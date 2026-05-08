@@ -6,7 +6,11 @@ import { Gavel, AlertTriangle, ArrowRight } from 'lucide-react';
 export const metadata = {
   title: 'Guia de SST para RH e DP | eSocial, multas e compliance | SERMST',
   description:
-    'Conteudo para RH e DP sobre eSocial SST, multas, ASO, S-2220, S-2240 e processos de medicina do trabalho para empresas.',
+    'Conteúdo para RH e DP sobre eSocial SST, multas, ASO, S-2220, S-2240 e processos de medicina do trabalho para empresas.',
+
+  alternates: {
+    canonical: 'https://sermst.com.br/rh',
+  },
 };
 
 export default function RHIndexPage() {
@@ -19,14 +23,14 @@ export default function RHIndexPage() {
         <div className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 relative z-10">
           <FadeIn direction="up">
             <span className="inline-block bg-accent-pink/10 border border-accent-pink/20 text-accent-pink font-black text-xs uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6">
-              Conteudo para RH e Departamento Pessoal
+              Conteúdo para RH e Departamento Pessoal
             </span>
             <h1 className="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-none">
               Gestão de eSocial e SST <br />
               <span className="text-accent-pink">para RH e DP</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl font-medium border-l-4 border-accent-pink pl-6 md:pl-10 leading-relaxed">
-              Este hub existe para responder a dor operacional do RH: admissão travada, evento fora do prazo, documento incoerente, retrabalho com ASO e medo de multa automatica no eSocial.
+              Este hub existe para responder a dor operacional do RH: admissão travada, evento fora do prazo, documento incoerente, retrabalho com ASO e medo de multa automática no eSocial.
             </p>
           </FadeIn>
         </div>

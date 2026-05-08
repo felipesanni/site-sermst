@@ -6,7 +6,11 @@ import { servicosSEO } from '@/lib/data/seo-content';
 export const metadata = {
   title: 'Exames e Laudos Ocupacionais | SERMST',
   description:
-    'Central de serviços da SERMST em Medicina e Segurança do Trabalho: exames admissionais, periodicos e gestão de PGR, PCMSO, LTCAT e eSocial.',
+    'Central de serviços da SERMST em Medicina e Segurança do Trabalho: exames admissionais, periódicos e gestão de PGR, PCMSO, LTCAT e eSocial.',
+
+  alternates: {
+    canonical: 'https://sermst.com.br/servicos',
+  },
 };
 
 export default function ServicosIndexPage() {
@@ -17,9 +21,9 @@ export default function ServicosIndexPage() {
       <header className="bg-brand-900 py-14 text-white md:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
           <FadeIn direction="down" viewport={false}>
-            <h1 className="mb-5 text-[2.6rem] font-black leading-[1.05] md:mb-6 md:text-6xl">Servicos para exames, laudos e rotina SST</h1>
+            <h1 className="mb-5 text-[2.6rem] font-black leading-[1.05] md:mb-6 md:text-6xl">Serviços para exames, laudos e rotina SST</h1>
             <p className="max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl">
-              Solucoes completas em Saúde e Segurança do Trabalho para empresas que precisam contratar, regularizar documentos e manter o eSocial sob controle sem travar a operação.
+              Soluções completas em Saúde e Segurança do Trabalho para empresas que precisam contratar, regularizar documentos e manter o eSocial sob controle sem travar a operação.
             </p>
           </FadeIn>
         </div>

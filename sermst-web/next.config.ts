@@ -16,32 +16,49 @@ import type { NextConfig } from "next";
  * IMPORTANTE: Antes do go-live, validar que /lp-aso (destino dos Google Ads atuais)
  * esta coberta para nao queimar budget de anuncios em 404.
  */
+
+const securityHeaders = [
+  { key: 'X-DNS-Prefetch-Control', value: 'on' },
+  { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload',
+  },
+  {
+    key: 'Content-Security-Policy',
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com",
+      "img-src 'self' data: blob: https:",
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://hooks.zapier.com",
+      "frame-src 'none'",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ].join('; '),
+  },
+];
+
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ];
+  },
+
   async redirects() {
     return [
-      // Geo-bairro (3 paginas) -> cidade Sao Paulo
-      {
-        source: "/sao-paulo/pinheiros/clinica-para-exame-admissional-em-pinheiros",
-        destination: "/servicos/exame-admissional-expresso/sao-paulo",
-        permanent: true,
-      },
-      {
-        source: "/sao-paulo/onde-realizar-exame-admissional-na-liberdade-sao-paulo",
-        destination: "/servicos/exame-admissional-expresso/sao-paulo",
-        permanent: true,
-      },
-      {
-        source: "/sao-paulo/exame-admissional-na-vila-mariana",
-        destination: "/servicos/exame-admissional-expresso/sao-paulo",
-        permanent: true,
-      },
-      {
-        source: "/category/sao-paulo/:bairro*",
-        destination: "/servicos/exame-admissional-expresso/sao-paulo",
-        permanent: true,
-      },
-
-      // Hubs antigos do WordPress
+      { source: "/sao-paulo/pinheiros/clinica-para-exame-admissional-em-pinheiros", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
+      { source: "/sao-paulo/onde-realizar-exame-admissional-na-liberdade-sao-paulo", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
+      { source: "/sao-paulo/exame-admissional-na-vila-mariana", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/sermst", destination: "/quem-somos", permanent: true },
       { source: "/missao-visao-e-valores", destination: "/quem-somos", permanent: true },
       { source: "/saude-ocupacional", destination: "/saude", permanent: true },
@@ -51,13 +68,9 @@ const nextConfig: NextConfig = {
       { source: "/esocial-sst", destination: "/servicos/gestao-esocial-s2220-s2240/sao-paulo", permanent: true },
       { source: "/clinicas-credenciadas", destination: "/a-clinica", permanent: true },
       { source: "/lp-aso", destination: "/contato", permanent: true },
-
-      // Saude ocupacional (sub-paginas)
       { source: "/saude-ocupacional/exames-ocupacionais", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/saude-ocupacional/exames-complementares", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
       { source: "/saude-ocupacional/pcmso-nr-07", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
-
-      // Seguranca do trabalho - NRs e laudos
       { source: "/seguranca-do-trabalho/prg-nr01-programa-geral-de-riscos", destination: "/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo", permanent: true },
       { source: "/seguranca-do-trabalho/ltcat-nr-15", destination: "/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo", permanent: true },
       { source: "/seguranca-do-trabalho/cipa-nr-05", destination: "/servicos/treinamentos-nrs-cipa-brigada/sao-paulo", permanent: true },
@@ -72,8 +85,6 @@ const nextConfig: NextConfig = {
       { source: "/seguranca-do-trabalho/nr-35-e-nr-18", destination: "/normas/nr-35-trabalho-em-altura", permanent: true },
       { source: "/seguranca-do-trabalho/ppp-portaria-3-214-78-do-mte", destination: "/normas/ppp-eletronico", permanent: true },
       { source: "/seguranca-do-trabalho/pgrs-prgss", destination: "/normas/pgrs-residuos", permanent: true },
-
-      // Guias /medicina-do-trabalho/ -> /saude ou /rh
       { source: "/medicina-do-trabalho/exame-admissional-perto-de-mim", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/medicina-do-trabalho/o-que-e-saude-ocupacional-um-guia-completo", destination: "/saude/o-que-e-saude-ocupacional", permanent: true },
       { source: "/medicina-do-trabalho/exame-pcmso-tudo-o-que-voce-precisa-saber-sobre-o-controle-de-saude-ocupacional", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
@@ -91,8 +102,6 @@ const nextConfig: NextConfig = {
       { source: "/medicina-do-trabalho/nr-07-tudo-o-que-voce-precisa-saber-sobre-o-controle-medico-de-saude-ocupacional", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
       { source: "/medicina-do-trabalho/nr-1-atualizada", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/uncategorized/nr-1-atualizada", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
-
-      // Guias /exames/ -> /rh, /saude, /servicos
       { source: "/exames/funcao-encarregado-responsabilidades-e-perfil-ideal", destination: "/rh/funcao-encarregado", permanent: true },
       { source: "/exames/o-que-um-gerente-faz-funcoes-responsabilidades", destination: "/rh/o-que-um-gerente-faz", permanent: true },
       { source: "/exames/como-funciona-o-exame-admissional", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
@@ -109,26 +118,17 @@ const nextConfig: NextConfig = {
       { source: "/exames/nr07-guia-completo-da-norma-regulamentadora-no-7", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
       { source: "/exames/exame-toxicologico-o-que-voce-precisa-saber", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
       { source: "/exames/pcmso-tudo-o-que-voce-precisa-saber-sobre-o-programa-de-controle-medico", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
-
-      // Exames clinicos antigos -> exames complementares
       { source: "/exames-clinicos/eletrocardiograma-de-alta-resolucao", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
       { source: "/exames-clinicos/polissonografia", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
       { source: "/exames-clinicos/audiometria", destination: "/servicos/audiometria-ocupacional-clinica/sao-paulo", permanent: true },
       { source: "/exames-clinicos/espirometria", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
       { source: "/exames-clinicos/eletroencefalograma", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
       { source: "/exames-clinicos/holter-e-mapa-de-24-horas", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
-
-      // Exames laboratoriais B2B (toxicologico ocupacional)
       { source: "/exames-laboratoriais/exame-toxicologico-ocupacional", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
       { source: "/exames-laboratoriais/contraprova-toxicologicos", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
-
-      // Servicos antigos (legados)
       { source: "/servicos/exames-admissionais", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/servicos/exame-admissional", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
-
-      // Blog WP -> /saude ou rota equivalente
       { source: "/blog", destination: "/saude", permanent: true },
-      { source: "/blog/page/:n*", destination: "/saude", permanent: true },
       { source: "/blog/cipa-como-implementar-na-minha-empresa-2", destination: "/servicos/treinamentos-nrs-cipa-brigada/sao-paulo", permanent: true },
       { source: "/blog/seguranca-do-trabalho-o-que-e-cipa", destination: "/servicos/treinamentos-nrs-cipa-brigada/sao-paulo", permanent: true },
       { source: "/blog/o-perfil-profissiografico-ppp-agora-sera-digital", destination: "/normas/ppp-eletronico", permanent: true },
@@ -146,12 +146,8 @@ const nextConfig: NextConfig = {
       { source: "/blog/seguranca-do-trabalho-a-relacao-com-a-medicina-do-trabalho", destination: "/saude/gestao-sst", permanent: true },
       { source: "/blog/podcast-ao-vivo-com-a-participacao-de-luiz-cesar-sannino", destination: "/quem-somos", permanent: true },
       { source: "/blog/conheca-os-principais-exames-e-avaliacoes-realizados-pela-sermst", destination: "/servicos", permanent: true },
-
-      // Sub-marca DR Exames (inativada) -> home
       { source: "/dr-exames", destination: "/", permanent: true },
       { source: "/exames-realizados-pela-dr-exames", destination: "/", permanent: true },
-
-      // B2C / particulares / convenio (fora do escopo B2B) -> home
       { source: "/exames-particulares", destination: "/", permanent: true },
       { source: "/exames-convenios", destination: "/", permanent: true },
       { source: "/atendimento-a-convenios", destination: "/", permanent: true },
@@ -160,8 +156,8 @@ const nextConfig: NextConfig = {
       { source: "/exames-laboratoriais/exame-de-urina-primeiro-jato", destination: "/", permanent: true },
       { source: "/exames-laboratoriais/exame-toxicologico-detran", destination: "/", permanent: true },
       { source: "/blog/voce-passou-em-um-concurso-publico-agende-seu-exame-toxicologico", destination: "/", permanent: true },
-
-      // Tags e categorias do WordPress (deindexar)
+      { source: "/category/sao-paulo/:bairro*", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
+      { source: "/blog/page/:n*", destination: "/saude", permanent: true },
       { source: "/tag/:slug*", destination: "/", permanent: true },
       { source: "/category/:slug*", destination: "/", permanent: true },
       { source: "/author/:slug*", destination: "/", permanent: true },

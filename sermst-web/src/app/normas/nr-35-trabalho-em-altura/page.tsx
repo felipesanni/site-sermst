@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-35: Trabalho em Altura — treinamento, exigências e penalidades | SERMST',
   description:
-    'Guia completo da NR-35 (trabalho em altura): quem precisa, treinamento obrigatório de 8h, reciclagem a cada 2 anos, APR, supervisão técnica e o que acontece em caso de descumprimento. Por SERMST.',
+    'Guia completo da NR-35 (trabalho em altura): quem precisa, treinamento obrigatório de 8h, reciclagem a cada 2 anos, APR, supervisão técnica é o que acontece em caso de descumprimento. Por SERMST.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura' },
 };
 
@@ -14,6 +14,7 @@ export default function NR35Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-35-trabalho-em-altura"
+      pageUrl="https://sermst.com.br/normas/nr-35-trabalho-em-altura"
       badgeText="NR-35"
       h1="NR-35: Trabalho em Altura — o que sua empresa precisa saber"
       intro="A NR-35 regulamenta toda atividade executada acima de 2 metros do nível inferior com risco de queda. Falha aqui é responsabilidade civil, criminal e financeira direta. Veja o que a norma exige e como cumprir."

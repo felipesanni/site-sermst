@@ -14,6 +14,7 @@ export default function OQueUmGerenteFazPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
+      pageUrl="https://sermst.com.br/rh/o-que-um-gerente-faz"
       h1="O que um gerente faz: funções, responsabilidades e impacto na empresa"
       intro="Guia para gestores e RH que estão estruturando o cargo: o que entrega o gerente, perfil que funciona, erros que custam caro e por que SST é responsabilidade direta dele."
       sections={[
@@ -90,7 +91,7 @@ export default function OQueUmGerenteFazPage() {
               <ol>
                 <li><strong>Treinamento documentado nas NRs aplicáveis</strong> à área que comanda (NR-10, NR-12, NR-18, NR-35 etc.).</li>
                 <li><strong>PCMSO em dia</strong> — o cargo de gerente também tem riscos específicos que o programa precisa refletir.</li>
-                <li><strong>Procedimentos por escrito</strong> sobre o que ele tem que cobrar da equipe, com evidência de leitura e ciência.</li>
+                <li><strong>Procedimentos por escrito</strong> sobré o que ele tem que cobrar da equipe, com evidência de leitura e ciência.</li>
               </ol>
             </>
           ),
@@ -122,7 +123,7 @@ export default function OQueUmGerenteFazPage() {
       sidebarHook="Gerente sem treinamento de SST documentado é exposição direta para a empresa em fiscalização ou acidente. A SERMST audita PCMSO, PGR e treinamentos de toda a estrutura — sem custo inicial."
       sidebarCtaLabel="Auditar SST da liderança"
       related={[
-        { label: 'Função encarregado: responsabilidades', href: '/rh/funcao-encarregado' },
+        { label: 'Função encarregado: responsabilidades', href: '/rh/função-encarregado' },
         { label: 'Como treinar gerentes', href: '/rh/treinamento-gerentes' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Multa de eSocial S-2220', href: '/rh/multa-esocial-s2220' },

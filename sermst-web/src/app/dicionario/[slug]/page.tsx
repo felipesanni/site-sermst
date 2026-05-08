@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = dicionarioSEO[slug];
-  if (!data) return { title: 'Termo nao encontrado | SERMST' };
+  if (!data) return { title: 'Termo não encontrado | SERMST' };
   return { title: data.h1, description: data.hook };
 }
 

@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { servicosSEO, localidades, saudeSEO, rhDoresSEO, dicionarioSEO } from "@/lib/data/seo-content";
+import { servicosSEO, localidades, saúdeSEO, rhDoresSEO, dicionarioSEO } from "@/lib/data/seo-content";
 import { trainingsData } from "@/lib/data/treinamentos-data";
 import { siteImages } from "@/lib/site-images";
 import { normasKnown } from "./normas/[slug]/page";
@@ -50,18 +50,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/dicionario`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
-  // ── Páginas base de serviços ──────────────────────────────────────────────
-  const servicoBasePages: MetadataRoute.Sitemap = Object.keys(servicosSEO).map((serviço) => ({
-    url: `${BASE_URL}/servicos/${serviço}`,
+  // ── Páginas base de servicos ──────────────────────────────────────────────
+  const servicoBasePages: MetadataRoute.Sitemap = Object.keys(servicosSEO).map((servico) => ({
+    url: `${BASE_URL}/servicos/${servico}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
   // ── Páginas geo-SEO ───────────────────────────────────────────────────────
-  const geoPages: MetadataRoute.Sitemap = Object.keys(servicosSEO).flatMap((serviço) =>
+  const geoPages: MetadataRoute.Sitemap = Object.keys(servicosSEO).flatMap((servico) =>
     localidades.map((localidade) => ({
-      url: `${BASE_URL}/servicos/${serviço}/${localidade.slug}`,
+      url: `${BASE_URL}/servicos/${servico}/${localidade.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: localidade.isHub ? 0.9 : 0.75,
@@ -77,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // ── Hub de Saúde Ocupacional ─────────────────────────────────────────────
-  const saudePages: MetadataRoute.Sitemap = Object.keys(saudeSEO).map((slug) => ({
+  const saúdePages: MetadataRoute.Sitemap = Object.keys(saúdeSEO).map((slug) => ({
     url: `${BASE_URL}/saude/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
@@ -114,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicoBasePages,
     ...geoPages,
     ...treinamentoPages,
-    ...saudePages,
+    ...saúdePages,
     ...rhPages,
     ...dicionarioPages,
     ...normasPages,

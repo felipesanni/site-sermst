@@ -14,6 +14,7 @@ export default function NR15Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-15-insalubridade"
+      pageUrl="https://sermst.com.br/normas/nr-15-insalubridade"
       badgeText="NR-15"
       h1="NR-15: Insalubridade — guia para gestores e RH"
       intro="A NR-15 define quais atividades geram direito ao adicional de insalubridade — 10%, 20% ou 40% sobre o salário mínimo. Pagar errado é passivo trabalhista garantido. Veja como caracterizar, calcular e blindar a empresa."
@@ -29,7 +30,7 @@ export default function NR15Page() {
           ),
         },
         {
-          title: 'Os 3 graus de insalubridade e o que muda',
+          title: 'Os 3 graus de insalubridade é o que muda',
           body: (
             <>
               <ul>

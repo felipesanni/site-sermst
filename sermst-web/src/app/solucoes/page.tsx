@@ -3,22 +3,26 @@ import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
 
 export const metadata: Metadata = {
-  title: 'Solucoes de SST para Empresas | SERMST',
+  title: 'Soluções de SST para Empresas | SERMST',
   description:
-    'Conheca as soluções da SERMST para exames ocupacionais, PGR, PCMSO, LTCAT, treinamentos e gestão de eSocial SST em São Paulo e Grande SP.',
+    'Conheça as soluções da SERMST para exames ocupacionais, PGR, PCMSO, LTCAT, treinamentos e gestão de eSocial SST em São Paulo e Grande SP.',
+
+  alternates: {
+    canonical: 'https://sermst.com.br/solucoes',
+  },
 };
 
 const solutions = [
   {
     title: 'Exames ocupacionais',
     description:
-      'Para empresas que precisam contratar rapido, manter ASO em dia e reduzir gargalos na rotina de RH.',
+      'Para empresas que precisam contratar rápido, manter ASO em dia e reduzir gargalos na rotina de RH.',
     href: '/servicos/exame-admissional-expresso/sao-paulo',
   },
   {
     title: 'PGR e gerenciamento de riscos',
     description:
-      'Para operações que precisam de inventario real de riscos, plano de acao coerente e base técnica para o eSocial.',
+      'Para operações que precisam de inventário real de riscos, plano de ação coerente e base técnica para o eSocial.',
     href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo',
   },
   {
@@ -28,9 +32,9 @@ const solutions = [
     href: '/servicos/pcmso-nr07-programa/sao-paulo',
   },
   {
-    title: 'LTCAT e base previdenciaria',
+    title: 'LTCAT e base previdenciária',
     description:
-      'Para negócios que precisam de laudo técnico solido para aposentadoria especial, PPP e S-2240.',
+      'Para negócios que precisam de laudo técnico sólido para aposentadoria especial, PPP e S-2240.',
     href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo',
   },
   {
@@ -40,14 +44,14 @@ const solutions = [
     href: '/servicos/gestao-esocial-s2220-s2240/sao-paulo',
   },
   {
-    title: 'Treinamentos obrigatorios',
+    title: 'Treinamentos obrigatórios',
     description:
-      'Para empresas que precisam capacitar equipes, validar certificados e sustentar prevenção com evidencia.',
+      'Para empresas que precisam capacitar equipes, validar certificados e sustentar prevenção com evidência.',
     href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo',
   },
 ];
 
-export default function SolucoesPage() {
+export default function SoluçõesPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       <section className="relative overflow-hidden bg-brand-900 text-white">
@@ -56,13 +60,13 @@ export default function SolucoesPage() {
           <div className="max-w-4xl">
             <FadeIn direction="up">
               <span className="mb-6 inline-block rounded-full border border-accent-pink/30 bg-accent-pink/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-                Solucoes B2B em SST
+                Soluções B2B em SST
               </span>
               <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
-                Solucoes de Medicina e Segurança do Trabalho para reduzir risco, acelerar rotina e sustentar o eSocial
+                Soluções de Medicina e Segurança do Trabalho para reduzir risco, acelerar rotina e sustentar o eSocial
               </h1>
               <p className="max-w-3xl text-xl leading-relaxed text-slate-300 md:text-2xl">
-                A SERMST organiza sua atuacao em torno de um objetivo simples: ajudar empresas a manter exames, documentos e eventos de SST em dia sem transformar conformidade em gargalo operacional.
+                A SERMST organiza sua atuação em torno de um objetivo simples: ajudar empresas a manter exames, documentos e eventos de SST em dia sem transformar conformidade em gargalo operacional.
               </p>
             </FadeIn>
           </div>
@@ -74,7 +78,7 @@ export default function SolucoesPage() {
           <FadeIn direction="right">
             <div className="surface-panel">
               <span className="kicker">
-                Leitura estrategica
+                Leitura Estratégica
               </span>
               <h2 className="mb-6 text-3xl font-black text-brand-900 md:text-4xl">
                 O que uma empresa realmente compra quando contrata SST
@@ -99,14 +103,14 @@ export default function SolucoesPage() {
                 Quando isso faz diferença
               </span>
               <h2 className="mb-6 text-2xl font-black text-brand-900">
-                Cenarios em que a SERMST costuma entrar
+                Cenários em que a SERMST costuma entrar
               </h2>
               <div className="space-y-4 text-slate-700">
-                <p>Admissoes urgentes e operação parada por falta de ASO.</p>
-                <p>Documentos de SST desatualizados ou genericos demais.</p>
+                <p>Admissões urgentes e operação parada por falta de ASO.</p>
+                <p>Documentos de SST desatualizados ou genéricos demais.</p>
                 <p>Receio de multa por falhas em S-2220 ou S-2240.</p>
-                <p>Fiscalizacoes, auditorias ou processos trabalhistas em andamento.</p>
-                <p>Dificuldade de integrar clínica, laudos e rotina de RH num fluxo so.</p>
+                <p>Fiscalizações, auditorias ou processos trabalhistas em andamento.</p>
+                <p>Dificuldade de integrar clínica, laudos e rotina de RH num fluxo só.</p>
               </div>
               <div className="mt-8 border-t border-slate-200 pt-8">
                 <Link
@@ -132,7 +136,7 @@ export default function SolucoesPage() {
                 className="card-clean group"
               >
                 <span className="kicker">
-                  Solucao prioritaria
+                  Solução Prioritária
                 </span>
                 <h3 className="mb-4 text-2xl font-black text-brand-900 transition-colors group-hover:text-accent-pink">
                   {solution.title}
@@ -141,7 +145,7 @@ export default function SolucoesPage() {
                   {solution.description}
                 </p>
                 <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
-                  Ver pagina da solução
+                  Ver página da solução
                   <span aria-hidden="true">→</span>
                 </span>
               </Link>

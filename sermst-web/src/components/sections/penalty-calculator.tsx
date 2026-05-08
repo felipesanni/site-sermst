@@ -14,7 +14,7 @@ const BASES = {
   S2220: {
     min: 402.53,
     label: 'S-2220 (monitoramento de saúde)',
-    headline: 'ASO nao enviado ou rotina médica fora de controle',
+    headline: 'ASO não enviado ou rotina médica fora de controle',
   },
   S2240: {
     min: 3115.0,
@@ -32,7 +32,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
   const urgencyText =
     eventType === 'S2220'
       ? 'Quando o ASO atrasa, a admissão trava, o RH perde tempo e o passivo cresce em silencio.'
-      : 'Quando o risco nao esta bem documentado, o problema nao fica so no evento. Ele contamina laudo, eSocial e defesa futura.';
+      : 'Quando o risco não esta bem documentado, o problema não fica so no evento. Ele contamina laudo, eSocial e defesa futura.';
 
   return (
     <section className="overflow-hidden bg-white py-24">
@@ -50,7 +50,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                 <span className="block font-sans not-italic text-brand-900">em {localidade}</span>
               </h2>
               <p className="mb-8 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
-                Use a simulacao para visualizar quanto a empresa pode estar expondo em atraso de SST. Nao e calculo jurídico definitivo, mas e um bom choque de realidade para decidir mais rapido.
+                Use a simulacao para visualizar quanto a empresa pode estar expondo em atraso de SST. Não é cálculo jurídico definitivo, mas é um bom choque de realidade para decidir mais rápido.
               </p>
 
               <div className="mb-10 flex gap-4">
@@ -84,7 +84,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                   <div>
                     <div className="mb-4 flex items-center justify-between">
                       <label className="flex items-center gap-2 text-sm font-black uppercase text-brand-900">
-                        <Users className="h-4 w-4" /> Funcionarios afetados
+                        <Users className="h-4 w-4" /> Funcionários afetados
                       </label>
                       <span className="rounded-lg bg-brand-900 px-4 py-1 text-lg font-black text-white">
                         {employees}
@@ -103,7 +103,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                   <div>
                     <div className="mb-4 flex items-center justify-between">
                       <label className="flex items-center gap-2 text-sm font-black uppercase text-brand-900">
-                        <Calendar className="h-4 w-4" /> Periodo de atraso (meses)
+                        <Calendar className="h-4 w-4" /> Período de atraso (meses)
                       </label>
                       <span className="rounded-lg bg-brand-900 px-4 py-1 text-lg font-black text-white">
                         {monthsDelay}
@@ -154,7 +154,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                   </div>
                   <div className="flex items-center gap-4 text-slate-300">
                     <div className="h-2 w-2 rounded-full bg-accent-pink" />
-                    <p className="text-sm font-medium">A exposicao real pode subir com reincidencia, fiscalização e inconsistencias técnicas</p>
+                    <p className="text-sm font-medium">A exposicao real pode subir com reincidência, fiscalização e inconsistencias técnicas</p>
                   </div>
                 </div>
 
@@ -181,15 +181,15 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent-pink" />
-                      Acelerar a decisao sobre regularizacao de SST.
+                      Acelerar a decisão sobre regularização de SST.
                     </li>
                   </ul>
                 </div>
 
                 <p className="mt-6 text-center text-[10px] font-bold uppercase tracking-widest leading-relaxed text-slate-500">
-                  *Estimativa ilustrativa com base em valores minimos de referência.
+                  *Estimativa ilustrativa com base em valores mínimos de referência.
                   <br />
-                  Pode variar conforme gravidade, reincidencia e contexto da fiscalização.
+                  Pode variar conforme gravidade, reincidência e contexto da fiscalização.
                 </p>
               </div>
             </div>

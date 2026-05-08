@@ -3,7 +3,7 @@ import { Localidade, SEODocument } from '@/lib/data/seo-content';
 const getPrimaryServiceName = (h1: string) => h1.split('|')[0].trim();
 
 const getServiceCategoryCopy = (data: SEODocument) => {
-  if (data.isClinico) {
+  if (data.isClínico) {
     return {
       searchIntent:
         'empresas que precisam acelerar admissões, manter o PCMSO em dia e evitar gargalos no envio de ASO para o eSocial',
@@ -37,7 +37,7 @@ export function buildServiceCopy(data: SEODocument) {
     ],
     complianceParagraphs: [
       data.quandoRequerido
-        ? `${data.quandoRequerido} Esse ponto é decisivo porque ${category.complianceAngle}. Quando a empresa entende o momento certo de contratar o serviço e o que precisa estar amarrado tecnicamente, evita inconsistências que mais tarde viram passivo trabalhista, autuação ou perda de produtividade.`
+        ? `${data.quandoRequerido} Esse ponto é decisivo porque ${category.complianceAngle}. Quando a empresa entende o momento certo de contratar o serviço é o que precisa estar amarrado tecnicamente, evita inconsistências que mais tarde viram passivo trabalhista, autuação ou perda de produtividade.`
         : `${category.complianceAngle} Esse alinhamento entre exigência legal, diagnóstico técnico e execução operacional é o que diferencia uma solução realmente segura de uma entrega superficial.`,
       `${serviceName} não é etapa isolada. Conversa com a rotina do RH, com a agenda do colaborador, com a documentação de SST e com a necessidade de provar — em eventual fiscalização — que a empresa atuou de forma preventiva, organizada e coerente com os riscos da atividade.`,
     ],
@@ -66,7 +66,7 @@ export function buildLocalServiceCopy(data: SEODocument, local: Localidade) {
       `${serviceName} em ${local.nome} precisa ser tratado como solução operacional, legal e comercial ao mesmo tempo. A página precisa responder à dor de quem busca rapidez e tranquilizar quem está pensando em risco jurídico, vencimento de prazo, admissão parada, auditoria futura ou multa relacionada ao eSocial.`,
     ],
     localCta:
-      data.isClinico
+      data.isClínico
         ? `Solicitar ${serviceName} em ${local.nome}`
         : `Solicitar proposta de ${serviceName} em ${local.nome}`,
     bridgeSentence: `Empresas em ${local.nome} escolhem melhor quando encontram uma página que explica o serviço com profundidade, mostra aderência ao contexto local e conduz para um próximo passo objetivo com o comercial.`,

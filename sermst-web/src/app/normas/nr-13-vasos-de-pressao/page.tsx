@@ -14,6 +14,7 @@ export default function NR13Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-13-vasos-de-pressao"
+      pageUrl="https://sermst.com.br/normas/nr-13-vasos-de-pressao"
       badgeText="NR-13"
       h1="NR-13: Caldeiras, Vasos de Pressão, Tubulações e Tanques"
       intro="A NR-13 obriga inspeção técnica periódica em equipamentos sob pressão. Sem laudo válido, a empresa não pode operar — risco de interdição imediata, acidente catastrófico e responsabilização. Veja como cumprir."
@@ -64,7 +65,7 @@ export default function NR13Page() {
                 <li><strong>Tubulações</strong>: prazos próprios definidos no PIE.</li>
               </ul>
               <p>
-                Equipamento com inspeção vencida não pode operar. A empresa que opera com vencimento vencido está em descumprimento direto e em caso de acidente, responsabilidade praticamente certa.
+                Equipamento com inspeção vencida não pode operar. A empresa que opera com vencimento vencido está em descumprimento direto e em caso de acidente, responsabilidade práticamente certa.
               </p>
             </>
           ),

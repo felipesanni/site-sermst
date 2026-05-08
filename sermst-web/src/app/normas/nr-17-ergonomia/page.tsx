@@ -14,6 +14,7 @@ export default function NR17Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-17-ergonomia"
+      pageUrl="https://sermst.com.br/normas/nr-17-ergonomia"
       badgeText="NR-17"
       h1="NR-17: Ergonomia — o que sua empresa precisa fazer para evitar LER/DORT"
       intro="A NR-17 trata da adaptação do trabalho às condições humanas: postura, mobiliário, ritmo, levantamento de peso, organização. Em ações trabalhistas por LER/DORT, a falta de Análise Ergonômica do Trabalho atualizada é responsabilidade direta da empresa."
@@ -92,7 +93,7 @@ export default function NR17Page() {
                 <li>O exame periódico foi conduzido com atenção a sintomas musculoesqueléticos?</li>
               </ol>
               <p>
-                Negativa em qualquer dessas é responsabilidade praticamente certa.
+                Negativa em qualquer dessas é responsabilidade práticamente certa.
               </p>
             </>
           ),

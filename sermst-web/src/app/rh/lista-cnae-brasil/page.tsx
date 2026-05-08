@@ -14,6 +14,7 @@ export default function ListaCNAEPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
+      pageUrl="https://sermst.com.br/rh/lista-cnae-brasil"
       h1="Lista CNAE Brasil: o guia para empresas e empreendedores"
       intro="O CNAE define o enquadramento da empresa em todos os órgãos públicos. Errar o CNAE muda alíquota, muda obrigação trabalhista, muda obrigação de SST. Saber escolher e revisar é decisão estratégica, não burocracia."
       sections={[
@@ -99,7 +100,7 @@ export default function ListaCNAEPage() {
         },
         {
           q: 'Como mudar o CNAE da empresa?',
-          a: 'Para empresa LTDA ou EIRELI, é alteração contratual via Junta Comercial. Para MEI, alteração no Portal do Empreendedor. A mudança reflete automaticamente em CNPJ, alvará e demais cadastros. Em geral, contador faz junto com a próxima alteração contratual.',
+          a: 'Para empresa LTDA ou EIRELI, é alteração contratual via Junta Comercial. Para MEI, alteração no Portal do Empreendedor. A mudança reflete automáticamente em CNPJ, alvará e demais cadastros. Em geral, contador faz junto com a próxima alteração contratual.',
         },
         {
           q: 'Trocar CNAE muda imposto pago no passado?',

@@ -11,11 +11,11 @@ import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildLocalServiceCopy } from '@/lib/seo-copy';
 
 export function generateStaticParams() {
-  const params: { serviço: string; regiao: string }[] = [];
+  const params: { servico: string; regiao: string }[] = [];
 
-  Object.keys(servicosSEO).forEach((serviço) => {
+  Object.keys(servicosSEO).forEach((servico) => {
     localidades.forEach((local) => {
-      params.push({ serviço, regiao: local.slug });
+      params.push({ servico, regiao: local.slug });
     });
   });
 
@@ -25,19 +25,19 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ serviço: string; regiao: string }>
+  params: Promise<{ servico: string; regiao: string }>
 }): Promise<Metadata> {
-  const { serviço, regiao } = await params;
-  const data = servicosSEO[serviço];
+  const { servico, regiao } = await params;
+  const data = servicosSEO[servico];
   const local = localidades.find((item) => item.slug === regiao);
 
   if (!data || !local) {
-    return { title: 'Pagina nao encontrada | SERMST' };
+    return { title: 'Pagina não encontrada | SERMST' };
   }
 
   const mainTerm = data.h1.split('|')[0].trim();
   const title = `${mainTerm} em ${local.nome} | SERMST`;
-  const description = `Precisa de ${mainTerm.toLowerCase()} em ${local.nome}? Clinica de medicina do trabalho com liberacao de ASO na hora, laboratorio proprio e envio ao eSocial. Atendimento expresso para empresas ${local.adjetivo}. Fale agora com a SERMST.`;
+  const description = `Precisa de ${mainTerm.toLowerCase()} em ${local.nome}? Clínica de medicina do trabalho com liberação de ASO na hora, laboratório próprio e envio ao eSocial. Atendimento expresso para empresas ${local.adjetivo}. Fale agora com a SERMST.`;
 
   return {
     title,
@@ -50,7 +50,7 @@ export async function generateMetadata({
       siteName: 'SERMST Medicina e Segurança do Trabalho',
     },
     alternates: {
-      canonical: `https://sermst.com.br/servicos/${serviço}/${regiao}`,
+      canonical: `https://sermst.com.br/servicos/${servico}/${regiao}`,
     },
   };
 }
@@ -58,10 +58,10 @@ export async function generateMetadata({
 export default async function LocalSEOPage({
   params,
 }: {
-  params: Promise<{ serviço: string; regiao: string }>
+  params: Promise<{ servico: string; regiao: string }>
 }) {
-  const { serviço, regiao } = await params;
-  const data = servicosSEO[serviço];
+  const { servico, regiao } = await params;
+  const data = servicosSEO[servico];
   const local = localidades.find((item) => item.slug === regiao);
 
   if (!data || !local) notFound();
@@ -80,7 +80,7 @@ export default async function LocalSEOPage({
     '@type': 'Service',
     name: `${servicoNome} em ${local.nome}`,
     provider: {
-      '@type': 'MedicalOrganization',
+      '@type': 'MédicalOrganization',
       name: 'SERMST - Medicina e Segurança do Trabalho',
       address: {
         '@type': 'PostalAddress',
@@ -122,7 +122,7 @@ export default async function LocalSEOPage({
           <FadeIn>
             <div className="max-w-4xl">
               <div className="mb-8 flex flex-wrap gap-2">
-                {data.isClinico ? (
+                {data.isClínico ? (
                   <span className="rounded-full bg-accent-pink px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white shadow-lg">
                     ASO no mesmo dia
                   </span>
@@ -166,7 +166,7 @@ export default async function LocalSEOPage({
               Autoridade legal e técnica
             </span>
             <h2 className="mb-8 text-3xl font-black leading-tight text-brand-900 md:text-4xl">
-              {data.isClinico ? `Agilidade no ASO e compliance em ${local.nome}` : `Elaboracao técnica e seguranca jurídica em ${local.nome}`}
+              {data.isClínico ? `Ágilidade no ASO e compliance em ${local.nome}` : `Elaboração técnica e segurança jurídica em ${local.nome}`}
             </h2>
             <p className="mb-10 text-xl font-medium leading-relaxed text-slate-600">
               {data.quandoRequerido}
@@ -177,7 +177,7 @@ export default async function LocalSEOPage({
                 <span className="text-sm font-black uppercase">Leitura de especialista</span>
               </div>
               <p className="font-medium italic text-slate-700">
-                {local.contextoEmpresarial} Unimos a expertise em medicina do trabalho a precisao regulatoria do eSocial.
+                {local.contextoEmpresarial} Unimos a expertise em medicina do trabalho a precisão regulatoria do eSocial.
               </p>
             </div>
           </FadeIn>
@@ -263,27 +263,27 @@ export default async function LocalSEOPage({
         <div className="mx-auto w-full max-w-[1280px] px-6 text-center">
           <FadeIn>
             <h2 className="mb-4 text-4xl font-black text-brand-900">
-              {data.isClinico ? 'Fluxo de atendimento otimizado' : 'Fluxo de elaboracao técnica'}
+              {data.isClínico ? 'Fluxo de atendimento otimizado' : 'Fluxo de elaboração técnica'}
             </h2>
             <p className="mb-16 text-xl font-medium text-slate-500">
-              {data.isClinico ? `Do agendamento ao ASO em maos para sua empresa em ${local.nome}.` : `Processo rigoroso para garantir a conformidade legal em ${local.nome}.`}
+              {data.isClínico ? `Do agendamento ao ASO em maos para sua empresa em ${local.nome}.` : `Processo rigoroso para garantir a conformidade legal em ${local.nome}.`}
             </p>
 
             <div className="grid gap-8 md:grid-cols-3">
-              {(data.isClinico
-                ? ['Agendamento online', 'Avaliacao na unidade', 'Liberacao para o RH']
-                : data.fluxoCorporativo || ['Diagnostico', 'Vistoria em campo', 'Entrega técnica']).map((step, i) => (
+              {(data.isClínico
+                ? ['Agendamento online', 'Avaliação na unidade', 'Liberação para o RH']
+                : data.fluxoCorporativo || ['Diagnóstico', 'Vistoria em campo', 'Entrega técnica']).map((step, i) => (
                 <div key={i} className="group flex flex-col items-center rounded-3xl border border-slate-100 bg-white p-10 shadow-xl transition-colors hover:border-accent-pink">
                   <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-white shadow-lg transition-transform group-hover:scale-110 ${i === 1 ? 'bg-accent-pink' : 'bg-brand-900'}`}>
                     {i === 0 && <Clock className="h-8 w-8" />}
-                    {i === 1 && (data.isClinico ? <Navigation className="h-8 w-8" /> : <ShieldCheck className="h-8 w-8" />)}
+                    {i === 1 && (data.isClínico ? <Navigation className="h-8 w-8" /> : <ShieldCheck className="h-8 w-8" />)}
                     {i === 2 && <TrendingUp className="h-8 w-8" />}
                   </div>
                   <h4 className="mb-4 text-xl font-black uppercase tracking-tighter text-brand-900">{step}</h4>
                   <p className="text-sm font-medium text-slate-500">
-                    {i === 0 && (data.isClinico ? 'Fale com a equipe, valide a demanda e envie o colaborador com guia digital.' : 'Alinhamento de escopo, urgencia e cronograma de visitas técnicas.')}
-                    {i === 1 && (data.isClinico ? 'Atendimento prioritario na unidade central com laboratorio proprio.' : 'Engenharia e medicina realizam vistoria no ambiente para coletar dados reais.')}
-                    {i === 2 && (data.isClinico ? 'ASO com validade plena e envio imediato ao eSocial.' : 'Elaboracao do laudo, assinatura técnica e entrega digital ao RH.')}
+                    {i === 0 && (data.isClínico ? 'Fale com a equipe, valide a demanda e envie o colaborador com guia digital.' : 'Alinhamento de escopo, urgencia e cronograma de visitas técnicas.')}
+                    {i === 1 && (data.isClínico ? 'Atendimento prioritario na unidade central com laboratório próprio.' : 'Engenharia e medicina realizam vistoria no ambiente para coletar dados reais.')}
+                    {i === 2 && (data.isClínico ? 'ASO com validade plena e envio imediato ao eSocial.' : 'Elaboração do laudo, assinatura técnica e entrega digital ao RH.')}
                   </p>
                 </div>
               ))}
@@ -292,7 +292,7 @@ export default async function LocalSEOPage({
         </div>
       </section>
 
-      {(data.isClinico || (data.documentosNecessarios && data.documentosNecessarios.length > 0)) && (
+      {(data.isClínico || (data.documentosNecessarios && data.documentosNecessarios.length > 0)) && (
         <section className="mx-auto w-full max-w-[1280px] px-6 py-24">
           <div className="grid gap-16 lg:grid-cols-2">
             <FadeIn direction="right">
@@ -300,7 +300,7 @@ export default async function LocalSEOPage({
                 <div className="mb-8 flex items-center gap-4">
                   <FileText className="h-8 w-8 text-brand-900" />
                   <h3 className="text-2xl font-black uppercase tracking-tighter text-brand-900">
-                    {data.isClinico ? 'O que o funcionario deve levar?' : 'Pre-requisitos técnicos'}
+                    {data.isClínico ? 'O que o funcionario deve levar?' : 'Pre-requisitos técnicos'}
                   </h3>
                 </div>
                 <ul className="grid flex-grow gap-4 sm:grid-cols-2">
@@ -318,7 +318,7 @@ export default async function LocalSEOPage({
                 <Zap className="mb-6 h-12 w-12 text-accent-pink" />
                 <h3 className="mb-6 text-3xl font-black uppercase tracking-tighter">Transparencia comercial</h3>
                 <p className="mb-8 border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed opacity-90">
-                  {data.expectativaCusto || 'Orcamentos personalizados para o CNPJ de sua empresa.'}
+                  {data.expectativaCusto || 'Orçamentos personalizados para o CNPJ de sua empresa.'}
                 </p>
                 <a href={`https://wa.me/5511915146447?text=Quero orcamento para ${servicoNome} em ${local.nome}`} className="btn-primary-safe-lg px-10 py-5 text-center text-lg font-black uppercase tracking-tighter shadow-xl">
                   Falar com comercial
@@ -329,7 +329,7 @@ export default async function LocalSEOPage({
         </section>
       )}
 
-      {serviço === 'treinamentos-nrs-cipa-brigada' && (
+      {servico === 'treinamentos-nrs-cipa-brigada' && (
         <section className="bg-white py-24">
           <div className="mx-auto max-w-[1280px] px-6">
             <FadeIn className="mb-16 text-center">
@@ -340,7 +340,7 @@ export default async function LocalSEOPage({
                 Grade de treinamentos NRs <br /> <small className="not-italic text-slate-400">em {local.nome}</small>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-xl font-medium text-slate-500">
-                Clique na norma para ver a carga horaria e o conteudo programatico completo.
+                Clique na norma para ver a carga horaria e o conteúdo programatico completo.
               </p>
             </FadeIn>
 
@@ -375,7 +375,7 @@ export default async function LocalSEOPage({
             Consultoria técnica
           </span>
           <h2 className="text-4xl font-black tracking-tighter text-brand-900 md:text-5xl">Duvidas frequentes</h2>
-          <p className="mt-4 font-medium text-slate-500">Tudo o que voce precisa saber sobre {servicoNome} em {local.nome}.</p>
+          <p className="mt-4 font-medium text-slate-500">Tudo o que você precisa saber sobre {servicoNome} em {local.nome}.</p>
         </div>
 
         <div className="space-y-4">
@@ -411,7 +411,7 @@ export default async function LocalSEOPage({
             </div>
             {!local.isHub && (
               <p className="mt-12 flex items-center justify-center gap-2 text-sm font-medium text-slate-400">
-                <Navigation className="h-4 w-4" /> Atendimento centralizado para a Grande SP a {local.distanciaMedia} de voce.
+                <Navigation className="h-4 w-4" /> Atendimento centralizado para a Grande SP a {local.distanciaMedia} de você.
               </p>
             )}
           </div>

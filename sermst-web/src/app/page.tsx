@@ -6,7 +6,7 @@ import { siteImages } from '@/lib/site-images';
 const regionalCards = [
   { city: 'São Paulo', slug: 'sao-paulo', desc: 'Unidade central e hub de atendimento especializado.' },
   { city: 'Santo André', slug: 'santo-andre', desc: 'Suporte completo para o polo industrial do ABC.' },
-  { city: 'São Bernardo', slug: 'sao-bernardo', desc: 'Agilidade para operações industriais e fabris.' },
+  { city: 'São Bernardo', slug: 'sao-bernardo', desc: 'Ágilidade para operações industriais e fabris.' },
   { city: 'São Caetano', slug: 'sao-caetano', desc: 'Saúde ocupacional para serviços e tecnologia.' },
   { city: 'Diadema', slug: 'diadema', desc: 'SST focada em operações químicas e metal mecânicas.' },
   { city: 'Osasco', slug: 'osasco', desc: 'Fluxo ágil para empresas de logística, varejo e tech.' },

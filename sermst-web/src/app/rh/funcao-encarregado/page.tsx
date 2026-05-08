@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { CheckCircle2, AlertTriangle, ShieldCheck, Users, ArrowRight, Target, FileWarning } from 'lucide-react';
 
 /**
- * Função Encarregado — página migrada do WordPress (/exames/funcao-encarregado-...)
+ * Função Encarregado — página migrada do WordPress (/exames/função-encarregado-...)
  *
  * No site antigo essa página gerou 346 cliques e 125.226 impressões em 16 meses
  * (CTR 0,3%, posição 4,8). É a página de maior impressão do domínio. O intent é
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   title: 'Função de Encarregado: responsabilidades, perfil e quando contratar | SERMST',
   description:
     'Guia completo da função encarregado: o que faz, responsabilidades, perfil ideal, salário médio, diferença para supervisor e o erro de SST que pega gestores de surpresa. Por SERMST, 40 anos em medicina e segurança do trabalho.',
-  alternates: { canonical: 'https://sermst.com.br/rh/funcao-encarregado' },
+  alternates: { canonical: 'https://sermst.com.br/rh/função-encarregado' },
   openGraph: {
     title: 'Função de Encarregado: responsabilidades, perfil e quando contratar',
     description:
       'O que faz um encarregado, perfil ideal, salário médio e o ponto cego de SST que pega gestores de surpresa.',
-    url: 'https://sermst.com.br/rh/funcao-encarregado',
+    url: 'https://sermst.com.br/rh/função-encarregado',
     type: 'article',
     locale: 'pt_BR',
   },
@@ -83,12 +83,12 @@ const faq = [
     a: 'Pode, e é comum. A responsabilidade do encarregado por SST é solidária com a empresa. Se houver acidente e ficar provado que o encarregado tinha conhecimento do risco e não agiu, ele responde junto. Por isso é crítico que o encarregado tenha treinamento formal nas NRs aplicáveis e que a empresa documente o repasse das instruções.',
   },
   {
-    q: 'Como saber se preciso de mais encarregados na operação?',
+    q: 'Como saber sé preciso de mais encarregados na operação?',
     a: 'O sinal mais claro é desorganização sob pressão: turnos que viram caos quando aumenta volume, falhas de procedimento que ninguém pega, acidentes ou quase-acidentes recorrentes. Geralmente, em operação industrial, um encarregado para cada 8–15 colaboradores é o ponto de equilíbrio.',
   },
 ];
 
-export default function FuncaoEncarregadoPage() {
+export default function FunçãoEncarregadoPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
@@ -104,7 +104,7 @@ export default function FuncaoEncarregadoPage() {
               Função de Encarregado: o que faz, responsabilidades e o ponto cego que pega gestores
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">
-              Guia direto para gestores, RH e quem está estruturando o cargo: responsabilidades reais, perfil que funciona, erros que custam caro e o que SST tem a ver com isso.
+              Guia direto para gestores, RH e quem está estruturando o cargo: responsabilidades reais, perfil que funciona, erros que custam caro é o que SST tem a ver com isso.
             </p>
           </FadeIn>
         </div>

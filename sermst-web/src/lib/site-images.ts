@@ -6,11 +6,11 @@ export type SiteImage = {
 export const siteImages = {
   home: {
     heroClinic: {
-      src: '/images/site/hero/sermst-hero-clinica-ocupacional.jpg',
+      src: '/images/site/hero/sermst-hero-clínica-ocupacional.jpg',
       alt: 'Recepção da clínica ocupacional da SERMST em São Paulo',
     },
     ownerPortrait: {
-      src: '/images/site/sermst-empresario-gestao-ocupacional.jpg',
+      src: '/images/site/sermst-empresário-gestão-ocupacional.jpg',
       alt: 'Empresário em retrato institucional representando gestão ocupacional e previsibilidade empresarial',
     },
     medicalStructure: {
@@ -18,21 +18,21 @@ export const siteImages = {
       alt: 'Ilustração de estrutura de medicina ocupacional e atendimento corporativo da SERMST',
     },
     clinicOperations: {
-      src: '/images/site/sermst-clinica-ocupacional-sao-paulo.jpg',
+      src: '/images/site/sermst-clínica-ocupacional-sao-paulo.jpg',
       alt: 'Ambiente clínico da SERMST preparado para exames ocupacionais em São Paulo',
     },
     occupationalLab: {
-      src: '/images/site/sermst-laboratorio-ocupacional-sao-paulo.jpg',
+      src: '/images/site/sermst-laboratório-ocupacional-sao-paulo.jpg',
       alt: 'Laboratório ocupacional da SERMST com estrutura para exames complementares',
     },
     clinicalService: {
-      src: '/images/site/sermst-atendimento-ocupacional-clinica.jpg',
+      src: '/images/site/sermst-atendimento-ocupacional-clínica.jpg',
       alt: 'Atendimento ocupacional da SERMST em rotina clínica corporativa',
     },
   },
   institutional: {
     corporateHealthHero: {
-      src: '/images/site/sermst-saude-corporativa.jpg',
+      src: '/images/site/sermst-saúde-corporativa.jpg',
       alt: 'Imagem institucional de saúde corporativa e medicina do trabalho da SERMST',
     },
     operationTeam: {

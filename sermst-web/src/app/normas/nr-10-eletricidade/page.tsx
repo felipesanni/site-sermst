@@ -14,6 +14,7 @@ export default function NR10Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-10-eletricidade"
+      pageUrl="https://sermst.com.br/normas/nr-10-eletricidade"
       badgeText="NR-10"
       h1="NR-10: Segurança em Instalações e Serviços em Eletricidade"
       intro="A NR-10 trata de uma das atividades de maior risco fatal do país. Define os requisitos para projeto, instalação, manutenção e operação de sistemas elétricos. Treinamento e laudo são obrigatórios — falha aqui é responsabilidade civil e criminal direta."
@@ -69,7 +70,7 @@ export default function NR10Page() {
           body: (
             <>
               <p>
-                A NR-10 estabelece 4 categorias com responsabilidades crescentes — entender qual se aplica ao seu trabalhador define o que ele pode ou não fazer:
+                A NR-10 estabelece 4 categorias com responsabilidades crescentes — entender qual se aplica ao seu trabalhador definé o que ele pode ou não fazer:
               </p>
               <ul>
                 <li><strong>Qualificado</strong> — comprovação de conclusão de curso específico reconhecido oficialmente.</li>

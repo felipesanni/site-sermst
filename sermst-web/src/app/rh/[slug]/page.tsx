@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = rhDoresSEO[slug];
 
-  if (!data) return { title: 'Pagina nao encontrada | SERMST' };
+  if (!data) return { title: 'Pagina não encontrada | SERMST' };
 
   return {
     title: data.h1,
@@ -152,7 +152,7 @@ export default async function RHDoresPage({
               <div className="max-w-2xl">
                 <h3 className="mb-3 text-2xl font-black">Se o problema ja esta afetando o RH, vale acelerar a conversa</h3>
                 <p className="leading-relaxed text-slate-300">
-                  A SERMST pode ajudar a organizar a rotina de SST, revisar riscos de multa e dar clareza sobre os proximos passos técnicos e operacionais.
+                  A SERMST pode ajudar a organizar a rotina de SST, revisar riscos de multa e dar clareza sobre os próximos passos técnicos e operacionais.
                 </p>
               </div>
               <a

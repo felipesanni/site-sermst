@@ -1,10 +1,27 @@
 import { NextResponse } from 'next/server';
 
+// ── Rate limiting simples em memória (5 req/IP/minuto) ─────────────────────
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 5;
+const WINDOW_MS = 60_000;
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + WINDOW_MS });
+    return true;
+  }
+  if (entry.count >= RATE_LIMIT) return false;
+  entry.count++;
+  return true;
+}
+
 /**
  * POST /api/lead
  *
  * Recebe submissoes do formulario de lead (/contato) e:
- * 1. Valida campos obrigatorios e honeypot anti-spam
+ * 1. Valida campos obrigatórios e honeypot anti-spam
  * 2. Loga no console do servidor (todos os leads ficam no log da Vercel)
  * 3. Envia email para LEAD_NOTIFY_EMAIL se SMTP estiver configurado
  * 4. Posta em LEAD_WEBHOOK_URL se configurado (CRM, Make, Zapier, n8n)
@@ -14,7 +31,7 @@ import { NextResponse } from 'next/server';
  * - LEAD_WEBHOOK_URL  - URL para POST do payload (CRM/Zapier)
  * - RESEND_API_KEY    - opcional, se usar Resend para envio de email
  *
- * Hoje funciona como recebedor + log + webhook. Integracao de email pode
+ * Hoje funciona como recebedor + log + webhook. Integração de email pode
  * ser plugada depois sem alterar o frontend.
  */
 
@@ -55,6 +72,18 @@ function isEmail(value: string) {
 }
 
 export async function POST(req: Request) {
+  // Rate limiting por IP
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    req.headers.get('x-real-ip') ??
+    'unknown';
+  if (!checkRateLimit(ip)) {
+    return NextResponse.json(
+      { error: 'Muitas requisições. Tente novamente em alguns instantes.' },
+      { status: 429 }
+    );
+  }
+
   let data: LeadPayload;
 
   try {
@@ -63,7 +92,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Payload invalido.' }, { status: 400 });
   }
 
-  // Honeypot para bots que preenchem campos invisiveis.
+  // Honeypot para bots que preenchem campos invisíveis.
   if (data.website && data.website.trim() !== '') {
     return NextResponse.json({ ok: true });
   }
@@ -71,7 +100,7 @@ export async function POST(req: Request) {
   for (const field of REQUIRED) {
     if (!data[field] || String(data[field]).trim() === '') {
       return NextResponse.json(
-        { error: `Campo obrigatorio ausente: ${field}` },
+        { error: `Campo obrigatório ausente: ${field}` },
         { status: 400 }
       );
     }

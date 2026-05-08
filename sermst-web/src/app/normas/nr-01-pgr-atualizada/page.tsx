@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-01 atualizada: PGR, riscos psicossociais e o que sua empresa precisa fazer | SERMST',
+  title: 'NR-01 atualizada: PGR, riscos psicossociais é o que sua empresa precisa fazer | SERMST',
   description:
-    'A NR-01 foi atualizada e agora exige inclusão de riscos psicossociais no PGR. Guia direto sobre o que mudou, o que sua empresa precisa fazer e os prazos que estão correndo. Por SERMST, 40 anos em medicina e segurança do trabalho.',
+    'A NR-01 foi atualizada e agora exige inclusão de riscos psicossociais no PGR. Guia direto sobré o que mudou, o que sua empresa precisa fazer e os prazos que estão correndo. Por SERMST, 40 anos em medicina e segurança do trabalho.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-01-pgr-atualizada' },
 };
 
@@ -14,8 +14,9 @@ export default function NR01Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-01-pgr-atualizada"
+      pageUrl="https://sermst.com.br/normas/nr-01-pgr-atualizada"
       badgeText="NR-01"
-      h1="NR-01 atualizada: o que mudou e o que a sua empresa precisa fazer"
+      h1="NR-01 atualizada: o que mudou é o que a sua empresa precisa fazer"
       intro="A NR-01 é o documento-mãe da segurança do trabalho. A atualização recente trouxe a obrigação de incluir riscos psicossociais no PGR — e prazos que já estão correndo. Veja o que isso significa na prática."
       sections={[
         {
@@ -117,7 +118,7 @@ export default function NR01Page() {
         },
       ]}
       sidebarTitle="PGR atualizado, com riscos psicossociais?"
-      sidebarHook="A SERMST faz auditoria gratuita do seu PGR atual. Se estiver desatualizado, mostramos exatamente o que precisa ser revisto — sem compromisso."
+      sidebarHook="A SERMST faz auditoria gratuita do seu PGR atual. Se estiver desatualizado, mostramos exatamenté o que precisa ser revisto — sem compromisso."
       sidebarCtaLabel="Auditar meu PGR"
       sidebarCtaHref="/contato"
       related={[

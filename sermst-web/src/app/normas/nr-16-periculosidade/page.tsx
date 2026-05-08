@@ -14,6 +14,7 @@ export default function NR16Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-16-periculosidade"
+      pageUrl="https://sermst.com.br/normas/nr-16-periculosidade"
       badgeText="NR-16"
       h1="NR-16: Periculosidade — quando é devida e como blindar a empresa"
       intro="A NR-16 define quem tem direito ao adicional de periculosidade de 30%. Eletricidade, inflamáveis, explosivos, radiações, segurança patrimonial. Cada atividade exige laudo que enquadra a função, sob pena de pagar adicional indevido por anos."
@@ -95,7 +96,7 @@ export default function NR16Page() {
           a: 'Não. O trabalhador escolhe o adicional mais favorável (Súmula 47 do TST). Pagar ambos simultaneamente é desperdício e cria expectativa que vira passivo se um dia a empresa quiser ajustar.',
         },
         {
-          q: 'Adicional de periculosidade incide sobre o que?',
+          q: 'Adicional de periculosidade incide sobré o que?',
           a: '30% sobre o salário base do trabalhador, sem incluir gratificações, prêmios ou outros adicionais — em regra. Norma coletiva da categoria pode estabelecer base mais ampla.',
         },
         {

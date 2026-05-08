@@ -1,4 +1,4 @@
-import { saudeSEO } from '@/lib/data/seo-content';
+import { saúdeSEO } from '@/lib/data/seo-content';
 import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
 import { HeartPulse, ArrowRight } from 'lucide-react';
@@ -7,10 +7,14 @@ export const metadata = {
   title: 'Hub de Saúde SST | Medicina do Trabalho, prevenção e rotina ocupacional | SERMST',
   description:
     'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO e produtividade.',
+
+  alternates: {
+    canonical: 'https://sermst.com.br/saude',
+  },
 };
 
-export default function SaudeIndexPage() {
-  const posts = Object.entries(saudeSEO).map(([slug, data]) => ({ slug, ...data }));
+export default function SaúdeIndexPage() {
+  const posts = Object.entries(saúdeSEO).map(([slug, data]) => ({ slug, ...data }));
 
   return (
     <main className="min-h-screen bg-white">
@@ -23,7 +27,7 @@ export default function SaudeIndexPage() {
             </span>
             <h1 className="text-4xl md:text-6xl font-black text-brand-900 mb-6">Hub de Saúde SST</h1>
             <p className="text-xl text-slate-600 max-w-3xl font-medium leading-relaxed">
-              Conteudo para empresas que querem entender melhor exames ocupacionais, vigilancia médica, prevenção e o impacto da saúde do trabalhador na produtividade e no compliance.
+              Conteúdo para empresas que querem entender melhor exames ocupacionais, vigilância médica, prevenção e o impacto da saúde do trabalhador na produtividade e no compliance.
             </p>
           </FadeIn>
         </div>

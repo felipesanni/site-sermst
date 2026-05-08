@@ -7,6 +7,10 @@ export const metadata = {
   title: 'Dicionário de SST | Termos de medicina e segurança do trabalho | SERMST',
   description:
     'Entenda termos como ASO, PGR, PCMSO, eSocial SST e outros conceitos da medicina e segurança do trabalho — explicados em linguagem útil para gestores e RH.',
+
+  alternates: {
+    canonical: 'https://sermst.com.br/dicionario',
+  },
 };
 
 export default function DicionarioIndexPage() {

@@ -7,9 +7,13 @@ import { siteImages } from '@/lib/site-images';
 export const metadata: Metadata = {
   title: 'A SERMST | Clínica de Medicina e Segurança do Trabalho em São Paulo',
   description: 'Há décadas cuidando da saúde ocupacional e segurança do trabalho. Conheça nossa estrutura centralizada no Largo do Paissandú, nosso corpo clínico e nosso compromisso com o compliance SST.',
+
+  alternates: {
+    canonical: 'https://sermst.com.br/a-clinica',
+  },
 };
 
-export default function AClinicaPage() {
+export default function AClínicaPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* 1. HERO INSTITUCIONAL */}
@@ -36,7 +40,7 @@ export default function AClinicaPage() {
                 <span className="text-accent-pink italic font-serif">sua parceira estratégica.</span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed border-l-4 border-accent-pink pl-6 mb-12">
-                Na SERMST, unimos a senioridade da medicina tradicional à agilidade do compliance digital. Cuidamos do seu maior ativo — as pessoas — enquanto protegemos seu CNPJ.
+                Na SERMST, unimos a senioridade da medicina tradicional à ágilidade do compliance digital. Cuidamos do seu maior ativo — as pessoas — enquanto protegemos seu CNPJ.
               </p>
             </div>
           </FadeIn>
@@ -82,7 +86,7 @@ export default function AClinicaPage() {
                 </div>
                 <div className="flex flex-col gap-3">
                   <Zap className="w-10 h-10 text-accent-pink" />
-                  <span className="text-lg font-black text-brand-900 uppercase">Agilidade Digital</span>
+                  <span className="text-lg font-black text-brand-900 uppercase">Ágilidade Digital</span>
                 </div>
               </div>
             </FadeIn>
@@ -145,7 +149,7 @@ export default function AClinicaPage() {
                     <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
                        <CheckCircle className="w-8 h-8 text-accent-pink mb-4" />
                        <h5 className="text-white font-black uppercase text-sm mb-2">Padrão de Exames</h5>
-                       <p className="text-slate-400 text-sm">Protocolos clínicos rigorosos e precisos.</p>
+                       <p className="text-slate-400 text-sm">Protocolos clínicos rigorosos é precisos.</p>
                     </div>
                     <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
                        <CheckCircle className="w-8 h-8 text-accent-pink mb-4" />

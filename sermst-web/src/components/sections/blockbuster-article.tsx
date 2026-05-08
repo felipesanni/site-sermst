@@ -39,6 +39,8 @@ export interface BlockbusterPageProps {
     label: string;
     href?: string;
   };
+  /** Canonical URL for this page (enables BreadcrumbList + Article schema) */
+  pageUrl?: string;
 }
 
 /**
@@ -61,6 +63,7 @@ export function BlockbusterArticle({
   sidebarCtaHref = '/contato',
   related,
   finalCta,
+  pageUrl,
 }: BlockbusterPageProps) {
   const frequentFaqs = buildFrequentFaqs(faq, {
     context: 'article',
@@ -74,8 +77,78 @@ export function BlockbusterArticle({
     href: '/contato',
   };
 
+  // ── Schema.org JSON-LD (BreadcrumbList + Article) ─────────────────────────
+  const hubUrl = pageUrl
+    ? pageUrl.split('/').slice(0, -1).join('/')
+    : null;
+
+  const breadcrumbSchema = pageUrl
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://sermst.com.br/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: hubLabel,
+            item: hubUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: h1,
+            item: pageUrl,
+          },
+        ],
+      }
+    : null;
+
+  const articleSchema = pageUrl
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: h1,
+        description: intro,
+        url: pageUrl,
+        datePublished: '2024-11-01',
+        dateModified: '2025-03-01',
+        author: {
+          '@type': 'Organization',
+          name: 'SERMST',
+          url: 'https://sermst.com.br',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'SERMST',
+          url: 'https://sermst.com.br',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://sermst.com.br/og-home.jpg',
+          },
+        },
+      }
+    : null;
+
   return (
     <main className="min-h-screen bg-white">
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
+      {articleSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+      )}
       <section className="relative bg-brand-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-pink/20 rounded-full blur-[120px]" />

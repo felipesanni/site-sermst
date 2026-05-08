@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Bookmark, HeartPulse, HelpCircle, ShieldCheck } from 'lucide-react';
 import { FadeIn } from '@/components/ui/fade-in';
-import { saudeSEO } from '@/lib/data/seo-content';
+import { saúdeSEO } from '@/lib/data/seo-content';
 import { buildFrequentFaqs } from '@/lib/faq';
 
 export function generateStaticParams() {
-  return Object.keys(saudeSEO).map((slug) => ({ slug }));
+  return Object.keys(saúdeSEO).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -16,18 +16,18 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = saudeSEO[slug];
-  if (!data) return { title: 'Conteudo nao encontrado | SERMST' };
+  const data = saúdeSEO[slug];
+  if (!data) return { title: 'Conteúdo não encontrado | SERMST' };
   return { title: data.h1, description: data.hook };
 }
 
-export default async function SaudeHubPage({
+export default async function SaúdeHubPage({
   params,
 }: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params;
-  const data = saudeSEO[slug];
+  const data = saúdeSEO[slug];
   if (!data) notFound();
   const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {
     context: 'saúde',
@@ -62,7 +62,7 @@ export default async function SaudeHubPage({
               <div className="prose prose-lg prose-slate max-w-none prose-a:text-accent-pink prose-h2:font-black prose-h2:text-brand-900">
                 <h2 className="flex items-center gap-3">
                   <Bookmark className="h-8 w-8 text-accent-pink" />
-                  Leitura pratica para decisao
+                  Leitura prática para decisão
                 </h2>
                 <p className="mb-10 rounded-xl border-l-4 border-brand-500 bg-slate-50 p-6 text-xl font-medium italic leading-relaxed text-brand-900/80">
                   {data.content.dor}
@@ -71,15 +71,15 @@ export default async function SaudeHubPage({
                 <p className="mb-10">{data.content.solução}</p>
 
                 <p>
-                  Em empresas que dependem de ritmo de contratacao, estabilidade operacional e rotina ocupacional minimamente organizada, saúde do trabalhador nao pode ficar separada da realidade do negócio. Quando o tema fica solto, o impacto aparece em atraso, afastamento, retrabalho e mais exposicao jurídica.
+                  Em empresas que dependem de ritmo de contratação, estabilidade operacional e rotina ocupacional minimamente organizada, saúde do trabalhador não pode ficar separada da realidade do negócio. Quando o tema fica solto, o impacto aparece em atraso, afastamento, retrabalho e mais exposicao jurídica.
                 </p>
                 <p>
-                  Por isso, este conteudo nao tenta apenas explicar um conceito. Ele ajuda o RH, a lideranca e a diretoria a enxergar quando a dor ja saiu do campo teorico e passou a exigir organizacao comercial, técnica e documental.
+                  Por isso, este conteúdo não tenta apenas explicar um conceito. Ele ajuda o RH, a lideranca e a diretoria a enxergar quando a dor ja saiu do campo teórico e passou a exigir organizacao comercial, técnica e documental.
                 </p>
 
                 <div className="relative my-12 overflow-hidden rounded-2xl bg-brand-900 p-10 text-white shadow-2xl">
                   <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-accent-pink/20 blur-3xl"></div>
-                  <h3 className="mb-6 mt-0 text-2xl font-black text-white">O que este tema protege na pratica</h3>
+                  <h3 className="mb-6 mt-0 text-2xl font-black text-white">O que este tema protege na prática</h3>
                   <ul className="m-0 grid gap-4 p-0 list-none">
                     {data.content.beneficios.map((ben, i) => (
                       <li key={i} className="flex items-start gap-3">

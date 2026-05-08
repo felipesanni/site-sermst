@@ -14,6 +14,7 @@ export default function PGRSPage() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/pgrs-residuos"
+      pageUrl="https://sermst.com.br/normas/pgrs-residuos"
       badgeText="PGRS"
       h1="PGRS: Plano de Gerenciamento de Resíduos para empresas"
       intro="O PGRS é exigência ambiental e sanitária para empresas que geram resíduos perigosos: clínicas, laboratórios, hospitais, indústrias químicas, farmacêuticas. Documenta como a empresa gerencia geração, segregação, transporte e destinação."
@@ -70,7 +71,7 @@ export default function PGRSPage() {
               </p>
               <ul>
                 <li><strong>Grupo A</strong> — biológico (potencial infectante): culturas, materiais com sangue ou fluido corporal</li>
-                <li><strong>Grupo B</strong> — químico: medicamentos vencidos, produtos químicos, reagentes</li>
+                <li><strong>Grupo B</strong> — químico: médicamentos vencidos, produtos químicos, reagentes</li>
                 <li><strong>Grupo C</strong> — radioativo</li>
                 <li><strong>Grupo D</strong> — comum (resíduo doméstico equivalente)</li>
                 <li><strong>Grupo E</strong> — perfurocortantes: agulhas, lâminas, lancetas</li>

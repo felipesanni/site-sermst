@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-18: Construção Civil — guia completo para empresas e responsáveis técnicos | SERMST',
   description:
-    'A NR-18 reúne os requisitos de SST específicos da construção civil. Veja o que exige, PCMAT, treinamentos, fiscalização do MTE e o que precisa estar documentado para defesa em obra.',
+    'A NR-18 reúne os requisitos de SST específicos da construção civil. Veja o que exige, PCMAT, treinamentos, fiscalização do MTE é o que precisa estar documentado para defesa em obra.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },
 };
 
@@ -14,6 +14,7 @@ export default function NR18Page() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/nr-18-construcao-civil"
+      pageUrl="https://sermst.com.br/normas/nr-18-construcao-civil"
       badgeText="NR-18"
       h1="NR-18: Segurança e Saúde no Trabalho na Construção Civil"
       intro="A NR-18 é a norma com mais autuação aplicada do país. Reúne requisitos de SST específicos para canteiro de obras: PCMAT, treinamentos, andaimes, escavações, EPIs, sinalização. Veja o que exige e como cumprir sem travar a obra."
@@ -95,7 +96,7 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                Obra com menos de 20 trabalhadores não precisa de PCMAT, mas <strong>continua precisando de PGR e PCMSO</strong>. As exigências de treinamento, EPI, sinalização e proteção coletiva também valem. A redução documental não é redução de obrigação.
+                Obra com menos de 20 trabalhadores não precisa de PCMAT, mas <strong>continua precisando de PGR e PCMSO</strong>. As exigências de treinamento, EPI, sinalização e proteção coletiva também valém. A redução documental não é redução de obrigação.
               </p>
               <p>
                 Empresa que faz reforma com 5 trabalhadores também tem que ter ASO admissional, treinamento de NR-35 se houver trabalho em altura, EPI com CA válido e ficha de entrega. O fato de ser obra pequena não tira responsabilidade — só reduz formalidade.

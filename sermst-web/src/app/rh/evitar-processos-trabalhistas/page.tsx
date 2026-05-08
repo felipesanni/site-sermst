@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Como evitar processos trabalhistas: guia prático para empresas e RH | SERMST',
   description:
-    'Processo trabalhista raramente é surpresa. É consequência de pequenas falhas acumuladas. Veja os 5 pilares de prevenção e o que blinda a empresa em ação.',
+    'Processo trabalhista raramente é surpresa. É consequência de pequenas falhas acumuladas. Veja os 5 pilares de prevenção é o que blinda a empresa em ação.',
   alternates: { canonical: 'https://sermst.com.br/rh/evitar-processos-trabalhistas' },
 };
 
@@ -14,15 +14,16 @@ export default function EvitarProcessosPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
+      pageUrl="https://sermst.com.br/rh/evitar-processos-trabalhistas"
       h1="Como evitar processos trabalhistas: o guia prático para empresas e RH"
-      intro="Processo trabalhista raramente é surpresa. É consequência acumulada de pequenas falhas — registro de ponto inconsistente, EPI sem ficha, ASO atrasado, contrato genérico. Veja como prevenir e o que blinda a empresa quando a ação chega."
+      intro="Processo trabalhista raramente é surpresa. É consequência acumulada de pequenas falhas — registro de ponto inconsistente, EPI sem ficha, ASO atrasado, contrato genérico. Veja como prevenir é o que blinda a empresa quando a ação chega."
       sections={[
         {
           title: 'Por que a maior parte das ações ganha do empregador',
           body: (
             <>
               <p>
-                A justiça do trabalho funciona com presunção de hipossuficiência do empregado. Significa que, em caso de dúvida sobre o que aconteceu, o juiz tende a acreditar no que o trabalhador alega. A defesa da empresa precisa ser <strong>baseada em prova documental robusta</strong> — não em &quot;a gente sempre fez assim&quot;.
+                A justiça do trabalho funciona com presunção de hipossuficiência do empregado. Significa que, em caso de dúvida sobré o que aconteceu, o juiz tende a acreditar no que o trabalhador alega. A defesa da empresa precisa ser <strong>baseada em prova documental robusta</strong> — não em &quot;a gente sempre fez assim&quot;.
               </p>
               <p>
                 Empresas que perdem ação não perdem porque foram negligentes — perdem porque não têm como provar que cumpriram. A diferença entre vencer e perder é o estado da documentação.
@@ -61,7 +62,7 @@ export default function EvitarProcessosPage() {
           body: (
             <>
               <p>
-                Aproximadamente 30-40% das ações trabalhistas tem componente de saúde ou segurança — afastamento, doença ocupacional, acidente, condição insalubre, periculosa. Em todas essas, a defesa depende de SST documentada.
+                Apróximadamente 30-40% das ações trabalhistas tem componente de saúde ou segurança — afastamento, doença ocupacional, acidente, condição insalubre, periculosa. Em todas essas, a defesa depende de SST documentada.
               </p>
               <p>
                 Sem PGR atualizado, a empresa não consegue provar que conhecia os riscos e tomou medidas de controle. Sem PCMSO em dia, não consegue provar que monitorava a saúde do trabalhador. Sem treinamento formalizado, não consegue provar que orientou. Sem ficha de EPI, não consegue provar que forneceu. Cada gap é uma porta para indenização.
@@ -113,7 +114,7 @@ export default function EvitarProcessosPage() {
       sidebarCtaLabel="Auditar minha documentação SST"
       related={[
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
+        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissão' },
         { label: 'Perícia trabalhista (assistente técnico)', href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}

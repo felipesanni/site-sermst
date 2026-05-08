@@ -14,11 +14,12 @@ export default function CartaRecomendacaoPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
-      h1="Como fazer uma carta de recomendação: o que escrever e o que evitar"
+      pageUrl="https://sermst.com.br/rh/carta-recomendacao"
+      h1="Como fazer uma carta de recomendação: o que escrever é o que evitar"
       intro="A carta de recomendação é uma escolha de gestão — quem você indica diz mais sobre você do que sobre o profissional. Honestidade controlada é o equilíbrio. Veja como redigir, modelos por contexto e cuidados jurídicos."
       sections={[
         {
-          title: 'O que é (e o que não é) carta de recomendação',
+          title: 'O que é (é o que não é) carta de recomendação',
           body: (
             <>
               <p>
@@ -59,7 +60,7 @@ export default function CartaRecomendacaoPage() {
               <li><strong>Contribuição mensurável</strong>: o que o profissional entregou, com fato. &quot;Liderou a implementação do sistema novo de produção que reduziu retrabalho em 30%.&quot;</li>
               <li><strong>Qualidades comportamentais reais</strong>: 2-3, com exemplo. Não vale lista de adjetivos vazios.</li>
               <li><strong>Recomendação clara</strong>: para qual tipo de função você indica e por quê.</li>
-              <li><strong>Disponibilidade para contato</strong>: e-mail e telefone para a empresa contratante validar.</li>
+              <li><strong>Disponibilidade para contato</strong>: e-mail e telefone para a empresa contratanté válidar.</li>
               <li><strong>Assinatura</strong>: nome, cargo, empresa, contato.</li>
             </ol>
           ),
@@ -114,14 +115,14 @@ export default function CartaRecomendacaoPage() {
         },
         {
           q: 'O que fazer se o ex-empregador se recusa?',
-          a: 'Aceitar com naturalidade. Não tem obrigação. Buscar referências em outras pessoas que trabalharam com o profissional (gerente direto que saiu, colega que migrou, cliente externo). Múltiplas referências fracas valem mais que insistir em uma negativa.',
+          a: 'Aceitar com naturalidade. Não tem obrigação. Buscar referências em outras pessoas que trabalharam com o profissional (gerente direto que saiu, colega que migrou, cliente externo). Múltiplas referências fracas valém mais que insistir em uma negativa.',
         },
       ]}
       sidebarTitle="Sua empresa documenta saídas de funcionários?"
       sidebarHook="Carta de recomendação é a parte visível do desligamento. A parte invisível — exame demissional, S-2299, paper trail — é o que protege a empresa em ação posterior."
       sidebarCtaLabel="Auditar processo de desligamento"
       related={[
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
+        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissão' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },

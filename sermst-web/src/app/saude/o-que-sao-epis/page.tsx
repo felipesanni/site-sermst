@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'O que são EPIs: equipamentos de proteção individual e o que sua empresa precisa documentar | SERMST',
+  title: 'O que são EPIs: equipamentos de proteção individual é o que sua empresa precisa documentar | SERMST',
   description:
     'EPI é exigência legal: fornecimento gratuito, treinamento de uso, fiscalização, troca periódica. Falhar em qualquer parte é responsabilidade da empresa. Veja o que NR-06 exige e como documentar.',
   alternates: { canonical: 'https://sermst.com.br/saude/o-que-sao-epis' },
@@ -14,6 +14,7 @@ export default function EPIsPage() {
       hubLabel="Hub Saúde Ocupacional"
       hubLabelShort="← Hub Saúde"
       hubHref="/saude"
+      pageUrl="https://sermst.com.br/saude/o-que-sao-epis"
       h1="O que são EPIs: o equipamento que protege o trabalhador e o CNPJ da empresa"
       intro="EPI (Equipamento de Proteção Individual) é exigência legal — fornecimento gratuito, treinamento de uso, fiscalização do uso e troca periódica. Falhar em qualquer parte é responsabilidade direta da empresa. Veja como documentar e fiscalizar."
       sections={[
@@ -120,7 +121,7 @@ export default function EPIsPage() {
       faq={[
         {
           q: 'O EPI tem validade?',
-          a: 'O CA (Certificado de Aprovação) tem prazo de validade — 5 anos, renovável. Quando o CA está vencido ou cancelado, o EPI perde validade legal mesmo se ainda estiver em condição física boa. Empresa precisa monitorar a base do MTE e substituir quando necessário.',
+          a: 'O CA (Certificado de Aprovação) tem prazo dé válidade — 5 anos, renovável. Quando o CA está vencido ou cancelado, o EPI perdé válidade legal mesmo se ainda estiver em condição física boa. Empresa precisa monitorar a base do MTE e substituir quando necessário.',
         },
         {
           q: 'Quem escolhe o EPI adequado?',

@@ -8,12 +8,13 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sermst.com.br/saude/gestao-sst' },
 };
 
-export default function GestaoSSTPage() {
+export default function GestãoSSTPage() {
   return (
     <BlockbusterArticle
       hubLabel="Hub Saúde Ocupacional"
       hubLabelShort="← Hub Saúde"
       hubHref="/saude"
+      pageUrl="https://sermst.com.br/saude/gestao-sst"
       h1="Gestão de SST: o sistema que sustenta operação e defende o CNPJ"
       intro="Gestão de Saúde e Segurança do Trabalho não é um documento — é um sistema. Conecta exame, laudo, treinamento e eSocial em fluxo único que sustenta operação e defende a empresa em fiscalização e ação trabalhista."
       sections={[
@@ -72,7 +73,7 @@ export default function GestaoSSTPage() {
                 Os eventos de SST do eSocial (S-2210 acidente, S-2220 monitoramento de saúde, S-2240 condições ambientais) são <strong>resultado direto</strong> da gestão. Quando a gestão é sólida, os eventos saem no prazo, com base técnica consistente, sem retrabalho.
               </p>
               <p>
-                Quando a gestão é frágil, aparecem os sintomas: evento atrasado (multa automática), evento com erro (rejeição e retrabalho), evento sem suporte documental (autuação posterior). O eSocial não causa o problema — ele expõe o que já existia.
+                Quando a gestão é frágil, aparecem os sintomas: evento atrasado (multa automática), evento com erro (rejeição e retrabalho), evento sem suporte documental (autuação posterior). O eSocial não causa o problema — ele expõé o que já existia.
               </p>
             </>
           ),

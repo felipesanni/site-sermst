@@ -8,12 +8,12 @@ import { siteImages } from '@/lib/site-images';
 export const metadata: Metadata = {
   title: 'Quem somos | SERMST - 40 anos protegendo empresas familiares',
   description:
-    'A SERMST e uma clínica de Medicina e Segurança do Trabalho com mais de 40 anos protegendo o patrimonio de empresarios que constroem com seriedade. +3.000 empresas, +500 clínicas credenciadas e laboratorio proprio.',
+    'A SERMST e uma clínica de Medicina e Segurança do Trabalho com mais de 40 anos protegendo o patrimônio de empresários que constroem com seriedade. +3.000 empresas, +500 clínicas credenciadas e laboratório próprio.',
   alternates: { canonical: 'https://sermst.com.br/quem-somos' },
   openGraph: {
     title: 'Quem somos | SERMST - 40 anos protegendo empresas familiares',
     description:
-      'Mais de 40 anos protegendo empresas familiares contra passivo trabalhista, autuacao e afastamento. SST que blinda patrimonio, nao e so papelada.',
+      'Mais de 40 anos protegendo empresas familiares contra passivo trabalhista, autuação e afastamento. SST que blinda patrimônio, não é só papelada.',
     url: 'https://sermst.com.br/quem-somos',
     type: 'website',
     locale: 'pt_BR',
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 };
 
 const diferenciais = [
-  { icon: Clock, label: '+40 anos', desc: 'de experiencia em Medicina e Segurança do Trabalho.' },
-  { icon: Building2, label: '+3.000 empresas', desc: 'atendidas em todo o Brasil ao longo da historia.' },
+  { icon: Clock, label: '+40 anos', desc: 'de experiência em Medicina e Segurança do Trabalho.' },
+  { icon: Building2, label: '+3.000 empresas', desc: 'atendidas em todo o Brasil ao longo da história.' },
   { icon: ShieldCheck, label: '+500 clínicas', desc: 'credenciadas em rede nacional para apoio operacional.' },
-  { icon: FlaskConical, label: 'Laboratorio proprio', desc: 'audiometria, ECG, EEG, espirometria e exames complementares.' },
+  { icon: FlaskConical, label: 'Laboratório próprio', desc: 'audiometria, ECG, EEG, espirometria e exames complementares.' },
   { icon: Users, label: 'Equipe multidisciplinar', desc: 'médicos, engenheiros, técnicos em SST e gestão de riscos.' },
 ];
 
@@ -47,9 +47,9 @@ export default function QuemSomosPage() {
             <h1 className="mb-8 max-w-4xl text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               40 anos protegendo o
               <br />
-              patrimonio de quem
+              patrimônio de quem
               <br />
-              <span className="font-serif italic text-accent-pink">leva o negócio a serio.</span>
+              <span className="font-serif italic text-accent-pink">leva o negócio a sério.</span>
             </h1>
             <p className="max-w-3xl border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed text-slate-200 md:text-2xl">
               Falamos de dono para dono. Sem rodeios, sem exageros. Com clareza, responsabilidade e compromisso com resultado.
@@ -63,7 +63,7 @@ export default function QuemSomosPage() {
           <FadeIn direction="up">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Por que existimos</span>
             <h2 className="mb-12 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              A maioria dos empresarios ainda ve SST como burocracia.
+              A maioria dos empresários ainda ve SST como burocracia.
               <br />
               <span className="text-slate-500">Esse pensamento deixa a empresa vulneravel.</span>
             </h2>
@@ -72,22 +72,22 @@ export default function QuemSomosPage() {
           <div className="space-y-7 text-lg font-medium leading-relaxed text-slate-700 md:text-xl">
             <FadeIn direction="up" delay={0.1}>
               <p>
-                Nascemos como uma consultoria especializada em Seguranca e Saúde no Trabalho atendendo micro e pequenas empresas. Mas, ao longo de mais de 40 anos de historia, percebemos que isso, por si so, nao era suficiente.
+                Nascemos como uma consultoria especializada em Segurança e Saúde no Trabalho atendendo micro e pequenas empresas. Mas, ao longo de mais de 40 anos de história, percebemos que isso, por si só, não era suficiente.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
               <p>
-                Para proteger de verdade o empresario, e preciso ir alem do cumprimento da legislacao. E preciso trabalhar a mentalidade de quem empreende, porque so assim e possivel blindar o negócio contra riscos invisiveis, reduzir passivos, prevenir autuacoes e aumentar a produtividade dos colaboradores.
+                Para proteger de verdade o empresário, é preciso ir além do cumprimento da legislação. É preciso trabalhar a mentalidade de quem empreende, porque só assim e possível blindar o negócio contra riscos invisíveis, reduzir passivos, prevenir autuações e aumentar a produtividade dos colaboradores.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
               <p className="my-10 border-l-4 border-accent-pink pl-6 text-2xl font-bold leading-snug text-brand-900 md:text-3xl">
-                Quem brinca de ser empresario trata SST como papelada. Quem leva o negócio a serio entende que conformidade e sinonimo de controle. E controle e o que separa empresas sustentaveis de negócios que quebram por descuido.
+                Quem brinca de ser empresário trata SST como papelada. Quem leva o negócio a sério entende que conformidade e sinônimo de controle. E controle é o que separa empresas sustentáveis de negócios que quebram por descuido.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.4}>
               <p>
-                Por tras dos laudos, exames e documentos, existe um conjunto de medidas que pode evitar prejuizos serios, proteger a operação, reduzir afastamentos e preservar o negócio que levou anos para ser construido.
+                Por trás dos laudos, exames e documentos, existe um conjunto de medidas que pode evitar prejuízos sérios, proteger a operação, reduzir afastamentos e preservar o negócio que levou anos para ser construído.
               </p>
             </FadeIn>
           </div>
@@ -97,9 +97,9 @@ export default function QuemSomosPage() {
       <section className="border-y border-slate-100 bg-slate-50 py-24">
         <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
           <FadeIn direction="up">
-            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Em numeros</span>
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Em números</span>
             <h2 className="mb-14 max-w-3xl text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              O que sustenta a confianca que <span className="text-accent-pink">empresarios como voce</span> depositam na SERMST
+              O que sustenta a confiança que <span className="text-accent-pink">empresários como voce</span> depositam na SERMST
             </h2>
           </FadeIn>
 
@@ -125,17 +125,17 @@ export default function QuemSomosPage() {
             <FadeIn direction="right">
               <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Nosso compromisso</span>
               <h2 className="mb-8 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-                Nao vendemos medo. Vendemos previsibilidade.
+                Não vendemos medo. Vendemos previsibilidade.
               </h2>
               <div className="space-y-6 text-lg font-medium leading-relaxed text-slate-700">
                 <p>
-                  A SERMST nao esta aqui para te assustar com multa de eSocial e processo trabalhista. Esta aqui para garantir que a sua empresa esteja sempre um passo a frente, com documentação correta, exames em dia, laudos que refletem a operação real e um fluxo de SST que nao trava admissão.
+                  A SERMST não esta aqui para te assustar com multa de eSocial e processo trabalhista. Esta aqui para garantir que a sua empresa esteja sempre um passo a frente, com documentação correta, exames em dia, laudos que refletem a operação real e um fluxo de SST que não trava admissão.
                 </p>
                 <p>
-                  Atendimento in company ou presencial, sem necessidade de agendamento. Equipe multidisciplinar com médicos, engenheiros e técnicos em SST. Laboratorio proprio para exames complementares. Tudo conectado em um fluxo que reduz tempo, reduz custo e reduz risco.
+                  Atendimento in company ou presencial, sem necessidade de agendamento. Equipe multidisciplinar com médicos, engenheiros e técnicos em SST. Laboratório próprio para exames complementares. Tudo conectado em um fluxo que reduz tempo, reduz custo e reduz risco.
                 </p>
                 <p className="font-bold text-brand-900">
-                  Voce cuida do crescimento do seu negócio. A SERMST cuida de blindar o que voce ja construiu.
+                  Você cuida do crescimento do seu negócio. A SERMST cuida de blindar o que você ja construiu.
                 </p>
               </div>
             </FadeIn>
@@ -145,11 +145,11 @@ export default function QuemSomosPage() {
                 <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Para quem e a SERMST</p>
                 <ul className="mb-8 space-y-4">
                   {[
-                    'Empresas familiares com patrimonio para proteger',
+                    'Empresas familiares com patrimônio para proteger',
                     'Grupos com multiplas empresas e CNPJs',
                     'RH e DP que precisam parar de retrabalhar ASO',
                     'Empresas insatisfeitas com a consultoria atual',
-                    'Operacoes com alta rotatividade de funcionarios',
+                    'Operações com alta rotatividade de funcionários',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-slate-200">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent-pink" />
@@ -180,7 +180,7 @@ export default function QuemSomosPage() {
               Em 15 minutos a equipe comercial entende o porte, a operação e o momento da empresa antes de indicar exame, laudo ou gestão SST.
             </p>
             <Link href="/contato" className="btn-primary-safe-lg text-lg shadow-2xl">
-              Solicitar diagnostico gratuito
+              Solicitar diagnóstico gratuito
               <ArrowRight className="h-5 w-5" />
             </Link>
           </FadeIn>

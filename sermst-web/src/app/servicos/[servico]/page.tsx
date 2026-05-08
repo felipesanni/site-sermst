@@ -9,22 +9,22 @@ import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildServiceCopy } from '@/lib/seo-copy';
 
 export function generateStaticParams() {
-  return Object.keys(servicosSEO).map((serviço) => ({ serviço }));
+  return Object.keys(servicosSEO).map((servico) => ({ servico }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ serviço: string }>
+  params: Promise<{ servico: string }>
 }): Promise<Metadata> {
-  const { serviço } = await params;
-  const data = servicosSEO[serviço];
+  const { servico } = await params;
+  const data = servicosSEO[servico];
 
   if (!data) {
-    return { title: 'Servico nao encontrado | SERMST' };
+    return { title: 'Servico não encontrado | SERMST' };
   }
 
-  const canonicalUrl = `https://sermst.com.br/servicos/${serviço}`;
+  const canonicalUrl = `https://sermst.com.br/servicos/${servico}`;
 
   return {
     title: data.h1,
@@ -45,10 +45,10 @@ export async function generateMetadata({
 export default async function ServicoPage({
   params,
 }: {
-  params: Promise<{ serviço: string }>
+  params: Promise<{ servico: string }>
 }) {
-  const { serviço } = await params;
-  const data = servicosSEO[serviço];
+  const { servico } = await params;
+  const data = servicosSEO[servico];
 
   if (!data) notFound();
 
@@ -221,7 +221,7 @@ export default async function ServicoPage({
             </div>
           </FadeIn>
 
-          {serviço === 'treinamentos-nrs-cipa-brigada' && (
+          {servico === 'treinamentos-nrs-cipa-brigada' && (
             <section className="bg-white py-24 text-brand-900">
               <div className="mx-auto max-w-[1280px] px-6">
                 <FadeIn className="mb-16 text-center">
@@ -232,7 +232,7 @@ export default async function ServicoPage({
                     Nossos treinamentos NRs
                   </h2>
                   <p className="mx-auto mt-4 max-w-2xl text-xl font-medium text-slate-500">
-                    Capacitacao teorica e pratica com certificação valida em todo o territorio nacional.
+                    Capacitação teórica e prática com certificação válida em todo o território nacional.
                   </p>
                 </FadeIn>
 

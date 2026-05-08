@@ -55,9 +55,9 @@ function hasAttributionSignal(snapshot: AttributionSnapshot) {
 }
 
 const dores = [
-  { v: 'admissional', l: 'Preciso de exame admissional rapido' },
+  { v: 'admissional', l: 'Preciso de exame admissional rápido' },
   { v: 'pcmso-pgr', l: 'Regularizar PCMSO, PGR ou LTCAT' },
-  { v: 'esocial', l: 'eSocial SST travado ou com pendencia' },
+  { v: 'esocial', l: 'eSocial SST travado ou com pendência' },
   { v: 'treinamento', l: 'Treinamentos NR / CIPA / brigada' },
   { v: 'perícia', l: 'Pericia trabalhista / assistente técnico' },
   { v: 'consultoria-completa', l: 'Trocar de consultoria atual' },
@@ -65,10 +65,10 @@ const dores = [
 ];
 
 const portes = [
-  { v: 'ate-20', l: 'Ate 20 funcionarios' },
-  { v: '21-100', l: 'De 21 a 100 funcionarios' },
-  { v: '101-500', l: 'De 101 a 500 funcionarios' },
-  { v: '500-mais', l: 'Mais de 500 funcionarios' },
+  { v: 'ate-20', l: 'Ate 20 funcionários' },
+  { v: '21-100', l: 'De 21 a 100 funcionários' },
+  { v: '101-500', l: 'De 101 a 500 funcionários' },
+  { v: '500-mais', l: 'Mais de 500 funcionários' },
 ];
 
 export function LeadForm() {
@@ -130,7 +130,7 @@ export function LeadForm() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data?.error || 'Nao foi possivel enviar.');
+        throw new Error(data?.error || 'Não foi possível enviar.');
       }
 
       setStatus('success');
@@ -172,10 +172,10 @@ export function LeadForm() {
     <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
       <div>
         <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-          Diagnostico comercial
+          Diagnóstico comercial
         </span>
         <h3 className="mb-2 text-2xl font-black leading-tight text-brand-900 md:text-3xl">
-          Conte o cenario da empresa e a SERMST volta com clareza comercial e técnica
+          Conte o cenário da empresa e a SERMST volta com clareza comercial e técnica
         </h3>
         <p className="text-sm leading-relaxed text-slate-600">
           Resposta da equipe comercial em ate 1 dia util. Se houver urgencia de admissão, eSocial travado ou risco de fiscalização, descreva isso no formulario.
@@ -243,7 +243,7 @@ export function LeadForm() {
 
       <div>
         <label htmlFor="porte" className="mb-2 block text-sm font-bold text-brand-900">
-          Quantos funcionarios a empresa tem?
+          Quantos funcionários a empresa tem?
         </label>
         <select
           id="porte"
@@ -287,13 +287,13 @@ export function LeadForm() {
 
       <div>
         <label htmlFor="mensagem" className="mb-2 block text-sm font-bold text-brand-900">
-          Conte o cenario (opcional)
+          Conte o cenário (opcional)
         </label>
         <textarea
           id="mensagem"
           name="mensagem"
           rows={4}
-          placeholder="Ex.: Tenho 80 funcionarios, PGR vencido, admissão parada e pendencia no eSocial..."
+          placeholder="Ex.: Tenho 80 funcionários, PGR vencido, admissão parada e pendência no eSocial..."
           className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
         />
       </div>
@@ -331,7 +331,7 @@ export function LeadForm() {
         <div className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
           <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
           <p>
-            <strong>Nao conseguimos enviar.</strong> {error || 'Tente novamente em alguns instantes ou use o WhatsApp.'}
+            <strong>Não conseguimos enviar.</strong> {error || 'Tente novamente em alguns instantes ou use o WhatsApp.'}
           </p>
         </div>
       )}
@@ -347,12 +347,12 @@ export function LeadForm() {
             Enviando...
           </>
         ) : (
-          'Solicitar diagnostico comercial'
+          'Solicitar diagnóstico comercial'
         )}
       </button>
 
       <p className="text-center text-xs leading-relaxed text-slate-500">
-        Ao enviar, voce concorda em receber retorno comercial da SERMST. Nao enviamos spam.
+        Ao enviar, você concorda em receber retorno comercial da SERMST. Não enviamos spam.
       </p>
     </form>
   );

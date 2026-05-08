@@ -14,6 +14,7 @@ export default function ExameDemissionalPage() {
       hubLabel="Hub Saúde Ocupacional"
       hubLabelShort="← Hub Saúde"
       hubHref="/saude"
+      pageUrl="https://sermst.com.br/saude/exame-demissional-guia"
       h1="Exame Demissional: como funciona e por que ele protege a empresa"
       intro="O exame demissional é a última oportunidade da empresa documentar o estado de saúde do trabalhador antes da rescisão. Sem ele, qualquer doença futura pode ser atribuída ao período trabalhado. Veja regras, prazos e como fazer certo."
       sections={[
@@ -142,7 +143,7 @@ export default function ExameDemissionalPage() {
       sidebarCtaLabel="Agendar exame demissional"
       related={[
         { label: 'Exame admissional expresso', href: '/servicos/exame-admissional-expresso/sao-paulo' },
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
+        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissão' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },
       ]}

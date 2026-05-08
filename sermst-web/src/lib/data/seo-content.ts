@@ -8,7 +8,7 @@ export interface FAQItem {
 export interface SEODocument {
   h1: string;
   hook: string;
-  isClinico: boolean;
+  isClínico: boolean;
   fluxoCorporativo?: string[];
   content: {
     dor: string;
@@ -32,7 +32,7 @@ export interface SEODocument {
 export interface Localidade {
   nome: string;
   slug: string;
-  unidadeReferencia: string;
+  unidadeReferência: string;
   distanciaMedia: string;
   adjetivo: string;
   isHub?: boolean;
@@ -43,35 +43,35 @@ export const localidades: Localidade[] = [
   {
     nome: "São Paulo",
     slug: "sao-paulo",
-    unidadeReferencia: "Unidade Central (Largo do Paissandu)",
+    unidadeReferência: "Unidade Central (Largo do Paissandu)",
     distanciaMedia: "0 min",
     adjetivo: "paulistana",
     isHub: true,
     contextoEmpresarial:
-      "O principal hub de Medicina do Trabalho na capital. Atendemos empresas de São Paulo com foco em exames admissionais rapidos, PCMSO consistente e conformidade operacional.",
+      "O principal hub de Medicina do Trabalho na capital. Atendemos empresas de São Paulo com foco em exames admissionais rápidos, PCMSO consistente e conformidade operacional.",
   },
   {
     nome: "Santo André",
     slug: "santo-andre",
-    unidadeReferencia: "São Paulo (Centro)",
+    unidadeReferência: "São Paulo (Centro)",
     distanciaMedia: "12 min",
     adjetivo: "andreense",
     contextoEmpresarial:
-      "Historico polo industrial. Oferecemos exame admissional em Santo André com emissao de ASO e envio ágil para rotinas de eSocial.",
+      "Histórico polo industrial. Oferecemos exame admissional em Santo André com emissão de ASO e envio ágil para rotinas de eSocial.",
   },
   {
     nome: "São Bernardo",
     slug: "sao-bernardo",
-    unidadeReferencia: "São Paulo (Centro)",
+    unidadeReferência: "São Paulo (Centro)",
     distanciaMedia: "18 min",
     adjetivo: "saobernardense",
     contextoEmpresarial:
-      "Centro fabril do ABC. Medicina do trabalho para empresas de São Bernardo que precisam de agilidade, rigor técnico e seguranca jurídica.",
+      "Centro fabril do ABC. Medicina do trabalho para empresas de São Bernardo que precisam de ágilidade, rigor técnico e segurança jurídica.",
   },
   {
     nome: "São Caetano",
     slug: "sao-caetano",
-    unidadeReferencia: "São Paulo (Centro)",
+    unidadeReferência: "São Paulo (Centro)",
     distanciaMedia: "10 min",
     adjetivo: "sulsancaetanense",
     contextoEmpresarial:
@@ -80,7 +80,7 @@ export const localidades: Localidade[] = [
   {
     nome: "Diadema",
     slug: "diadema",
-    unidadeReferencia: "São Paulo (Centro)",
+    unidadeReferência: "São Paulo (Centro)",
     distanciaMedia: "20 min",
     adjetivo: "diademense",
     contextoEmpresarial:
@@ -89,16 +89,16 @@ export const localidades: Localidade[] = [
   {
     nome: "Osasco",
     slug: "osasco",
-    unidadeReferencia: "São Paulo (Centro)",
+    unidadeReferência: "São Paulo (Centro)",
     distanciaMedia: "35 min",
     adjetivo: "osasquense",
     contextoEmpresarial:
-      "Hub de e-commerce e tecnologia em expansao. Solucoes ageis em exame admissional e conformidade para o mercado dinamico de Osasco.",
+      "Hub de e-commerce e tecnologia em expansão. Soluções ágeis em exame admissional e conformidade para o mercado dinâmico de Osasco.",
   },
   {
     nome: "Guarulhos",
     slug: "guarulhos",
-    unidadeReferencia: "São Paulo (Centro)",
+    unidadeReferência: "São Paulo (Centro)",
     distanciaMedia: "25 min",
     adjetivo: "guarulhense",
     contextoEmpresarial:
@@ -107,7 +107,7 @@ export const localidades: Localidade[] = [
   {
     nome: "Barueri",
     slug: "barueri",
-    unidadeReferencia: "São Paulo (Centro)",
+    unidadeReferência: "São Paulo (Centro)",
     distanciaMedia: "40 min",
     adjetivo: "barueriense",
     contextoEmpresarial:
@@ -116,20 +116,20 @@ export const localidades: Localidade[] = [
 ];
 
 export const estatisticasSERMST = {
-  anosExperiencia: "+40",
+  anosExperiência: "+40",
   empresasAtendidas: "+3.000",
-  clinicasCredenciadas: "+500",
+  clínicasCredenciadas: "+500",
   vidasGeriadas: "+40k",
 };
 
 export const servicosSEO: Record<string, SEODocument> = {
   "exame-admissional-expresso": {
-    h1: "Exame Admissional | Clinica de Medicina do Trabalho",
+    h1: "Exame Admissional | Clínica de Medicina do Trabalho",
     hook:
-      "Precisa de exame admissional com rapidez, validade para eSocial e menos impacto na rotina do RH? A SERMST realiza exame admissional em São Paulo com laboratorio proprio, liberacao ágil de ASO e estrutura para empresas que nao podem atrasar contratacoes.",
-    isClinico: true,
+      "Precisa de exame admissional com rapidez, validade para eSocial e menos impacto na rotina do RH? A SERMST realiza exame admissional em São Paulo com laboratório próprio, liberação ágil de ASO e estrutura para empresas que não podem atrasar contratacoes.",
+    isClínico: true,
     quandoRequerido:
-      "O exame admissional e uma exigencia legal da NR-07 (PCMSO) e deve ser realizado antes que o colaborador inicie suas funcoes. Alem de garantir a aptidao do funcionario, ele sustenta o envio correto do evento S-2220 ao eSocial e ajuda a evitar multas por falhas no processo de admissão.",
+      "O exame admissional e uma exigencia legal da NR-07 (PCMSO) e deve ser realizado antes que o colaborador inicie suas funcoes. Alem de garantir a aptidão do funcionario, ele sustenta o envio correto do evento S-2220 ao eSocial e ajuda a evitar multas por falhas no processo de admissão.",
     documentosNecessarios: [
       "RG e CPF ou documento oficial com foto",
       "Guia de encaminhamento em papel ou digital",
@@ -139,38 +139,38 @@ export const servicosSEO: Record<string, SEODocument> = {
       "O preco do exame admissional varia conforme os riscos do cargo e a necessidade de exames complementares, como audiometria, sangue, ECG ou outros. Solicite o orcamento corporativo para pacotes de atendimento ocupacional.",
     content: {
       dor:
-        "Processos de contratacao lentos, filas em clínicas terceirizadas e demora no ASO geram admissões travadas, retrabalho para o RH e perda de produtividade logo no inicio da operação.",
+        "Processos de contratação lentos, filas em clínicas terceirizadas e demora no ASO geram admissões travadas, retrabalho para o RH e perda de produtividade logo no inicio da operação.",
       solução:
-        "Com laboratorio proprio, equipe médica especializada em medicina do trabalho e fluxo ocupacional orientado a urgencia empresarial, a SERMST reduz burocracia e acelera a liberacao do ASO sem abrir mao de conformidade.",
+        "Com laboratório próprio, equipe médica especializada em medicina do trabalho e fluxo ocupacional orientado a urgencia empresarial, a SERMST reduz burocracia e acelera a liberação do ASO sem abrir mao de conformidade.",
       beneficios: [
-        "Liberacao de ASO com mais velocidade operacional",
-        "Clinica de medicina do trabalho centralizada",
+        "Liberação de ASO com mais velocidade operacional",
+        "Clínica de medicina do trabalho centralizada",
         "ASO com validade plena para eSocial",
         "Resultados integrados em um so fluxo para o RH",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "Uma gestão de saúde ocupacional eficiente comeca no admissional. Integrar NR-07 e eSocial e a chave para seguranca jurídica e ritmo de contratacao.",
-        author: "Diretor Medico",
-        role: "Diretor Medico",
+        text: "Uma gestão de saúde ocupacional eficiente começa no admissional. Integrar NR-07 e eSocial é a chave para segurança jurídica e ritmo de contratação.",
+        author: "Diretor Médico",
+        role: "Diretor Médico",
       },
       faq: [
         {
-          q: "Qual clínica faz exame admissional mais rapido?",
-          a: "A SERMST possui fluxo expresso e laboratorio clínico proprio na unidade central de São Paulo, agilizando o resultado final do ASO.",
+          q: "Qual clínica faz exame admissional mais rápido?",
+          a: "A SERMST possui fluxo expresso e laboratório clínico próprio na unidade central de São Paulo, ágilizando o resultado final do ASO.",
         },
         {
-          q: "O ASO admissional e valido por quanto tempo?",
-          a: "O ASO admissional e especifico para o momento da contratacao. Depois da admissão, o colaborador passa a seguir o cronograma do PCMSO da empresa.",
+          q: "O ASO admissional e válido por quanto tempo?",
+          a: "O ASO admissional e específico para o momento da contratação. Depois da admissão, o colaborador passa a seguir o cronograma do PCMSO da empresa.",
         },
         {
           q: "Precisa agendar o exame de admissão?",
-          a: "Recomendamos o contato previo por WhatsApp para orientar o fluxo e reduzir espera, mas a SERMST tambem atende demandas de urgencia empresarial.",
+          a: "Recomendamos o contato previo por WhatsApp para orientar o fluxo e reduzir espera, mas a SERMST também atende demandas de urgencia empresarial.",
         },
         {
-          q: "Quais exames sao necessarios na admissão?",
-          a: "O exame clínico e obrigatorio, e os complementares dependem dos riscos do cargo definidos no PCMSO da empresa.",
+          q: "Quais exames são necessarios na admissão?",
+          a: "O exame clínico e obrigatório, e os complementares dependem dos riscos do cargo definidos no PCMSO da empresa.",
         },
       ],
     },
@@ -178,37 +178,37 @@ export const servicosSEO: Record<string, SEODocument> = {
   "pcmso-nr07-programa": {
     h1: "PCMSO (NR-07) | Gestão de Saúde Ocupacional Especializada",
     hook:
-      "PCMSO nao pode ser documento generico. A SERMST elabora e coordena o PCMSO com base na realidade da sua empresa, definindo grade de exames, periodicidade, coerencia com riscos ocupacionais e sustentacao correta para o eSocial.",
-    isClinico: false,
+      "PCMSO não pode ser documento genérico. A SERMST elabora e coordena o PCMSO com base na realidade da sua empresa, definindo grade de exames, periodicidade, coerencia com riscos ocupacionais e sustentacao correta para o eSocial.",
+    isClínico: false,
     fluxoCorporativo: [
-      "Diagnostico e visita do médico do trabalho",
-      "Elaboracao do cronograma de exames",
+      "Diagnóstico e visita do médico do trabalho",
+      "Elaboração do cronograma de exames",
       "Assinatura do coordenador e entrega digital",
     ],
     quandoRequerido:
-      "O PCMSO e obrigatorio para empresas com empregados CLT e funciona como o eixo médico da NR-07. E ele que define quais exames cada trabalhador deve realizar de acordo com os riscos identificados na operação.",
+      "O PCMSO e obrigatório para empresas com empregados CLT e funciona como o eixo médico da NR-07. E ele que define quais exames cada trabalhador deve realizar de acordo com os riscos identificados na operação.",
     content: {
       dor:
-        "PCMSO generico, desconectado da operação e mal alinhado ao risco do cargo abre espaco para exames inadequados, falhas em S-2220, inseguranca jurídica e passivos ocupacionais.",
+        "PCMSO genérico, desconectado da operação e mal alinhado ao risco do cargo abre espaco para exames inadequados, falhas em S-2220, insegurança jurídica e passivos ocupacionais.",
       solução:
-        "A SERMST trabalha com assessoria médica real, leitura do processo produtivo e construcao de um programa de saúde ocupacional que protege a empresa tecnicamente, operacionalmente e juridicamente.",
+        "A SERMST trabalha com assessoria médica real, leitura do processo produtivo e construcao de um programa de saúde ocupacional que protege a empresa técnicamente, operacionalmente e jurídicamente.",
       beneficios: [
         "Coordenacao por médicos do trabalho especialistas",
-        "Integracao total com PGR e eSocial",
+        "Integração total com PGR e eSocial",
         "Cronograma de exames coerente com os riscos da função",
-        "Seguranca jurídica contra doencas ocupacionais",
+        "Segurança jurídica contra doenças ocupacionais",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "Um PCMSO serio exige que o médico conheca a realidade operacional do cliente e nao apenas assine um modelo pronto.",
-        author: "Diretoria Clinica",
+        text: "Um PCMSO sério exige que o médico conheca a realidade operacional do cliente e não apenas assine um modelo pronto.",
+        author: "Diretoria Clínica",
         role: "SERMST",
       },
       faq: [
         {
           q: "O que e PCMSO?",
-          a: "E o Programa de Controle Medico de Saúde Ocupacional, obrigatorio para prevenir, monitorar e registrar a saúde do trabalhador conforme os riscos da empresa.",
+          a: "E o Programa de Controle Médico de Saúde Ocupacional, obrigatório para prevenir, monitorar e registrar a saúde do trabalhador conforme os riscos da empresa.",
         },
         {
           q: "Quem assina o PCMSO?",
@@ -218,10 +218,10 @@ export const servicosSEO: Record<string, SEODocument> = {
     },
   },
   "pgr-nr01-gerenciamento-riscos": {
-    h1: "PGR (NR-01) | Engenharia de Seguranca e Levantamento de Riscos",
+    h1: "PGR (NR-01) | Engenharia de Segurança e Levantamento de Riscos",
     hook:
-      "Sua empresa precisa de PGR coerente com a operação real, e nao de um documento padrao. A SERMST realiza vistoria técnica, inventario de riscos e plano de acao com foco em conformidade, prevenção e sustentacao do eSocial.",
-    isClinico: false,
+      "Sua empresa precisa de PGR coerente com a operação real, e não de um documento padrao. A SERMST realiza vistoria técnica, inventario de riscos e plano de acao com foco em conformidade, prevenção e sustentacao do eSocial.",
+    isClínico: false,
     fluxoCorporativo: [
       "Vistoria técnica pormenorizada em campo",
       "Levantamento e inventario de riscos ocupacionais",
@@ -238,15 +238,15 @@ export const servicosSEO: Record<string, SEODocument> = {
         "Inventario de riscos conforme NR-01",
         "PGR baseado na realidade operacional",
         "Plano de acao com cronograma definido",
-        "Blindagem de patrimonio e operação",
+        "Blindagem de patrimônio e operação",
         "Assessoria em fiscalizações e auditorias",
         "Gestão dinamica do plano de acao",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "PGR nao e papel. E gestão de risco real para evitar acidente, retrabalho e multa.",
-        author: "Diretoria Tecnica",
+        text: "PGR não é papel. E gestão de risco real para evitar acidente, retrabalho e multa.",
+        author: "Diretoria Técnica",
         role: "SERMST",
       },
       faq: [
@@ -256,49 +256,49 @@ export const servicosSEO: Record<string, SEODocument> = {
         },
         {
           q: "Quem elabora o PGR?",
-          a: "Profissionais qualificados em seguranca do trabalho, como engenheiros e técnicos legalmente habilitados.",
+          a: "Profissionais qualificados em segurança do trabalho, como engenheiros e técnicos legalmente habilitados.",
         },
       ],
     },
   },
   "ltcat-laudo-tecnico-previdenciario": {
-    h1: "LTCAT | Laudo Tecnico de Condicoes Ambientais do Trabalho",
+    h1: "LTCAT | Laudo Técnico de Condicoes Ambientais do Trabalho",
     hook:
-      "Documentacao solida para aposentadoria especial, PPP e eSocial S-2240. A SERMST realiza medicoes quantitativas, enquadramento técnico e entrega de LTCAT com base consistente para obrigacoes previdenciarias.",
-    isClinico: false,
+      "Documentação solida para aposentadoria especial, PPP e eSocial S-2240. A SERMST realiza médicoes quantitativas, enquadramento técnico e entrega de LTCAT com base consistente para obrigações previdênciarias.",
+    isClínico: false,
     fluxoCorporativo: [
       "Visita técnica com coleta de dados quantitativos",
-      "Analise técnica e enquadramento previdenciario",
-      "Emissao do laudo assinado por engenheiro SST",
+      "Analise técnica e enquadramento previdênciario",
+      "Emissão do laudo assinado por engenheiro SST",
     ],
     quandoRequerido:
-      "O LTCAT e indispensavel para empresas com exposicao a agentes nocivos que precisam sustentar aposentadoria especial, PPP e recolhimentos relacionados ao risco previdenciario.",
+      "O LTCAT e indispensavel para empresas com exposicao a agentes nocivos que precisam sustentar aposentadoria especial, PPP e recolhimentos relacionados ao risco previdênciario.",
     content: {
       dor:
-        "Laudos técnicos inconsistentes podem gerar recolhimento indevido, base fragil para PPP e exposicao a discussoes previdenciarias de alto custo.",
+        "Laudos técnicos inconsistentes podem gerar recolhimento indevido, base frágil para PPP e exposicao a discussoes previdênciarias de alto custo.",
       solução:
-        "A SERMST combina medicao técnica, critério de enquadramento e leitura jurídica do risco para entregar LTCAT mais consistente e defensavel.",
+        "A SERMST combina médicao técnica, critério de enquadramento e leitura jurídica do risco para entregar LTCAT mais consistente e defensavel.",
       beneficios: [
-        "Medicoes de ruido e calor certificadas",
-        "Base técnica para o Perfil Profissiografico Previdenciario",
-        "Seguranca do negócio e compliance",
+        "Médicoes de ruido e calor certificadas",
+        "Base técnica para o Perfil Profissiografico Previdênciario",
+        "Segurança do negócio e compliance",
         "Envio estruturado ao eSocial",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "LTCAT sem medicao quantitativa em campo costuma enfraquecer a defesa técnica da empresa.",
-        author: "Diretoria Tecnica",
+        text: "LTCAT sem médicao quantitativa em campo costuma enfraquecer a defesa técnica da empresa.",
+        author: "Diretoria Técnica",
         role: "SERMST",
       },
       faq: [
         {
-          q: "Qual a diferenca entre PGR e LTCAT?",
-          a: "O PGR organiza a gestão dos riscos ocupacionais. O LTCAT sustenta o enquadramento previdenciario ligado a exposicao nociva.",
+          q: "Qual a diferença entre PGR e LTCAT?",
+          a: "O PGR organiza a gestão dos riscos ocupacionais. O LTCAT sustenta o enquadramento previdênciario ligado a exposicao nociva.",
         },
         {
           q: "O S-2240 exige LTCAT atualizado?",
-          a: "Os dados de exposicao no eSocial devem ter base técnica consistente, e o LTCAT costuma ser uma das referencias principais.",
+          a: "Os dados de exposicao no eSocial devem ter base técnica consistente, e o LTCAT costuma ser uma das referências principais.",
         },
       ],
     },
@@ -307,22 +307,22 @@ export const servicosSEO: Record<string, SEODocument> = {
     h1: "Gestão completa de eSocial SST | S-2220 e S-2240",
     hook:
       "Gestão de eSocial SST para empresas que querem parar de correr atras de prazo, XML e erro de envio. A SERMST organiza S-2220 e S-2240 com processo, rastreabilidade e suporte para uma rotina de compliance mais segura.",
-    isClinico: false,
+    isClínico: false,
     content: {
       dor:
-        "Quando o eSocial SST fica sem dono, a empresa passa a conviver com atraso de evento, erro manual, retrabalho entre RH e SST e risco real de multa automatica.",
+        "Quando o eSocial SST fica sem dono, a empresa passa a conviver com atraso de evento, erro manual, retrabalho entre RH e SST e risco real de multa automática.",
       solução:
-        "A SERMST estrutura a rotina de envio com software, protocolo, suporte e visibilidade operacional, ajudando a empresa a transformar obrigacao digital em processo controlado.",
+        "A SERMST estrutura a rotina de envio com software, protocolo, suporte e visibilidade operacional, ajudando a empresa a transformar obrigação digital em processo controlado.",
       beneficios: [
-        "Reducao de multas automaticas",
+        "Redução de multas automáticas",
         "Protocolo de entrega XML",
         "Interface entre SST, RH e operação",
-        "Monitoramento de pendencias e prazos",
+        "Monitoramento de pendências e prazos",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "No eSocial, agilidade no dado e tao importante quanto a qualidade técnica da informacao.",
+        text: "No eSocial, ágilidade no dado e tao importante quanto a qualidade técnica da informação.",
         author: "Governanca Corporativa",
         role: "SERMST",
       },
@@ -342,25 +342,25 @@ export const servicosSEO: Record<string, SEODocument> = {
     h1: "Audiometria Ocupacional | Exames de Audicao",
     hook:
       "Proteja a audicao da equipe e reduza exposicao a passivos relacionados a ruido ocupacional. A SERMST realiza audiometria ocupacional integrada ao PCMSO com estrutura adequada e foco em validade técnica.",
-    isClinico: true,
+    isClínico: true,
     quandoRequerido:
-      "A audiometria ocupacional e indicada para funcoes expostas a ruido acima dos limites de tolerancia e costuma ser exigida em admissão, demissão e acompanhamentos periodicos.",
+      "A audiometria ocupacional e indicada para funcoes expostas a ruido acima dos limites de tolerancia e costuma ser exigida em admissão, demissão e acompanhamentos periódicos.",
     content: {
       dor:
-        "Perda auditiva ocupacional pode gerar processo, afastamento e custo elevado quando a empresa nao monitora o trabalhador de forma consistente.",
+        "Perda auditiva ocupacional pode gerar processo, afastamento e custo elevado quando a empresa não monitora o trabalhador de forma consistente.",
       solução:
         "A SERMST realiza audiometria com critério técnico, profissionais especializados e integração ao fluxo do ASO para dar mais consistencia ao monitoramento ocupacional.",
       beneficios: [
         "Cabine acustica calibrada",
         "Resultado integrado ao ASO",
-        "Avaliacao de PAIR conforme norma",
+        "Avaliação de PAIR conforme norma",
         "Atendimento expresso",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "Saúde auditiva e produtividade, prevenção e seguranca laboral ao mesmo tempo.",
-        author: "Diretor Medico",
+        text: "Saúde auditiva e produtividade, prevenção e segurança laboral ao mesmo tempo.",
+        author: "Diretor Médico",
         role: "SERMST",
       },
       faq: [
@@ -376,19 +376,19 @@ export const servicosSEO: Record<string, SEODocument> = {
     },
   },
   "exame-toxicologico-clt": {
-    h1: "Exame Toxicologico | Motoristas Profissionais CLT",
+    h1: "Exame Toxicológico | Motoristas Profissionais CLT",
     hook:
-      "Exame toxicológico ocupacional com agilidade para transportadoras e operações que dependem de motoristas CLT. A SERMST organiza coleta, validade nacional do laudo e suporte para rotinas vinculadas ao eSocial.",
-    isClinico: true,
+      "Exame toxicológico ocupacional com ágilidade para transportadoras e operações que dependem de motoristas CLT. A SERMST organiza coleta, validade nacional do laudo e suporte para rotinas vinculadas ao eSocial.",
+    isClínico: true,
     quandoRequerido:
-      "O exame toxicológico e obrigatorio em admissão, demissão e acompanhamentos previstos para motoristas profissionais das categorias C, D e E.",
+      "O exame toxicológico e obrigatório em admissão, demissão e acompanhamentos previstos para motoristas profissionais das categorias C, D e E.",
     content: {
       dor:
-        "Atraso no toxicológico trava contratacao, expoe a empresa a risco regulatorio e compromete operações que dependem de motorista liberado rapidamente.",
+        "Atraso no toxicológico trava contratação, expoe a empresa a risco regulatorio e compromete operações que dependem de motorista liberado rapidamente.",
       solução:
-        "A SERMST organiza coleta eficiente, prazo curto e integração ocupacional para reduzir impacto logistico e acelerar a liberacao do trabalhador.",
+        "A SERMST organiza coleta eficiente, prazo curto e integração ocupacional para reduzir impacto logistico e acelerar a liberação do trabalhador.",
       beneficios: [
-        "Coleta rapida e discreta",
+        "Coleta rápida e discreta",
         "Suporte para rotina ocupacional",
         "Laudo com validade nacional",
         "Faturamento corporativo",
@@ -396,28 +396,28 @@ export const servicosSEO: Record<string, SEODocument> = {
     },
     geoOpt: {
       expertQuote: {
-        text: "Seguranca nas estradas comeca em um processo ocupacional bem controlado desde a contratacao.",
-        author: "Diretor Medico",
+        text: "Segurança nas estradas começa em um processo ocupacional bem controlado desde a contratação.",
+        author: "Diretor Médico",
         role: "SERMST",
       },
       faq: [
         {
           q: "O que detecta o exame?",
-          a: "O exame toxicológico identifica o consumo de substancias psicoativas em janela retroativa de longo prazo por meio de amostra biologica apropriada.",
+          a: "O exame toxicológico identifica o consumo de substancias psicoativas em janela retroativa de longo prazo por meio de amostra biologica aprópriada.",
         },
       ],
     },
   },
   "exames-complementares-laboratoriais": {
-    h1: "Exames Complementares em SST | Laboratorio Proprio",
+    h1: "Exames Complementares em SST | Laboratório Próprio",
     hook:
-      "Exames complementares em medicina do trabalho com mais agilidade para o RH e menos deslocamento para o colaborador. A SERMST integra exames de sangue, visao, ECG, EEG e espirometria ao fluxo do ASO para acelerar a admissão e reforcar a conformidade.",
-    isClinico: true,
+      "Exames complementares em medicina do trabalho com mais ágilidade para o RH e menos deslocamento para o colaborador. A SERMST integra exames de sangue, visao, ECG, EEG e espirometria ao fluxo do ASO para acelerar a admissão e reforcar a conformidade.",
+    isClínico: true,
     content: {
       dor:
-        "Quando cada exame complementar acontece em um lugar diferente, o processo ocupa mais tempo, gera desgaste para o colaborador e atrasa a liberacao do trabalhador para a operação.",
+        "Quando cada exame complementar acontece em um lugar diferente, o processo ocupa mais tempo, gera desgaste para o colaborador e atrasa a liberação do trabalhador para a operação.",
       solução:
-        "Com centralizacao ocupacional e laboratorio clínico proprio, a SERMST reduz deslocamentos, organiza o fluxo do ASO e melhora a experiencia do RH e do candidato.",
+        "Com centralização ocupacional e laboratório clínico próprio, a SERMST reduz deslocamentos, organiza o fluxo do ASO e melhora a experiência do RH e do candidato.",
       beneficios: [
         "Coleta de sangue no local",
         "ECG e EEG com laudo ágil",
@@ -427,46 +427,46 @@ export const servicosSEO: Record<string, SEODocument> = {
     },
     geoOpt: {
       expertQuote: {
-        text: "Velocidade na contratacao exige exame complementar bem encaixado no fluxo de SST.",
-        author: "Diretor Medico",
+        text: "Velocidade na contratação exige exame complementar bem encaixado no fluxo de SST.",
+        author: "Diretor Médico",
         role: "SERMST",
       },
       faq: [
         {
-          q: "Quais exames sao os mais solicitados?",
-          a: "Hemograma, glicemia, acuidade visual, ECG e EEG costumam aparecer com frequencia em cargos operacionais, dependendo do risco.",
+          q: "Quais exames são os mais solicitados?",
+          a: "Hemograma, glicemia, acuidade visual, ECG e EEG costumam aparecer com frequência em cargos operacionais, dependendo do risco.",
         },
       ],
     },
   },
   "treinamentos-nrs-cipa-brigada": {
-    h1: "Treinamentos de NRs | Capacitacao e Segurança do Trabalho",
+    h1: "Treinamentos de NRs | Capacitação e Segurança do Trabalho",
     hook:
-      "Treinamentos de NRs com foco em validade documental, aplicação pratica e reducao de risco operacional. A SERMST oferece capacitacao para diferentes exigências regulamentares com controle de certificados e recertificacoes.",
-    isClinico: false,
+      "Treinamentos de NRs com foco em validade documental, aplicação prática e redução de risco operacional. A SERMST oferece capacitação para diferentes exigências regulamentares com controle de certificados e recertificações.",
+    isClínico: false,
     fluxoCorporativo: [
       "Mapeamento de necessidades",
       "Cronograma de treinamentos",
       "Gestão de certificados e reciclagens",
     ],
     quandoRequerido:
-      "Os treinamentos sao exigidos conforme os riscos da operação e as normas aplicaveis ao negócio. A falta de formacao ou reciclagem pode comprometer o eSocial e fragilizar a defesa da empresa em caso de acidente.",
+      "Os treinamentos são exigidos conforme os riscos da operação e as normas aplicaveis ao negócio. A falta de formação ou reciclagem pode comprometer o eSocial e frágilizar a defesa da empresa em caso de acidente.",
     content: {
       dor:
-        "Certificados sem consistencia técnica ou treinamentos superficiais nao protegem o colaborador nem o CNPJ quando a empresa precisa provar sua rotina de prevenção.",
+        "Certificados sem consistencia técnica ou treinamentos superficiais não protegem o colaborador nem o CNPJ quando a empresa precisa provar sua rotina de prevenção.",
       solução:
-        "A SERMST trabalha com metodologia voltada a adultos, instrutores experientes e organizacao do ciclo de treinamentos para transformar obrigacao legal em proteção operacional.",
+        "A SERMST trabalha com metodologia voltada a adultos, instrutores experientes e organizacao do ciclo de treinamentos para transformar obrigação legal em proteção operacional.",
       beneficios: [
-        "Catalogo amplo de NRs e temas obrigatorios",
-        "Formacao de CIPA e brigada de incendio",
+        "Catalogo amplo de NRs e temas obrigatórios",
+        "Formação de CIPA e brigada de incendio",
         "Certificados digitais com validação",
-        "Treinamentos teoricos e praticos in-company ou em hub",
+        "Treinamentos teóricos e práticos in-company ou em hub",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "Treinamento eficaz nao e custo. E investimento em continuidade operacional e paz jurídica.",
-        author: "Diretoria Tecnica SERMST",
+        text: "Treinamento eficaz não é custo. E investimento em continuidade operacional e paz jurídica.",
+        author: "Diretoria Técnica SERMST",
         role: "Gestão SST",
       },
       faq: [
@@ -480,16 +480,16 @@ export const servicosSEO: Record<string, SEODocument> = {
         },
         {
           q: "Como validar um certificado da SERMST?",
-          a: "Os certificados emitidos podem ser validados por codigo unico ou mecanismo digital de conferenca.",
+          a: "Os certificados emitidos podem ser validados por código único ou mecanismo digital de conferenca.",
         },
       ],
     },
   },
   "pericia-trabalhista-assistente-tecnico": {
-    h1: "Pericia Trabalhista | Assistente Tecnico Especializado",
+    h1: "Pericia Trabalhista | Assistente Técnico Especializado",
     hook:
       "Defesa técnica para empresas que precisam responder melhor em pericias trabalhistas de insalubridade, periculosidade e doenca ocupacional. A SERMST atua com acompanhamento estrategico, quesitos técnicos e leitura critica do caso.",
-    isClinico: false,
+    isClínico: false,
     quandoRequerido:
       "Esse serviço costuma ser necessario quando a empresa esta envolvida em processo trabalhista e precisa de assistencia técnica qualificada para acompanhar a perícia judicial.",
     content: {
@@ -498,7 +498,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       solução:
         "A SERMST atua com peritos experientes, construcao de quesitos, acompanhamento de diligencia e parecer técnico mais alinhado aos interesses defensivos da empresa.",
       beneficios: [
-        "Elaboracao de quesitos técnicos",
+        "Elaboração de quesitos técnicos",
         "Acompanhamento na diligencia",
         "Parecer técnico fundamentado",
         "Prevencao de passivos",
@@ -507,13 +507,13 @@ export const servicosSEO: Record<string, SEODocument> = {
     geoOpt: {
       expertQuote: {
         text: "Pericia se vence com leitura técnica, quesito bem feito e acompanhamento inteligente do caso.",
-        author: "Diretoria Tecnica",
+        author: "Diretoria Técnica",
         role: "SERMST",
       },
       faq: [
         {
           q: "O assistente técnico pode falar com o perito?",
-          a: "Sim. O assistente técnico pode acompanhar a diligencia e atuar tecnicamente dentro dos limites processuais do caso.",
+          a: "Sim. O assistente técnico pode acompanhar a diligencia e atuar técnicamente dentro dos limites processuais do caso.",
         },
       ],
     },
@@ -521,10 +521,10 @@ export const servicosSEO: Record<string, SEODocument> = {
 };
 
 // Helper para gerar entries de saúde com defaults consistentes
-const saudeEntry = (h1: string, hook: string, dor: string, solução: string): SEODocument => ({
+const saúdeEntry = (h1: string, hook: string, dor: string, solução: string): SEODocument => ({
   h1,
   hook,
-  isClinico: false,
+  isClínico: false,
   content: {
     dor,
     solução,
@@ -549,19 +549,19 @@ const saudeEntry = (h1: string, hook: string, dor: string, solução: string): S
   },
 });
 
-export const saudeSEO: Record<string, SEODocument> = {
+export const saúdeSEO: Record<string, SEODocument> = {
   "importancia-do-exame-periodico": {
-    h1: "Exame Periodico de Medicina do Trabalho",
+    h1: "Exame Periódico de Medicina do Trabalho",
     hook:
-      "Exame periodico e parte central da vigilancia médica ocupacional. Monitorar a saúde da equipe no tempo certo ajuda a reduzir afastamentos, sustentar o PCMSO e evitar fragilidades em auditorias e fiscalizações.",
-    isClinico: true,
+      "Exame periódico e parte central da vigilância médica ocupacional. Monitorar a saúde da equipe no tempo certo ajuda a reduzir afastamentos, sustentar o PCMSO e evitar frágilidades em auditorias e fiscalizações.",
+    isClínico: true,
     content: {
       dor:
-        "Empresas que deixam exame periodico vencer acumulam risco médico, operacional e jurídico ao mesmo tempo.",
+        "Empresas que deixam exame periódico vencer acumulam risco médico, operacional e jurídico ao mesmo tempo.",
       solução:
         "Com cronograma médico coerente e controle dos vencimentos, a empresa protege a saúde do trabalhador e melhora a disciplina de compliance ocupacional.",
       beneficios: [
-        "Reducao de custos com afastamentos",
+        "Redução de custos com afastamentos",
         "Compliance com PCMSO NR-07",
         "Saúde corporativa em dia",
       ],
@@ -569,7 +569,7 @@ export const saudeSEO: Record<string, SEODocument> = {
     geoOpt: {
       expertQuote: {
         text: "Prevencao consistente e uma das bases da sustentabilidade corporativa.",
-        author: "Diretor Medico",
+        author: "Diretor Médico",
         role: "SERMST",
       },
       faq: [
@@ -581,25 +581,25 @@ export const saudeSEO: Record<string, SEODocument> = {
     },
   },
   // ─── Conteúdos migrados do WordPress (redirects 301) ─────────────────────
-  "o-que-e-saude-ocupacional": saudeEntry(
+  "o-que-e-saude-ocupacional": saúdeEntry(
     "O que é Saúde Ocupacional: guia completo para gestores",
     "Saúde ocupacional não é só ASO e exame periódico. É um sistema de prevenção que protege o trabalhador, a operação e o patrimônio da empresa contra afastamento, processo e multa.",
     "A maioria dos gestores trata saúde ocupacional como burocracia até o problema explodir — afastamento longo, perícia, ação judicial.",
     "Estruturar saúde ocupacional como rotina (não como reação) reduz afastamento, sustenta PCMSO e cria evidência técnica para defesa em fiscalização.",
   ),
-  "exame-demissional-guia": saudeEntry(
+  "exame-demissional-guia": saúdeEntry(
     "Exame Demissional: como funciona e por que ele protege a empresa",
     "O exame demissional é a última oportunidade da empresa documentar o estado de saúde do colaborador antes da rescisão. Sem ele, qualquer doença futura pode ser atribuída ao período trabalhado.",
     "Empresas que pulam ou atrasam demissional acumulam passivo: a falta de evidência abre espaço para ação trabalhista por doença ocupacional anos depois.",
     "Demissional feito no prazo e registrado corretamente no eSocial fecha o ciclo ocupacional do trabalhador e protege a empresa de reclamação retroativa.",
   ),
-  "o-que-sao-epis": saudeEntry(
+  "o-que-sao-epis": saúdeEntry(
     "O que são EPIs: o equipamento que protege o trabalhador e a empresa",
     "EPI (Equipamento de Proteção Individual) é exigência legal — fornecimento gratuito, treinamento de uso, fiscalização do uso e troca periódica. Falhar em qualquer parte é responsabilidade direta da empresa.",
     "Empresas que distribuem EPI sem treinamento, sem ficha de entrega e sem fiscalização de uso descobrem o problema só quando acontece o acidente — e a defesa cai por falta de evidência.",
     "EPI bem implementado tem três partes: o equipamento certo (CA válido), o trabalhador treinado (registro em ficha) e a fiscalização do uso (responsabilidade do encarregado e do SESMT).",
   ),
-  "gestao-sst": saudeEntry(
+  "gestao-sst": saúdeEntry(
     "Gestão de SST: o que é e como organizar sem virar burocracia",
     "Gestão de Saúde e Segurança do Trabalho não é um documento — é um sistema. Conecta exame, laudo, treinamento e eSocial em fluxo único que sustenta operação e defende o CNPJ.",
     "Empresas tratam SST como pasta de arquivo. Resultado: documento existe, mas não reflete a operação real. Em fiscalização ou processo, isso desmonta.",
@@ -611,7 +611,7 @@ export const saudeSEO: Record<string, SEODocument> = {
 const rhEntry = (h1: string, hook: string, dor: string, solução: string): SEODocument => ({
   h1,
   hook,
-  isClinico: false,
+  isClínico: false,
   content: {
     dor,
     solução,
@@ -640,16 +640,16 @@ export const rhDoresSEO: Record<string, SEODocument> = {
   "multa-esocial-s2220": {
     h1: "Como Evitar Multas do eSocial S-2220 e S-2240",
     hook:
-      "O eSocial cruza dados de forma automatica. Empresas que deixam saúde e seguranca sem rotina definida se expoem a atraso de evento, erro operacional e risco crescente de multa.",
-    isClinico: false,
+      "O eSocial cruza dados de forma automática. Empresas que deixam saúde e segurança sem rotina definida se expõem a atraso de evento, erro operacional e risco crescente de multa.",
+    isClínico: false,
     content: {
       dor:
-        "A falta de envio, o envio fora do prazo ou a base técnica inconsistente nos eventos de SST pode gerar autuacao, retrabalho e inseguranca entre RH, operação e medicina ocupacional.",
+        "A falta de envio, o envio fora do prazo ou a base técnica inconsistente nos eventos de SST pode gerar autuação, retrabalho e insegurança entre RH, operação e medicina ocupacional.",
       solução:
         "Com processo, plataforma e rotina organizada, a empresa ganha previsibilidade para cumprir prazos e reduzir falhas no fluxo entre ASO, laudos e envios.",
       beneficios: [
         "Protocolos de envio seguros",
-        "Integracao via XML",
+        "Integração via XML",
         "Eliminacao de erros manuais",
       ],
     },
@@ -662,13 +662,13 @@ export const rhDoresSEO: Record<string, SEODocument> = {
       faq: [
         {
           q: "Qual o prazo do S-2220?",
-          a: "O evento deve seguir o prazo operacional aplicavel ao envio de informações de saúde do trabalhador, conforme a rotina e a obrigacao da empresa.",
+          a: "O evento deve seguir o prazo operacional aplicavel ao envio de informações de saúde do trabalhador, conforme a rotina e a obrigação da empresa.",
         },
       ],
     },
   },
   // ─── Guias migrados do WordPress (redirects 301) ─────────────────────────
-  // funcao-encarregado tem página dedicada em /rh/funcao-encarregado/page.tsx
+  // função-encarregado tem página dedicada em /rh/função-encarregado/page.tsx
   "o-que-um-gerente-faz": rhEntry(
     "O que um gerente faz: funções, responsabilidades e impacto",
     "Gerente é o cargo que transforma estratégia da diretoria em execução real da equipe. Reúne planejamento, gente e indicador num só ponto de responsabilidade.",
@@ -681,7 +681,7 @@ export const rhDoresSEO: Record<string, SEODocument> = {
     "Gestor adia demissão por receio do passivo, ou demite por impulso sem documentação. Os dois caminhos custam caro.",
     "Demissão estruturada tem três etapas: documentação prévia (advertência, feedback formal), exame demissional em dia, e rescisão com base em fato — não opinião.",
   ),
-  "carta-demissao": rhEntry(
+  "carta-demissão": rhEntry(
     "Como fazer uma carta de demissão: modelo e cuidados",
     "A carta de demissão (rescisão) é peça jurídica. O conteúdo dela define obrigações trabalhistas, abre janela para passivo e fica no eSocial. Texto genérico custa caro.",
     "Carta mal redigida abre brecha para reclamação trabalhista posterior — alegação de motivo justo invalido, falta de aviso prévio, descumprimento de norma coletiva.",
@@ -717,28 +717,28 @@ export const dicionarioSEO: Record<string, SEODocument> = {
   "o-que-e-aso": {
     h1: "ASO: Tudo sobre o Atestado de Saúde Ocupacional",
     hook:
-      "O ASO e um dos documentos centrais da medicina do trabalho. Ele registra a aptidao ocupacional do trabalhador e tem impacto direto em admissão, periodicos, demissão e rotina de eSocial.",
-    isClinico: true,
+      "O ASO é um dos documentos centrais da medicina do trabalho. Ele registra a aptidão ocupacional do trabalhador e tem impacto direto em admissão, periódicos, demissão e rotina de eSocial.",
+    isClínico: true,
     content: {
       dor:
-        "Muitos gestores so percebem a importancia do ASO quando a contratacao atrasa, o exame vence ou aparece uma inconsistenci a em fiscalização.",
+        "Muitos gestores so percebem a importancia do ASO quando a contratação atrasa, o exame vence ou aparece uma inconsistenci a em fiscalização.",
       solução:
-        "Entender o que e o ASO, quem assina, quando ele se aplica e como ele se conecta ao PCMSO ajuda a empresa a contratar com mais seguranca.",
+        "Entender o que e o ASO, quem assina, quando ele se aplica e como ele se conecta ao PCMSO ajuda a empresa a contratar com mais segurança.",
       beneficios: [
-        "Documentacao ocupacional conforme NR-07",
+        "Documentação ocupacional conforme NR-07",
         "Base de respaldo para o eSocial",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "O ASO e um dos pilares da contratacao segura e da rastreabilidade ocupacional.",
-        author: "Diretor Medico",
+        text: "O ASO é um dos pilares da contratação segura e da rastreabilidade ocupacional.",
+        author: "Diretor Médico",
         role: "SERMST",
       },
       faq: [
         {
-          q: "ASO e exame de sangue sao a mesma coisa?",
-          a: "Nao. O ASO e o atestado ocupacional final. Exames de sangue podem ser complementares, dependendo do risco e da função.",
+          q: "ASO e exame de sangue são a mesma coisa?",
+          a: "Nao. O ASO é o atestado ocupacional final. Exames de sangue podem ser complementares, dependendo do risco e da função.",
         },
       ],
     },

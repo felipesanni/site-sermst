@@ -14,6 +14,7 @@ export default function TreinamentoGerentesPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
+      pageUrl="https://sermst.com.br/rh/treinamento-gerentes"
       h1="Como treinar gerentes: o guia para desenvolver líderes que entregam"
       intro="Gerente promovido sem treinamento vira problema na equipe e na operação. Treinar liderança é investimento que retorna em produtividade, retenção, segurança e até em redução de processo trabalhista. Veja como estruturar."
       sections={[
@@ -141,7 +142,7 @@ export default function TreinamentoGerentesPage() {
       sidebarCtaLabel="Programa SST para gestão"
       related={[
         { label: 'O que um gerente faz', href: '/rh/o-que-um-gerente-faz' },
-        { label: 'Função encarregado', href: '/rh/funcao-encarregado' },
+        { label: 'Função encarregado', href: '/rh/função-encarregado' },
         { label: 'Treinamentos NR/CIPA/brigada', href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
       ]}

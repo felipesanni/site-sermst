@@ -14,6 +14,7 @@ export default function QuandoDemitirPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
+      pageUrl="https://sermst.com.br/rh/quando-demitir-funcionario"
       h1="Quando demitir um funcionário: o guia que o gestor precisa"
       intro="Demissão é decisão técnica, não emocional. Feita certa, protege o time e o resultado. Feita errada, vira processo trabalhista, queda de moral e custo escondido. Veja os sinais, as etapas e os cuidados."
       sections={[
@@ -133,7 +134,7 @@ export default function QuandoDemitirPage() {
       sidebarHook="Cada demissão precisa de exame demissional, S-2299 no prazo e documentação prévia. Falha em um desses três é passivo aberto. A SERMST audita o processo de rescisão completo."
       sidebarCtaLabel="Auditar processo de demissão"
       related={[
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
+        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissão' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },

@@ -5,16 +5,17 @@ export const metadata: Metadata = {
   title: 'Como fazer uma carta de demissão: modelo, cuidados e passivos a evitar | SERMST',
   description:
     'A carta de rescisão é peça jurídica. O conteúdo dela define obrigações trabalhistas, abre janela para passivo e fica registrada no eSocial. Veja como redigir corretamente.',
-  alternates: { canonical: 'https://sermst.com.br/rh/carta-demissao' },
+  alternates: { canonical: 'https://sermst.com.br/rh/carta-demissão' },
 };
 
-export default function CartaDemissaoPage() {
+export default function CartaDemissãoPage() {
   return (
     <BlockbusterArticle
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
-      h1="Como fazer uma carta de demissão: o que escrever e o que evitar"
+      pageUrl="https://sermst.com.br/rh/carta-demissão"
+      h1="Como fazer uma carta de demissão: o que escrever é o que evitar"
       intro="A carta de rescisão é peça jurídica. O conteúdo define obrigações, abre porta para passivo e fica registrada no eSocial. Veja como redigir certo — para quem está sendo demitido e para quem está demitindo."
       sections={[
         {
@@ -29,7 +30,7 @@ export default function CartaDemissaoPage() {
                 <li><strong>Carta/comunicado de demissão</strong> — escrita pela <em>empresa</em> que está dispensando o trabalhador. Sem justa causa, gera aviso prévio, multa de FGTS e direito a seguro-desemprego.</li>
               </ul>
               <p>
-                A confusão entre os dois é a primeira fonte de litígio em rescisão. Empresa que &quot;sugere&quot; o pedido de demissão para evitar custo está praticando coação — uma das brechas mais comuns de ação trabalhista posterior.
+                A confusão entre os dois é a primeira fonte de litígio em rescisão. Empresa que &quot;sugere&quot; o pedido de demissão para evitar custo está práticando coação — uma das brechas mais comuns de ação trabalhista posterior.
               </p>
             </>
           ),

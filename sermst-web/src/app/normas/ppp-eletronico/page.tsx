@@ -14,6 +14,7 @@ export default function PPPPage() {
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas/ppp-eletronico"
+      pageUrl="https://sermst.com.br/normas/ppp-eletronico"
       badgeText="PPP eletrônico"
       h1="PPP eletrônico: o que é, como funciona e por que ele importa"
       intro="O PPP eletrônico é o documento que descreve as condições ambientais do trabalho de cada colaborador para fins previdenciários. Obrigatório no eSocial via evento S-2240, é base para aposentadoria especial e responsabilidade direta da empresa."

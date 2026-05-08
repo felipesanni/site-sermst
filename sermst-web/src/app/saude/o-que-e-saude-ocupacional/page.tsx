@@ -8,12 +8,13 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sermst.com.br/saude/o-que-e-saude-ocupacional' },
 };
 
-export default function SaudeOcupacionalPage() {
+export default function SaúdeOcupacionalPage() {
   return (
     <BlockbusterArticle
       hubLabel="Hub Saúde Ocupacional"
       hubLabelShort="← Hub Saúde"
       hubHref="/saude"
+      pageUrl="https://sermst.com.br/saude/o-que-e-saude-ocupacional"
       h1="O que é Saúde Ocupacional: guia completo para gestores"
       intro="Saúde ocupacional não é só ASO e exame periódico. É um sistema de prevenção que protege o trabalhador, a operação e o patrimônio da empresa contra afastamento, processo e multa. Veja como funciona na prática."
       sections={[
@@ -101,7 +102,7 @@ export default function SaudeOcupacionalPage() {
         },
         {
           q: 'O ASO vale para sempre?',
-          a: 'Não. Cada ASO tem prazo de validade conforme tipo de exame e risco do cargo: admissional vale para a admissão (precisa ser anterior ao início do contrato); periódico vale conforme periodicidade do PCMSO (1 ou 2 anos); demissional vale na rescisão.',
+          a: 'Não. Cada ASO tem prazo dé válidade conforme tipo de exame e risco do cargo: admissional vale para a admissão (precisa ser anterior ao início do contrato); periódico vale conforme periodicidade do PCMSO (1 ou 2 anos); demissional vale na rescisão.',
         },
         {
           q: 'Como saber se o PCMSO da minha empresa está bem feito?',

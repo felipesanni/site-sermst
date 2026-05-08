@@ -51,7 +51,7 @@ export default function NormasIndexPage() {
               Guia das NRs explicadas para gestores
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">
-              As Normas Regulamentadoras definem o que sua empresa precisa fazer para operar com segurança e cumprir o eSocial. Aqui cada NR é apresentada com obrigações, prazos e o que costuma cair em fiscalização.
+              As Normas Regulamentadoras definem o que sua empresa precisa fazer para operar com segurança e cumprir o eSocial. Aqui cada NR é apresentada com obrigações, prazos é o que costuma cair em fiscalização.
             </p>
           </FadeIn>
         </div>
