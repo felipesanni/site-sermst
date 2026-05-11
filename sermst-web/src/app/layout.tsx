@@ -50,6 +50,12 @@ export const metadata: Metadata = {
     description: 'Blindagem jurídica e gestão de risco 100% alinhada ao eSocial.',
     images: ['/images/site/og-cover.jpg'],
   },
+  other: {
+    'geo.placename': 'São Paulo, SP, Brasil',
+    'geo.position': '-23.543;-46.637',
+    'geo.region': 'BR-SP',
+    'ICBM': '-23.543, -46.637',
+  },
 }
 
 const organizationSchema = {

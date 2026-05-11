@@ -3,6 +3,61 @@ import Link from 'next/link';
 import { ArrowRight, Building2, CheckCircle2, Clock, FileCheck2, Navigation, ShieldCheck } from 'lucide-react';
 import { siteImages } from '@/lib/site-images';
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'O que é medicina do trabalho?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Medicina do trabalho é a especialidade médica que cuida da saúde dos trabalhadores, prevenindo doenças ocupacionais, realizando exames admissionais, periódicos e demissionais, e garantindo conformidade com a NR-07 (PCMSO).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'O que é PCMSO e qual empresa é obrigada a ter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é exigido pela NR-07 para todas as empresas que possuem empregados CLT. Ele define quais exames ocupacionais cada trabalhador deve realizar conforme os riscos do cargo, e sustenta o envio correto dos eventos de SST ao eSocial.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'O que é PGR e quem precisa ter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O PGR (Programa de Gerenciamento de Riscos) substituiu o PPRA e é obrigatório pela NR-01 para todas as empresas com empregados CLT. Ele identifica, avalia e controla os riscos ocupacionais da operação, sendo base para o PCMSO e para os eventos S-2240 do eSocial.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quando o exame admissional deve ser realizado?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O exame admissional deve ser realizado antes do início das atividades do novo colaborador, conforme exige a NR-07. O ASO (Atestado de Saúde Ocupacional) emitido após o exame é obrigatório para a admissão e para o envio do evento S-2220 ao eSocial.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'O que é ASO e qual a sua validade?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O ASO (Atestado de Saúde Ocupacional) é o documento emitido pelo médico do trabalho que atesta se o colaborador está apto, apto com restrições ou inapto para a função. Cada tipo de ASO (admissional, periódico, demissional, retorno ao trabalho ou mudança de função) tem validade específica definida no PCMSO da empresa.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quais são os riscos de não ter SST organizada?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Empresas sem SST organizada estão expostas a autuações fiscais, multas do eSocial por eventos atrasados ou inconsistentes, passivos trabalhistas em processos judiciais e afastamentos não gerenciados. Além disso, a falta de documentação adequada pode comprometer a defesa da empresa em fiscalizações do Ministério do Trabalho.',
+      },
+    },
+  ],
+};
+
 const regionalCards = [
   { city: 'São Paulo', slug: 'sao-paulo', desc: 'Unidade central e hub de atendimento especializado.' },
   { city: 'Santo André', slug: 'santo-andre', desc: 'Suporte completo para o polo industrial do ABC.' },
@@ -474,6 +529,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </div>
   );
 }
