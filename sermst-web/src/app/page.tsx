@@ -139,7 +139,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 h-[420px] w-[420px] rounded-full bg-accent-pink/20 blur-[100px]" />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-10 px-6 lg:flex-row lg:px-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-10 px-6 lg:-mt-12 lg:flex-row lg:px-8">
           <div className="w-full max-w-2xl text-center lg:text-left">
             <div className="hero-anim-badge mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 py-1.5 pl-1.5 pr-4 shadow-xl backdrop-blur-md md:mb-8">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-pink shadow-[0_0_15px_rgba(227,27,69,0.35)]">
@@ -161,11 +161,6 @@ export default function Home() {
             <p className="hero-anim-p mx-auto mb-8 max-w-2xl rounded-xl bg-brand-900/35 p-5 text-lg font-medium leading-relaxed text-slate-200 backdrop-blur-sm md:bg-transparent md:p-0 md:text-xl md:backdrop-blur-none lg:mx-0 lg:border-l-[3px] lg:border-accent-pink lg:pl-6">
               Exames ocupacionais, PGR, PCMSO, LTCAT e gestão de eSocial para empresas que querem proteger o que levou anos para construir, sem travar admissão, sem retrabalho e sem medo de fiscalização.
             </p>
-
-            <Link href="/saude/clinica-exame-admissional-sao-paulo" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-accent-pink transition hover:text-white">
-              Precisa de clínica de exame admissional em São Paulo? Veja como escolher
-              <ArrowRight className="h-4 w-4" />
-            </Link>
 
             <div className="hero-anim-cta flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
               <Link href="/contato" className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-accent-pink px-8 py-4 font-bold text-white shadow-[0_0_40px_-10px_rgba(227,27,69,0.5)] transition-all duration-300 hover:scale-[1.02] hover:bg-accent-pink-hover sm:w-auto">
