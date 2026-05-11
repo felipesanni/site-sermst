@@ -123,7 +123,7 @@ const structureItems = [
 export default function Home() {
   return (
     <div className="flex w-full flex-1 flex-col overflow-hidden">
-      <section className="relative flex min-h-[560px] w-full items-center overflow-hidden bg-brand-900 py-12 lg:min-h-[680px]">
+      <section className="relative flex min-h-[560px] w-full items-center overflow-hidden bg-brand-900 py-12 lg:min-h-[800px]">
         <div className="absolute inset-0">
             <Image
               src={siteImages.home.heroClinic.src}
@@ -162,12 +162,8 @@ export default function Home() {
               Exames ocupacionais, PGR, PCMSO, LTCAT e gestão de eSocial para empresas que querem proteger o que levou anos para construir, sem travar admissão, sem retrabalho e sem medo de fiscalização.
             </p>
 
-            <p className="mx-auto mb-8 max-w-2xl text-sm font-medium leading-relaxed text-slate-300 lg:mx-0">
-              Se a sua busca foi por <strong className="text-white">clinica de exame admissional</strong>, <strong className="text-white">clinicas de exames admissionais</strong> ou <strong className="text-white">exame admissional em Sao Paulo</strong>, a SERMST concentra atendimento ocupacional para empresas que precisam emitir ASO e contratar com mais velocidade.
-            </p>
-
             <Link href="/saude/clinica-exame-admissional-sao-paulo" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-accent-pink transition hover:text-white">
-              Entender como escolher uma clinica de exame admissional
+              Precisa de clínica de exame admissional em São Paulo? Veja como escolher
               <ArrowRight className="h-4 w-4" />
             </Link>
 
@@ -226,7 +222,7 @@ export default function Home() {
               Cada serviço da SERMST foi estruturado para reduzir atraso de admissão, manter documentos obrigatórios atualizados e proteger a empresa contra multas do eSocial e passivos trabalhistas.
             </p>
             <p className="mt-4 text-sm font-medium leading-relaxed text-slate-600 lg:pr-10">
-              Nossa operacao atende especialmente empresas que pesquisam por clinica para exame admissional, clinica de exames admissionais e ASO admissional com entrega mais previsivel para o RH.
+              Para o RH que precisa de exame admissional com ASO no mesmo dia e integração com eSocial, a SERMST tem laboratório próprio e fluxo ocupacional que não trava contratação.
             </p>
           </div>
 
@@ -388,9 +384,9 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <h2 className="text-4xl font-black tracking-tight text-brand-900 md:text-5xl lg:text-6xl">
-              Mais de <span className="bg-gradient-to-r from-brand-500 to-accent-pink bg-clip-text text-transparent">+40 anos</span> de
+              Mais de <span className="bg-gradient-to-r from-brand-500 to-accent-pink bg-clip-text text-transparent">40 anos</span> de
               <br />
-              experiência
+              experiência em SST
             </h2>
           </div>
 
@@ -500,7 +496,7 @@ export default function Home() {
                 Atendimento estratégico para as principais regiões industriais e corporativas da capital, do ABC e da Grande SP. Unidade de referência no centro de São Paulo, com fluxo expresso para admissão e gestão SST.
               </p>
               <p className="mt-4 text-sm font-medium leading-relaxed text-slate-500">
-                Para boa parte das buscas que antes caiam na home, o destino certo continua aqui: uma clinica de exame admissional em Sao Paulo com cobertura regional e encaminhamento direto para a unidade mais aderente ao seu fluxo.
+                Precisa de clínica de exame admissional em São Paulo ou na Grande SP? A SERMST tem unidade central no centro histórico e cobertura regional para atender o fluxo de admissões da sua empresa com mais previsibilidade.
               </p>
             </div>
 
