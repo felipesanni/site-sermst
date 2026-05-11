@@ -10,6 +10,14 @@ import { buildFrequentFaqs } from '@/lib/faq';
 import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildLocalServiceCopy } from '@/lib/seo-copy';
 
+function getServiceSearchLabel(servico: string, fallback: string) {
+  if (servico === 'exame-admissional-expresso') {
+    return 'Clinica de Exame Admissional';
+  }
+
+  return fallback;
+}
+
 export function generateStaticParams() {
   const params: { servico: string; regiao: string }[] = [];
 
@@ -35,9 +43,12 @@ export async function generateMetadata({
     return { title: 'Pagina não encontrada | SERMST' };
   }
 
-  const mainTerm = data.h1.split('|')[0].trim();
+  const rawMainTerm = data.h1.split('|')[0].trim();
+  const mainTerm = getServiceSearchLabel(servico, rawMainTerm);
   const title = `${mainTerm} em ${local.nome} | SERMST`;
-  const description = `Precisa de ${mainTerm.toLowerCase()} em ${local.nome}? Clínica de medicina do trabalho com liberação de ASO na hora, laboratório próprio e envio ao eSocial. Atendimento expresso para empresas ${local.adjetivo}. Fale agora com a SERMST.`;
+  const description = servico === 'exame-admissional-expresso'
+    ? `Precisa de clinica de exame admissional em ${local.nome}? A SERMST atende empresas que buscam clinicas de exames admissionais com ASO, laboratorio proprio, exames ocupacionais e apoio ao eSocial.`
+    : `Precisa de ${mainTerm.toLowerCase()} em ${local.nome}? Clínica de medicina do trabalho com liberação de ASO na hora, laboratório próprio e envio ao eSocial. Atendimento expresso para empresas ${local.adjetivo}. Fale agora com a SERMST.`;
 
   return {
     title,
@@ -66,7 +77,7 @@ export default async function LocalSEOPage({
 
   if (!data || !local) notFound();
 
-  const servicoNome = data.h1.split('|')[0].trim();
+  const servicoNome = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
   const waMessage = `Preciso de ${servicoNome} em ${local.nome}`;
   const seoCopy = buildLocalServiceCopy(data, local);
   const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {

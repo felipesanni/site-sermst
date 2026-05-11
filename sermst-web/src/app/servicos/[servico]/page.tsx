@@ -8,6 +8,14 @@ import { buildFrequentFaqs } from '@/lib/faq';
 import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildServiceCopy } from '@/lib/seo-copy';
 
+function getServiceSearchLabel(servico: string, fallback: string) {
+  if (servico === 'exame-admissional-expresso') {
+    return 'Clinica de Exame Admissional';
+  }
+
+  return fallback;
+}
+
 export function generateStaticParams() {
   return Object.keys(servicosSEO).map((servico) => ({ servico }));
 }
@@ -25,16 +33,22 @@ export async function generateMetadata({
   }
 
   const canonicalUrl = `https://sermst.com.br/servicos/${servico}`;
+  const serviceLabel = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
+  const title = servico === 'exame-admissional-expresso' ? `${serviceLabel} | SERMST` : data.h1;
+  const description =
+    servico === 'exame-admissional-expresso'
+      ? 'Clinica para exame admissional em Sao Paulo com ASO, exames ocupacionais, apoio ao eSocial e fluxo pensado para empresas que precisam contratar sem atrasar a admissao.'
+      : data.hook;
 
   return {
-    title: data.h1,
-    description: data.hook,
+    title,
+    description,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: data.h1,
-      description: data.hook,
+      title,
+      description,
       url: canonicalUrl,
       locale: 'pt_BR',
       type: 'website',
@@ -53,7 +67,7 @@ export default async function ServicoPage({
   if (!data) notFound();
 
   const seoCopy = buildServiceCopy(data);
-  const serviceName = data.h1.split('|')[0].trim();
+  const serviceName = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
   const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {
     context: 'service',
     topic: serviceName,
@@ -85,7 +99,7 @@ export default async function ServicoPage({
                 Especialidade SERMST
               </span>
               <h1 className="mb-8 text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
-                {data.h1}
+                {servico === 'exame-admissional-expresso' ? 'Clinica de Exame Admissional | Medicina do Trabalho' : data.h1}
               </h1>
               <p className="mx-auto max-w-3xl border-l-4 border-accent-pink pl-6 text-left text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
                 {data.hook}

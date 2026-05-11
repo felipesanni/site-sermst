@@ -1,7 +1,25 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Building2, CheckCircle2, Clock, FileCheck2, Navigation, ShieldCheck } from 'lucide-react';
 import { siteImages } from '@/lib/site-images';
+
+export const metadata: Metadata = {
+  title: 'Clinica de Exame Admissional em Sao Paulo | SERMST',
+  description:
+    'Clinica de exames admissionais em Sao Paulo com ASO, exames ocupacionais, PCMSO e apoio ao eSocial. A SERMST atende empresas que precisam agilizar admissao com seguranca tecnica.',
+  alternates: {
+    canonical: 'https://sermst.com.br',
+  },
+  openGraph: {
+    title: 'Clinica de Exame Admissional em Sao Paulo | SERMST',
+    description:
+      'Clinica de exames admissionais em Sao Paulo com ASO, exames ocupacionais, PCMSO e apoio ao eSocial para empresas que precisam contratar sem gargalo.',
+    url: 'https://sermst.com.br',
+    locale: 'pt_BR',
+    type: 'website',
+  },
+};
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -144,6 +162,15 @@ export default function Home() {
               Exames ocupacionais, PGR, PCMSO, LTCAT e gestão de eSocial para empresas que querem proteger o que levou anos para construir, sem travar admissão, sem retrabalho e sem medo de fiscalização.
             </p>
 
+            <p className="mx-auto mb-8 max-w-2xl text-sm font-medium leading-relaxed text-slate-300 lg:mx-0">
+              Se a sua busca foi por <strong className="text-white">clinica de exame admissional</strong>, <strong className="text-white">clinicas de exames admissionais</strong> ou <strong className="text-white">exame admissional em Sao Paulo</strong>, a SERMST concentra atendimento ocupacional para empresas que precisam emitir ASO e contratar com mais velocidade.
+            </p>
+
+            <Link href="/saude/clinica-exame-admissional-sao-paulo" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-accent-pink transition hover:text-white">
+              Entender como escolher uma clinica de exame admissional
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+
             <div className="hero-anim-cta flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
               <Link href="/contato" className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-accent-pink px-8 py-4 font-bold text-white shadow-[0_0_40px_-10px_rgba(227,27,69,0.5)] transition-all duration-300 hover:scale-[1.02] hover:bg-accent-pink-hover sm:w-auto">
                 <div className="absolute inset-0 animate-[shimmer_2s_infinite] bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.22)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%]" />
@@ -197,6 +224,9 @@ export default function Home() {
             </h2>
             <p className="mt-4 text-sm font-medium leading-relaxed text-slate-700 lg:pr-10">
               Cada serviço da SERMST foi estruturado para reduzir atraso de admissão, manter documentos obrigatórios atualizados e proteger a empresa contra multas do eSocial e passivos trabalhistas.
+            </p>
+            <p className="mt-4 text-sm font-medium leading-relaxed text-slate-600 lg:pr-10">
+              Nossa operacao atende especialmente empresas que pesquisam por clinica para exame admissional, clinica de exames admissionais e ASO admissional com entrega mais previsivel para o RH.
             </p>
           </div>
 
@@ -468,6 +498,9 @@ export default function Home() {
               </h2>
               <p className="mt-6 text-lg font-medium leading-relaxed text-slate-600">
                 Atendimento estratégico para as principais regiões industriais e corporativas da capital, do ABC e da Grande SP. Unidade de referência no centro de São Paulo, com fluxo expresso para admissão e gestão SST.
+              </p>
+              <p className="mt-4 text-sm font-medium leading-relaxed text-slate-500">
+                Para boa parte das buscas que antes caiam na home, o destino certo continua aqui: uma clinica de exame admissional em Sao Paulo com cobertura regional e encaminhamento direto para a unidade mais aderente ao seu fluxo.
               </p>
             </div>
 

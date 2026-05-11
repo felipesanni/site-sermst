@@ -76,6 +76,27 @@ export default function SaúdeIndexPage() {
           </FadeIn>
         </div>
 
+        <FadeIn direction="up">
+          <div className="mb-14 rounded-[2rem] border border-accent-pink/20 bg-accent-pink/5 p-8 lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              blockbuster comercial
+            </span>
+            <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+              Clinica de exame admissional em Sao Paulo
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
+              A antiga home da SERMST ja mostrava a forca desse cluster. Agora ele ganhou uma pagina dedicada, feita para responder a busca comercial de empresas que procuram clinica para exame admissional, ASO e apoio ocupacional com mais profundidade.
+            </p>
+            <Link
+              href="/saude/clinica-exame-admissional-sao-paulo"
+              className="btn-primary-safe mt-6 inline-flex"
+            >
+              Ler a blockbuster de admissional
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </FadeIn>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.map((post, idx) => (
             <FadeIn key={post.slug} delay={idx * 0.1}>
