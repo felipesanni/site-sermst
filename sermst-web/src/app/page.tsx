@@ -123,7 +123,7 @@ const structureItems = [
 export default function Home() {
   return (
     <div className="flex w-full flex-1 flex-col overflow-hidden">
-      <section className="relative flex min-h-[560px] w-full items-center overflow-hidden bg-brand-900 py-12 lg:min-h-[800px]">
+      <section className="relative flex min-h-[560px] w-full items-center overflow-hidden bg-brand-900 py-12 lg:min-h-[680px]">
         <div className="absolute inset-0">
             <Image
               src={siteImages.home.heroClinic.src}
@@ -139,7 +139,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 h-[420px] w-[420px] rounded-full bg-accent-pink/20 blur-[100px]" />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-10 px-6 lg:-mt-12 lg:flex-row lg:px-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-10 px-6 lg:-mt-24 lg:flex-row lg:px-8">
           <div className="w-full max-w-2xl text-center lg:text-left">
             <div className="hero-anim-badge mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 py-1.5 pl-1.5 pr-4 shadow-xl backdrop-blur-md md:mb-8">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-pink shadow-[0_0_15px_rgba(227,27,69,0.35)]">
