@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'EPI é exigência legal: fornecimento gratuito, treinamento de uso, fiscalização, troca periódica. Falhar em qualquer parte é responsabilidade da empresa. Veja o que NR-06 exige e como documentar.',
   alternates: { canonical: 'https://sermst.com.br/saude/o-que-sao-epis' },
+  openGraph: {
+    title: 'EPIs: o que são, tipos obrigatórios e responsabilidades da empresa | SERMST',
+    description:
+      'Guia completo sobre Equipamentos de Proteção Individual: tipos, quando são obrigatórios, CA do Ministério do Trabalho, responsabilidade do empregador e documentação.',
+    url: 'https://sermst.com.br/saude/o-que-sao-epis',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function EPIsPage() {

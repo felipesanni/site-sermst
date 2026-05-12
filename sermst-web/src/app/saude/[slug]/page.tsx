@@ -18,7 +18,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = saúdeSEO[slug];
   if (!data) return { title: 'Conteúdo não encontrado | SERMST' };
-  return { title: data.h1, description: data.hook };
+  return {
+    title: data.h1,
+    description: data.hook,
+    alternates: { canonical: `https://sermst.com.br/saude/${slug}` },
+    openGraph: {
+      title: data.h1,
+      description: data.hook,
+      url: `https://sermst.com.br/saude/${slug}`,
+      type: 'article',
+      locale: 'pt_BR',
+    },
+  };
 }
 
 export default async function SaúdeHubPage({

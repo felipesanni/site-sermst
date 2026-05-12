@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Medicina do trabalho é a especialidade que protege o trabalhador e a empresa ao mesmo tempo. Entenda o que ela cobre, o que é obrigatório e como estruturar na sua operação.',
   alternates: { canonical: 'https://sermst.com.br/saude/medicina-do-trabalho-guia' },
+  openGraph: {
+    title: 'Medicina do Trabalho: o que é e por que vai além do exame | SERMST',
+    description:
+      'Entenda o papel da medicina do trabalho nas empresas: obrigações legais, diferença da medicina clínica, prevenção de afastamentos e como estruturar essa área.',
+    url: 'https://sermst.com.br/saude/medicina-do-trabalho-guia',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function MedicinaDoTrabalhoPage() {

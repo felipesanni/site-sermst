@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'A NR-13 obriga inspeção periódica em caldeiras e vasos de pressão. Sem laudo válido, equipamento não pode operar. Veja categorias, prazos e requisitos.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-13-vasos-de-pressao' },
+  openGraph: {
+    title: 'NR-13: vasos de pressão, caldeiras e riscos — o que a empresa precisa saber | SERMST',
+    description:
+      'O que a NR-13 exige para caldeiras e vasos de pressão: inspeções, habilitação de operadores, prontuário e responsabilidades do empregador.',
+    url: 'https://sermst.com.br/normas/nr-13-vasos-de-pressao',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function NR13Page() {

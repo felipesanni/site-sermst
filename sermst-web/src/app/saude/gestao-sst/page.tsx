@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Gestão de SST não é documento, é sistema. Conecta exame, laudo, treinamento e eSocial em fluxo único. Veja como estruturar e os erros que viram passivo.',
   alternates: { canonical: 'https://sermst.com.br/saude/gestao-sst' },
+  openGraph: {
+    title: 'Gestão de SST: como estruturar saúde e segurança na empresa | SERMST',
+    description:
+      'Como organizar a gestão de saúde e segurança do trabalho na prática: documentos, programas, obrigações eSocial e como evitar autuações e passivo trabalhista.',
+    url: 'https://sermst.com.br/saude/gestao-sst',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function GestãoSSTPage() {

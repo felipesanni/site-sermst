@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'A NR-10 define requisitos mínimos para segurança em instalações e serviços com eletricidade. Treinamento, prontuário, supervisão e laudo são exigidos em fiscalização.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-10-eletricidade' },
+  openGraph: {
+    title: 'NR-10: segurança em instalações elétricas — obrigações e treinamentos | SERMST',
+    description:
+      'Guia da NR-10: quem precisa de treinamento, o que a norma exige para instalações elétricas, habilitação de trabalhadores e documentação obrigatória.',
+    url: 'https://sermst.com.br/normas/nr-10-eletricidade',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function NR10Page() {

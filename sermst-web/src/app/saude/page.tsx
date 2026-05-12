@@ -13,6 +13,14 @@ export const metadata = {
   alternates: {
     canonical: 'https://sermst.com.br/saude',
   },
+  openGraph: {
+    title: 'Hub de Saúde SST | Medicina do Trabalho, prevenção e rotina ocupacional | SERMST',
+    description:
+      'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO e produtividade.',
+    url: 'https://sermst.com.br/saude',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 export default function SaúdeIndexPage() {

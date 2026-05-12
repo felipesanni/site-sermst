@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Guia direto sobre a função de gerente: o que faz no dia a dia, responsabilidades técnicas, perfil que entrega resultado, diferença para supervisor e o ponto cego de SST que pega gestores promovidos sem treinamento.',
   alternates: { canonical: 'https://sermst.com.br/rh/o-que-um-gerente-faz' },
+  openGraph: {
+    title: 'O que um gerente faz: responsabilidades, limites e obrigações SST | SERMST',
+    description:
+      'Entenda as responsabilidades de um gerente no contexto trabalhista e como as obrigações de SST se aplicam a gestores e lideranças intermediárias.',
+    url: 'https://sermst.com.br/rh/o-que-um-gerente-faz',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function OQueUmGerenteFazPage() {

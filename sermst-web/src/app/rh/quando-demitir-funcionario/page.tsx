@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Demissão é decisão técnica, não emocional. Feita certa, protege time e resultado. Feita errada, vira processo e custo escondido. Veja sinais, etapas e cuidados.',
   alternates: { canonical: 'https://sermst.com.br/rh/quando-demitir-funcionario' },
+  openGraph: {
+    title: 'Quando demitir um funcionário: critérios, riscos e compliance SST | SERMST',
+    description:
+      'Como tomar a decisão de demissão de forma segura: documentação necessária, exame demissional, justa causa e como reduzir o risco de processo trabalhista.',
+    url: 'https://sermst.com.br/rh/quando-demitir-funcionario',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function QuandoDemitirPage() {

@@ -17,6 +17,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${training.title} | Treinamentos NR | SERMST`,
     description: training.summary,
+    alternates: { canonical: `https://sermst.com.br/treinamentos/${training.slug}` },
+    openGraph: {
+      title: `${training.title} | Treinamentos NR | SERMST`,
+      description: training.summary,
+      url: `https://sermst.com.br/treinamentos/${training.slug}`,
+      type: 'article',
+      locale: 'pt_BR',
+    },
   };
 }
 

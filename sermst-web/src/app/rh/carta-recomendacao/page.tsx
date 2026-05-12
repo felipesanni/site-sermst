@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'A carta de recomendação é uma escolha de gestão. Honestidade controlada é o equilíbrio. Veja como redigir, modelos por contexto e o erro de inflar avaliação.',
   alternates: { canonical: 'https://sermst.com.br/rh/carta-recomendacao' },
+  openGraph: {
+    title: 'Como escrever uma carta de recomendação profissional: estrutura e exemplos | SERMST',
+    description:
+      'Guia prático para escrever uma carta de recomendação profissional eficaz: estrutura, o que incluir, tom adequado e exemplos para diferentes cargos.',
+    url: 'https://sermst.com.br/rh/carta-recomendação',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function CartaRecomendacaoPage() {

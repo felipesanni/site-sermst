@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'A NR-15 define o adicional de insalubridade (10%, 20% ou 40%). Pagar sem laudo correto vira passivo. Deixar de pagar quando devido também. Veja como decidir certo.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-15-insalubridade' },
+  openGraph: {
+    title: 'NR-15: insalubridade — quando é devida e como eliminar ou neutralizar | SERMST',
+    description:
+      'Entenda a NR-15 e o adicional de insalubridade: agentes insalubres, limites de tolerância, laudos, EPI e como a empresa pode eliminar ou neutralizar a exposição.',
+    url: 'https://sermst.com.br/normas/nr-15-insalubridade',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function NR15Page() {

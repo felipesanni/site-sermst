@@ -11,6 +11,14 @@ export const metadata = {
   alternates: {
     canonical: 'https://sermst.com.br/rh',
   },
+  openGraph: {
+    title: 'Guia de SST para RH e DP | eSocial, multas e compliance | SERMST',
+    description:
+      'Recursos práticos para profissionais de RH e DP que precisam entender obrigações SST, eSocial, admissão, demissão e conformidade trabalhista.',
+    url: 'https://sermst.com.br/rh',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 export default function RHIndexPage() {

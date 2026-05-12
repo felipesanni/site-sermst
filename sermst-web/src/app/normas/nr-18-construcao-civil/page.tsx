@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'A NR-18 reúne os requisitos de SST específicos da construção civil. Veja o que exige, PCMAT, treinamentos, fiscalização do MTE é o que precisa estar documentado para defesa em obra.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },
+  openGraph: {
+    title: 'NR-18: construção civil — PCMAT, EPI e segurança em obra | SERMST',
+    description:
+      'Guia da NR-18 para construtoras: PCMAT obrigatório, equipamentos de proteção, treinamentos, EPC e documentação para obras com mais de 20 trabalhadores.',
+    url: 'https://sermst.com.br/normas/nr-18-construcao-civil',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function NR18Page() {

@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'O ASO (Atestado de Saúde Ocupacional) é documento obrigatório em toda contratação, demissão, exame periódico e retorno ao trabalho. Sem ele, a empresa assume risco jurídico.',
   alternates: { canonical: 'https://sermst.com.br/saude/aso-atestado-saude-ocupacional' },
+  openGraph: {
+    title: 'ASO: o que é, quando emitir e por que protege a empresa | SERMST',
+    description:
+      'Entenda o Atestado de Saúde Ocupacional (ASO), quando é obrigatório, o que deve constar e como ele se integra ao eSocial para proteger empresa e trabalhador.',
+    url: 'https://sermst.com.br/saude/aso-atestado-saude-ocupacional',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function ASOPage() {

@@ -11,6 +11,14 @@ export const metadata = {
   alternates: {
     canonical: 'https://sermst.com.br/dicionario',
   },
+  openGraph: {
+    title: 'Dicionário SST | Termos de Saúde e Segurança do Trabalho | SERMST',
+    description:
+      'Glossário completo dos principais termos de saúde e segurança do trabalho: ASO, PCMSO, PGR, eSocial, NRs e muito mais.',
+    url: 'https://sermst.com.br/dicionario',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 export default function DicionarioIndexPage() {

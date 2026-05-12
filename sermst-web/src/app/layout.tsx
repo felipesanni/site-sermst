@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
 import './globals.css'
+import { MobileMenuClose } from '@/components/ui/mobile-menu-close'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading' })
@@ -319,6 +320,7 @@ export default function RootLayout({
           </div>
         </header>
 
+        <MobileMenuClose />
         <main className="flex-1">{children}</main>
 
         <a href="https://wa.me/5511915146447" className="force-whatsapp-bg fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full border-2 border-white p-4 shadow-[0_10px_30px_rgba(37,211,102,0.4)] transition-transform hover:scale-110">

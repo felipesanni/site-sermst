@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'O PGRS é exigido para clínicas, laboratórios, indústrias químicas e farmacêuticas. Gerencia geração, segregação e destinação de resíduos perigosos. Veja regras.',
   alternates: { canonical: 'https://sermst.com.br/normas/pgrs-residuos' },
+  openGraph: {
+    title: 'PGRS: Plano de Gerenciamento de Resíduos Sólidos — obrigações e estrutura | SERMST',
+    description:
+      'Quando o PGRS é obrigatório, o que deve conter, diferença do PGRSS para saúde e como implementar o Plano de Gerenciamento de Resíduos Sólidos.',
+    url: 'https://sermst.com.br/normas/pgrs-residuos',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function PGRSPage() {

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sermst.com.br/a-clinica',
   },
+  openGraph: {
+    title: 'A SERMST | Clínica de Medicina e Segurança do Trabalho em São Paulo',
+    description:
+      'Há décadas cuidando da saúde ocupacional e segurança do trabalho. Conheça nossa estrutura no Largo do Paissandú, nosso corpo clínico e nosso compromisso com o compliance SST.',
+    url: 'https://sermst.com.br/a-clinica',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 export default function AClínicaPage() {

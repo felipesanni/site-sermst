@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'PCMSO (NR-07) é o programa que define quais exames cada trabalhador precisa fazer e com qual frequência. Obrigatório para toda empresa com CLT. Entenda como funciona.',
   alternates: { canonical: 'https://sermst.com.br/saude/pcmso-programa-controle-medico' },
+  openGraph: {
+    title: 'PCMSO: o que é, quem precisa e como estruturar corretamente | SERMST',
+    description:
+      'Guia completo sobre o Programa de Controle Médico de Saúde Ocupacional: obrigatoriedade, conteúdo mínimo, integração com eSocial e erros comuns a evitar.',
+    url: 'https://sermst.com.br/saude/pcmso-programa-controle-medico',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function PCMSOPage() {

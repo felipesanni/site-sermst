@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'A NR-01 foi atualizada e agora exige inclusão de riscos psicossociais no PGR. Guia direto sobré o que mudou, o que sua empresa precisa fazer e os prazos que estão correndo. Por SERMST, 40 anos em medicina e segurança do trabalho.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-01-pgr-atualizada' },
+  openGraph: {
+    title: 'NR-1 e PGR: o que mudou, obrigações e como implementar | SERMST',
+    description:
+      'Entenda a NR-1 atualizada e o Programa de Gerenciamento de Riscos (PGR): quem precisa, o que exige e como estruturar o GRO para ficar em conformidade.',
+    url: 'https://sermst.com.br/normas/nr-01-pgr-atualizada',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function NR01Page() {

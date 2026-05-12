@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'O exame demissional fecha o ciclo ocupacional do trabalhador e protege a empresa de ação trabalhista por doença ocupacional. Veja prazo, regras e o erro de pular.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional-guia' },
+  openGraph: {
+    title: 'Exame demissional: o que é, quando fazer e como protege a empresa | SERMST',
+    description:
+      'Tudo sobre o exame demissional: quando é obrigatório, prazo para realização, o que acontece sem ele e como o ASO demissional reduz risco trabalhista.',
+    url: 'https://sermst.com.br/saude/exame-demissional-guia',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function ExameDemissionalPage() {

@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Gerente promovido sem treinamento vira problema na equipe e na operação. Treinar liderança retorna em produtividade, retenção e segurança. Veja como estruturar.',
   alternates: { canonical: 'https://sermst.com.br/rh/treinamento-gerentes' },
+  openGraph: {
+    title: 'Treinamento para gerentes em SST: obrigações, NRs e responsabilidade | SERMST',
+    description:
+      'O que a lei exige em treinamentos SST para gerentes e lideranças: NR-1, CIPA, NR-35 e como estruturar a capacitação de forma que proteja a empresa.',
+    url: 'https://sermst.com.br/rh/treinamento-gerentes',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function TreinamentoGerentesPage() {

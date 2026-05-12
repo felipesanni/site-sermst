@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sermst.com.br/contato',
   },
+  openGraph: {
+    title: 'Contato SERMST | Orçamento para Medicina do Trabalho, PGR, PCMSO e eSocial',
+    description:
+      'Solicite orçamento para exames ocupacionais, PGR, PCMSO, laudos e gestão eSocial. Atendimento rápido, sem burocracia — fale com a SERMST agora.',
+    url: 'https://sermst.com.br/contato',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 const contactPaths = [

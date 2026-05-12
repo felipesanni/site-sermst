@@ -91,6 +91,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `https://sermst.com.br/normas/${slug}`,
     },
+    openGraph: {
+      title: `${titulo} | SERMST`,
+      description:
+        norma?.descricao ??
+        'Entenda as Normas Regulamentadoras de Saúde e Segurança do Trabalho. A SERMST oferece suporte técnico completo para conformidade com NRs e eSocial.',
+      url: `https://sermst.com.br/normas/${slug}`,
+      type: 'article',
+      locale: 'pt_BR',
+    },
   };
 }
 

@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Saúde ocupacional não é só ASO e exame periódico — é um sistema que protege trabalhador, operação e patrimônio. Veja os pilares, obrigações legais e como estruturar.',
   alternates: { canonical: 'https://sermst.com.br/saude/o-que-e-saude-ocupacional' },
+  openGraph: {
+    title: 'O que é saúde ocupacional: conceito, legislação e aplicação prática | SERMST',
+    description:
+      'Entenda o que é saúde ocupacional, como ela se aplica nas empresas, quais programas são exigidos por lei e por que vai muito além de exames admissionais.',
+    url: 'https://sermst.com.br/saude/o-que-e-saude-ocupacional',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function SaúdeOcupacionalPage() {

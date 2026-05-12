@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'O CNAE define enquadramento da empresa nos órgãos públicos. Errar o CNAE muda alíquota tributária, muda obrigação SST e muda risco de fiscalização. Veja como escolher e revisar.',
   alternates: { canonical: 'https://sermst.com.br/rh/lista-cnae-brasil' },
+  openGraph: {
+    title: 'Lista CNAE Brasil: como identificar o grau de risco da sua empresa | SERMST',
+    description:
+      'Entenda o código CNAE, como ele determina o grau de risco da atividade econômica e quais obrigações SST mudam conforme o enquadramento.',
+    url: 'https://sermst.com.br/rh/lista-cnae-brasil',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function ListaCNAEPage() {

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   description:
     'Hub das Normas Regulamentadoras de SST (NR-01, NR-10, NR-15, NR-16, NR-17, NR-18, NR-35 e PPP eletrônico) explicadas em linguagem útil para gestores e RH.',
   alternates: { canonical: 'https://sermst.com.br/normas' },
+  openGraph: {
+    title: 'Normas Regulamentadoras (NRs) | Guia para empresas | SERMST',
+    description:
+      'Guia completo das principais Normas Regulamentadoras: NR-1, NR-6, NR-9, NR-17, NR-35 e mais. Entenda obrigações, riscos e como se adequar.',
+    url: 'https://sermst.com.br/normas',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 const ordemPreferida = [

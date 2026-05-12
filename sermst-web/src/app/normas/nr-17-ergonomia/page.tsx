@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'A NR-17 trata da adaptação do trabalho às condições humanas. Sem AET atualizada, ações por LER/DORT viram responsabilidade direta da empresa. Veja como cumprir.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-17-ergonomia' },
+  openGraph: {
+    title: 'NR-17 Ergonomia: AET, postura, prevenção de LER/DORT e obrigações | SERMST',
+    description:
+      'Tudo sobre a NR-17: quando a AET (Análise Ergonômica do Trabalho) é obrigatória, o que ela analisa, LER/DORT e como adequar postos de trabalho.',
+    url: 'https://sermst.com.br/normas/nr-17-ergonomia',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function NR17Page() {

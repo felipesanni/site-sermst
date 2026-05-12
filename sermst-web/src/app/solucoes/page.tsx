@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sermst.com.br/solucoes',
   },
+  openGraph: {
+    title: 'Soluções SST | Exames, PGR, PCMSO, laudos e eSocial | SERMST',
+    description:
+      'Veja como a SERMST estrutura exames ocupacionais, PGR, PCMSO, laudos técnicos e gestão eSocial para empresas de todos os portes.',
+    url: 'https://sermst.com.br/solucoes',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 const solutions = [

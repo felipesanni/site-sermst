@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Processo trabalhista raramente é surpresa. É consequência de pequenas falhas acumuladas. Veja os 5 pilares de prevenção é o que blinda a empresa em ação.',
   alternates: { canonical: 'https://sermst.com.br/rh/evitar-processos-trabalhistas' },
+  openGraph: {
+    title: 'Como evitar processos trabalhistas: documentação, SST e gestão de risco | SERMST',
+    description:
+      'Principais causas de processos trabalhistas no Brasil e como a documentação SST correta — ASO, PCMSO, PGR — reduz significativamente o passivo da empresa.',
+    url: 'https://sermst.com.br/rh/evitar-processos-trabalhistas',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function EvitarProcessosPage() {

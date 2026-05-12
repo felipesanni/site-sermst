@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'Clínica de exame admissional em São Paulo com ASO, exames ocupacionais, PCMSO e apoio ao eSocial. Veja como escolher, quais documentos levar, prazo e o que avaliar.',
   alternates: { canonical: 'https://sermst.com.br/saude/clinica-exame-admissional-sao-paulo' },
+  openGraph: {
+    title: 'Clínica de Exame Admissional em São Paulo para empresas | SERMST',
+    description:
+      'Como escolher a clínica certa para exames admissionais em São Paulo: ASO, fluxo de atendimento, integração com PCMSO e o que define se a admissão anda ou trava.',
+    url: 'https://sermst.com.br/saude/clinica-exame-admissional-sao-paulo',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function ClinicaExameAdmissionalPage() {

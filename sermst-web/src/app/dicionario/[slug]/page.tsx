@@ -16,7 +16,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const data = dicionarioSEO[slug];
   if (!data) return { title: 'Termo não encontrado | SERMST' };
-  return { title: data.h1, description: data.hook };
+  return {
+    title: data.h1,
+    description: data.hook,
+    alternates: { canonical: `https://sermst.com.br/dicionario/${slug}` },
+    openGraph: {
+      title: data.h1,
+      description: data.hook,
+      url: `https://sermst.com.br/dicionario/${slug}`,
+      type: 'article',
+      locale: 'pt_BR',
+    },
+  };
 }
 
 export default async function DicionarioPage({ params }: { params: Promise<{ slug: string }> }) {

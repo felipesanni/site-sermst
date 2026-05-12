@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sermst.com.br/blog',
   },
+  openGraph: {
+    title: 'Blog SERMST | Saúde e Segurança do Trabalho',
+    description:
+      'Artigos, guias e análises sobre medicina do trabalho, normas regulamentadoras, eSocial e gestão SST para empresas.',
+    url: 'https://sermst.com.br/blog',
+    type: 'website',
+    locale: 'pt_BR',
+  },
 };
 
 export default function BlogPage() {

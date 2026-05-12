@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     'O PPP eletrônico via S-2240 é base para aposentadoria especial e previdenciária. Erro no documento gera passivo. Veja regras, prazos e responsabilidades.',
   alternates: { canonical: 'https://sermst.com.br/normas/ppp-eletronico' },
+  openGraph: {
+    title: 'PPP Eletrônico: o que é, como gerar e obrigações no eSocial | SERMST',
+    description:
+      'Guia completo sobre o Perfil Profissiográfico Previdenciário eletrônico: quem precisa emitir, como gerar no eSocial e o que acontece sem o PPP no desligamento.',
+    url: 'https://sermst.com.br/normas/ppp-eletronico',
+    type: 'article',
+    locale: 'pt_BR',
+  },
 };
 
 export default function PPPPage() {
