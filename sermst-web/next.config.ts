@@ -175,7 +175,7 @@ const nextConfig: NextConfig = {
       // -- Paginas WP sem equivalente direto --
       { source: "/termos-e-condicoes", destination: "/", permanent: true },
       { source: "/politica-de-privacidade", destination: "/", permanent: true },
-      { source: "/guia", destination: "/dicionario", permanent: true },
+      // { source: "/guia", destination: "/dicionario", permanent: true }, // removido — /guia agora é página ativa
       { source: "/ebook", destination: "/contato", permanent: true },
       { source: "/v1", destination: "/", permanent: true },
       { source: "/lp", destination: "/contato", permanent: true },
