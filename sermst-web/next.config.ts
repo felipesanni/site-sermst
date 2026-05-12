@@ -35,7 +35,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://hooks.zapier.com",
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://hooks.zapier.com https://brasilapi.com.br https://n8n.projeto.app.br",
       "frame-src 'none'",
       "object-src 'none'",
       "base-uri 'self'",
