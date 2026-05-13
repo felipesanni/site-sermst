@@ -160,7 +160,22 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
 
                 <a
                   href={`https://wa.me/5511915146447?text=Quero regularizar o evento ${eventType} em ${localidade} e reduzir a exposicao estimada de R$ ${totalPenalty.toFixed(2)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary-safe-lg group/btn flex w-full rounded-2xl py-6 text-xl font-black"
+                  onClick={() => {
+                    if (typeof window !== 'undefined') {
+                      (window as any).dataLayer = (window as any).dataLayer || [];
+                      (window as any).dataLayer.push({
+                        event: 'calculator_whatsapp_click',
+                        event_type: eventType,
+                        localidade: localidade,
+                        employees: employees,
+                        months_delay: monthsDelay,
+                        penalty_value: Math.round(totalPenalty),
+                      });
+                    }
+                  }}
                 >
                   Quero reduzir esse risco
                   <ArrowRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-2" />
@@ -181,7 +196,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent-pink" />
-                      Acelerar a decisão sobre regularização de SST.
+                      Mostrar senioridade técnica para convencer a diretoria a agir antes da autuação.
                     </li>
                   </ul>
                 </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
@@ -72,6 +73,7 @@ const portes = [
 ];
 
 export function LeadForm() {
+  const pathname = usePathname();
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [attribution, setAttribution] = useState<StoredAttribution | null>(null);
@@ -135,6 +137,12 @@ export function LeadForm() {
 
       setStatus('success');
       (e.target as HTMLFormElement).reset();
+
+      // Dispara evento de conversão para GTM → GA4 "Novo Lead" + Facebook Pixel
+      if (typeof window !== 'undefined') {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({ event: 'sermst_lead_generated' });
+      }
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Erro inesperado.');
@@ -156,10 +164,10 @@ export function LeadForm() {
         <p className="text-sm text-slate-500">
           Se for urgente, fale agora pelo WhatsApp:{' '}
           <a
-            href="https://wa.me/5511915146447"
+            href={`https://wa.me/5511915146447?text=${encodeURIComponent('Olá! Acabei de preencher o formulário no site da SERMST (página: ' + pathname + ') e gostaria de falar com a equipe comercial.')}`}
             className="font-bold text-accent-pink underline"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             (11) 91514-6447
           </a>
@@ -347,13 +355,9 @@ export function LeadForm() {
             Enviando...
           </>
         ) : (
-          'Solicitar diagnóstico comercial'
+          'Solicitar orçamento gratuito'
         )}
       </button>
-
-      <p className="text-center text-xs leading-relaxed text-slate-500">
-        Ao enviar, você concorda em receber retorno comercial da SERMST. Não enviamos spam.
-      </p>
     </form>
   );
 }

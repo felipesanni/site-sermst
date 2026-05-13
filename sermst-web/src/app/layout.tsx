@@ -3,7 +3,9 @@ import { Inter, Outfit } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
 import './globals.css'
+import Script from 'next/script'
 import { MobileMenuClose } from '@/components/ui/mobile-menu-close'
+import { WhatsAppHeaderLink, WhatsAppMobileLink, WhatsAppFloatingButton } from '@/components/ui/whatsapp-link'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading' })
@@ -144,8 +146,50 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+      {/* ── Google Tag Manager ── */}
+      <Script
+        id="gtm"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7NL2D9B');`,
+        }}
+      />
+      {/* ── Meta Pixel ── */}
+      <Script
+        id="meta-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','3362485210720558');fbq('track','PageView');`,
+        }}
+      />
       </head>
       <body className="flex min-h-screen flex-col">
+        {/* GTM noscript fallback */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-N7NL2D9B"
+            height="0" width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* Meta Pixel noscript fallback */}
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1" width="1" style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=3362485210720558&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -189,10 +233,7 @@ export default function RootLayout({
                 <svg className="h-4 w-4 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 comercial@sermst.com.br
               </a>
-              <a href="https://wa.me/5511915146447" target="_blank" rel="noopener" className="force-pink-btn flex items-center gap-2 rounded px-6 py-2 text-sm font-bold text-white shadow-lg transition-colors">
-                <Image src="/images/site/whatsapp.png" alt="WhatsApp" width={20} height={20} className="h-5 w-5 object-contain brightness-0 invert" />
-                (11) 91514-6447
-              </a>
+              <WhatsAppHeaderLink />
             </div>
           </div>
         </div>
@@ -269,15 +310,7 @@ export default function RootLayout({
                       <svg className="h-4 w-4 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                       Ligar
                     </a>
-                    <a
-                      href="https://wa.me/5511915146447"
-                      target="_blank"
-                      rel="noopener"
-                      className="flex items-center justify-center gap-2 rounded-2xl bg-accent-pink px-4 py-3 text-sm font-bold text-white shadow-lg"
-                    >
-                      <Image src="/images/site/whatsapp.png" alt="WhatsApp" width={16} height={16} className="h-4 w-4 object-contain brightness-0 invert" />
-                      WhatsApp
-                    </a>
+                    <WhatsAppMobileLink />
                   </div>
 
                   <nav className="flex flex-col gap-6 text-xl font-medium text-white">
@@ -323,10 +356,7 @@ export default function RootLayout({
         <MobileMenuClose />
         <main className="flex-1">{children}</main>
 
-        <a href="https://wa.me/5511915146447" className="force-whatsapp-bg fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full border-2 border-white p-4 shadow-[0_10px_30px_rgba(37,211,102,0.4)] transition-transform hover:scale-110">
-          <Image src="/images/site/whatsapp.png" alt="WhatsApp" width={32} height={32} className="h-8 w-8 object-contain brightness-0 invert drop-shadow-md" />
-          <span className="force-pink-btn absolute -right-1 -top-1 h-4 w-4 animate-pulse rounded-full border-2 border-white"></span>
-        </a>
+        <WhatsAppFloatingButton />
 
         <footer className="relative overflow-hidden border-t border-white/5 bg-[#05091C] py-24 text-slate-400">
           <div className="absolute left-0 top-0 h-[1px] w-full bg-gradient-to-r from-transparent via-accent-pink to-transparent opacity-50"></div>
