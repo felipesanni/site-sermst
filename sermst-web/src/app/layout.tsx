@@ -7,8 +7,8 @@ import Script from 'next/script'
 import { MobileMenuClose } from '@/components/ui/mobile-menu-close'
 import { WhatsAppHeaderLink, WhatsAppMobileLink, WhatsAppFloatingButton } from '@/components/ui/whatsapp-link'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'block' })
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading', display: 'block' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sermst.com.br'),
@@ -158,7 +158,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-N7NL2D9B');`,
         }}
       />
-      {/* ── Meta Pixel ── */}
+      {/* ── Meta Pixel (direto, não via GTM) ── */}
       <Script
         id="meta-pixel"
         strategy="afterInteractive"
