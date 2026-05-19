@@ -39,6 +39,23 @@ export default function ServicosIndexPage() {
       </header>
 
       <section className="mx-auto w-full max-w-[1280px] px-6 py-20 lg:px-8">
+        <div className="mb-8 rounded-[2rem] border border-brand-900/10 bg-white p-6 shadow-sm">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-3xl">
+              <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.18em] text-accent-pink">
+                Diagnóstico antes do orçamento
+              </span>
+              <h2 className="text-2xl font-black text-brand-900">Não sabe ainda quais obrigações se aplicam ao seu caso?</h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Use a Calculadora de Risco para consultar o CNPJ ou CNAE da empresa, estimar o grau de risco, o enquadramento de NR-05/CIPA e chegar ao serviço certo com mais clareza.
+              </p>
+            </div>
+            <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">
+              Abrir Calculadora de Risco
+            </Link>
+          </div>
+        </div>
+
         <div className="grid gap-8 md:grid-cols-2">
           {serviços.map((serviço, idx) => (
             <FadeIn key={serviço.slug} delay={idx * 0.1}>

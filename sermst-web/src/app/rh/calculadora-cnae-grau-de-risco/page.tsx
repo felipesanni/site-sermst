@@ -3,14 +3,14 @@ import { CnaeCalculator } from '@/components/sections/cnae-calculator';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Calculadora CNAE: descubra o grau de risco da sua empresa | SERMST',
+  title: 'Calculadora de Risco da empresa | CNAE, CIPA, RAT e SST | SERMST',
   description:
-    'Consulte o grau de risco (1 a 4) pelo código CNAE da sua empresa e veja as obrigações de SST: alíquota de RAT, periodicidade de exames, SESMT e NRs aplicáveis.',
+    'Consulte o grau de risco da empresa pelo CNPJ ou CNAE e veja obrigações de SST, CIPA pela NR-05, RAT, SESMT, exames periódicos e NRs aplicáveis.',
   alternates: { canonical: 'https://sermst.com.br/rh/calculadora-cnae-grau-de-risco' },
   openGraph: {
-    title: 'Calculadora CNAE × Grau de Risco | SERMST',
+    title: 'Calculadora de Risco | CNPJ, CNAE, CIPA e SST | SERMST',
     description:
-      'Descubra o grau de risco do CNAE da sua empresa e quais obrigações de SST se aplicam: RAT, SESMT, periodicidade de exames médicos e NRs relevantes.',
+      'Descubra o grau de risco da empresa pelo CNPJ ou CNAE e veja RAT, SESMT, NR-05/CIPA, exames periódicos e NRs relevantes.',
     url: 'https://sermst.com.br/rh/calculadora-cnae-grau-de-risco',
     type: 'article',
     locale: 'pt_BR',
@@ -40,8 +40,8 @@ export default function CalculadoraCnaePage() {
           datePublished: '2025-01-01',
           dateModified: '2026-05-01',
         }}
-        h1="Calculadora CNAE × Grau de Risco"
-        intro="Use a ferramenta acima para consultar o grau de risco do CNAE da sua empresa e ver quais obrigações de SST se aplicam. Abaixo, explicamos como o grau de risco é determinado e o que muda na prática."
+        h1="Calculadora de Risco da empresa"
+        intro="Use a ferramenta acima para consultar o grau de risco da empresa pelo CNPJ ou CNAE e ver quais obrigações de SST, RAT e NR-05/CIPA se aplicam. Abaixo, explicamos como o enquadramento funciona na prática."
         sections={[
           {
             title: 'O que é o grau de risco e de onde ele vem',

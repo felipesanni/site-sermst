@@ -251,6 +251,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="px-4 pb-10 md:pb-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="rounded-[2rem] border border-brand-900/10 bg-white p-6 shadow-[0_18px_40px_-24px_rgba(11,19,60,0.22)] md:p-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-3xl">
+                <span className="mb-3 inline-block rounded-full bg-brand-900/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-brand-900">
+                  Ferramenta qualificadora
+                </span>
+                <h2 className="text-2xl font-black text-brand-900 md:text-3xl">
+                  Descubra o risco da empresa antes de pedir proposta
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
+                  A Calculadora de Risco cruza CNPJ ou CNAE com grau de risco, RAT, SESMT e NR-05 para mostrar se ha CIPA, representante da NR-05 ou apoio por SESMT. Depois, a propria ferramenta pode enviar esse enquadramento para a equipe comercial.
+                </p>
+              </div>
+              <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">
+                Abrir Calculadora de Risco
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative container mx-auto max-w-6xl overflow-hidden bg-white px-4 py-24 lg:py-32">
         <div className="absolute inset-0 md:hidden">
           <Image

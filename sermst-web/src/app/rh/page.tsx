@@ -111,10 +111,10 @@ export default function RHIndexPage() {
                 Ferramenta gratuita
               </span>
               <h2 className="text-xl font-black leading-snug md:text-2xl">
-                Calculadora CNAE × Grau de Risco
+                Calculadora de Risco
               </h2>
               <p className="mt-1 text-sm text-slate-300">
-                Consulte o grau de risco do seu CNAE e veja RAT, SESMT, periodicidade de exames e NRs aplicáveis.
+                Consulte o risco da empresa por CNPJ ou CNAE e veja RAT, SESMT, NR-05/CIPA, periodicidade de exames e NRs aplicáveis.
               </p>
             </div>
             <div className="shrink-0 rounded-full bg-white/10 p-3 transition-all group-hover:translate-x-1">

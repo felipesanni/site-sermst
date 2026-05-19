@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { LeadForm } from '@/components/forms/lead-form';
 import { FadeIn } from '@/components/ui/fade-in';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
@@ -133,6 +134,21 @@ export default function ContatoPage() {
 
       <section className="mx-auto max-w-[1280px] px-6 pb-20 lg:px-8">
         <FadeIn direction="up">
+          <div className="mb-6 rounded-[2rem] border border-brand-900/10 bg-white p-6 shadow-sm">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-3xl">
+                <span className="kicker">Pré-diagnóstico gratuito</span>
+                <h2 className="mt-2 text-2xl font-black text-brand-900">Prefere chegar com o enquadramento pronto?</h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  Antes de falar com o comercial, use a Calculadora de Risco para cruzar CNPJ ou CNAE com RAT, SESMT e NR-05/CIPA. Ela ajuda a qualificar o cenário e já pode enviar esse resumo para a SERMST.
+                </p>
+              </div>
+              <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">
+                Usar Calculadora de Risco
+              </Link>
+            </div>
+          </div>
+
           <div className="grid gap-6 md:grid-cols-3">
             {contactPaths.map((path) => (
               <a

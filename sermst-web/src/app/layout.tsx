@@ -258,7 +258,15 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                 <Link href="/contato" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Contato</Link>
               </nav>
 
-              <div className="hidden items-center gap-2 text-slate-500 lg:flex">
+              <div className="hidden items-center gap-4 lg:flex">
+                <Link
+                  href="/rh/calculadora-cnae-grau-de-risco"
+                  className="inline-flex items-center rounded-full bg-brand-900 px-4 py-2 text-sm font-bold text-white shadow-[0_12px_24px_-16px_rgba(11,19,60,0.9)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-800"
+                >
+                  Calculadora de Risco
+                </Link>
+
+                <div className="flex items-center gap-2 text-slate-500">
                 <a href="https://www.facebook.com/sermstocupacional" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="social-hover hover-fb flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-colors">
                   <svg className="social-icon h-4 w-4 fill-slate-500 transition-colors" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
@@ -271,6 +279,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                 <a href="https://www.youtube.com/@sermstocupacional" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="social-hover hover-yt flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-colors">
                   <svg className="social-icon h-4 w-4 fill-slate-500 transition-colors" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
+                </div>
               </div>
             </div>
 
@@ -319,6 +328,20 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                     </a>
                     <WhatsAppMobileLink />
                   </div>
+
+                  <Link
+                    href="/rh/calculadora-cnae-grau-de-risco"
+                    className="mb-8 flex items-start justify-between gap-4 rounded-3xl border border-accent-pink/25 bg-gradient-to-br from-accent-pink/18 via-accent-pink/10 to-white/5 px-5 py-5 text-white shadow-[0_20px_50px_-30px_rgba(248,67,101,0.75)]"
+                  >
+                    <div className="space-y-1">
+                      <p className="text-xs font-black uppercase tracking-[0.28em] text-accent-pink">Diagnóstico guiado</p>
+                      <p className="text-lg font-black leading-tight">Abrir Calculadora de Risco</p>
+                      <p className="text-sm leading-relaxed text-slate-300">
+                        Consulte CNPJ ou CNAE, veja grau de risco, RAT, SESMT e NR-05/CIPA antes de falar com o comercial.
+                      </p>
+                    </div>
+                    <svg className="mt-1 h-5 w-5 shrink-0 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+                  </Link>
 
                   <nav className="flex flex-col gap-6 text-xl font-medium text-white">
                     <Link href="/" className="flex items-center justify-between border-b border-white/10 pb-4">
