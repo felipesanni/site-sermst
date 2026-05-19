@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import Script from 'next/script';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
@@ -17,6 +18,7 @@ type AttributionSnapshot = {
   utm_term: string;
   gclid: string;
   fbclid: string;
+  utm_id: string;
 };
 
 type StoredAttribution = {
@@ -25,6 +27,8 @@ type StoredAttribution = {
 };
 
 const ATTRIBUTION_KEY = 'sermst_attribution_v1';
+const FORM_STARTED_AT_KEY = 'sermst_form_started_at_v1';
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
 
 function buildSnapshot(): AttributionSnapshot {
   const params = new URLSearchParams(window.location.search);
@@ -40,6 +44,7 @@ function buildSnapshot(): AttributionSnapshot {
     utm_term: params.get('utm_term') || '',
     gclid: params.get('gclid') || '',
     fbclid: params.get('fbclid') || '',
+    utm_id: params.get('utm_id') || '',
   };
 }
 
@@ -51,7 +56,8 @@ function hasAttributionSignal(snapshot: AttributionSnapshot) {
       snapshot.utm_content ||
       snapshot.utm_term ||
       snapshot.gclid ||
-      snapshot.fbclid,
+      snapshot.fbclid ||
+      snapshot.utm_id,
   );
 }
 
@@ -77,6 +83,7 @@ export function LeadForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [attribution, setAttribution] = useState<StoredAttribution | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState('');
 
   useEffect(() => {
     const current = buildSnapshot();
@@ -89,8 +96,11 @@ export function LeadForm() {
       const stored = storedRaw ? (JSON.parse(storedRaw) as StoredAttribution) : null;
 
       if (stored) {
+        const shouldPromoteFirstTouch =
+          hasSignal && !hasAttributionSignal(stored.first);
+
         next = {
-          first: stored.first,
+          first: shouldPromoteFirstTouch ? current : stored.first,
           last: hasSignal
             ? current
             : {
@@ -112,7 +122,42 @@ export function LeadForm() {
     }
 
     window.localStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(next));
+    if (!window.sessionStorage.getItem(FORM_STARTED_AT_KEY)) {
+      window.sessionStorage.setItem(FORM_STARTED_AT_KEY, String(Date.now()));
+    }
     setAttribution(next);
+  }, []);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+
+    const syncWidget = () => {
+      if (typeof window === 'undefined') return;
+      const api = (window as Window & {
+        turnstile?: {
+          render: (selector: string, options: Record<string, unknown>) => string;
+        };
+      }).turnstile;
+
+      if (!api) return;
+
+      const container = document.getElementById('sermst-turnstile');
+      if (!container || container.dataset.rendered === 'true') return;
+
+      api.render('#sermst-turnstile', {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: 'light',
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      });
+
+      container.dataset.rendered = 'true';
+    };
+
+    syncWidget();
+    const timer = window.setInterval(syncWidget, 500);
+    return () => window.clearInterval(timer);
   }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -177,7 +222,12 @@ export function LeadForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+    <>
+      {TURNSTILE_SITE_KEY ? (
+        <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" />
+      ) : null}
+
+      <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
       <div>
         <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
           Diagnóstico comercial
@@ -318,6 +368,8 @@ export function LeadForm() {
       <input type="hidden" name="landing_page" value={attribution?.first.page || ''} />
       <input type="hidden" name="conversion_page" value={typeof window !== 'undefined' ? window.location.href : ''} />
       <input type="hidden" name="original_referrer" value={attribution?.first.referrer || ''} />
+      <input type="hidden" name="form_started_at" value={typeof window !== 'undefined' ? window.sessionStorage.getItem(FORM_STARTED_AT_KEY) || '' : ''} />
+      <input type="hidden" name="turnstile_token" value={turnstileToken} />
       <input type="hidden" name="utm_source" value={attribution?.last.utm_source || ''} />
       <input type="hidden" name="utm_medium" value={attribution?.last.utm_medium || ''} />
       <input type="hidden" name="utm_campaign" value={attribution?.last.utm_campaign || ''} />
@@ -325,6 +377,7 @@ export function LeadForm() {
       <input type="hidden" name="utm_term" value={attribution?.last.utm_term || ''} />
       <input type="hidden" name="gclid" value={attribution?.last.gclid || ''} />
       <input type="hidden" name="fbclid" value={attribution?.last.fbclid || ''} />
+      <input type="hidden" name="utm_id" value={attribution?.last.utm_id || ''} />
       <input type="hidden" name="utm_source_first" value={attribution?.first.utm_source || ''} />
       <input type="hidden" name="utm_medium_first" value={attribution?.first.utm_medium || ''} />
       <input type="hidden" name="utm_campaign_first" value={attribution?.first.utm_campaign || ''} />
@@ -332,8 +385,18 @@ export function LeadForm() {
       <input type="hidden" name="utm_term_first" value={attribution?.first.utm_term || ''} />
       <input type="hidden" name="gclid_first" value={attribution?.first.gclid || ''} />
       <input type="hidden" name="fbclid_first" value={attribution?.first.fbclid || ''} />
+      <input type="hidden" name="utm_id_first" value={attribution?.first.utm_id || ''} />
       <input type="hidden" name="attribution_first_captured_at" value={attribution?.first.capturedAt || ''} />
       <input type="hidden" name="attribution_last_captured_at" value={attribution?.last.capturedAt || ''} />
+
+      {TURNSTILE_SITE_KEY ? (
+        <div className="space-y-2">
+          <div id="sermst-turnstile" className="min-h-[65px]" />
+          <p className="text-xs text-slate-500">
+            Esta etapa ajuda a proteger o formulário contra spam automatizado.
+          </p>
+        </div>
+      ) : null}
 
       {status === 'error' && (
         <div className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
@@ -358,6 +421,7 @@ export function LeadForm() {
           'Solicitar orçamento gratuito'
         )}
       </button>
-    </form>
+      </form>
+    </>
   );
 }

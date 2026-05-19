@@ -5,6 +5,9 @@ import nodemailer from 'nodemailer';
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
 const WINDOW_MS = 60_000;
+const MIN_SUBMIT_MS = 4_000;
+const MAX_MESSAGE_LENGTH = 1500;
+const MAX_GENERIC_FIELD_LENGTH = 240;
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -56,6 +59,7 @@ interface LeadPayload {
   utm_term?: string;
   gclid?: string;
   fbclid?: string;
+  utm_id?: string;
   utm_source_first?: string;
   utm_medium_first?: string;
   utm_campaign_first?: string;
@@ -63,14 +67,51 @@ interface LeadPayload {
   utm_term_first?: string;
   gclid_first?: string;
   fbclid_first?: string;
+  utm_id_first?: string;
   attribution_first_captured_at?: string;
   attribution_last_captured_at?: string;
+  form_started_at?: string;
+  turnstile_token?: string;
 }
 
 const REQUIRED = ['nome', 'empresa', 'email', 'telefone', 'porte', 'dor'] as const;
 
 function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function countLinks(value: string) {
+  return (value.match(/https?:\/\/|www\./gi) || []).length;
+}
+
+function containsSpamPattern(value: string) {
+  return /(casino|viagra|loan|forex|crypto|telegram|seo service|backlink)/i.test(value);
+}
+
+async function verifyTurnstile(token: string, ip: string) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) return true;
+  if (!token) return false;
+
+  try {
+    const body = new URLSearchParams();
+    body.set('secret', secret);
+    body.set('response', token);
+    if (ip && ip !== 'unknown') body.set('remoteip', ip);
+
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    });
+
+    if (!response.ok) return false;
+    const result = (await response.json()) as { success?: boolean };
+    return Boolean(result.success);
+  } catch (error) {
+    console.error('[LEAD] Turnstile falhou:', error);
+    return false;
+  }
 }
 
 function buildEmailText(lead: ReturnType<typeof buildLead>): string {
@@ -95,12 +136,17 @@ function buildEmailText(lead: ReturnType<typeof buildLead>): string {
     `  UTM medium:      ${lead.attribution.lastTouch.utm_medium || "(vazio)"}\n` +
     `  UTM campaign:    ${lead.attribution.lastTouch.utm_campaign || "(vazio)"}\n` +
     `  UTM content:     ${lead.attribution.lastTouch.utm_content || "(vazio)"}\n` +
+    `  UTM term:        ${lead.attribution.lastTouch.utm_term || "(vazio)"}\n` +
+    `  UTM ID:          ${lead.attribution.lastTouch.utm_id || "(vazio)"}\n` +
     `  GCLID:           ${lead.attribution.lastTouch.gclid || "(vazio)"}\n` +
     `  FBCLID:          ${lead.attribution.lastTouch.fbclid || "(vazio)"}\n\n` +
     `Primeiro toque\n` +
     `  UTM source:      ${lead.attribution.firstTouch.utm_source || "(vazio)"}\n` +
     `  UTM medium:      ${lead.attribution.firstTouch.utm_medium || "(vazio)"}\n` +
     `  UTM campaign:    ${lead.attribution.firstTouch.utm_campaign || "(vazio)"}\n` +
+    `  UTM content:     ${lead.attribution.firstTouch.utm_content || "(vazio)"}\n` +
+    `  UTM term:        ${lead.attribution.firstTouch.utm_term || "(vazio)"}\n` +
+    `  UTM ID:          ${lead.attribution.firstTouch.utm_id || "(vazio)"}\n` +
     `  GCLID:           ${lead.attribution.firstTouch.gclid || "(vazio)"}\n\n` +
     `Recebido em:       ${lead.receivedAt}\n`
   );
@@ -143,9 +189,14 @@ function buildEmailHtml(lead: ReturnType<typeof buildLead>): string {
         ${row("UTM source", lead.attribution.lastTouch.utm_source)}
         ${row("UTM medium", lead.attribution.lastTouch.utm_medium)}
         ${row("UTM campaign", lead.attribution.lastTouch.utm_campaign)}
+        ${row("UTM content", lead.attribution.lastTouch.utm_content)}
+        ${row("UTM term", lead.attribution.lastTouch.utm_term)}
+        ${row("UTM ID", lead.attribution.lastTouch.utm_id)}
         ${row("GCLID", lead.attribution.lastTouch.gclid)}
         ${row("1º UTM source", lead.attribution.firstTouch.utm_source)}
         ${row("1º UTM medium", lead.attribution.firstTouch.utm_medium)}
+        ${row("1º UTM campaign", lead.attribution.firstTouch.utm_campaign)}
+        ${row("1º UTM ID", lead.attribution.firstTouch.utm_id)}
       </table>
     </td></tr>
 
@@ -177,6 +228,7 @@ function buildLead(data: LeadPayload, req: Request) {
         utm_term: data.utm_term ? String(data.utm_term).trim() : '',
         gclid: data.gclid ? String(data.gclid).trim() : '',
         fbclid: data.fbclid ? String(data.fbclid).trim() : '',
+        utm_id: data.utm_id ? String(data.utm_id).trim() : '',
         capturedAt: data.attribution_last_captured_at ? String(data.attribution_last_captured_at).trim() : '',
       },
       firstTouch: {
@@ -187,6 +239,7 @@ function buildLead(data: LeadPayload, req: Request) {
         utm_term: data.utm_term_first ? String(data.utm_term_first).trim() : '',
         gclid: data.gclid_first ? String(data.gclid_first).trim() : '',
         fbclid: data.fbclid_first ? String(data.fbclid_first).trim() : '',
+        utm_id: data.utm_id_first ? String(data.utm_id_first).trim() : '',
         capturedAt: data.attribution_first_captured_at ? String(data.attribution_first_captured_at).trim() : '',
       },
     },
@@ -231,6 +284,53 @@ export async function POST(req: Request) {
 
   if (!isEmail(String(data.email))) {
     return NextResponse.json({ error: 'E-mail invalido.' }, { status: 400 });
+  }
+
+  const formStartedAt = Number(data.form_started_at || 0);
+  if (
+    !Number.isFinite(formStartedAt) ||
+    formStartedAt <= 0 ||
+    Date.now() - formStartedAt < MIN_SUBMIT_MS
+  ) {
+    return NextResponse.json(
+      { error: 'Envio invalido. Aguarde alguns segundos e tente novamente.' },
+      { status: 400 }
+    );
+  }
+
+  const nome = String(data.nome || '').trim();
+  const empresa = String(data.empresa || '').trim();
+  const email = String(data.email || '').trim();
+  const telefone = String(data.telefone || '').trim();
+  const mensagem = String(data.mensagem || '').trim();
+  const fullText = `${nome} ${empresa} ${email} ${telefone} ${mensagem}`.trim();
+
+  if (
+    nome.length > MAX_GENERIC_FIELD_LENGTH ||
+    empresa.length > MAX_GENERIC_FIELD_LENGTH ||
+    email.length > MAX_GENERIC_FIELD_LENGTH ||
+    telefone.length > 40 ||
+    mensagem.length > MAX_MESSAGE_LENGTH
+  ) {
+    return NextResponse.json(
+      { error: 'Alguns campos ultrapassam o limite permitido.' },
+      { status: 400 }
+    );
+  }
+
+  if (countLinks(fullText) > 2 || containsSpamPattern(fullText)) {
+    return NextResponse.json(
+      { error: 'Nao foi possivel validar o conteudo enviado.' },
+      { status: 400 }
+    );
+  }
+
+  const turnstileOk = await verifyTurnstile(String(data.turnstile_token || ''), ip);
+  if (!turnstileOk) {
+    return NextResponse.json(
+      { error: 'Nao foi possivel validar o envio do formulario.' },
+      { status: 400 }
+    );
   }
 
   const lead = buildLead(data, req);
