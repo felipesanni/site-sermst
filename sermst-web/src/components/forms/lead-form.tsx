@@ -30,14 +30,6 @@ const ATTRIBUTION_KEY = 'sermst_attribution_v1';
 const FORM_STARTED_AT_KEY = 'sermst_form_started_at_v1';
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
 
-declare global {
-  interface Window {
-    onSermstTurnstileSuccess?: (token: string) => void;
-    onSermstTurnstileExpired?: () => void;
-    onSermstTurnstileError?: () => void;
-  }
-}
-
 function buildSnapshot(): AttributionSnapshot {
   const params = new URLSearchParams(window.location.search);
 
@@ -91,7 +83,6 @@ export function LeadForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [attribution, setAttribution] = useState<StoredAttribution | null>(null);
-  const [turnstileToken, setTurnstileToken] = useState('');
 
   useEffect(() => {
     const current = buildSnapshot();
@@ -134,20 +125,6 @@ export function LeadForm() {
       window.sessionStorage.setItem(FORM_STARTED_AT_KEY, String(Date.now()));
     }
     setAttribution(next);
-  }, []);
-
-  useEffect(() => {
-    if (!TURNSTILE_SITE_KEY) return;
-
-    window.onSermstTurnstileSuccess = (token: string) => setTurnstileToken(token);
-    window.onSermstTurnstileExpired = () => setTurnstileToken('');
-    window.onSermstTurnstileError = () => setTurnstileToken('');
-
-    return () => {
-      delete window.onSermstTurnstileSuccess;
-      delete window.onSermstTurnstileExpired;
-      delete window.onSermstTurnstileError;
-    };
   }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -214,7 +191,10 @@ export function LeadForm() {
   return (
     <>
       {TURNSTILE_SITE_KEY ? (
-        <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" />
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+        />
       ) : null}
 
       <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
@@ -359,7 +339,6 @@ export function LeadForm() {
       <input type="hidden" name="conversion_page" value={typeof window !== 'undefined' ? window.location.href : ''} />
       <input type="hidden" name="original_referrer" value={attribution?.first.referrer || ''} />
       <input type="hidden" name="form_started_at" value={typeof window !== 'undefined' ? window.sessionStorage.getItem(FORM_STARTED_AT_KEY) || '' : ''} />
-      <input type="hidden" name="turnstile_token" value={turnstileToken} />
       <input type="hidden" name="utm_source" value={attribution?.last.utm_source || ''} />
       <input type="hidden" name="utm_medium" value={attribution?.last.utm_medium || ''} />
       <input type="hidden" name="utm_campaign" value={attribution?.last.utm_campaign || ''} />
@@ -382,12 +361,10 @@ export function LeadForm() {
       {TURNSTILE_SITE_KEY ? (
         <div className="space-y-2">
           <div
-            className="cf-turnstile min-h-[65px]"
+            className="cf-turnstile"
             data-sitekey={TURNSTILE_SITE_KEY}
             data-theme="light"
-            data-callback="onSermstTurnstileSuccess"
-            data-expired-callback="onSermstTurnstileExpired"
-            data-error-callback="onSermstTurnstileError"
+            data-size="normal"
           />
           <p className="text-xs text-slate-500">
             Esta etapa ajuda a proteger o formulário contra spam automatizado.

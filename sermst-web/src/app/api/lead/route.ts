@@ -72,6 +72,7 @@ interface LeadPayload {
   attribution_last_captured_at?: string;
   form_started_at?: string;
   turnstile_token?: string;
+  'cf-turnstile-response'?: string;
 }
 
 const REQUIRED = ['nome', 'empresa', 'email', 'telefone', 'porte', 'dor'] as const;
@@ -325,7 +326,10 @@ export async function POST(req: Request) {
     );
   }
 
-  const turnstileOk = await verifyTurnstile(String(data.turnstile_token || ''), ip);
+  const turnstileToken = String(
+    data.turnstile_token || data['cf-turnstile-response'] || ''
+  );
+  const turnstileOk = await verifyTurnstile(turnstileToken, ip);
   if (!turnstileOk) {
     return NextResponse.json(
       { error: 'Nao foi possivel validar o envio do formulario.' },
