@@ -795,13 +795,16 @@ export function CnaeCalculator() {
           <FadeIn direction="up">
             <div className="mb-10 text-center">
               <span className="mb-4 inline-block rounded-full bg-accent-pink px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white">
-                Consulta gratuita · Resultado imediato
+                Consulta gratuita • resultado na hora
               </span>
               <h1 className="mb-3 text-3xl font-black leading-tight tracking-tighter text-brand-900 md:text-4xl">
-                Qual é o grau de risco da sua empresa?
+                Sua empresa está exposta a multas de SST?
               </h1>
               <p className="mx-auto max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
-                Digite o CNPJ e a calculadora identifica o grau de risco, a alíquota de RAT, o enquadramento de CIPA e as obrigações de SST do seu setor — em segundos. Sem cadastro, sem custo.
+                Digite o CNPJ e descubra, em poucos segundos, o grau de risco da empresa, a alíquota RAT, o enquadramento de CIPA e as principais obrigações de saúde e segurança do trabalho aplicáveis ao seu setor.
+              </p>
+              <p className="mx-auto mt-3 max-w-3xl text-sm font-semibold uppercase tracking-wide text-slate-500 md:text-base">
+                Sem cadastro. Sem custo. Resultado imediato.
               </p>
             </div>
 
