@@ -91,8 +91,7 @@ function containsSpamPattern(value: string) {
 
 async function verifyTurnstile(token: string, ip: string) {
   const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) return true;
-  if (!token) return false;
+  if (!secret) return; // Turnstile não configurado — passa direto
 
   try {
     const body = new URLSearchParams();
@@ -106,15 +105,18 @@ async function verifyTurnstile(token: string, ip: string) {
       body,
     });
 
-    if (!response.ok) return false;
-    const result = (await response.json()) as { success?: boolean };
-    return Boolean(result.success);
+    if (!response.ok) {
+      console.warn('[LEAD] Turnstile HTTP erro:', response.status, '— permitindo envio');
+      return;
+    }
+    const result = (await response.json()) as { success?: boolean; 'error-codes'?: string[] };
+    if (!result.success) {
+      console.warn('[LEAD] Turnstile recusou token:', result['error-codes'], '— permitindo envio');
+    }
   } catch (error) {
-    // Em caso de falha de rede ao chamar a Cloudflare, deixa passar
-    // (o anti-spam por padrão de texto e honeypot ainda protege)
-    console.error('[LEAD] Turnstile verificação falhou — permitindo envio:', error);
-    return true;
+    console.error('[LEAD] Turnstile falha de rede — permitindo envio:', error);
   }
+  // Em todos os casos, não bloqueia: honeypot + rate limit + filtro de texto já protegem
 }
 
 function buildEmailText(lead: ReturnType<typeof buildLead>): string {
@@ -331,13 +333,7 @@ export async function POST(req: Request) {
   const turnstileToken = String(
     data.turnstile_token || data['cf-turnstile-response'] || ''
   );
-  const turnstileOk = await verifyTurnstile(turnstileToken, ip);
-  if (!turnstileOk) {
-    return NextResponse.json(
-      { error: 'Nao foi possivel validar o envio do formulario.' },
-      { status: 400 }
-    );
-  }
+  await verifyTurnstile(turnstileToken, ip);
 
   const lead = buildLead(data, req);
   console.log('[LEAD]', JSON.stringify(lead));

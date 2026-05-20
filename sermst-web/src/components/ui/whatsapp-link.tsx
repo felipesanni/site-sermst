@@ -74,7 +74,7 @@ export function WhatsAppHeaderTextLink() {
         alt="WhatsApp"
         width={16}
         height={16}
-        className="h-4 w-4 object-contain"
+        className="h-4 w-4 object-contain [filter:brightness(0)_saturate(100%)_invert(14%)_sepia(98%)_saturate(2600%)_hue-rotate(334deg)_brightness(95%)_contrast(110%)]"
       />
       Falar no WhatsApp
     </a>

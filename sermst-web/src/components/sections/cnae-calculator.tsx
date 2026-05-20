@@ -356,25 +356,25 @@ function ResultCard({
             <Users className="h-5 w-5" />
           </div>
           <div>
-            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">NR-05 e dimensionamento de CIPA</p>
-            <h4 className="mt-1 text-lg font-black text-brand-900">Leitura da estrutura de CIPA para este estabelecimento</h4>
+            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">NR-05 · Dimensionamento de CIPA</p>
+            <h4 className="mt-1 text-lg font-black text-brand-900">Este estabelecimento precisa de CIPA?</h4>
             <p className="mt-1 text-sm leading-relaxed text-slate-600">
-              A NR-05 olha para o estabelecimento, não para o total do grupo empresarial. Com a quantidade de empregados informada no topo da consulta, a calculadora mostra se a empresa tende a precisar de CIPA completa, apenas representante da NR-05 ou cobertura pela estrutura de SESMT.
+              A NR-05 olha para o estabelecimento, não para o total do grupo. A calculadora cruza o grau de risco com a quantidade de empregados informada e mostra se há obrigação de CIPA completa, apenas representante da NR-05 ou cobertura pelo SESMT.
             </p>
           </div>
         </div>
 
         <div className="mb-5 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-          <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Leitura da faixa</p>
+          <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Enquadramento pelo Quadro I da NR-05</p>
           <p className="mt-1 text-sm font-semibold text-brand-900">
-            {nr05Reference || 'Preencha a quantidade no topo da consulta para cruzar com o Quadro I da NR-05.'}
+            {nr05Reference || 'Informe os empregados acima para ver o enquadramento no Quadro I da NR-05.'}
           </p>
         </div>
 
         {!employeeCount && (
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-sm leading-relaxed text-slate-600">
-              Informe a quantidade de empregados no topo da consulta para a calculadora mostrar se este estabelecimento tende a exigir CIPA, quantos membros efetivos e suplentes cabem por lado e quando o caso e apenas de representante da NR-05.
+              Informe a quantidade de empregados no campo acima para calcular se este estabelecimento precisa de CIPA, quantos membros são exigidos por lado e se o caso é de representante da NR-05.
             </p>
           </div>
         )}
@@ -422,7 +422,7 @@ function ResultCard({
               </div>
               <div>
                 <p className="text-[11px] font-black uppercase tracking-wider text-yellow-700">Representante da NR-05</p>
-                <h5 className="mt-1 text-lg font-black text-brand-900">Nesta faixa, a empresa não tende a montar CIPA completa</h5>
+                <h5 className="mt-1 text-lg font-black text-brand-900">Nesta faixa, não há obrigação de CIPA completa</h5>
                 <p className="mt-2 text-sm leading-relaxed text-slate-700">{nr05.observacao}</p>
               </div>
             </div>
@@ -447,25 +447,25 @@ function ResultCard({
 
       <div className="mb-8 rounded-[2rem] border border-white/70 bg-white/75 p-6 shadow-sm">
         <div className="mb-5">
-          <p className="text-[11px] font-black uppercase tracking-wider text-accent-pink">Qualificação comercial</p>
-          <h4 className="mt-1 text-lg font-black text-brand-900">Receba um diagnóstico inicial e avance com a equipe da SERMST</h4>
+          <p className="text-[11px] font-black uppercase tracking-wider text-accent-pink">Próximo passo</p>
+          <h4 className="mt-1 text-lg font-black text-brand-900">A SERMST já tem o enquadramento. Falta só o seu contato.</h4>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            A calculadora já orientou o cenário e reuniu os dados técnicos principais. No envio final, basta informar nome, e-mail e telefone. A SERMST recebe junto o CNAE consultado, o grau de risco, o enquadramento de NR-05/CIPA e o contexto do estabelecimento para responder com mais critério comercial e técnico.
+            Ao enviar, a SERMST recebe automaticamente o CNAE, o grau de risco, o enquadramento de CIPA e o número de empregados. A equipe já chega no contato com o contexto do seu caso — sem perguntar o que você já respondeu aqui.
           </p>
         </div>
 
         <div className="mb-5 grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">O que a equipe recebe</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">CNAE, grau de risco, RAT, leitura de SESMT e enquadramento de NR-05/CIPA.</p>
+            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">O que a equipe já recebe</p>
+            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">CNAE, grau de risco, RAT, dimensionamento de SESMT, enquadramento de NR-05/CIPA e número de empregados.</p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Por que isso ajuda</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Evita proposta genérica e encurta o caminho até o serviço que realmente faz sentido.</p>
+            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Por que funciona</p>
+            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Sem apresentação genérica. A equipe responde direto com o que se aplica ao seu porte, setor e grau de risco.</p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Quando usar</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Ideal para quem ainda não sabe se o problema é exame, laudo, eSocial, PGR, PCMSO ou estrutura de SST.</p>
+            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Para quem é</p>
+            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Para quem não sabe exatamente o que falta — exame, laudo, eSocial, PGR, PCMSO ou estrutura completa de SST.</p>
           </div>
         </div>
 
@@ -474,9 +474,9 @@ function ResultCard({
             <div className="flex items-start gap-3">
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
               <div>
-                <p className="font-black text-brand-900">Diagnóstico enviado com sucesso.</p>
+                <p className="font-black text-brand-900">Recebemos. Em breve você tem retorno.</p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                  A equipe comercial recebeu o enquadramento calculado e entra em contato para orientar o próximo passo com mais precisão.
+                  A equipe comercial recebeu seu contato junto com o enquadramento calculado. O retorno já vem com proposta adequada ao seu caso.
                 </p>
               </div>
             </div>
@@ -541,7 +541,7 @@ function ResultCard({
                   data-theme="light"
                   data-size="normal"
                 />
-                <p className="text-xs text-slate-500">Protecao anti-spam ativa neste envio.</p>
+                <p className="text-xs text-slate-500">Proteção anti-spam ativa.</p>
               </div>
             ) : null}
 
@@ -573,10 +573,10 @@ function ResultCard({
 
       <div className="mt-4 space-y-2 text-center">
         <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-          *Consulta baseada nos Quadros da NR-04, NR-05 e NR-07. Confirme o enquadramento com profissional habilitado.
+          *Resultado baseado nos Quadros da NR-04, NR-05 e NR-07. Consulte profissional habilitado antes de tomar decisões operacionais ou fiscais com base neste resultado.
         </p>
         <p className="mx-auto max-w-2xl text-xs leading-relaxed text-slate-500">
-          RAT é a alíquota do Risco Ambiental do Trabalho aplicada sobre a folha. Quando a leitura mostra RAT 3% + FAP, isso indica uma base de risco elevada que ainda pode ser ajustada pelo Fator Acidentário de Prevenção conforme o histórico da empresa.
+          RAT é a alíquota do Risco Ambiental do Trabalho incidente sobre a folha de pagamento. Quando o resultado mostra RAT 3% + FAP, a base de risco é elevada — o Fator Acidentário de Prevenção pode reduzir ou majorar esse percentual conforme o histórico de acidentes da própria empresa.
         </p>
       </div>
     </div>
@@ -795,13 +795,13 @@ export function CnaeCalculator() {
           <FadeIn direction="up">
             <div className="mb-10 text-center">
               <span className="mb-4 inline-block rounded-full bg-accent-pink px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white">
-                Diagnóstico gratuito
+                Consulta gratuita · Resultado imediato
               </span>
-              <h2 className="mb-3 text-3xl font-black leading-tight tracking-tighter text-brand-900 md:text-4xl">
-                Calculadora de Risco
-              </h2>
+              <h1 className="mb-3 text-3xl font-black leading-tight tracking-tighter text-brand-900 md:text-4xl">
+                Qual é o grau de risco da sua empresa?
+              </h1>
               <p className="mx-auto max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
-                Descubra em poucos passos se a empresa tende a exigir CIPA, representante da NR-05, SESMT, mais rotina de exames ou maior exposição a custo trabalhista e fiscal. Comece pelo CNPJ da empresa e pela quantidade de empregados no estabelecimento.
+                Digite o CNPJ e a calculadora identifica o grau de risco, a alíquota de RAT, o enquadramento de CIPA e as obrigações de SST do seu setor — em segundos. Sem cadastro, sem custo.
               </p>
             </div>
 
@@ -813,7 +813,7 @@ export function CnaeCalculator() {
                   </div>
                   <div>
                     <p className="text-sm font-black uppercase tracking-wide text-brand-900">CNPJ da empresa</p>
-                    <p className="text-xs text-slate-500">Fluxo principal para diagnóstico e qualificação comercial</p>
+                    <p className="text-xs text-slate-500">Consulta automática pelo cadastro da Receita Federal</p>
                   </div>
                 </div>
                 <button
@@ -904,7 +904,7 @@ export function CnaeCalculator() {
                     />
                   </label>
                   <p className="mt-3 text-sm leading-relaxed text-slate-500">
-                    Esse dado ajuda a cruzar o resultado com o Quadro I da NR-05 e mostrar se a empresa tende a exigir CIPA completa, representante da NR-05 ou apoio por SESMT.
+                    Informe quantos empregados há neste estabelecimento. Com esse número, a calculadora cruza com o Quadro I da NR-05 e mostra se há obrigação de CIPA, quantos membros são exigidos e se o caso é de representante da NR-05.
                   </p>
                 </div>
               </div>
@@ -955,7 +955,7 @@ export function CnaeCalculator() {
                       {cnpjCnaeDesc && ` - ${cnpjCnaeDesc}`}
                     </p>
                     <p className="mt-2 text-xs text-slate-500">
-                      Este CNAE ainda não está na nossa base detalhada.{' '}
+                      Este CNAE ainda não está na nossa base detalhada. 
                       <a
                         href="https://wa.me/5511915146447?text=Quero consultar o grau de risco do CNAE da minha empresa"
                         target="_blank"
@@ -970,7 +970,7 @@ export function CnaeCalculator() {
                 )}
                 {cnpjStatus === 'idle' && !cnpj && (
                   <p className="mt-3 text-center text-sm text-slate-500">
-                    Digite o CNPJ para consultar automaticamente o CNAE principal da empresa.
+                    Digite o CNPJ e a calculadora busca o CNAE principal direto na Receita Federal.
                   </p>
                 )}
                 <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -989,7 +989,7 @@ export function CnaeCalculator() {
                     />
                   </label>
                   <p className="mt-3 text-sm leading-relaxed text-slate-500">
-                      Com o CNPJ e a quantidade de empregados, a calculadora já estima grau de risco, RAT, SESMT e o enquadramento de NR-05/CIPA com mais precisão comercial.
+                      Informe quantos empregados há neste estabelecimento. Com esse dado, a calculadora mostra se a empresa precisa de CIPA completa, apenas representante da NR-05 ou SESMT próprio.
                   </p>
                 </div>
               </div>

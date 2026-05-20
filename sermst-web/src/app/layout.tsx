@@ -239,7 +239,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
               </a>
               <Link
                 href="/rh/calculadora-cnae-grau-de-risco"
-                className="force-pink-btn inline-flex items-center gap-2 rounded px-6 py-2 text-sm font-bold text-white shadow-lg transition-colors"
+                className="force-pink-btn inline-flex items-center gap-2 rounded-full px-6 py-2 text-sm font-bold text-white shadow-lg transition-colors animate-pulse"
               >
                 Calcular Meu Risco
               </Link>

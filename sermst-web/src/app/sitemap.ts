@@ -110,14 +110,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // ── Páginas RH estáticas (fora do rhDoresSEO) ───────────────────────────────
+  const rhStaticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/rh/calculadora-cnae-grau-de-risco`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE_URL}/rh/lista-cnae-brasil`,              lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${BASE_URL}/rh/evitar-processos-trabalhistas`,  lastModified: now, changeFrequency: "monthly", priority: 0.70 },
+    { url: `${BASE_URL}/rh/carta-demissao`,                 lastModified: now, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${BASE_URL}/rh/carta-recomendacao`,             lastModified: now, changeFrequency: "monthly", priority: 0.60 },
+    { url: `${BASE_URL}/rh/treinamento-gerentes`,           lastModified: now, changeFrequency: "monthly", priority: 0.60 },
+  ];
+
+  // ── Páginas Saúde estáticas (fora do saúdeSEO) ──────────────────────────────
+  const saúdeStaticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/saude/pcmso-programa-controle-medico`,      lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${BASE_URL}/saude/medicina-do-trabalho-guia`,           lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE_URL}/saude/aso-atestado-saude-ocupacional`,      lastModified: now, changeFrequency: "monthly", priority: 0.70 },
+    { url: `${BASE_URL}/saude/gestao-sst`,                          lastModified: now, changeFrequency: "monthly", priority: 0.65 },
+  ];
+
+  // ── Páginas de equipe e institucionais ──────────────────────────────────────
+  const equipePages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/equipe/felipe-sannino`,    lastModified: now, changeFrequency: "yearly",  priority: 0.70 },
+    { url: `${BASE_URL}/equipe/luiz-cesar-sannino`,lastModified: now, changeFrequency: "yearly",  priority: 0.70 },
+    { url: `${BASE_URL}/blog`,                     lastModified: now, changeFrequency: "weekly",  priority: 0.60 },
+  ];
+
   return [
     ...staticPages,
     ...servicoBasePages,
     ...geoPages,
     ...treinamentoPages,
     ...saúdePages,
+    ...saúdeStaticPages,
     ...rhPages,
+    ...rhStaticPages,
     ...dicionarioPages,
     ...normasPages,
+    ...equipePages,
   ];
 }

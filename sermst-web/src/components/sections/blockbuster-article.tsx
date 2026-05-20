@@ -43,6 +43,8 @@ export interface BlockbusterPageProps {
   };
   /** Canonical URL for this page (enables BreadcrumbList + Article schema) */
   pageUrl?: string;
+  /** Quando a página já tem um H1 anterior (ex: calculadora), renderiza o título do artigo como H2 */
+  h1Tag?: 'h1' | 'h2';
   /** Foto de destaque exibida no hero do artigo */
   coverImage?: { src: string; alt: string };
   /** Autor do artigo (E-E-A-T) */
@@ -80,6 +82,7 @@ export function BlockbusterArticle({
   pageUrl,
   coverImage,
   author,
+  h1Tag = 'h1',
 }: BlockbusterPageProps) {
   const frequentFaqs = buildFrequentFaqs(faq, {
     context: 'article',
@@ -185,9 +188,15 @@ export function BlockbusterArticle({
               )}
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-8 tracking-tight max-w-4xl">
-              {h1}
-            </h1>
+            {h1Tag === 'h2' ? (
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-8 tracking-tight max-w-4xl">
+                {h1}
+              </h2>
+            ) : (
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-8 tracking-tight max-w-4xl">
+                {h1}
+              </h1>
+            )}
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">
               {intro}
             </p>
