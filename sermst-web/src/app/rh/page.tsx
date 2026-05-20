@@ -101,23 +101,23 @@ export default function RHIndexPage() {
         <FadeIn direction="up">
           <Link
             href="/rh/calculadora-cnae-grau-de-risco"
-            className="group flex flex-col sm:flex-row items-center gap-6 rounded-2xl border-2 border-brand-900 bg-brand-900 p-8 text-white hover:bg-brand-900/90 transition-all"
+            className="group flex flex-col sm:flex-row items-center gap-6 rounded-2xl border-2 border-brand-900 bg-white p-8 text-brand-900 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
           >
-            <div className="shrink-0 rounded-full bg-white/10 p-4">
+            <div className="shrink-0 rounded-full bg-accent-pink/8 p-4">
               <AlertTriangle className="h-8 w-8 text-accent-pink" />
             </div>
             <div className="flex-1 text-center sm:text-left">
               <span className="mb-1 block text-[10px] font-black uppercase tracking-widest text-accent-pink">
                 Ferramenta gratuita
               </span>
-              <h2 className="text-xl font-black leading-snug md:text-2xl">
+              <h2 className="text-xl font-black leading-snug text-brand-900 md:text-2xl">
                 Calculadora de Risco
               </h2>
-              <p className="mt-1 text-sm text-slate-300">
+              <p className="mt-1 text-sm text-slate-600">
                 Consulte o risco da empresa por CNPJ ou CNAE e veja RAT, SESMT, NR-05/CIPA, periodicidade de exames e NRs aplicáveis.
               </p>
             </div>
-            <div className="shrink-0 rounded-full bg-white/10 p-3 transition-all group-hover:translate-x-1">
+            <div className="shrink-0 rounded-full bg-brand-900 p-3 text-white transition-all group-hover:translate-x-1">
               <ArrowRight className="h-5 w-5" />
             </div>
           </Link>
