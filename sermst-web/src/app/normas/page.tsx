@@ -70,6 +70,30 @@ export default function NormasIndexPage() {
         </div>
       </header>
 
+      <section className="py-16 max-w-[1280px] w-full mx-auto px-6 lg:px-8 border-b border-slate-200">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl font-black text-brand-900 mb-6">O que são Normas Regulamentadoras?</h2>
+          <p className="text-slate-600 leading-relaxed mb-4">
+            As Normas Regulamentadoras (NRs) são regulamentos técnicos do Ministério do Trabalho e Emprego que
+            estabelecem os requisitos mínimos de Saúde e Segurança do Trabalho (SST) para todas as empresas brasileiras
+            com funcionários regidos pela CLT. Atualmente existem 38 NRs ativas — cada uma voltada para um risco
+            específico, setor ou obrigação de gestão.
+          </p>
+          <p className="text-slate-600 leading-relaxed mb-4">
+            O descumprimento de qualquer NR aplicável ao perfil da empresa pode resultar em autuações do Ministério
+            do Trabalho, multas automáticas via eSocial (eventos S-2220 e S-2240), interdição de equipamentos ou
+            atividades, e passivo trabalhista em ações judiciais. Desde 2023, as inconsistências documentais detectadas
+            pelo eSocial geram notificações automáticas sem necessidade de fiscalização presencial.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            A conformidade com as NRs não é estática — normas são atualizadas periodicamente. A NR-01, por exemplo,
+            passou por revisão em 2022 e incluiu riscos psicossociais a partir de 2025. A NR-07 (PCMSO) define os
+            exames obrigatórios conforme os riscos levantados no PGR. Manter os documentos de SST atualizados é
+            responsabilidade do empregador e não pode ser delegada ao trabalhador.
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 max-w-[1280px] w-full mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {normas.map((norma, idx) => (

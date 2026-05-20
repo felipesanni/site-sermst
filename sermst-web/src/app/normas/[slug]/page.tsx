@@ -5,7 +5,7 @@ import { BookOpen, ArrowRight, ShieldCheck } from 'lucide-react';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 // Slugs conhecidos — destinos dos redirects 301 do site WordPress antigo
-export const normasKnown: Record<string, { titulo: string; descricao: string }> = {
+export const normasKnown: Record<string, { titulo: string; descricao: string; conteudo?: string }> = {
   'nr-01-pgr-atualizada': {
     titulo: 'NR-01 atualizada: Programa de Gerenciamento de Riscos (PGR)',
     descricao:
@@ -57,21 +57,18 @@ export const normasKnown: Record<string, { titulo: string; descricao: string }> 
       'O PGRS é exigido para clínicas, laboratórios, hospitais, indústrias químicas e farmacêuticas. Documenta como a empresa gerencia geração, segregação, transporte e destinação de resíduos perigosos.',
   },
 
-  // Slugs antigos — manter para compatibilidade
+  // Slug legado — o-que-e-nr-01 e o-que-e-nr-15 têm 301 para as páginas canônicas (next.config.ts)
   'o-que-e-nr-07': {
-    titulo: 'NR-07: Programa de Controle Médico de Saúde Ocupacional (PCMSO)',
+    titulo: 'NR-07: PCMSO — Controle Médico de Saúde Ocupacional',
     descricao:
       'A NR-07 estabelece a obrigatoriedade do PCMSO para todas as empresas regidas pela CLT. Determina quais exames ocupacionais devem ser realizados e com qual periodicidade, conforme os riscos de cada função.',
-  },
-  'o-que-e-nr-01': {
-    titulo: 'NR-01: Disposições Gerais e Gerenciamento de Riscos Ocupacionais (PGR)',
-    descricao:
-      'A NR-01 exige que todas as empresas elaborem o PGR, identificando, avaliando e controlando os riscos ocupacionais. É o documento-mãe da segurança do trabalho no Brasil.',
-  },
-  'o-que-e-nr-15': {
-    titulo: 'NR-15: Atividades e Operações Insalubres',
-    descricao:
-      'A NR-15 define as atividades que geram direito ao adicional de insalubridade (mínimo, médio ou máximo), baseadas em ruído, calor, produtos químicos e outros agentes físicos ou biológicos.',
+    conteudo: `O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é o programa que define quais exames médicos os trabalhadores da empresa precisam realizar — na admissão, periodicamente, na mudança de função, no retorno ao trabalho e na demissão. Ele é elaborado por um médico do trabalho com base nos riscos identificados no PGR da empresa.
+
+Todas as empresas com funcionários regidos pela CLT precisam ter um PCMSO vigente, independentemente do porte ou grau de risco. Micro e pequenas empresas também são obrigadas — a única diferença está na periodicidade dos exames e na necessidade ou não de um médico coordenador.
+
+O PCMSO tem impacto direto no eSocial. Cada ASO (Atestado de Saúde Ocupacional) emitido — admissional, periódico ou demissional — deve ser registrado no evento S-2220. Sem PCMSO ativo e atualizado, a empresa não consegue enviar o S-2220 corretamente, o que gera inconsistências no eSocial e risco de multa automática.
+
+Na prática, o programa define: quais exames complementares cada função deve fazer (hemograma, audiometria, espirometria, raio-X etc.), a periodicidade dos exames periódicos para cada cargo e os critérios de aptidão e restrição que o médico do trabalho aplica na emissão do ASO. A SERMST elabora e gerencia o PCMSO completo, incluindo emissão de ASO no mesmo dia para exames admissionais.`,
   },
 };
 
@@ -150,6 +147,13 @@ export default async function NormaPage({ params }: Props) {
           <div className="md:col-span-2">
             <FadeIn direction="right">
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+                {norma?.conteudo && (
+                  <div className="mb-8 pb-8 border-b border-slate-100">
+                    {norma.conteudo.split('\n\n').map((para, i) => (
+                      <p key={i} className="text-slate-600 leading-relaxed mb-4 last:mb-0">{para}</p>
+                    ))}
+                  </div>
+                )}
                 <div className="flex items-center gap-3 mb-6">
                   <ShieldCheck className="w-8 h-8 text-accent-pink" />
                   <h2 className="text-2xl font-black text-brand-900">Conformidade e Penalidades</h2>

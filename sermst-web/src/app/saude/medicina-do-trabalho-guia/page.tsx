@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Medicina do Trabalho: o que é e o que a empresa precisa saber | SERMST',
+  title: 'Medicina do Trabalho: Guia para Empresas | SERMST',
   description:
     'Medicina do trabalho é a especialidade que protege o trabalhador e a empresa ao mesmo tempo. Entenda o que ela cobre, o que é obrigatório e como estruturar na sua operação.',
   alternates: { canonical: 'https://sermst.com.br/saude/medicina-do-trabalho-guia' },

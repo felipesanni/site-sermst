@@ -38,6 +38,27 @@ export default function ServicosIndexPage() {
         </div>
       </header>
 
+      <section className="mx-auto w-full max-w-[1280px] px-6 pt-16 pb-4 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-slate-600 leading-relaxed mb-4">
+            A SERMST oferece serviços completos de Medicina e Segurança do Trabalho para empresas de todos os portes
+            em São Paulo e Grande ABC. Do exame admissional expresso — com ASO emitido no mesmo dia e laboratório
+            clínico próprio — até a gestão documental de PGR, PCMSO, LTCAT e eSocial, cada serviço é estruturado para
+            eliminar o passivo trabalhista e manter a empresa em conformidade com o Ministério do Trabalho.
+          </p>
+          <p className="text-slate-600 leading-relaxed mb-4">
+            Empresas com funcionários CLT têm obrigações periódicas de SST que variam conforme o CNAE, o grau de risco
+            e o número de empregados. O exame periódico, o envio do S-2220 ao eSocial após cada ASO, a atualização
+            do PCMSO e do PGR, e a renovação dos treinamentos obrigatórios de NRs fazem parte do ciclo anual de
+            conformidade de qualquer empresa regularmente constituída.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            Não sabe por onde começar? Use a Calculadora de Grau de Risco abaixo para identificar as obrigações de
+            SST com base no CNAE da sua empresa antes de escolher o serviço.
+          </p>
+        </div>
+      </section>
+
       <section className="mx-auto w-full max-w-[1280px] px-6 py-20 lg:px-8">
         <div className="mb-8 rounded-[2rem] border border-brand-900/10 bg-white p-6 shadow-sm">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">

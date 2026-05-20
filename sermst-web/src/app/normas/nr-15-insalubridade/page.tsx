@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-15: Insalubridade — adicional, laudo e como evitar passivo trabalhista | SERMST',
+  title: 'NR-15: Insalubridade — Adicional e Laudo Técnico | SERMST',
   description:
     'A NR-15 define o adicional de insalubridade (10%, 20% ou 40%). Pagar sem laudo correto vira passivo. Deixar de pagar quando devido também. Veja como decidir certo.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-15-insalubridade' },

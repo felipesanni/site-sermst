@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame Demissional: como funciona, prazo e por que ele protege a empresa | SERMST',
+  title: 'Exame Demissional: Como Funciona e Protege a Empresa | SERMST',
   description:
     'O exame demissional fecha o ciclo ocupacional do trabalhador e protege a empresa de ação trabalhista por doença ocupacional. Veja prazo, regras e o erro de pular.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional-guia' },

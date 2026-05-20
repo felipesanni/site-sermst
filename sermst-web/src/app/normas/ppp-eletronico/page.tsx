@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'PPP eletrônico: Perfil Profissiográfico Previdenciário no eSocial | SERMST',
+  title: 'PPP Eletrônico: Perfil Profissiográfico | SERMST',
   description:
     'O PPP eletrônico via S-2240 é base para aposentadoria especial e previdenciária. Erro no documento gera passivo. Veja regras, prazos e responsabilidades.',
   alternates: { canonical: 'https://sermst.com.br/normas/ppp-eletronico' },

@@ -19,26 +19,70 @@ export const metadata: Metadata = {
   },
 };
 
+const hubs = [
+  {
+    href: '/saude',
+    label: 'Hub Saúde Ocupacional',
+    description:
+      'Guias técnicos sobre medicina do trabalho, PCMSO, ASO, exames admissionais, exame demissional, EPIs e gestão de SST. Conteúdo voltado para médicos do trabalho, gestores de RH e responsáveis pelo DP.',
+  },
+  {
+    href: '/rh',
+    label: 'Hub RH e Departamento Pessoal',
+    description:
+      'Calculadora CNAE × Grau de Risco, guias sobre carta de demissão, responsabilidades do gerente em SST, como evitar processos trabalhistas, e tudo o que o DP precisa saber sobre obrigações de SST e eSocial.',
+  },
+  {
+    href: '/normas',
+    label: 'Normas Regulamentadoras',
+    description:
+      'Explicações objetivas das principais NRs — NR-01 (PGR), NR-07 (PCMSO), NR-10, NR-15, NR-16, NR-17, NR-18 e NR-35 — com foco no que a empresa precisa documentar e quais as penalidades pelo descumprimento.',
+  },
+  {
+    href: '/dicionario',
+    label: 'Dicionário SST',
+    description:
+      'Glossário completo de termos de Saúde e Segurança do Trabalho: ASO, LTCAT, PPP, PCMSO, PGR, CAT, SESMT, NR e dezenas de outros termos usados em laudos, documentos e fiscalizações do Ministério do Trabalho.',
+  },
+];
+
 export default function BlogPage() {
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center bg-white px-4 py-20 text-center">
-      <FadeIn direction="up">
-        <h1 className="mb-4 text-4xl font-black text-brand-900">Conteúdo SST para empresas</h1>
-        <p className="mx-auto mb-8 max-w-xl text-lg text-slate-600">
-          O conteúdo da SERMST agora está organizado por uso: Hub Saúde Ocupacional, Hub RH e DP, Normas Regulamentadoras e Dicionário SST.
-        </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/saude" className="btn-primary-safe">
-            Hub Saúde
-          </Link>
-          <Link href="/rh" className="btn-primary-safe">
-            Hub RH
-          </Link>
-          <Link href="/dicionario" className="btn-outline">
-            Dicionário SST
-          </Link>
+    <main className="min-h-screen bg-slate-50 pt-32 pb-24">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+        <FadeIn direction="up">
+          <h1 className="mb-4 text-4xl md:text-5xl font-black text-brand-900 leading-tight">
+            Conteúdo SST para empresas
+          </h1>
+          <p className="max-w-2xl text-lg text-slate-600 leading-relaxed mb-4">
+            A SERMST produz conteúdo técnico em Saúde e Segurança do Trabalho voltado para gestores, RH e DP
+            de empresas que precisam entender obrigações legais sem depender de jargão jurídico.
+          </p>
+          <p className="max-w-2xl text-slate-600 leading-relaxed mb-12">
+            O conteúdo está organizado em quatro hubs temáticos — cada um com guias práticos, calculadoras e
+            referências legais atualizadas. Escolha o tema que mais se aplica à sua necessidade.
+          </p>
+        </FadeIn>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {hubs.map((hub, i) => (
+            <FadeIn key={hub.href} delay={i * 0.1}>
+              <Link
+                href={hub.href}
+                className="group flex flex-col bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 hover:border-accent-pink/30 transition-all duration-300"
+              >
+                <h2 className="text-xl font-black text-brand-900 mb-3 group-hover:text-accent-pink transition-colors">
+                  {hub.label}
+                </h2>
+                <p className="text-slate-600 leading-relaxed text-sm flex-grow">{hub.description}</p>
+                <span className="mt-6 text-xs font-black uppercase tracking-widest text-accent-pink">
+                  Acessar hub →
+                </span>
+              </Link>
+            </FadeIn>
+          ))}
         </div>
-      </FadeIn>
-    </div>
+      </div>
+    </main>
   );
 }

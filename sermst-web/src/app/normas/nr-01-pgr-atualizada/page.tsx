@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-01 atualizada: PGR, riscos psicossociais é o que sua empresa precisa fazer | SERMST',
+  title: 'NR-01 atualizada: PGR e Riscos Psicossociais | SERMST',
   description:
     'A NR-01 foi atualizada e agora exige inclusão de riscos psicossociais no PGR. Guia direto sobré o que mudou, o que sua empresa precisa fazer e os prazos que estão correndo. Por SERMST, 40 anos em medicina e segurança do trabalho.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-01-pgr-atualizada' },

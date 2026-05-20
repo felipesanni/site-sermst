@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'O que é Saúde Ocupacional: guia completo para gestores e RH | SERMST',
+  title: 'O que é Saúde Ocupacional: Guia para Gestores | SERMST',
   description:
     'Saúde ocupacional não é só ASO e exame periódico — é um sistema que protege trabalhador, operação e patrimônio. Veja os pilares, obrigações legais e como estruturar.',
   alternates: { canonical: 'https://sermst.com.br/saude/o-que-e-saude-ocupacional' },

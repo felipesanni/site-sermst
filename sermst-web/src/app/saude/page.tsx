@@ -10,7 +10,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 export const dynamic = 'force-static';
 
 export const metadata = {
-  title: 'Hub de Saúde SST | Medicina do Trabalho, prevenção e rotina ocupacional | SERMST',
+  title: 'Hub de Saúde SST | Medicina do Trabalho | SERMST',
   description:
     'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO e produtividade.',
 
@@ -18,7 +18,7 @@ export const metadata = {
     canonical: 'https://sermst.com.br/saude',
   },
   openGraph: {
-    title: 'Hub de Saúde SST | Medicina do Trabalho, prevenção e rotina ocupacional | SERMST',
+    title: 'Hub de Saúde SST | Medicina do Trabalho | SERMST',
     description:
       'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO e produtividade.',
     url: 'https://sermst.com.br/saude',

@@ -15,7 +15,7 @@ const grauBadge: Record<number, string> = {
 };
 
 export const metadata: Metadata = {
-  title: 'Lista CNAE Brasil: guia completo para empresas e empreendedores | SERMST',
+  title: 'Lista CNAE Brasil: Guia para Empresas | SERMST',
   description:
     'O CNAE define enquadramento da empresa nos órgãos públicos. Errar o CNAE muda alíquota tributária, muda obrigação SST e muda risco de fiscalização. Veja como escolher e revisar.',
   alternates: { canonical: 'https://sermst.com.br/rh/lista-cnae-brasil' },

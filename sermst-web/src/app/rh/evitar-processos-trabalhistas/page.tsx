@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Como evitar processos trabalhistas: guia prático para empresas e RH | SERMST',
+  title: 'Como Evitar Processos Trabalhistas: Guia para RH | SERMST',
   description:
     'Processo trabalhista raramente é surpresa. É consequência de pequenas falhas acumuladas. Veja os 5 pilares de prevenção é o que blinda a empresa em ação.',
   alternates: { canonical: 'https://sermst.com.br/rh/evitar-processos-trabalhistas' },

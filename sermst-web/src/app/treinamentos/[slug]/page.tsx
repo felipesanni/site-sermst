@@ -54,6 +54,15 @@ export default async function TrainingPage({ params }: PageProps) {
               </p>
             </FadeIn>
 
+            {training.description && (
+              <FadeIn delay={0.15} className="prose prose-slate max-w-none">
+                <h2 className="text-2xl font-black text-brand-900 mb-6">Por que este treinamento é obrigatório?</h2>
+                {training.description.split('\n\n').map((para: string, i: number) => (
+                  <p key={i} className="text-slate-600 leading-relaxed mb-4">{para}</p>
+                ))}
+              </FadeIn>
+            )}
+
             <FadeIn delay={0.2} className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-slate-100">
               <h2 className="text-3xl font-black text-brand-900 mb-8 flex items-center gap-4">
                 <BookOpen className="w-8 h-8 text-accent-pink" />

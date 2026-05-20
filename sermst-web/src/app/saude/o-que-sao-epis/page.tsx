@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'O que são EPIs: equipamentos de proteção individual é o que sua empresa precisa documentar | SERMST',
+  title: 'O que são EPIs: Tipos, Obrigações e Documentação | SERMST',
   description:
     'EPI é exigência legal: fornecimento gratuito, treinamento de uso, fiscalização, troca periódica. Falhar em qualquer parte é responsabilidade da empresa. Veja o que NR-06 exige e como documentar.',
   alternates: { canonical: 'https://sermst.com.br/saude/o-que-sao-epis' },

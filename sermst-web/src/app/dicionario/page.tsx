@@ -8,7 +8,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 export const dynamic = 'force-static';
 
 export const metadata = {
-  title: 'Dicionário de SST | Termos de medicina e segurança do trabalho | SERMST',
+  title: 'Dicionário SST | Termos de Saúde e Segurança | SERMST',
   description:
     'Entenda termos como ASO, PGR, PCMSO, eSocial SST e outros conceitos da medicina e segurança do trabalho — explicados em linguagem útil para gestores e RH.',
 

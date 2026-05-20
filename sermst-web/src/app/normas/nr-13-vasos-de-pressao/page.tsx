@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-13: Caldeiras e Vasos de Pressão — inspeção e responsabilidade técnica | SERMST',
+  title: 'NR-13: Caldeiras e Vasos de Pressão — Inspeção | SERMST',
   description:
     'A NR-13 obriga inspeção periódica em caldeiras e vasos de pressão. Sem laudo válido, equipamento não pode operar. Veja categorias, prazos e requisitos.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-13-vasos-de-pressao' },

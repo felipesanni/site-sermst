@@ -5,7 +5,7 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 export const metadata: Metadata = {
-  title: 'Contato SERMST | Orçamento para Medicina do Trabalho, PGR, PCMSO e eSocial',
+  title: 'Contato SERMST | Orçamento Medicina do Trabalho',
   description:
     'Fale com a SERMST para solicitar orcamento de exames admissionais, PGR, PCMSO, LTCAT, treinamentos e gestão de eSocial SST em São Paulo e Grande SP.',
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: 'https://sermst.com.br/contato',
   },
   openGraph: {
-    title: 'Contato SERMST | Orçamento para Medicina do Trabalho, PGR, PCMSO e eSocial',
+    title: 'Contato SERMST | Orçamento Medicina do Trabalho',
     description:
       'Solicite orçamento para exames ocupacionais, PGR, PCMSO, laudos e gestão eSocial. Atendimento rápido, sem burocracia — fale com a SERMST agora.',
     url: 'https://sermst.com.br/contato',

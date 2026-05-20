@@ -15,6 +15,9 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'exame-admissional-expresso') {
     return 'Clinica de Exame Admissional';
   }
+  if (servico === 'ltcat-laudo-tecnico-previdenciario') {
+    return 'LTCAT — Laudo Técnico Ambiental';
+  }
 
   return fallback;
 }

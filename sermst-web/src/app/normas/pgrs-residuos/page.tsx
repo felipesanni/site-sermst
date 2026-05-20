@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'PGRS: Plano de Gerenciamento de Resíduos de Saúde e Indústria | SERMST',
+  title: 'PGRS: Gerenciamento de Resíduos de Saúde | SERMST',
   description:
     'O PGRS é exigido para clínicas, laboratórios, indústrias químicas e farmacêuticas. Gerencia geração, segregação e destinação de resíduos perigosos. Veja regras.',
   alternates: { canonical: 'https://sermst.com.br/normas/pgrs-residuos' },

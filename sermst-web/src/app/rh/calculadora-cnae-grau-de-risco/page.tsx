@@ -8,7 +8,7 @@ const webAppSchema = {"@context": "https://schema.org", "@type": "WebApplication
 const howToSchema = {"@context": "https://schema.org", "@type": "HowTo", "name": "Como usar o resultado da Calculadora CNAE de Grau de Risco", "description": "Passo a passo para interpretar o resultado da calculadora CNAE e aplicar as obrigações de SST na empresa.", "step": [{"@type": "HowToStep", "position": 1, "name": "Confirme o grau de risco", "text": "Se não bater com o que a empresa pratica ou com o que o contador informou, vale revisar o CNAE cadastrado."}, {"@type": "HowToStep", "position": 2, "name": "Verifique as NRs destacadas", "text": "Cada setor tem NRs específicas além das universais (NR-01, NR-07, NR-09, NR-28). O resultado mostra quais são mais relevantes."}, {"@type": "HowToStep", "position": 3, "name": "Calcule a obrigação de SESMT", "text": "Use o grau de risco e o número de empregados para saber se a empresa precisa de equipe própria ou se pode contratar serviço externo."}, {"@type": "HowToStep", "position": 4, "name": "Ajuste a periodicidade dos exames", "text": "ASOs fora do prazo geram evento S-2220 em atraso no eSocial — multa por funcionário."}, {"@type": "HowToStep", "position": 5, "name": "Revise o PGR com a frequência correta", "text": "Graus 3 e 4 precisam de revisão anual documentada."}]} as const;
 
 export const metadata: Metadata = {
-  title: 'Calculadora CNAE: grau de risco, RAT, CIPA e obrigações de SST | SERMST',
+  title: 'Calculadora CNAE: Grau de Risco e Obrigações SST | SERMST',
   description:
     'Digite o CNPJ ou o código CNAE e descubra grau de risco, alíquota de RAT, exigência de CIPA pela NR-05, SESMT, exames periódicos e NRs do setor — grátis e sem cadastro.',
   keywords: [

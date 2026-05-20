@@ -5,14 +5,14 @@ import { ShieldCheck, Zap, Users, MapPin, Building2, CheckCircle, ArrowRight } f
 import { siteImages } from '@/lib/site-images';
 
 export const metadata: Metadata = {
-  title: 'A SERMST | Clínica de Medicina e Segurança do Trabalho em São Paulo',
+  title: 'A Clínica SERMST | Medicina do Trabalho em São Paulo',
   description: 'Há décadas cuidando da saúde ocupacional e segurança do trabalho. Conheça nossa estrutura centralizada no Largo do Paissandú, nosso corpo clínico e nosso compromisso com o compliance SST.',
 
   alternates: {
     canonical: 'https://sermst.com.br/a-clinica',
   },
   openGraph: {
-    title: 'A SERMST | Clínica de Medicina e Segurança do Trabalho em São Paulo',
+    title: 'A Clínica SERMST | Medicina do Trabalho em São Paulo',
     description:
       'Há décadas cuidando da saúde ocupacional e segurança do trabalho. Conheça nossa estrutura no Largo do Paissandú, nosso corpo clínico e nosso compromisso com o compliance SST.',
     url: 'https://sermst.com.br/a-clinica',

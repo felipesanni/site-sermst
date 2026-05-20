@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Gestão de SST: o que é e como organizar sem virar burocracia | SERMST',
+  title: 'Gestão de SST: Como Organizar na Empresa | SERMST',
   description:
     'Gestão de SST não é documento, é sistema. Conecta exame, laudo, treinamento e eSocial em fluxo único. Veja como estruturar e os erros que viram passivo.',
   alternates: { canonical: 'https://sermst.com.br/saude/gestao-sst' },

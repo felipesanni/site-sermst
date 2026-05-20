@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-18: Construção Civil — guia completo para empresas e responsáveis técnicos | SERMST',
+  title: 'NR-18: Construção Civil — Guia para Empresas | SERMST',
   description:
     'A NR-18 reúne os requisitos de SST específicos da construção civil. Veja o que exige, PCMAT, treinamentos, fiscalização do MTE é o que precisa estar documentado para defesa em obra.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },

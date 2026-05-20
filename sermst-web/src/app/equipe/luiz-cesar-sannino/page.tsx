@@ -5,12 +5,12 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { ArrowRight, BookOpen, Briefcase, GraduationCap, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Luiz César Sannino | Higienista Ocupacional e Técnico em SST — SERMST',
+  title: 'Luiz César Sannino | Higienista Ocupacional SST — SERMST',
   description:
     'Luiz César Sannino é Higienista Ocupacional e Técnico em Segurança do Trabalho (CREA/SP 5061899709) com mais de 40 anos de experiência em Medicina e Segurança do Trabalho.',
   alternates: { canonical: 'https://sermst.com.br/equipe/luiz-cesar-sannino' },
   openGraph: {
-    title: 'Luiz César Sannino | Higienista Ocupacional e Técnico em SST — SERMST',
+    title: 'Luiz César Sannino | Higienista Ocupacional SST — SERMST',
     description:
       'Higienista Ocupacional e Técnico em Segurança do Trabalho (CREA/SP 5061899709). Mais de 40 anos formando a SERMST — autor dos principais guias técnicos sobre normas regulamentadoras e saúde ocupacional.',
     url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
