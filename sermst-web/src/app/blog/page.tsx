@@ -64,6 +64,31 @@ export default function BlogPage() {
           </p>
         </FadeIn>
 
+        <FadeIn direction="up" delay={0.1}>
+          <div className="mb-12 rounded-[2rem] border border-brand-900/10 bg-white p-8 shadow-sm">
+            <h2 className="mb-4 text-2xl font-black text-brand-900">Como usar este hub de conteúdo</h2>
+            <div className="space-y-4 text-slate-600 leading-relaxed">
+              <p>
+                Este espaço funciona como uma porta de entrada para empresas que precisam entender saúde e segurança do
+                trabalho com clareza prática. Em vez de reunir textos genéricos, a SERMST organiza o conteúdo por intenção
+                real de busca: saúde ocupacional, rotina de RH e departamento pessoal, normas regulamentadoras e conceitos
+                técnicos que aparecem em laudos, eventos do eSocial e fiscalizações.
+              </p>
+              <p>
+                Se a sua dúvida está ligada a exames, ASO, PCMSO, PGR, EPIs ou obrigações clínicas, o hub de Saúde
+                Ocupacional é o melhor caminho. Se o problema envolve carta de demissão, função de encarregado, treinamento
+                de gerentes, DET, DIR, eSocial SST ou estrutura documental da empresa, o hub de RH e DP concentra os
+                materiais mais úteis para decisão.
+              </p>
+              <p>
+                A ideia é simples: ajudar o gestor a entender o risco, o documento exigido, a obrigação aplicável e o que
+                costuma gerar multa ou passivo quando a operação segue sem critério técnico. Assim, cada página do site deixa
+                de ser só conteúdo informativo e passa a funcionar como apoio real para tomada de decisão em SST.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+
         <div className="grid md:grid-cols-2 gap-6">
           {hubs.map((hub, i) => (
             <FadeIn key={hub.href} delay={i * 0.1}>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Como treinar gerentes: guia para desenvolver líderes de alto desempenho | SERMST',
+  title: 'Como treinar gerentes: guia prático | SERMST',
   description:
     'Gerente promovido sem treinamento vira problema na equipe e na operação. Treinar liderança retorna em produtividade, retenção e segurança. Veja como estruturar.',
   alternates: { canonical: 'https://sermst.com.br/rh/treinamento-gerentes' },

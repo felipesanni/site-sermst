@@ -15,12 +15,12 @@ import { CheckCircle2, AlertTriangle, ShieldCheck, Users, ArrowRight, Target, Fi
  * orientados para CONVERTER o gestor — que é quem fecha contrato com a SERMST.
  */
 export const metadata: Metadata = {
-  title: 'Função de Encarregado: responsabilidades, perfil e quando contratar | SERMST',
+  title: 'Função de Encarregado: perfil e responsabilidades | SERMST',
   description:
     'Guia completo da função encarregado: o que faz, responsabilidades, perfil ideal, salário médio, diferença para supervisor e o erro de SST que pega gestores de surpresa. Por SERMST, 40 anos em medicina e segurança do trabalho.',
   alternates: { canonical: 'https://sermst.com.br/rh/funcao-encarregado' },
   openGraph: {
-    title: 'Função de Encarregado: responsabilidades, perfil e quando contratar',
+    title: 'Função de Encarregado: perfil e responsabilidades',
     description:
       'O que faz um encarregado, perfil ideal, salário médio e o ponto cego de SST que pega gestores de surpresa.',
     url: 'https://sermst.com.br/rh/funcao-encarregado',
