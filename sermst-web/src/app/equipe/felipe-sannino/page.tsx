@@ -143,7 +143,7 @@ export default function FelipeSanninoPage() {
                 />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tight">
+                <h1 className="h1-standard">
                   Felipe Sannino
                 </h1>
                 <p className="mt-2 text-accent-pink font-bold text-lg">

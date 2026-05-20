@@ -51,7 +51,7 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
                 <BookOpen className="w-4 h-4" />
                 Dicionario SST
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-900 mb-8 tracking-tighter leading-[0.95]">
+              <h1 className="h1-standard mb-8 text-brand-900 tracking-tighter leading-[0.95]">
                 {data.h1}
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 font-medium border-l-4 border-brand-500 pl-6 lg:pl-10">

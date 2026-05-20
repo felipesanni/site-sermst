@@ -150,7 +150,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="hero-anim-h1 mb-5 text-[2.7rem] font-black leading-[1.04] tracking-tight text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.75)] sm:text-5xl md:text-6xl lg:text-[5rem]">
+            <h1 className="hero-anim-h1 h1-standard mb-5 text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.75)]">
               SST não é custo.
               <br className="hidden sm:block" />
               <span className="block bg-gradient-to-r from-accent-pink via-[#ff7a93] to-white bg-clip-text text-transparent sm:inline">
@@ -163,8 +163,8 @@ export default function Home() {
             </p>
 
             <div className="hero-anim-cta flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-              <Link href="/contato" className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-accent-pink px-8 py-4 font-bold text-white shadow-[0_0_40px_-10px_rgba(227,27,69,0.5)] transition-all duration-300 hover:scale-[1.02] hover:bg-accent-pink-hover sm:w-auto">
-                <div className="absolute inset-0 animate-[shimmer_2s_infinite] bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.22)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%]" />
+              <Link href="/contato" className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(227,27,69,0.34)_0%,rgba(47,22,66,0.86)_100%)] px-8 py-4 font-bold text-white shadow-[0_14px_32px_-16px_rgba(227,27,69,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[0_18px_40px_-16px_rgba(227,27,69,0.68)] sm:w-auto">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_58%)] opacity-90" />
                 <span className="relative z-10 flex items-center gap-2">
                   Solicitar diagnóstico gratuito
                   <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>

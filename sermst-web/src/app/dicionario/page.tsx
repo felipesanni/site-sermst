@@ -38,7 +38,7 @@ export default function DicionarioIndexPage() {
               <div className="bg-brand-900 p-3 rounded-lg text-white shadow-lg">
                 <BookOpen className="w-6 h-6" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-black text-brand-900 tracking-tighter">Dicionário de SST</h1>
+              <h1 className="h1-standard text-brand-900 tracking-tighter">Dicionário de SST</h1>
             </div>
             <p className="text-xl text-slate-600 max-w-3xl leading-relaxed font-medium">
               Glossário para traduzir a linguagem técnica da medicina e segurança do trabalho em conteúdo claro para empresas, RH e gestores.

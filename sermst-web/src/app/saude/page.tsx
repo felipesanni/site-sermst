@@ -40,7 +40,7 @@ export default function SaúdeIndexPage() {
               <HeartPulse className="w-4 h-4" />
               Educação e prevenção
             </span>
-            <h1 className="text-4xl md:text-6xl font-black text-brand-900 mb-6">Hub de Saúde SST</h1>
+            <h1 className="h1-standard mb-6 text-brand-900">Hub de Saúde SST</h1>
             <p className="text-xl text-slate-600 max-w-3xl font-medium leading-relaxed">
               Conteúdo para empresas que querem entender melhor exames ocupacionais, vigilância médica, prevenção e o impacto da saúde do trabalhador na produtividade e no compliance.
             </p>

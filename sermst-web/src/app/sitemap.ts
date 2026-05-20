@@ -114,6 +114,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const rhStaticPages: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/rh/calculadora-cnae-grau-de-risco`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE_URL}/rh/lista-cnae-brasil`,              lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${BASE_URL}/rh/domicilio-eletronico-trabalhista-det`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE_URL}/rh/declaracao-inexistencia-risco-dir`,    lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE_URL}/rh/evitar-processos-trabalhistas`,  lastModified: now, changeFrequency: "monthly", priority: 0.70 },
     { url: `${BASE_URL}/rh/carta-demissao`,                 lastModified: now, changeFrequency: "monthly", priority: 0.65 },
     { url: `${BASE_URL}/rh/carta-recomendacao`,             lastModified: now, changeFrequency: "monthly", priority: 0.60 },

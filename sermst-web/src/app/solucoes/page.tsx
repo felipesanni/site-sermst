@@ -70,7 +70,7 @@ export default function SoluçõesPage() {
               <span className="mb-6 inline-block rounded-full border border-accent-pink/30 bg-accent-pink/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
                 Soluções B2B em SST
               </span>
-              <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
+              <h1 className="h1-standard mb-6">
                 Soluções de Medicina e Segurança do Trabalho para reduzir risco, acelerar rotina e sustentar o eSocial
               </h1>
               <p className="max-w-3xl text-xl leading-relaxed text-slate-300 md:text-2xl">

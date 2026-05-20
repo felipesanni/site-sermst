@@ -46,7 +46,7 @@ export default function QuemSomosPage() {
             <span className="mb-8 inline-block rounded-full border border-accent-pink/20 bg-accent-pink/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
               Quem somos
             </span>
-            <h1 className="mb-8 max-w-4xl text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="h1-standard mb-8 max-w-4xl">
               40 anos protegendo o
               <br />
               patrimônio de quem

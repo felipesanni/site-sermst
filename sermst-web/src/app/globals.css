@@ -178,6 +178,10 @@
     @apply mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink;
   }
 
+  .h1-standard {
+    @apply text-[2rem] font-black leading-[1.08] tracking-tight;
+  }
+
   /* ── Links com sublinhado animado ───────────────────────────────────── */
   .link-underline {
     @apply relative inline-block transition-colors;

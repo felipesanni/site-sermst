@@ -80,7 +80,7 @@ export default function ContatoPage() {
               <span className="mb-5 inline-block rounded-full border border-accent-pink/20 bg-accent-pink/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-accent-pink md:mb-6">
                 Orçamento e atendimento comercial
               </span>
-              <h1 className="mb-5 text-[2.6rem] font-black leading-[1.05] text-white drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)] md:mb-6 md:text-6xl">
+              <h1 className="h1-standard mb-5 text-white drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)] md:mb-6">
                 Fale com a SERMST para regularizar SST, acelerar exames e reduzir risco trabalhista
               </h1>
               <p className="max-w-3xl text-lg leading-relaxed text-slate-300 md:text-2xl">

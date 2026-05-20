@@ -128,7 +128,7 @@ export default async function NormaPage({ params }: Props) {
               <BookOpen className="w-6 h-6" />
               <span className="text-xs font-black uppercase tracking-widest">Normas Regulamentadoras</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black text-white leading-tight max-w-4xl">
+            <h1 className="h1-standard max-w-4xl text-white">
               {titulo}
             </h1>
             {norma?.descricao && (

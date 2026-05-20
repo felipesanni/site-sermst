@@ -57,7 +57,7 @@ export default async function SaúdeHubPage({
               <span className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent-pink">
                 <HeartPulse className="h-4 w-4" /> Hub de Saúde SST
               </span>
-              <h1 className="mb-8 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+              <h1 className="h1-standard mb-8 text-white">
                 {data.h1}
               </h1>
               <p className="text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">

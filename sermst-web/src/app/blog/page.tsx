@@ -51,7 +51,7 @@ export default function BlogPage() {
     <main className="min-h-screen bg-slate-50 pt-32 pb-24">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <FadeIn direction="up">
-          <h1 className="mb-4 text-4xl md:text-5xl font-black text-brand-900 leading-tight">
+          <h1 className="h1-standard mb-4 text-brand-900">
             Conteúdo SST para empresas
           </h1>
           <p className="max-w-2xl text-lg text-slate-600 leading-relaxed mb-4">

@@ -105,7 +105,7 @@ export default function FunçãoEncarregadoPage() {
             <Link href="/rh" className="inline-flex items-center gap-2 text-accent-pink font-bold text-xs uppercase tracking-[0.2em] mb-6 hover:text-white transition">
               ← Hub de RH e Departamento Pessoal
             </Link>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] mb-8 tracking-tight max-w-4xl">
+            <h1 className="h1-standard mb-8 max-w-4xl">
               Função de Encarregado: o que faz, responsabilidades e o ponto cego que pega gestores
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">

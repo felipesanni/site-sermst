@@ -153,7 +153,7 @@ export default async function LocalSEOPage({
                 </span>
               </div>
 
-              <h1 className="mb-8 text-4xl font-black leading-[0.9] tracking-tighter text-white md:text-6xl lg:text-7xl">
+              <h1 className="h1-standard mb-8 tracking-tighter text-white">
                 {servicoNome} <br />
                 <span className="font-serif italic text-accent-pink">em {local.nome}</span>
               </h1>

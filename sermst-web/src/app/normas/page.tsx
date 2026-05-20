@@ -60,7 +60,7 @@ export default function NormasIndexPage() {
                 Normas Regulamentadoras
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black mb-8 leading-[1.05] tracking-tight max-w-3xl">
+            <h1 className="h1-standard mb-8 max-w-3xl">
               Guia das NRs explicadas para gestores
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">

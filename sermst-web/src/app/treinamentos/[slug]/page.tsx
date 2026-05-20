@@ -46,7 +46,7 @@ export default async function TrainingPage({ params }: PageProps) {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
             <FadeIn>
-              <h1 className="text-4xl md:text-6xl font-black text-brand-900 leading-none tracking-tighter mb-8 italic">
+              <h1 className="h1-standard mb-8 text-brand-900 leading-none tracking-tighter italic">
                 {training.title}
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed border-l-4 border-accent-pink pl-6">

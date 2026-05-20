@@ -100,7 +100,7 @@ export default async function ServicoPage({
               <span className="mb-6 inline-block rounded-full border border-accent-pink/20 bg-accent-pink/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-accent-pink">
                 Especialidade SERMST
               </span>
-              <h1 className="mb-8 text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
+              <h1 className="h1-standard mb-8 text-white">
                 {servico === 'exame-admissional-expresso' ? 'Clinica de Exame Admissional | Medicina do Trabalho' : data.h1}
               </h1>
               <p className="mx-auto max-w-3xl border-l-4 border-accent-pink pl-6 text-left text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
@@ -200,6 +200,48 @@ export default async function ServicoPage({
               </div>
             </FadeIn>
           </div>
+
+          {servico === 'gestao-esocial-s2220-s2240' && (
+            <div className="grid gap-6 lg:grid-cols-2">
+              <FadeIn direction="right">
+                <Link
+                  href="/rh/domicilio-eletronico-trabalhista-det"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    DET: canal oficial de comunicacao com a fiscalizacao trabalhista
+                  </h2>
+                  <p className="mb-6 text-slate-700 leading-relaxed">
+                    Se o problema do seu eSocial ja se mistura com intimacao, aviso institucional e risco de perder prazo, o DET precisa entrar no fluxo da empresa.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
+                    Entender o DET
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={0.08}>
+                <Link
+                  href="/rh/declaracao-inexistencia-risco-dir"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    DIR: como validar se sua empresa realmente pode usar simplificacao
+                  </h2>
+                  <p className="mb-6 text-slate-700 leading-relaxed">
+                    Para empresas tentando simplificar SST, a DIR so e segura quando o enquadramento esta correto e conversa com a realidade do estabelecimento.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
+                    Entender a DIR
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+            </div>
+          )}
         </div>
       </section>
 

@@ -38,7 +38,7 @@ export default function RHIndexPage() {
             <span className="inline-block bg-accent-pink/10 border border-accent-pink/20 text-accent-pink font-black text-xs uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6">
               Conteúdo para RH e Departamento Pessoal
             </span>
-            <h1 className="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-none">
+            <h1 className="h1-standard mb-8 tracking-tighter">
               Gestão de eSocial e SST <br />
               <span className="text-accent-pink">para RH e DP</span>
             </h1>
@@ -122,6 +122,48 @@ export default function RHIndexPage() {
             </div>
           </Link>
         </FadeIn>
+      </section>
+
+      <section className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 pb-16">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <FadeIn direction="right">
+            <Link
+              href="/rh/domicilio-eletronico-trabalhista-det"
+              className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+            >
+              <span className="kicker">Fiscalizacao digital</span>
+              <h2 className="mb-4 text-2xl font-black text-brand-900">
+                DET: como funciona o Domicilio Eletronico Trabalhista
+              </h2>
+              <p className="mb-6 text-slate-700 leading-relaxed">
+                Entenda por que o DET virou parte real da rotina de compliance trabalhista e o que a empresa perde quando deixa notificacoes e prazos sem responsavel.
+              </p>
+              <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
+                Ler guia do DET
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </FadeIn>
+
+          <FadeIn direction="left" delay={0.08}>
+            <Link
+              href="/rh/declaracao-inexistencia-risco-dir"
+              className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+            >
+              <span className="kicker">NR-01 e simplificacao</span>
+              <h2 className="mb-4 text-2xl font-black text-brand-900">
+                DIR: quando a empresa pode declarar inexistencia de risco
+              </h2>
+              <p className="mb-6 text-slate-700 leading-relaxed">
+                Veja quando a DIR realmente faz sentido, por que grau 1 ou 2 nao basta sozinho e como evitar usar simplificacao sem enquadramento tecnico.
+              </p>
+              <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
+                Ler guia da DIR
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </FadeIn>
+        </div>
       </section>
 
       <section className="pb-24 max-w-[1280px] w-full mx-auto px-6 lg:px-8">

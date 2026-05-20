@@ -73,7 +73,7 @@ export default async function RHDoresPage({
                 <span aria-hidden="true">←</span>
                 Voltar ao guia de RH
               </Link>
-              <h1 className="mb-8 text-4xl font-black leading-[1.1] tracking-tight text-brand-900 md:text-5xl lg:text-[3.5rem]">
+              <h1 className="h1-standard mb-8 text-brand-900">
                 {data.h1}
               </h1>
               <p className="text-xl font-medium leading-relaxed text-slate-600 md:text-2xl">

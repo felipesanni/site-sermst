@@ -43,7 +43,7 @@ export default function AClínicaPage() {
               <span className="bg-accent-pink text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 inline-block shadow-lg shadow-accent-pink/20">
                 Tradição & Inovação SST
               </span>
-              <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] mb-10 tracking-tighter">
+              <h1 className="h1-standard mb-10 text-white tracking-tighter">
                 Mais que uma clínica, <br/>
                 <span className="text-accent-pink italic font-serif">sua parceira estratégica.</span>
               </h1>
