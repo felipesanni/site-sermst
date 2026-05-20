@@ -6,6 +6,7 @@ import './globals.css'
 import Script from 'next/script'
 import { MobileMenuClose } from '@/components/ui/mobile-menu-close'
 import { WhatsAppHeaderTextLink, WhatsAppMobileLink, WhatsAppFloatingButton } from '@/components/ui/whatsapp-link'
+import { ScrollToTop } from '@/components/ui/scroll-to-top'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'optional' })
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading', display: 'optional' })
@@ -180,6 +181,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
       />
       </head>
       <body className="flex min-h-screen flex-col">
+        <ScrollToTop />
         {/* GTM noscript fallback */}
         <noscript>
           <iframe
@@ -239,7 +241,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
               </a>
               <Link
                 href="/rh/calculadora-cnae-grau-de-risco"
-                className="force-pink-btn inline-flex items-center gap-2 rounded-full px-6 py-2 text-sm font-bold text-white shadow-lg transition-colors animate-pulse"
+                className="force-pink-btn btn-glow-pulse inline-flex items-center gap-2 rounded-full px-6 py-2 text-sm font-bold text-white transition-colors"
               >
                 Calcular Meu Risco
               </Link>
