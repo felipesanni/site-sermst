@@ -131,7 +131,7 @@ export default function EvitarProcessosPage() {
       sidebarCtaLabel="Auditar minha documentação SST"
       related={[
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissão' },
+        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Perícia trabalhista (assistente técnico)', href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}

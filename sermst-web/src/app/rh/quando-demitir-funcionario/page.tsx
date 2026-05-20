@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Demissão é decisão técnica, não emocional. Feita certa, protege time e resultado. Feita errada, vira processo e custo escondido. Veja sinais, etapas e cuidados.',
   alternates: { canonical: 'https://sermst.com.br/rh/quando-demitir-funcionario' },
-  robots: 'noindex, follow',
+  robots: 'index, follow',
   openGraph: {
     title: 'Quando demitir um funcionário: critérios, riscos e compliance SST | SERMST',
     description:
@@ -152,7 +152,7 @@ export default function QuandoDemitirPage() {
       sidebarHook="Cada demissão precisa de exame demissional, S-2299 no prazo e documentação prévia. Falha em um desses três é passivo aberto. A SERMST audita o processo de rescisão completo."
       sidebarCtaLabel="Auditar processo de demissão"
       related={[
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissão' },
+        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },

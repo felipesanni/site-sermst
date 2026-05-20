@@ -838,7 +838,7 @@ export const rhDoresSEO: Record<string, SEODocument> = {
     },
   },
   // ─── Guias migrados do WordPress (redirects 301) ─────────────────────────
-  // função-encarregado tem página dedicada em /rh/função-encarregado/page.tsx
+  // função-encarregado tem página dedicada em /rh/funcao-encarregado/page.tsx
   "o-que-um-gerente-faz": rhEntry(
     "O que um gerente faz: funções, responsabilidades e impacto",
     "Gerente é o cargo que transforma estratégia da diretoria em execução real da equipe. Reúne planejamento, gente e indicador num só ponto de responsabilidade.",
@@ -851,7 +851,7 @@ export const rhDoresSEO: Record<string, SEODocument> = {
     "Gestor adia demissão por receio do passivo, ou demite por impulso sem documentação. Os dois caminhos custam caro.",
     "Demissão estruturada tem três etapas: documentação prévia (advertência, feedback formal), exame demissional em dia, e rescisão com base em fato — não opinião.",
   ),
-  "carta-demissão": rhEntry(
+  "carta-demissao": rhEntry(
     "Como fazer uma carta de demissão: modelo e cuidados",
     "A carta de demissão (rescisão) é peça jurídica. O conteúdo dela define obrigações trabalhistas, abre janela para passivo e fica no eSocial. Texto genérico custa caro.",
     "Carta mal redigida abre brecha para reclamação trabalhista posterior — alegação de motivo justo invalido, falta de aviso prévio, descumprimento de norma coletiva.",

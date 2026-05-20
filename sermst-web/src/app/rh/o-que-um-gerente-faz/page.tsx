@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Guia direto sobre a função de gerente: o que faz no dia a dia, responsabilidades técnicas, perfil que entrega resultado, diferença para supervisor e o ponto cego de SST que pega gestores promovidos sem treinamento.',
   alternates: { canonical: 'https://sermst.com.br/rh/o-que-um-gerente-faz' },
-  robots: 'noindex, follow',
+  robots: 'index, follow',
   openGraph: {
     title: 'O que um gerente faz: responsabilidades, limites e obrigações SST | SERMST',
     description:
@@ -141,7 +141,7 @@ export default function OQueUmGerenteFazPage() {
       sidebarHook="Gerente sem treinamento de SST documentado é exposição direta para a empresa em fiscalização ou acidente. A SERMST audita PCMSO, PGR e treinamentos de toda a estrutura — sem custo inicial."
       sidebarCtaLabel="Auditar SST da liderança"
       related={[
-        { label: 'Função encarregado: responsabilidades', href: '/rh/função-encarregado' },
+        { label: 'Função encarregado: responsabilidades', href: '/rh/funcao-encarregado' },
         { label: 'Como treinar gerentes', href: '/rh/treinamento-gerentes' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Multa de eSocial S-2220', href: '/rh/multa-esocial-s2220' },

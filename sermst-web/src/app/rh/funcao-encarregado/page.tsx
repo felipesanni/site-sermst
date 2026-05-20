@@ -18,12 +18,12 @@ export const metadata: Metadata = {
   title: 'Função de Encarregado: responsabilidades, perfil e quando contratar | SERMST',
   description:
     'Guia completo da função encarregado: o que faz, responsabilidades, perfil ideal, salário médio, diferença para supervisor e o erro de SST que pega gestores de surpresa. Por SERMST, 40 anos em medicina e segurança do trabalho.',
-  alternates: { canonical: 'https://sermst.com.br/rh/função-encarregado' },
+  alternates: { canonical: 'https://sermst.com.br/rh/funcao-encarregado' },
   openGraph: {
     title: 'Função de Encarregado: responsabilidades, perfil e quando contratar',
     description:
       'O que faz um encarregado, perfil ideal, salário médio e o ponto cego de SST que pega gestores de surpresa.',
-    url: 'https://sermst.com.br/rh/função-encarregado',
+    url: 'https://sermst.com.br/rh/funcao-encarregado',
     type: 'article',
     locale: 'pt_BR',
   },

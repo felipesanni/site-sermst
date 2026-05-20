@@ -193,7 +193,7 @@ export default function ListaCNAEPage() {
         { label: 'Calculadora CNAE × Grau de Risco', href: '/rh/calculadora-cnae-grau-de-risco' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'PGR (NR-01) atualizado', href: '/normas/nr-01-pgr-atualizada' },
-        { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s-2220' },
+        { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />
   );

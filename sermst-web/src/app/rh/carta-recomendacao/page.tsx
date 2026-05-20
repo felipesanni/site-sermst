@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description:
     'A carta de recomendação é uma escolha de gestão. Honestidade controlada é o equilíbrio. Veja como redigir, modelos por contexto e o erro de inflar avaliação.',
   alternates: { canonical: 'https://sermst.com.br/rh/carta-recomendacao' },
-  robots: 'noindex, follow',
+  robots: 'index, follow',
   openGraph: {
     title: 'Como escrever uma carta de recomendação profissional: estrutura e exemplos | SERMST',
     description:
       'Guia prático para escrever uma carta de recomendação profissional eficaz: estrutura, o que incluir, tom adequado e exemplos para diferentes cargos.',
-    url: 'https://sermst.com.br/rh/carta-recomendação',
+    url: 'https://sermst.com.br/rh/carta-recomendacao',
     type: 'article',
     locale: 'pt_BR',
   },
@@ -140,7 +140,7 @@ export default function CartaRecomendacaoPage() {
       sidebarHook="Carta de recomendação é a parte visível do desligamento. A parte invisível — exame demissional, S-2299, paper trail — é o que protege a empresa em ação posterior."
       sidebarCtaLabel="Auditar processo de desligamento"
       related={[
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissão' },
+        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },

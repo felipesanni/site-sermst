@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: 'Como fazer uma carta de demissão: modelo, cuidados e passivos a evitar | SERMST',
   description:
     'A carta de rescisão é peça jurídica. O conteúdo dela define obrigações trabalhistas, abre janela para passivo e fica registrada no eSocial. Veja como redigir corretamente.',
-  alternates: { canonical: 'https://sermst.com.br/rh/carta-demissão' },
-  robots: 'noindex, follow',
+  alternates: { canonical: 'https://sermst.com.br/rh/carta-demissao' },
+  robots: 'index, follow',
   openGraph: {
     title: 'Como fazer uma carta de demissão: modelo, cuidados e passivos a evitar | SERMST',
     description:
       'Saiba como redigir uma carta de demissão corretamente, quais elementos são obrigatórios, quando usar carta de demissão por justa causa e como evitar passivo trabalhista.',
-    url: 'https://sermst.com.br/rh/carta-demissão',
+    url: 'https://sermst.com.br/rh/carta-demissao',
     type: 'article',
     locale: 'pt_BR',
   },
@@ -24,7 +24,7 @@ export default function CartaDemissãoPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
-      pageUrl="https://sermst.com.br/rh/carta-demissão"
+      pageUrl="https://sermst.com.br/rh/carta-demissao"
       author={{
         name: 'Felipe Sannino',
         jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',

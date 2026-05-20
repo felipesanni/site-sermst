@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Gerente promovido sem treinamento vira problema na equipe e na operação. Treinar liderança retorna em produtividade, retenção e segurança. Veja como estruturar.',
   alternates: { canonical: 'https://sermst.com.br/rh/treinamento-gerentes' },
-  robots: 'noindex, follow',
+  robots: 'index, follow',
   openGraph: {
     title: 'Treinamento para gerentes em SST: obrigações, NRs e responsabilidade | SERMST',
     description:
@@ -160,7 +160,7 @@ export default function TreinamentoGerentesPage() {
       sidebarCtaLabel="Programa SST para gestão"
       related={[
         { label: 'O que um gerente faz', href: '/rh/o-que-um-gerente-faz' },
-        { label: 'Função encarregado', href: '/rh/função-encarregado' },
+        { label: 'Função encarregado', href: '/rh/funcao-encarregado' },
         { label: 'Treinamentos NR/CIPA/brigada', href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
       ]}

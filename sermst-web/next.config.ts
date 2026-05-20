@@ -226,6 +226,21 @@ const nextConfig: NextConfig = {
       { source: "/portfolio/exames-ocupacionais", destination: "/servicos", permanent: true },
       { source: "/portfolio/:slug*", destination: "/servicos", permanent: true },
 
+      // -- URLs com acento (canônicas antigas) → URLs sem acento (corretas) --
+      { source: "/rh/fun%C3%A7%C3%A3o-encarregado",           destination: "/rh/funcao-encarregado",               permanent: true },
+      { source: "/rh/função-encarregado",                      destination: "/rh/funcao-encarregado",               permanent: true },
+      { source: "/rh/carta-demiss%C3%A3o",                     destination: "/rh/carta-demissao",                   permanent: true },
+      { source: "/rh/carta-demissão",                          destination: "/rh/carta-demissao",                   permanent: true },
+      { source: "/rh/carta-recomenda%C3%A7%C3%A3o",           destination: "/rh/carta-recomendacao",               permanent: true },
+      { source: "/rh/carta-recomendação",                      destination: "/rh/carta-recomendacao",               permanent: true },
+      // -- Typo: hífen extra em multa-esocial --
+      { source: "/rh/multa-esocial-s-2220",                    destination: "/rh/multa-esocial-s2220",              permanent: true },
+      // -- Slugs de treinamentos com acento (antigos) → sem acento (corretos) --
+      { source: "/treinamentos/nr-10-seguran%C3%A7a-eletrica", destination: "/treinamentos/nr-10-seguranca-eletrica",          permanent: true },
+      { source: "/treinamentos/nr-10-segurança-eletrica",       destination: "/treinamentos/nr-10-seguranca-eletrica",          permanent: true },
+      { source: "/treinamentos/nr-18-seguran%C3%A7a-construcao-civil", destination: "/treinamentos/nr-18-seguranca-construcao-civil", permanent: true },
+      { source: "/treinamentos/nr-18-segurança-construcao-civil",      destination: "/treinamentos/nr-18-seguranca-construcao-civil", permanent: true },
+
       // -- Catch-all para sub-paths de WP (ex: /attachment/) nao cobertos por regras especificas --
       { source: "/saude-ocupacional/:path*", destination: "/saude", permanent: true },
       { source: "/medicina-do-trabalho/:path*", destination: "/saude", permanent: true },

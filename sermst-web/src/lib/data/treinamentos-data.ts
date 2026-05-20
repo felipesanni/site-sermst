@@ -10,7 +10,7 @@ export interface Training {
 
 export const trainingsData: Training[] = [
   {
-    slug: 'nr-10-segurança-eletrica',
+    slug: 'nr-10-seguranca-eletrica',
     title: 'NR-10 - Segurança em Eletricidade',
     category: 'Segurança',
     workload: '40h (Básico) / 40h (Complementar/SEP)',
@@ -138,7 +138,7 @@ export const trainingsData: Training[] = [
     ]
   },
   {
-    slug: 'nr-18-segurança-construcao-civil',
+    slug: 'nr-18-seguranca-construcao-civil',
     title: 'NR-18 - Construção Civil',
     category: 'Construção',
     workload: '4h (Integração) / Periódicos Conforme Função',
