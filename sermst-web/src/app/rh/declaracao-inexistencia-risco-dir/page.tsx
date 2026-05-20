@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'DIR: quando a empresa pode emitir Declaracao de Inexistencia de Risco | SERMST',
   description:
     'Entenda o que e a DIR, quando a Declaracao de Inexistencia de Risco pode ser usada, quem se enquadra e por que nem toda empresa de grau 1 ou 2 esta dispensada de analise tecnica.',
+  keywords: [
+    'DIR',
+    'Declaracao de Inexistencia de Risco',
+    'NR-01',
+    'ME EPP grau de risco',
+    'dispensa PGR',
+    'dispensa PCMSO',
+    'levantamento preliminar de perigos',
+  ],
   alternates: {
     canonical: 'https://sermst.com.br/rh/declaracao-inexistencia-risco-dir',
   },
@@ -37,6 +46,7 @@ export default function DeclaracaoInexistenciaRiscoPage() {
         datePublished: '2026-05-20',
         dateModified: '2026-05-20',
       }}
+      readingTime="6 min"
       h1="DIR: quando a empresa pode usar a Declaracao de Inexistencia de Risco"
       intro="A DIR parece simples, mas e justamente ai que muitas empresas erram. Nao basta estar em atividade administrativa ou ter grau de risco menor: a declaracao so faz sentido quando a organizacao realmente se enquadra nos criterios legais e nao identifica determinadas exposicoes ocupacionais no estabelecimento."
       sections={[
@@ -72,6 +82,19 @@ export default function DeclaracaoInexistenciaRiscoPage() {
               </p>
               <p>
                 Isso significa que a analise nao pode ser baseada so no CNAE, na percepcao de escritorio ou em achar que a empresa nunca teve acidente. O ponto central e o <strong>levantamento real dos perigos e exposicoes</strong>.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'DIR, grau de risco 1 ou 2 e empresas de menor porte',
+          body: (
+            <>
+              <p>
+                Um dos maiores volumes de busca sobre esse tema aparece em consultas como <strong>empresa grau 1 pode fazer DIR</strong>, <strong>grau 2 precisa de PGR</strong> ou <strong>ME e EPP pode dispensar PCMSO</strong>. Essas perguntas fazem sentido, mas so o grau de risco nao fecha a decisao.
+              </p>
+              <p>
+                A DIR precisa conversar com porte, enquadramento, realidade do estabelecimento e ausencia das exposicoes que afastariam a simplificacao. Sem isso, a empresa sai do campo da economia e entra no campo do risco documental.
               </p>
             </>
           ),
@@ -120,6 +143,7 @@ export default function DeclaracaoInexistenciaRiscoPage() {
         { q: 'O que significa DIR em SST?', a: 'DIR significa Declaracao de Inexistencia de Risco, usada em cenarios especificos de simplificacao previstos na NR-01 e na orientacao oficial do governo.' },
         { q: 'Toda empresa de grau de risco 1 ou 2 pode emitir DIR?', a: 'Nao automaticamente. O grau de risco ajuda no enquadramento, mas a empresa ainda precisa verificar se realmente se enquadra nos criterios e se nao ha exposicoes ocupacionais que afastem essa simplificacao.' },
         { q: 'MEI com empregado pode usar DIR?', a: 'Em alguns cenarios simplificados, sim, mas isso depende das condicoes efetivas do estabelecimento e das orientacoes oficiais aplicaveis. Nao e seguro presumir sem analise.' },
+        { q: 'DIR dispensa PGR e PCMSO automaticamente?', a: 'Nao e seguro tratar a DIR como dispensa automatica de toda rotina de SST. O enquadramento precisa ser validado com base na norma, no porte da empresa, no grau de risco e no levantamento real do estabelecimento.' },
         { q: 'DIR dispensa toda obrigacao de SST?', a: 'Nao. A declaracao nao elimina a responsabilidade da empresa sobre saude e seguranca. Ela trata de uma situacao especifica de simplificacao, e nao de abandono da gestao de riscos ocupacionais.' },
         { q: 'Como saber se minha empresa realmente pode usar DIR?', a: 'A resposta depende do porte, grau de risco, existencia ou nao de exposicoes ocupacionais e da leitura real do estabelecimento. E exatamente o tipo de ponto que vale diagnosticar antes de assumir uma dispensa.' },
       ]}

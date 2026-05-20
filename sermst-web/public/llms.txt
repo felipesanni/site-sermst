@@ -98,6 +98,8 @@ Guias práticos para gestão de RH, DP e obrigações trabalhistas.
 
 - Calculadora CNAE × Grau de Risco: https://sermst.com.br/rh/calculadora-cnae-grau-de-risco
 - Lista CNAE completa do Brasil: https://sermst.com.br/rh/lista-cnae-brasil
+- Domicílio Eletrônico Trabalhista (DET): https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det
+- Declaração de Inexistência de Risco (DIR): https://sermst.com.br/rh/declaracao-inexistencia-risco-dir
 - Como evitar processos trabalhistas: https://sermst.com.br/rh/evitar-processos-trabalhistas
 - Multa eSocial S-2220: https://sermst.com.br/rh/multa-esocial-s2220
 - Função do encarregado de RH: https://sermst.com.br/rh/funcao-encarregado

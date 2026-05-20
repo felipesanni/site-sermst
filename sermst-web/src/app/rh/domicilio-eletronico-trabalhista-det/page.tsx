@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'DET: o que e o Domicilio Eletronico Trabalhista e como evitar perdas de prazo | SERMST',
   description:
     'Entenda o que e o DET, para que serve o Domicilio Eletronico Trabalhista, quem precisa acompanhar e quais riscos surgem quando a empresa perde notificacoes do MTE e da SIT.',
+  keywords: [
+    'DET',
+    'Domicilio Eletronico Trabalhista',
+    'MTE',
+    'Secretaria de Inspecao do Trabalho',
+    'notificacao trabalhista',
+    'prazo fiscalizacao trabalhista',
+    'comunicacao oficial empregador governo',
+  ],
   alternates: {
     canonical: 'https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det',
   },
@@ -37,6 +46,7 @@ export default function DomicilioEletronicoTrabalhistaPage() {
         datePublished: '2026-05-20',
         dateModified: '2026-05-20',
       }}
+      readingTime="6 min"
       h1="DET: o que e o Domicilio Eletronico Trabalhista e por que sua empresa nao pode ignorar"
       intro="O DET e o canal oficial de comunicacao eletronica entre o governo e o empregador para atos da Inspecao do Trabalho. Quando a empresa deixa de acompanhar esse ambiente, o risco nao e so perder um aviso: e perder prazo de resposta, defesa, envio documental e controle sobre uma fiscalizacao."
       sections={[
@@ -61,6 +71,19 @@ export default function DomicilioEletronicoTrabalhistaPage() {
               <li><strong>Enviar documentacao eletronica.</strong> O DET tambem serve para entregar documentos exigidos em fiscalizacao e apresentar defesa ou recurso em processos administrativos.</li>
               <li><strong>Concentrar historico e acompanhamento.</strong> Em vez de tratar cada demanda de forma dispersa, a empresa passa a ter um ponto central de relacionamento institucional com a fiscalizacao trabalhista.</li>
             </ul>
+          ),
+        },
+        {
+          title: 'DET, MTE e SIT: como esse trio aparece nas buscas',
+          body: (
+            <>
+              <p>
+                Muitas empresas chegam a esse tema pesquisando por <strong>DET MTE</strong>, <strong>DET SIT</strong>, <strong>como acessar o DET</strong>, <strong>notificacao no DET</strong> ou <strong>prazo no Domicilio Eletronico Trabalhista</strong>. Todas essas buscas apontam para o mesmo problema de fundo: o empregador precisa entender como o canal oficial do governo impacta sua rotina real.
+              </p>
+              <p>
+                Quando o DET nao entra na agenda de acompanhamento, o risco deixa de ser teorico. Ele passa a ser prazo perdido, documento fora de hora, dificuldade de resposta e exposicao desnecessaria em fiscalizacao.
+              </p>
+            </>
           ),
         },
         {
@@ -115,8 +138,9 @@ export default function DomicilioEletronicoTrabalhistaPage() {
       ]}
       faq={[
         { q: 'O que significa DET?', a: 'DET significa Domicilio Eletronico Trabalhista, plataforma oficial usada para comunicacao entre o empregador e a Inspecao do Trabalho.' },
+        { q: 'DET e a mesma coisa que eSocial?', a: 'Nao. O DET e o canal oficial de comunicacao, notificacao e tramitacao com a Inspecao do Trabalho. O eSocial continua sendo o ambiente de envio dos eventos trabalhistas, previdenciarios e de SST.' },
         { q: 'Quem precisa acompanhar o DET?', a: 'Empregadores que tenham relacao trabalhista e precisem manter rotina de comunicacao institucional com a fiscalizacao devem acompanhar o DET e definir um responsavel interno pelo monitoramento.' },
-        { q: 'O DET substitui o eSocial?', a: 'Nao. O DET e um canal de comunicacao e tramitacao com a Inspecao do Trabalho. O eSocial continua sendo o ambiente de envio dos eventos trabalhistas, previdenciarios e de SST.' },
+        { q: 'O que pode chegar no DET?', a: 'O empregador pode receber avisos, intimacoes, solicitacoes documentais, comunicacoes da Inspecao do Trabalho e outras demandas formais ligadas a fiscalizacao trabalhista.' },
         { q: 'Perder prazo no DET pode gerar problema?', a: 'Sim. O risco principal e perder tempo de resposta, entrega documental, manifestacao ou defesa em uma demanda ligada a fiscalizacao trabalhista.' },
         { q: 'O DET tem relacao com SST?', a: 'Tem relacao indireta e operacional. Quando a empresa precisa apresentar documentos ou sustentar rotinas de saude e seguranca, o DET pode ser a via de comunicacao formal, enquanto SST fornece a base tecnica da resposta.' },
       ]}

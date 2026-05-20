@@ -164,7 +164,7 @@ export default function GuiaPage() {
     <div className="guia-page">
       <div className="wrap" id="app">
         <div className="page-title">
-          <h1>Solicitação de Exame</h1>
+          <h1 className="h1-standard">Solicitação de Exame</h1>
         </div>
 
         {/* FORMULÁRIO */}

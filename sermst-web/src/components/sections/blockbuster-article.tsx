@@ -120,8 +120,13 @@ export function BlockbusterArticle({
         headline: h1,
         description: intro,
         url: pageUrl,
+        mainEntityOfPage: pageUrl,
+        inLanguage: 'pt-BR',
         datePublished: author?.datePublished ?? '2024-11-01',
         dateModified: author?.dateModified ?? '2026-05-01',
+        image: coverImage
+          ? [`https://sermst.com.br${coverImage.src}`]
+          : undefined,
         author: author
           ? {
               '@type': 'Person',
@@ -140,6 +145,21 @@ export function BlockbusterArticle({
       }
     : null;
 
+  const faqSchema = frequentFaqs.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: frequentFaqs.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      }
+    : null;
+
   return (
     <main className="min-h-screen bg-white">
       {breadcrumbSchema && (
@@ -147,6 +167,9 @@ export function BlockbusterArticle({
       )}
       {articleSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      )}
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
