@@ -212,12 +212,12 @@ function ResultCard({
 
     const nr05Summary =
       nr05?.kind === 'cipa'
-        ? `CIPA obrigatoria (${nr05.faixa}) com ${nr05.empregados.efetivos} efetivo(s) e ${nr05.empregados.suplentes} suplente(s) por lado.`
+        ? `CIPA obrigatória (${nr05.faixa}) com ${nr05.empregados.efetivos} efetivo(s) e ${nr05.empregados.suplentes} suplente(s) por lado.`
         : nr05?.kind === 'representante'
           ? 'Sem CIPA dimensionada nesta faixa; caso tende a representante da NR-05.'
           : nr05?.kind === 'sesmt'
-            ? 'Faixa sem CIPA dimensionada pelo Quadro I; atribuicoes tendem a ser cobertas pelo SESMT.'
-            : 'NR-05 ainda nao calculada.';
+            ? 'Faixa sem CIPA dimensionada pelo Quadro I; atribuições tendem a ser cobertas pelo SESMT.'
+            : 'NR-05 ainda não calculada.';
 
     payload.porte = getPorteFromEmployees(employees);
     payload.dor = 'calculadora-risco';
@@ -248,7 +248,7 @@ function ResultCard({
 
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
-        throw new Error(data?.error || 'Nao foi possivel enviar a analise.');
+        throw new Error(data?.error || 'Não foi possível enviar a análise.');
       }
 
       setStatus('success');
@@ -359,7 +359,7 @@ function ResultCard({
             <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">NR-05 e dimensionamento de CIPA</p>
             <h4 className="mt-1 text-lg font-black text-brand-900">Leitura da estrutura de CIPA para este estabelecimento</h4>
             <p className="mt-1 text-sm leading-relaxed text-slate-600">
-              A NR-05 olha para o estabelecimento, nao para o total do grupo empresarial. Com a quantidade de empregados informada no topo da consulta, a calculadora mostra se a empresa tende a precisar de CIPA completa, apenas representante da NR-05 ou cobertura pela estrutura de SESMT.
+              A NR-05 olha para o estabelecimento, não para o total do grupo empresarial. Com a quantidade de empregados informada no topo da consulta, a calculadora mostra se a empresa tende a precisar de CIPA completa, apenas representante da NR-05 ou cobertura pela estrutura de SESMT.
             </p>
           </div>
         </div>
@@ -422,7 +422,7 @@ function ResultCard({
               </div>
               <div>
                 <p className="text-[11px] font-black uppercase tracking-wider text-yellow-700">Representante da NR-05</p>
-                <h5 className="mt-1 text-lg font-black text-brand-900">Nesta faixa, a empresa nao tende a montar CIPA completa</h5>
+                <h5 className="mt-1 text-lg font-black text-brand-900">Nesta faixa, a empresa não tende a montar CIPA completa</h5>
                 <p className="mt-2 text-sm leading-relaxed text-slate-700">{nr05.observacao}</p>
               </div>
             </div>
@@ -447,10 +447,10 @@ function ResultCard({
 
       <div className="mb-8 rounded-[2rem] border border-white/70 bg-white/75 p-6 shadow-sm">
         <div className="mb-5">
-          <p className="text-[11px] font-black uppercase tracking-wider text-accent-pink">Qualifica??o comercial</p>
-          <h4 className="mt-1 text-lg font-black text-brand-900">Receba um diagn?stico inicial e avance com a equipe da SERMST</h4>
+          <p className="text-[11px] font-black uppercase tracking-wider text-accent-pink">Qualificação comercial</p>
+          <h4 className="mt-1 text-lg font-black text-brand-900">Receba um diagnóstico inicial e avance com a equipe da SERMST</h4>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            A calculadora j? orientou o cen?rio e reuniu os dados t?cnicos principais. No envio final, basta informar nome, e-mail e telefone. A SERMST recebe junto o CNAE consultado, o grau de risco, o enquadramento de NR-05/CIPA e o contexto do estabelecimento para responder com mais crit?rio comercial e t?cnico.
+            A calculadora já orientou o cenário e reuniu os dados técnicos principais. No envio final, basta informar nome, e-mail e telefone. A SERMST recebe junto o CNAE consultado, o grau de risco, o enquadramento de NR-05/CIPA e o contexto do estabelecimento para responder com mais critério comercial e técnico.
           </p>
         </div>
 
@@ -548,7 +548,7 @@ function ResultCard({
             {status === 'error' && (
               <div className="flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
                 <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
-                <p><strong>Nao conseguimos enviar.</strong> {error}</p>
+                <p><strong>Não conseguimos enviar.</strong> {error}</p>
               </div>
             )}
 
@@ -576,7 +576,7 @@ function ResultCard({
           *Consulta baseada nos Quadros da NR-04, NR-05 e NR-07. Confirme o enquadramento com profissional habilitado.
         </p>
         <p className="mx-auto max-w-2xl text-xs leading-relaxed text-slate-500">
-          RAT e a aliquota do Risco Ambiental do Trabalho aplicada sobre a folha. Quando a leitura mostra RAT 3% + FAP, isso indica uma base de risco elevada que ainda pode ser ajustada pelo Fator Acidentario de Prevencao conforme o historico da empresa.
+          RAT é a alíquota do Risco Ambiental do Trabalho aplicada sobre a folha. Quando a leitura mostra RAT 3% + FAP, isso indica uma base de risco elevada que ainda pode ser ajustada pelo Fator Acidentário de Prevenção conforme o histórico da empresa.
         </p>
       </div>
     </div>

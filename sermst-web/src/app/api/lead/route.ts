@@ -110,8 +110,10 @@ async function verifyTurnstile(token: string, ip: string) {
     const result = (await response.json()) as { success?: boolean };
     return Boolean(result.success);
   } catch (error) {
-    console.error('[LEAD] Turnstile falhou:', error);
-    return false;
+    // Em caso de falha de rede ao chamar a Cloudflare, deixa passar
+    // (o anti-spam por padrão de texto e honeypot ainda protege)
+    console.error('[LEAD] Turnstile verificação falhou — permitindo envio:', error);
+    return true;
   }
 }
 
