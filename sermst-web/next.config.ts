@@ -110,7 +110,7 @@ const nextConfig: NextConfig = {
       { source: "/medicina-do-trabalho/gestao-de-sst-a-chave-para-um-ambiente-de-trabalho-seguro-e-saudavel", destination: "/saude/gestao-sst", permanent: true },
       { source: "/medicina-do-trabalho/esocial-sst-mudou", destination: "/rh/multa-esocial-s2220", permanent: true },
       { source: "/medicina-do-trabalho/como-funciona-o-exame-admissional-tudo-o-que-voce-precisa-saber", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
-      { source: "/medicina-do-trabalho/nr-07-tudo-o-que-voce-precisa-saber-sobre-o-controle-medico-de-saude-ocupacional", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
+      { source: "/medicina-do-trabalho/nr-07-tudo-o-que-voce-precisa-saber-sobre-o-controle-medico-de-saude-ocupacional", destination: "/normas/o-que-e-nr-07", permanent: true },
       { source: "/medicina-do-trabalho/nr-1-atualizada", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/uncategorized/nr-1-atualizada", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/exames/funcao-encarregado-responsabilidades-e-perfil-ideal", destination: "/rh/funcao-encarregado", permanent: true },
@@ -126,7 +126,7 @@ const nextConfig: NextConfig = {
       { source: "/exames/gestao-de-sst-o-guia-completo-para-empresas-que-buscam-seguranca", destination: "/saude/gestao-sst", permanent: true },
       { source: "/exames/exame-toxicologico-guia-completo-para-motoristas-e-empresas", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
       { source: "/exames/audiometria-ocupacional", destination: "/servicos/audiometria-ocupacional-clinica/sao-paulo", permanent: true },
-      { source: "/exames/nr07-guia-completo-da-norma-regulamentadora-no-7", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
+      { source: "/exames/nr07-guia-completo-da-norma-regulamentadora-no-7", destination: "/normas/o-que-e-nr-07", permanent: true },
       { source: "/exames/exame-toxicologico-o-que-voce-precisa-saber", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
       { source: "/exames/pcmso-tudo-o-que-voce-precisa-saber-sobre-o-programa-de-controle-medico", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
       { source: "/exames-clinicos/eletrocardiograma-de-alta-resolucao", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
@@ -235,6 +235,8 @@ const nextConfig: NextConfig = {
       { source: "/rh/carta-recomendação",                      destination: "/rh/carta-recomendacao",               permanent: true },
       // -- Typo: hífen extra em multa-esocial --
       { source: "/rh/multa-esocial-s-2220",                    destination: "/rh/multa-esocial-s2220",              permanent: true },
+      { source: "/dicionario/multa-esocial-s2220",             destination: "/rh/multa-esocial-s2220",              permanent: true },
+      { source: "/dicionario/multa-esocial-s-2220",            destination: "/rh/multa-esocial-s2220",              permanent: true },
       // -- Slugs de treinamentos com acento (antigos) → sem acento (corretos) --
       { source: "/treinamentos/nr-10-seguran%C3%A7a-eletrica", destination: "/treinamentos/nr-10-seguranca-eletrica",          permanent: true },
       { source: "/treinamentos/nr-10-segurança-eletrica",       destination: "/treinamentos/nr-10-seguranca-eletrica",          permanent: true },
@@ -249,6 +251,7 @@ const nextConfig: NextConfig = {
       { source: "/saude-ocupacional/:path*", destination: "/saude", permanent: true },
       { source: "/medicina-do-trabalho/:path*", destination: "/saude", permanent: true },
       { source: "/exames/:path*", destination: "/servicos", permanent: true },
+      { source: "/seguranca-do-trabalho/:path*", destination: "/normas", permanent: true },
       { source: "/lp-aso-form/:path*", destination: "/contato", permanent: true },
       { source: "/lp-obra/:path*", destination: "/contato", permanent: true },
     ];

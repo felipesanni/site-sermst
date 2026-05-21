@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { useEffect, useRef, useState, ReactNode } from 'react';
 
 type FadeInProps = {
   children: ReactNode;
@@ -12,6 +11,24 @@ type FadeInProps = {
   viewport?: boolean;
 };
 
+const directionMap: Record<string, string> = {
+  up:    'translateY(32px)',
+  down:  'translateY(-32px)',
+  left:  'translateX(32px)',
+  right: 'translateX(-32px)',
+  none:  'none',
+};
+
+/**
+ * FadeIn — animação de entrada leve sem Framer Motion.
+ *
+ * Estratégia de LCP:
+ * - SSR / antes da hidratação → sem inline styles → elemento visível no HTML
+ * - Após hidratação, se já estiver acima do fold → exibe imediatamente (sem delay)
+ * - Abaixo do fold → anima quando entrar na viewport (IntersectionObserver)
+ *
+ * Isso elimina o problema de opacity:0 no LCP element que Framer Motion causava.
+ */
 export function FadeIn({
   children,
   delay = 0,
@@ -20,42 +37,56 @@ export function FadeIn({
   className = '',
   viewport = true,
 }: FadeInProps) {
-  const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
-    none: { x: 0, y: 0 },
-  };
+  const ref = useRef<HTMLDivElement>(null);
+  const [hydrated, setHydrated] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  const revealedState = {
-    opacity: 1,
-    x: 0,
-    y: 0,
-  };
+  useEffect(() => {
+    setHydrated(true);
+
+    // viewport=false → anima imediatamente (ex: hero sem scroll-trigger)
+    if (!viewport) {
+      setVisible(true);
+      return;
+    }
+
+    const el = ref.current;
+    if (!el) return;
+
+    // Já está acima do fold → mostra sem animação (preserva LCP)
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      setVisible(true);
+      return;
+    }
+
+    // Abaixo do fold → observa entrada na viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '-80px' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [viewport]);
+
+  // Antes da hidratação → sem estilo inline → HTML visível para crawlers e LCP
+  const style: React.CSSProperties = hydrated
+    ? {
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'none' : directionMap[direction],
+        transition: `opacity ${duration}s cubic-bezier(0.21,0.47,0.32,0.98) ${delay}s, transform ${duration}s cubic-bezier(0.21,0.47,0.32,0.98) ${delay}s`,
+        willChange: visible ? 'auto' : 'opacity, transform',
+      }
+    : {};
 
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        ...directions[direction],
-      }}
-      {...(viewport
-        ? {
-            whileInView: revealedState,
-            viewport: { once: true, margin: '-100px' },
-          }
-        : {
-            animate: revealedState,
-          })}
-      transition={{
-        duration: duration,
-        delay: delay,
-        ease: [0.21, 0.47, 0.32, 0.98], // Custom sleek cubic-bezier
-      }}
-      className={className}
-    >
+    <div ref={ref} className={className} style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }

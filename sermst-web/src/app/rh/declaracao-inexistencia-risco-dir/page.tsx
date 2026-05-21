@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'DIR: quando a empresa pode emitir Declaracao de Inexistencia de Risco | SERMST',
+  title: 'DIR: quando a empresa pode usar a declaração | SERMST',
   description:
     'Entenda o que e a DIR, quando a Declaracao de Inexistencia de Risco pode ser usada, quem se enquadra e por que nem toda empresa de grau 1 ou 2 esta dispensada de analise tecnica.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: 'https://sermst.com.br/rh/declaracao-inexistencia-risco-dir',
   },
   openGraph: {
-    title: 'DIR: quando a empresa pode emitir Declaracao de Inexistencia de Risco | SERMST',
+    title: 'DIR: quando a empresa pode usar a declaração | SERMST',
     description:
       'Guia pratico sobre DIR para empresas: criterios, limites, relacao com PGR, PCMSO e risco de usar a declaracao sem enquadramento correto.',
     url: 'https://sermst.com.br/rh/declaracao-inexistencia-risco-dir',

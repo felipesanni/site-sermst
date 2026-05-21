@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'DET: o que e o Domicilio Eletronico Trabalhista e como evitar perdas de prazo | SERMST',
+  title: 'DET: o que é e como evitar perda de prazo | SERMST',
   description:
     'Entenda o que e o DET, para que serve o Domicilio Eletronico Trabalhista, quem precisa acompanhar e quais riscos surgem quando a empresa perde notificacoes do MTE e da SIT.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: 'https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det',
   },
   openGraph: {
-    title: 'DET: o que e o Domicilio Eletronico Trabalhista e como evitar perdas de prazo | SERMST',
+    title: 'DET: o que é e como evitar perda de prazo | SERMST',
     description:
       'Guia pratico sobre DET para empresas: comunicacoes da Inspecao do Trabalho, prazos, fiscalizacao, acesso e rotina de acompanhamento pelo RH.',
     url: 'https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det',
@@ -151,7 +151,7 @@ export default function DomicilioEletronicoTrabalhistaPage() {
       related={[
         { label: 'Gestao completa de eSocial SST', href: '/servicos/gestao-esocial-s2220-s2240' },
         { label: 'DIR: quando a empresa pode declarar inexistencia de risco', href: '/rh/declaracao-inexistencia-risco-dir' },
-        { label: 'Como evitar multas do eSocial S-2220 e S-2240', href: '/dicionario/multa-esocial-s2220' },
+        { label: 'Como evitar multas do eSocial S-2220 e S-2240', href: '/rh/multa-esocial-s2220' },
         { label: 'Calculadora de risco por CNPJ', href: '/rh/calculadora-cnae-grau-de-risco' },
       ]}
       finalCta={{
