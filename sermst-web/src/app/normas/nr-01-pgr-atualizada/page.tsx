@@ -22,7 +22,7 @@ export default function NR01Page() {
       coverImage={{ src: "/images/articles/normas-nr.jpg", alt: "Documentação do Programa de Gerenciamento de Riscos PGR conforme NR-01 atualizada" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/nr-01-pgr-atualizada"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-01-pgr-atualizada"
       badgeText="NR-01"
       author={{

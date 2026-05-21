@@ -22,7 +22,7 @@ export default function PGRSPage() {
       coverImage={{ src: "/images/articles/normas-nr.jpg", alt: "Gestão e segregação de resíduos sólidos em ambiente industrial conforme PGRS" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/pgrs-residuos"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/pgrs-residuos"
       badgeText="PGRS"
       author={{

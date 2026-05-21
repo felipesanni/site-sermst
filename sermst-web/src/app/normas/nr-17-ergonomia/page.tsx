@@ -22,7 +22,7 @@ export default function NR17Page() {
       coverImage={{ src: "/images/site/medical-consult.jpg", alt: "Avaliação ergonômica de posto de trabalho e AET conforme NR-17" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/nr-17-ergonomia"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-17-ergonomia"
       badgeText="NR-17"
       author={{

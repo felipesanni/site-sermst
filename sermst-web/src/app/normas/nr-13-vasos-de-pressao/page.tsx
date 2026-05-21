@@ -22,7 +22,7 @@ export default function NR13Page() {
       coverImage={{ src: "/images/site/safety-equipment.jpg", alt: "Inspeção técnica de vasos de pressão e caldeiras conforme NR-13" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/nr-13-vasos-de-pressao"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-13-vasos-de-pressao"
       badgeText="NR-13"
       author={{

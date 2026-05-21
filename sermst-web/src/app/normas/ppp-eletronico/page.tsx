@@ -22,7 +22,7 @@ export default function PPPPage() {
       coverImage={{ src: "/images/articles/normas-nr.jpg", alt: "Perfil Profissiográfico Previdenciário eletrônico PPP-e em sistema de SST" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/ppp-eletronico"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/ppp-eletronico"
       badgeText="PPP eletrônico"
       author={{

@@ -37,9 +37,9 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
       'A NR-17 trata da adaptação do trabalho às condições humanas — postura, mobiliário, ritmo, levantamento de peso. Em ações trabalhistas por LER/DORT, a falta de Análise Ergonômica do Trabalho (AET) atualizada vira responsabilidade direta da empresa.',
   },
   'nr-18-construcao-civil': {
-    titulo: 'NR-18: Segurança e Saúde no Trabalho na Indústria da Construção',
+    titulo: 'NR-18: Segurança e Saúde na Construção Civil',
     descricao:
-      'A NR-18 reúne os requisitos de SST específicos da construção civil — andaimes, escavações, cinto de segurança, treinamentos. PCMAT, ordens de serviço e treinamentos formais são exigidos e fiscalizados em obra.',
+      'A NR-18 define os requisitos de SST para canteiros de obra. O PCMAT foi extinto e substituído pelo PGR. Abrange treinamentos obrigatórios, proteções coletivas, PCMSO e eSocial SST.',
   },
   'nr-35-trabalho-em-altura': {
     titulo: 'NR-35: Trabalho em Altura',

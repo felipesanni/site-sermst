@@ -22,7 +22,7 @@ export default function NR15Page() {
       coverImage={{ src: "/images/site/safety-equipment.jpg", alt: "Ambiente de trabalho com agentes insalubres e equipamentos de proteção NR-15" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/nr-15-insalubridade"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-15-insalubridade"
       badgeText="NR-15"
       author={{

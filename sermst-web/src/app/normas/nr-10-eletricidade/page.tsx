@@ -22,7 +22,7 @@ export default function NR10Page() {
       coverImage={{ src: "/images/site/safety-equipment.jpg", alt: "Profissional com EPI elétrico em atividade de manutenção conforme NR-10" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/nr-10-eletricidade"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-10-eletricidade"
       badgeText="NR-10"
       author={{

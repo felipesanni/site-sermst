@@ -22,7 +22,7 @@ export default function NR35Page() {
       coverImage={{ src: "/images/site/safety-equipment.jpg", alt: "Trabalhador com equipamento de proteção contra quedas em trabalho em altura NR-35" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/nr-35-trabalho-em-altura"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-35-trabalho-em-altura"
       badgeText="NR-35"
       author={{

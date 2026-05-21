@@ -22,7 +22,7 @@ export default function NR16Page() {
       coverImage={{ src: "/images/site/safety-equipment.jpg", alt: "Área de risco com sinalização de periculosidade conforme NR-16" }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
-      hubHref="/normas/nr-16-periculosidade"
+      hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-16-periculosidade"
       badgeText="NR-16"
       author={{
