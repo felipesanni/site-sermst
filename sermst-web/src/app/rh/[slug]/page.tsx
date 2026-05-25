@@ -24,9 +24,11 @@ export async function generateMetadata({
   return {
     title: data.h1,
     description: data.hook,
+    alternates: { canonical: `https://sermst.com.br/rh/${slug}` },
     openGraph: {
       title: data.h1,
       description: data.hook,
+      url: `https://sermst.com.br/rh/${slug}`,
       locale: 'pt_BR',
       type: 'article',
     },

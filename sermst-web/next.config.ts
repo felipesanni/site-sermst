@@ -23,8 +23,9 @@ const securityHeaders = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
-  // UTF-8 explícito em todas as respostas HTML
-  { key: 'Content-Type', value: 'text/html; charset=utf-8' },
+  // NOTA: Content-Type NÃO deve ser definido globalmente aqui.
+  // Aplicar Content-Type a todos os routes substitui o MIME type dos bundles JS/CSS,
+  // fazendo o browser recusar executar scripts (nosniff bloqueia text/html como JS).
   {
     key: 'Strict-Transport-Security',
     value: 'max-age=63072000; includeSubDomains; preload',
