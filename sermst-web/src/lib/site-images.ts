@@ -77,6 +77,10 @@ export const articleImages: Record<string, SiteImage> = {
     src: '/images/articles/medicina-trabalho.jpg',
     alt: 'Médico do trabalho em consulta clínica ocupacional com profissional',
   },
+  'insalubridade-o-que-e-adicional': {
+    src: '/images/site/safety-equipment.jpg',
+    alt: 'Ambiente de trabalho com exposicao a agentes insalubres e avaliacao tecnica de SST',
+  },
   'afastamento-inss-empresa': {
     src: '/images/articles/afastamento-inss.jpg',
     alt: 'Trabalhador em processo de afastamento e retorno ao trabalho com suporte de RH',

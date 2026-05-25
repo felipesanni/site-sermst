@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { servicosSEO, localidades, saúdeSEO, rhDoresSEO, dicionarioSEO } from "@/lib/data/seo-content";
+import { servicosSEO, localidades, saudeSEO, rhDoresSEO, dicionarioSEO } from "@/lib/data/seo-content";
 import { trainingsData } from "@/lib/data/treinamentos-data";
 import { siteImages } from "@/lib/site-images";
 import { normasKnown } from "./normas/[slug]/page";
@@ -84,8 +84,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "medicina-do-trabalho-guia",
     "aso-atestado-saude-ocupacional",
     "gestao-sst",
+    "insalubridade-o-que-e-adicional",
   ]);
-  const saúdePages: MetadataRoute.Sitemap = Object.keys(saúdeSEO)
+  const saudePages: MetadataRoute.Sitemap = Object.keys(saudeSEO)
     .filter((slug) => !saúdeStaticSlugs.has(slug))
     .map((slug) => ({
       url: `${BASE_URL}/saude/${slug}`,
@@ -147,6 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/saude/medicina-do-trabalho-guia`,           lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE_URL}/saude/aso-atestado-saude-ocupacional`,      lastModified: now, changeFrequency: "monthly", priority: 0.70 },
     { url: `${BASE_URL}/saude/gestao-sst`,                          lastModified: now, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${BASE_URL}/saude/insalubridade-o-que-e-adicional`,     lastModified: now, changeFrequency: "monthly", priority: 0.78 },
   ];
 
   // ── Páginas de equipe e institucionais ──────────────────────────────────────
@@ -161,7 +163,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicoBasePages,
     ...geoPages,
     ...treinamentoPages,
-    ...saúdePages,
+    ...saudePages,
     ...saúdeStaticPages,
     ...rhPages,
     ...rhStaticPages,

@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 const ordemPreferida = [
   'nr-01-pgr-atualizada',
+  'o-que-e-nr-07',
   'nr-35-trabalho-em-altura',
   'nr-18-construcao-civil',
   'nr-15-insalubridade',

@@ -99,7 +99,7 @@ export default async function RHDoresPage({
                 <ShieldCheck className="h-8 w-8 text-green-500" />
                 A resposta prática para o RH
               </h2>
-              <p>{data.content.solução}</p>
+              <p>{data.content.solucao}</p>
               <p>
                 Em empresas que dependem de admissão rápida, documentação coerente e rotina previsível de SST, o RH não precisa só entender a norma. Precisa traduzir a exigência em processo. Por isso a ligação entre medicina do trabalho, eSocial, PGR, PCMSO e fluxo de ASO precisa estar clara — e operável.
               </p>

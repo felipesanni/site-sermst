@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'ASO: o que é, quando emitir e por que protege a empresa | SERMST',
   description:
-    'O ASO (Atestado de Saúde Ocupacional) é documento obrigatório em toda contratação, demissão, exame periódico e retorno ao trabalho. Sem ele, a empresa assume risco jurídico.',
+    'Guia prático sobre ASO: quando emitir, o que precisa constar, relação com o eSocial e como o documento protege a empresa em admissões, periódicos e demissões.',
   alternates: { canonical: 'https://sermst.com.br/saude/aso-atestado-saude-ocupacional' },
   openGraph: {
     title: 'ASO: o que é, quando emitir e por que protege a empresa | SERMST',
@@ -36,7 +36,7 @@ export default function ASOPage() {
       }}
 
       h1="ASO: o que é, quando emitir e por que ele protege a empresa"
-      intro="O Atestado de Saúde Ocupacional é o documento que fecha o ciclo de cada exame ocupacional. Sem ele válido e no prazo, a empresa não tem evidência de que cumpriu sua obrigação legal — e qualquer doença futura pode ser atribuída ao período de trabalho."
+      intro="O Atestado de Saúde Ocupacional é o documento que fecha o ciclo de cada exame ocupacional. Se a dúvida é só conceitual, o dicionário resolve. Aqui, o foco é quando emitir, como usar e onde a empresa se expõe quando o ASO está errado ou vencido."
       sections={[
         {
           title: 'O que é o ASO',
@@ -153,6 +153,7 @@ export default function ASOPage() {
       sidebarHook="A SERMST emite ASO no mesmo dia para admissões urgentes e controla o vencimento dos periódicos da sua empresa — integrado ao envio do S-2220 no eSocial."
       sidebarCtaLabel="Solicitar ASO admissional"
       related={[
+        { label: 'ASO no dicionário: definição rápida', href: '/dicionario/o-que-e-aso' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
         { label: 'Clínica de exame admissional em SP', href: '/saude/clinica-exame-admissional-sao-paulo' },
         { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },

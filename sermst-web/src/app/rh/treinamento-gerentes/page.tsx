@@ -162,7 +162,7 @@ export default function TreinamentoGerentesPage() {
         { label: 'O que um gerente faz', href: '/rh/o-que-um-gerente-faz' },
         { label: 'Função encarregado', href: '/rh/funcao-encarregado' },
         { label: 'Treinamentos NR/CIPA/brigada', href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo' },
-        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionário' },
+        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
       ]}
     />
   );

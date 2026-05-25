@@ -84,7 +84,7 @@ const nextConfig: NextConfig = {
       { source: "/lp-aso", destination: "/contato", permanent: true },
       { source: "/saude-ocupacional/exames-ocupacionais", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/saude-ocupacional/exames-complementares", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
-      { source: "/saude-ocupacional/pcmso-nr-07", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
+      { source: "/saude-ocupacional/pcmso-nr-07", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
       { source: "/seguranca-do-trabalho/prg-nr01-programa-geral-de-riscos", destination: "/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo", permanent: true },
       { source: "/seguranca-do-trabalho/ltcat-nr-15", destination: "/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo", permanent: true },
       { source: "/seguranca-do-trabalho/cipa-nr-05", destination: "/servicos/treinamentos-nrs-cipa-brigada/sao-paulo", permanent: true },
@@ -101,9 +101,9 @@ const nextConfig: NextConfig = {
       { source: "/seguranca-do-trabalho/pgrs-prgss", destination: "/normas/pgrs-residuos", permanent: true },
       { source: "/medicina-do-trabalho/exame-admissional-perto-de-mim", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/medicina-do-trabalho/o-que-e-saude-ocupacional-um-guia-completo", destination: "/saude/o-que-e-saude-ocupacional", permanent: true },
-      { source: "/medicina-do-trabalho/exame-pcmso-tudo-o-que-voce-precisa-saber-sobre-o-controle-de-saude-ocupacional", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
-      { source: "/medicina-do-trabalho/aso-tudo-o-que-voce-precisa-saber-sobre-o-atestado-de-saude-ocupacional", destination: "/dicionario/o-que-e-aso", permanent: true },
-      { source: "/medicina-do-trabalho/tudo-sobre-o-aso-admissional-garantindo-a-saude-e-seguranca-no-trabalho", destination: "/dicionario/o-que-e-aso", permanent: true },
+      { source: "/medicina-do-trabalho/exame-pcmso-tudo-o-que-voce-precisa-saber-sobre-o-controle-de-saude-ocupacional", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
+      { source: "/medicina-do-trabalho/aso-tudo-o-que-voce-precisa-saber-sobre-o-atestado-de-saude-ocupacional", destination: "/saude/aso-atestado-saude-ocupacional", permanent: true },
+      { source: "/medicina-do-trabalho/tudo-sobre-o-aso-admissional-garantindo-a-saude-e-seguranca-no-trabalho", destination: "/saude/aso-atestado-saude-ocupacional", permanent: true },
       { source: "/medicina-do-trabalho/como-funciona-o-exame-demissional-guia-completo-e-estrategico", destination: "/saude/exame-demissional-guia", permanent: true },
       { source: "/medicina-do-trabalho/funcao-do-encarregado-responsabilidades-competencias-e-impacto-no-ambiente-de-trabalho", destination: "/rh/funcao-encarregado", permanent: true },
       { source: "/medicina-do-trabalho/lista-cnae-brasil-o-guia-completo-para-empresas-e-empreendedores", destination: "/rh/lista-cnae-brasil", permanent: true },
@@ -131,7 +131,7 @@ const nextConfig: NextConfig = {
       { source: "/exames/audiometria-ocupacional", destination: "/servicos/audiometria-ocupacional-clinica/sao-paulo", permanent: true },
       { source: "/exames/nr07-guia-completo-da-norma-regulamentadora-no-7", destination: "/normas/o-que-e-nr-07", permanent: true },
       { source: "/exames/exame-toxicologico-o-que-voce-precisa-saber", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
-      { source: "/exames/pcmso-tudo-o-que-voce-precisa-saber-sobre-o-programa-de-controle-medico", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
+      { source: "/exames/pcmso-tudo-o-que-voce-precisa-saber-sobre-o-programa-de-controle-medico", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
       { source: "/exames-clinicos/eletrocardiograma-de-alta-resolucao", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
       { source: "/exames-clinicos/polissonografia", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
       { source: "/exames-clinicos/audiometria", destination: "/servicos/audiometria-ocupacional-clinica/sao-paulo", permanent: true },
@@ -165,7 +165,7 @@ const nextConfig: NextConfig = {
       { source: "/exames-particulares", destination: "/", permanent: true },
       { source: "/exames-convenios", destination: "/", permanent: true },
       { source: "/atendimento-a-convenios", destination: "/", permanent: true },
-      { source: "/exames-clinicos/colesterol-total-e-fracoes-soro", destination: "/", permanent: true },
+      { source: "/exames-clinicos/colesterol-total-e-fracoes-soro{/}?", destination: "/", permanent: true },
       { source: "/exames-laboratoriais/hemograma-sangue-total", destination: "/", permanent: true },
       { source: "/exames-laboratoriais/exame-de-urina-primeiro-jato", destination: "/", permanent: true },
       { source: "/exames-laboratoriais/exame-toxicologico-detran", destination: "/", permanent: true },
@@ -187,13 +187,27 @@ const nextConfig: NextConfig = {
       { source: "/blog/saude-ocupacional-o-que-e-como-promover", destination: "/saude", permanent: true },
       // /blog existe no Next.js -- nao redirecionar a raiz, so posts antigos do WP
 
+      // -- Posts de blog sem equivalente mapeado (reportados no GSC como 404) --
+      { source: "/blog/os-riscos-do-trabalho-em-altura-e-o-papel-da-nr-35", destination: "/normas/nr-35-trabalho-em-altura", permanent: true },
+      { source: "/blog/prazo-prorrogado-regularize-seu-exame-toxicologico-e-evite-multas", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
+      { source: "/blog/novas-regras-para-concessao-de-beneficios-por-incapacidade-temporaria-pelo-inss", destination: "/saude", permanent: true },
+      { source: "/blog/agosto-dourado", destination: "/", permanent: true },
+
       // -- Paginas WP sem equivalente direto --
       { source: "/termos-e-condicoes", destination: "/", permanent: true },
       { source: "/politica-de-privacidade", destination: "/", permanent: true },
       // { source: "/guia", destination: "/dicionario", permanent: true }, // removido — /guia agora é página ativa
       { source: "/ebook", destination: "/contato", permanent: true },
+      { source: "/obrigado-sermst", destination: "/contato", permanent: true },
+      // Sitemaps WordPress legados → sitemap.xml do Next.js
+      { source: "/category-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      // Arquivos e diretórios WP sem equivalente
+      { source: "/wp-content/:path*", destination: "/", permanent: true },
+      { source: "/v1/attachment/:path*", destination: "/", permanent: true },
       { source: "/v1", destination: "/", permanent: true },
       { source: "/lp", destination: "/contato", permanent: true },
+      { source: "/contato/", destination: "/contato", permanent: true },
       { source: "/lp-aso1", destination: "/contato", permanent: true },
       { source: "/lp-aso-form", destination: "/contato", permanent: true },
       { source: "/lp-obra", destination: "/contato", permanent: true },
@@ -201,9 +215,9 @@ const nextConfig: NextConfig = {
 
       // -- Posts /medicina-do-trabalho/ ausentes --
       { source: "/medicina-do-trabalho/o-que-sao-exames-laborais-e-por-que-sao-importantes", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
-      { source: "/medicina-do-trabalho/pcmso-tudo-o-que-voce-precisa-saber", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
-      { source: "/medicina-do-trabalho/tudo-sobre-o-aso-atestado-de-saude-ocupacional", destination: "/dicionario/o-que-e-aso", permanent: true },
-      { source: "/medicina-do-trabalho/tudo-o-que-voce-precisa-saber-sobre-o-pcmso", destination: "/servicos/pcmso-nr07-programa/sao-paulo", permanent: true },
+      { source: "/medicina-do-trabalho/pcmso-tudo-o-que-voce-precisa-saber", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
+      { source: "/medicina-do-trabalho/tudo-sobre-o-aso-atestado-de-saude-ocupacional", destination: "/saude/aso-atestado-saude-ocupacional", permanent: true },
+      { source: "/medicina-do-trabalho/tudo-o-que-voce-precisa-saber-sobre-o-pcmso", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
       { source: "/medicina-do-trabalho/treinamento-rh-um-guia-completo-para-potencializar-equipes-e-resultados", destination: "/rh/treinamento-gerentes", permanent: true },
       { source: "/medicina-do-trabalho/o-que-sao-epis-um-guia-completo-para-a-seguranca-no-trabalho", destination: "/saude/o-que-sao-epis", permanent: true },
       { source: "/medicina-do-trabalho/quando-demitir-um-funcionario-guia-completo-e-estrategico", destination: "/rh/quando-demitir-funcionario", permanent: true },

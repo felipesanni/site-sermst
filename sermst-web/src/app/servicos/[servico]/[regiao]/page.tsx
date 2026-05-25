@@ -139,7 +139,7 @@ export default async function LocalSEOPage({
           <FadeIn>
             <div className="max-w-4xl">
               <div className="mb-8 flex flex-wrap gap-2">
-                {data.isClínico ? (
+                {data.isClinico ? (
                   <span className="rounded-full bg-accent-pink px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white shadow-lg">
                     ASO no mesmo dia
                   </span>
@@ -183,7 +183,7 @@ export default async function LocalSEOPage({
               Autoridade legal e técnica
             </span>
             <h2 className="mb-8 text-3xl font-black leading-tight text-brand-900 md:text-4xl">
-              {data.isClínico ? `Ágilidade no ASO e compliance em ${local.nome}` : `Elaboração técnica e segurança jurídica em ${local.nome}`}
+              {data.isClinico ? `Ágilidade no ASO e compliance em ${local.nome}` : `Elaboração técnica e segurança jurídica em ${local.nome}`}
             </h2>
             <p className="mb-10 text-xl font-medium leading-relaxed text-slate-600">
               {data.quandoRequerido}
@@ -357,27 +357,27 @@ export default async function LocalSEOPage({
         <div className="mx-auto w-full max-w-[1280px] px-6 text-center">
           <FadeIn>
             <h2 className="mb-4 text-4xl font-black text-brand-900">
-              {data.isClínico ? 'Fluxo de atendimento otimizado' : 'Fluxo de elaboração técnica'}
+              {data.isClinico ? 'Fluxo de atendimento otimizado' : 'Fluxo de elaboração técnica'}
             </h2>
             <p className="mb-16 text-xl font-medium text-slate-500">
-              {data.isClínico ? `Do agendamento ao ASO em mãos para sua empresa em ${local.nome}.` : `Processo rigoroso para garantir a conformidade legal em ${local.nome}.`}
+              {data.isClinico ? `Do agendamento ao ASO em mãos para sua empresa em ${local.nome}.` : `Processo rigoroso para garantir a conformidade legal em ${local.nome}.`}
             </p>
 
             <div className="grid gap-8 md:grid-cols-3">
-              {(data.isClínico
+              {(data.isClinico
                 ? ['Agendamento online', 'Avaliação na unidade', 'Liberação para o RH']
                 : data.fluxoCorporativo || ['Diagnóstico', 'Vistoria em campo', 'Entrega técnica']).map((step, i) => (
                 <div key={i} className="group flex flex-col items-center rounded-3xl border border-slate-100 bg-white p-10 shadow-xl transition-colors hover:border-accent-pink">
                   <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-white shadow-lg transition-transform group-hover:scale-110 ${i === 1 ? 'bg-accent-pink' : 'bg-brand-900'}`}>
                     {i === 0 && <Clock className="h-8 w-8" />}
-                    {i === 1 && (data.isClínico ? <Navigation className="h-8 w-8" /> : <ShieldCheck className="h-8 w-8" />)}
+                    {i === 1 && (data.isClinico ? <Navigation className="h-8 w-8" /> : <ShieldCheck className="h-8 w-8" />)}
                     {i === 2 && <TrendingUp className="h-8 w-8" />}
                   </div>
                   <h4 className="mb-4 text-xl font-black uppercase tracking-tighter text-brand-900">{step}</h4>
                   <p className="text-sm font-medium text-slate-500">
-                    {i === 0 && (data.isClínico ? 'Fale com a equipe, valide a demanda e envie o colaborador com guia digital.' : 'Alinhamento de escopo, urgência e cronograma de visitas técnicas.')}
-                    {i === 1 && (data.isClínico ? 'Atendimento prioritário na unidade central com laboratório próprio.' : 'Engenharia e medicina realizam vistoria no ambiente para coletar dados reais.')}
-                    {i === 2 && (data.isClínico ? 'ASO com validade plena e envio imediato ao eSocial.' : 'Elaboração do laudo, assinatura técnica e entrega digital ao RH.')}
+                    {i === 0 && (data.isClinico ? 'Fale com a equipe, valide a demanda e envie o colaborador com guia digital.' : 'Alinhamento de escopo, urgência e cronograma de visitas técnicas.')}
+                    {i === 1 && (data.isClinico ? 'Atendimento prioritário na unidade central com laboratório próprio.' : 'Engenharia e medicina realizam vistoria no ambiente para coletar dados reais.')}
+                    {i === 2 && (data.isClinico ? 'ASO com validade plena e envio imediato ao eSocial.' : 'Elaboração do laudo, assinatura técnica e entrega digital ao RH.')}
                   </p>
                 </div>
               ))}
@@ -386,7 +386,7 @@ export default async function LocalSEOPage({
         </div>
       </section>
 
-      {(data.isClínico || (data.documentosNecessarios && data.documentosNecessarios.length > 0)) && (
+      {(data.isClinico || (data.documentosNecessarios && data.documentosNecessarios.length > 0)) && (
         <section className="mx-auto w-full max-w-[1280px] px-6 py-24">
           <div className="grid gap-16 lg:grid-cols-2">
             <FadeIn direction="right">
@@ -394,7 +394,7 @@ export default async function LocalSEOPage({
                 <div className="mb-8 flex items-center gap-4">
                   <FileText className="h-8 w-8 text-brand-900" />
                   <h3 className="text-2xl font-black uppercase tracking-tighter text-brand-900">
-                    {data.isClínico ? 'O que o funcionário deve levar?' : 'Pre-requisitos técnicos'}
+                    {data.isClinico ? 'O que o funcionário deve levar?' : 'Pre-requisitos técnicos'}
                   </h3>
                 </div>
                 <ul className="grid flex-grow gap-4 sm:grid-cols-2">
@@ -514,3 +514,4 @@ export default async function LocalSEOPage({
     </div>
   );
 }
+           

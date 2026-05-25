@@ -1,4 +1,4 @@
-import { saúdeSEO } from '@/lib/data/seo-content';
+import { saudeSEO } from '@/lib/data/seo-content';
 import { articleImages, siteImages } from '@/lib/site-images';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -26,7 +26,7 @@ export const metadata = {
 };
 
 export default function SaudeIndexPage() {
-  const posts = Object.entries(saúdeSEO).map(([slug, data]) => ({ slug, ...data }));
+  const posts = Object.entries(saudeSEO).map(([slug, data]) => ({ slug, ...data }));
 
   return (
     <main className="min-h-screen bg-slate-50">

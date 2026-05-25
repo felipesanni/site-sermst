@@ -130,7 +130,7 @@ export default function EvitarProcessosPage() {
       sidebarHook="Cerca de 40% das ações têm componente SST. Sem PGR, PCMSO, ASOs e treinamentos documentados, a defesa cai. A SERMST faz auditoria completa do paper trail."
       sidebarCtaLabel="Auditar minha documentação SST"
       related={[
-        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionário' },
+        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Perícia trabalhista (assistente técnico)', href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { dicionarioSEO } from '@/lib/data/seo-content';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = dicionarioSEO[slug];
-  if (!data) return { title: 'Termo não encontrado | SERMST' };
+  if (!data) return { title: 'Termo nÃ£o encontrado | SERMST' };
   return {
     title: data.h1,
     description: data.hook,
@@ -42,7 +42,7 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
 
   return (
     <article className="min-h-screen bg-white">
-      <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Dicionário SST', item: 'https://sermst.com.br/dicionario' }, { name: data.h1 }]} />
+      <BreadcrumbJsonLd items={[{ name: 'InÃ­cio', item: 'https://sermst.com.br' }, { name: 'DicionÃ¡rio SST', item: 'https://sermst.com.br/dicionario' }, { name: data.h1 }]} />
       <header className="bg-slate-50 pt-32 pb-20 border-b border-slate-200">
         <div className="max-w-[1280px] w-full mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -67,16 +67,16 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
           <div className="lg:col-span-8">
             <FadeIn delay={0.2}>
               <div className="prose prose-lg prose-slate max-w-none">
-                <h2 className="text-brand-900 font-black">Definição e aplicação prática</h2>
+                <h2 className="text-brand-900 font-black">DefiniÃ§Ã£o e aplicaÃ§Ã£o prÃ¡tica</h2>
                 <p className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-lg leading-relaxed shadow-inner italic">
                   {data.content.dor}
                 </p>
 
                 <div className="my-12">
-                  <h3 className="font-black text-brand-900">Contexto técnico</h3>
-                  <p>{data.content.solução}</p>
+                  <h3 className="font-black text-brand-900">Contexto tÃ©cnico</h3>
+                  <p>{data.content.solucao}</p>
                   <p>
-                    Mais importante que a definição é entender em que situação esse termo aparece na rotina da empresa, por que ele importa para o RH, para o financeiro e para a operação, e como se conecta com SST, eSocial, exame ocupacional, documentação obrigatória e risco jurídico.
+                    Mais importante que a definiÃ§Ã£o Ã© entender em que situaÃ§Ã£o esse termo aparece na rotina da empresa, por que ele importa para o RH, para o financeiro e para a operaÃ§Ã£o, e como se conecta com SST, eSocial, exame ocupacional, documentaÃ§Ã£o obrigatÃ³ria e risco jurÃ­dico.
                   </p>
                 </div>
 
@@ -106,7 +106,7 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
           <aside className="lg:col-span-4 flex flex-col gap-8">
             <FadeIn direction="left" delay={0.4} className="bg-brand-900 text-white p-8 rounded-2xl shadow-2xl">
               <Info className="w-8 h-8 text-accent-pink mb-6" />
-              <h3 className="font-black text-xl mb-8">Dúvidas sobre este termo?</h3>
+              <h3 className="font-black text-xl mb-8">DÃºvidas sobre este termo?</h3>
               <div className="space-y-8">
                 {frequentFaqs.map((faq, idx) => (
                   <div key={idx}>

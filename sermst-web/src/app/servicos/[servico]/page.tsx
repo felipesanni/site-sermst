@@ -127,7 +127,7 @@ export default async function ServicoPage({
               <h2 className="text-sm font-black uppercase tracking-widest">A solução corporativa</h2>
             </div>
             <p className="text-lg leading-relaxed text-slate-700">
-              {data.content.solução}
+              {data.content.solucao}
             </p>
           </FadeIn>
 
@@ -380,3 +380,4 @@ export default async function ServicoPage({
     </article>
   );
 }
+  

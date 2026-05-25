@@ -15,14 +15,14 @@ import { CheckCircle2, AlertTriangle, ShieldCheck, Users, ArrowRight, Target, Fi
  * orientados para CONVERTER o gestor — que é quem fecha contrato com a SERMST.
  */
 export const metadata: Metadata = {
-  title: 'Função de Encarregado: perfil e responsabilidades | SERMST',
+  title: 'Encarregado: o que faz, função e responsabilidades | SERMST',
   description:
-    'Guia completo da função encarregado: o que faz, responsabilidades, perfil ideal, salário médio, diferença para supervisor e o erro de SST que pega gestores de surpresa. Por SERMST, 40 anos em medicina e segurança do trabalho.',
+    'Entenda o que faz um encarregado, quais são suas responsabilidades, diferença para supervisor, perfil ideal e os cuidados de SST que a empresa precisa documentar.',
   alternates: { canonical: 'https://sermst.com.br/rh/funcao-encarregado' },
   openGraph: {
-    title: 'Função de Encarregado: perfil e responsabilidades',
+    title: 'Encarregado: o que faz, função e responsabilidades',
     description:
-      'O que faz um encarregado, perfil ideal, salário médio e o ponto cego de SST que pega gestores de surpresa.',
+      'O que faz um encarregado, quais responsabilidades assume e onde a empresa costuma errar ao estruturar esse cargo.',
     url: 'https://sermst.com.br/rh/funcao-encarregado',
     type: 'article',
     locale: 'pt_BR',
@@ -106,7 +106,7 @@ export default function FunçãoEncarregadoPage() {
               ← Hub de RH e Departamento Pessoal
             </Link>
             <h1 className="h1-standard mb-8 max-w-4xl">
-              Função de Encarregado: o que faz, responsabilidades e o ponto cego que pega gestores
+              Encarregado: o que faz, responsabilidades e o ponto cego que pega gestores
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">
               Guia direto para gestores, RH e quem está estruturando o cargo: responsabilidades reais, perfil que funciona, erros que custam caro é o que SST tem a ver com isso.

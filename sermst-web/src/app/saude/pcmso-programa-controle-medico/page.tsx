@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'PCMSO: o que é, quem precisa e como montar o programa | SERMST',
   description:
-    'PCMSO (NR-07) define quais exames cada trabalhador precisa fazer e com qual frequência. Obrigatório para toda empresa com CLT. Entenda como funciona.',
+    'Entenda como funciona o PCMSO na prática, quem precisa do programa, como definir exames ocupacionais e quando consultar a NR-07 para a base legal.',
   alternates: { canonical: 'https://sermst.com.br/saude/pcmso-programa-controle-medico' },
   openGraph: {
     title: 'PCMSO: o que é, quem precisa e como estruturar corretamente | SERMST',
@@ -36,7 +36,7 @@ export default function PCMSOPage() {
       }}
 
       h1="PCMSO: o que é, quem precisa e como montar o programa"
-      intro="O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é a base legal dos exames dos trabalhadores. Sem ele, a empresa não tem como sustentar ASO, nem enviar o S-2220 ao eSocial com segurança técnica."
+      intro="O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é o guia prático da empresa para exames ocupacionais. A NR-07 traz a regra; o PCMSO transforma essa regra em cronograma, exames e critérios por cargo."
       sections={[
         {
           title: 'O que é o PCMSO',
@@ -47,6 +47,9 @@ export default function PCMSOPage() {
               </p>
               <p>
                 Diferente do que muitos pensam, o PCMSO não é uma lista genérica de exames. É um documento personalizado: uma empresa com trabalho em altura tem exigências distintas de uma empresa de escritório. O programa precisa refletir a realidade da operação.
+              </p>
+              <p>
+                Se a sua busca é entender a <strong>norma</strong>, a página de <strong>NR-07</strong> explica a obrigação legal. Aqui, o foco é a aplicação do programa dentro da rotina da empresa.
               </p>
             </>
           ),
@@ -146,11 +149,11 @@ export default function PCMSOPage() {
       sidebarHook="A SERMST revisa e atualiza o PCMSO da sua empresa — alinhado com o PGR vigente e com os eventos de SST do eSocial. Sem enrolação, sem modelo genérico."
       sidebarCtaLabel="Revisar meu PCMSO"
       related={[
+        { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
         { label: 'Gestão de SST', href: '/saude/gestao-sst' },
         { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },
         { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'PGR (NR-01) atualizado', href: '/normas/nr-01-pgr-atualizada' },
-        { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />
   );

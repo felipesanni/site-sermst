@@ -69,16 +69,16 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
 
   // Slug legado — o-que-e-nr-01 e o-que-e-nr-15 têm 301 para as páginas canônicas (next.config.ts)
   'o-que-e-nr-07': {
-    titulo: 'NR-07: PCMSO — Controle Médico de Saúde Ocupacional',
+    titulo: 'NR-07: o que a norma exige sobre PCMSO e exames ocupacionais',
     descricao:
-      'A NR-07 estabelece a obrigatoriedade do PCMSO para todas as empresas regidas pela CLT. Determina quais exames ocupacionais devem ser realizados e com qual periodicidade, conforme os riscos de cada função.',
-    conteudo: `O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é o programa que define quais exames médicos os trabalhadores da empresa precisam realizar — na admissão, periodicamente, na mudança de função, no retorno ao trabalho e na demissão. Ele é elaborado por um médico do trabalho com base nos riscos identificados no PGR da empresa.
+      'A NR-07 é a norma que obriga a empresa a manter um PCMSO e realizar o monitoramento de saúde dos trabalhadores conforme os riscos ocupacionais de cada função.',
+    conteudo: `A NR-07 é a norma regulamentadora que trata do monitoramento da saúde dos trabalhadores. Ela obriga a empresa a manter um PCMSO ativo e coerente com os riscos identificados no PGR, definindo a lógica legal por trás dos exames admissionais, periódicos, de retorno ao trabalho, mudança de função e demissionais.
 
-Todas as empresas com funcionários regidos pela CLT precisam ter um PCMSO vigente, independentemente do porte ou grau de risco. Micro e pequenas empresas também são obrigadas — a única diferença está na periodicidade dos exames e na necessidade ou não de um médico coordenador.
+Em outras palavras: a NR-07 é a regra; o PCMSO é o programa que coloca essa regra em prática. Quem pesquisa "NR-07" normalmente quer entender a exigência normativa, o que a empresa precisa cumprir e qual o risco de não cumprir. Quem pesquisa "PCMSO" geralmente quer saber como montar, revisar ou operacionalizar o programa.
 
-O PCMSO tem impacto direto no eSocial. Cada ASO (Atestado de Saúde Ocupacional) emitido — admissional, periódico ou demissional — deve ser registrado no evento S-2220. Sem PCMSO ativo e atualizado, a empresa não consegue enviar o S-2220 corretamente, o que gera inconsistências no eSocial e risco de multa automática.
+Toda empresa com empregado CLT precisa atender a NR-07, independentemente do porte. O nível de complexidade muda conforme o risco e a estrutura da empresa, mas a obrigação não desaparece. A norma também se conecta ao eSocial: os ASOs emitidos com base no PCMSO alimentam o evento S-2220, e inconsistências entre PGR, PCMSO e exames deixam a empresa exposta em fiscalização.
 
-Na prática, o programa define: quais exames complementares cada função deve fazer (hemograma, audiometria, espirometria, raio-X etc.), a periodicidade dos exames periódicos para cada cargo e os critérios de aptidão e restrição que o médico do trabalho aplica na emissão do ASO. A SERMST elabora e gerencia o PCMSO completo, incluindo emissão de ASO no mesmo dia para exames admissionais.`,
+Se a sua necessidade é entender como estruturar o programa, cronogramas, exames por cargo e integração com ASO e eSocial, o caminho correto é a página específica de PCMSO. Aqui, o objetivo é esclarecer a norma e o que ela exige da empresa.`,
   },
 };
 
@@ -120,12 +120,20 @@ export default async function NormaPage({ params }: Props) {
   const norma = normasKnown[slug];
   const titulo = norma?.titulo ?? slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
-  const servicosRelacionados = [
-    { label: 'PCMSO (NR-07)', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
-    { label: 'PGR (NR-01)', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
-    { label: 'LTCAT & Insalubridade', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
-    { label: 'Exame Admissional', href: '/servicos/exame-admissional-expresso/sao-paulo' },
-  ];
+  const servicosRelacionados =
+    slug === 'o-que-e-nr-07'
+      ? [
+          { label: 'PCMSO: guia prático do programa', href: '/saude/pcmso-programa-controle-medico' },
+          { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
+          { label: 'PGR (NR-01)', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
+          { label: 'Exame Admissional', href: '/servicos/exame-admissional-expresso/sao-paulo' },
+        ]
+      : [
+          { label: 'PCMSO (NR-07)', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
+          { label: 'PGR (NR-01)', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
+          { label: 'LTCAT & Insalubridade', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
+          { label: 'Exame Admissional', href: '/servicos/exame-admissional-expresso/sao-paulo' },
+        ];
 
   return (
     <main className="min-h-screen bg-slate-50">

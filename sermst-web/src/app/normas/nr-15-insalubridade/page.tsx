@@ -34,7 +34,7 @@ export default function NR15Page() {
       }}
 
       h1="NR-15: Insalubridade — guia para gestores e RH"
-      intro="A NR-15 define quais atividades geram direito ao adicional de insalubridade — 10%, 20% ou 40% sobre o salário mínimo. Pagar errado é passivo trabalhista garantido. Veja como caracterizar, calcular e blindar a empresa."
+      intro="A NR-15 define quais atividades geram direito ao adicional de insalubridade — 10%, 20% ou 40% sobre o salário mínimo. Pagar errado é passivo trabalhista garantido. Se a sua dúvida é mais ampla sobre conceito, direito e cálculo, veja também o guia de insalubridade. Aqui, o foco é a norma e o enquadramento técnico."
       sections={[
         {
           title: 'O que é a NR-15 (em uma frase)',
@@ -136,6 +136,7 @@ export default function NR15Page() {
       sidebarHook="Pagar errado é passivo. Não pagar quando devido também. A SERMST faz laudo técnico de NR-15 alinhado a PGR, PCMSO e eSocial — defesa robusta em fiscalização e ação."
       sidebarCtaLabel="Solicitar laudo NR-15"
       related={[
+        { label: 'Insalubridade: conceito, direito e cálculo', href: '/saude/insalubridade-o-que-e-adicional' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },
         { label: 'LTCAT — laudo técnico previdenciário', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
         { label: 'PGR (NR-01) atualizado', href: '/normas/nr-01-pgr-atualizada' },

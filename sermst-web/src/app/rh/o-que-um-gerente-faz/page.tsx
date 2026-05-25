@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'O que um gerente faz: funções e responsabilidades | SERMST',
+  title: 'Gerente: o que faz, funções e responsabilidades | SERMST',
   description:
-    'Guia direto sobre a função de gerente: o que faz no dia a dia, responsabilidades técnicas, perfil que entrega resultado, diferença para supervisor e o ponto cego de SST que pega gestores promovidos sem treinamento.',
+    'Veja o que faz um gerente, quais responsabilidades o cargo assume, diferença para supervisor e coordenador, e como SST entra na rotina dessa liderança.',
   alternates: { canonical: 'https://sermst.com.br/rh/o-que-um-gerente-faz' },
   robots: 'index, follow',
   openGraph: {
-    title: 'O que um gerente faz: funções e responsabilidades | SERMST',
+    title: 'Gerente: o que faz, funções e responsabilidades | SERMST',
     description:
-      'Entenda as responsabilidades de um gerente no contexto trabalhista e como as obrigações de SST se aplicam a gestores e lideranças intermediárias.',
+      'Entenda o que faz um gerente, como o cargo se diferencia de outras lideranças e quais obrigações de SST recaem sobre essa função.',
     url: 'https://sermst.com.br/rh/o-que-um-gerente-faz',
     type: 'article',
     locale: 'pt_BR',
@@ -33,7 +33,7 @@ export default function OQueUmGerenteFazPage() {
         dateModified: '2026-05-01',
       }}
 
-      h1="O que um gerente faz: funções, responsabilidades e impacto na empresa"
+      h1="Gerente: o que faz, funções, responsabilidades e impacto na empresa"
       intro="Guia para gestores e RH que estão estruturando o cargo: o que entrega o gerente, perfil que funciona, erros que custam caro e por que SST é responsabilidade direta dele."
       sections={[
         {
@@ -143,7 +143,7 @@ export default function OQueUmGerenteFazPage() {
       related={[
         { label: 'Função encarregado: responsabilidades', href: '/rh/funcao-encarregado' },
         { label: 'Como treinar gerentes', href: '/rh/treinamento-gerentes' },
-        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionário' },
+        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Multa de eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />
