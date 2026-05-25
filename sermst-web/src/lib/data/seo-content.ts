@@ -536,9 +536,9 @@ export const servicosSEO: Record<string, SEODocument> = {
       "O exame toxicológico é obrigatório em admissão, demissão e acompanhamentos previstos para motoristas profissionais das categorias C, D e E.",
     content: {
       dor:
-        "Atraso no toxicológico trava contratação, expoe a empresa a risco regulatorio e compromete operações que dependem de motorista liberado rapidamente.",
+        "Atraso no toxicológico trava contratação, expõe a empresa a risco regulatório e compromete operações que dependem de motorista liberado rapidamente.",
       solução:
-        "A SERMST organiza coleta eficiente, prazo curto e integração ocupacional para reduzir impacto logistico e acelerar a liberação do trabalhador.",
+        "A SERMST organiza coleta eficiente, prazo curto e integração ocupacional para reduzir impacto logístico e acelerar a liberação do trabalhador.",
       beneficios: [
         "Coleta rápida e discreta",
         "Suporte para rotina ocupacional",
@@ -546,6 +546,11 @@ export const servicosSEO: Record<string, SEODocument> = {
         "Faturamento corporativo",
       ],
     },
+    documentosNecessarios: [
+      "Documento de identidade (RG ou CNH)",
+      "Carteira Nacional de Habilitação (CNH) — cat. C, D ou E",
+      "Guia de exame emitida pela empresa",
+    ],
     geoOpt: {
       expertQuote: {
         text: "Segurança nas estradas começa em um processo ocupacional bem controlado desde a contratação.",
@@ -555,7 +560,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       faq: [
         {
           q: "O que detecta o exame?",
-          a: "O exame toxicológico identifica o consumo de substancias psicoativas em janela retroativa de longo prazo por meio de amostra biologica aprópriada.",
+          a: "O exame toxicológico identifica o consumo de substâncias psicoativas em janela retroativa de longo prazo por meio de amostra biológica apropriada.",
         },
       ],
     },
@@ -845,7 +850,7 @@ export const rhDoresSEO: Record<string, SEODocument> = {
     "Empresas familiares tratam o gerente como super-encarregado — perdem talento, perdem liderança e perdem produtividade quando o cargo não é estruturado com clareza.",
     "Gerente bem definido tem três entregáveis claros: resultado da área, desenvolvimento da equipe e segurança da operação. SST é parte do terceiro pilar.",
   ),
-  "quando-demitir-funcionário": rhEntry(
+  "quando-demitir-funcionario": rhEntry(
     "Quando demitir um funcionário: guia para gestores",
     "Demissão é decisão técnica, não emocional. Feita certa, protege o time e o resultado. Feita errada, vira processo trabalhista, queda de moral e custo escondido.",
     "Gestor adia demissão por receio do passivo, ou demite por impulso sem documentação. Os dois caminhos custam caro.",

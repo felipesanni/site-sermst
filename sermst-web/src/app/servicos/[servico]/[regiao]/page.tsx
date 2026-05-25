@@ -96,7 +96,7 @@ export default async function LocalSEOPage({
     '@type': 'Service',
     name: `${servicoNome} em ${local.nome}`,
     provider: {
-      '@type': 'MédicalOrganization',
+      '@type': 'MedicalOrganization',
       name: 'SERMST - Medicina e Segurança do Trabalho',
       address: {
         '@type': 'PostalAddress',

@@ -66,6 +66,7 @@ Página: https://sermst.com.br/servicos/treinamentos-nrs-cipa-brigada/sao-paulo
 ## Normas Regulamentadoras (guias)
 
 - NR-01 / PGR: https://sermst.com.br/normas/nr-01-pgr-atualizada
+- NR-05 – CIPA: https://sermst.com.br/normas/nr-05-cipa
 - NR-07 / PCMSO: https://sermst.com.br/normas/o-que-e-nr-07
 - NR-10 – Eletricidade: https://sermst.com.br/normas/nr-10-eletricidade
 - NR-13 – Caldeiras e Vasos de Pressão: https://sermst.com.br/normas/nr-13-vasos-de-pressao
@@ -73,6 +74,7 @@ Página: https://sermst.com.br/servicos/treinamentos-nrs-cipa-brigada/sao-paulo
 - NR-16 – Periculosidade: https://sermst.com.br/normas/nr-16-periculosidade
 - NR-17 – Ergonomia: https://sermst.com.br/normas/nr-17-ergonomia
 - NR-18 – Construção Civil: https://sermst.com.br/normas/nr-18-construcao-civil
+- NR-33 – Espaço Confinado: https://sermst.com.br/normas/nr-33-espaco-confinado
 - NR-35 – Trabalho em Altura: https://sermst.com.br/normas/nr-35-trabalho-em-altura
 - PPP Eletrônico: https://sermst.com.br/normas/ppp-eletronico
 - PGRS (Resíduos): https://sermst.com.br/normas/pgrs-residuos
@@ -90,6 +92,7 @@ Artigos técnicos sobre medicina do trabalho, PCMSO, ASO e gestão SST.
 - Gestão SST: https://sermst.com.br/saude/gestao-sst
 - Exame Admissional em São Paulo: https://sermst.com.br/saude/clinica-exame-admissional-sao-paulo
 - Exame Demissional: https://sermst.com.br/saude/exame-demissional-guia
+- Exame Periódico Ocupacional: https://sermst.com.br/saude/importancia-do-exame-periodico
 - EPIs – o que são: https://sermst.com.br/saude/o-que-sao-epis
 
 ### Hub RH e Departamento Pessoal

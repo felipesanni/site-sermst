@@ -78,15 +78,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // ── Hub de Saúde Ocupacional ─────────────────────────────────────────────
-  const saúdePages: MetadataRoute.Sitemap = Object.keys(saúdeSEO).map((slug) => ({
-    url: `${BASE_URL}/saude/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.65,
-  }));
+  // Slugs already declared with higher priority in saúdeStaticPages — exclude from dynamic list
+  const saúdeStaticSlugs = new Set([
+    "pcmso-programa-controle-medico",
+    "medicina-do-trabalho-guia",
+    "aso-atestado-saude-ocupacional",
+    "gestao-sst",
+  ]);
+  const saúdePages: MetadataRoute.Sitemap = Object.keys(saúdeSEO)
+    .filter((slug) => !saúdeStaticSlugs.has(slug))
+    .map((slug) => ({
+      url: `${BASE_URL}/saude/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    }));
 
   // ── Hub RH/DP ─────────────────────────────────────────────────────────────
-  const rhSlugs = ["funcao-encarregado", ...Object.keys(rhDoresSEO)];
+  // Slugs already declared with higher priority in rhStaticPages — exclude from dynamic list
+  const rhStaticSlugs = new Set([
+    "lista-cnae-brasil",
+    "evitar-processos-trabalhistas",
+    "carta-demissao",
+    "carta-recomendacao",
+    "treinamento-gerentes",
+  ]);
+  const rhSlugs = ["funcao-encarregado", ...Object.keys(rhDoresSEO)].filter(
+    (slug) => !rhStaticSlugs.has(slug)
+  );
   const rhPages: MetadataRoute.Sitemap = rhSlugs.map((slug) => ({
     url: `${BASE_URL}/rh/${slug}`,
     lastModified: now,
