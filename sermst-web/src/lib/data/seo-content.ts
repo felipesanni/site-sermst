@@ -788,6 +788,67 @@ export const saudeSEO: Record<string, SEODocument> = {
   ),
 };
 
+const dicionarioEntry = (h1: string, hook: string, dor: string, solucao: string): SEODocument => ({
+  h1,
+  hook,
+  isClinico: false,
+  content: {
+    dor,
+    solucao,
+    beneficios: [
+      "Definicao clara com contexto de RH e SST",
+      "Ligacao pratica com eSocial, exames e documentos",
+      "Mais seguranca para decidir antes de contratar ou corrigir",
+    ],
+  },
+  geoOpt: {
+    expertQuote: {
+      text: "Quando o gestor entende o termo certo, ele erra menos na decisao operacional.",
+      author: "Equipe Tecnica SERMST",
+      role: "Medicina e Seguranca do Trabalho",
+    },
+    faq: [
+      {
+        q: "Por que esse termo importa para a empresa?",
+        a: "Porque ele normalmente aparece ligado a exame ocupacional, documento obrigatorio, eSocial, rotina de RH ou risco trabalhista. Entender o termo ajuda a decidir melhor e mais cedo.",
+      },
+    ],
+  },
+});
+
+export const dicionarioSEO: Record<string, SEODocument> = {
+  "o-que-e-aso": dicionarioEntry(
+    "O que e ASO: significado do atestado de saude ocupacional",
+    "ASO e o Atestado de Saude Ocupacional, documento emitido ao fim do exame ocupacional para registrar se o trabalhador esta apto ou inapto para a funcao.",
+    "Muita empresa trata o ASO como simples papel de admissao, mas ele e uma das evidencias mais importantes da rotina ocupacional e da defesa juridica da empresa.",
+    "Entender o ASO no contexto certo ajuda a ligar exame, PCMSO, eSocial e responsabilidade da empresa sem confundir com atestado medico comum.",
+  ),
+  "o-que-e-pcmso": dicionarioEntry(
+    "O que e PCMSO: significado do programa de controle medico",
+    "PCMSO e o Programa de Controle Medico de Saude Ocupacional. Ele define quais exames cada cargo precisa realizar e com qual periodicidade.",
+    "Quando o RH nao entende o que e PCMSO, o programa vira arquivo parado e a empresa perde o controle sobre exames, ASOs e prazos do eSocial.",
+    "Com a definicao certa, fica mais facil enxergar o PCMSO como base da vigilancia medica ocupacional, e nao como documento burocratico isolado.",
+  ),
+  "o-que-e-pgr": dicionarioEntry(
+    "O que e PGR: significado do programa de gerenciamento de riscos",
+    "PGR e o Programa de Gerenciamento de Riscos exigido pela NR-01. Ele organiza a identificacao, avaliacao e controle dos riscos ocupacionais da empresa.",
+    "Muita empresa ainda confunde PGR com documento padrao ou com o antigo PPRA, o que enfraquece a coerencia tecnica da rotina de SST.",
+    "Entender o PGR ajuda a conectar risco real da operacao com laudos, exames, treinamentos e eventos do eSocial.",
+  ),
+  "o-que-e-ltcat": dicionarioEntry(
+    "O que e LTCAT: significado do laudo tecnico das condicoes ambientais do trabalho",
+    "LTCAT e o Laudo Tecnico das Condicoes Ambientais do Trabalho, usado para documentar agentes nocivos e sustentar PPP e aposentadoria especial.",
+    "Sem entender o papel do LTCAT, a empresa mistura conceitos trabalhistas e previdenciarios e gera documento inconsistente para pericia, PPP e eSocial.",
+    "A definicao correta ajuda a separar o que e insalubridade trabalhista, o que e exposicao previdenciaria e onde o LTCAT entra de fato.",
+  ),
+  "o-que-e-ppp": dicionarioEntry(
+    "O que e PPP: significado do perfil profissiografico previdenciario",
+    "PPP e o Perfil Profissiografico Previdenciario, documento que consolida historico laboral, agentes nocivos e informacoes previdenciarias do trabalhador.",
+    "Muita empresa so descobre a importancia do PPP quando surge desligamento, pedido de aposentadoria especial ou exigencia de retificacao documental.",
+    "Com a definicao certa, fica mais facil entender por que PPP, LTCAT, S-2240 e historico de exposicao precisam contar a mesma historia.",
+  ),
+};
+
 // Helper para gerar entries de RH com defaults consistentes
 const rhEntry = (h1: string, hook: string, dor: string, solucao: string): SEODocument => ({
   h1,
@@ -795,7 +856,7 @@ const rhEntry = (h1: string, hook: string, dor: string, solucao: string): SEODoc
   isClinico: false,
   content: {
     dor,
-    soluÃ§Ã£o,
+    solucao,
     beneficios: [
       "DecisÃ£o de RH com respaldo tÃ©cnico e jurÃ­dico",
       "DocumentaÃ§Ã£o que sustenta auditoria e fiscalizaÃ§Ã£o",
@@ -908,4 +969,14 @@ export const rhDoresSEO: Record<string, SEODocument> = {
       },
       faq: [
         {
-          q: "Toda empresa 
+          q: "Toda empresa precisa tratar risco psicossocial no PGR?",
+          a: "Toda empresa precisa avaliar se a organizacao do trabalho, a forma de cobranca, a sobrecarga, o assedio ou outros fatores estao gerando risco psicossocial relevante. O tratamento pode mudar conforme o contexto, mas ignorar o tema nao e uma opcao segura.",
+        },
+        {
+          q: "Risco psicossocial e a mesma coisa que burnout?",
+          a: "Nao. Burnout e uma possivel consequencia. Risco psicossocial e o conjunto de fatores da organizacao do trabalho que pode levar a adoecimento, conflito, queda de desempenho e exposicao juridica.",
+        },
+      ],
+    },
+  },
+};

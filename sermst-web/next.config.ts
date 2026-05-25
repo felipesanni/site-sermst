@@ -49,11 +49,26 @@ const securityHeaders = [
   },
 ];
 
+const pageCacheHeaders = [
+  {
+    key: 'Cache-Control',
+    value: 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400',
+  },
+];
+
 const nextConfig: NextConfig = {
   output: 'standalone',
 
   async headers() {
     return [
+      {
+        source: '/',
+        headers: [...securityHeaders, ...pageCacheHeaders],
+      },
+      {
+        source: '/:path((?!_next/static|.*\\..*).*)',
+        headers: [...securityHeaders, ...pageCacheHeaders],
+      },
       {
         source: '/(.*)',
         headers: securityHeaders,

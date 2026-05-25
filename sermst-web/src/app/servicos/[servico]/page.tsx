@@ -380,4 +380,3 @@ export default async function ServicoPage({
     </article>
   );
 }
-  
