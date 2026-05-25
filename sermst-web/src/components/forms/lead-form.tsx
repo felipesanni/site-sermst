@@ -83,12 +83,15 @@ export function LeadForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [attribution, setAttribution] = useState<StoredAttribution | null>(null);
+  const [conversionPage, setConversionPage] = useState('');
+  const [formStartedAt, setFormStartedAt] = useState('');
 
   useEffect(() => {
     const current = buildSnapshot();
     const hasSignal = hasAttributionSignal(current);
 
     let next: StoredAttribution;
+    let nextFormStartedAt = '';
 
     try {
       const storedRaw = window.localStorage.getItem(ATTRIBUTION_KEY);
@@ -120,11 +123,20 @@ export function LeadForm() {
       };
     }
 
-    window.localStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(next));
-    if (!window.sessionStorage.getItem(FORM_STARTED_AT_KEY)) {
-      window.sessionStorage.setItem(FORM_STARTED_AT_KEY, String(Date.now()));
+    try {
+      window.localStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(next));
+      nextFormStartedAt = window.sessionStorage.getItem(FORM_STARTED_AT_KEY) || '';
+      if (!nextFormStartedAt) {
+        nextFormStartedAt = String(Date.now());
+        window.sessionStorage.setItem(FORM_STARTED_AT_KEY, nextFormStartedAt);
+      }
+    } catch {
+      // localStorage/sessionStorage indisponíveis (Safari privado, storage bloqueado)
     }
+
     setAttribution(next);
+    setConversionPage(window.location.href);
+    setFormStartedAt(nextFormStartedAt);
   }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -336,9 +348,9 @@ export function LeadForm() {
       />
 
       <input type="hidden" name="landing_page" value={attribution?.first.page || ''} />
-      <input type="hidden" name="conversion_page" value={typeof window !== 'undefined' ? window.location.href : ''} />
+      <input type="hidden" name="conversion_page" value={conversionPage} />
       <input type="hidden" name="original_referrer" value={attribution?.first.referrer || ''} />
-      <input type="hidden" name="form_started_at" value={typeof window !== 'undefined' ? window.sessionStorage.getItem(FORM_STARTED_AT_KEY) || '' : ''} />
+      <input type="hidden" name="form_started_at" value={formStartedAt} />
       <input type="hidden" name="utm_source" value={attribution?.last.utm_source || ''} />
       <input type="hidden" name="utm_medium" value={attribution?.last.utm_medium || ''} />
       <input type="hidden" name="utm_campaign" value={attribution?.last.utm_campaign || ''} />

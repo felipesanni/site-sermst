@@ -26,7 +26,7 @@ const contactPaths = [
   {
     title: 'Exames ocupacionais',
     description:
-      'Para admissional, demissional, periódico, retorno ao trabalho, mudanca de função e ASO com rapidez operacional.',
+      'Para admissional, demissional, periódico, retorno ao trabalho, mudança de função e ASO com rapidez operacional.',
     cta: 'https://wa.me/5511915146447?text=Preciso%20de%20exames%20ocupacionais%20para%20minha%20empresa',
     label: 'Solicitar exames',
   },
@@ -49,13 +49,13 @@ const contactPaths = [
 const differentiators = [
   'Mais de 40 anos de experiência em Medicina e Segurança do Trabalho.',
   'Estrutura própria para acelerar ASO, exames complementares e fluxos ocupacionais.',
-  'Atendimento para São Paulo, Grande ABC, Osasco, Guarulhos, Barueri e regiao.',
+  'Atendimento para São Paulo, Grande ABC, Osasco, Guarulhos, Barueri e região.',
   'Foco em reduzir risco trabalhista, atraso de contratação e falhas de eSocial.',
 ];
 
 const objections = [
   {
-    q: 'Minha empresa ainda não sabe exatamenté o que precisa.',
+    q: 'Minha empresa ainda não sabe exatamente o que precisa.',
     a: 'Tudo bem. O primeiro contato serve justamente para entender porte, atividade, urgência e risco antes de indicar exames, laudos ou gestão de SST.',
   },
   {
@@ -63,7 +63,7 @@ const objections = [
     a: 'A SERMST já trabalha com operação orientada a velocidade, principalmente em exames ocupacionais, ASO e integração com rotinas de RH.',
   },
   {
-    q: 'Ja temos documentos, mas não sabemos se estão corretos.',
+    q: 'Já temos documentos, mas não sabemos se estão corretos.',
     a: 'Esse é um cenário comum. A equipe pode avaliar se PGR, PCMSO, LTCAT e eventos de eSocial estão coerentes com a realidade da operação.',
   },
 ];
@@ -84,7 +84,7 @@ export default function ContatoPage() {
                 Fale com a SERMST para regularizar SST, acelerar exames e reduzir risco trabalhista
               </h1>
               <p className="max-w-3xl text-lg leading-relaxed text-slate-300 md:text-2xl">
-                Se sua empresa precisa de exame admissional, PGR, PCMSO, LTCAT, treinamentos ou gestão de eSocial SST, está é a página para falar com o time comercial da SERMST e avançar com mais clareza, rapidez e segurança técnica.
+                Se sua empresa precisa de exame admissional, PGR, PCMSO, LTCAT, treinamentos ou gestão de eSocial SST, esta é a página para falar com o time comercial da SERMST e avançar com mais clareza, rapidez e segurança técnica.
               </p>
             </FadeIn>
           </div>
@@ -192,7 +192,7 @@ export default function ContatoPage() {
                   Nem toda empresa chega aqui no mesmo estágio. Algumas sabem que precisam de exame admissional urgente. Outras sabem apenas que existe um risco de multa, um documento vencido ou um problema no eSocial, mas ainda não conseguem nomear a solução.
                 </p>
                 <p>
-                  A SERMST trabalha os dois cenários. Para quem tem demanda imediata, fluxo expresso. Para quem ainda está tentando entender a dimensão do problema, diagnóstico técnico antes de propor qualquer serviço. Você só contrata depois que entende exatamenté o que precisa.
+                  A SERMST trabalha os dois cenários. Para quem tem demanda imediata, fluxo expresso. Para quem ainda está tentando entender a dimensão do problema, diagnóstico técnico antes de propor qualquer serviço. Você só contrata depois que entende exatamente o que precisa.
                 </p>
               </div>
               <ul className="space-y-4">
@@ -212,7 +212,7 @@ export default function ContatoPage() {
                 Objeções comuns
               </span>
               <h2 className="mb-6 text-2xl font-black text-brand-900">
-                Duvidas que costumam aparecer antes do primeiro contato
+                Dúvidas que costumam aparecer antes do primeiro contato
               </h2>
               <div className="space-y-6">
                 {objections.map((item) => (
