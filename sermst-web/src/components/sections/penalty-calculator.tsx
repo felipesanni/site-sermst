@@ -32,7 +32,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
   const urgencyText =
     eventType === 'S2220'
       ? 'Quando o ASO atrasa, a admissão trava, o RH perde tempo e o passivo cresce em silencio.'
-      : 'Quando o risco não esta bem documentado, o problema não fica so no evento. Ele contamina laudo, eSocial e defesa futura.';
+      : 'Quando o risco não está bem documentado, o problema não fica so no evento. Ele contamina laudo, eSocial e defesa futura.';
 
   return (
     <section className="overflow-hidden bg-white py-24">
@@ -129,7 +129,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
               <div className="relative overflow-hidden rounded-[3.5rem] border border-white/10 bg-brand-900 p-12 text-white shadow-2xl">
                 <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-accent-pink/30 bg-accent-pink/20 px-4 py-2">
                   <ShieldAlert className="h-5 w-5 text-accent-pink" />
-                  <span className="text-[10px] font-black uppercase tracking-widest">Estimativa de exposicao {eventType}</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Estimativa de exposição {eventType}</span>
                 </div>
 
                 <div className="mb-10">
@@ -154,7 +154,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                   </div>
                   <div className="flex items-center gap-4 text-slate-300">
                     <div className="h-2 w-2 rounded-full bg-accent-pink" />
-                    <p className="text-sm font-medium">A exposicao real pode subir com reincidência, fiscalização e inconsistencias técnicas</p>
+                    <p className="text-sm font-medium">A exposição real pode subir com reincidência, fiscalização e inconsistências técnicas</p>
                   </div>
                 </div>
 
@@ -188,7 +188,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
                   <ul className="space-y-2 text-sm text-slate-300">
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent-pink" />
-                      Priorizar o problema antes que ele vire urgencia jurídica.
+                      Priorizar o problema antes que ele vire urgência jurídica.
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent-pink" />

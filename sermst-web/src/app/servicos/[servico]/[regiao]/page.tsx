@@ -194,7 +194,7 @@ export default async function LocalSEOPage({
                 <span className="text-sm font-black uppercase">Leitura de especialista</span>
               </div>
               <p className="font-medium italic text-slate-700">
-                {local.contextoEmpresarial} Unimos a expertise em medicina do trabalho a precisão regulatoria do eSocial.
+                {local.contextoEmpresarial} Unimos a expertise em medicina do trabalho a precisão regulatória do eSocial.
               </p>
             </div>
           </FadeIn>
@@ -394,7 +394,7 @@ export default async function LocalSEOPage({
                 <div className="mb-8 flex items-center gap-4">
                   <FileText className="h-8 w-8 text-brand-900" />
                   <h3 className="text-2xl font-black uppercase tracking-tighter text-brand-900">
-                    {data.isClínico ? 'O que o funcionario deve levar?' : 'Pre-requisitos técnicos'}
+                    {data.isClínico ? 'O que o funcionário deve levar?' : 'Pre-requisitos técnicos'}
                   </h3>
                 </div>
                 <ul className="grid flex-grow gap-4 sm:grid-cols-2">

@@ -161,7 +161,7 @@ export default function ExameDemissionalPage() {
       related={[
         { label: 'Exame admissional expresso', href: '/servicos/exame-admissional-expresso/sao-paulo' },
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
-        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
+        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionário' },
         { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },
       ]}
     />

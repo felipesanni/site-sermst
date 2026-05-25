@@ -48,7 +48,7 @@ export default function AClínicaPage() {
                 <span className="text-accent-pink italic font-serif">sua parceira estratégica.</span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed border-l-4 border-accent-pink pl-6 mb-12">
-                Na SERMST, unimos a senioridade da medicina tradicional à ágilidade do compliance digital. Cuidamos do seu maior ativo — as pessoas — enquanto protegemos seu CNPJ.
+                Na SERMST, unimos a senioridade da medicina tradicional à agilidade do compliance digital. Cuidamos do seu maior ativo — as pessoas — enquanto protegemos seu CNPJ.
               </p>
             </div>
           </FadeIn>

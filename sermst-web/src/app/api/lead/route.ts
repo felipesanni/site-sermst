@@ -1,6 +1,13 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// ── Helper: JSON com charset UTF-8 explícito ───────────────────────────────
+const JSON_HEADERS = { 'Content-Type': 'application/json; charset=utf-8' } as const;
+function jsonResponse(body: unknown, status = 200) {
+  return NextResponse.json(body, { status, headers: JSON_HEADERS });
+}
+
+
 // ── Rate limiting simples em memória (5 req/IP/minuto) ─────────────────────
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
@@ -260,35 +267,29 @@ export async function POST(req: Request) {
     req.headers.get('x-real-ip') ??
     'unknown';
   if (!checkRateLimit(ip)) {
-    return NextResponse.json(
-      { error: 'Muitas requisições. Tente novamente em alguns instantes.' },
-      { status: 429 }
-    );
+    return jsonResponse({ error: 'Muitas requisições. Tente novamente em alguns instantes.' }, 429);
   }
 
   let data: LeadPayload;
   try {
     data = (await req.json()) as LeadPayload;
   } catch {
-    return NextResponse.json({ error: 'Payload invalido.' }, { status: 400 });
+    return jsonResponse({ error: 'Payload invalido.' }, 400);
   }
 
   // Honeypot
   if (data.website && data.website.trim() !== '') {
-    return NextResponse.json({ ok: true });
+    return jsonResponse({ ok: true });
   }
 
   for (const field of REQUIRED) {
     if (!data[field] || String(data[field]).trim() === '') {
-      return NextResponse.json(
-        { error: `Campo obrigatório ausente: ${field}` },
-        { status: 400 }
-      );
+      return jsonResponse({ error: `Campo obrigatório ausente: ${field}` }, 400);
     }
   }
 
   if (!isEmail(String(data.email))) {
-    return NextResponse.json({ error: 'E-mail invalido.' }, { status: 400 });
+    return jsonResponse({ error: 'E-mail invalido.' }, 400);
   }
 
   const formStartedAt = Number(data.form_started_at || 0);
@@ -297,10 +298,7 @@ export async function POST(req: Request) {
     formStartedAt <= 0 ||
     Date.now() - formStartedAt < MIN_SUBMIT_MS
   ) {
-    return NextResponse.json(
-      { error: 'Envio invalido. Aguarde alguns segundos e tente novamente.' },
-      { status: 400 }
-    );
+    return jsonResponse({ error: 'Envio invalido. Aguarde alguns segundos e tente novamente.' }, 400);
   }
 
   const nome = String(data.nome || '').trim();
@@ -317,17 +315,11 @@ export async function POST(req: Request) {
     telefone.length > 40 ||
     mensagem.length > MAX_MESSAGE_LENGTH
   ) {
-    return NextResponse.json(
-      { error: 'Alguns campos ultrapassam o limite permitido.' },
-      { status: 400 }
-    );
+    return jsonResponse({ error: 'Alguns campos ultrapassam o limite permitido.' }, 400);
   }
 
   if (countLinks(fullText) > 2 || containsSpamPattern(fullText)) {
-    return NextResponse.json(
-      { error: 'Nao foi possivel validar o conteudo enviado.' },
-      { status: 400 }
-    );
+    return jsonResponse({ error: 'Nao foi possivel validar o conteudo enviado.' }, 400);
   }
 
   const turnstileToken = String(
@@ -365,21 +357,24 @@ export async function POST(req: Request) {
       const transporter = nodemailer.createTransport({
         host: smtpHost,
         port: smtpPort,
-        secure: smtpPort === 465,   // true para SSL/465, false para TLS/587
+        secure: smtpPort === 465,
+        // Garante encoding UTF-8 na conexão SMTP
+        tls: { rejectUnauthorized: false },   // true para SSL/465, false para TLS/587
         auth: { user: smtpUser, pass: smtpPass },
       });
 
       await transporter.sendMail({
         from: smtpFrom,
         to: notifyTo,
-        subject: `Novo lead SERMST: ${lead.empresa} — ${lead.dor}`,
+        subject: `=?UTF-8?B?${Buffer.from('Novo lead SERMST: ' + lead.empresa + ' — ' + lead.dor).toString('base64')}?=`,
         text: buildEmailText(lead),
         html: buildEmailHtml(lead),
+        encoding: 'base64',
       });
     } catch (err) {
       console.error('[LEAD] SMTP falhou:', err);
     }
   }
 
-  return NextResponse.json({ ok: true });
+  return jsonResponse({ ok: true });
 }

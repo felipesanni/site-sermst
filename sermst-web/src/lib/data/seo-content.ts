@@ -43,7 +43,7 @@ export interface Localidade {
   setoresPredominantes?: string[];
   /** Bairros industriais/comerciais atendidos */
   bairrosAtendidos?: string[];
-  /** Por que a SERMST é especialmente relevante para esta cidade */
+  /** Por que a SERMST é especialmente relevante para está cidade */
   diferencialLocal?: string;
 }
 
@@ -278,10 +278,10 @@ export const servicosSEO: Record<string, SEODocument> = {
   "exame-admissional-expresso": {
     h1: "Exame Admissional | Clínica de Medicina do Trabalho",
     hook:
-      "Precisa de exame admissional com rapidez, validade para eSocial e menos impacto na rotina do RH? A SERMST realiza exame admissional em São Paulo com laboratório próprio, liberação ágil de ASO e estrutura para empresas que não podem atrasar contratacoes.",
+      "Precisa de exame admissional com rapidez, validade para eSocial e menos impacto na rotina do RH? A SERMST realiza exame admissional em São Paulo com laboratório próprio, liberação ágil de ASO e estrutura para empresas que não podem atrasar contratações.",
     isClínico: true,
     quandoRequerido:
-      "O exame admissional e uma exigencia legal da NR-07 (PCMSO) e deve ser realizado antes que o colaborador inicie suas funcoes. Alem de garantir a aptidão do funcionario, ele sustenta o envio correto do evento S-2220 ao eSocial e ajuda a evitar multas por falhas no processo de admissão.",
+      "O exame admissional e uma exigencia legal da NR-07 (PCMSO) e deve ser realizado antes que o colaborador inicie suas funções. Alem de garantir a aptidão do funcionário, ele sustenta o envio correto do evento S-2220 ao eSocial e ajuda a evitar multas por falhas no processo de admissão.",
     documentosNecessarios: [
       "RG e CPF ou documento oficial com foto",
       "Guia de encaminhamento em papel ou digital",
@@ -293,7 +293,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       dor:
         "Processos de contratação lentos, filas em clínicas terceirizadas e demora no ASO geram admissões travadas, retrabalho para o RH e perda de produtividade logo no inicio da operação.",
       solução:
-        "Com laboratório próprio, equipe médica especializada em medicina do trabalho e fluxo ocupacional orientado a urgencia empresarial, a SERMST reduz burocracia e acelera a liberação do ASO sem abrir mao de conformidade.",
+        "Com laboratório próprio, equipe médica especializada em medicina do trabalho e fluxo ocupacional orientado a urgência empresarial, a SERMST reduz burocracia e acelera a liberação do ASO sem abrir mao de conformidade.",
       beneficios: [
         "Liberação de ASO com mais velocidade operacional",
         "Clínica de medicina do trabalho centralizada",
@@ -318,11 +318,11 @@ export const servicosSEO: Record<string, SEODocument> = {
         },
         {
           q: "Precisa agendar o exame de admissão?",
-          a: "Recomendamos o contato previo por WhatsApp para orientar o fluxo e reduzir espera, mas a SERMST também atende demandas de urgencia empresarial.",
+          a: "Recomendamos o contato prévio por WhatsApp para orientar o fluxo e reduzir espera, mas a SERMST também atende demandas de urgência empresarial.",
         },
         {
-          q: "Quais exames são necessarios na admissão?",
-          a: "O exame clínico e obrigatório, e os complementares dependem dos riscos do cargo definidos no PCMSO da empresa.",
+          q: "Quais exames são necessários na admissão?",
+          a: "O exame clínico é obrigatório, e os complementares dependem dos riscos do cargo definidos no PCMSO da empresa.",
         },
       ],
     },
@@ -330,7 +330,7 @@ export const servicosSEO: Record<string, SEODocument> = {
   "pcmso-nr07-programa": {
     h1: "PCMSO (NR-07) | Gestão de Saúde Ocupacional Especializada",
     hook:
-      "PCMSO não pode ser documento genérico. A SERMST elabora e coordena o PCMSO com base na realidade da sua empresa, definindo grade de exames, periodicidade, coerencia com riscos ocupacionais e sustentacao correta para o eSocial.",
+      "PCMSO não pode ser documento genérico. A SERMST elabora e coordena o PCMSO com base na realidade da sua empresa, definindo grade de exames, periodicidade, coerência com riscos ocupacionais e sustentação correta para o eSocial.",
     isClínico: false,
     fluxoCorporativo: [
       "Diagnóstico e visita do médico do trabalho",
@@ -338,12 +338,12 @@ export const servicosSEO: Record<string, SEODocument> = {
       "Assinatura do coordenador e entrega digital",
     ],
     quandoRequerido:
-      "O PCMSO e obrigatório para empresas com empregados CLT e funciona como o eixo médico da NR-07. E ele que define quais exames cada trabalhador deve realizar de acordo com os riscos identificados na operação.",
+      "O PCMSO é obrigatório para empresas com empregados CLT e funciona como o eixo médico da NR-07. E ele que define quais exames cada trabalhador deve realizar de acordo com os riscos identificados na operação.",
     content: {
       dor:
         "PCMSO genérico, desconectado da operação e mal alinhado ao risco do cargo abre espaco para exames inadequados, falhas em S-2220, insegurança jurídica e passivos ocupacionais.",
       solução:
-        "A SERMST trabalha com assessoria médica real, leitura do processo produtivo e construcao de um programa de saúde ocupacional que protege a empresa técnicamente, operacionalmente e jurídicamente.",
+        "A SERMST trabalha com assessoria médica real, leitura do processo produtivo e construcao de um programa de saúde ocupacional que protege a empresa tecnicamente, operacionalmente e juridicamente.",
       beneficios: [
         "Coordenacao por médicos do trabalho especialistas",
         "Integração total com PGR e eSocial",
@@ -364,7 +364,7 @@ export const servicosSEO: Record<string, SEODocument> = {
         },
         {
           q: "Quem assina o PCMSO?",
-          a: "O PCMSO deve ser assinado por médico do trabalho responsavel pela coordenacao do programa.",
+          a: "O PCMSO deve ser assinado por médico do trabalho responsável pela coordenação do programa.",
         },
       ],
     },
@@ -372,11 +372,11 @@ export const servicosSEO: Record<string, SEODocument> = {
   "pgr-nr01-gerenciamento-riscos": {
     h1: "PGR (NR-01) | Engenharia de Segurança e Levantamento de Riscos",
     hook:
-      "Sua empresa precisa de PGR coerente com a operação real, e não de um documento padrao. A SERMST realiza vistoria técnica, inventario de riscos e plano de acao com foco em conformidade, prevenção e sustentacao do eSocial.",
+      "Sua empresa precisa de PGR coerente com a operação real, e não de um documento padrão. A SERMST realiza vistoria técnica, inventário de riscos e plano de acao com foco em conformidade, prevenção e sustentação do eSocial.",
     isClínico: false,
     fluxoCorporativo: [
       "Vistoria técnica pormenorizada em campo",
-      "Levantamento e inventario de riscos ocupacionais",
+      "Levantamento e inventário de riscos ocupacionais",
       "Definicao do plano de acao e entrega técnica",
     ],
     quandoRequerido:
@@ -385,7 +385,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       dor:
         "PGRs copia e cola, feitos sem leitura real do ambiente, costumam falhar em auditorias, enfraquecem a prevenção e ainda alimentam o eSocial com informações inconsistentes.",
       solução:
-        "A SERMST faz engenharia de campo orientada a realidade da empresa, analisa atividades, maquinas, agentes nocivos e medidas de controle para entregar um inventario de riscos defensavel e realmente utilizavel.",
+        "A SERMST faz engenharia de campo orientada a realidade da empresa, analisa atividades, maquinas, agentes nocivos e medidas de controle para entregar um inventário de riscos defensável e realmente utilizável.",
       beneficios: [
         "Inventario de riscos conforme NR-01",
         "PGR baseado na realidade operacional",
@@ -404,7 +404,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       faq: [
         {
           q: "O que mudou no PGR?",
-          a: "O PGR integra o gerenciamento de riscos ocupacionais e exige inventario coerente, plano de acao e acompanhamento continuo.",
+          a: "O PGR integra o gerenciamento de riscos ocupacionais e exige inventário coerente, plano de acao e acompanhamento continuo.",
         },
         {
           q: "Quem elabora o PGR?",
@@ -416,7 +416,7 @@ export const servicosSEO: Record<string, SEODocument> = {
   "ltcat-laudo-tecnico-previdenciario": {
     h1: "LTCAT | Laudo Técnico de Condições Ambientais do Trabalho",
     hook:
-      "Documentação solida para aposentadoria especial, PPP e eSocial S-2240. A SERMST realiza médicoes quantitativas, enquadramento técnico e entrega de LTCAT com base consistente para obrigações previdênciarias.",
+      "Documentação solida para aposentadoria especial, PPP e eSocial S-2240. A SERMST realiza medições quantitativas, enquadramento técnico e entrega de LTCAT com base consistente para obrigações previdenciárias.",
     isClínico: false,
     fluxoCorporativo: [
       "Visita técnica com coleta de dados quantitativos",
@@ -427,9 +427,9 @@ export const servicosSEO: Record<string, SEODocument> = {
       "O LTCAT e indispensavel para empresas com exposição a agentes nocivos que precisam sustentar aposentadoria especial, PPP e recolhimentos relacionados ao risco previdênciario.",
     content: {
       dor:
-        "Laudos técnicos inconsistentes podem gerar recolhimento indevido, base frágil para PPP e exposição a discussoes previdênciarias de alto custo.",
+        "Laudos técnicos inconsistentes podem gerar recolhimento indevido, base frágil para PPP e exposição a discussoes previdenciárias de alto custo.",
       solução:
-        "A SERMST combina médicao técnica, critério de enquadramento e leitura jurídica do risco para entregar LTCAT mais consistente e defensavel.",
+        "A SERMST combina médicao técnica, critério de enquadramento e leitura jurídica do risco para entregar LTCAT mais consistente e defensável.",
       beneficios: [
         "Médicoes de ruido e calor certificadas",
         "Base técnica para o Perfil Profissiografico Previdênciario",
@@ -474,7 +474,7 @@ export const servicosSEO: Record<string, SEODocument> = {
     },
     geoOpt: {
       expertQuote: {
-        text: "No eSocial, ágilidade no dado e tao importante quanto a qualidade técnica da informação.",
+        text: "No eSocial, agilidade no dado e tao importante quanto a qualidade técnica da informação.",
         author: "Governanca Corporativa",
         role: "SERMST",
       },
@@ -496,7 +496,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       "Proteja a audição da equipe e reduza exposição a passivos relacionados a ruido ocupacional. A SERMST realiza audiometria ocupacional integrada ao PCMSO com estrutura adequada e foco em validade técnica.",
     isClínico: true,
     quandoRequerido:
-      "A audiometria ocupacional e indicada para funcoes expostas a ruido acima dos limites de tolerancia e costuma ser exigida em admissão, demissão e acompanhamentos periódicos.",
+      "A audiometria ocupacional e indicada para funções expostas a ruido acima dos limites de tolerancia e costuma ser exigida em admissão, demissão e acompanhamentos periódicos.",
     content: {
       dor:
         "Perda auditiva ocupacional pode gerar processo, afastamento e custo elevado quando a empresa não monitora o trabalhador de forma consistente.",
@@ -530,10 +530,10 @@ export const servicosSEO: Record<string, SEODocument> = {
   "exame-toxicologico-clt": {
     h1: "Exame Toxicológico | Motoristas Profissionais CLT",
     hook:
-      "Exame toxicológico ocupacional com ágilidade para transportadoras e operações que dependem de motoristas CLT. A SERMST organiza coleta, validade nacional do laudo e suporte para rotinas vinculadas ao eSocial.",
+      "Exame toxicológico ocupacional com agilidade para transportadoras e operações que dependem de motoristas CLT. A SERMST organiza coleta, validade nacional do laudo e suporte para rotinas vinculadas ao eSocial.",
     isClínico: true,
     quandoRequerido:
-      "O exame toxicológico e obrigatório em admissão, demissão e acompanhamentos previstos para motoristas profissionais das categorias C, D e E.",
+      "O exame toxicológico é obrigatório em admissão, demissão e acompanhamentos previstos para motoristas profissionais das categorias C, D e E.",
     content: {
       dor:
         "Atraso no toxicológico trava contratação, expoe a empresa a risco regulatorio e compromete operações que dependem de motorista liberado rapidamente.",
@@ -563,7 +563,7 @@ export const servicosSEO: Record<string, SEODocument> = {
   "exames-complementares-laboratoriais": {
     h1: "Exames Complementares em SST | Laboratório Próprio",
     hook:
-      "Exames complementares em medicina do trabalho com mais ágilidade para o RH e menos deslocamento para o colaborador. A SERMST integra exames de sangue, visao, ECG, EEG e espirometria ao fluxo do ASO para acelerar a admissão e reforcar a conformidade.",
+      "Exames complementares em medicina do trabalho com mais agilidade para o RH e menos deslocamento para o colaborador. A SERMST integra exames de sangue, visao, ECG, EEG e espirometria ao fluxo do ASO para acelerar a admissão e reforcar a conformidade.",
     isClínico: true,
     content: {
       dor:
@@ -643,7 +643,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       "Defesa técnica para empresas que precisam responder melhor em pericias trabalhistas de insalubridade, periculosidade e doenca ocupacional. A SERMST atua com acompanhamento estrategico, quesitos técnicos e leitura critica do caso.",
     isClínico: false,
     quandoRequerido:
-      "Esse serviço costuma ser necessario quando a empresa esta envolvida em processo trabalhista e precisa de assistencia técnica qualificada para acompanhar a perícia judicial.",
+      "Esse serviço costuma ser necessario quando a empresa está envolvida em processo trabalhista e precisa de assistencia técnica qualificada para acompanhar a perícia judicial.",
     content: {
       dor:
         "Laudos periciais desfavoraveis por falta de defesa técnica adequada podem elevar condenacoes e enfraquecer a posicao jurídica da empresa.",
@@ -665,7 +665,7 @@ export const servicosSEO: Record<string, SEODocument> = {
       faq: [
         {
           q: "O assistente técnico pode falar com o perito?",
-          a: "Sim. O assistente técnico pode acompanhar a diligencia e atuar técnicamente dentro dos limites processuais do caso.",
+          a: "Sim. O assistente técnico pode acompanhar a diligencia e atuar tecnicamente dentro dos limites processuais do caso.",
         },
       ],
     },
@@ -705,7 +705,7 @@ export const saúdeSEO: Record<string, SEODocument> = {
   "importancia-do-exame-periodico": {
     h1: "Exame Periódico de Medicina do Trabalho",
     hook:
-      "Exame periódico e parte central da vigilância médica ocupacional. Monitorar a saúde da equipe no tempo certo ajuda a reduzir afastamentos, sustentar o PCMSO e evitar frágilidades em auditorias e fiscalizações.",
+      "Exame periódico e parte central da vigilância médica ocupacional. Monitorar a saúde da equipe no tempo certo ajuda a reduzir afastamentos, sustentar o PCMSO e evitar fragilidades em auditorias e fiscalizações.",
     isClínico: true,
     content: {
       dor:
@@ -845,7 +845,7 @@ export const rhDoresSEO: Record<string, SEODocument> = {
     "Empresas familiares tratam o gerente como super-encarregado — perdem talento, perdem liderança e perdem produtividade quando o cargo não é estruturado com clareza.",
     "Gerente bem definido tem três entregáveis claros: resultado da área, desenvolvimento da equipe e segurança da operação. SST é parte do terceiro pilar.",
   ),
-  "quando-demitir-funcionario": rhEntry(
+  "quando-demitir-funcionário": rhEntry(
     "Quando demitir um funcionário: guia para gestores",
     "Demissão é decisão técnica, não emocional. Feita certa, protege o time e o resultado. Feita errada, vira processo trabalhista, queda de moral e custo escondido.",
     "Gestor adia demissão por receio do passivo, ou demite por impulso sem documentação. Os dois caminhos custam caro.",

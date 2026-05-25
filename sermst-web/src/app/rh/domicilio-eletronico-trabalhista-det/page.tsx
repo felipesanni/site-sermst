@@ -81,7 +81,7 @@ export default function DomicilioEletronicoTrabalhistaPage() {
                 Muitas empresas chegam a esse tema pesquisando por <strong>DET MTE</strong>, <strong>DET SIT</strong>, <strong>como acessar o DET</strong>, <strong>notificacao no DET</strong> ou <strong>prazo no Domicilio Eletronico Trabalhista</strong>. Todas essas buscas apontam para o mesmo problema de fundo: o empregador precisa entender como o canal oficial do governo impacta sua rotina real.
               </p>
               <p>
-                Quando o DET nao entra na agenda de acompanhamento, o risco deixa de ser teorico. Ele passa a ser prazo perdido, documento fora de hora, dificuldade de resposta e exposicao desnecessaria em fiscalizacao.
+                Quando o DET nao entra na agenda de acompanhamento, o risco deixa de ser teorico. Ele passa a ser prazo perdido, documento fora de hora, dificuldade de resposta e exposição desnecessaria em fiscalizacao.
               </p>
             </>
           ),
@@ -91,10 +91,10 @@ export default function DomicilioEletronicoTrabalhistaPage() {
           body: (
             <>
               <p>
-                Na teoria, o DET e um canal digital. Na pratica, ele e um <strong>ponto de risco de prazo</strong>. Empresas que nao definem responsavel, rotina de leitura e procedimento de resposta podem descobrir tarde demais que ja havia uma solicitacao aberta, uma cobranca de documento ou uma janela curta para manifestacao.
+                Na teoria, o DET e um canal digital. Na pratica, ele e um <strong>ponto de risco de prazo</strong>. Empresas que nao definem responsável, rotina de leitura e procedimento de resposta podem descobrir tarde demais que ja havia uma solicitacao aberta, uma cobranca de documento ou uma janela curta para manifestacao.
               </p>
               <p>
-                Isso conversa diretamente com SST, eSocial, ASO, PGR, PCMSO e laudos. Se a fiscalizacao pedir prova documental e a empresa nao souber onde esta cada peca, o problema deixa de ser so acesso ao DET e vira exposicao operacional.
+                Isso conversa diretamente com SST, eSocial, ASO, PGR, PCMSO e laudos. Se a fiscalizacao pedir prova documental e a empresa nao souber onde está cada peca, o problema deixa de ser so acesso ao DET e vira exposição operacional.
               </p>
             </>
           ),
@@ -114,7 +114,7 @@ export default function DomicilioEletronicoTrabalhistaPage() {
           body: (
             <>
               <p>
-                O maior erro e cadastrar o acesso e considerar o assunto encerrado. O DET precisa de processo: responsavel definido, frequencia de verificacao, trilha de encaminhamento interno e base documental pronta para responder rapido.
+                O maior erro e cadastrar o acesso e considerar o assunto encerrado. O DET precisa de processo: responsável definido, frequencia de verificacao, trilha de encaminhamento interno e base documental pronta para responder rapido.
               </p>
               <p>
                 Quando a empresa depende de memoria, mensagens soltas ou tentativa de descobrir quem cuida disso, o DET vira mais um gargalo em vez de protecao.
@@ -127,7 +127,7 @@ export default function DomicilioEletronicoTrabalhistaPage() {
           body: (
             <>
               <p>
-                A SERMST nao substitui o acesso institucional do empregador ao DET, mas ajuda a empresa a organizar o que normalmente e cobrado ou verificado em rotina trabalhista: ASOs, coerencia de PCMSO, PGR, laudos, eventos SST do eSocial e trilha documental para auditoria.
+                A SERMST nao substitui o acesso institucional do empregador ao DET, mas ajuda a empresa a organizar o que normalmente e cobrado ou verificado em rotina trabalhista: ASOs, coerência de PCMSO, PGR, laudos, eventos SST do eSocial e trilha documental para auditoria.
               </p>
               <p>
                 Se o problema nao e so entrar no portal, mas <strong>ter lastro tecnico para responder bem</strong>, ai a conversa deixa de ser tecnologica e passa a ser de compliance real.
@@ -139,7 +139,7 @@ export default function DomicilioEletronicoTrabalhistaPage() {
       faq={[
         { q: 'O que significa DET?', a: 'DET significa Domicilio Eletronico Trabalhista, plataforma oficial usada para comunicacao entre o empregador e a Inspecao do Trabalho.' },
         { q: 'DET e a mesma coisa que eSocial?', a: 'Nao. O DET e o canal oficial de comunicacao, notificacao e tramitacao com a Inspecao do Trabalho. O eSocial continua sendo o ambiente de envio dos eventos trabalhistas, previdenciarios e de SST.' },
-        { q: 'Quem precisa acompanhar o DET?', a: 'Empregadores que tenham relacao trabalhista e precisem manter rotina de comunicacao institucional com a fiscalizacao devem acompanhar o DET e definir um responsavel interno pelo monitoramento.' },
+        { q: 'Quem precisa acompanhar o DET?', a: 'Empregadores que tenham relacao trabalhista e precisem manter rotina de comunicacao institucional com a fiscalizacao devem acompanhar o DET e definir um responsável interno pelo monitoramento.' },
         { q: 'O que pode chegar no DET?', a: 'O empregador pode receber avisos, intimacoes, solicitacoes documentais, comunicacoes da Inspecao do Trabalho e outras demandas formais ligadas a fiscalizacao trabalhista.' },
         { q: 'Perder prazo no DET pode gerar problema?', a: 'Sim. O risco principal e perder tempo de resposta, entrega documental, manifestacao ou defesa em uma demanda ligada a fiscalizacao trabalhista.' },
         { q: 'O DET tem relacao com SST?', a: 'Tem relacao indireta e operacional. Quando a empresa precisa apresentar documentos ou sustentar rotinas de saude e seguranca, o DET pode ser a via de comunicacao formal, enquanto SST fornece a base tecnica da resposta.' },

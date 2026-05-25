@@ -142,7 +142,7 @@ export default async function ServicoPage({
               ))}
             </ul>
             <Link href="/contato" className="btn-primary-safe flex w-full">
-              Solicitar orientacao comercial
+              Solicitar orientação comercial
             </Link>
           </FadeIn>
         </div>
@@ -213,7 +213,7 @@ export default async function ServicoPage({
                     DET: canal oficial de comunicacao com a fiscalizacao trabalhista
                   </h2>
                   <p className="mb-6 text-slate-700 leading-relaxed">
-                    Se o problema do seu eSocial ja se mistura com intimacao, aviso institucional e risco de perder prazo, o DET precisa entrar no fluxo da empresa.
+                    Se o problema do seu eSocial já se mistura com intimacao, aviso institucional e risco de perder prazo, o DET precisa entrar no fluxo da empresa.
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
                     Entender o DET

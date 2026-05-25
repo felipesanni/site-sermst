@@ -24,7 +24,7 @@ export default function QuandoDemitirPage() {
       hubLabel="Hub de RH e Departamento Pessoal"
       hubLabelShort="← Hub de RH e DP"
       hubHref="/rh"
-      pageUrl="https://sermst.com.br/rh/quando-demitir-funcionario"
+      pageUrl="https://sermst.com.br/rh/quando-demitir-funcionário"
       author={{
         name: 'Felipe Sannino',
         jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',

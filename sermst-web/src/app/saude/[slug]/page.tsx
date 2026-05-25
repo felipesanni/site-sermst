@@ -84,7 +84,7 @@ export default async function SaúdeHubPage({
                 <p className="mb-10">{data.content.solução}</p>
 
                 <p>
-                  Em empresas que dependem de ritmo de contratação, estabilidade operacional e rotina ocupacional minimamente organizada, saúde do trabalhador não pode ficar separada da realidade do negócio. Quando o tema fica solto, o impacto aparece em atraso, afastamento, retrabalho e mais exposicao jurídica.
+                  Em empresas que dependem de ritmo de contratação, estabilidade operacional e rotina ocupacional minimamente organizada, saúde do trabalhador não pode ficar separada da realidade do negócio. Quando o tema fica solto, o impacto aparece em atraso, afastamento, retrabalho e mais exposição jurídica.
                 </p>
                 <p>
                   Por isso, este conteúdo não tenta apenas explicar um conceito. Ele ajuda o RH, a lideranca e a diretoria a enxergar quando a dor ja saiu do campo teórico e passou a exigir organizacao comercial, técnica e documental.
@@ -123,7 +123,7 @@ export default async function SaúdeHubPage({
               <div className="mt-8 rounded-2xl bg-brand-500 p-8 text-white shadow-xl">
                 <h3 className="mb-4 text-xl font-black">Quando vale sair da leitura e ir para a acao</h3>
                 <p className="mb-6 text-sm leading-relaxed text-white/80">
-                  Se a sua empresa ja esta lidando com afastamento, admissão lenta, duvida de PCMSO ou risco de falha ocupacional, o melhor passo e organizar o fluxo com a SERMST.
+                  Se a sua empresa ja está lidando com afastamento, admissão lenta, dúvida de PCMSO ou risco de falha ocupacional, o melhor passo e organizar o fluxo com a SERMST.
                 </p>
                 <Link href="/contato" className="btn-light-safe flex w-full text-brand-500">
                   FALAR COM A SERMST

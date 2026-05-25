@@ -7,7 +7,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 export const metadata: Metadata = {
   title: 'Contato SERMST | Orçamento Medicina do Trabalho',
   description:
-    'Fale com a SERMST para solicitar orcamento de exames admissionais, PGR, PCMSO, LTCAT, treinamentos e gestão de eSocial SST em São Paulo e Grande SP.',
+    'Fale com a SERMST para solicitar orçamento de exames admissionais, PGR, PCMSO, LTCAT, treinamentos e gestão de eSocial SST em São Paulo e Grande SP.',
 
   alternates: {
     canonical: 'https://sermst.com.br/contato',
@@ -33,7 +33,7 @@ const contactPaths = [
   {
     title: 'PGR, PCMSO e laudos',
     description:
-      'Para regularizar documentação obrigatória, revisar conformidade técnica e reduzir exposicao a passivos trabalhistas.',
+      'Para regularizar documentação obrigatória, revisar conformidade técnica e reduzir exposição a passivos trabalhistas.',
     cta: 'https://wa.me/5511915146447?text=Quero%20orcamento%20para%20PGR%2C%20PCMSO%20ou%20laudos%20de%20SST',
     label: 'Solicitar proposta',
   },
@@ -56,11 +56,11 @@ const differentiators = [
 const objections = [
   {
     q: 'Minha empresa ainda não sabe exatamenté o que precisa.',
-    a: 'Tudo bem. O primeiro contato serve justamente para entender porte, atividade, urgencia e risco antes de indicar exames, laudos ou gestão de SST.',
+    a: 'Tudo bem. O primeiro contato serve justamente para entender porte, atividade, urgência e risco antes de indicar exames, laudos ou gestão de SST.',
   },
   {
-    q: 'Estamos com urgencia para admissão e não podemos perder tempo.',
-    a: 'A SERMST ja trabalha com operação orientada a velocidade, principalmente em exames ocupacionais, ASO e integração com rotinas de RH.',
+    q: 'Estamos com urgência para admissão e não podemos perder tempo.',
+    a: 'A SERMST já trabalha com operação orientada a velocidade, principalmente em exames ocupacionais, ASO e integração com rotinas de RH.',
   },
   {
     q: 'Ja temos documentos, mas não sabemos se estão corretos.',
@@ -84,7 +84,7 @@ export default function ContatoPage() {
                 Fale com a SERMST para regularizar SST, acelerar exames e reduzir risco trabalhista
               </h1>
               <p className="max-w-3xl text-lg leading-relaxed text-slate-300 md:text-2xl">
-                Se sua empresa precisa de exame admissional, PGR, PCMSO, LTCAT, treinamentos ou gestão de eSocial SST, esta é a página para falar com o time comercial da SERMST e avançar com mais clareza, rapidez e segurança técnica.
+                Se sua empresa precisa de exame admissional, PGR, PCMSO, LTCAT, treinamentos ou gestão de eSocial SST, está é a página para falar com o time comercial da SERMST e avançar com mais clareza, rapidez e segurança técnica.
               </p>
             </FadeIn>
           </div>

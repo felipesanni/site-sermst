@@ -145,7 +145,7 @@ export default function CartaDemissãoPage() {
       sidebarHook="Toda dispensa exige exame demissional registrado no eSocial. Sem ele, o passivo de saúde ocupacional fica aberto por anos. A SERMST faz auditoria do seu processo de rescisão."
       sidebarCtaLabel="Auditar processo de rescisão"
       related={[
-        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
+        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionário' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },

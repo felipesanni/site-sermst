@@ -141,7 +141,7 @@ export default function CartaRecomendacaoPage() {
       sidebarCtaLabel="Auditar processo de desligamento"
       related={[
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
-        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
+        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionário' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
       ]}

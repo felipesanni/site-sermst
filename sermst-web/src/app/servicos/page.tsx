@@ -7,14 +7,14 @@ import { siteImages } from '@/lib/site-images';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 export const metadata = {
-  title: 'Exames e Laudos Ocupacionais | SERMST',
+  title: 'Exames Admissionais e Laudos SST em São Paulo | SERMST',
   description:
     'Central de serviços da SERMST em Medicina e Segurança do Trabalho: exames admissionais, periódicos e gestão de PGR, PCMSO, LTCAT e eSocial.',
   alternates: {
     canonical: 'https://sermst.com.br/servicos',
   },
   openGraph: {
-    title: 'Exames e Laudos Ocupacionais | SERMST',
+    title: 'Exames Admissionais e Laudos SST em São Paulo | SERMST',
     description:
       'Central de serviços da SERMST em Medicina e Segurança do Trabalho: exames admissionais, periódicos e gestão de PGR, PCMSO, LTCAT e eSocial.',
     url: 'https://sermst.com.br/servicos',

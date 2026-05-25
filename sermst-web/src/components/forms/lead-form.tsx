@@ -171,7 +171,7 @@ export function LeadForm() {
           Recebemos sua mensagem.
         </h3>
         <p className="mx-auto mb-6 max-w-md leading-relaxed text-slate-700">
-          Em breve a equipe comercial da SERMST entra em contato para entender porte, urgencia e operação antes de indicar o melhor caminho.
+          Em breve a equipe comercial da SERMST entra em contato para entender porte, urgência e operação antes de indicar o melhor caminho.
         </p>
         <p className="text-sm text-slate-500">
           Se for urgente, fale agora pelo WhatsApp:{' '}
@@ -206,7 +206,7 @@ export function LeadForm() {
           Conte o cenário da empresa e a SERMST volta com clareza comercial e técnica
         </h3>
         <p className="text-sm leading-relaxed text-slate-600">
-          Resposta da equipe comercial em ate 1 dia util. Se houver urgencia de admissão, eSocial travado ou risco de fiscalização, descreva isso no formulario.
+          Resposta da equipe comercial em ate 1 dia util. Se houver urgência de admissão, eSocial travado ou risco de fiscalização, descreva isso no formulario.
         </p>
       </div>
 

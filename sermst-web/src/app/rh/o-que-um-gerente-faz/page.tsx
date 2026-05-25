@@ -143,7 +143,7 @@ export default function OQueUmGerenteFazPage() {
       related={[
         { label: 'Função encarregado: responsabilidades', href: '/rh/funcao-encarregado' },
         { label: 'Como treinar gerentes', href: '/rh/treinamento-gerentes' },
-        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
+        { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionário' },
         { label: 'Multa de eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />

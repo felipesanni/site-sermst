@@ -263,7 +263,7 @@ export default function Home() {
                   Descubra o risco da empresa antes de pedir proposta
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                  A Calculadora de Risco cruza CNPJ ou CNAE com grau de risco, RAT, SESMT e NR-05 para mostrar se ha CIPA, representante da NR-05 ou apoio por SESMT. Depois, a propria ferramenta pode enviar esse enquadramento para a equipe comercial.
+                  A Calculadora de Risco cruza CNPJ ou CNAE com grau de risco, RAT, SESMT e NR-05 para mostrar se ha CIPA, representante da NR-05 ou apoio por SESMT. Depois, a própria ferramenta pode enviar esse enquadramento para a equipe comercial.
                 </p>
               </div>
               <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">

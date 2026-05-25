@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server';
 
+// ── Helper: JSON com charset UTF-8 explícito ───────────────────────────────
+const JSON_HEADERS = { 'Content-Type': 'application/json; charset=utf-8' } as const;
+function jsonUtf8(body: unknown, status = 200) {
+  return NextResponse.json(body, { status, headers: JSON_HEADERS });
+}
+
+
 type NormalizedCnpjPayload = {
   razaoSocial: string;
   cnaeFiscal: string;
@@ -77,23 +84,23 @@ export async function GET(_: Request, context: { params: Promise<{ cnpj: string 
   const normalized = onlyDigits(cnpj);
 
   if (normalized.length !== 14) {
-    return NextResponse.json({ error: 'CNPJ invalido.' }, { status: 400 });
+    return jsonUtf8({ error: 'CNPJ invalido.' }, 400);
   }
 
   try {
     const brasilApi = await tryBrasilApi(normalized);
     if (brasilApi) {
-      return NextResponse.json(brasilApi);
+      return jsonUtf8(brasilApi);
     }
 
     const receitaWs = await tryReceitaWs(normalized);
     if (receitaWs) {
-      return NextResponse.json(receitaWs);
+      return jsonUtf8(receitaWs);
     }
 
-    return NextResponse.json({ error: 'CNPJ nao encontrado.' }, { status: 404 });
+    return jsonUtf8({ error: 'CNPJ nao encontrado.' }, 404);
   } catch (error) {
     console.error('[CNPJ LOOKUP] Falha ao consultar APIs:', error);
-    return NextResponse.json({ error: 'Nao foi possivel consultar este CNPJ.' }, { status: 502 });
+    return jsonUtf8({ error: 'Nao foi possivel consultar este CNPJ.' }, 502);
   }
 }

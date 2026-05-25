@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Conteúdo SST para Empresas | SERMST',
   description:
     'Guias práticos de medicina e segurança do trabalho organizados por tema: Saúde Ocupacional, RH e DP, Normas Regulamentadoras e Dicionário SST.',
+  robots: { index: false, follow: false },
   alternates: {
     canonical: 'https://sermst.com.br/blog',
   },

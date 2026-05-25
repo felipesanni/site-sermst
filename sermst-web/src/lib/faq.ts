@@ -41,7 +41,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
         },
         {
           q: `Quais informações a SERMST precisa para orientar ${topicLower}${localPhrase}?`,
-          a: `Normalmente precisamos entender CNPJ, quantidade de colaboradores, função envolvida, exposicoes ocupacionais e urgencia da demanda. Com isso, a equipe consegue direcionar o fluxo certo para ${topicLower}.`,
+          a: `Normalmente precisamos entender CNPJ, quantidade de colaboradores, função envolvida, exposições ocupacionais e urgência da demanda. Com isso, a equipe consegue direcionar o fluxo certo para ${topicLower}.`,
         },
         {
           q: `${topic} impacta o eSocial ou outros documentos obrigatórios?`,
@@ -49,11 +49,11 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
         },
         {
           q: `O atendimento de ${topicLower} pode ser feito na empresa ou exige deslocamento?`,
-          a: `Isso depende da natureza do serviço. Alguns fluxos exigem atendimento em unidade, enquanto outros podem ser organizados in company ou de forma hibrida. A orientacao correta depende da operação da empresa.`,
+          a: `Isso depende da natureza do serviço. Alguns fluxos exigem atendimento em unidade, enquanto outros podem ser organizados in company ou de forma híbrida. A orientação correta depende da operação da empresa.`,
         },
         {
           q: `Quanto tempo leva para organizar ${topicLower}${localPhrase}?`,
-          a: `O prazo varia conforme urgencia, volume de colaboradores e complexidade técnica. Em demandas bem alinhadas, a SERMST estrutura o fluxo rapidamente e evita atraso no RH ou na operação.`,
+          a: `O prazo varia conforme urgência, volume de colaboradores e complexidade técnica. Em demandas bem alinhadas, a SERMST estrutura o fluxo rapidamente e evita atraso no RH ou na operação.`,
         },
         {
           q: `Como pedir proposta de ${topicLower} com o escopo correto?`,
@@ -63,12 +63,12 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
     case 'service':
       return [
         {
-          q: `Como saber se ${topicLower} e obrigatório para minha empresa?`,
+          q: `Como saber se ${topicLower} é obrigatório para minha empresa?`,
           a: `A obrigatoriedade depende da rotina da empresa, dos riscos ocupacionais e da fase do vinculo trabalhista. A SERMST analisa esse contexto antes de orientar a contratação do serviço.`,
         },
         {
           q: `Quais dados a empresa deve reunir antes de contratar ${topicLower}?`,
-          a: `CNPJ, quantidade de colaboradores, cargos envolvidos, riscos da operação e prazo desejado ja ajudam a definir o escopo correto e a evitar proposta generica.`,
+          a: `CNPJ, quantidade de colaboradores, cargos envolvidos, riscos da operação e prazo desejado já ajudam a definir o escopo correto e a evitar proposta genérica.`,
         },
         {
           q: `${topic} interfere no eSocial, no PCMSO ou no PGR?`,
@@ -80,7 +80,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
         },
         {
           q: `Quanto tempo a empresa leva para colocar ${topicLower} em ordem?`,
-          a: `Isso varia conforme urgencia, qualidade das informações iniciais e complexidade técnica. Quando o escopo é válidado corretamente, o processo fica mais rápido e seguro.`,
+          a: `Isso varia conforme urgência, qualidade das informações iniciais e complexidade técnica. Quando o escopo é válidado corretamente, o processo fica mais rápido e seguro.`,
         },
         {
           q: `Como falar com a SERMST sobre ${topicLower} sem perder tempo com proposta errada?`,
@@ -91,7 +91,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
       return [
         {
           q: `Como esse tema afeta admissão, ASO e prazos do RH?`,
-          a: `Quando o RH não entende como o tema conversa com SST, os impactos aparecem em contratacoes travadas, exame fora do prazo e mais retrabalho com documentação.`,
+          a: `Quando o RH não entende como o tema conversa com SST, os impactos aparecem em contratações travadas, exame fora do prazo e mais retrabalho com documentação.`,
         },
         {
           q: `Esse assunto pode gerar multa, passivo trabalhista ou falha no eSocial?`,
@@ -107,7 +107,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
         },
         {
           q: `Quando vale sair da leitura e falar com a SERMST?`,
-          a: `Quando a empresa ja esta vendo atraso, insegurança no RH, risco de multa ou dificuldade para saber qual próximo passo técnico precisa entrar primeiro.`,
+          a: `Quando a empresa ja está vendo atraso, insegurança no RH, risco de multa ou dificuldade para saber qual próximo passo técnico precisa entrar primeiro.`,
         },
       ];
     case 'saúde':
@@ -122,14 +122,14 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
         },
         {
           q: `Como esse assunto se conecta ao eSocial?`,
-          a: `Ele pode influenciar a qualidade das informações ocupacionais, a coerencia dos exames e a segurança do fluxo documental que sustenta os eventos da empresa.`,
+          a: `Ele pode influenciar a qualidade das informações ocupacionais, a coerência dos exames e a segurança do fluxo documental que sustenta os eventos da empresa.`,
         },
         {
-          q: `Quais sinais mostram que esse tema ja esta gerando exposicao para a empresa?`,
-          a: `Atraso de admissão, duvida recorrente do RH, exame sem critério claro, aumento de retrabalho e insegurança sobré o que deve ou não ser documentado são sinais comuns.`,
+          q: `Quais sinais mostram que esse tema ja está gerando exposição para a empresa?`,
+          a: `Atraso de admissão, dúvida recorrente do RH, exame sem critério claro, aumento de retrabalho e insegurança sobré o que deve ou não ser documentado são sinais comuns.`,
         },
         {
-          q: `Quando vale transformar essa duvida em conversa comercial com a SERMST?`,
+          q: `Quando vale transformar essa dúvida em conversa comercial com a SERMST?`,
           a: `Quando a empresa precisa sair da explicação geral e organizar um fluxo real de exame, programa ocupacional ou rotina documental para não carregar risco oculto.`,
         },
       ];
@@ -141,7 +141,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
         },
         {
           q: `Como esse conceito se conecta com eSocial, PGR ou PCMSO?`,
-          a: `Mesmo quando parece apenas teórico, o termo normalmente influencia leitura de risco, estrutura documental ou coerencia da informação ocupacional.`,
+          a: `Mesmo quando parece apenas teórico, o termo normalmente influencia leitura de risco, estrutura documental ou coerência da informação ocupacional.`,
         },
         {
           q: `O que o RH costuma confundir sobre ${topicLower}?`,
@@ -149,7 +149,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
         },
         {
           q: `Quando esse assunto deixa de ser teoria e vira acao prática?`,
-          a: `Quando impacta prazo, contratação, exame, programa ocupacional, auditoria ou cria duvida sobré o que a empresa deve comprovar diante de fiscalização.`,
+          a: `Quando impacta prazo, contratação, exame, programa ocupacional, auditoria ou cria dúvida sobré o que a empresa deve comprovar diante de fiscalização.`,
         },
         {
           q: `A SERMST ajuda a revisar ${topicLower} na prática?`,
@@ -167,12 +167,12 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
           a: `Sim. Quando a empresa interpreta o tema de forma superficial, o problema costuma aparecer depois em auditoria, eSocial, afastamento ou atraso de rotina.`,
         },
         {
-          q: `Quais sinais mostram que esse tema ja merece atenção comercial ou técnica?`,
-          a: `Dificuldade recorrente no RH, duvida sobre obrigatoriedade, falha de documentação e urgencia frequente são sinais de que vale aprofundar o caso.`,
+          q: `Quais sinais mostram que esse tema já merece atenção comercial ou técnica?`,
+          a: `Dificuldade recorrente no RH, dúvida sobre obrigatoriedade, falha de documentação e urgência frequente são sinais de que vale aprofundar o caso.`,
         },
         {
           q: `Qual é o primeiro passo para organizar esse tema na prática?`,
-          a: `Entender o contexto da empresa, os cargos envolvidos, os riscos da operação é o que ja existe hoje em termos de documento, exame ou procedimento.`,
+          a: `Entender o contexto da empresa, os cargos envolvidos, os riscos da operação é o que já existe hoje em termos de documento, exame ou procedimento.`,
         },
         {
           q: `Quando vale falar com a SERMST sobre esse assunto?`,

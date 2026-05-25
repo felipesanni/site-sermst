@@ -9,7 +9,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 export const metadata: Metadata = {
   title: 'Quem somos | SERMST - 40 anos protegendo empresas familiares',
   description:
-    'A SERMST e uma clínica de Medicina e Segurança do Trabalho com mais de 40 anos protegendo o patrimônio de empresários que constroem com seriedade. +3.000 empresas, +500 clínicas credenciadas e laboratório próprio.',
+    'Clínica de Medicina e Segurança do Trabalho com +40 anos. Mais de 3.000 empresas atendidas, +500 clínicas credenciadas em todo o Brasil e laboratório próprio.',
   alternates: { canonical: 'https://sermst.com.br/quem-somos' },
   openGraph: {
     title: 'Quem somos | SERMST - 40 anos protegendo empresas familiares',
@@ -65,9 +65,9 @@ export default function QuemSomosPage() {
           <FadeIn direction="up">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Por que existimos</span>
             <h2 className="mb-12 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              A maioria dos empresários ainda ve SST como burocracia.
+              A maioria dos empresários ainda vê SST como burocracia.
               <br />
-              <span className="text-slate-500">Esse pensamento deixa a empresa vulneravel.</span>
+              <span className="text-slate-500">Esse pensamento deixa a empresa vulnerável.</span>
             </h2>
           </FadeIn>
 
@@ -79,12 +79,12 @@ export default function QuemSomosPage() {
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
               <p>
-                Para proteger de verdade o empresário, é preciso ir além do cumprimento da legislação. É preciso trabalhar a mentalidade de quem empreende, porque só assim e possível blindar o negócio contra riscos invisíveis, reduzir passivos, prevenir autuações e aumentar a produtividade dos colaboradores.
+                Para proteger de verdade o empresário, é preciso ir além do cumprimento da legislação. É preciso trabalhar a mentalidade de quem empreende, porque só assim é possível blindar o negócio contra riscos invisíveis, reduzir passivos, prevenir autuações e aumentar a produtividade dos colaboradores.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
               <p className="my-10 border-l-4 border-accent-pink pl-6 text-2xl font-bold leading-snug text-brand-900 md:text-3xl">
-                Quem brinca de ser empresário trata SST como papelada. Quem leva o negócio a sério entende que conformidade e sinônimo de controle. E controle é o que separa empresas sustentáveis de negócios que quebram por descuido.
+                Empresas que tratam SST apenas como papelada costumam perceber o problema tarde demais. Quem leva o negócio a sério entende que conformidade é sinônimo de controle — e controle é o que protege operação, patrimônio e continuidade.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.4}>
@@ -101,7 +101,7 @@ export default function QuemSomosPage() {
           <FadeIn direction="up">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Em números</span>
             <h2 className="mb-14 max-w-3xl text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              O que sustenta a confiança que <span className="text-accent-pink">empresários como voce</span> depositam na SERMST
+              O que sustenta a confiança que <span className="text-accent-pink">empresários como você</span> depositam na SERMST
             </h2>
           </FadeIn>
 
@@ -131,24 +131,24 @@ export default function QuemSomosPage() {
               </h2>
               <div className="space-y-6 text-lg font-medium leading-relaxed text-slate-700">
                 <p>
-                  A SERMST não esta aqui para te assustar com multa de eSocial e processo trabalhista. Esta aqui para garantir que a sua empresa esteja sempre um passo a frente, com documentação correta, exames em dia, laudos que refletem a operação real e um fluxo de SST que não trava admissão.
+                  A SERMST não está aqui para te assustar com multa de eSocial e processo trabalhista. Está aqui para garantir que a sua empresa esteja sempre um passo a frente, com documentação correta, exames em dia, laudos que refletem a operação real e um fluxo de SST que não trava admissão.
                 </p>
                 <p>
                   Atendimento in company ou presencial, sem necessidade de agendamento. Equipe multidisciplinar com médicos, engenheiros e técnicos em SST. Laboratório próprio para exames complementares. Tudo conectado em um fluxo que reduz tempo, reduz custo e reduz risco.
                 </p>
                 <p className="font-bold text-brand-900">
-                  Você cuida do crescimento do seu negócio. A SERMST cuida de blindar o que você ja construiu.
+                  Você cuida do crescimento do seu negócio. A SERMST cuida de blindar o que você já construiu.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn direction="left" delay={0.2}>
               <div className="sticky top-24 rounded-[2rem] bg-brand-900 p-10 text-white shadow-[0_30px_60px_-15px_rgba(11,19,60,0.4)]">
-                <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Para quem e a SERMST</p>
+                <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Para quem é a SERMST</p>
                 <ul className="mb-8 space-y-4">
                   {[
                     'Empresas familiares com patrimônio para proteger',
-                    'Grupos com multiplas empresas e CNPJs',
+                    'Grupos com múltiplas empresas e CNPJs',
                     'RH e DP que precisam parar de retrabalhar ASO',
                     'Empresas insatisfeitas com a consultoria atual',
                     'Operações com alta rotatividade de funcionários',
@@ -174,7 +174,7 @@ export default function QuemSomosPage() {
         <div className="relative z-10 mx-auto max-w-[1100px] px-6 text-center lg:px-8">
           <FadeIn direction="up">
             <h2 className="mb-8 text-4xl font-black leading-tight text-white md:text-6xl">
-              Sua empresa esta
+              Sua empresa está
               <br />
               <span className="text-accent-pink">realmente protegida?</span>
             </h2>

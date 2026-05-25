@@ -136,7 +136,7 @@ export default function RHIndexPage() {
                 DET: como funciona o Domicilio Eletronico Trabalhista
               </h2>
               <p className="mb-6 text-slate-700 leading-relaxed">
-                Entenda por que o DET virou parte real da rotina de compliance trabalhista e o que a empresa perde quando deixa notificacoes e prazos sem responsavel.
+                Entenda por que o DET virou parte real da rotina de compliance trabalhista e o que a empresa perde quando deixa notificacoes e prazos sem responsável.
               </p>
               <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
                 Ler guia do DET

@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'PCMSO: o que é, quem precisa e como montar o programa | SERMST',
   description:
-    'PCMSO (NR-07) é o programa que define quais exames cada trabalhador precisa fazer e com qual frequência. Obrigatório para toda empresa com CLT. Entenda como funciona.',
+    'PCMSO (NR-07) define quais exames cada trabalhador precisa fazer e com qual frequência. Obrigatório para toda empresa com CLT. Entenda como funciona.',
   alternates: { canonical: 'https://sermst.com.br/saude/pcmso-programa-controle-medico' },
   openGraph: {
     title: 'PCMSO: o que é, quem precisa e como estruturar corretamente | SERMST',

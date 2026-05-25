@@ -6,6 +6,16 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 // Slugs conhecidos — destinos dos redirects 301 do site WordPress antigo
 export const normasKnown: Record<string, { titulo: string; descricao: string; conteudo?: string }> = {
+  'nr-33-espaco-confinado': {
+    titulo: 'NR-33: Segurança e Saúde nos Trabalhos em Espaços Confinados',
+    descricao:
+      'A NR-33 exige identificação, classificação e controle de todos os espaços confinados do estabelecimento. Entrada sem Permissão de Entrada e Trabalho (PET) e equipe treinada é infração grave — e risco de acidente com responsabilidade penal.',
+  },
+  'nr-05-cipa': {
+    titulo: 'NR-05: CIPA — Comissão Interna de Prevenção de Acidentes',
+    descricao:
+      'A NR-05 obriga empresas a constituir a CIPA ou designar um responsável, conforme o CNAE e o número de funcionários. Membros eleitos têm estabilidade de emprego; falta de CIPA é autuação direta na fiscalização do MTE.',
+  },
   'nr-01-pgr-atualizada': {
     titulo: 'NR-01 atualizada: Programa de Gerenciamento de Riscos (PGR)',
     descricao:

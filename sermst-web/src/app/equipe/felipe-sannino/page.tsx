@@ -66,7 +66,7 @@ const articles = [
     hub: 'RH & Gestão',
   },
   {
-    href: '/rh/quando-demitir-funcionario',
+    href: '/rh/quando-demitir-funcionário',
     title: 'Quando demitir um funcionário: o guia que o gestor precisa',
     hub: 'RH & Gestão',
   },
