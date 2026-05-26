@@ -154,6 +154,55 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+      {/* ── ChunkLoadError auto-reload ──────────────────────────────────────
+           Quando um deploy novo substitui os hashes dos chunks JS, o browser
+           pode ter o HTML antigo em cache e tentar carregar chunks que não
+           existem mais. O servidor retorna HTML (404) → MIME text/html →
+           nosniff bloqueia → "page couldn't load". F5 resolve porque
+           baixa o HTML novo com os hashes corretos.
+           Este script faz o F5 automaticamente, com proteção contra loop. */}
+      <Script
+        id="chunk-error-handler"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+(function(){
+  var RELOAD_KEY = '__cle_reloaded__';
+  function isChunkError(msg) {
+    return msg && (
+      msg.indexOf('ChunkLoadError') !== -1 ||
+      msg.indexOf('Loading chunk') !== -1 ||
+      msg.indexOf('Failed to fetch dynamically imported module') !== -1 ||
+      msg.indexOf('Importing a module script failed') !== -1
+    );
+  }
+  function safeReload() {
+    try {
+      if (sessionStorage.getItem(RELOAD_KEY)) return;
+      sessionStorage.setItem(RELOAD_KEY, '1');
+      window.location.reload();
+    } catch(e) {}
+  }
+  // Limpa a flag ao carregar com sucesso
+  window.addEventListener('load', function() {
+    try { sessionStorage.removeItem(RELOAD_KEY); } catch(e) {}
+  });
+  // Captura erros de módulo dinâmico (promessas rejeitadas)
+  window.addEventListener('unhandledrejection', function(e) {
+    var r = e.reason;
+    if (!r) return;
+    var msg = (r.name || '') + ' ' + (r.message || '');
+    if (isChunkError(msg)) safeReload();
+  });
+  // Captura erros síncronos de script
+  window.addEventListener('error', function(e) {
+    var msg = (e.message || '') + ' ' + (e.filename || '');
+    if (isChunkError(msg)) safeReload();
+  }, true);
+})();
+          `,
+        }}
+      />
       {/* ── Google Tag Manager ── */}
       <Script
         id="gtm"

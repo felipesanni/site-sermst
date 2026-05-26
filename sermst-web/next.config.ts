@@ -61,6 +61,24 @@ const nextConfig: NextConfig = {
 
   async headers() {
     return [
+      // ── Arquivos estáticos do Next.js (_next/static/) ─────────────────────
+      // Hashes no nome garantem unicidade → cache imutável por 1 ano.
+      // Content-Type explícito evita que proxy/CDN mal configurado devolva
+      // "text/html" para .js, o que causaria MIME type error + nosniff bloqueio.
+      {
+        source: '/_next/static/chunks/:path*.js',
+        headers: [
+          { key: 'Content-Type', value: 'application/javascript; charset=utf-8' },
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      // ── Páginas ────────────────────────────────────────────────────────────
       {
         source: '/',
         headers: [...securityHeaders, ...pageCacheHeaders],
@@ -227,6 +245,7 @@ const nextConfig: NextConfig = {
       { source: "/lp-aso-form", destination: "/contato", permanent: true },
       { source: "/lp-obra", destination: "/contato", permanent: true },
       { source: "/servicos/medicina-do-trabalho", destination: "/solucoes", permanent: true },
+      { source: "/servicos/saude/:slug*", destination: "/saude/:slug*", permanent: true },
 
       // -- Posts /medicina-do-trabalho/ ausentes --
       { source: "/medicina-do-trabalho/o-que-sao-exames-laborais-e-por-que-sao-importantes", destination: "/servicos/exames-complementares-laboratoriais/sao-paulo", permanent: true },
