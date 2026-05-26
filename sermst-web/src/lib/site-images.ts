@@ -81,14 +81,6 @@ export const articleImages: Record<string, SiteImage> = {
     src: '/images/site/safety-equipment.jpg',
     alt: 'Ambiente de trabalho com exposicao a agentes insalubres e avaliacao tecnica de SST',
   },
-  'afastamento-inss-empresa': {
-    src: '/images/articles/afastamento-inss.jpg',
-    alt: 'Trabalhador em processo de afastamento e retorno ao trabalho com suporte de RH',
-  },
-  'cat-comunicacao-acidente': {
-    src: '/images/articles/cat-comunicacao.jpg',
-    alt: 'Documentação de comunicação de acidente de trabalho CAT em ambiente corporativo',
-  },
   // Normas
   'normas-regulamentadoras': {
     src: '/images/articles/normas-nr.jpg',

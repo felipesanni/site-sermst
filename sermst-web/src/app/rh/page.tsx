@@ -1,7 +1,7 @@
 import { rhDoresSEO } from '@/lib/data/seo-content';
 import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
-import { Gavel, AlertTriangle, ArrowRight } from 'lucide-react';
+import { Gavel, AlertTriangle, ArrowRight, Syringe } from 'lucide-react';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 
@@ -164,6 +164,34 @@ export default function RHIndexPage() {
             </Link>
           </FadeIn>
         </div>
+      </section>
+
+      {/* ── Destaque: Lei 15.377/2026 ── */}
+      <section className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 pb-12">
+        <FadeIn direction="up">
+          <Link
+            href="/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos"
+            className="group flex flex-col sm:flex-row items-center gap-6 rounded-2xl border-2 border-accent-pink bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div className="shrink-0 rounded-full bg-accent-pink/8 p-4">
+              <Syringe className="h-8 w-8 text-accent-pink" />
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <span className="mb-1 block text-[10px] font-black uppercase tracking-widest text-accent-pink">
+                Nova lei — em vigor desde abril de 2026
+              </span>
+              <h2 className="text-xl font-black leading-snug text-brand-900 md:text-2xl">
+                Lei 15.377/2026: vacinação, HPV e exames preventivos na CLT
+              </h2>
+              <p className="mt-1 text-sm text-slate-600">
+                Empresas devem informar sobre vacinação e prevenção de câncer, e comunicar o direito a 3 dias de ausência remunerada para exames preventivos. Guia completo para RH e DP.
+              </p>
+            </div>
+            <div className="shrink-0 rounded-full bg-accent-pink p-3 text-white transition-all group-hover:translate-x-1">
+              <ArrowRight className="h-5 w-5" />
+            </div>
+          </Link>
+        </FadeIn>
       </section>
 
       <section className="pb-24 max-w-[1280px] w-full mx-auto px-6 lg:px-8">
