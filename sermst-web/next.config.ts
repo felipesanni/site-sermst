@@ -293,6 +293,8 @@ const nextConfig: NextConfig = {
       { source: "/treinamentos/nr-10-segurança-eletrica",       destination: "/treinamentos/nr-10-seguranca-eletrica",          permanent: true },
       { source: "/treinamentos/nr-18-seguran%C3%A7a-construcao-civil", destination: "/treinamentos/nr-18-seguranca-construcao-civil", permanent: true },
       { source: "/treinamentos/nr-18-segurança-construcao-civil",      destination: "/treinamentos/nr-18-seguranca-construcao-civil", permanent: true },
+      { source: "/saude/import%C3%A2ncia-do-exame-periodico", destination: "/saude/importancia-do-exame-periodico", permanent: true },
+      { source: "/saude/importância-do-exame-periodico", destination: "/saude/importancia-do-exame-periodico", permanent: true },
 
       // -- Slugs legados de normas com página canônica equivalente --
       { source: "/normas/o-que-e-nr-01", destination: "/normas/nr-01-pgr-atualizada", permanent: true },

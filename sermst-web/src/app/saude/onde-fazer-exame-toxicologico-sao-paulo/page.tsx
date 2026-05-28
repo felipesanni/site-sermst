@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Onde Fazer Exame Toxicológico em São Paulo | CNH C, D e E | SERMST',
+  title: 'Onde Fazer Exame Toxicológico em São Paulo | SERMST',
   description:
     'Saiba onde fazer exame toxicológico em São Paulo com validade nacional, atendimento para empresa e pessoa física e suporte para CNH C, D e E.',
   robots: 'index, follow',

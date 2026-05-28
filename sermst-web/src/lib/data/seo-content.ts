@@ -7,6 +7,7 @@ export interface FAQItem {
 
 export interface SEODocument {
   h1: string;
+  seoTitle?: string;
   hook: string;
   isClinico: boolean;
   fluxoCorporativo?: string[];
@@ -737,7 +738,7 @@ const saudeEntry = (h1: string, hook: string, dor: string, solucao: string): SEO
 });
 
 export const saudeSEO: Record<string, SEODocument> = {
-  "importância-do-exame-periodico": {
+  "importancia-do-exame-periodico": {
     h1: "Exame Periódico de Medicina do Trabalho",
     hook:
       "Exame periódico e parte central da vigilância médica ocupacional. Monitorar a saúde da equipe no tempo certo ajuda a reduzir afastamentos, sustentar o PCMSO e evitar fragilidades em auditorias e fiscalizações.",
@@ -818,6 +819,9 @@ export const saudeSEO: Record<string, SEODocument> = {
   ),
 };
 
+saudeSEO["insalubridade-o-que-e-adicional"].seoTitle =
+  "Insalubridade: quem tem direito e como calcular | SERMST";
+
 const dicionarioEntry = (h1: string, hook: string, dor: string, solucao: string): SEODocument => ({
   h1,
   hook,
@@ -878,6 +882,11 @@ export const dicionarioSEO: Record<string, SEODocument> = {
     "Com a definição certa, fica mais fácil entender por que PPP, LTCAT, S-2240 e histórico de exposição precisam contar a mesma história.",
   ),
 };
+
+dicionarioSEO["o-que-e-ltcat"].seoTitle =
+  "O que e LTCAT? Significado e para que serve | SERMST";
+dicionarioSEO["o-que-e-ppp"].seoTitle =
+  "O que e PPP? Significado e para que serve | SERMST";
 
 // Helper para gerar entries de RH com defaults consistentes
 const rhEntry = (h1: string, hook: string, dor: string, solucao: string): SEODocument => ({
@@ -943,6 +952,7 @@ export const rhDoresSEO: Record<string, SEODocument> = {
   // função-encarregado tem página dedicada em /rh/funcao-encarregado/page.tsx
   "cat-acidente-de-trabalho": {
     h1: "CAT: como emitir a Comunicação de Acidente de Trabalho e evitar passivo",
+    seoTitle: "CAT: como emitir e evitar passivo trabalhista | SERMST",
     hook:
       "A CAT é um dos documentos mais pesquisados quando a empresa já está diante de acidente, afastamento ou suspeita de doença ocupacional. Emitir fora do prazo, omitir informações ou simplesmente não emitir abre risco previdenciário, trabalhista e fiscal ao mesmo tempo.",
     isClinico: false,

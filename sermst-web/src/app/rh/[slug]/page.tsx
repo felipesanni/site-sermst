@@ -22,11 +22,11 @@ export async function generateMetadata({
   if (!data) return { title: 'Pagina não encontrada | SERMST' };
 
   return {
-    title: data.h1,
+    title: data.seoTitle ?? data.h1,
     description: data.hook,
     alternates: { canonical: `https://sermst.com.br/rh/${slug}` },
     openGraph: {
-      title: data.h1,
+      title: data.seoTitle ?? data.h1,
       description: data.hook,
       url: `https://sermst.com.br/rh/${slug}`,
       locale: 'pt_BR',

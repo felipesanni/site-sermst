@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Insalubridade: o que e, quem tem direito, adicional e calculo | SERMST',
+  title: 'Insalubridade: quem tem direito e como calcular | SERMST',
   description:
     'Entenda o que e insalubridade, quem tem direito ao adicional, como funcionam os 10%, 20% e 40%, qual e a base de calculo e quando o laudo tecnico faz diferenca.',
   alternates: { canonical: 'https://sermst.com.br/saude/insalubridade-o-que-e-adicional' },
   openGraph: {
-    title: 'Insalubridade: o que e, quem tem direito, adicional e calculo | SERMST',
+    title: 'Insalubridade: quem tem direito e como calcular | SERMST',
     description:
       'Guia pratico sobre insalubridade, adicional, calculo, diferenca para periculosidade, laudo tecnico e a relacao disso com NR-15, LTCAT e eSocial.',
     url: 'https://sermst.com.br/saude/insalubridade-o-que-e-adicional',

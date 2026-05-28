@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Valor do Exame Toxicológico CNH | Quanto Custa em São Paulo | SERMST',
+  title: 'Valor do Exame Toxicológico CNH | SERMST',
   description:
     'Entenda o valor do exame toxicológico para CNH C, D e E, o que influencia o preço e onde ver o atendimento da SERMST com referência de R$ 200,00.',
   robots: 'index, follow',
