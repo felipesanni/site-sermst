@@ -1007,3 +1007,6 @@ export const rhDoresSEO: Record<string, SEODocument> = {
           a: "Não. Burnout é uma possível consequência. Risco psicossocial é o conjunto de fatores da organização do trabalho que pode levar a adoecimento, conflito, queda de desempenho e exposicao juridica.",
         },
       ],
+    },
+  },
+};
