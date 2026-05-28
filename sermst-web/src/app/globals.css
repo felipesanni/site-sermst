@@ -1,0 +1,383 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-900: #0B133C; /* Official SERMST Navy */
+  --color-brand-800: #111e5c;
+  --color-brand-500: #223fbf;
+  --color-accent-pink: #E31B45; /* Deepened for AA Contrast */
+  --color-accent-pink-hover: #c4163b;
+  --color-light-bg: #f8fafc;
+  
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-heading: var(--font-heading), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    /* Compensa o header sticky (h-20 = 80px) em scroll de âncoras e navegação */
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    @apply text-slate-900 bg-white antialiased selection:bg-accent-pink selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* ── Acessibilidade: foco visível para navegação por teclado ────────── */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-pink ring-offset-2 ring-offset-white rounded-md;
+  }
+
+  /* ── Respeitar preferência de redução de movimento ──────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* ── Botões padronizados ────────────────────────────────────────────── */
+  /* Use estes em vez de repetir classes Tailwind em cada CTA. */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-accent-pink text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-accent-pink-hover hover:text-white hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-md transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-brand-900 text-brand-900 font-bold py-3.5 px-8 rounded-xl hover:bg-brand-900 hover:text-white active:scale-[0.98] transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 text-brand-900 font-bold py-3 px-6 rounded-lg hover:bg-slate-100 active:bg-slate-200 transition-colors duration-150;
+  }
+
+  .btn-nav-cta {
+    @apply inline-flex items-center gap-2 bg-accent-pink text-white font-bold py-2 px-6 rounded-md hover:bg-accent-pink-hover hover:text-white shadow-md hover:shadow-lg transition-all duration-200 text-sm;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-[#1fb958] hover:text-white hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .btn-whatsapp-solid {
+    background-color: #25d366 !important;
+    color: #ffffff !important;
+  }
+
+  .btn-whatsapp-solid:hover,
+  .btn-whatsapp-solid:focus-visible,
+  .btn-whatsapp-solid:active,
+  .btn-whatsapp-solid:visited {
+    background-color: #1fb958 !important;
+    color: #ffffff !important;
+  }
+
+  .btn-primary-safe {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent-pink px-6 py-4 font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-pink-hover hover:text-white hover:shadow-xl;
+  }
+
+  .btn-primary-safe-lg {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent-pink px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-pink-hover hover:text-white hover:shadow-xl;
+  }
+
+  .btn-dark-safe {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-900 px-8 py-4 font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-800 hover:text-white hover:shadow-xl;
+  }
+
+  .btn-light-safe {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/40 bg-white px-6 py-3 font-bold text-brand-900 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:text-brand-900 hover:shadow-lg;
+  }
+
+  .btn-outline-safe {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-brand-900 bg-white px-6 py-3.5 font-bold text-brand-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-900 hover:text-white hover:shadow-lg;
+  }
+
+  .btn-dark-safe {
+    background-color: #0b133c !important;
+    color: #ffffff !important;
+  }
+
+  .btn-dark-safe:hover,
+  .btn-dark-safe:focus-visible,
+  .btn-dark-safe:active,
+  .btn-dark-safe:visited {
+    background-color: #111e5c !important;
+    color: #ffffff !important;
+  }
+
+  .btn-light-safe {
+    background-color: #ffffff !important;
+    color: #0b133c !important;
+    border-color: rgba(255, 255, 255, 0.38) !important;
+  }
+
+  .btn-light-safe:hover,
+  .btn-light-safe:focus-visible,
+  .btn-light-safe:active,
+  .btn-light-safe:visited {
+    background-color: #f8fafc !important;
+    color: #0b133c !important;
+  }
+
+  .btn-outline-safe {
+    background-color: #ffffff !important;
+    color: #0b133c !important;
+    border-color: #0b133c !important;
+  }
+
+  .btn-outline-safe:hover,
+  .btn-outline-safe:focus-visible,
+  .btn-outline-safe:active {
+    background-color: #0b133c !important;
+    color: #ffffff !important;
+    border-color: #0b133c !important;
+  }
+
+  .btn-primary-safe,
+  .btn-primary-safe-lg {
+    background-color: #e31b45 !important;
+    color: #ffffff !important;
+  }
+
+  .btn-primary-safe:hover,
+  .btn-primary-safe:focus-visible,
+  .btn-primary-safe:active,
+  .btn-primary-safe:visited,
+  .btn-primary-safe-lg:hover,
+  .btn-primary-safe-lg:focus-visible,
+  .btn-primary-safe-lg:active,
+  .btn-primary-safe-lg:visited {
+    background-color: #c4163b !important;
+    color: #ffffff !important;
+  }
+
+  /* ── Cards padronizados ─────────────────────────────────────────────── */
+  .card-clean {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-200 p-8 hover:shadow-xl hover:border-accent-pink/30 hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply bg-brand-900 text-white rounded-2xl p-8 shadow-[0_20px_40px_-15px_rgba(11,19,60,0.4)];
+  }
+
+  .surface-panel {
+    @apply rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10;
+  }
+
+  .surface-panel-muted {
+    @apply rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm lg:p-10;
+  }
+
+  .kicker {
+    @apply mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink;
+  }
+
+  .h1-standard {
+    @apply text-[2rem] font-black leading-[1.08] tracking-tight;
+  }
+
+  /* ── Links com sublinhado animado ───────────────────────────────────── */
+  .link-underline {
+    @apply relative inline-block transition-colors;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-accent-pink transition-all duration-200;
+  }
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* ── Pré-cabeçalho de seção (badge) ─────────────────────────────────── */
+  .eyebrow {
+    @apply block text-xs font-black uppercase tracking-[0.2em] text-accent-pink mb-4;
+  }
+
+  .faq-accordion {
+    @apply overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg;
+  }
+
+  .faq-summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-6 p-6 md:p-8;
+  }
+
+  .faq-question {
+    @apply pr-6 text-lg font-black leading-tight text-brand-900 transition-colors md:pr-10 md:text-xl;
+  }
+
+  .faq-icon {
+    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-brand-900 shadow-sm transition-all duration-300 group-hover:border-slate-300 group-hover:bg-slate-100;
+  }
+
+  .faq-answer {
+    @apply border-t border-slate-100 bg-slate-50 px-6 pb-6 pt-5 text-base font-medium leading-relaxed text-slate-600 md:px-8 md:pb-8 md:pt-6 md:text-lg;
+  }
+
+  .faq-accordion[open] {
+    @apply border-accent-pink shadow-xl;
+  }
+
+  .faq-accordion[open] .faq-question {
+    @apply text-accent-pink;
+  }
+
+  .faq-accordion[open] .faq-icon {
+    @apply rotate-180 border-accent-pink bg-accent-pink text-white;
+  }
+}
+
+/* ── Prose (substituição do @tailwindcss/typography) ─────────────────────── */
+/* Estilos aplicados em artigos de /saude, /rh e /dicionario */
+.prose {
+  color: #334155; /* slate-700 */
+  max-width: 65ch;
+  line-height: 1.75;
+}
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose h2 {
+  color: #0B133C; /* brand-900 */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+}
+
+.prose h3 {
+  color: #0B133C;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
+.prose h4 {
+  color: #0B133C;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.prose li {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.prose strong {
+  color: #0f172a; /* slate-900 */
+  font-weight: 700;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose a {
+  color: #E31B45; /* accent-pink */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: #c4163b;
+}
+
+.prose blockquote {
+  border-left: 4px solid #E31B45;
+  padding-left: 1.25em;
+  margin: 1.5em 0;
+  color: #475569; /* slate-600 */
+  font-style: italic;
+}
+
+.prose code {
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  font-size: 0.875em;
+  color: #0B133C;
+}
+
+.prose pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1.25em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  font-size: 0.875em;
+  line-height: 1.7;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 2em 0;
+}
+
+/* Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Botão "Calcular Meu Risco" — glow branco pulsante ───────────────────── */
+@keyframes btn-glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(255,255,255,0); }
+  50%       { box-shadow: 0 0 18px 6px rgba(255,255,255,.18); }
+}
+
+.btn-glow-pulse {
+  animation: btn-glow-pulse 2.4s ease-in-out infinite;
+}
+
+/* ── Hero CSS animations (GPU-only, zero JS, no LCP penalty) ─────────────── */
+@keyframes hero-fade-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-fade-left {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-anim-badge   { animation: hero-fade-down 0.5s cubic-bezier(.21,.47,.32,.98) 0.05s both; }
+.hero-anim-h1      { animation: hero-fade-up   0.6s cubic-bezier(.21,.47,.32,.98) 0.12s both; }
+.hero-anim-p       { animation: hero-fade-up   0.6s cubic-bezier(.21,.47,.32,.98) 0.22s both; }
+.hero-anim-cta     { animation: hero-fade-up   0.5s cubic-bezier(.21,.47,.32,.98) 0.32s both; }
+.hero-anim-card    { animation: hero-fade-left 0.7s cubic-bezier(.21,.47,.32,.98) 0.18s both; }
