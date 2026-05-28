@@ -27,21 +27,21 @@ const contactPaths = [
     title: 'Exames ocupacionais',
     description:
       'Para admissional, demissional, periódico, retorno ao trabalho, mudança de função e ASO com rapidez operacional.',
-    cta: 'https://wa.me/5511915146447?text=Preciso%20de%20exames%20ocupacionais%20para%20minha%20empresa',
+    cta: 'https://wa.me/5511915146447?text=Olá!%20Vim%20da%20página%20de%20contato%20da%20SERMST%20e%20preciso%20de%20exames%20ocupacionais%20para%20minha%20empresa.',
     label: 'Solicitar exames',
   },
   {
     title: 'PGR, PCMSO e laudos',
     description:
       'Para regularizar documentação obrigatória, revisar conformidade técnica e reduzir exposição a passivos trabalhistas.',
-    cta: 'https://wa.me/5511915146447?text=Quero%20orcamento%20para%20PGR%2C%20PCMSO%20ou%20laudos%20de%20SST',
+    cta: 'https://wa.me/5511915146447?text=Olá!%20Vim%20da%20página%20de%20contato%20da%20SERMST%20e%20quero%20orçamento%20para%20PGR,%20PCMSO%20ou%20laudos%20de%20SST.',
     label: 'Solicitar proposta',
   },
   {
     title: 'eSocial SST',
     description:
       'Para empresas que precisam organizar S-2220, S-2240, fluxos de envio e rotina de compliance com menos retrabalho.',
-    cta: 'https://wa.me/5511915146447?text=Preciso%20regularizar%20o%20eSocial%20SST%20da%20minha%20empresa',
+    cta: 'https://wa.me/5511915146447?text=Olá!%20Vim%20da%20página%20de%20contato%20da%20SERMST%20e%20preciso%20regularizar%20o%20eSocial%20SST%20da%20minha%20empresa.',
     label: 'Regularizar eSocial',
   },
 ];
@@ -107,7 +107,7 @@ export default function ContatoPage() {
               </h2>
               <div className="space-y-5 text-slate-700">
                 <a
-                  href="https://wa.me/5511915146447?text=Quero%20falar%20com%20a%20SERMST%20sobre%20SST%20para%20minha%20empresa"
+                  href="https://wa.me/5511915146447?text=Olá!%20Vim%20da%20página%20de%20contato%20da%20SERMST%20e%20quero%20falar%20sobre%20SST%20para%20minha%20empresa."
                   target="_blank"
                   rel="noopener"
                   className="btn-whatsapp btn-whatsapp-solid flex w-full"

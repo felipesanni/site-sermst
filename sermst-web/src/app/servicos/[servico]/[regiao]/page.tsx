@@ -113,6 +113,7 @@ export default async function LocalSEOPage({
       name: 'SERMST - Medicina e Segurança do Trabalho',
       url: 'https://sermst.com.br',
       telephone: '+55-11-91514-6447',
+      hasMap: 'https://maps.app.goo.gl/TcAza8i3jHKjHfjr5',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Largo do Paissandu, 72, 3º Andar',

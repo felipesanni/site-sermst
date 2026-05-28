@@ -215,10 +215,10 @@ export function LeadForm() {
           Diagnóstico comercial
         </span>
         <h3 className="mb-2 text-2xl font-black leading-tight text-brand-900 md:text-3xl">
-          Conte o cenário da empresa e a SERMST volta com clareza comercial e técnica
+          Preencha o formulário e a SERMST entra em contato o mais rápido possível
         </h3>
         <p className="text-sm leading-relaxed text-slate-600">
-          Resposta da equipe comercial em ate 1 dia util. Se houver urgência de admissão, eSocial travado ou risco de fiscalização, descreva isso no formulario.
+          Nossa equipe irá entender sua demanda e retornar com orientação precisa. Se houver urgência de admissão, eSocial travado ou risco de fiscalização, sinalize no formulário para priorizarmos o contato.
         </p>
       </div>
 
@@ -254,7 +254,7 @@ export function LeadForm() {
       <div className="grid gap-4 md:grid-cols-2">
         <div>
           <label htmlFor="email" className="mb-2 block text-sm font-bold text-brand-900">
-            E-mail corporativo
+            E-mail
           </label>
           <input
             id="email"
@@ -404,7 +404,7 @@ export function LeadForm() {
             Enviando...
           </>
         ) : (
-          'Solicitar orçamento gratuito'
+          'Quero receber contato da SERMST'
         )}
       </button>
       </form>

@@ -91,6 +91,7 @@ const organizationSchema = {
     latitude: -23.543,
     longitude: -46.637,
   },
+  hasMap: 'https://maps.app.goo.gl/TcAza8i3jHKjHfjr5',
   areaServed: [
     'São Paulo',
     'Santo André',
@@ -465,10 +466,15 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent-pink/20 bg-accent-pink/10">
                       <svg className="h-5 w-5 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
                     </div>
-                    <div>
-                      <p className="mb-1 text-xs font-black uppercase text-white">Largo do Paissandu, 72</p>
-                      <p className="text-sm leading-relaxed text-slate-400">Centro Histórico, 3º Andar<br />São Paulo - SP | 01037-000</p>
-                    </div>
+                    <a
+                      href="https://maps.app.goo.gl/TcAza8i3jHKjHfjr5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block transition-colors hover:text-accent-pink"
+                    >
+                      <p className="mb-1 text-xs font-black uppercase text-white transition-colors hover:text-accent-pink">Largo do Paissandu, 72</p>
+                      <p className="text-sm leading-relaxed text-slate-400 transition-colors hover:text-slate-300">Centro Histórico, 3º Andar<br />São Paulo - SP | 01037-000</p>
+                    </a>
                   </div>
                   <div className="flex gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent-pink/20 bg-accent-pink/10">
@@ -476,8 +482,18 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                     </div>
                     <div>
                       <p className="mb-1 text-xs font-black uppercase text-white">Canais Oficiais</p>
-                      <p className="text-sm text-slate-400">(11) 3229-7567</p>
-                      <p className="text-sm font-semibold text-slate-200">comercial@sermst.com.br</p>
+                      <a
+                        href="tel:+551132297567"
+                        className="block text-sm text-slate-400 transition-colors hover:text-accent-pink"
+                      >
+                        (11) 3229-7567
+                      </a>
+                      <a
+                        href="mailto:comercial@sermst.com.br"
+                        className="block text-sm font-semibold text-slate-200 transition-colors hover:text-accent-pink"
+                      >
+                        comercial@sermst.com.br
+                      </a>
                     </div>
                   </div>
                 </div>
