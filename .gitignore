@@ -1,0 +1,12 @@
+# Materiais de apoio — não fazem parte do projeto
+Apoio/
+Icones Whats/
+Imagens/
+New logo/
+Pesquisa/
+
+# Arquivos avulsos
+*.csv
+
+# Pasta de configuração local de agentes
+.agent/
