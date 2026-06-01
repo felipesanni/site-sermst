@@ -2,17 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 import { cnaeData } from '@/lib/data/cnae-data';
+import { CnaeTable } from '@/components/cnae/CnaeTable';
 
 export const dynamic = 'force-static';
-
-const ratPorGrau: Record<number, string> = { 1: '1%', 2: '2%', 3: '3%', 4: '3% + FAP' };
-
-const grauBadge: Record<number, string> = {
-  1: 'bg-emerald-100 text-emerald-800',
-  2: 'bg-yellow-100 text-yellow-800',
-  3: 'bg-orange-100 text-orange-800',
-  4: 'bg-red-100 text-red-800',
-};
 
 export const metadata: Metadata = {
   title: 'Lista CNAE Brasil: Guia para Empresas | SERMST',
@@ -129,34 +121,7 @@ export default function ListaCNAEPage() {
                 A tabela abaixo lista as principais subclasses CNAE com seus graus de risco conforme o <strong>Quadro I da NR-04</strong> (Portaria MTb nº 3.214/1978). Use para localizar o código da sua empresa, identificar o grau de risco e verificar a alíquota de RAT correspondente. Para busca interativa por código, nome ou CNPJ, use a{' '}
                 <Link href="/rh/calculadora-cnae-grau-de-risco" className="font-semibold underline">calculadora CNAE</Link>.
               </p>
-              <div className="not-prose overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-slate-900 text-white">
-                      <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider whitespace-nowrap">Código</th>
-                      <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Atividade econômica</th>
-                      <th className="hidden px-4 py-3 text-left text-xs font-black uppercase tracking-wider sm:table-cell">Setor</th>
-                      <th className="px-4 py-3 text-center text-xs font-black uppercase tracking-wider whitespace-nowrap">Grau</th>
-                      <th className="px-4 py-3 text-center text-xs font-black uppercase tracking-wider whitespace-nowrap">RAT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cnaeData.map((entry, i) => (
-                      <tr key={entry.codigo} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                        <td className="px-4 py-3 font-mono text-xs font-bold text-slate-700 whitespace-nowrap">{entry.codigo}</td>
-                        <td className="px-4 py-3 text-slate-800 leading-snug">{entry.descricao}</td>
-                        <td className="hidden px-4 py-3 text-slate-500 sm:table-cell text-xs">{entry.setor}</td>
-                        <td className="px-4 py-3 text-center">
-                          <span className={`inline-block rounded-lg px-2.5 py-1 text-xs font-black ${grauBadge[entry.grauRisco]}`}>
-                            {entry.grauRisco}
-                          </span>
-                        </td>
-                        <td className="px-4 py-3 text-center text-xs font-bold text-slate-700 whitespace-nowrap">{ratPorGrau[entry.grauRisco]}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <CnaeTable data={cnaeData} />
               <p className="mt-3 text-xs text-slate-500">
                 Fonte: Quadro I da NR-04 cruzado com a base oficial de subclasses CNAE do IBGE. Esta tabela já contempla {cnaeData.length} subclasses.
               </p>

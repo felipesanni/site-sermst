@@ -109,7 +109,7 @@ export default async function LocalSEOPage({
     serviceType: servicoNome,
     url: `https://sermst.com.br/servicos/${servico}/${regiao}`,
     provider: {
-      '@type': 'MedicalOrganization',
+      '@type': ['MedicalOrganization', 'LocalBusiness'],
       name: 'SERMST - Medicina e Segurança do Trabalho',
       url: 'https://sermst.com.br',
       telephone: '+55-11-91514-6447',
