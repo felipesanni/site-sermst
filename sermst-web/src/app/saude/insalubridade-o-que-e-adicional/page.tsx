@@ -133,7 +133,7 @@ export default function InsalubridadePage() {
                 Em outras palavras: a empresa so consegue dizer com seguranca se alguem tem ou nao tem direito a 40% depois de avaliar ambiente, agente nocivo, intensidade da exposicao e possibilidade real de neutralizacao.
               </p>
               <p>
-                E exatamente por isso que buscas como "quem tem direito a 40 de insalubridade" tantas vezes acabam em disputa trabalhista. Quando a decisao e tomada sem laudo, a margem para erro fica enorme.
+                E exatamente por isso que buscas como &quot;quem tem direito a 40 de insalubridade&quot; tantas vezes acabam em disputa trabalhista. Quando a decisao e tomada sem laudo, a margem para erro fica enorme.
               </p>
             </>
           ),
@@ -175,7 +175,7 @@ export default function InsalubridadePage() {
                 A <strong>NR-15</strong> e a norma regulamentadora que organiza as atividades e operacoes insalubres para fins trabalhistas. E ela que define criterios tecnicos, anexos, agentes e a logica de enquadramento do adicional.
               </p>
               <p>
-                Quem pesquisa "insalubridade" geralmente quer a resposta ampla: conceito, direito, calculo e laudo. Ja quem pesquisa "NR-15 insalubridade" costuma estar atras do texto normativo, dos anexos e do enquadramento tecnico. As duas intencoes se encostam, mas nao sao a mesma coisa.
+                Quem pesquisa &quot;insalubridade&quot; geralmente quer a resposta ampla: conceito, direito, calculo e laudo. Ja quem pesquisa &quot;NR-15 insalubridade&quot; costuma estar atras do texto normativo, dos anexos e do enquadramento tecnico. As duas intencoes se encostam, mas nao sao a mesma coisa.
               </p>
             </>
           ),

@@ -7,13 +7,10 @@ import { normasKnown } from "./normas/[slug]/page";
 const BASE_URL = "https://sermst.com.br";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   // ── Páginas estáticas ─────────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
       images: [
@@ -27,14 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/quem-somos`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
       images: [`${BASE_URL}${siteImages.institutional.corporateHealthHero.src}`],
     },
     {
       url: `${BASE_URL}/a-clinica`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
       images: [
@@ -42,21 +37,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         `${BASE_URL}${siteImages.institutional.operationTeam.src}`,
       ],
     },
-    { url: `${BASE_URL}/contato`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/solucoes`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/saude`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE_URL}/saude/clinica-exame-admissional-sao-paulo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/saude/onde-fazer-exame-toxicologico-sao-paulo`, lastModified: now, changeFrequency: "monthly", priority: 0.72 },
-    { url: `${BASE_URL}/saude/valor-exame-toxicologico-cnh`, lastModified: now, changeFrequency: "monthly", priority: 0.72 },
-    { url: `${BASE_URL}/rh`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE_URL}/normas`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/dicionario`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/contato`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/solucoes`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/saude`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE_URL}/saude/clinica-exame-admissional-sao-paulo`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/saude/onde-fazer-exame-toxicologico-sao-paulo`, changeFrequency: "monthly", priority: 0.72 },
+    { url: `${BASE_URL}/saude/valor-exame-toxicologico-cnh`, changeFrequency: "monthly", priority: 0.72 },
+    // ── BOFU cluster (pré-compra admissional) ─────────────────────────────
+    { url: `${BASE_URL}/saude/valor-exame-admissional`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE_URL}/saude/exame-admissional-precisa-de-jejum`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${BASE_URL}/saude/validade-aso-admissional`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${BASE_URL}/saude/empresa-pode-desistir-apos-exame-admissional`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${BASE_URL}/saude/tabela-exames-admissionais-por-funcao`, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE_URL}/rh`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE_URL}/normas`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/dicionario`, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   // ── Páginas base de servicos ──────────────────────────────────────────────
   const servicoBasePages: MetadataRoute.Sitemap = Object.keys(servicosSEO).map((servico) => ({
     url: `${BASE_URL}/servicos/${servico}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -65,7 +65,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const geoPages: MetadataRoute.Sitemap = Object.keys(servicosSEO).flatMap((servico) =>
     localidades.map((localidade) => ({
       url: `${BASE_URL}/servicos/${servico}/${localidade.slug}`,
-      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: localidade.isHub ? 0.9 : 0.75,
     }))
@@ -74,7 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Treinamentos ──────────────────────────────────────────────────────────
   const treinamentoPages: MetadataRoute.Sitemap = trainingsData.map((treinamento) => ({
     url: `${BASE_URL}/treinamentos/${treinamento.slug}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.65,
   }));
@@ -92,7 +90,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((slug) => !saúdeStaticSlugs.has(slug))
     .map((slug) => ({
       url: `${BASE_URL}/saude/${slug}`,
-      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.65,
     }));
@@ -111,7 +108,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   const rhPages: MetadataRoute.Sitemap = rhSlugs.map((slug) => ({
     url: `${BASE_URL}/rh/${slug}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -119,7 +115,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Dicionário SST ────────────────────────────────────────────────────────
   const dicionarioPages: MetadataRoute.Sitemap = Object.keys(dicionarioSEO).map((slug) => ({
     url: `${BASE_URL}/dicionario/${slug}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.55,
   }));
@@ -127,38 +122,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Normas regulamentadoras ───────────────────────────────────────────────
   const normasPages: MetadataRoute.Sitemap = Object.keys(normasKnown).map((slug) => ({
     url: `${BASE_URL}/normas/${slug}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   // ── Páginas RH estáticas (fora do rhDoresSEO) ───────────────────────────────
   const rhStaticPages: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/rh/calculadora-cnae-grau-de-risco`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${BASE_URL}/rh/lista-cnae-brasil`,              lastModified: now, changeFrequency: "monthly", priority: 0.80 },
-    { url: `${BASE_URL}/rh/domicilio-eletronico-trabalhista-det`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${BASE_URL}/rh/declaracao-inexistencia-risco-dir`,    lastModified: now, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${BASE_URL}/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${BASE_URL}/rh/evitar-processos-trabalhistas`,  lastModified: now, changeFrequency: "monthly", priority: 0.70 },
-    { url: `${BASE_URL}/rh/carta-demissao`,                 lastModified: now, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${BASE_URL}/rh/carta-recomendacao`,             lastModified: now, changeFrequency: "monthly", priority: 0.60 },
-    { url: `${BASE_URL}/rh/treinamento-gerentes`,           lastModified: now, changeFrequency: "monthly", priority: 0.60 },
+    { url: `${BASE_URL}/rh/calculadora-cnae-grau-de-risco`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE_URL}/rh/lista-cnae-brasil`,              changeFrequency: "monthly", priority: 0.80 },
+    { url: `${BASE_URL}/rh/domicilio-eletronico-trabalhista-det`, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE_URL}/rh/declaracao-inexistencia-risco-dir`,    changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE_URL}/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos`, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE_URL}/rh/evitar-processos-trabalhistas`,  changeFrequency: "monthly", priority: 0.70 },
+    { url: `${BASE_URL}/rh/carta-demissao`,                 changeFrequency: "monthly", priority: 0.65 },
+    { url: `${BASE_URL}/rh/carta-recomendacao`,             changeFrequency: "monthly", priority: 0.60 },
+    { url: `${BASE_URL}/rh/treinamento-gerentes`,           changeFrequency: "monthly", priority: 0.60 },
   ];
 
   // ── Páginas Saúde estáticas (fora do saúdeSEO) ──────────────────────────────
   const saúdeStaticPages: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/saude/pcmso-programa-controle-medico`,      lastModified: now, changeFrequency: "monthly", priority: 0.80 },
-    { url: `${BASE_URL}/saude/medicina-do-trabalho-guia`,           lastModified: now, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${BASE_URL}/saude/aso-atestado-saude-ocupacional`,      lastModified: now, changeFrequency: "monthly", priority: 0.70 },
-    { url: `${BASE_URL}/saude/gestao-sst`,                          lastModified: now, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${BASE_URL}/saude/insalubridade-o-que-e-adicional`,     lastModified: now, changeFrequency: "monthly", priority: 0.78 },
+    { url: `${BASE_URL}/saude/pcmso-programa-controle-medico`,      changeFrequency: "monthly", priority: 0.80 },
+    { url: `${BASE_URL}/saude/medicina-do-trabalho-guia`,           changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE_URL}/saude/aso-atestado-saude-ocupacional`,      changeFrequency: "monthly", priority: 0.70 },
+    { url: `${BASE_URL}/saude/gestao-sst`,                          changeFrequency: "monthly", priority: 0.65 },
+    { url: `${BASE_URL}/saude/insalubridade-o-que-e-adicional`,     changeFrequency: "monthly", priority: 0.78 },
   ];
 
   // ── Páginas de equipe e institucionais ──────────────────────────────────────
   const equipePages: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/equipe/felipe-sannino`,    lastModified: now, changeFrequency: "yearly",  priority: 0.70 },
-    { url: `${BASE_URL}/equipe/luiz-cesar-sannino`,lastModified: now, changeFrequency: "yearly",  priority: 0.70 },
-    { url: `${BASE_URL}/blog`,                     lastModified: now, changeFrequency: "weekly",  priority: 0.60 },
+    { url: `${BASE_URL}/equipe/felipe-sannino`,    changeFrequency: "yearly",  priority: 0.70 },
+    { url: `${BASE_URL}/equipe/luiz-cesar-sannino`,changeFrequency: "yearly",  priority: 0.70 },
+    { url: `${BASE_URL}/blog`,                     changeFrequency: "weekly",  priority: 0.60 },
   ];
 
   return [

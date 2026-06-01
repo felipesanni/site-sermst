@@ -463,11 +463,11 @@ export const servicosSEO: Record<string, SEODocument> = {
     isClinico: false,
     content: {
       dor:
-        "Quando o eSocial SST fica sem dono, a empresa passa a conviver com atraso de evento, erro manual, retrabalho entre RH e SST e risco real de multa automática.",
+        "Quando o eSocial SST fica sem dono, a empresa passa a conviver com atraso de evento, erro manual, retrabalho entre RH e SST e risco real de autuação.",
       solucao:
         "A SERMST estrutura a rotina de envio com software, protocolo, suporte e visibilidade operacional, ajudando a empresa a transformar obrigação digital em processo controlado.",
       beneficios: [
-        "Redução de multas automáticas",
+        "Redução do risco de autuação",
         "Protocolo de entrega XML",
         "Interface entre SST, RH e operação",
         "Monitoramento de pendências e prazos",
@@ -887,35 +887,6 @@ dicionarioSEO["o-que-e-ltcat"].seoTitle =
   "O que e LTCAT? Significado e para que serve | SERMST";
 dicionarioSEO["o-que-e-ppp"].seoTitle =
   "O que e PPP? Significado e para que serve | SERMST";
-
-// Helper para gerar entries de RH com defaults consistentes
-const rhEntry = (h1: string, hook: string, dor: string, solucao: string): SEODocument => ({
-  h1,
-  hook,
-  isClinico: false,
-  content: {
-    dor,
-    solucao,
-    beneficios: [
-      "Decisão de RH com respaldo técnico e jurídico",
-      "Documentação que sustenta auditoria e fiscalização",
-      "Redução de retrabalho e exposição a passivo",
-    ],
-  },
-  geoOpt: {
-    expertQuote: {
-      text: "RH bem informado decide melhor — e empresa bem documentada gasta menos com processo.",
-      author: "Equipe SERMST",
-      role: "Medicina e Segurança do Trabalho",
-    },
-    faq: [
-      {
-        q: "Onde isso se conecta com SST da empresa?",
-        a: "Toda decisão de RH (admissão, demissão, mudança de função) tem peça de SST por trás — ASO, PCMSO, PGR. A SERMST integra os dois lados.",
-      },
-    ],
-  },
-});
 
 export const rhDoresSEO: Record<string, SEODocument> = {
   "multa-esocial-s2220": {

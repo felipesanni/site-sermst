@@ -42,36 +42,43 @@ export function FadeIn({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setHydrated(true);
+    let observer: IntersectionObserver | undefined;
+    const animationFrame = window.requestAnimationFrame(() => {
+      setHydrated(true);
 
-    // viewport=false → anima imediatamente (ex: hero sem scroll-trigger)
-    if (!viewport) {
-      setVisible(true);
-      return;
-    }
+      // viewport=false → anima imediatamente (ex: hero sem scroll-trigger)
+      if (!viewport) {
+        setVisible(true);
+        return;
+      }
 
-    const el = ref.current;
-    if (!el) return;
+      const el = ref.current;
+      if (!el) return;
 
-    // Já está acima do fold → mostra sem animação (preserva LCP)
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      setVisible(true);
-      return;
-    }
+      // Já está acima do fold → mostra sem animação (preserva LCP)
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        setVisible(true);
+        return;
+      }
 
-    // Abaixo do fold → observa entrada na viewport
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      // Abaixo do fold → observa entrada na viewport
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+
           setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '-80px' },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+          observer?.disconnect();
+        },
+        { rootMargin: '-80px' },
+      );
+      observer.observe(el);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      observer?.disconnect();
+    };
   }, [viewport]);
 
   // Antes da hidratação → sem estilo inline → HTML visível para crawlers e LCP

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { FadeIn } from '@/components/ui/fade-in';
 import { BookOpen, ArrowRight, ShieldCheck } from 'lucide-react';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
@@ -118,6 +119,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NormaPage({ params }: Props) {
   const { slug } = await params;
   const norma = normasKnown[slug];
+  if (!norma) notFound();
+
   const titulo = norma?.titulo ?? slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
   const servicosRelacionados =
@@ -177,7 +180,7 @@ export default async function NormaPage({ params }: Props) {
                   <h2 className="text-2xl font-black text-brand-900">Conformidade e Penalidades</h2>
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  O não cumprimento desta norma pode acarretar multas automáticas via eSocial (eventos S-2220 e S-2240),
+                  O não cumprimento desta norma pode acarretar autuações relacionadas às obrigações de SST e inconsistências no eSocial (eventos S-2220 e S-2240),
                   além de autuações do Ministério do Trabalho e passivos trabalhistas em reclamações.
                 </p>
                 <p className="text-slate-600 leading-relaxed">

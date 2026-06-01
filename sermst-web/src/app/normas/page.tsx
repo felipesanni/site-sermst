@@ -82,7 +82,7 @@ export default function NormasIndexPage() {
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
             O descumprimento de qualquer NR aplicável ao perfil da empresa pode resultar em autuações do Ministério
-            do Trabalho, multas automáticas via eSocial (eventos S-2220 e S-2240), interdição de equipamentos ou
+            do Trabalho, autuações relacionadas às obrigações de SST, inconsistências no eSocial (eventos S-2220 e S-2240), interdição de equipamentos ou
             atividades, e passivo trabalhista em ações judiciais. Desde 2023, as inconsistências documentais detectadas
             pelo eSocial geram notificações automáticas sem necessidade de fiscalização presencial.
           </p>

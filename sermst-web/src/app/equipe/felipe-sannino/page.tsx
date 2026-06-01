@@ -107,6 +107,10 @@ const personSchema = {
     'Conformidade Trabalhista',
     'eSocial',
   ],
+  sameAs: [
+    'https://www.linkedin.com/in/felipe-sannino/',
+    'https://www.oab.org.br/',
+  ],
 };
 
 export default function FelipeSanninoPage() {

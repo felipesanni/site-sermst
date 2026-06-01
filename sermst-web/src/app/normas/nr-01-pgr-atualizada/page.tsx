@@ -75,7 +75,7 @@ export default function NR01Page() {
                 Toda empresa com pelo menos um empregado regido pela CLT precisa ter PGR atualizado. Empresas grau de risco 1 ou 2 com até 20 funcionários têm um regime simplificado, mas não estão dispensadas. Microempresas e MEIs sem empregados continuam fora.
               </p>
               <p>
-                Sobre os riscos psicossociais especificamente, a obrigação entrou em vigor a partir de maio de 2025. <strong>Empresas que não revisaram o PGR depois disso estão tecnicamente desconformes.</strong> A fiscalização do MTE ainda está ramping up, mas em ação trabalhista a desconformidade já é argumento utilizado.
+                Sobre os riscos psicossociais especificamente, a nova redação entrou em vigor em <strong>26 de maio de 2026</strong>. A empresa deve avaliar se o PGR atual identifica fatores de risco psicossociais relacionados ao trabalho e se o plano de ação precisa ser atualizado. A fiscalização e eventual responsabilização dependem da situação concreta.
               </p>
             </>
           ),
@@ -84,12 +84,12 @@ export default function NR01Page() {
           title: 'O que fazer agora (passo a passo)',
           body: (
             <ol>
-              <li><strong>Auditar o PGR atual.</strong> Verificar a data da última revisão e se ele inclui riscos psicossociais. Se for anterior a maio/2025, está desatualizado.</li>
+              <li><strong>Auditar o PGR atual.</strong> Verificar se o inventário de riscos considera fatores psicossociais relacionados ao trabalho e se o plano de ação precisa ser atualizado após a vigência de 26 de maio de 2026.</li>
               <li><strong>Mapear os riscos psicossociais reais.</strong> Por área, por função, por turno. Pesquisa anônima com a equipe ajuda muito — e a falta dela já é evidência fraca.</li>
               <li><strong>Definir plano de ação.</strong> Para cada risco identificado, qual é a medida de controle, quem é o responsável e qual o prazo.</li>
               <li><strong>Atualizar PCMSO em paralelo.</strong> O PCMSO precisa refletir os mesmos riscos do PGR. Se um menciona risco psicossocial e outro não, há inconsistência técnica.</li>
               <li><strong>Documentar e treinar lideranças.</strong> Gerentes e supervisores precisam entender o que mudou — e ter evidência formal disso.</li>
-              <li><strong>Cronograma de revisão</strong>. PGR não é &quot;feito uma vez&quot;. Tem que ser revisado anualmente e sempre que houver mudança significativa na operação.</li>
+              <li><strong>Cronograma de revisão.</strong> PGR não é &quot;feito uma vez&quot;. A avaliação de riscos deve ser revista no máximo a cada 2 anos, ou antes quando ocorrerem as situações previstas na NR-01.</li>
             </ol>
           ),
         },
@@ -102,8 +102,8 @@ export default function NR01Page() {
               </p>
               <ul>
                 <li><strong>Multa direta do MTE</strong> — pode chegar a R$ 6 mil por infração, multiplicada por trabalhador exposto.</li>
-                <li><strong>Multa automática no eSocial</strong> via S-2240 incoerente.</li>
-                <li><strong>Responsabilização em ação trabalhista</strong> — falta de PGR é prova quase automática de descumprimento da obrigação de cuidado (caput do art. 157, CLT).</li>
+                <li><strong>Inconsistência no eSocial</strong> quando o evento S-2240 não reflete corretamente os riscos ocupacionais.</li>
+                <li><strong>Responsabilização em ação trabalhista</strong> quando a documentação e as medidas de prevenção não demonstram o cumprimento do dever de cuidado.</li>
               </ul>
               <p>
                 Em qualquer dos três, o custo do passivo é múltiplo do que custaria atualizar o documento.
@@ -131,7 +131,7 @@ export default function NR01Page() {
         },
         {
           q: 'PGR feito uma vez vale por quanto tempo?',
-          a: 'Tem que ser revisado a cada 2 anos no mínimo (1 ano para empresas grau de risco 3 ou 4) e sempre que houver mudança significativa na operação — nova máquina, mudança de layout, nova função. PGR antigo desatualizado vale menos do que não ter PGR para fins de defesa em ação.',
+          a: 'A avaliação de riscos deve ser revista no máximo a cada 2 anos e também quando ocorrerem mudanças relevantes na operação, acidentes, doenças relacionadas ao trabalho ou outras situações previstas na NR-01. Organizações certificadas em sistema de gestão de SST podem ter prazo de até 3 anos.',
         },
       ]}
       sidebarTitle="PGR atualizado, com riscos psicossociais?"

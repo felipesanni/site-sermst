@@ -78,7 +78,7 @@ export default function ExameDemissionalPage() {
               <ul>
                 <li>Atraso na homologação no sindicato (se aplicável)</li>
                 <li>Verbas rescisórias além do prazo (multa do art. 477 da CLT)</li>
-                <li>Evento S-2299 fora do prazo no eSocial — multa automática</li>
+                <li>Evento S-2299 fora do prazo no eSocial — risco de autuação e retrabalho</li>
               </ul>
             </>
           ),

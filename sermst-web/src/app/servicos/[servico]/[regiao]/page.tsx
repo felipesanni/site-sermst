@@ -22,6 +22,47 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   return fallback;
 }
 
+function getLocalServiceDescription(servico: string, serviceName: string, local: (typeof localidades)[number]) {
+  if (servico === 'exame-admissional-expresso') {
+    return `Precisa de clínica de exame admissional em ${local.nome}? A SERMST atende empresas que buscam ASO, exames ocupacionais, laboratório próprio e apoio ao eSocial.`;
+  }
+
+  if (servico === 'exame-toxicologico-clt') {
+    return `Exame toxicológico em ${local.nome} com atendimento para empresas e pessoa física, validade nacional e preço de R$ 200,00. A SERMST apoia admissão, demissão e renovação de CNH para categorias C, D e E.`;
+  }
+
+  if (servico === 'audiometria-ocupacional-clinica' || servico === 'exames-complementares-laboratoriais') {
+    return `${serviceName} em ${local.nome} para empresas que precisam organizar exames ocupacionais com agilidade, orientação técnica e integração com a rotina de SST.`;
+  }
+
+  if (servico === 'gestao-esocial-s2220-s2240') {
+    return `Gestão de eSocial SST em ${local.nome} para empresas que precisam organizar eventos S-2220 e S-2240 com documentação coerente e suporte técnico.`;
+  }
+
+  if (servico === 'treinamentos-nrs-cipa-brigada') {
+    return `Treinamentos de NRs, CIPA e brigada em ${local.nome} para empresas que precisam capacitar equipes e manter evidências de conformidade em SST.`;
+  }
+
+  if (servico === 'pcmso-nr07-programa') {
+    return `PCMSO em ${local.nome}: programa de saúde ocupacional elaborado por médico do trabalho com grade de exames por risco, periodicidade definida e sustentação correta para o eSocial S-2220.`;
+  }
+
+  if (servico === 'pgr-nr01-gerenciamento-riscos') {
+    const setor = local.setoresPredominantes?.[0]?.split('—')[0].trim() ?? 'indústria e serviços';
+    return `PGR em ${local.nome}: levantamento de riscos e elaboração do programa conforme NR-01 para empresas de ${setor.toLowerCase()}. Revisão no prazo, base técnica sólida e defesa em fiscalização.`;
+  }
+
+  if (servico === 'ltcat-laudo-tecnico-previdenciario') {
+    return `LTCAT em ${local.nome}: laudo técnico ambiental com base para aposentadoria especial, defesa em auditoria previdenciária e sustentação do evento S-2240 no eSocial.`;
+  }
+
+  if (servico === 'pericia-trabalhista-assistente-tecnico') {
+    return `Perícia trabalhista em ${local.nome}: assistência técnica especializada em ações de insalubridade, periculosidade, acidente de trabalho e descumprimento de NRs — suporte técnico para empresa e advogado.`;
+  }
+
+  return `${serviceName} em ${local.nome} para empresas que precisam de documentação técnica, orientação especializada e mais segurança na gestão de SST. Fale com a SERMST.`;
+}
+
 export function generateStaticParams() {
   const params: { servico: string; regiao: string }[] = [];
 
@@ -52,11 +93,7 @@ export async function generateMetadata({
   const title = servico === 'exame-toxicologico-clt'
     ? `${mainTerm} em ${local.nome} | CNH C, D e E e Empresas`
     : `${mainTerm} em ${local.nome} | SERMST`;
-  const description = servico === 'exame-admissional-expresso'
-    ? `Precisa de clínica de exame admissional em ${local.nome}? A SERMST atende empresas que buscam clínicas de exames admissionais com ASO, laboratório próprio, exames ocupacionais e apoio ao eSocial.`
-    : servico === 'exame-toxicologico-clt'
-      ? `Exame toxicológico em ${local.nome} com atendimento para empresas e pessoa física, validade nacional e preço de R$ 200,00. A SERMST apoia admissão, demissão e renovação de CNH para categorias C, D e E.`
-      : `Precisa de ${mainTerm.toLowerCase()} em ${local.nome}? Clínica de medicina do trabalho com liberação de ASO na hora, laboratório próprio e envio ao eSocial. Atendimento expresso para empresas ${local.adjetivo}. Fale agora com a SERMST.`;
+  const description = getLocalServiceDescription(servico, mainTerm, local);
 
   return {
     title,
@@ -89,11 +126,7 @@ export default async function LocalSEOPage({
   const servicoNome = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
   const waMessage = `Preciso de ${servicoNome} em ${local.nome}`;
   const seoCopy = buildLocalServiceCopy(data, local);
-  const pageDescription = servico === 'exame-admissional-expresso'
-    ? `Precisa de clínica de exame admissional em ${local.nome}? A SERMST atende empresas que buscam clínicas de exames admissionais com ASO, laboratório próprio, exames ocupacionais e apoio ao eSocial.`
-    : servico === 'exame-toxicologico-clt'
-      ? `Exame toxicológico em ${local.nome} com atendimento para empresas e pessoa física, validade nacional e preço de R$ 200,00. A SERMST apoia admissão, demissão e renovação de CNH para categorias C, D e E.`
-      : `Precisa de ${servicoNome.toLowerCase()} em ${local.nome}? Clínica de medicina do trabalho com liberação de ASO na hora, laboratório próprio e envio ao eSocial. Atendimento expresso para empresas ${local.adjetivo}. Fale agora com a SERMST.`;
+  const pageDescription = getLocalServiceDescription(servico, servicoNome, local);
   const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {
     context: 'service-local',
     topic: servicoNome,
@@ -320,6 +353,59 @@ export default async function LocalSEOPage({
           </div>
         </div>
       </section>
+
+      {/* ── Perfil econômico e riscos SST da cidade ── */}
+      {(local.perfilEconomico || local.setoresPredominantes) && (
+        <section className="bg-slate-50 py-20">
+          <div className="mx-auto w-full max-w-[1280px] px-6">
+            <div className="mx-auto max-w-5xl">
+              <FadeIn direction="up">
+                <span className="mb-3 block text-xs font-black uppercase tracking-widest text-accent-pink">
+                  Contexto local
+                </span>
+                <h2 className="mb-6 text-3xl font-black text-brand-900 md:text-4xl">
+                  {servicoNome} em {local.nome}: perfil econômico e riscos SST do setor
+                </h2>
+
+                {local.perfilEconomico && (
+                  <p className="mb-8 text-lg leading-relaxed text-slate-700">{local.perfilEconomico}</p>
+                )}
+
+                {local.setoresPredominantes && local.setoresPredominantes.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="mb-4 text-base font-black uppercase tracking-wide text-brand-900">
+                      Setores com maior exposição a obrigações SST em {local.nome}
+                    </h3>
+                    <ul className="grid gap-3 sm:grid-cols-2">
+                      {local.setoresPredominantes.map((setor) => {
+                        const [titulo, detalhe] = setor.split('—').map((s) => s.trim());
+                        return (
+                          <li key={setor} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4">
+                            <TrendingUp className="mt-0.5 h-5 w-5 shrink-0 text-accent-pink" />
+                            <div>
+                              <span className="block text-sm font-black text-brand-900">{titulo}</span>
+                              {detalhe && <span className="text-xs text-slate-500">{detalhe}</span>}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
+
+                {local.diferencialLocal && (
+                  <div className="rounded-2xl border-l-4 border-accent-pink bg-white p-6">
+                    <span className="mb-2 block text-xs font-black uppercase tracking-widest text-accent-pink">
+                      Por que a SERMST para {local.nome}
+                    </span>
+                    <p className="text-base leading-relaxed text-slate-700">{local.diferencialLocal}</p>
+                  </div>
+                )}
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+      )}
 
       {isToxicologicoPage && (
         <section className="bg-slate-50 py-20">

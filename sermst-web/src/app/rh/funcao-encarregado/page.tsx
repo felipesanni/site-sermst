@@ -62,7 +62,7 @@ const errosComuns = [
   },
   {
     titulo: 'Esquecer do exame ocupacional periódico',
-    desc: 'Cargo de liderança não dispensa PCMSO. Encarregado precisa de exame admissional, periódico e demissional como qualquer colaborador. Pular isso é multa automática no eSocial.',
+    desc: 'Cargo de liderança não dispensa PCMSO. Encarregado precisa de exame admissional, periódico e demissional como qualquer colaborador. Ignorar o fluxo pode gerar inconsistência no eSocial e risco de autuação.',
   },
 ];
 

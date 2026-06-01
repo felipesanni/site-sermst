@@ -240,6 +240,7 @@ gtag('config', 'AW-11548872057');
           `,
         }}
       />
+      {/* ── Meta Pixel (direto, não via GTM) ── */}
       <Script
         id="meta-pixel"
         strategy="afterInteractive"

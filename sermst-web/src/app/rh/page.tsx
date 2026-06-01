@@ -43,7 +43,7 @@ export default function RHIndexPage() {
               <span className="text-accent-pink">para RH e DP</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl font-medium border-l-4 border-accent-pink pl-6 md:pl-10 leading-relaxed">
-              Este hub existe para responder a dor operacional do RH: admissão travada, evento fora do prazo, documento incoerente, retrabalho com ASO e medo de multa automática no eSocial.
+              Este hub existe para responder a dor operacional do RH: admissão travada, evento fora do prazo, documento incoerente, retrabalho com ASO e medo de autuação relacionada ao eSocial.
             </p>
           </FadeIn>
         </div>

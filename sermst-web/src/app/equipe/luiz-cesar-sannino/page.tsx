@@ -126,6 +126,10 @@ const personSchema = {
     'EPIs',
     'Saúde Ocupacional',
   ],
+  sameAs: [
+    'https://www.linkedin.com/in/luiz-cesar-sannino/',
+    'https://www.crea-sp.org.br/',
+  ],
 };
 
 export default function LuizCesarSanninoPage() {

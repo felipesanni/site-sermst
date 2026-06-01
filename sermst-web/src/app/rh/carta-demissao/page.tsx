@@ -113,7 +113,7 @@ export default function CartaDemissãoPage() {
               <li><strong>Demissão na licença, na gravidez ou no afastamento INSS</strong>. Estabilidade — demissão é nula.</li>
               <li><strong>Não pagar verba rescisória no prazo</strong> (10 dias após o fim do contrato). Multa do art. 477 da CLT, valor de um salário do empregado.</li>
               <li><strong>Não dar baixa na CTPS</strong>. Continua valendo o contrato — empresa segue pagando todas as obrigações.</li>
-              <li><strong>Não comunicar a rescisão no eSocial</strong>. S-2299 fora do prazo é multa automática.</li>
+              <li><strong>Não comunicar a rescisão no eSocial</strong>. S-2299 fora do prazo gera risco de autuação e retrabalho.</li>
               <li><strong>Pular exame demissional</strong>. Passivo de saúde ocupacional fica em aberto.</li>
             </ul>
           ),

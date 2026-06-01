@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/cdn-cgi/', '/wp-admin/', '/wp-login.php', '/xmlrpc.php'],
+      disallow: ['/cdn-cgi/'],
     },
     sitemap: 'https://sermst.com.br/sitemap.xml',
     host: 'https://sermst.com.br',

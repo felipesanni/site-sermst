@@ -140,7 +140,7 @@ export function BlockbusterArticle({
           '@type': 'Organization',
           name: 'SERMST',
           url: 'https://sermst.com.br',
-          logo: { '@type': 'ImageObject', url: 'https://sermst.com.br/og-home.jpg' },
+          logo: { '@type': 'ImageObject', url: 'https://sermst.com.br/images/site/logo-cor.png' },
         },
       }
     : null;
