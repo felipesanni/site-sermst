@@ -174,6 +174,9 @@ export default function ComoFuncionaExameAdmissionalPage() {
         }}
         h1="Exame admissional: o que é, como funciona e quais exames podem ser solicitados"
         intro="O exame admissional é a avaliação ocupacional feita antes do início das atividades do colaborador. Ele verifica se a pessoa está apta para a função, considerando os riscos do cargo e o PCMSO da empresa. Ao final, é emitido o ASO admissional."
+        disableFaqSchema
+        includeFallbackFaqs={false}
+        maxFaqItems={9}
         sections={[
         {
           title: 'Resumo rápido para quem precisa decidir agora',

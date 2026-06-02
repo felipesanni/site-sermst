@@ -12,6 +12,8 @@ interface FrequentFAQOptions {
   context: FAQContext;
   topic: string;
   localidade?: string;
+  includeFallbacks?: boolean;
+  maxItems?: number;
 }
 
 function dedupeFaqs(items: FAQItem[]): FAQItem[] {
@@ -247,8 +249,9 @@ export function buildFrequentFaqs(
   options: FrequentFAQOptions,
 ): FAQItem[] {
   const uniqueBase = dedupeFaqs(baseFaqs);
-  const fallbackFaqs = buildFallbackFaqs(options);
+  const fallbackFaqs = options.includeFallbacks === false ? [] : buildFallbackFaqs(options);
   const merged = dedupeFaqs([...uniqueBase, ...fallbackFaqs]);
+  const maxItems = options.maxItems ?? Math.min(7, Math.max(5, merged.length));
 
-  return merged.slice(0, Math.min(7, Math.max(5, merged.length)));
+  return merged.slice(0, maxItems);
 }
