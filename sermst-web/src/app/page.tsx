@@ -38,7 +38,7 @@ const faqSchema = {
       name: 'O que é PCMSO e qual empresa é obrigada a ter?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é exigido pela NR-07 para todas as empresas que possuem empregados CLT. Ele define quais exames ocupacionais cada trabalhador deve realizar conforme os riscos do cargo, e sustenta o envio correto dos eventos de SST ao eSocial.',
+        text: 'O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é previsto na NR-07 e organiza o monitoramento da saúde dos empregados conforme os riscos ocupacionais. A própria NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP de grau de risco 1 ou 2, sem eliminar exames ocupacionais nem ASO.',
       },
     },
     {
@@ -46,7 +46,7 @@ const faqSchema = {
       name: 'O que é PGR e quem precisa ter?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O PGR (Programa de Gerenciamento de Riscos) substituiu o PPRA e é obrigatório pela NR-01 para todas as empresas com empregados CLT. Ele identifica, avalia e controla os riscos ocupacionais da operação, sendo base para o PCMSO e para os eventos S-2240 do eSocial.',
+        text: 'O PGR (Programa de Gerenciamento de Riscos) substituiu o PPRA e materializa o gerenciamento de riscos ocupacionais previsto na NR-01. Como regra, ele identifica, avalia e controla os riscos da operação, sendo base para o PCMSO e para os eventos S-2240 do eSocial. A NR-01 prevê hipóteses específicas de dispensa de elaboração para pequenos negócios.',
       },
     },
     {

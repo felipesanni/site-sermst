@@ -69,7 +69,7 @@ export default function ClinicaExameAdmissionalPage() {
                 O exame é o processo. O <strong>Atestado de Saúde Ocupacional</strong> é a evidência que fecha a etapa. Sem ele, a empresa não pode admitir com segurança jurídica — e sem ele correto, não tem como enviar o S-2220 ao eSocial de forma consistente.
               </p>
               <p>
-                Um ASO bem emitido contém: identificação completa do trabalhador e da empresa, função, riscos do cargo conforme o PCMSO, exames realizados, conclusão de aptidão, e assinatura do médico coordenador. Qualquer campo faltando invalida o documento do ponto de vista técnico.
+                Um ASO bem emitido contém: identificação completa do trabalhador e da empresa, função, riscos ocupacionais relevantes, exames realizados, conclusão de aptidão, dados do médico responsável pelo PCMSO, quando houver, e assinatura do médico que realizou o exame clínico.
               </p>
               <p>
                 A SERMST emite o ASO dentro do fluxo corporativo — alinhado ao PCMSO da empresa, com exames complementares quando necessário e integração ao envio do S-2220.
@@ -94,7 +94,7 @@ export default function ClinicaExameAdmissionalPage() {
           body: (
             <>
               <p>
-                A SERMST tem laboratório próprio na unidade central de São Paulo, fluxo de atendimento corporativo e médico coordenador de PCMSO integrado à operação. O RH não precisa coordenar múltiplos fornecedores: exame clínico, complementares e ASO saem do mesmo lugar.
+                A SERMST tem laboratório próprio na unidade central de São Paulo, fluxo de atendimento corporativo e responsabilidade técnica médica integrada à operação. O RH não precisa coordenar múltiplos fornecedores: exame clínico, complementares e ASO saem do mesmo lugar.
               </p>
               <p>
                 Para empresas com volume de contratação — seja 5 ou 50 admissões por mês — a previsibilidade de prazo e a consistência documental são o que separa uma clínica de medicina do trabalho de uma clínica que faz exame admissional por acaso.

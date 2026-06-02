@@ -65,7 +65,7 @@ export default function NormasIndexPage() {
               Guia das NRs explicadas para gestores
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">
-              As Normas Regulamentadoras definem o que sua empresa precisa fazer para operar com segurança e cumprir o eSocial. Aqui cada NR é apresentada com obrigações, prazos é o que costuma cair em fiscalização.
+              As Normas Regulamentadoras definem o que sua empresa precisa fazer para operar com segurança e cumprir o eSocial. Aqui cada NR é apresentada com obrigações, prazos e o que costuma cair em fiscalização.
             </p>
           </FadeIn>
         </div>
@@ -88,7 +88,7 @@ export default function NormasIndexPage() {
           </p>
           <p className="text-slate-600 leading-relaxed">
             A conformidade com as NRs não é estática — normas são atualizadas periodicamente. A NR-01, por exemplo,
-            passou por revisão em 2022 e incluiu riscos psicossociais a partir de 2025. A NR-07 (PCMSO) define os
+            passou por revisão e incluiu expressamente os fatores de risco psicossociais relacionados ao trabalho no GRO a partir de 26 de maio de 2026. A NR-07 (PCMSO) define os
             exames obrigatórios conforme os riscos levantados no PGR. Manter os documentos de SST atualizados é
             responsabilidade do empregador e não pode ser delegada ao trabalhador.
           </p>

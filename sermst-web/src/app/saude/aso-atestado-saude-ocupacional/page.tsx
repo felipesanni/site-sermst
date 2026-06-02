@@ -43,7 +43,7 @@ export default function ASOPage() {
           body: (
             <>
               <p>
-                O ASO é o documento emitido pelo <strong>médico do trabalho</strong> ao final de cada exame ocupacional — admissional, periódico, de retorno ao trabalho, de mudança de função ou demissional. Ele registra formalmente se o trabalhador está <strong>apto ou inapto</strong> para exercer a função, com base nos exames clínicos e complementares realizados.
+                O ASO é o documento emitido pelo <strong>médico que realiza o exame clínico ocupacional</strong> — admissional, periódico, de retorno ao trabalho, de mudança de risco ocupacional ou demissional. Ele registra formalmente se o trabalhador está <strong>apto ou inapto</strong> para exercer a função, com base nos exames clínicos e complementares realizados.
               </p>
               <p>
                 Tecnicamente, o ASO não é só um papel: é a <strong>evidência jurídica</strong> de que a empresa avaliou a saúde do trabalhador naquele momento. É essa evidência que protege o empregador em casos de ação trabalhista por doença ocupacional, perícia do INSS ou fiscalização do MTE.
@@ -57,9 +57,9 @@ export default function ASOPage() {
             <ul>
               <li><strong>Exame admissional:</strong> antes do início das atividades. Sem ASO admissional, o trabalhador não deveria começar a trabalhar.</li>
               <li><strong>Exame periódico:</strong> conforme a periodicidade definida no PCMSO para o cargo. Pode ser anual, semestral ou bienal dependendo do risco.</li>
-              <li><strong>Exame de retorno ao trabalho:</strong> obrigatório quando o trabalhador retorna de afastamento superior a 30 dias por doença ou acidente.</li>
-              <li><strong>Exame de mudança de função:</strong> quando o trabalhador muda para função com risco diferente — novo ASO antes da mudança.</li>
-              <li><strong>Exame demissional:</strong> antes da homologação da rescisão, exceto se o último periódico tiver sido realizado há menos de 90 ou 135 dias (conforme o grau de risco).</li>
+              <li><strong>Exame de retorno ao trabalho:</strong> obrigatório antes do retorno quando o afastamento por doença ou acidente, ocupacional ou não, for igual ou superior a 30 dias.</li>
+              <li><strong>Exame de mudança de risco ocupacional:</strong> antes da mudança, adequando o controle médico aos novos riscos.</li>
+              <li><strong>Exame demissional:</strong> em até 10 dias contados do término do contrato, podendo ser dispensado se o exame clínico ocupacional mais recente ocorreu há menos de 135 dias para grau de risco 1 ou 2, ou 90 dias para grau de risco 3 ou 4.</li>
             </ul>
           ),
         },
@@ -75,8 +75,8 @@ export default function ASOPage() {
                 <li>Riscos ocupacionais específicos do cargo</li>
                 <li>Indicação dos procedimentos médicos realizados (exames clínicos e complementares)</li>
                 <li>Conclusão: apto ou inapto para a função</li>
-                <li>Nome, CRM e assinatura do médico examinador e do médico coordenador do PCMSO</li>
-                <li>Data de emissão e prazo de validade</li>
+                <li>Nome e CRM do médico responsável pelo PCMSO, se houver</li>
+                <li>Data, CRM e assinatura do médico que realizou o exame clínico</li>
               </ul>
               <p>
                 ASO sem todos esses campos é tecnicamente inválido — mesmo que o exame tenha sido realizado.
@@ -89,7 +89,7 @@ export default function ASOPage() {
           body: (
             <>
               <p>
-                Cada ASO emitido precisa ser comunicado ao eSocial via <strong>evento S-2220 (Monitoramento da Saúde do Trabalhador)</strong>. O prazo é até o dia 15 do mês seguinte ao da emissão do ASO.
+                O <strong>evento S-2220 (Monitoramento da Saúde do Trabalhador)</strong> registra no eSocial as informações dos exames ocupacionais aplicáveis. O envio deve seguir o leiaute e os prazos vigentes do evento.
               </p>
               <p>
                 O S-2220 inclui: tipo de exame, data, resultado de aptidão, e os exames complementares realizados com seus resultados. Envio fora do prazo ou com dados divergentes do ASO físico gera inconsistência — o que pode resultar em notificação ou multa em cruzamento de dados.
@@ -134,11 +134,11 @@ export default function ASOPage() {
         },
         {
           q: 'Qual médico pode emitir ASO?',
-          a: 'O médico examinador pode ser qualquer médico habilitado a realizar o exame clínico. Mas o ASO deve ser referendado pelo médico coordenador do PCMSO da empresa, que precisa ter especialização em medicina do trabalho.',
+          a: 'Para cada exame clínico ocupacional, o médico que realizou o exame emite o ASO. O documento também deve informar o médico responsável pelo PCMSO, quando houver.',
         },
         {
           q: 'O trabalhador tem direito a receber uma via do ASO?',
-          a: 'Sim. A NR-07 determina que o ASO deve ser emitido em duas vias — uma fica com a empresa e outra é entregue ao trabalhador. Não entregar é infração.',
+          a: 'Sim. A NR-07 determina que o ASO seja comprovadamente disponibilizado ao trabalhador. A empresa precisa manter evidência dessa disponibilização.',
         },
         {
           q: 'ASO de empresa diferente tem validade?',
@@ -146,7 +146,7 @@ export default function ASOPage() {
         },
         {
           q: 'Qual a diferença entre ASO e atestado médico comum?',
-          a: 'São documentos completamente distintos. O atestado médico comum é emitido por qualquer médico para justificar ausência por doença. O ASO é emitido especificamente pelo médico do trabalho para atestar aptidão ocupacional, com base nos riscos do cargo e no PCMSO da empresa.',
+          a: 'São documentos distintos. O atestado médico comum costuma justificar ausência por motivo de saúde. O ASO registra a conclusão de aptidão ocupacional e é emitido pelo médico que realizou o exame clínico, considerando os riscos relacionados ao trabalho.',
         },
       ]}
       sidebarTitle="Seus ASOs estão em dia e no eSocial?"

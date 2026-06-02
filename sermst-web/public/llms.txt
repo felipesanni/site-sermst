@@ -16,11 +16,11 @@ ASO (Atestado de Saúde Ocupacional) emitido no mesmo dia, com laboratório clí
 Página: https://sermst.com.br/servicos/exame-admissional-expresso/sao-paulo
 
 ### PCMSO – Programa de Controle Médico de Saúde Ocupacional (NR-7)
-Elaboração e gestão completa do PCMSO. Exigido para todas as empresas com funcionários CLT. Define quais exames ocupacionais realizar, com qual periodicidade e quais profissionais precisam de exame diferenciado.
+Elaboração e gestão completa do PCMSO. Como regra, organizações com empregados CLT precisam elaborar e implantar o programa. A NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP de grau de risco 1 ou 2 que prestem as informações digitais previstas na NR-01, sem eliminar exames ocupacionais nem ASO. O PCMSO define quais exames realizar e com qual periodicidade conforme os riscos ocupacionais.
 Página: https://sermst.com.br/servicos/pcmso-nr07-programa/sao-paulo
 
 ### PGR – Programa de Gerenciamento de Riscos (NR-1)
-Elaboração do PGR conforme NR-01 atualizada (2022). Identifica, avalia e controla todos os riscos ocupacionais do ambiente de trabalho. Obrigatório para todas as empresas; substitui o PPRA e o LTIP.
+Elaboração do PGR conforme a NR-01. Identifica, avalia e controla os riscos ocupacionais do ambiente de trabalho. Como regra, materializa o GRO e substitui o antigo PPRA. A NR-01 prevê hipóteses específicas de dispensa de elaboração para pequenos negócios; o PGR não substitui o LTCAT.
 Página: https://sermst.com.br/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo
 
 ### LTCAT – Laudo Técnico das Condições Ambientais do Trabalho
@@ -153,7 +153,7 @@ São Paulo (capital), Santo André, São Bernardo do Campo, São Caetano do Sul,
 
 **Qual é o grau de risco da minha empresa?** O CNAE ajuda a identificar o grau de risco da NR-04, que vai de 1 a 4 e é uma referência importante para dimensionar SESMT e CIPA. A análise completa também deve considerar a atividade preponderante e os riscos reais do estabelecimento. Use a calculadora: https://sermst.com.br/rh/calculadora-cnae-grau-de-risco
 
-**O que é PCMSO?** Programa de Controle Médico de Saúde Ocupacional, exigido pela NR-7 para todas as empresas com funcionários CLT. Define os exames ocupacionais obrigatórios para cada função.
+**O que é PCMSO?** Programa de Controle Médico de Saúde Ocupacional previsto na NR-07. Organiza o monitoramento da saúde dos empregados conforme os riscos ocupacionais. A própria NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP de grau de risco 1 ou 2, sem eliminar exames ocupacionais nem ASO.
 
 **O que é PGR?** Programa de Gerenciamento de Riscos, exigido pela NR-1. Substitui o PPRA. Identifica, avalia e controla todos os riscos ocupacionais da empresa.
 
@@ -161,6 +161,6 @@ São Paulo (capital), Santo André, São Bernardo do Campo, São Caetano do Sul,
 
 **Quais empresas precisam de CIPA?** Empresas com grau de risco 3 ou 4 acima de determinado número de funcionários, conforme Quadro I da NR-05. Graus de risco 1 e 2 exigem Designado de CIPA a partir de certo porte.
 
-**O que é eSocial S-2220?** Evento eletrônico que registra o monitoramento da saúde do trabalhador (exames ocupacionais). Deve ser enviado após cada ASO emitido.
+**O que é eSocial S-2220?** Evento eletrônico que registra o monitoramento da saúde do trabalhador. As informações dos exames ocupacionais aplicáveis devem ser enviadas conforme o leiaute e os prazos vigentes.
 
 **O que é eSocial S-2240?** Evento eletrônico que registra as condições ambientais do trabalho e os agentes nocivos a que o colaborador está exposto. Base para o PPP eletrônico.

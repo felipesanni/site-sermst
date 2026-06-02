@@ -77,7 +77,7 @@ export default function NR18Page() {
                 O <strong>PCMAT (Programa de Condições e Meio Ambiente de Trabalho na Indústria da Construção)</strong> foi durante décadas o documento central de planejamento de SST exigido pela NR-18. Para obras com 20 ou mais trabalhadores, era obrigatório elaborar o PCMAT antes do início das atividades, com conteúdo específico: memorial descritivo, projetos de proteção coletiva, layout do canteiro, cronograma de medidas preventivas e programa de treinamento.
               </p>
               <p>
-                Com a revisão da NR-18, o PCMAT foi <strong>oficialmente extinto</strong>. O PPRA (Programa de Prevenção de Riscos Ambientais) também foi descontinuado no mesmo processo. Ambos foram substituídos pelo <strong>PGR (Programa de Gerenciamento de Riscos)</strong>, previsto na NR-01 atualizada, que passa a ser o documento único de gestão de riscos ocupacionais para todas as empresas com empregados CLT.
+                Com a revisão da NR-18, o PCMAT foi <strong>oficialmente extinto</strong>. O PPRA (Programa de Prevenção de Riscos Ambientais) também foi descontinuado. Na construção civil, o <strong>PGR (Programa de Gerenciamento de Riscos)</strong> previsto na NR-01 e detalhado pela NR-18 passou a organizar a gestão de riscos ocupacionais do canteiro.
               </p>
               <p>
                 Obras que já tinham um PCMAT válido em andamento puderam manter o documento até a conclusão daquela obra específica. Para qualquer canteiro iniciado após a transição da norma, o PGR é o único documento aceito. Apresentar PCMAT para obra nova não atende mais à legislação e configura ausência de programa de gestão de riscos.
@@ -123,10 +123,10 @@ export default function NR18Page() {
                 Na construção civil, os riscos mais comuns que determinam exames específicos incluem exposição a ruído (audiometria tonal obrigatória), poeira de sílica (espirometria e radiografia de tórax), solventes e tintas (hemograma e função hepática), calor intenso e trabalho em altura. A ausência de exames complementares adequados ao perfil de risco da obra é uma das principais inconsistências encontradas em auditoria.
               </p>
               <p>
-                O ASO (Atestado de Saúde Ocupacional) precisa ser emitido para todos os trabalhadores no admissional, no periódico, no retorno ao trabalho após afastamento superior a 30 dias e no demissional. Em obra, é comum encontrar trabalhadores admitidos sem ASO válido, especialmente em contratações emergenciais. Cada trabalhador sem ASO é um passivo individual em fiscalização.
+                O ASO (Atestado de Saúde Ocupacional) precisa ser emitido para os exames clínicos ocupacionais aplicáveis: admissional, periódico, retorno ao trabalho após afastamento igual ou superior a 30 dias, mudança de risco ocupacional e demissional. Em obra, é comum encontrar trabalhadores admitidos sem ASO válido, especialmente em contratações emergenciais. Cada trabalhador sem ASO é um passivo individual em fiscalização.
               </p>
               <p>
-                Desde 2023, o PCMSO e os eventos de SST precisam ser enviados ao eSocial via evento S-2220 (monitoramento de saúde do trabalhador). A ausência de envio gera inconsistência no eSocial e pode acionar notificação automática do MTE.
+                Os exames ocupacionais aplicáveis precisam alimentar o evento S-2220 (monitoramento da saúde do trabalhador) conforme o leiaute e os prazos do eSocial. A ausência de envio ou a divergência entre documentos pode gerar inconsistências e exposição em auditorias e fiscalizações.
               </p>
             </>
           ),
@@ -145,7 +145,7 @@ export default function NR18Page() {
                 O <strong>S-2240</strong> registra as condições ambientais de trabalho: agentes nocivos, intensidade ou concentração de exposição e as medidas de controle adotadas. Na construção civil, o S-2240 é especialmente relevante porque o canteiro tem múltiplos agentes nocivos reconhecidos (ruído, vibração, calor, poeira de sílica) que precisam ser informados com base no LTCAT ou no inventário do PGR.
               </p>
               <p>
-                Inconsistências no S-2240 podem indicar ao sistema que trabalhadores estão expostos a agentes nocivos sem proteção adequada, gerando notificação automática. Isso acontece com frequência quando o PGR descreve os riscos mas o S-2240 não está atualizado com as medidas de controle correspondentes.
+                Inconsistências no S-2240 podem indicar divergências entre a realidade da operação e as informações transmitidas. Isso acontece quando o PGR descreve riscos, mas o S-2240 não acompanha as medidas de controle correspondentes.
               </p>
             </>
           ),
@@ -247,13 +247,13 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                No texto antigo da norma, obras com menos de 20 trabalhadores não precisavam de PCMAT. Com a extinção do PCMAT e a chegada do PGR, essa distinção deixou de existir. Hoje, <strong>qualquer obra com empregados CLT precisa de PGR e PCMSO</strong>, independentemente do porte ou do número de trabalhadores.
+                No texto antigo da norma, obras com menos de 20 trabalhadores não precisavam de PCMAT. Com a extinção do PCMAT, essa distinção deixou de existir para o programa específico do canteiro. A análise atual deve considerar as exigências da NR-18 e as hipóteses de tratamento simplificado ou dispensa previstas na NR-01 e na NR-07, sem presumir que uma obra pequena está livre de obrigações de SST.
               </p>
               <p>
                 Uma empresa de reforma com 3 trabalhadores contratados pela CLT precisa ter ASO admissional para cada um, treinamento de NR-35 se houver qualquer atividade acima de 2 metros, PGR documentando os riscos da atividade e PCMSO com os exames pertinentes. O porte da obra pode influenciar a extensão dos documentos, mas não elimina as obrigações básicas.
               </p>
               <p>
-                Microempreendedores individuais (MEI) que contratam funcionários também estão sujeitos às obrigações de SST. A inscrição como MEI não afasta a responsabilidade de empregador para fins de segurança e saúde no trabalho. A diferença prática é que MEI com um empregado pode ter um PGR mais simples, mas precisa ter.
+                Microempreendedores individuais (MEI) que contratam funcionários também estão sujeitos às obrigações aplicáveis de SST. A inscrição como MEI não afasta a responsabilidade do empregador. A NR-01 prevê dispensa de elaboração do PGR para o MEI, mas isso não autoriza ignorar os riscos reais da atividade nem as obrigações que continuem aplicáveis.
               </p>
               <p>
                 Para obras iniciadas com prazo curto, um erro comum é tratar SST como burocracia a ser resolvida depois do início das atividades. O PGR e o ASO admissional precisam existir antes de o trabalhador entrar no canteiro, não depois. Autuação por ausência de documentação na fase inicial da obra cobre também os períodos anteriores ao início da fiscalização.
@@ -288,7 +288,7 @@ export default function NR18Page() {
         },
         {
           q: 'Qual a diferença entre PCMAT e PGR?',
-          a: 'O PCMAT era um documento exclusivo da construção civil, exigido pela NR-18 para obras com 20 ou mais trabalhadores. O PGR é o instrumento unificado de gestão de riscos, previsto na NR-01, aplicável a todas as empresas com empregados CLT. Na construção civil, o PGR substituiu o PCMAT e o PPRA, cobrindo inventário de riscos, plano de ação, controles e cronograma de revisão com mais abrangência e metodologia estruturada.',
+          a: 'O PCMAT era um documento exclusivo da construção civil, exigido pela NR-18 para obras com 20 ou mais trabalhadores. Na construção civil, o PGR passou a organizar a gestão de riscos do canteiro com inventário, plano de ação e controles. A análise deve observar a NR-18 e as hipóteses específicas de simplificação ou dispensa previstas na NR-01.',
         },
         {
           q: 'Construtora que terceiriza tudo: quem responde pelos acidentes?',
@@ -312,7 +312,7 @@ export default function NR18Page() {
         },
         {
           q: 'Como funciona o eSocial SST na construção civil?',
-          a: 'As construtoras precisam enviar o evento S-2220 para cada ASO emitido (admissional, periódico, retorno e demissional) e o S-2240 para registrar as condições ambientais de trabalho e os agentes nocivos aos quais cada trabalhador está exposto. Inconsistências entre o S-2240 e o PGR ou LTCAT da empresa geram notificações automáticas do sistema.',
+          a: 'As construtoras precisam enviar as informações aplicáveis ao S-2220 e usar o S-2240 para registrar as condições ambientais de trabalho conforme as regras do eSocial. Divergências entre S-2240, PGR e LTCAT fragilizam a conformidade documental da empresa.',
         },
         {
           q: 'O PGR na construção civil precisa de ART?',

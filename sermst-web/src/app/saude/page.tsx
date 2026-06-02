@@ -144,6 +144,29 @@ export default function SaudeIndexPage() {
           </div>
         </FadeIn>
 
+        <FadeIn direction="up" delay={0.05}>
+          <div className="mb-14 rounded-[2rem] border border-brand-900 bg-white p-8 shadow-sm lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Guia essencial de saúde ocupacional
+            </span>
+            <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+              PCMSO: significado, validade e quem precisa elaborar
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
+              Entenda o que significa PCMSO, como o programa se conecta à NR-07 e ao PGR, quando
+              precisa ser atualizado e em quais cenários MEI, ME ou EPP pode ter dispensa de
+              elaboração sem deixar de realizar exames ocupacionais.
+            </p>
+            <Link
+              href="/saude/pcmso-programa-controle-medico"
+              className="btn-primary-safe mt-6 inline-flex"
+            >
+              Ler guia completo de PCMSO
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </FadeIn>
+
         <FadeIn direction="up" delay={0.08}>
           <div className="mb-14 grid gap-6 lg:grid-cols-2">
             <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">

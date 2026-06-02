@@ -80,7 +80,7 @@ export default function EmpresaPodeDesistirPage() {
             body: (
               <>
                 <p>
-                  A empresa pode não admitir um candidato após o exame admissional em uma única situação com base legal sólida: quando o <strong>médico do trabalho coordenador do PCMSO emite ASO com conclusão "inapto"</strong>.
+                  A empresa pode não admitir um candidato após o exame admissional em uma única situação com base legal sólida: quando o <strong>médico que realizou o exame clínico emite ASO com conclusão &quot;inapto&quot;</strong>.
                 </p>
                 <p>
                   A inaptidão precisa ser fundamentada tecnicamente — vinculada às exigências físicas ou de saúde da função e aos riscos identificados no PCMSO. O médico não pode declarar inaptidão por preferência ou por pedido da empresa sem base clínica.
@@ -96,7 +96,7 @@ export default function EmpresaPodeDesistirPage() {
             body: (
               <>
                 <p>
-                  Se o médico emitiu ASO com conclusão <strong>"apto"</strong> e a empresa decide não contratar com base em:
+                  Se o médico emitiu ASO com conclusão <strong>&quot;apto&quot;</strong> e a empresa decide não contratar com base em:
                 </p>
                 <ul>
                   <li>Resultado de exame de sangue que não fundamentou inaptidão</li>

@@ -20,7 +20,7 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
   'nr-01-pgr-atualizada': {
     titulo: 'NR-01 atualizada: Programa de Gerenciamento de Riscos (PGR)',
     descricao:
-      'A NR-01 é o documento-mãe da segurança do trabalho no Brasil. Atualizada em 2022 e com riscos psicossociais incluídos a partir de 2025, exige que toda empresa identifique, avalie e controle os riscos ocupacionais por meio do PGR.',
+      'A NR-01 é o documento-mãe da segurança do trabalho no Brasil. Com fatores de risco psicossociais expressamente incluídos no GRO desde 26 de maio de 2026, orienta a identificação, avaliação e controle dos riscos ocupacionais.',
   },
   'nr-10-eletricidade': {
     titulo: 'NR-10: Segurança em Instalações e Serviços em Eletricidade',
@@ -72,12 +72,14 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
   'o-que-e-nr-07': {
     titulo: 'NR-07: o que a norma exige sobre PCMSO e exames ocupacionais',
     descricao:
-      'A NR-07 é a norma que obriga a empresa a manter um PCMSO e realizar o monitoramento de saúde dos trabalhadores conforme os riscos ocupacionais de cada função.',
-    conteudo: `A NR-07 é a norma regulamentadora que trata do monitoramento da saúde dos trabalhadores. Ela obriga a empresa a manter um PCMSO ativo e coerente com os riscos identificados no PGR, definindo a lógica legal por trás dos exames admissionais, periódicos, de retorno ao trabalho, mudança de função e demissionais.
+      'A NR-07 organiza o monitoramento de saúde ocupacional. Como regra, exige PCMSO coerente com os riscos da empresa e exames admissionais, periódicos, de retorno, mudança de risco e demissionais.',
+    conteudo: `A NR-07 é a norma regulamentadora que trata do monitoramento da saúde dos trabalhadores. Como regra, ela exige PCMSO ativo e coerente com os riscos identificados no PGR, definindo a lógica legal por trás dos exames admissionais, periódicos, de retorno ao trabalho, mudança de risco ocupacional e demissionais.
 
 Em outras palavras: a NR-07 é a regra; o PCMSO é o programa que coloca essa regra em prática. Quem pesquisa "NR-07" normalmente quer entender a exigência normativa, o que a empresa precisa cumprir e qual o risco de não cumprir. Quem pesquisa "PCMSO" geralmente quer saber como montar, revisar ou operacionalizar o programa.
 
-Toda empresa com empregado CLT precisa atender a NR-07, independentemente do porte. O nível de complexidade muda conforme o risco e a estrutura da empresa, mas a obrigação não desaparece. A norma também se conecta ao eSocial: os ASOs emitidos com base no PCMSO alimentam o evento S-2220, e inconsistências entre PGR, PCMSO e exames deixam a empresa exposta em fiscalização.
+A NR-07 se aplica às organizações com empregados CLT. Como regra, o empregador deve garantir a elaboração e a efetiva implantação do PCMSO. A própria NR-07 prevê dispensa de elaboração para alguns MEI, ME e EPP de grau de risco 1 ou 2 que prestem as informações digitais previstas na NR-01 e não identifiquem as exposições ocupacionais previstas na norma. Mesmo nesses casos, exames ocupacionais e ASO continuam obrigatórios.
+
+A norma também se conecta ao eSocial: os ASOs emitidos no monitoramento da saúde alimentam o evento S-2220, e inconsistências entre PGR, PCMSO e exames deixam a empresa exposta em fiscalização.
 
 Se a sua necessidade é entender como estruturar o programa, cronogramas, exames por cargo e integração com ASO e eSocial, o caminho correto é a página específica de PCMSO. Aqui, o objetivo é esclarecer a norma e o que ela exige da empresa.`,
   },
@@ -127,6 +129,7 @@ export default async function NormaPage({ params }: Props) {
     slug === 'o-que-e-nr-07'
       ? [
           { label: 'PCMSO: guia prático do programa', href: '/saude/pcmso-programa-controle-medico' },
+          { label: 'DIR: quando pode haver dispensa de elaborar PCMSO', href: '/rh/declaracao-inexistencia-risco-dir' },
           { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
           { label: 'PGR (NR-01)', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
           { label: 'Exame Admissional', href: '/servicos/exame-admissional-expresso/sao-paulo' },

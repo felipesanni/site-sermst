@@ -111,7 +111,7 @@ export default function SaúdeOcupacionalPage() {
         },
         {
           q: 'Pequena empresa precisa ter saúde ocupacional?',
-          a: 'Sim. Empresa com 1 funcionário CLT já está sob obrigação de PCMSO, ASO admissional e exames periódicos. O regime para pequena empresa é simplificado, mas não dispensado. Microempresa de baixo risco tem PCMSO simplificado; baixo risco com até 20 funcionários pode optar por PCMSO sem médico responsável em algumas situações.',
+          a: 'Como regra, empresas com empregado precisam organizar a saúde ocupacional, realizar os exames aplicáveis e emitir ASO. A NR-07 prevê dispensa de elaborar PCMSO para alguns MEI, ME e EPP de grau de risco 1 ou 2 que atendem aos critérios aplicáveis, sem eliminar exames ocupacionais nem ASO.',
         },
         {
           q: 'Quem pode fazer ASO?',

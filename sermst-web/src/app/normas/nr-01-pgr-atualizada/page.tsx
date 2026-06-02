@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-01 atualizada: PGR e Riscos Psicossociais | SERMST',
+  title: 'Norma Regulamentadora 01 (NR-01): PGR e GRO | SERMST',
   description:
-    'NR-01 atualizada exige riscos psicossociais no PGR. Saiba o que mudou, o que sua empresa precisa fazer e os prazos que estão correndo. Guia prático por SERMST.',
+    'Entenda a Norma Regulamentadora 01 (NR-01): GRO, PGR, fatores de risco psicossociais, dispensas para pequenos negócios e o que sua empresa precisa revisar.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-01-pgr-atualizada' },
   openGraph: {
-    title: 'NR-1 e PGR: o que mudou, obrigações e como implementar | SERMST',
+    title: 'Norma Regulamentadora 01 (NR-01): PGR, GRO e obrigações | SERMST',
     description:
       'Entenda a NR-1 atualizada e o Programa de Gerenciamento de Riscos (PGR): quem precisa, o que exige e como estruturar o GRO para ficar em conformidade.',
     url: 'https://sermst.com.br/normas/nr-01-pgr-atualizada',
@@ -30,18 +30,18 @@ export default function NR01Page() {
         jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-06-02',
       }}
 
-      h1="NR-01 atualizada: o que mudou é o que a sua empresa precisa fazer"
-      intro="A NR-01 é o documento-mãe da segurança do trabalho. A atualização recente trouxe a obrigação de incluir riscos psicossociais no PGR — e prazos que já estão correndo. Veja o que isso significa na prática."
+      h1="Norma Regulamentadora 01 (NR-01): PGR, GRO e riscos psicossociais"
+      intro="A Norma Regulamentadora 01 organiza as disposições gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, os fatores de risco psicossociais relacionados ao trabalho precisam entrar expressamente nessa leitura. Veja como revisar a rotina da empresa sem confundir obrigação com checklist genérico."
       sections={[
         {
-          title: 'O que é a NR-01 (em uma frase)',
+          title: 'O que é a Norma Regulamentadora 01 (NR-01)',
           body: (
             <>
               <p>
-                A NR-01 estabelece as disposições gerais sobre Segurança e Saúde no Trabalho e exige que toda empresa elabore o <strong>PGR — Programa de Gerenciamento de Riscos</strong>. É o documento que identifica, avalia e define como controlar os riscos ocupacionais da operação. Sem PGR válido, a empresa fica exposta a multa, autuação e responsabilização em caso de acidente.
+                A NR-01 estabelece as disposições gerais sobre Segurança e Saúde no Trabalho e estrutura o <strong>GRO — Gerenciamento de Riscos Ocupacionais</strong>. Como regra, esse gerenciamento precisa ser materializado em um <strong>PGR — Programa de Gerenciamento de Riscos</strong>, com inventário de riscos e plano de ação coerentes com a operação.
               </p>
             </>
           ),
@@ -51,7 +51,7 @@ export default function NR01Page() {
           body: (
             <>
               <p>
-                A grande mudança é a inclusão obrigatória dos <strong>riscos psicossociais</strong> no PGR. Até a atualização, o PGR cobria principalmente riscos físicos, químicos, biológicos, ergonômicos e de acidente. A nova redação exige que a empresa também identifique e gerencie:
+                A mudança mais recente é a inclusão expressa dos <strong>fatores de risco psicossociais relacionados ao trabalho</strong> no GRO. A análise precisa considerar fatores que possam afetar a saúde mental dos trabalhadores, como:
               </p>
               <ul>
                 <li>Carga mental excessiva</li>
@@ -72,10 +72,10 @@ export default function NR01Page() {
           body: (
             <>
               <p>
-                Toda empresa com pelo menos um empregado regido pela CLT precisa ter PGR atualizado. Empresas grau de risco 1 ou 2 com até 20 funcionários têm um regime simplificado, mas não estão dispensadas. Microempresas e MEIs sem empregados continuam fora.
+                Como regra, organizações com empregados precisam manter o gerenciamento de riscos ocupacionais coerente com a operação. A NR-01 prevê tratamentos simplificados e hipóteses específicas de dispensa de elaboração do PGR: o MEI é dispensado de elaborar o programa, e determinadas ME e EPP de grau de risco 1 ou 2 também podem ser dispensadas quando prestam as informações digitais e não identificam exposições ocupacionais a agentes físicos, químicos e biológicos.
               </p>
               <p>
-                Sobre os riscos psicossociais especificamente, a nova redação entrou em vigor em <strong>26 de maio de 2026</strong>. A empresa deve avaliar se o PGR atual identifica fatores de risco psicossociais relacionados ao trabalho e se o plano de ação precisa ser atualizado. A fiscalização e eventual responsabilização dependem da situação concreta.
+                Essas dispensas não significam ausência de responsabilidade em SST. Sobre os fatores psicossociais especificamente, a nova redação entrou em vigor em <strong>26 de maio de 2026</strong>. A empresa deve avaliar se o GRO e, quando aplicável, o PGR identificam fatores relacionados ao trabalho e se o plano de ação precisa ser atualizado.
               </p>
             </>
           ),
@@ -135,7 +135,7 @@ export default function NR01Page() {
         },
       ]}
       sidebarTitle="PGR atualizado, com riscos psicossociais?"
-      sidebarHook="A SERMST faz auditoria gratuita do seu PGR atual. Se estiver desatualizado, mostramos exatamenté o que precisa ser revisto — sem compromisso."
+      sidebarHook="A SERMST faz auditoria gratuita do seu PGR atual. Se estiver desatualizado, mostramos exatamente o que precisa ser revisto — sem compromisso."
       sidebarCtaLabel="Auditar meu PGR"
       sidebarCtaHref="/contato"
       related={[

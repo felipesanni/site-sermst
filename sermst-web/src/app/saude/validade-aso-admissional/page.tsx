@@ -96,7 +96,7 @@ export default function ValidadeAsoPage() {
                 <li><strong>ASO Periódico</strong> — durante o vínculo, conforme cronograma do PCMSO. Periodicidade varia pelo grau de risco e pela idade do trabalhador.</li>
                 <li><strong>ASO de Retorno ao Trabalho</strong> — após afastamento por acidente, doença ou parto.</li>
                 <li><strong>ASO de Mudança de Função</strong> — quando o colaborador muda de cargo com risco diferente.</li>
-                <li><strong>ASO Demissional</strong> — antes da homologação da rescisão contratual.</li>
+                <li><strong>ASO demissional</strong> — exame clínico em até 10 dias contados do término do contrato, observadas as hipóteses de dispensa previstas na NR-07.</li>
               </ul>
             ),
           },

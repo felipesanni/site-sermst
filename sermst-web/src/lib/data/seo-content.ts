@@ -48,6 +48,19 @@ export interface Localidade {
   diferencialLocal?: string;
 }
 
+export interface DicionarioDetail {
+  respostaCurta: string;
+  ondeAparece: string;
+  naoConfunda: string;
+  aprofundamento: {
+    href: string;
+    title: string;
+    description: string;
+    label: string;
+  };
+  faq: FAQItem[];
+}
+
 export const localidades: Localidade[] = [
   {
     nome: "São Paulo",
@@ -336,17 +349,17 @@ export const servicosSEO: Record<string, SEODocument> = {
     fluxoCorporativo: [
       "Diagnóstico e visita do médico do trabalho",
       "Elaboração do cronograma de exames",
-      "Assinatura do coordenador e entrega digital",
+      "Assinatura do médico responsável e entrega digital",
     ],
     quandoRequerido:
-      "O PCMSO é obrigatório para empresas com empregados CLT e funciona como o eixo médico da NR-07. E ele que define quais exames cada trabalhador deve realizar de acordo com os riscos identificados na operação.",
+      "Como regra, organizações com empregados CLT precisam elaborar e implantar o PCMSO, que funciona como o eixo médico da NR-07. A própria NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP de grau de risco 1 ou 2, sem eliminar exames ocupacionais nem ASO.",
     content: {
       dor:
         "PCMSO genérico, desconectado da operação e mal alinhado ao risco do cargo abre espaco para exames inadequados, falhas em S-2220, insegurança jurídica e passivos ocupacionais.",
       solucao:
         "A SERMST trabalha com assessoria médica real, leitura do processo produtivo e construcao de um programa de saúde ocupacional que protege a empresa tecnicamente, operacionalmente e juridicamente.",
       beneficios: [
-        "Coordenacao por médicos do trabalho especialistas",
+        "Responsabilidade técnica médica definida",
         "Integração total com PGR e eSocial",
         "Cronograma de exames coerente com os riscos da função",
         "Segurança jurídica contra doenças ocupacionais",
@@ -361,11 +374,11 @@ export const servicosSEO: Record<string, SEODocument> = {
       faq: [
         {
           q: "O que é o PCMSO?",
-          a: "E o Programa de Controle Médico de Saúde Ocupacional, obrigatório para prevenir, monitorar e registrar a saúde do trabalhador conforme os riscos da empresa.",
+          a: "E o Programa de Controle Médico de Saúde Ocupacional previsto na NR-07. Ele organiza o monitoramento da saúde dos empregados conforme os riscos ocupacionais da empresa.",
         },
         {
           q: "Quem assina o PCMSO?",
-          a: "O PCMSO deve ser assinado por médico do trabalho responsável pela coordenação do programa.",
+          a: "A organização deve indicar médico do trabalho responsável pelo PCMSO. Se não houver médico do trabalho na localidade, a NR-07 admite médico de outra especialidade como responsável pelo programa.",
         },
       ],
     },
@@ -794,22 +807,22 @@ export const saudeSEO: Record<string, SEODocument> = {
     "Gestão de SST bem feita é cíclica: identifica risco â†’ atualiza PGR â†’ ajusta PCMSO â†’ documenta treinamento â†’ envia eSocial â†’ audita. Cada etapa alimenta a próxima.",
   ),
   "pcmso-programa-controle-medico": saudeEntry(
-    "PCMSO: o que é, quem precisa e como montar o programa",
-    "O PCMSO define quais exames cada trabalhador precisa fazer e com qual frequência, por cargo e por risco. Sem ele válido, a empresa não tem base para os ASOs nem para o S-2220 no eSocial.",
-    "PCMSO genérico, desatualizado ou assinado por médico sem especialização em medicina do trabalho não sustenta fiscalização — e elimina a proteção que o documento deveria oferecer.",
-    "PCMSO correto é personalizado: reflete os riscos reais de cada cargo, define os exames e periodicidades corretos, e está alinhado com o PGR e com os eventos de SST do eSocial.",
+    "PCMSO: o que é, validade e quem precisa elaborar",
+    "O PCMSO organiza o monitoramento da saúde ocupacional conforme os riscos de cada função. A NR-07 prevê cenários específicos de dispensa para pequenos negócios, sem eliminar exames nem ASO.",
+    "PCMSO genérico ou desatualizado não reflete a operação real, fragiliza a vigilância médica e pode gerar inconsistências nos eventos de SST.",
+    "PCMSO correto é personalizado: reflete riscos reais, define exames e periodicidades coerentes e permanece alinhado com PGR e eSocial.",
   ),
   "aso-atestado-saude-ocupacional": saudeEntry(
     "ASO: o que é, quando emitir e por que protege a empresa",
     "O Atestado de Saúde Ocupacional é a evidência jurídica de que a empresa avaliou a saúde do trabalhador. Sem ASO válido, qualquer doença futura pode ser atribuída ao período de trabalho.",
     "ASO feito fora do prazo, com campos faltando, ou por médico não habilitado não protege a empresa — mesmo que o exame tenha sido realizado. O documento precisa estar correto em forma e conteúdo.",
-    "ASO correto tem: médico coordenador do PCMSO assinando, todos os campos preenchidos, via entregue ao trabalhador e envio do S-2220 ao eSocial dentro do prazo.",
+    "ASO correto tem: dados do médico responsável pelo PCMSO, quando houver, assinatura do médico que realizou o exame clínico, campos preenchidos, disponibilização ao trabalhador e envio do S-2220 ao eSocial dentro do prazo.",
   ),
   "medicina-do-trabalho-guia": saudeEntry(
     "Medicina do Trabalho: o que é e o que toda empresa precisa saber",
     "Medicina do trabalho conecta saúde do trabalhador, segurança jurídica da empresa e conformidade com o eSocial. Quando bem estruturada, reduz afastamento, processo trabalhista e custo escondido.",
     "A maioria das empresas trata medicina do trabalho como burocracia pontual — faz exame admissional e esquece. O resultado aparece no processo trabalhista, no afastamento longo ou na autuação do MTE.",
-    "Medicina do trabalho bem estruturada é preventiva: PCMSO alinhado com o PGR, exames no prazo, ASOs corretos, eSocial em dia e médico coordenador que acompanha a operação.",
+    "Medicina do trabalho bem estruturada é preventiva: PCMSO alinhado com o PGR, exames no prazo, ASOs corretos, eSocial em dia e responsabilidade técnica médica definida.",
   ),
   "insalubridade-o-que-e-adicional": saudeEntry(
     "Insalubridade: o que e, quem tem direito, adicional e calculo",
@@ -858,10 +871,10 @@ export const dicionarioSEO: Record<string, SEODocument> = {
     "Entender o ASO no contexto certo ajuda a ligar exame, PCMSO, eSocial e responsabilidade da empresa sem confundir com atestado médico comum.",
   ),
   "o-que-e-pcmso": dicionarioEntry(
-    "O que é PCMSO: significado do programa de controle médico",
-    "PCMSO é o Programa de Controle Médico de Saúde Ocupacional. Ele define quais exames cada cargo precisa realizar e com qual periodicidade.",
-    "Quando o RH não entende o que é PCMSO, o programa vira arquivo parado e a empresa perde o controle sobre exames, ASOs e prazos do eSocial.",
-    "Com a definição certa, fica mais fácil enxergar o PCMSO como base da vigilância médica ocupacional, e não como documento burocrático isolado.",
+    "O que é PCMSO? Significado da sigla e para que serve",
+    "PCMSO significa Programa de Controle Médico de Saúde Ocupacional. Previsto na NR-07, ele organiza o monitoramento da saúde dos empregados conforme os riscos ocupacionais.",
+    "A sigla PCMSO aparece em exames admissionais, ASOs, rotinas do RH e documentos de SST. Entender seu significado ajuda a não confundir o programa com uma simples lista padronizada de exames.",
+    "O PCMSO conecta os riscos ocupacionais identificados no PGR ao planejamento médico da empresa. Para entender validade, obrigatoriedade, dispensa e estrutura do programa, consulte o guia completo de PCMSO.",
   ),
   "o-que-e-pgr": dicionarioEntry(
     "O que é PGR: significado do programa de gerenciamento de riscos",
@@ -884,9 +897,143 @@ export const dicionarioSEO: Record<string, SEODocument> = {
 };
 
 dicionarioSEO["o-que-e-ltcat"].seoTitle =
-  "O que e LTCAT? Significado e para que serve | SERMST";
+  "O que é LTCAT? Significado e para que serve | SERMST";
 dicionarioSEO["o-que-e-ppp"].seoTitle =
-  "O que e PPP? Significado e para que serve | SERMST";
+  "O que é PPP? Significado e para que serve | SERMST";
+dicionarioSEO["o-que-e-pcmso"].seoTitle =
+  "O que é PCMSO? Significado da sigla e para que serve | SERMST";
+dicionarioSEO["o-que-e-aso"].seoTitle =
+  "O que é ASO? Significado e para que serve | SERMST";
+dicionarioSEO["o-que-e-pgr"].seoTitle =
+  "O que é PGR? Significado e para que serve | SERMST";
+
+export const dicionarioDetails: Record<string, DicionarioDetail> = {
+  "o-que-e-aso": {
+    respostaCurta:
+      "ASO significa Atestado de Saúde Ocupacional. É o documento emitido após o exame ocupacional para registrar se o trabalhador está apto ou inapto para exercer determinada função.",
+    ondeAparece:
+      "O RH encontra o ASO na admissão, nos exames periódicos, no retorno ao trabalho, na mudança de risco ocupacional e no desligamento. O documento também sustenta o envio das informações de monitoramento da saúde ao eSocial.",
+    naoConfunda:
+      "ASO não é atestado médico comum. O atestado comum normalmente justifica uma ausência por motivo de saúde. O ASO registra a conclusão de aptidão ocupacional para uma função e considera os riscos relacionados ao trabalho.",
+    aprofundamento: {
+      href: "/saude/aso-atestado-saude-ocupacional",
+      title: "Precisa entender tipos de ASO, campos obrigatórios e eSocial?",
+      description:
+        "Veja quando cada exame ocupacional deve ocorrer, o que precisa constar no ASO e como o documento se conecta ao evento S-2220.",
+      label: "Ler guia completo de ASO",
+    },
+    faq: [
+      {
+        q: "O que significa ASO?",
+        a: "ASO significa Atestado de Saúde Ocupacional.",
+      },
+      {
+        q: "ASO e atestado médico são a mesma coisa?",
+        a: "Não. O ASO registra aptidão ocupacional para uma função. O atestado médico comum costuma justificar ausência por motivo de saúde.",
+      },
+    ],
+  },
+  "o-que-e-pcmso": {
+    respostaCurta:
+      "PCMSO significa Programa de Controle Médico de Saúde Ocupacional. Previsto na NR-07, ele organiza o planejamento médico e o monitoramento da saúde dos empregados conforme os riscos ocupacionais.",
+    ondeAparece:
+      "O PCMSO aparece quando a empresa precisa definir exames admissionais, periódicos, de retorno, de mudança de risco e demissionais. Ele também precisa conversar com o PGR, com os ASOs e com os eventos de SST enviados ao eSocial.",
+    naoConfunda:
+      "PCMSO não é uma lista padrão de exames. O programa precisa refletir os riscos reais da organização. A NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP, sem eliminar exames ocupacionais nem ASO.",
+    aprofundamento: {
+      href: "/saude/pcmso-programa-controle-medico",
+      title: "Precisa entender validade, obrigatoriedade ou dispensa do PCMSO?",
+      description:
+        "Veja quem precisa elaborar o programa, quando pode haver dispensa prevista na NR-07 e como funciona a validade do PCMSO.",
+      label: "Ler guia completo de PCMSO",
+    },
+    faq: [
+      {
+        q: "O que significa PCMSO?",
+        a: "PCMSO significa Programa de Controle Médico de Saúde Ocupacional.",
+      },
+      {
+        q: "Dispensa de PCMSO elimina os exames ocupacionais?",
+        a: "Não. Mesmo quando a dispensa de elaboração se aplica, os exames ocupacionais e a emissão do ASO continuam obrigatórios.",
+      },
+    ],
+  },
+  "o-que-e-pgr": {
+    respostaCurta:
+      "PGR significa Programa de Gerenciamento de Riscos. Previsto na NR-01, ele organiza a identificação dos perigos, a avaliação dos riscos ocupacionais e o plano de ação da empresa.",
+    ondeAparece:
+      "O PGR aparece na rotina de prevenção, em auditorias, fiscalizações e na revisão dos documentos de SST. Ele orienta medidas de controle e serve de base para alinhar treinamentos, PCMSO e informações ocupacionais.",
+    naoConfunda:
+      "PGR não é apenas um arquivo pronto nem um novo nome para qualquer documento antigo. Ele precisa refletir a operação real da empresa e ser atualizado quando os riscos, processos ou medidas de prevenção mudarem.",
+    aprofundamento: {
+      href: "/normas/nr-01-pgr-atualizada",
+      title: "Precisa entender obrigatoriedade, inventário de riscos e plano de ação?",
+      description:
+        "Veja como a NR-01 estrutura o PGR, quando revisar o documento e como ele se conecta ao restante da gestão de SST.",
+      label: "Ler guia completo de PGR",
+    },
+    faq: [
+      {
+        q: "O que significa PGR?",
+        a: "PGR significa Programa de Gerenciamento de Riscos.",
+      },
+      {
+        q: "PGR substituiu o PPRA?",
+        a: "O gerenciamento de riscos ocupacionais da NR-01 passou a ser estruturado pelo PGR. A empresa precisa analisar a operação atual, e não apenas trocar o nome de um documento antigo.",
+      },
+    ],
+  },
+  "o-que-e-ltcat": {
+    respostaCurta:
+      "LTCAT significa Laudo Técnico das Condições Ambientais do Trabalho. É o documento previdenciário usado para caracterizar a exposição a agentes nocivos e sustentar informações relacionadas ao PPP e à aposentadoria especial.",
+    ondeAparece:
+      "O LTCAT aparece quando a empresa precisa documentar exposições ocupacionais com base técnica, revisar o PPP, sustentar dados do eSocial S-2240 ou analisar possíveis enquadramentos previdenciários.",
+    naoConfunda:
+      "LTCAT não é o mesmo que PGR nem laudo de insalubridade. Os documentos podem conversar entre si, mas possuem finalidades diferentes: gestão de riscos, enquadramento trabalhista e base previdenciária não são a mesma coisa.",
+    aprofundamento: {
+      href: "/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo",
+      title: "Precisa elaborar ou revisar o LTCAT da empresa?",
+      description:
+        "Conheça o escopo técnico do LTCAT, sua relação com PPP e S-2240 e como a SERMST estrutura a avaliação previdenciária.",
+      label: "Ver página completa de LTCAT",
+    },
+    faq: [
+      {
+        q: "O que significa LTCAT?",
+        a: "LTCAT significa Laudo Técnico das Condições Ambientais do Trabalho.",
+      },
+      {
+        q: "LTCAT e laudo de insalubridade são iguais?",
+        a: "Não. O LTCAT tem finalidade previdenciária. A insalubridade trabalhista segue critérios próprios, embora as avaliações técnicas possam se relacionar.",
+      },
+    ],
+  },
+  "o-que-e-ppp": {
+    respostaCurta:
+      "PPP significa Perfil Profissiográfico Previdenciário. É o documento que consolida o histórico laboral do trabalhador, suas atividades e as informações sobre exposição a agentes nocivos para fins previdenciários.",
+    ondeAparece:
+      "O PPP aparece em pedidos previdenciários, desligamentos, auditorias e revisões do histórico de exposição. No fluxo atual, suas informações se conectam aos dados ambientais enviados ao eSocial, especialmente pelo evento S-2240.",
+    naoConfunda:
+      "PPP não é um laudo técnico. Ele consolida informações que precisam ter base consistente em documentos como o LTCAT e nos registros da empresa. Se os documentos contam histórias diferentes, a inconsistência aparece.",
+    aprofundamento: {
+      href: "/normas/ppp-eletronico",
+      title: "Precisa entender PPP eletrônico, S-2240 e responsabilidades?",
+      description:
+        "Veja como o PPP funciona, quais informações entram no documento e por que LTCAT, PGR e eSocial precisam estar alinhados.",
+      label: "Ler guia completo de PPP",
+    },
+    faq: [
+      {
+        q: "O que significa PPP?",
+        a: "PPP significa Perfil Profissiográfico Previdenciário.",
+      },
+      {
+        q: "PPP e LTCAT são a mesma coisa?",
+        a: "Não. O PPP consolida o histórico laboral e previdenciário do trabalhador. O LTCAT fornece base técnica para caracterizar exposições a agentes nocivos.",
+      },
+    ],
+  },
+};
 
 export const rhDoresSEO: Record<string, SEODocument> = {
   "multa-esocial-s2220": {

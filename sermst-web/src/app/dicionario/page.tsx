@@ -41,7 +41,7 @@ export default function DicionarioIndexPage() {
               <h1 className="h1-standard text-brand-900 tracking-tighter">Dicionário de SST</h1>
             </div>
             <p className="text-xl text-slate-600 max-w-3xl leading-relaxed font-medium">
-              Glossário para traduzir a linguagem técnica da medicina e segurança do trabalho em conteúdo claro para empresas, RH e gestores.
+              Respostas rápidas para entender siglas e termos de SST, com links para guias completos quando você precisar aprofundar o assunto.
             </p>
           </FadeIn>
         </div>
@@ -55,14 +55,14 @@ export default function DicionarioIndexPage() {
                 Para gestores e RH
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-brand-900 mb-6">
-                Entender o termo certo acelera a decisão certa
+                Primeiro a resposta direta. Depois, o aprofundamento.
               </h2>
               <div className="space-y-5 text-lg leading-relaxed text-slate-700">
                 <p>
                   Quem busca o significado de ASO, PCMSO, PGR ou outros termos de SST geralmente não está apenas estudando. Está tentando resolver um problema real da empresa, entender uma exigência legal ou ganhar clareza antes de falar com um fornecedor.
                 </p>
                 <p>
-                  Por isso este dicionário não para na definição. Cada termo é apresentado com o contexto da rotina ocupacional, com indicação de quando ele aparece na prática e por que importa para a empresa.
+                  Por isso este dicionário começa com uma resposta curta, mostra onde o termo aparece na prática e diferencia conceitos que costumam ser confundidos. Quando o tema exige mais profundidade, cada verbete aponta para um guia específico.
                 </p>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function DicionarioIndexPage() {
                 </h3>
                 <p className="text-slate-500 text-sm mb-10 flex-grow line-clamp-3">{termo.hook}</p>
                 <p className="text-sm text-slate-500 font-semibold mb-6">
-                  Definição com contexto real de RH, eSocial, exames e documentação obrigatória.
+                  Resposta rápida, contexto prático e caminho para aprofundar o tema.
                 </p>
                 <div className="mt-auto flex items-center gap-2 text-brand-900 font-bold text-xs uppercase tracking-[0.2em] group-hover:gap-4 transition-all">
                   Ler definição

@@ -1,10 +1,9 @@
 ﻿import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { dicionarioSEO } from '@/lib/data/seo-content';
+import { dicionarioDetails, dicionarioSEO } from '@/lib/data/seo-content';
 import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
-import { BookOpen, Info, ShieldCheck, ArrowRight } from 'lucide-react';
-import { buildFrequentFaqs } from '@/lib/faq';
+import { BookOpen, Info, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 export function generateStaticParams() {
@@ -34,11 +33,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function DicionarioPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const data = dicionarioSEO[slug];
-  if (!data) notFound();
-  const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {
-    context: 'dicionario',
-    topic: data.h1,
-  });
+  const detail = dicionarioDetails[slug];
+  if (!data || !detail) notFound();
 
   return (
     <article className="min-h-screen bg-white">
@@ -49,7 +45,7 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
             <FadeIn direction="down">
               <span className="inline-flex items-center gap-2 bg-brand-500/10 text-brand-500 font-black px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-8">
                 <BookOpen className="w-4 h-4" />
-                Dicionario SST
+                Dicionário SST
               </span>
               <h1 className="h1-standard mb-8 text-brand-900 tracking-tighter leading-[0.95]">
                 {data.h1}
@@ -67,37 +63,39 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
           <div className="lg:col-span-8">
             <FadeIn delay={0.2}>
               <div className="prose prose-lg prose-slate max-w-none">
-                <h2 className="text-brand-900 font-black">Definição e aplicação prática</h2>
-                <p className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-lg leading-relaxed shadow-inner italic">
-                  {data.content.dor}
-                </p>
-
-                <div className="my-12">
-                  <h3 className="font-black text-brand-900">Contexto técnico</h3>
-                  <p>{data.content.solucao}</p>
-                  <p>
-                    Mais importante que a definição é entender em que situação esse termo aparece na rotina da empresa, por que ele importa para o RH, para o financeiro e para a operação, e como se conecta com SST, eSocial, exame ocupacional, documentação obrigatória e risco jurídico.
+                <div className="rounded-2xl border border-brand-900/10 bg-slate-50 p-8 shadow-sm">
+                  <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                    Resposta rápida
+                  </span>
+                  <p className="m-0 text-xl font-medium leading-relaxed text-brand-900">
+                    {detail.respostaCurta}
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 my-10">
-                  <div className="bg-brand-900 text-white p-8 rounded-2xl shadow-xl">
-                    <h4 className="text-accent-pink font-black uppercase text-xs mb-4">Pilares do termo</h4>
-                    <ul className="space-y-3 p-0 m-0 list-none">
-                      {data.content.beneficios.map((ben, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm">
-                          <span className="text-accent-pink">+</span>
-                          {ben}
-                        </li>
-                      ))}
-                    </ul>
+                <div className="my-10 grid gap-6 md:grid-cols-2">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-7">
+                    <h2 className="mt-0 text-xl font-black text-brand-900">Onde aparece na prática</h2>
+                    <p className="mb-0 text-base leading-relaxed text-slate-700">{detail.ondeAparece}</p>
                   </div>
-                  <div className="bg-white border-2 border-brand-900 p-8 rounded-2xl flex flex-col justify-center">
-                    <ShieldCheck className="w-10 h-10 text-brand-900 mb-6" />
-                    <p className="text-brand-900 font-bold mb-0 leading-tight">
-                      &quot;{data.geoOpt.expertQuote.text}&quot;
-                    </p>
+                  <div className="rounded-2xl border border-slate-200 bg-white p-7">
+                    <h2 className="mt-0 text-xl font-black text-brand-900">Não confunda</h2>
+                    <p className="mb-0 text-base leading-relaxed text-slate-700">{detail.naoConfunda}</p>
                   </div>
+                </div>
+
+                <div className="my-12 rounded-2xl border border-accent-pink/20 bg-accent-pink/5 p-8">
+                  <div className="mb-4 flex items-center gap-3 text-accent-pink">
+                    <CheckCircle2 className="h-5 w-5" />
+                    <span className="text-xs font-black uppercase tracking-[0.2em]">Aprofunde o tema</span>
+                  </div>
+                  <h2 className="mt-0 text-2xl font-black text-brand-900">
+                    {detail.aprofundamento.title}
+                  </h2>
+                  <p>{detail.aprofundamento.description}</p>
+                  <Link href={detail.aprofundamento.href} className="btn-primary-safe no-underline">
+                    {detail.aprofundamento.label}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </FadeIn>
@@ -108,7 +106,7 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
               <Info className="w-8 h-8 text-accent-pink mb-6" />
               <h3 className="font-black text-xl mb-8">Dúvidas sobre este termo?</h3>
               <div className="space-y-8">
-                {frequentFaqs.map((faq, idx) => (
+                {detail.faq.map((faq, idx) => (
                   <div key={idx}>
                     <span className="block font-bold text-accent-pink text-sm mb-2 uppercase">{faq.q}</span>
                     <p className="text-sm text-slate-300 leading-relaxed">{faq.a}</p>

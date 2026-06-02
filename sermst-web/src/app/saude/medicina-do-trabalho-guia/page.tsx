@@ -56,13 +56,13 @@ export default function MedicinaDoTrabalhoPage() {
           body: (
             <>
               <p>
-                A <strong>NR-07</strong> é a norma central da medicina do trabalho. Ela determina que toda empresa com empregados CLT deve:
+                A <strong>NR-07</strong> é a norma central da medicina do trabalho. Como regra, as organizações com empregados CLT devem:
               </p>
               <ul>
-                <li>Elaborar e implementar o PCMSO, sob responsabilidade de médico do trabalho coordenador</li>
+                <li>Elaborar e implementar o PCMSO, sob responsabilidade do médico indicado para o programa</li>
                 <li>Realizar os exames ocupacionais previstos (admissional, periódico, retorno, mudança de função, demissional)</li>
-                <li>Emitir ASO ao fim de cada exame, com entrega de via ao trabalhador</li>
-                <li>Registrar os resultados dos exames e fazer relatório anual do PCMSO</li>
+                <li>Emitir ASO ao fim de cada exame clínico ocupacional e disponibilizá-lo de forma comprovável ao trabalhador</li>
+                <li>Registrar os resultados dos exames e elaborar o relatório analítico anual do PCMSO</li>
                 <li>Enviar os eventos de SST correspondentes ao eSocial (S-2220, principalmente)</li>
               </ul>
               <p>
@@ -79,7 +79,7 @@ export default function MedicinaDoTrabalhoPage() {
                 O médico clínico trata o paciente. O <strong>médico do trabalho avalia a aptidão</strong> do trabalhador para exercer uma função específica, considerando os riscos daquela atividade e o estado de saúde atual da pessoa.
               </p>
               <p>
-                Isso tem implicação direta para a empresa: só o médico do trabalho pode assinar o ASO. Só o médico com especialização pode coordenar o PCMSO. Documentos assinados por médicos sem essa qualificação são tecnicamente inválidos — o que significa que a empresa pode estar com toda a papelada em ordem e ainda assim sem proteção legal.
+                Isso tem implicação direta para a empresa: o ASO precisa registrar os dados do médico responsável pelo PCMSO, quando houver, e a assinatura do médico que realizou o exame clínico. Para o PCMSO, a organização deve indicar médico do trabalho responsável; se não houver esse profissional na localidade, a NR-07 admite médico de outra especialidade.
               </p>
             </>
           ),
@@ -119,13 +119,13 @@ export default function MedicinaDoTrabalhoPage() {
           title: 'Como estruturar medicina do trabalho na prática',
           body: (
             <ol>
-              <li><strong>Contratar médico coordenador de PCMSO</strong> — com especialização em medicina do trabalho ou título ANAMT. Esse é o ponto de partida.</li>
+              <li><strong>Indicar médico responsável pelo PCMSO</strong> — a organização deve indicar médico do trabalho; se não houver esse profissional na localidade, a NR-07 admite médico de outra especialidade.</li>
               <li><strong>Fazer o PGR</strong> — identificação de riscos por cargo, base do PCMSO.</li>
               <li><strong>Elaborar o PCMSO</strong> — com o médico, baseado nos riscos mapeados. Definir exames e periodicidade por cargo.</li>
               <li><strong>Executar os exames</strong> — admissionais antes de contratar, periódicos no prazo, demissionais antes de encerrar o vínculo.</li>
-              <li><strong>Emitir e arquivar ASOs</strong> — com entrega de via ao trabalhador e envio do S-2220 ao eSocial.</li>
+              <li><strong>Emitir e arquivar ASOs</strong> — com disponibilização comprovável ao trabalhador e envio das informações aplicáveis ao S-2220.</li>
               <li><strong>Monitorar vencimentos</strong> — sistema de alerta para periódicos próximos do vencimento. Manter tabela atualizada por cargo.</li>
-              <li><strong>Relatório anual do PCMSO</strong> — análise dos exames realizados no ano, tendências, propostas de melhoria.</li>
+              <li><strong>Relatório analítico anual do PCMSO</strong> — análise dos exames realizados no ano, tendências e propostas de melhoria.</li>
             </ol>
           ),
         },
@@ -133,15 +133,15 @@ export default function MedicinaDoTrabalhoPage() {
       faq={[
         {
           q: 'Médico clínico pode assinar ASO?',
-          a: 'Pode realizar o exame clínico, mas o ASO precisa ser referendado pelo médico coordenador do PCMSO, que deve ter especialização em medicina do trabalho. Sem esse referendo, o ASO é tecnicamente inválido.',
+          a: 'O ASO deve conter os dados do médico responsável pelo PCMSO, quando houver, além da data, do registro profissional e da assinatura do médico que realizou o exame clínico.',
         },
         {
           q: 'Empresa MEI ou microempresa precisa de medicina do trabalho?',
-          a: 'MEI sem empregados, não. Assim que contratar o primeiro empregado CLT, passa a ser obrigada pela NR-07 — independente do porte. Microempresa com 1 funcionário precisa de PCMSO e de exames ocupacionais.',
+          a: 'Os exames ocupacionais continuam obrigatórios quando há empregados. A NR-07 prevê dispensa de elaboração do PCMSO para alguns MEI, ME e EPP de grau de risco 1 ou 2 que atendem aos critérios aplicáveis e prestam as informações digitais previstas na NR-01.',
         },
         {
           q: 'Medicina do trabalho terceirizada tem a mesma validade legal?',
-          a: 'Sim. A NR-07 não exige que o médico coordenador seja funcionário da empresa. O serviço pode ser contratado junto a uma clínica especializada. O que importa é que o profissional tenha a qualificação exigida e assuma a responsabilidade técnica formalmente.',
+          a: 'Sim. O serviço pode ser contratado junto a uma clínica especializada. A organização continua responsável por garantir a elaboração e a efetiva implantação do PCMSO quando ele for exigido.',
         },
         {
           q: 'A empresa pode ser autuada mesmo tendo todos os exames em dia?',
@@ -153,7 +153,7 @@ export default function MedicinaDoTrabalhoPage() {
         },
       ]}
       sidebarTitle="Sua medicina do trabalho está cobrindo o que a lei exige?"
-      sidebarHook="A SERMST estrutura e executa a medicina do trabalho da sua empresa: PCMSO, ASOs, exames, eSocial. Com médico coordenador especializado e fluxo que não trava contratação."
+      sidebarHook="A SERMST estrutura e executa a medicina do trabalho da sua empresa: PCMSO, ASOs, exames e eSocial, com responsabilidade técnica definida e fluxo que não trava contratação."
       sidebarCtaLabel="Estruturar medicina do trabalho"
       related={[
         { label: 'PCMSO: o programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },

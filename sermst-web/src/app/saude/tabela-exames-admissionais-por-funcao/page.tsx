@@ -139,7 +139,7 @@ export default function TabelaExamesFuncaoPage() {
             body: (
               <>
                 <p>
-                  Não existe uma lista nacional única de "exames obrigatórios por cargo". O que existe é o <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong>, elaborado pelo médico do trabalho, que define quais exames complementares cada função da empresa precisa realizar com base nos riscos identificados no PGR.
+                  Não existe uma lista nacional única de &quot;exames obrigatórios por cargo&quot;. O que existe é o <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong>, elaborado pelo médico responsável, que define quais exames complementares cada função da empresa precisa realizar com base nos riscos identificados no PGR.
                 </p>
                 <p>
                   A tabela abaixo é uma referência dos exames mais praticados por tipo de função — não substitui o PCMSO da sua empresa. Cargos com exposição a agentes específicos (ruído, produtos químicos, vibração, risco biológico) podem ter exigências adicionais.
