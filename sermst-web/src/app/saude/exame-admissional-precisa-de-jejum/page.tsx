@@ -158,6 +158,7 @@ export default function ExameAdmissionalJejumPage() {
         sidebarHook="A SERMST realiza exames admissionais com laboratório próprio e emite o ASO no mesmo dia. Oriente o candidato corretamente e evite atrasos na admissão."
         sidebarCtaLabel="Solicitar exame admissional"
         related={[
+          { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
           { label: 'Tabela de exames por função', href: '/saude/tabela-exames-admissionais-por-funcao' },
           { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },

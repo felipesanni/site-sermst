@@ -133,6 +133,7 @@ export default function ClinicaExameAdmissionalPage() {
       sidebarCtaLabel="Solicitar atendimento admissional"
       sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
+        { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
         { label: 'Exame admissional expresso em São Paulo', href: '/servicos/exame-admissional-expresso/sao-paulo' },
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },

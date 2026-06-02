@@ -180,6 +180,7 @@ export default function ValorExameAdmissionalPage() {
         sidebarHook="Empresas com contrato corporativo acessam tarifas a partir de R$ 70,00 por exame admissional, com ASO no mesmo dia, laboratório próprio e integração com o eSocial."
         sidebarCtaLabel="Solicitar orçamento"
         related={[
+          { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Tabela de exames por função e cargo', href: '/saude/tabela-exames-admissionais-por-funcao' },
           { label: 'Exame admissional precisa de jejum?', href: '/saude/exame-admissional-precisa-de-jejum' },
           { label: 'Validade do ASO admissional', href: '/saude/validade-aso-admissional' },

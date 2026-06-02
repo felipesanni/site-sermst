@@ -145,13 +145,12 @@ const nextConfig: NextConfig = {
       { source: "/medicina-do-trabalho/como-fazer-uma-carta-de-demissao-guia-completo-para-profissionais", destination: "/rh/carta-demissao", permanent: true },
       { source: "/medicina-do-trabalho/gestao-de-sst-a-chave-para-um-ambiente-de-trabalho-seguro-e-saudavel", destination: "/saude/gestao-sst", permanent: true },
       { source: "/medicina-do-trabalho/esocial-sst-mudou", destination: "/rh/multa-esocial-s2220", permanent: true },
-      { source: "/medicina-do-trabalho/como-funciona-o-exame-admissional-tudo-o-que-voce-precisa-saber", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
+      { source: "/medicina-do-trabalho/como-funciona-o-exame-admissional-tudo-o-que-voce-precisa-saber", destination: "/exames/como-funciona-o-exame-admissional", permanent: true },
       { source: "/medicina-do-trabalho/nr-07-tudo-o-que-voce-precisa-saber-sobre-o-controle-medico-de-saude-ocupacional", destination: "/normas/o-que-e-nr-07", permanent: true },
       { source: "/medicina-do-trabalho/nr-1-atualizada", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/uncategorized/nr-1-atualizada", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/exames/funcao-encarregado-responsabilidades-e-perfil-ideal", destination: "/rh/funcao-encarregado", permanent: true },
       { source: "/exames/o-que-um-gerente-faz-funcoes-responsabilidades", destination: "/rh/o-que-um-gerente-faz", permanent: true },
-      { source: "/exames/como-funciona-o-exame-admissional", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/exames/como-funciona-exame-demissional", destination: "/saude/exame-demissional-guia", permanent: true },
       { source: "/exames/como-fazer-uma-carta-de-demissao", destination: "/rh/carta-demissao", permanent: true },
       { source: "/exames/quando-demitir-um-funcionario-guia-completo-para-gestores", destination: "/rh/quando-demitir-funcionario", permanent: true },
@@ -270,7 +269,7 @@ const nextConfig: NextConfig = {
       { source: "/exames/como-desenvolver-lideres-eficazes", destination: "/rh/treinamento-gerentes", permanent: true },
 
       // -- Posts /sao-paulo/ ausentes --
-      { source: "/sao-paulo/como-funcionam-os-exames-admissionais-no-brasil", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
+      { source: "/sao-paulo/como-funcionam-os-exames-admissionais-no-brasil", destination: "/exames/como-funciona-o-exame-admissional", permanent: true },
       { source: "/sao-paulo/exame-admissional-barato-na-mooca-guia-completo", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
 
       // -- Portfolio (site WP legado) --

@@ -226,6 +226,7 @@ export default function TabelaExamesFuncaoPage() {
         sidebarHook="A SERMST elabora o PCMSO e define os exames corretos para cada função — sem exames desnecessários e sem lacunas que viram multa."
         sidebarCtaLabel="Montar meu PCMSO"
         related={[
+          { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
           { label: 'Exame admissional precisa de jejum?', href: '/saude/exame-admissional-precisa-de-jejum' },
           { label: 'PCMSO: o que é e quem precisa', href: '/saude/pcmso-programa-controle-medico' },

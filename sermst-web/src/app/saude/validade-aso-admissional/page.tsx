@@ -167,6 +167,7 @@ export default function ValidadeAsoPage() {
         sidebarHook="A SERMST organiza o cronograma de exames ocupacionais da sua empresa, integra com o eSocial e garante que nenhum colaborador fique com ASO vencido."
         sidebarCtaLabel="Organizar meu PCMSO"
         related={[
+          { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
           { label: 'Tabela de exames por função', href: '/saude/tabela-exames-admissionais-por-funcao' },
           { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },

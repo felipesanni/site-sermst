@@ -90,6 +90,7 @@ Artigos técnicos sobre medicina do trabalho, PCMSO, ASO e gestão SST.
 - ASO – Atestado de Saúde Ocupacional: https://sermst.com.br/saude/aso-atestado-saude-ocupacional
 - Medicina do Trabalho – guia: https://sermst.com.br/saude/medicina-do-trabalho-guia
 - Gestão SST: https://sermst.com.br/saude/gestao-sst
+- Exame admissional: o que é, como funciona e quais exames podem ser solicitados: https://sermst.com.br/exames/como-funciona-o-exame-admissional/
 - Exame Admissional em São Paulo: https://sermst.com.br/saude/clinica-exame-admissional-sao-paulo
 - Onde fazer exame toxicológico em São Paulo: https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo
 - Valor do exame toxicológico CNH: https://sermst.com.br/saude/valor-exame-toxicologico-cnh
@@ -149,7 +150,7 @@ São Paulo (capital), Santo André, São Bernardo do Campo, São Caetano do Sul,
 
 ## Perguntas frequentes
 
-**O que é exame admissional?** Avaliação médica obrigatória (NR-07) realizada antes do início das atividades do trabalhador, que resulta no ASO (Atestado de Saúde Ocupacional). Obrigatório para disparo do evento S-2220 no eSocial.
+**O que é exame admissional?** Avaliação médica ocupacional prevista na NR-07, realizada antes do início das atividades do trabalhador, que resulta no ASO (Atestado de Saúde Ocupacional). Seus dados sustentam o registro de monitoramento de saúde ocupacional no eSocial quando aplicável.
 
 **Qual é o grau de risco da minha empresa?** O CNAE ajuda a identificar o grau de risco da NR-04, que vai de 1 a 4 e é uma referência importante para dimensionar SESMT e CIPA. A análise completa também deve considerar a atividade preponderante e os riscos reais do estabelecimento. Use a calculadora: https://sermst.com.br/rh/calculadora-cnae-grau-de-risco
 
