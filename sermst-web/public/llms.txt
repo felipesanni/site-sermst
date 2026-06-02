@@ -90,7 +90,7 @@ Artigos técnicos sobre medicina do trabalho, PCMSO, ASO e gestão SST.
 - ASO – Atestado de Saúde Ocupacional: https://sermst.com.br/saude/aso-atestado-saude-ocupacional
 - Medicina do Trabalho – guia: https://sermst.com.br/saude/medicina-do-trabalho-guia
 - Gestão SST: https://sermst.com.br/saude/gestao-sst
-- Exame admissional: o que é, como funciona e quais exames podem ser solicitados: https://sermst.com.br/exames/como-funciona-o-exame-admissional/
+- Exame admissional: o que é, como funciona e quais exames podem ser solicitados: https://sermst.com.br/exames/como-funciona-o-exame-admissional
 - Exame Admissional em São Paulo: https://sermst.com.br/saude/clinica-exame-admissional-sao-paulo
 - Onde fazer exame toxicológico em São Paulo: https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo
 - Valor do exame toxicológico CNH: https://sermst.com.br/saude/valor-exame-toxicologico-cnh

@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/contato`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/solucoes`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/saude`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE_URL}/exames/como-funciona-o-exame-admissional/`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/exames/como-funciona-o-exame-admissional`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/saude/clinica-exame-admissional-sao-paulo`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/saude/onde-fazer-exame-toxicologico-sao-paulo`, changeFrequency: "monthly", priority: 0.72 },
     { url: `${BASE_URL}/saude/valor-exame-toxicologico-cnh`, changeFrequency: "monthly", priority: 0.72 },

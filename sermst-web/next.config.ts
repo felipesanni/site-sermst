@@ -302,7 +302,7 @@ const nextConfig: NextConfig = {
       // -- Catch-all para sub-paths de WP (ex: /attachment/) nao cobertos por regras especificas --
       { source: "/saude-ocupacional/:path*", destination: "/saude", permanent: true },
       { source: "/medicina-do-trabalho/:path*", destination: "/saude", permanent: true },
-      { source: "/exames/:path*", destination: "/servicos", permanent: true },
+      { source: "/exames/:path((?!como-funciona-o-exame-admissional/?$).*)", destination: "/servicos", permanent: true },
       { source: "/seguranca-do-trabalho/:path*", destination: "/normas", permanent: true },
       { source: "/lp-aso-form/:path*", destination: "/contato", permanent: true },
       { source: "/lp-obra/:path*", destination: "/contato", permanent: true },

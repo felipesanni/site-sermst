@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: 'Exame Admissional: o que é, como funciona e quais exames faz | SERMST',
   description:
     'Entenda o que é exame admissional, como funciona, quais exames podem ser solicitados, documentos necessários, ASO, jejum e prazo para empresas.',
-  alternates: { canonical: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional/' },
+  alternates: { canonical: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional' },
   openGraph: {
     title: 'Exame Admissional: o que é, como funciona e quais exames faz',
     description:
       'Guia completo sobre exame admissional: o que é, quando fazer, quais exames entram no ASO, documentos, jejum, prazo e como empresas devem organizar o fluxo.',
-    url: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional/',
+    url: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional',
     type: 'article',
     locale: 'pt_BR',
   },
@@ -31,10 +31,132 @@ const comparisonSchema = {
   ],
 };
 
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Como funciona o exame admissional',
+  description:
+    'Passo a passo do exame admissional para empresas: encaminhamento, conferência do PCMSO, exame clínico, complementares, ASO e organização para eSocial.',
+  totalTime: 'PT1H',
+  step: [
+    {
+      '@type': 'HowToStep',
+      name: 'Encaminhar o candidato',
+      text: 'A empresa envia o candidato com dados corretos, função, encaminhamento e informações ocupacionais relevantes.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Conferir PCMSO e riscos da função',
+      text: 'A clínica verifica se o cargo exige apenas exame clínico ou também exames complementares previstos no PCMSO.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Realizar o exame clínico ocupacional',
+      text: 'O médico realiza anamnese ocupacional, histórico de saúde e avaliação clínica compatível com a função.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Realizar exames complementares quando aplicável',
+      text: 'Audiometria, acuidade visual, espirometria, laboratório ou toxicológico são feitos quando o PCMSO e os riscos do cargo indicam necessidade.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Emitir o ASO admissional',
+      text: 'Após avaliação e resultados necessários, o médico emite o Atestado de Saúde Ocupacional com conclusão de apto ou inapto.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Organizar registro ocupacional',
+      text: 'A empresa arquiva o ASO e organiza as informações para o monitoramento de saúde ocupacional, incluindo eSocial quando aplicável.',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'O que é exame admissional?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'É o exame ocupacional feito antes do início das atividades do colaborador. Ele avalia se a pessoa está apta para a função, considerando os riscos do cargo e o PCMSO da empresa.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Como é o exame admissional?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Normalmente começa com avaliação clínica e anamnese ocupacional. Dependendo da função, podem ser solicitados exames complementares como audiometria, acuidade visual, espirometria, laboratório ou toxicológico.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quais exames são feitos no admissional?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O exame clínico é a base. Os complementares variam conforme o PCMSO e os riscos do cargo. Não existe uma lista única para todas as funções.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Exame admissional precisa de jejum?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O exame clínico não precisa de jejum. Jejum só é necessário se houver exame complementar específico, como glicemia em jejum ou lipidograma.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quem paga o exame admissional?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A empresa contratante. O custo dos exames ocupacionais é responsabilidade do empregador.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'O candidato pode começar a trabalhar antes do exame admissional?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Não é recomendado e coloca a empresa em não conformidade. O exame admissional deve ser feito antes do início das atividades.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'O exame admissional pode impedir a contratação?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pode haver conclusão de inaptidão quando a condição de saúde impede o exercício seguro daquela função específica. A decisão deve ser técnica, relacionada aos riscos do cargo e sem caráter discriminatório.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'A empresa pode pedir teste de gravidez ou HIV?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Não. Exames discriminatórios ou sem relação com a aptidão ocupacional não devem fazer parte do admissional.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'MEI, ME e EPP precisam fazer exame admissional?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Quando possuem empregados, devem realizar e custear exames ocupacionais. Mesmo empresas dispensadas de elaborar PCMSO em situações específicas continuam tendo obrigações de exames médicos ocupacionais.',
+      },
+    },
+  ],
+};
+
 export default function ComoFuncionaExameAdmissionalPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(comparisonSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlockbusterArticle
         coverImage={{ src: '/images/site/sermst-estrutura-medicina-ocupacional.png', alt: 'Exame admissional ocupacional para contratação de colaborador' }}
         hubLabel="Hub de Saúde Ocupacional"
@@ -42,7 +164,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
         hubHref="/saude"
         badgeText="Guia admissional"
         readingTime="10 min"
-        pageUrl="https://sermst.com.br/exames/como-funciona-o-exame-admissional/"
+        pageUrl="https://sermst.com.br/exames/como-funciona-o-exame-admissional"
         author={{
           name: 'Luiz César Sannino',
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
