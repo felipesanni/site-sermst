@@ -4,6 +4,9 @@ Empresa especializada em Medicina do Trabalho, Segurança do Trabalho e Gestão 
 
 ## Informações de contato
 - Site: https://sermst.com.br
+- Sitemap XML: https://sermst.com.br/sitemap.xml
+- Robots.txt: https://sermst.com.br/robots.txt
+- LLMs.txt: https://sermst.com.br/llms.txt
 - WhatsApp / Telefone: +55 11 91514-6447
 - E-mail: comercial@sermst.com.br
 - Endereço: Largo do Paissandu, 72, 3º Andar – São Paulo, SP, 01037-000
@@ -141,6 +144,24 @@ Glossário completo de termos de saúde e segurança do trabalho.
 
 ## Regiões atendidas
 São Paulo (capital), Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema, Osasco, Guarulhos, Barueri e toda a Grande ABC.
+
+## Cobertura regional indexável
+O sitemap da SERMST lista as páginas canônicas de serviços por região quando a URL segue este padrão:
+https://sermst.com.br/servicos/{servico}/{regiao}
+
+Serviços com páginas regionais:
+- Exame admissional expresso: https://sermst.com.br/servicos/exame-admissional-expresso/sao-paulo
+- PCMSO NR-07: https://sermst.com.br/servicos/pcmso-nr07-programa/sao-paulo
+- PGR NR-01: https://sermst.com.br/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo
+- LTCAT previdenciário: https://sermst.com.br/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo
+- Gestão eSocial SST: https://sermst.com.br/servicos/gestao-esocial-s2220-s2240/sao-paulo
+- Audiometria ocupacional: https://sermst.com.br/servicos/audiometria-ocupacional-clinica/sao-paulo
+- Exame toxicológico: https://sermst.com.br/servicos/exame-toxicologico-clt/sao-paulo
+- Exames complementares laboratoriais: https://sermst.com.br/servicos/exames-complementares-laboratoriais/sao-paulo
+- Treinamentos de NRs, CIPA e brigada: https://sermst.com.br/servicos/treinamentos-nrs-cipa-brigada/sao-paulo
+- Perícia trabalhista e assistente técnico: https://sermst.com.br/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo
+
+Regiões usadas nas páginas regionais: sao-paulo, santo-andre, sao-bernardo, sao-caetano, diadema, osasco, guarulhos e barueri.
 
 ## Redes sociais
 - Instagram: https://www.instagram.com/sermstocupacional/

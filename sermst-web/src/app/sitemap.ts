@@ -5,13 +5,6 @@ import { siteImages } from "@/lib/site-images";
 import { normasKnown } from "./normas/[slug]/page";
 
 const BASE_URL = "https://sermst.com.br";
-const GEO_SITEMAP_PRIORITY: Record<string, string[]> = {
-  "exame-admissional-expresso": ["sao-paulo", "guarulhos", "santo-andre", "sao-bernardo", "osasco"],
-  "exame-toxicologico-clt": ["sao-paulo", "guarulhos", "osasco", "barueri"],
-  "audiometria-ocupacional-clinica": ["sao-paulo", "santo-andre", "sao-bernardo", "diadema"],
-  "exames-complementares-laboratoriais": ["sao-paulo", "santo-andre", "sao-bernardo"],
-  "treinamentos-nrs-cipa-brigada": ["sao-paulo"],
-};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // ── Páginas estáticas ─────────────────────────────────────────────────────
@@ -46,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     { url: `${BASE_URL}/contato`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/solucoes`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/servicos`, changeFrequency: "weekly", priority: 0.85 },
     { url: `${BASE_URL}/saude`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/exames/como-funciona-o-exame-admissional`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/saude/clinica-exame-admissional-sao-paulo`, changeFrequency: "monthly", priority: 0.8 },
@@ -71,15 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // ── Páginas geo-SEO ───────────────────────────────────────────────────────
-  const geoPages: MetadataRoute.Sitemap = Object.entries(GEO_SITEMAP_PRIORITY).flatMap(([servico, slugs]) =>
-    slugs
-      .map((slug) => localidades.find((localidade) => localidade.slug === slug))
-      .filter((localidade): localidade is NonNullable<typeof localidade> => Boolean(localidade))
-      .map((localidade) => ({
-        url: `${BASE_URL}/servicos/${servico}/${localidade.slug}`,
-        changeFrequency: "monthly" as const,
-        priority: localidade.isHub ? 0.9 : 0.74,
-      }))
+  const geoPages: MetadataRoute.Sitemap = Object.keys(servicosSEO).flatMap((servico) =>
+    localidades.map((localidade) => ({
+      url: `${BASE_URL}/servicos/${servico}/${localidade.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: localidade.isHub ? 0.9 : 0.72,
+    }))
   );
 
   // ── Treinamentos ──────────────────────────────────────────────────────────
