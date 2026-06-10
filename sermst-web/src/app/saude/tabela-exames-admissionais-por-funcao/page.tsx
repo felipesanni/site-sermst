@@ -133,6 +133,16 @@ export default function TabelaExamesFuncaoPage() {
         }}
         h1="Tabela de exames admissionais por função e cargo"
         intro="Os exames admissionais variam conforme os riscos do cargo — não são iguais para todas as funções. O exame clínico é obrigatório para todos. Os exames complementares (audiometria, sangue, espirometria, toxicológico etc.) dependem do que o PCMSO da empresa prevê para cada cargo. Veja os protocolos mais comuns por tipo de função."
+        quickAnswer={
+          <p>
+            Em linguagem simples: <strong>todo colaborador precisa do exame clínico admissional</strong>.
+            Já exames como <strong>audiometria, espirometria, toxicológico, hemograma ou sorologias</strong>
+            {' '}só entram quando o <strong>PCMSO da empresa</strong> determina isso para aquela função,
+            com base nos riscos reais do cargo. A tabela abaixo é um atalho para entender os cenários mais
+            comuns antes de fechar o protocolo.
+          </p>
+        }
+        showTableOfContents
         sections={[
           {
             title: 'Regra fundamental: quem define os exames é o PCMSO',
@@ -150,31 +160,38 @@ export default function TabelaExamesFuncaoPage() {
           {
             title: 'Tabela de exames por tipo de função',
             body: (
-              <div className="not-prose overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-slate-900 text-white">
-                      <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Função</th>
-                      <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider whitespace-nowrap">Grau de Risco</th>
-                      <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Exames Obrigatórios</th>
-                      <th className="hidden px-4 py-3 text-left text-xs font-black uppercase tracking-wider lg:table-cell">Complementares Comuns</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tabelaExames.map((row, i) => (
-                      <tr key={row.funcao} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                        <td className="px-4 py-3 font-bold text-slate-800">{row.funcao}</td>
-                        <td className="px-4 py-3 text-slate-600 whitespace-nowrap text-xs">{row.risco}</td>
-                        <td className="px-4 py-3 text-slate-700">{row.examesObrigatorios}</td>
-                        <td className="hidden px-4 py-3 text-slate-500 text-xs lg:table-cell">{row.examesComuns}</td>
+              <>
+                <div className="not-prose mb-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                  Se estiver no celular, comece olhando a coluna de <strong>função</strong> e depois a
+                  de <strong>exames obrigatórios</strong>. Os complementares comuns aparecem completos no
+                  desktop para facilitar a comparação.
+                </div>
+                <div className="not-prose overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Função</th>
+                        <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider whitespace-nowrap">Grau de Risco</th>
+                        <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Exames Obrigatórios</th>
+                        <th className="hidden px-4 py-3 text-left text-xs font-black uppercase tracking-wider lg:table-cell">Complementares Comuns</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <p className="px-4 py-3 text-xs text-slate-400 border-t border-slate-100">
-                  Tabela de referência. Os exames reais dependem do PCMSO da empresa e dos riscos identificados no PGR para cada cargo.
-                </p>
-              </div>
+                    </thead>
+                    <tbody>
+                      {tabelaExames.map((row, i) => (
+                        <tr key={row.funcao} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                          <td className="px-4 py-3 font-bold text-slate-800">{row.funcao}</td>
+                          <td className="whitespace-nowrap px-4 py-3 text-xs text-slate-600">{row.risco}</td>
+                          <td className="px-4 py-3 text-slate-700">{row.examesObrigatorios}</td>
+                          <td className="hidden px-4 py-3 text-xs text-slate-500 lg:table-cell">{row.examesComuns}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="border-t border-slate-100 px-4 py-3 text-xs text-slate-400">
+                    Tabela de referência. Os exames reais dependem do PCMSO da empresa e dos riscos identificados no PGR para cada cargo.
+                  </p>
+                </div>
+              </>
             ),
           },
           {

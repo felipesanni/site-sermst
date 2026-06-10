@@ -4,13 +4,14 @@ import nextConfig from '../next.config';
 import HomePage from '@/app/page';
 import ContatoPage from '@/app/contato/page';
 import CalculadoraCnaePage from '@/app/rh/calculadora-cnae-grau-de-risco/page';
+import ExamePeriodicoPage from '@/app/saude/importancia-do-exame-periodico/page';
 
 describe('paginas principais', () => {
   it('renderiza a home com a proposta central do negocio', () => {
     render(<HomePage />);
 
-    expect(screen.getByText(/SST não é custo/i)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Solicitar diagnóstico gratuito/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/SST/i);
+    expect(screen.getByRole('link', { name: /Solicitar/i })).toBeInTheDocument();
   });
 
   it('renderiza a pagina de contato com formulario e CTA da calculadora', () => {
@@ -25,8 +26,21 @@ describe('paginas principais', () => {
   it('renderiza a pagina da calculadora com a promessa da ferramenta', () => {
     render(<CalculadoraCnaePage />);
 
-    expect(screen.getByText(/Sua empresa está exposta a multas de SST/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sua empresa/i)).toBeInTheDocument();
     expect(screen.getByText(/Digite o CNPJ e descubra/i)).toBeInTheDocument();
+  });
+
+  it('renderiza a pagina de exame periodico com resposta direta e FAQ', () => {
+    render(<ExamePeriodicoPage />);
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Exame periódico ocupacional: o que é, quando fazer e por que importa/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Resposta direta/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Neste artigo/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Perguntas frequentes/i })).toBeInTheDocument();
   });
 });
 

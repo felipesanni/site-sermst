@@ -757,9 +757,10 @@ const saudeEntry = (h1: string, hook: string, dor: string, solucao: string): SEO
 
 export const saudeSEO: Record<string, SEODocument> = {
   "importancia-do-exame-periodico": {
-    h1: "Exame Periódico de Medicina do Trabalho",
+    h1: "Exame periódico ocupacional: o que é, periodicidade e regras",
+    seoTitle: "Exame periódico ocupacional: o que é, periodicidade e regras | SERMST",
     hook:
-      "Exame periódico e parte central da vigilância médica ocupacional. Monitorar a saúde da equipe no tempo certo ajuda a reduzir afastamentos, sustentar o PCMSO e evitar fragilidades em auditorias e fiscalizações.",
+      "Entenda o que é o exame periódico ocupacional, quem define a periodicidade, quais exames podem entrar e por que atrasar isso aumenta o risco da empresa.",
     isClinico: true,
     content: {
       dor:
@@ -767,21 +768,29 @@ export const saudeSEO: Record<string, SEODocument> = {
       solucao:
         "Com cronograma médico coerente e controle dos vencimentos, a empresa protege a saúde do trabalhador e melhora a disciplina de compliance ocupacional.",
       beneficios: [
-        "Redução de custos com afastamentos",
-        "Compliance com PCMSO NR-07",
-        "Saúde corporativa em dia",
+        "Mais previsibilidade para o RH",
+        "PCMSO mais coerente com a operação",
+        "Menos fragilidade documental e menos retrabalho",
       ],
     },
     geoOpt: {
       expertQuote: {
-        text: "Prevenção consistente é uma das bases da sustentabilidade corporativa.",
-        author: "Diretor Médico",
+        text: "Exame periódico bem organizado não é detalhe administrativo. É parte da defesa médica e documental da empresa.",
+        author: "Equipe Técnica SERMST",
         role: "SERMST",
       },
       faq: [
         {
-          q: "Qual a multa por atraso?",
-          a: "O valor pode variar conforme o porte da empresa, o contexto da infração e a quantidade de trabalhadores afetados.",
+          q: "O exame periódico ocupacional é obrigatório?",
+          a: "Ele integra o acompanhamento médico ocupacional da empresa e precisa seguir o PCMSO, os riscos do cargo e a rotina real de saúde ocupacional.",
+        },
+        {
+          q: "Quem define a periodicidade do exame periódico?",
+          a: "A periodicidade deve seguir a NR-07, o PCMSO e a avaliação médica dos riscos ocupacionais da função, e não um intervalo copiado de outra empresa.",
+        },
+        {
+          q: "O que acontece se a empresa deixa o exame periódico vencer?",
+          a: "A empresa fica mais exposta a falhas de compliance, retrabalho do RH, fragilidade documental e dificuldade de provar que monitorou a saúde ocupacional no tempo certo.",
         },
       ],
     },

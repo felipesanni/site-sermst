@@ -36,6 +36,15 @@ export default function ValorExameToxicologicoCnhPage() {
       }}
       h1="Valor do exame toxicológico CNH: quanto custa e o que realmente importa comparar"
       intro="Quem chega até aqui normalmente quer uma resposta objetiva: qual é o valor do exame toxicológico e se esse atendimento serve para CNH C, D e E. Também é comum surgir a dúvida sobre empresa, pessoa física e como saber se o exame está enquadrado da forma certa. O preço importa, mas ele só ajuda de verdade quando vem acompanhado desse contexto."
+      quickAnswer={
+        <p>
+          Hoje, o <strong>valor de referência informado pela SERMST para o exame toxicológico é R$
+          200,00</strong>. Essa informação ajuda mais quando vem junto do contexto: a clínica atende
+          <strong> empresa e pessoa física</strong> e o exame pode estar ligado a <strong>CNH C, D e
+          E</strong> ou a rotinas ocupacionais de motoristas.
+        </p>
+      }
+      showTableOfContents
       sections={[
         {
           title: 'O valor ajuda, mas sozinho não responde tudo',

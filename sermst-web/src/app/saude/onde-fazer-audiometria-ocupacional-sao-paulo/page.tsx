@@ -36,6 +36,16 @@ export default function OndeFazerAudiometriaOcupacionalSaoPauloPage() {
       }}
       h1="Onde fazer audiometria ocupacional em São Paulo: centro, acesso e quando avançar para o serviço"
       intro="Quem busca onde fazer audiometria ocupacional em São Paulo geralmente está tentando resolver uma etapa real do processo da empresa: admissão, periódico, demissional ou monitoramento previsto no PCMSO. Nessa hora, localização ajuda, mas não basta. O que faz diferença é encontrar uma clínica com estrutura adequada, agilidade de atendimento e leitura correta do contexto ocupacional."
+      quickAnswer={
+        <p>
+          Se a sua empresa procura <strong>onde fazer audiometria ocupacional em São Paulo</strong>, a
+          SERMST atende no <strong>Largo do Paissandu, 72, 3º andar, Centro Histórico</strong>, com
+          estrutura para <strong>audiometria tonal</strong>, integração ao ASO e apoio ao PCMSO. Para
+          quem precisa resolver admissão, periódico ou demissional com menos atrito logístico, a região
+          central costuma ser um caminho prático.
+        </p>
+      }
+      showTableOfContents
       sections={[
         {
           title: 'Localização importa, mas o exame precisa entrar no fluxo certo',

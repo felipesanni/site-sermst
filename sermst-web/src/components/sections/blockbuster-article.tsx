@@ -28,6 +28,10 @@ export interface BlockbusterPageProps {
   h1: string;
   intro: string;
   readingTime?: string;
+  quickAnswer?: ReactNode;
+  quickAnswerLabel?: string;
+  showTableOfContents?: boolean;
+  tableOfContentsTitle?: string;
   sections: BlockbusterSection[];
   faq: BlockbusterFAQ[];
   sidebarTitle: string;
@@ -77,6 +81,10 @@ export function BlockbusterArticle({
   h1,
   intro,
   readingTime,
+  quickAnswer,
+  quickAnswerLabel = 'Resposta direta',
+  showTableOfContents = false,
+  tableOfContentsTitle = 'Neste artigo',
   sections,
   faq,
   sidebarTitle,
@@ -106,6 +114,16 @@ export function BlockbusterArticle({
     label: 'Solicitar diagnóstico gratuito',
     href: '/contato',
   };
+
+  const sectionAnchors = sections.map((section, index) => ({
+    id: `${section.title
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '') || `secao-${index + 1}`}-${index + 1}`,
+    title: section.title,
+  }));
 
   // ── Schema.org JSON-LD (BreadcrumbList + Article) ─────────────────────────
   const hubUrl = hubHref.startsWith('http')
@@ -258,9 +276,52 @@ export function BlockbusterArticle({
 
           {/* Article content */}
           <article>
+            {(quickAnswer || showTableOfContents) && (
+              <FadeIn direction="up">
+                <div className="mb-12 grid gap-5 md:grid-cols-2">
+                  {quickAnswer && (
+                    <div className="rounded-3xl border border-emerald-100 bg-emerald-50 p-6 shadow-sm">
+                      <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-emerald-700">
+                        {quickAnswerLabel}
+                      </p>
+                      <div className="prose prose-slate max-w-none prose-p:my-0 prose-p:text-slate-700 prose-p:leading-relaxed prose-strong:text-brand-900">
+                        {quickAnswer}
+                      </div>
+                    </div>
+                  )}
+
+                  {showTableOfContents && (
+                    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                      <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-slate-500">
+                        {tableOfContentsTitle}
+                      </p>
+                      <ol className="space-y-2">
+                        {sectionAnchors.map((item, index) => (
+                          <li key={item.id}>
+                            <a
+                              href={`#${item.id}`}
+                              className="group inline-flex items-start gap-3 text-sm text-slate-700 transition hover:text-accent-pink"
+                            >
+                              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-[11px] font-black text-slate-500 group-hover:bg-accent-pink/10 group-hover:text-accent-pink">
+                                {String(index + 1).padStart(2, '0')}
+                              </span>
+                              <span className="leading-snug group-hover:underline">{item.title}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  )}
+                </div>
+              </FadeIn>
+            )}
+
             {sections.map((s, i) => (
               <FadeIn key={i} direction="up" delay={i * 0.04}>
-                <div className="mb-12 pb-12 border-b border-slate-100 last:border-0 last:mb-0 last:pb-0">
+                <div
+                  id={sectionAnchors[i]?.id}
+                  className="mb-12 scroll-mt-28 border-b border-slate-100 pb-12 last:mb-0 last:border-0 last:pb-0"
+                >
                   {/* Section heading with step accent */}
                   <div className="flex items-start gap-4 mb-5">
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-pink/10 text-xs font-black text-accent-pink">

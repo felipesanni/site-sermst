@@ -36,6 +36,16 @@ export default function OndeFazerExameToxicologicoPage() {
       }}
       h1="Onde fazer exame toxicológico em São Paulo: centro, acesso e validade do atendimento"
       intro="Quem busca onde fazer exame toxicológico em São Paulo geralmente precisa resolver isso sem perda de tempo. Pode ser renovação da CNH C, D ou E, admissão de motorista, rotina da empresa ou simplesmente a dúvida sobre onde encontrar atendimento confiável na região central. Nessa hora, o que pesa não é só o endereço: é saber se a clínica atende empresa e pessoa física, se o laudo serve para a finalidade certa e se o acesso é simples."
+      quickAnswer={
+        <p>
+          Para quem procura <strong>onde fazer exame toxicológico em São Paulo</strong>, a SERMST atende
+          no <strong>Largo do Paissandu, 72, 3º andar, Centro Histórico</strong>, com suporte para
+          <strong> empresa e pessoa física</strong>, inclusive em demandas ligadas à <strong>CNH C, D e
+          E</strong>. O ponto principal não é só o endereço: é confirmar se o exame serve para a
+          finalidade certa e se o laudo tem validade para o seu caso.
+        </p>
+      }
+      showTableOfContents
       sections={[
         {
           title: 'Mais do que o endereço, importa sair com a demanda resolvida',
