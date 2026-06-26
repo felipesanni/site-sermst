@@ -80,6 +80,88 @@ interface LeadPayload {
   form_started_at?: string;
   turnstile_token?: string;
   'cf-turnstile-response'?: string;
+  lead_type?: string;
+  assinatura?: SubscriptionLeadData;
+  cargo?: string;
+  cpf_responsavel?: string;
+  rg_responsavel?: string;
+  indicador_nome?: string;
+  indicador_telefone?: string;
+  dia_pagamento?: string;
+  email_financeiro?: string;
+  contador_nome?: string;
+  contador_email?: string;
+  contador_telefone?: string;
+  plano_assinatura?: string;
+  funcionarios?: string;
+  valor_mensal?: string;
+  valor_anual?: string;
+  ciclo_pagamento?: string;
+  cnpj?: string;
+  cnae?: string;
+  grau_risco?: string;
+  unidades_adicionais?: string;
+}
+
+interface AddressData {
+  cep?: string;
+  logradouro?: string;
+  numero?: string;
+  complemento?: string;
+  bairro?: string;
+  cidade?: string;
+  estado?: string;
+}
+
+interface SubscriptionLeadData {
+  plano?: {
+    id?: string;
+    nome?: string;
+    funcionarios?: number | string;
+    ciclo_pagamento?: string;
+    valor_mensal?: string;
+    valor_anual_pix?: string;
+    itens_inclusos?: string[];
+  };
+  responsavel?: {
+    nome?: string;
+    email?: string;
+    telefone?: string;
+    cargo?: string;
+    cpf?: string;
+    rg?: string;
+  };
+  financeiro?: {
+    diaPagamento?: string;
+    email?: string;
+  };
+  contabilidade?: {
+    nome?: string;
+    email?: string;
+    telefone?: string;
+  };
+  indicacao?: {
+    nome?: string;
+    telefone?: string;
+  };
+  empresa?: {
+    cnpj?: string;
+    razao_social?: string;
+    cnae?: string;
+    cnae_descricao?: string;
+    grau_risco?: string;
+    grau_risco_label?: string;
+    nr05?: string;
+    endereco_principal?: AddressData;
+    status_endereco_principal?: string;
+    filiais?: Array<{
+      identificacao?: string;
+      cnpj?: string;
+      razao_social?: string;
+      endereco?: AddressData;
+      status_endereco?: string;
+    }>;
+  };
 }
 
 const REQUIRED = ['nome', 'empresa', 'email', 'telefone', 'porte', 'dor'] as const;
@@ -126,7 +208,89 @@ async function verifyTurnstile(token: string, ip: string) {
   // Em todos os casos, não bloqueia: honeypot + rate limit + filtro de texto já protegem
 }
 
+function escapeHtml(value: unknown) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function emptyHtml() {
+  return "<em style='color:#94a3b8;font-style:italic'>vazio</em>";
+}
+
+function textOrEmpty(value: unknown) {
+  const text = String(value ?? '').trim();
+  return text || '(vazio)';
+}
+
+function htmlValue(value: unknown) {
+  const text = String(value ?? '').trim();
+  return text ? escapeHtml(text) : emptyHtml();
+}
+
+function mailto(email: unknown) {
+  const value = String(email ?? '').trim();
+  if (!value) return emptyHtml();
+  const safe = escapeHtml(value);
+  return `<a href="mailto:${safe}" style="color:#0f172a;text-decoration:underline">${safe}</a>`;
+}
+
+function tel(phone: unknown) {
+  const value = String(phone ?? '').trim();
+  if (!value) return emptyHtml();
+  const safe = escapeHtml(value);
+  return `<a href="tel:${safe.replace(/\D/g, '')}" style="color:#0f172a;text-decoration:underline">${safe}</a>`;
+}
+
+function formatAddress(address?: AddressData) {
+  if (!address) return '';
+
+  const street = [
+    address.logradouro,
+    address.numero ? `nº ${address.numero}` : '',
+    address.complemento,
+  ]
+    .filter(Boolean)
+    .join(', ');
+  const region = [
+    address.bairro,
+    address.cidade || address.estado ? `${address.cidade || ''}${address.estado ? `/${address.estado}` : ''}` : '',
+    address.cep ? `CEP ${address.cep}` : '',
+  ]
+    .filter(Boolean)
+    .join(' - ');
+
+  return [street, region].filter(Boolean).join(' | ');
+}
+
+function tableRows(rows: Array<[string, string]>) {
+  return rows
+    .map(
+      ([label, value]) =>
+        `<tr><td style="padding:10px 14px;font-weight:800;color:#1e293b;white-space:nowrap;width:190px;border-bottom:1px solid #e2e8f0;vertical-align:top">${escapeHtml(label)}</td>` +
+        `<td style="padding:10px 14px;color:#334155;border-bottom:1px solid #e2e8f0;vertical-align:top">${value || emptyHtml()}</td></tr>`,
+    )
+    .join('');
+}
+
+function infoTable(rows: Array<[string, string]>) {
+  return `<table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;background:#ffffff">${tableRows(rows)}</table>`;
+}
+
+function section(title: string, content: string, subtitle = '') {
+  return `<tr><td style="background:#ffffff;padding:24px 32px;border-top:1px solid #e2e8f0">
+    <p style="margin:0 0 6px;font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#e11d48">${escapeHtml(title)}</p>
+    ${subtitle ? `<p style="margin:0 0 16px;color:#64748b;font-size:14px;line-height:1.5">${escapeHtml(subtitle)}</p>` : ''}
+    ${content}
+  </td></tr>`;
+}
+
 function buildEmailText(lead: ReturnType<typeof buildLead>): string {
+  if (lead.subscription) return buildSubscriptionEmailText(lead);
+
   return (
     `Novo lead recebido pelo formulário do site SERMST\n` +
     `${"=".repeat(50)}\n\n` +
@@ -164,7 +328,176 @@ function buildEmailText(lead: ReturnType<typeof buildLead>): string {
   );
 }
 
+function buildSubscriptionEmailText(lead: ReturnType<typeof buildLead>): string {
+  const subscription = lead.subscription;
+  const plan = subscription?.plano ?? {};
+  const responsible = subscription?.responsavel ?? {};
+  const financial = subscription?.financeiro ?? {};
+  const accounting = subscription?.contabilidade ?? {};
+  const referral = subscription?.indicacao ?? {};
+  const company = subscription?.empresa ?? {};
+  const branches = company.filiais ?? [];
+  const includedItems = plan.itens_inclusos ?? [];
+
+  return (
+    `Nova contratação de assinatura SERMST\n` +
+    `${"=".repeat(50)}\n\n` +
+    `Empresa:              ${textOrEmpty(company.razao_social || lead.empresa)}\n` +
+    `CNPJ:                 ${textOrEmpty(company.cnpj)}\n` +
+    `Plano:                ${textOrEmpty(plan.nome || lead.dor)}\n` +
+    `Funcionários:         ${textOrEmpty(plan.funcionarios || lead.porte)}\n` +
+    `Pagamento:            ${plan.ciclo_pagamento === 'annual' ? 'Anual à vista via PIX' : 'Mensal recorrente'}\n` +
+    `Valor mensal:         ${textOrEmpty(plan.valor_mensal)}\n` +
+    `Valor anual PIX:      ${textOrEmpty(plan.valor_anual_pix)}\n\n` +
+    `Responsável:          ${textOrEmpty(responsible.nome || lead.nome)}\n` +
+    `Cargo:                ${textOrEmpty(responsible.cargo)}\n` +
+    `E-mail:               ${textOrEmpty(responsible.email || lead.email)}\n` +
+    `Telefone:             ${textOrEmpty(responsible.telefone || lead.telefone)}\n` +
+    `CPF/RG:               ${textOrEmpty([responsible.cpf, responsible.rg].filter(Boolean).join(' / '))}\n\n` +
+    `Financeiro:           Dia ${textOrEmpty(financial.diaPagamento)} | ${textOrEmpty(financial.email)}\n` +
+    `Contabilidade:        ${textOrEmpty([accounting.nome, accounting.email, accounting.telefone].filter(Boolean).join(' | '))}\n` +
+    `Indicação/vendedor:   ${textOrEmpty([referral.nome, referral.telefone].filter(Boolean).join(' | '))}\n\n` +
+    `CNAE:                 ${textOrEmpty([company.cnae, company.cnae_descricao].filter(Boolean).join(' - '))}\n` +
+    `Grau de risco:        ${textOrEmpty(company.grau_risco_label || company.grau_risco)}\n` +
+    `NR-05:                ${textOrEmpty(company.nr05)}\n` +
+    `Endereço matriz:      ${textOrEmpty(formatAddress(company.endereco_principal))} (${textOrEmpty(company.status_endereco_principal)})\n\n` +
+    `Filiais:\n${branches.length ? branches.map((branch, index) => `  ${index + 1}. ${textOrEmpty(branch.identificacao)} | ${textOrEmpty(branch.cnpj)} | ${textOrEmpty(formatAddress(branch.endereco))} (${textOrEmpty(branch.status_endereco)})`).join('\n') : '  Sem filiais adicionais informadas.'}\n\n` +
+    `Itens incluídos:\n${includedItems.length ? includedItems.map((item) => `  - ${item}`).join('\n') : '  (vazio)'}\n\n` +
+    `Atribuição: ${lead.attribution.conversionPage || '(vazio)'} | ${lead.attribution.lastTouch.utm_source || '(sem UTM source)'} / ${lead.attribution.lastTouch.utm_medium || '(sem UTM medium)'}\n` +
+    `Recebido em: ${lead.receivedAt}\n`
+  );
+}
+
+function buildSubscriptionEmailHtml(lead: ReturnType<typeof buildLead>): string {
+  const subscription = lead.subscription;
+  const plan = subscription?.plano ?? {};
+  const responsible = subscription?.responsavel ?? {};
+  const financial = subscription?.financeiro ?? {};
+  const accounting = subscription?.contabilidade ?? {};
+  const referral = subscription?.indicacao ?? {};
+  const company = subscription?.empresa ?? {};
+  const branches = company.filiais ?? [];
+  const includedItems = plan.itens_inclusos ?? [];
+  const paymentLabel = plan.ciclo_pagamento === 'annual' ? 'Anual à vista via PIX' : 'Mensal recorrente';
+
+  const itemsHtml = includedItems.length
+    ? `<ul style="margin:0;padding:0;list-style:none">${includedItems
+        .map(
+          (item) =>
+            `<li style="margin:0 0 8px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:10px;background:#f8fafc;color:#334155;font-size:14px;line-height:1.45">✓ ${escapeHtml(item)}</li>`,
+        )
+        .join('')}</ul>`
+    : `<p style="margin:0;color:#94a3b8;font-style:italic">Nenhum item informado.</p>`;
+
+  const branchesHtml = branches.length
+    ? branches
+        .map(
+          (branch, index) =>
+            `<div style="margin:0 0 10px;padding:14px;border:1px solid #e2e8f0;border-radius:12px;background:#ffffff">
+              <p style="margin:0 0 8px;color:#0f172a;font-weight:900">${index + 1}. ${htmlValue(branch.identificacao)}</p>
+              ${infoTable([
+                ['CNPJ', htmlValue(branch.cnpj)],
+                ['Razão social', htmlValue(branch.razao_social)],
+                ['Endereço', htmlValue(formatAddress(branch.endereco))],
+                ['Status', htmlValue(branch.status_endereco)],
+              ])}
+            </div>`,
+        )
+        .join('')
+    : `<p style="margin:0;padding:14px;border:1px solid #e2e8f0;border-radius:12px;background:#ffffff;color:#64748b;font-weight:700">Sem filiais adicionais informadas.</p>`;
+
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#eef2f7;font-family:Arial,Helvetica,sans-serif;color:#334155">
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr><td align="center" style="padding:28px 12px">
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:760px;border-collapse:collapse;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(15,23,42,.12)">
+        <tr><td style="background:#0f172a;padding:28px 32px">
+          <p style="margin:0 0 8px;color:#fb174c;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.14em">Contratação de assinatura</p>
+          <h1 style="margin:0;color:#ffffff;font-size:26px;line-height:1.2;font-weight:900">Novo pedido: ${htmlValue(plan.nome || 'Plano SERMST')}</h1>
+          <p style="margin:10px 0 0;color:#cbd5e1;font-size:15px;line-height:1.5">${htmlValue(company.razao_social || lead.empresa)} · ${htmlValue(plan.funcionarios || lead.porte)} funcionários</p>
+        </td></tr>
+
+        <tr><td style="background:#ffffff;padding:24px 32px">
+          <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse">
+            <tr>
+              <td style="width:33.33%;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc">
+                <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">Plano</p>
+                <p style="margin:0;color:#0f172a;font-size:18px;font-weight:900">${htmlValue(plan.nome)}</p>
+              </td>
+              <td style="width:33.33%;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc">
+                <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">Mensal</p>
+                <p style="margin:0;color:#0f172a;font-size:18px;font-weight:900">${htmlValue(plan.valor_mensal)}</p>
+              </td>
+              <td style="width:33.33%;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc">
+                <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">Pagamento</p>
+                <p style="margin:0;color:#0f172a;font-size:18px;font-weight:900">${escapeHtml(paymentLabel)}</p>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+
+        ${section('Dados do responsável', infoTable([
+          ['Nome', htmlValue(responsible.nome || lead.nome)],
+          ['Cargo', htmlValue(responsible.cargo)],
+          ['E-mail', mailto(responsible.email || lead.email)],
+          ['Telefone', tel(responsible.telefone || lead.telefone)],
+          ['CPF', htmlValue(responsible.cpf)],
+          ['RG', htmlValue(responsible.rg)],
+        ]))}
+
+        ${section('Plano selecionado', infoTable([
+          ['Funcionários', htmlValue(plan.funcionarios)],
+          ['Valor mensal', htmlValue(plan.valor_mensal)],
+          ['Valor anual PIX', htmlValue(plan.valor_anual_pix)],
+          ['Forma de pagamento', escapeHtml(paymentLabel)],
+        ]))}
+
+        ${section('Itens incluídos no contrato', itemsHtml, 'Escopo informado ao cliente no formulário de contratação.')}
+
+        ${section('Financeiro e indicação', infoTable([
+          ['Dia de pagamento', htmlValue(financial.diaPagamento)],
+          ['E-mail financeiro', mailto(financial.email)],
+          ['Contabilidade', htmlValue([accounting.nome, accounting.email, accounting.telefone].filter(Boolean).join(' | '))],
+          ['Vendedor/indicação', htmlValue([referral.nome, referral.telefone].filter(Boolean).join(' | '))],
+        ]))}
+
+        ${section('Dados da empresa', infoTable([
+          ['Razão social', htmlValue(company.razao_social || lead.empresa)],
+          ['CNPJ', htmlValue(company.cnpj)],
+          ['CNAE', htmlValue([company.cnae, company.cnae_descricao].filter(Boolean).join(' - '))],
+          ['Grau de risco', htmlValue(company.grau_risco_label || company.grau_risco)],
+          ['NR-05', htmlValue(company.nr05)],
+          ['Endereço matriz', htmlValue(formatAddress(company.endereco_principal))],
+          ['Status endereço', htmlValue(company.status_endereco_principal)],
+        ]))}
+
+        ${section('Filiais adicionais', branchesHtml)}
+
+        ${section('Atribuição', infoTable([
+          ['Landing page', htmlValue(lead.attribution.landingPage)],
+          ['Pág. conversão', htmlValue(lead.attribution.conversionPage)],
+          ['UTM source', htmlValue(lead.attribution.lastTouch.utm_source)],
+          ['UTM medium', htmlValue(lead.attribution.lastTouch.utm_medium)],
+          ['UTM campaign', htmlValue(lead.attribution.lastTouch.utm_campaign)],
+          ['UTM content', htmlValue(lead.attribution.lastTouch.utm_content)],
+          ['UTM term', htmlValue(lead.attribution.lastTouch.utm_term)],
+          ['GCLID', htmlValue(lead.attribution.lastTouch.gclid)],
+        ]))}
+
+        <tr><td style="background:#0f172a;padding:18px 32px">
+          <p style="margin:0;color:#cbd5e1;font-size:12px;line-height:1.5">Enviado automaticamente pelo site sermst.com.br em ${escapeHtml(lead.receivedAt)}. Conferir CNAE, grau de risco, unidades, cargos e exames complementares antes da ativação final do plano.</p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body></html>`;
+}
+
 function buildEmailHtml(lead: ReturnType<typeof buildLead>): string {
+  if (lead.subscription) return buildSubscriptionEmailHtml(lead);
+
   const row = (label: string, value: string) =>
     `<tr><td style="padding:6px 12px;font-weight:600;color:#1e293b;white-space:nowrap;width:160px">${label}</td>` +
     `<td style="padding:6px 12px;color:#334155">${value || "<em style='color:#94a3b8'>vazio</em>"}</td></tr>`;
@@ -219,6 +552,53 @@ function buildEmailHtml(lead: ReturnType<typeof buildLead>): string {
 </body></html>`;
 }
 
+function normalizeSubscription(data: LeadPayload): SubscriptionLeadData | null {
+  if (data.dor !== 'assinatura-sst' && data.lead_type !== 'assinatura-sst') return null;
+
+  if (data.assinatura && typeof data.assinatura === 'object') {
+    return data.assinatura;
+  }
+
+  return {
+    plano: {
+      nome: data.plano_assinatura || data.dor || '',
+      funcionarios: data.funcionarios || data.porte || '',
+      ciclo_pagamento: data.ciclo_pagamento || '',
+      valor_mensal: data.valor_mensal || '',
+      valor_anual_pix: data.valor_anual || '',
+      itens_inclusos: [],
+    },
+    responsavel: {
+      nome: data.nome || '',
+      email: data.email || '',
+      telefone: data.telefone || '',
+      cargo: data.cargo || '',
+      cpf: data.cpf_responsavel || '',
+      rg: data.rg_responsavel || '',
+    },
+    financeiro: {
+      diaPagamento: data.dia_pagamento || '',
+      email: data.email_financeiro || '',
+    },
+    contabilidade: {
+      nome: data.contador_nome || '',
+      email: data.contador_email || '',
+      telefone: data.contador_telefone || '',
+    },
+    indicacao: {
+      nome: data.indicador_nome || '',
+      telefone: data.indicador_telefone || '',
+    },
+    empresa: {
+      cnpj: data.cnpj || '',
+      razao_social: data.empresa || '',
+      cnae: data.cnae || '',
+      grau_risco: data.grau_risco || '',
+      filiais: [],
+    },
+  };
+}
+
 function buildLead(data: LeadPayload, req: Request) {
   return {
     nome: String(data.nome).trim(),
@@ -258,6 +638,7 @@ function buildLead(data: LeadPayload, req: Request) {
     receivedAt: new Date().toISOString(),
     userAgent: req.headers.get('user-agent') ?? '',
     referer: req.headers.get('referer') ?? '',
+    subscription: normalizeSubscription(data),
   };
 }
 
