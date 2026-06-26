@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   Loader2,
   MapPin,
-  MessageCircle,
   Pencil,
   Plus,
   Send,
@@ -27,6 +26,7 @@ type ContractPlan = {
   title: string;
   monthly: number;
   annualPix: number;
+  includedItems: string[];
 };
 
 type BusinessAddress = {
@@ -99,7 +99,8 @@ type AssinaturaContractModalProps = {
 const formatter = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
   currency: 'BRL',
-  maximumFractionDigits: 0,
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
 });
 
 function digits(value: string) {
@@ -247,19 +248,14 @@ function buildAttributionPayload(attribution: StoredAttribution | null, conversi
   };
 }
 
-function buildWhatsAppUrl(planTitle: string, employees: number, monthly: number, companyName: string) {
-  const companyLine = companyName ? `A empresa é ${companyName}. ` : '';
-  const message =
-    `Olá! Solicitei uma simulação de assinatura SST no site da SERMST. ${companyLine}` +
-    `Plano: ${planTitle}. Funcionários: ${employees}. Simulação: ${formatter.format(monthly)}/mês.`;
-
-  return `https://wa.me/5511915146447?text=${encodeURIComponent(message)}`;
-}
-
 function buildSubscriptionMessage({
   plan,
   employees,
   billingCycle,
+  referral,
+  responsible,
+  financial,
+  accounting,
   companyName,
   cnpj,
   cnpjInfo,
@@ -271,6 +267,27 @@ function buildSubscriptionMessage({
   plan: ContractPlan;
   employees: number;
   billingCycle: BillingCycle;
+  referral: {
+    nome: string;
+    telefone: string;
+  };
+  responsible: {
+    nome: string;
+    email: string;
+    telefone: string;
+    cargo: string;
+    cpf: string;
+    rg: string;
+  };
+  financial: {
+    diaPagamento: string;
+    email: string;
+  };
+  accounting: {
+    nome: string;
+    email: string;
+    telefone: string;
+  };
   companyName: string;
   cnpj: string;
   cnpjInfo: CnpjLookupResponse | null;
@@ -298,14 +315,25 @@ function buildSubscriptionMessage({
     `Funcionários informados: ${employees}.`,
     `Valor mensal estimado: ${formatter.format(plan.monthly)}.`,
     `Valor anual à vista estimado: ${formatter.format(plan.annualPix)}.`,
-    `Preferência inicial: ${billingCycle === 'annual' ? 'anual à vista' : 'mensal'}.`,
+    `Forma de pagamento escolhida: ${billingCycle === 'annual' ? 'anual à vista via PIX' : 'mensal recorrente'}.`,
+    `Itens incluídos no contrato: ${plan.includedItems.join('; ')}.`,
+    referral.nome || referral.telefone
+      ? `Vendedor/indicação: ${referral.nome || 'não informado'}${referral.telefone ? `, telefone ${referral.telefone}` : ''}.`
+      : '',
+    `Responsável: ${responsible.nome}, ${responsible.cargo}, e-mail ${responsible.email}, telefone ${responsible.telefone}.`,
+    responsible.cpf ? `CPF do responsável: ${responsible.cpf}.` : '',
+    responsible.rg ? `RG do responsável: ${responsible.rg}.` : '',
+    `Financeiro: pagamento preferido dia ${financial.diaPagamento}; e-mail financeiro ${financial.email}.`,
+    accounting.nome || accounting.email || accounting.telefone
+      ? `Contabilidade: ${accounting.nome || 'nome não informado'}${accounting.email ? `, e-mail ${accounting.email}` : ''}${accounting.telefone ? `, telefone ${accounting.telefone}` : ''}.`
+      : '',
     cnpj ? `CNPJ matriz: ${cnpj}.` : '',
     cnpjInfo?.cnaeFiscal ? `CNAE principal: ${cnpjInfo.cnaeFiscal} - ${cnpjInfo.cnaeDescricao || 'sem descrição retornada'}.` : '',
     riskInfo ? `Grau de risco pela base interna: ${riskInfo.label}. ${riskInfo.sesmt}` : '',
     getNr05Summary(cnaeEntry, employees),
     `Endereço principal: ${formatAddress(mainAddress)} (${addressStatusLabel(mainAddressStatus)}).`,
     `Filiais adicionais: ${branchSummary}`,
-    'Validar proposta final por CNAE, grau de risco, unidades, cargos, exames complementares, treinamentos, PGR, PCMSO, LTCAT, PPP e eSocial.',
+    'Cliente confirmou intenção de contratação pelo fluxo de assinatura. Conferir CNAE, grau de risco, unidades, cargos, exames complementares, treinamentos, PGR, PCMSO, LTCAT, PPP e eSocial para ativação correta do plano.',
   ]
     .filter(Boolean)
     .join(' ');
@@ -817,6 +845,27 @@ export function AssinaturaContractModal({
     const form = event.currentTarget;
     const formData = new FormData(form);
     const company = companyName.trim();
+    const responsible = {
+      nome: String(formData.get('nome') || '').trim(),
+      email: String(formData.get('email') || '').trim().toLowerCase(),
+      telefone: String(formData.get('telefone') || '').trim(),
+      cargo: String(formData.get('cargo') || '').trim(),
+      cpf: String(formData.get('cpf') || '').trim(),
+      rg: String(formData.get('rg') || '').trim(),
+    };
+    const referral = {
+      nome: String(formData.get('indicador_nome') || '').trim(),
+      telefone: String(formData.get('indicador_telefone') || '').trim(),
+    };
+    const financial = {
+      diaPagamento: String(formData.get('dia_pagamento') || '').trim(),
+      email: String(formData.get('email_financeiro') || '').trim().toLowerCase(),
+    };
+    const accounting = {
+      nome: String(formData.get('contador_nome') || '').trim(),
+      email: String(formData.get('contador_email') || '').trim().toLowerCase(),
+      telefone: String(formData.get('contador_telefone') || '').trim(),
+    };
 
     if (digits(cnpj).length !== 14) {
       setSubmitStatus('error');
@@ -825,16 +874,20 @@ export function AssinaturaContractModal({
     }
 
     const payload = {
-      nome: String(formData.get('nome') || '').trim(),
+      nome: responsible.nome,
       empresa: company,
-      email: String(formData.get('email') || '').trim().toLowerCase(),
-      telefone: String(formData.get('telefone') || '').trim(),
+      email: responsible.email,
+      telefone: responsible.telefone,
       porte: getPorteFromEmployees(employees),
       dor: 'assinatura-sst',
       mensagem: buildSubscriptionMessage({
         plan,
         employees,
         billingCycle,
+        referral,
+        responsible,
+        financial,
+        accounting,
         companyName: company,
         cnpj,
         cnpjInfo,
@@ -846,8 +899,16 @@ export function AssinaturaContractModal({
       website: String(formData.get('website') || ''),
       form_started_at: formStartedAt || String(Date.now() - 5000),
       lead_type: 'assinatura-sst',
-      cargo: String(formData.get('cargo') || '').trim(),
-      dia_pagamento: String(formData.get('dia_pagamento') || '').trim(),
+      cargo: responsible.cargo,
+      cpf_responsavel: responsible.cpf,
+      rg_responsavel: responsible.rg,
+      indicador_nome: referral.nome,
+      indicador_telefone: referral.telefone,
+      dia_pagamento: financial.diaPagamento,
+      email_financeiro: financial.email,
+      contador_nome: accounting.nome,
+      contador_email: accounting.email,
+      contador_telefone: accounting.telefone,
       plano_assinatura: plan.title,
       funcionarios: String(employees),
       valor_mensal: formatter.format(plan.monthly),
@@ -869,7 +930,7 @@ export function AssinaturaContractModal({
 
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
-        throw new Error(data?.error || 'Não foi possível enviar a solicitação.');
+        throw new Error(data?.error || 'Não foi possível enviar a contratação.');
       }
 
       setSubmitStatus('success');
@@ -909,9 +970,13 @@ export function AssinaturaContractModal({
             <p className="text-xs font-black uppercase tracking-[0.18em] text-accent-pink">
               Dados para contratação
             </p>
-            <h3 id="subscription-contract-title" className="mt-1 text-2xl font-black text-brand-900">
-              {plan.title} para {employees} funcionário{employees === 1 ? '' : 's'}
+            <h3 id="subscription-contract-title" className="mt-1 text-2xl font-black text-brand-900 md:text-3xl">
+              Dados para Contratação
             </h3>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+              Preencha os dados abaixo para contratar o plano selecionado. A SERMST usa estas
+              informações para ativar o contrato e organizar o atendimento.
+            </p>
           </div>
           <button
             type="button"
@@ -928,46 +993,53 @@ export function AssinaturaContractModal({
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
               <CheckCircle2 className="h-8 w-8 text-green-600" />
             </div>
-            <h4 className="mb-3 text-2xl font-black text-brand-900">Solicitação enviada.</h4>
+            <h4 className="mb-3 text-2xl font-black text-brand-900">Contratação enviada.</h4>
             <p className="mx-auto max-w-xl leading-relaxed text-slate-600">
-              A SERMST recebeu a simulação com plano, porte, CNPJ, endereço principal e filiais
-              informadas. A equipe comercial entra em contato para validar o escopo final.
+              A SERMST recebeu o plano escolhido com porte, CNPJ, endereço principal e filiais
+              informadas. Vamos seguir com a ativação comercial do contrato.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex justify-center">
               <button type="button" onClick={onClose} className="btn-primary-safe">
                 Fechar
               </button>
-              <a
-                href={buildWhatsAppUrl(plan.title, employees, plan.monthly, companyName)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline-safe"
-              >
-                <MessageCircle className="h-5 w-5" />
-                Chamar no WhatsApp
-              </a>
             </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 p-5 md:p-6">
-            <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">
-                Resumo da simulação
-              </p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <section className="rounded-2xl border border-brand-500/20 bg-brand-50/60 p-5 shadow-sm">
+              <div className="mb-5 flex items-center gap-3">
+                <CheckCircle2 className="h-5 w-5 text-accent-pink" />
+                <h4 className="text-xl font-black text-brand-900">Plano Selecionado</h4>
+              </div>
+
+              <dl className="mb-5 divide-y divide-brand-900/10 text-sm md:text-base">
+                <div className="flex items-center justify-between gap-4 py-3">
+                  <dt className="font-bold text-slate-600">Plano:</dt>
+                  <dd className="text-right font-black text-brand-900">{plan.title}</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-3">
+                  <dt className="font-bold text-slate-600">Número de funcionários:</dt>
+                  <dd className="text-right font-black text-brand-900">
+                    {employees} funcionário{employees === 1 ? '' : 's'}
+                  </dd>
+                </div>
+              </dl>
+
+              <p className="mb-3 text-sm font-bold text-slate-600">Forma de pagamento:</p>
+              <div className="grid gap-3 sm:grid-cols-2">
                 <button
                   type="button"
                   onClick={() => setBillingCycle('monthly')}
                   className={
                     billingCycle === 'monthly'
                       ? 'rounded-2xl border-2 border-accent-pink bg-white p-4 text-left shadow-sm'
-                      : 'rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-brand-900'
+                      : 'rounded-2xl border border-slate-200 bg-white/80 p-4 text-left transition hover:border-brand-900'
                   }
                   aria-pressed={billingCycle === 'monthly'}
                 >
-                  <span className="block text-xs font-black uppercase tracking-[0.14em] text-slate-500">Mensal</span>
+                  <span className="block text-base font-black text-brand-900">Mensal</span>
                   <span className="mt-1 block text-2xl font-black text-brand-900">{formatter.format(plan.monthly)}</span>
-                  <span className="text-sm font-semibold text-slate-500">por mês</span>
+                  <span className="text-sm font-semibold text-slate-500">Pagamento mensal recorrente</span>
                 </button>
                 <button
                   type="button"
@@ -975,14 +1047,229 @@ export function AssinaturaContractModal({
                   className={
                     billingCycle === 'annual'
                       ? 'rounded-2xl border-2 border-accent-pink bg-white p-4 text-left shadow-sm'
-                      : 'rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-brand-900'
+                      : 'rounded-2xl border border-slate-200 bg-white/80 p-4 text-left transition hover:border-brand-900'
                   }
                   aria-pressed={billingCycle === 'annual'}
                 >
-                  <span className="block text-xs font-black uppercase tracking-[0.14em] text-slate-500">Anual à vista</span>
+                  <span className="mb-2 inline-flex rounded-full bg-green-500 px-3 py-1 text-xs font-black text-white">5% OFF</span>
+                  <span className="block text-base font-black text-brand-900">Anual à vista</span>
                   <span className="mt-1 block text-2xl font-black text-brand-900">{formatter.format(plan.annualPix)}</span>
-                  <span className="text-sm font-semibold text-slate-500">5% de desconto</span>
+                  <span className="text-sm font-semibold text-slate-500">PIX com 5% de desconto</span>
                 </button>
+              </div>
+
+              <div className="mt-5 flex items-center justify-between gap-4 rounded-2xl bg-white/80 p-4">
+                <span className="font-bold text-slate-600">Valor mensal:</span>
+                <span className="text-right text-2xl font-black text-brand-900">{formatter.format(plan.monthly)}/mês</span>
+              </div>
+            </section>
+
+            <section className="rounded-2xl border border-brand-500/20 bg-brand-50/60 p-5">
+              <h4 className="text-xl font-black text-brand-900">Itens incluídos no contrato</h4>
+              <p className="mt-2 leading-relaxed text-slate-600">
+                Confira todos os serviços que fazem parte do seu plano {plan.title}:
+              </p>
+              <ul className="mt-5 grid gap-3">
+                {plan.includedItems.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm font-semibold leading-relaxed text-slate-700 md:text-base">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent-pink" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="rounded-2xl border border-slate-200 p-5">
+              <h4 className="mb-5 text-xl font-black text-brand-900">Vendedor ou quem indicou</h4>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="contract-indicador-nome" className="mb-2 block text-sm font-bold text-brand-900">
+                    Nome e sobrenome (opcional)
+                  </label>
+                  <input
+                    id="contract-indicador-nome"
+                    name="indicador_nome"
+                    type="text"
+                    placeholder="Nome do vendedor ou pessoa que indicou"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contract-indicador-telefone" className="mb-2 block text-sm font-bold text-brand-900">
+                    Telefone (opcional)
+                  </label>
+                  <input
+                    id="contract-indicador-telefone"
+                    name="indicador_telefone"
+                    type="tel"
+                    placeholder="(00) 00000-0000"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-slate-500">
+                Informe o nome e telefone do vendedor ou da pessoa que indicou nossos serviços.
+              </p>
+            </section>
+
+            <section className="rounded-2xl border border-slate-200 p-5">
+              <h4 className="mb-5 text-xl font-black text-brand-900">Dados do responsável</h4>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="contract-nome" className="mb-2 block text-sm font-bold text-brand-900">
+                    Nome completo *
+                  </label>
+                  <input
+                    id="contract-nome"
+                    name="nome"
+                    type="text"
+                    required
+                    autoComplete="name"
+                    placeholder="Seu nome completo"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contract-email" className="mb-2 block text-sm font-bold text-brand-900">
+                    E-mail corporativo *
+                  </label>
+                  <input
+                    id="contract-email"
+                    name="email"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    placeholder="seu@email.com"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contract-telefone" className="mb-2 block text-sm font-bold text-brand-900">
+                    Telefone/WhatsApp *
+                  </label>
+                  <input
+                    id="contract-telefone"
+                    name="telefone"
+                    type="tel"
+                    required
+                    autoComplete="tel"
+                    placeholder="(00) 00000-0000"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contract-cargo" className="mb-2 block text-sm font-bold text-brand-900">
+                    Cargo *
+                  </label>
+                  <input
+                    id="contract-cargo"
+                    name="cargo"
+                    type="text"
+                    required
+                    placeholder="Ex.: Gerente de RH"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contract-cpf" className="mb-2 block text-sm font-bold text-brand-900">
+                    CPF
+                  </label>
+                  <input
+                    id="contract-cpf"
+                    name="cpf"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="000.000.000-00"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contract-rg" className="mb-2 block text-sm font-bold text-brand-900">
+                    RG
+                  </label>
+                  <input
+                    id="contract-rg"
+                    name="rg"
+                    type="text"
+                    placeholder="00.000.000-0"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section className="rounded-2xl border border-slate-200 p-5">
+              <h4 className="mb-5 text-xl font-black text-brand-900">Dados do financeiro</h4>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="contract-dia-pagamento" className="mb-2 block text-sm font-bold text-brand-900">
+                    Data de pagamento preferida *
+                  </label>
+                  <input
+                    id="contract-dia-pagamento"
+                    name="dia_pagamento"
+                    type="text"
+                    required
+                    inputMode="numeric"
+                    placeholder="Ex.: 10"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contract-email-financeiro" className="mb-2 block text-sm font-bold text-brand-900">
+                    E-mail do financeiro *
+                  </label>
+                  <input
+                    id="contract-email-financeiro"
+                    name="email_financeiro"
+                    type="email"
+                    required
+                    placeholder="financeiro@empresa.com"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-6 border-t border-slate-100 pt-5">
+                <h5 className="mb-4 text-lg font-black text-brand-900">Contabilidade</h5>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="contract-contador-nome" className="mb-2 block text-sm font-bold text-brand-900">
+                      Nome
+                    </label>
+                    <input
+                      id="contract-contador-nome"
+                      name="contador_nome"
+                      type="text"
+                      placeholder="Nome do contador"
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contract-contador-email" className="mb-2 block text-sm font-bold text-brand-900">
+                      E-mail
+                    </label>
+                    <input
+                      id="contract-contador-email"
+                      name="contador_email"
+                      type="email"
+                      placeholder="contador@contabilidade.com"
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contract-contador-telefone" className="mb-2 block text-sm font-bold text-brand-900">
+                      Telefone
+                    </label>
+                    <input
+                      id="contract-contador-telefone"
+                      name="contador_telefone"
+                      type="tel"
+                      placeholder="(00) 00000-0000"
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
+                    />
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -1179,7 +1466,7 @@ export function AssinaturaContractModal({
               </div>
             </section>
 
-            <section className="rounded-2xl border border-slate-200 p-5">
+            <fieldset disabled className="hidden" aria-hidden="true">
               <h4 className="mb-5 text-xl font-black text-brand-900">Dados do contato</h4>
 
               <div className="grid gap-4 sm:grid-cols-2">
@@ -1263,7 +1550,14 @@ export function AssinaturaContractModal({
                   <option value="a-combinar">A combinar</option>
                 </select>
               </div>
-            </section>
+            </fieldset>
+
+            <div className="rounded-2xl border border-brand-500/20 bg-brand-50/60 p-5 text-center">
+              <p className="text-base font-semibold leading-relaxed text-slate-600 md:text-lg">
+                Após o envio, <strong className="text-brand-900">um membro da equipe comercial da SERMST</strong>{' '}
+                entrará em contato para finalização. Obrigado!
+              </p>
+            </div>
 
             <label className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
               <input
@@ -1274,8 +1568,8 @@ export function AssinaturaContractModal({
                 className="mt-1 h-4 w-4 rounded border-slate-300 accent-accent-pink"
               />
               <span className="text-sm font-semibold leading-relaxed text-slate-700">
-                Entendo que este valor é uma estimativa comercial e que a SERMST precisa validar
-                CNAE, grau de risco, unidades, funções, exames e documentos antes da proposta final.
+                Li e aceito os <span className="font-black text-accent-pink">Termos e Condições</span> e a{' '}
+                <span className="font-black text-accent-pink">Política de Privacidade</span>.
               </span>
             </label>
 
@@ -1293,28 +1587,34 @@ export function AssinaturaContractModal({
                 <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
                 <p>
                   <strong>Não conseguimos enviar.</strong>{' '}
-                  {submitError || 'Tente novamente em alguns instantes ou use o WhatsApp.'}
+                  {submitError || 'Tente novamente em alguns instantes.'}
                 </p>
               </div>
             ) : null}
 
-            <button
-              type="submit"
-              disabled={submitStatus === 'submitting' || !acceptedEstimate}
-              className="btn-primary-safe-lg flex w-full disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {submitStatus === 'submitting' ? (
-                <>
-                  <Loader2 className="h-5 w-5 animate-spin" />
-                  Enviando solicitação...
-                </>
-              ) : (
-                <>
-                  <Send className="h-5 w-5" />
-                  Enviar solicitação de contratação
-                </>
-              )}
-            </button>
+            <div className="grid gap-3 border-t border-slate-100 pt-6 sm:grid-cols-[1fr_0.32fr]">
+              <button
+                type="submit"
+                disabled={submitStatus === 'submitting' || !acceptedEstimate}
+                className="btn-primary-safe-lg flex w-full disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {submitStatus === 'submitting' ? (
+                  <>
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                    Enviando contratação...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-5 w-5" />
+                    Confirmar envio
+                  </>
+                )}
+              </button>
+              <button type="button" onClick={onClose} className="btn-outline-safe w-full">
+                <X className="h-5 w-5" />
+                Cancelar
+              </button>
+            </div>
           </form>
         )}
       </div>

@@ -12,7 +12,6 @@ import {
   ChevronUp,
   ClipboardCheck,
   Loader2,
-  MessageCircle,
   ShieldCheck,
   X,
 } from 'lucide-react';
@@ -35,6 +34,7 @@ type Plan = {
   minimum: number;
   bands: PriceBand[];
   features: string[];
+  includedItems: string[];
   bestFor: string;
 };
 
@@ -81,13 +81,40 @@ const employeeShortcuts = [1, 5, 10, 20, 50, 100, 300, 500, 1000];
 const ATTRIBUTION_KEY = 'sermst_attribution_v1';
 const FORM_STARTED_AT_KEY = 'sermst_form_started_at_v1';
 
+const baseIncludedItems = [
+  'PGR - Programa de Gerenciamento de Riscos',
+  'PCMSO - Programa de Controle Médico de Saúde Ocupacional',
+  'LTCAT - Laudo Técnico das Condições Ambientais de Trabalho',
+  'Exames clínicos ocupacionais na sede da SERMST (exceto exames complementares)',
+  'Portal do Cliente - Software de Gestão',
+  'Gestão de vencimentos de periódicos',
+  'Mensageria do eSocial (S-2210, S-2220, S-2221, S-2240)',
+];
+
+const essencialIncludedItems = [
+  'PPP - Perfil Profissiográfico Previdenciário',
+  'CAT - Comunicado de Acidente de Trabalho',
+  'Curso de CIPA para o representante da empresa',
+  'Consultoria em SST',
+  'Apoio para auditorias e fiscalizações',
+  'Avaliação dos fatores psicossociais',
+];
+
+const totalIncludedItems = [
+  '5 consultas com clínico geral ao longo do ano',
+  '1 palestra online ao vivo com psicóloga para a equipe',
+  '1 treinamento online sobre gestão estratégica',
+  '1 treinamento online sobre gestão de pessoas',
+  '1 treinamento online sobre empreendedorismo',
+];
+
 const plans: Plan[] = [
   {
     id: 'base',
     eyebrow: 'Entrada organizada',
     title: 'Plano Base',
     description:
-      'Para empresas que precisam manter a documentação obrigatória em ordem sem contratar cada item separado.',
+      'Para empresas que precisam organizar a documentação obrigatória, exames clínicos e rotina digital de SST.',
     minimum: 149,
     bestFor: 'Empresas pequenas, operação simples e baixa complexidade ocupacional.',
     bands: [
@@ -97,20 +124,15 @@ const plans: Plan[] = [
       { from: 101, to: 300, monthlyPerEmployee: 7 },
       { from: 301, monthlyPerEmployee: 5.5 },
     ],
-    features: [
-      'PGR e PCMSO conforme escopo da empresa',
-      'Orientação para exames ocupacionais obrigatórios',
-      'LTCAT e PPP sob necessidade técnica',
-      'Direcionamento para eventos S-2220 e S-2240',
-      'Canal comercial para dúvidas de rotina',
-    ],
+    features: baseIncludedItems,
+    includedItems: baseIncludedItems,
   },
   {
     id: 'essencial',
     eyebrow: 'Mais indicado',
     title: 'Plano Essencial',
     description:
-      'Para empresas que querem acompanhamento mensal, controle de vencimentos e rotina de SST mais previsível.',
+      'Para empresas que querem o Base completo com PPP, CAT, CIPA, consultoria e apoio em fiscalização.',
     minimum: 229,
     bestFor: 'Empresas em crescimento, RH sem tempo e contratos com admissões recorrentes.',
     bands: [
@@ -120,20 +142,15 @@ const plans: Plan[] = [
       { from: 101, to: 300, monthlyPerEmployee: 11 },
       { from: 301, monthlyPerEmployee: 8.5 },
     ],
-    features: [
-      'Tudo do Plano Base',
-      'Gestão de vencimentos ocupacionais',
-      'Calendário de exames periódicos',
-      'Apoio para envio de eventos SST ao eSocial',
-      'Revisão de prioridades por risco e urgência',
-    ],
+    features: ['Tudo do Plano Base', ...essencialIncludedItems],
+    includedItems: [...baseIncludedItems, ...essencialIncludedItems],
   },
   {
     id: 'total',
     eyebrow: 'Gestão completa',
     title: 'Plano Gestão Total',
     description:
-      'Para empresas médias e grandes que precisam de governança, previsibilidade e acompanhamento próximo.',
+      'Para empresas que querem somar SST, saúde, liderança e desenvolvimento da equipe em um plano anual.',
     minimum: 329,
     bestFor: 'Operações com mais funcionários, múltiplas funções, fiscalização ou maior exposição trabalhista.',
     bands: [
@@ -143,15 +160,12 @@ const plans: Plan[] = [
       { from: 101, to: 300, monthlyPerEmployee: 16 },
       { from: 301, monthlyPerEmployee: 12 },
     ],
-    features: [
-      'Tudo do Plano Essencial',
-      'Rotina mensal de acompanhamento SST',
-      'Priorização por risco, unidade e função',
-      'Apoio consultivo para auditorias e fiscalizações',
-      'Plano de implantação por fases para empresas maiores',
-    ],
+    features: ['Tudo do Plano Essencial', ...totalIncludedItems],
+    includedItems: [...baseIncludedItems, ...essencialIncludedItems, ...totalIncludedItems],
   },
 ];
+
+const RECOMMENDED_PLAN_ID: PlanId = 'essencial';
 
 const formatter = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
@@ -203,12 +217,6 @@ function calculateMonthly(plan: Plan, employees: number) {
   return Math.round(total);
 }
 
-function getRecommendedPlan(employees: number): PlanId {
-  if (employees <= 5) return 'base';
-  if (employees <= 75) return 'essencial';
-  return 'total';
-}
-
 function hasAddress(address?: AddressPayload) {
   return Boolean(address?.cep || address?.logradouro || address?.bairro || address?.cidade || address?.estado);
 }
@@ -216,7 +224,7 @@ function hasAddress(address?: AddressPayload) {
 function getCompanyReading(employees: number, cnaeEntry: CnaeEntry | null) {
   if (cnaeEntry) {
     const risk = grauRiscoInfo[cnaeEntry.grauRisco];
-    return `CNPJ localizado: CNAE ${cnaeEntry.codigo}, ${risk.label}. A simulação considera o porte agora; a SERMST valida risco, exames e escopo antes da proposta final.`;
+    return `CNPJ localizado: CNAE ${cnaeEntry.codigo}, ${risk.label}. O plano já segue com porte, risco e dados da empresa para contratação.`;
   }
 
   if (employees <= 5) {
@@ -224,7 +232,7 @@ function getCompanyReading(employees: number, cnaeEntry: CnaeEntry | null) {
   }
 
   if (employees <= 20) {
-    return 'Empresa em crescimento: já vale vender acompanhamento, vencimentos e rotina de exames, não só documentos avulsos.';
+    return 'Empresa em crescimento: já faz sentido estruturar acompanhamento, vencimentos e rotina de exames, não só documentos avulsos.';
   }
 
   if (employees <= 75) {
@@ -232,21 +240,10 @@ function getCompanyReading(employees: number, cnaeEntry: CnaeEntry | null) {
   }
 
   if (employees <= 300) {
-    return 'Empresa média: a conversa deve ser governança mensal, redução de retrabalho e previsibilidade por função/unidade.';
+    return 'Empresa média: o plano organiza governança mensal, reduz retrabalho e dá previsibilidade por função ou unidade.';
   }
 
   return 'Contrato corporativo: a proposta precisa considerar unidades, turnos, volume de exames, cargos críticos e implantação por fases.';
-}
-
-function buildWhatsAppUrl(planTitle: string, employees: number, monthly: number, companyName: string) {
-  const companyLine = companyName ? `A empresa é ${companyName}. ` : '';
-  const message =
-    `Olá! Fiz uma simulação na página de planos da SERMST. ${companyLine}` +
-    `Minha empresa tem ${employees} funcionário${employees === 1 ? '' : 's'}, ` +
-    `o plano de interesse é ${planTitle} e a simulação mostrou ${formatter.format(monthly)}/mês. ` +
-    `Podem validar o escopo e me orientar?`;
-
-  return `https://wa.me/5511915146447?text=${encodeURIComponent(message)}`;
 }
 
 function buildSnapshot(): AttributionSnapshot {
@@ -295,7 +292,6 @@ export function AssinaturaPlans() {
   const lastCnpj = useRef('');
 
   const normalizedEmployees = clampEmployees(employees);
-  const recommendedPlan = getRecommendedPlan(normalizedEmployees);
   const cnaeEntry = useMemo(
     () => (cnpjInfo?.cnaeFiscal ? findCnaeEntry(cnpjInfo.cnaeFiscal) : null),
     [cnpjInfo],
@@ -313,10 +309,10 @@ export function AssinaturaPlans() {
           monthly,
           annualPix,
           perEmployee,
-          isRecommended: plan.id === recommendedPlan,
+          isRecommended: plan.id === RECOMMENDED_PLAN_ID,
         };
       }),
-    [normalizedEmployees, recommendedPlan],
+    [normalizedEmployees],
   );
 
   const selectedPlan = selectedPlanId
@@ -428,11 +424,11 @@ export function AssinaturaPlans() {
         <div className="mb-10 max-w-3xl">
           <span className="kicker">Calculadora de planos</span>
           <h2 className="mb-5 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-            Simule, qualifique pelo CNPJ e envie a contratação em um único fluxo
+            Escolha o plano, qualifique pelo CNPJ e envie a contratação
           </h2>
           <p className="text-lg leading-relaxed text-slate-600">
-            A quantidade de funcionários define uma estimativa inicial. O CNPJ ajuda a SERMST a
-            identificar CNAE, grau de risco e endereço antes de confirmar o escopo final.
+            A quantidade de funcionários define o valor inicial. O CNPJ preenche razão social,
+            CNAE, grau de risco e endereço para acelerar o pedido.
           </p>
         </div>
 
@@ -576,7 +572,7 @@ export function AssinaturaPlans() {
 
               <div className="mt-6 rounded-2xl border border-brand-900/10 bg-slate-50 p-5">
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">
-                  Leitura comercial da faixa
+                  Leitura do porte da empresa
                 </p>
                 <p className="mt-2 font-semibold leading-relaxed text-brand-900">
                   {getCompanyReading(normalizedEmployees, cnaeEntry)}
@@ -591,8 +587,8 @@ export function AssinaturaPlans() {
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-4">
                   <ClipboardCheck className="mb-3 h-5 w-5 text-accent-pink" />
-                  <p className="text-sm font-black text-brand-900">Escopo validado</p>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">CNAE, unidades, cargos e exames entram na proposta final.</p>
+                  <p className="text-sm font-black text-brand-900">Dados conferidos</p>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-500">CNAE, unidades, cargos e exames seguem no pedido.</p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-4">
                   <BadgeCheck className="mb-3 h-5 w-5 text-accent-pink" />
@@ -667,36 +663,19 @@ export function AssinaturaPlans() {
                 ))}
               </ul>
 
-              <div className="mt-auto space-y-3">
+              <div className="mt-auto">
                 <button
                   type="button"
                   onClick={() => setSelectedPlanId(plan.id)}
                   className={plan.isRecommended ? 'btn-primary-safe w-full' : 'btn-outline-safe w-full'}
-                  aria-label={`Solicitar contratação do ${plan.title}`}
+                  aria-label={`Contratar o ${plan.title}`}
                 >
-                  Solicitar contratação
+                  Contratar agora
                   <ArrowRight className="h-5 w-5" />
                 </button>
-                <a
-                  href={buildWhatsAppUrl(plan.title, normalizedEmployees, plan.monthly, companyName)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold text-brand-900 transition hover:bg-slate-50"
-                >
-                  <MessageCircle className="h-4 w-4 text-accent-pink" />
-                  Tirar dúvida pelo WhatsApp
-                </a>
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
-          <p className="text-sm font-semibold leading-relaxed text-amber-900">
-            Importante: a calculadora é uma estimativa comercial para facilitar a conversa. Exames
-            complementares, treinamentos específicos, visitas técnicas, insalubridade/periculosidade,
-            unidades adicionais e grau de risco podem alterar o valor final.
-          </p>
         </div>
       </div>
 

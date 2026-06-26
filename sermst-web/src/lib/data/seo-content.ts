@@ -506,6 +506,7 @@ export const servicosSEO: Record<string, SEODocument> = {
   },
   "audiometria-ocupacional-clinica": {
     h1: "Audiometria Ocupacional e Audiometria Tonal | Exames de Audição",
+    seoTitle: "Audiometria Ocupacional | SERMST",
     hook:
       "Proteja a audição da equipe e reduza exposição a passivos relacionados a ruído ocupacional. A SERMST realiza audiometria ocupacional e audiometria tonal integrada ao PCMSO, com estrutura adequada, cabine calibrada e foco em validade técnica.",
     isClinico: true,
@@ -758,7 +759,7 @@ const saudeEntry = (h1: string, hook: string, dor: string, solucao: string): SEO
 export const saudeSEO: Record<string, SEODocument> = {
   "importancia-do-exame-periodico": {
     h1: "Exame periódico ocupacional: o que é, periodicidade e regras",
-    seoTitle: "Exame periódico ocupacional: o que é, periodicidade e regras | SERMST",
+    seoTitle: "Exame Periódico Ocupacional | SERMST",
     hook:
       "Entenda o que é o exame periódico ocupacional, quem define a periodicidade, quais exames podem entrar e por que atrasar isso aumenta o risco da empresa.",
     isClinico: true,

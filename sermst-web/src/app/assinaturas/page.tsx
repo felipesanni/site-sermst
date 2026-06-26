@@ -12,21 +12,20 @@ import {
 } from 'lucide-react';
 import { AssinaturaPlans } from './assinatura-plans';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
-import { LeadForm } from '@/components/forms/lead-form';
 import { FadeIn } from '@/components/ui/fade-in';
 import { siteImages } from '@/lib/site-images';
 
 export const metadata: Metadata = {
   title: 'Planos de SST por Assinatura para Empresas | SERMST',
   description:
-    'Planos mensais de SST para empresas de todos os portes. Simule valores para PGR, PCMSO, exames ocupacionais, LTCAT, PPP e apoio ao eSocial com a SERMST.',
+    'Contrate SST por assinatura com a SERMST. Planos mensais para organizar PGR, PCMSO, LTCAT, exames clínicos, eSocial, vencimentos e rotina de SST da empresa.',
   alternates: {
     canonical: 'https://sermst.com.br/assinaturas',
   },
   openGraph: {
     title: 'Planos de SST por Assinatura | Simulador SERMST',
     description:
-      'Use a calculadora de planos da SERMST e estime a gestão mensal de SST conforme o número de funcionários da empresa.',
+      'Escolha um plano mensal de SST, simule pelo número de funcionários e envie os dados de contratação pelo fluxo da SERMST.',
     url: 'https://sermst.com.br/assinaturas',
     type: 'website',
     locale: 'pt_BR',
@@ -53,93 +52,71 @@ const serviceSchema = {
   areaServed: ['São Paulo', 'Grande São Paulo', 'ABC Paulista'],
   serviceType: 'Gestão mensal de Saúde e Segurança do Trabalho',
   description:
-    'Planos mensais para gestão de SST, PGR, PCMSO, exames ocupacionais, LTCAT, PPP e apoio ao eSocial para empresas de diferentes portes.',
+    'Planos mensais para organizar documentos obrigatórios, exames clínicos ocupacionais, vencimentos, mensageria do eSocial e rotina de SST para empresas de diferentes portes.',
   url: 'https://sermst.com.br/assinaturas',
 };
+
+const contractFaqs = [
+  {
+    title: 'Como funciona a assinatura mensal de SST?',
+    text: 'A empresa escolhe o plano, informa CNPJ, número de funcionários e unidades atendidas. A SERMST recebe o pedido com os dados de contratação e inicia a organização dos documentos, exames, vencimentos e rotinas incluídas no plano.',
+  },
+  {
+    title: 'O que muda entre Plano Base, Essencial e Gestão Total?',
+    text: 'O Plano Base cobre o núcleo obrigatório de SST. O Essencial acrescenta PPP, CAT, CIPA, consultoria, apoio em auditorias e fatores psicossociais. O Gestão Total adiciona consultas, palestra com psicóloga e treinamentos online para a equipe.',
+  },
+  {
+    title: 'Como o CNPJ ajuda na contratação?',
+    text: 'A consulta do CNPJ preenche razão social e endereço, além de ajudar a identificar dados como CNAE, porte e grau de risco. Isso deixa o pedido mais completo antes da finalização do contrato.',
+  },
+  {
+    title: 'Como incluir matriz e filiais no mesmo pedido?',
+    text: 'No formulário de contratação é possível confirmar o endereço principal e adicionar outras unidades que devem entrar no atendimento, com CEP, endereço, cidade e estado de cada local.',
+  },
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'O valor da calculadora é o preço final do contrato?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Não. A calculadora mostra uma estimativa comercial inicial. O valor final depende de CNAE, grau de risco, número de unidades, cargos, exames complementares, treinamentos e situação atual de PGR, PCMSO, LTCAT e eSocial.',
-      },
+  mainEntity: contractFaqs.map((item) => ({
+    '@type': 'Question',
+    name: item.title,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.text,
     },
-    {
-      '@type': 'Question',
-      name: 'A SERMST atende empresas pequenas?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. A página foi criada para empresas de diferentes portes, incluindo empresas pequenas que precisam organizar SST, exames ocupacionais e documentos obrigatórios sem contratar serviços avulsos o tempo todo.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Empresas com mais de 100 funcionários podem contratar assinatura?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. Para empresas maiores, a assinatura costuma exigir diagnóstico por unidade, função, grau de risco e volume de exames. A calculadora ajuda a iniciar a conversa, e a SERMST valida o escopo antes da proposta final.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Os exames complementares estão inclusos no plano?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A inclusão depende do escopo validado. Alguns exames complementares, visitas técnicas, treinamentos específicos e avaliações especiais podem alterar o valor final do plano.',
-      },
-    },
-  ],
+  })),
 };
 
 const includedItems = [
   {
     icon: FileCheck2,
     title: 'Documentos obrigatórios',
-    text: 'PGR, PCMSO, LTCAT, PPP e base técnica para manter a empresa em conformidade.',
+    text: 'PGR, PCMSO, LTCAT e os documentos essenciais para a empresa manter a rotina de SST em ordem.',
   },
   {
     icon: CalendarCheck2,
     title: 'Rotina de vencimentos',
-    text: 'Acompanhamento de exames periódicos, prazos e prioridades para reduzir esquecimento no RH.',
+    text: 'Acompanhamento de exames periódicos, prazos e prioridades para o RH não depender de lembretes soltos.',
   },
   {
     icon: ShieldCheck,
     title: 'Apoio ao eSocial SST',
-    text: 'Orientação para eventos S-2220 e S-2240, com foco em reduzir erro e retrabalho.',
+    text: 'Mensageria para S-2210, S-2220, S-2221 e S-2240 com mais organização para reduzir erro e retrabalho.',
   },
   {
     icon: Users,
     title: 'Planos por porte',
-    text: 'Cálculo inicial por número de funcionários, com ajuste por CNAE, risco e complexidade real.',
+    text: 'Simulação por número de funcionários, com CNPJ, endereço e filiais no mesmo fluxo de contratação.',
   },
 ];
 
 const comparison = [
   ['Compra avulsa', 'Assinatura SERMST'],
-  ['Empresa lembra da SST quando vence, contrata ou é cobrada.', 'A rotina fica organizada mensalmente, com previsibilidade de próximos passos.'],
-  ['Cada documento vira uma negociação separada.', 'PGR, PCMSO, exames, LTCAT, PPP e eSocial entram em uma conversa única.'],
-  ['Preço parece menor no início, mas o retrabalho aparece depois.', 'O custo mensal ajuda a diluir a operação e reduzir surpresa comercial.'],
-  ['Pouca clareza sobre prioridade técnica.', 'A SERMST valida porte, risco, CNAE, cargos e urgências antes de fechar escopo.'],
-];
-
-const objections = [
-  {
-    title: '“Tenho poucos funcionários. Preciso mesmo disso?”',
-    text: 'Se há empregado CLT, já existe rotina ocupacional. O plano certo para empresa pequena não precisa ser pesado, mas precisa evitar improviso.',
-  },
-  {
-    title: '“Minha empresa é grande demais para plano pronto.”',
-    text: 'Empresas maiores entram por diagnóstico. A calculadora estima o ponto de partida, e a proposta final considera unidades, funções e volume real.',
-  },
-  {
-    title: '“Quero só saber quanto custa.”',
-    text: 'A calculadora mostra uma referência imediata. Depois a SERMST confirma o que está incluso para não vender barato algo que não cobre o risco.',
-  },
+  ['A empresa contrata documentos, exames e envios em momentos separados.', 'Documentos, exames clínicos, vencimentos e eSocial ficam reunidos em um plano mensal.'],
+  ['Cada necessidade abre uma nova cotação e uma nova troca de informações.', 'O pedido já nasce com plano, CNPJ, funcionários, endereço, filiais e forma de pagamento.'],
+  ['A rotina depende de alguém perceber vencimentos e pendências a tempo.', 'A assinatura cria acompanhamento recorrente para a empresa trabalhar com mais previsibilidade.'],
+  ['O custo aparece em blocos separados ao longo do ano.', 'O plano mensal ajuda a transformar SST em uma despesa organizada e fácil de acompanhar.'],
 ];
 
 export default function AssinaturasPage() {
@@ -168,42 +145,38 @@ export default function AssinaturasPage() {
           <FadeIn direction="up" viewport={false}>
             <span className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/8 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white/90 backdrop-blur">
               <BadgeCheck className="h-4 w-4 text-accent-pink" />
-              SST por assinatura para todos os portes
+              SST por assinatura
             </span>
             <h1 className="h1-standard mb-6 max-w-4xl text-white md:text-5xl lg:text-6xl">
-              Planos mensais de SST para sua empresa não correr atrás de documento vencido
+              Saúde e Segurança do Trabalho em um plano mensal para sua empresa
             </h1>
             <p className="mb-8 max-w-3xl text-xl font-medium leading-relaxed text-slate-200 md:text-2xl">
-              Simule o valor por quantidade de funcionários e veja uma proposta inicial para PGR,
-              PCMSO, exames ocupacionais, LTCAT, PPP e apoio ao eSocial.
+              A SERMST organiza documentos obrigatórios, exames clínicos, vencimentos, eSocial e
+              rotina de SST em um único fluxo. Simule pelo número de funcionários, escolha o plano e
+              envie os dados para contratação.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link href="#planos" className="btn-primary-safe-lg">
-                Simular meu plano
+                Conhecer os planos
                 <ArrowRight className="h-5 w-5" />
               </Link>
-              <a
-                href="https://wa.me/5511915146447?text=Ol%C3%A1!%20Quero%20entender%20os%20planos%20de%20SST%20por%20assinatura%20da%20SERMST."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-light-safe px-8 py-4"
-              >
-                Falar com especialista
-              </a>
+              <Link href="#o-que-inclui" className="btn-light-safe px-8 py-4">
+                Ver itens incluídos
+              </Link>
             </div>
           </FadeIn>
 
           <FadeIn direction="left" viewport={false} delay={0.1}>
             <div className="rounded-[2rem] border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-xl lg:p-8">
               <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-accent-pink">
-                O que muda na assinatura
+                Contratação em poucos passos
               </p>
               <div className="space-y-4">
                 {[
-                  'Valor mensal estimado por porte da empresa.',
-                  'Escopo validado antes da proposta final.',
-                  'Planos para 1, 10, 50, 100, 300 ou mais funcionários.',
-                  'WhatsApp já recebe a simulação feita pelo cliente.',
+                  'Planos para empresas pequenas, médias e grandes.',
+                  'CNPJ, endereço principal e filiais entram no mesmo pedido.',
+                  'Base, Essencial e Gestão Total com escopo claro antes do envio.',
+                  'Forma de pagamento e dados financeiros definidos no formulário.',
                 ].map((item) => (
                   <div key={item} className="flex gap-3 rounded-2xl bg-white/8 p-4">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent-pink" />
@@ -218,16 +191,16 @@ export default function AssinaturasPage() {
 
       <AssinaturaPlans />
 
-      <section className="px-6 py-20 lg:px-8">
+      <section id="o-que-inclui" className="px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-12 max-w-3xl">
             <span className="kicker">O que entra no plano</span>
             <h2 className="text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              A assinatura vende rotina, não apenas papel
+              O plano mensal transforma SST em rotina acompanhada
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-600">
-              A ideia é simplificar a contratação de SST para empresas pequenas e, ao mesmo tempo,
-              abrir conversa consultiva com empresas médias e grandes.
+              Em vez de contratar cada obrigação separadamente, sua empresa centraliza documentos,
+              exames clínicos, vencimentos e eSocial em um plano alinhado ao porte da operação.
             </p>
           </div>
 
@@ -253,12 +226,12 @@ export default function AssinaturasPage() {
           <div>
             <span className="kicker">Compra avulsa x assinatura</span>
             <h2 className="mb-5 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              Por que transformar SST em plano mensal
+              Por que contratar SST por assinatura
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
-              A compra avulsa parece simples, mas cria esquecimento, correria e retrabalho. A
-              assinatura cria recorrência e abre espaço para relacionamento de longo prazo com
-              empresas de qualquer porte.
+              A assinatura troca contratações soltas por uma rotina contínua. A empresa ganha
+              previsibilidade, sabe o que está incluído no plano e envia os dados necessários em um
+              único fluxo.
             </p>
           </div>
 
@@ -283,12 +256,16 @@ export default function AssinaturasPage() {
       <section className="px-6 py-20 lg:px-8">
         <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">
           <div>
-            <span className="kicker">Objeções reais</span>
+            <span className="kicker">Perguntas frequentes</span>
             <h2 className="mb-8 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              A página precisa capturar pequeno, médio e grande sem falar igual com todos
+              Como funciona a contratação do plano
             </h2>
+            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-slate-600">
+              Confirme como funcionam plano, CNPJ, endereço e filiais antes de enviar os dados de
+              contratação.
+            </p>
             <div className="space-y-5">
-              {objections.map((item) => (
+              {contractFaqs.map((item) => (
                 <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <h3 className="mb-3 text-xl font-black text-brand-900">{item.title}</h3>
                   <p className="leading-relaxed text-slate-600">{item.text}</p>
@@ -298,7 +275,34 @@ export default function AssinaturasPage() {
           </div>
 
           <div className="surface-panel">
-            <LeadForm />
+            <span className="kicker">Contratação direta</span>
+            <h3 className="mt-3 text-2xl font-black leading-tight text-brand-900 md:text-3xl">
+              Escolha o plano e envie os dados completos
+            </h3>
+            <p className="mt-4 leading-relaxed text-slate-600">
+              O fluxo foi pensado para transformar a simulação em pedido de contratação, com CNPJ,
+              responsável, financeiro, endereço principal e filiais no mesmo envio.
+            </p>
+
+            <div className="mt-8 divide-y divide-slate-100 border-y border-slate-100">
+              {[
+                'Informe CNPJ e quantidade de funcionários.',
+                'Escolha Base, Essencial ou Gestão Total.',
+                'Confirme endereço, unidades e ciclo de pagamento.',
+              ].map((step, index) => (
+                <div key={step} className="flex gap-4 py-5">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-pink text-sm font-black text-white">
+                    {index + 1}
+                  </span>
+                  <p className="font-semibold leading-relaxed text-brand-900">{step}</p>
+                </div>
+              ))}
+            </div>
+
+            <Link href="#planos" className="btn-primary-safe mt-8 w-full">
+              Contratar pelo simulador
+              <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -308,14 +312,14 @@ export default function AssinaturasPage() {
         <div className="relative z-10 mx-auto flex max-w-[1100px] flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div className="max-w-3xl">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-              Próximo passo
+              Pronto para contratar
             </span>
             <h2 className="text-3xl font-black leading-tight md:text-5xl">
-              Use a simulação como porta de entrada para vender o contrato certo
+              Escolha o plano e envie sua contratação
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-300">
-              A calculadora reduz a dúvida de preço, mas a SERMST ainda valida o escopo para
-              proteger margem, qualidade técnica e responsabilidade legal.
+              Escolha mensal ou anual, confirme CNPJ, endereço e filiais, e envie tudo em um único
+              pedido para a SERMST iniciar o plano.
             </p>
           </div>
           <Link href="#planos" className="btn-light-safe shrink-0 px-8 py-4">

@@ -13,6 +13,9 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'exame-admissional-expresso') {
     return 'Clínica de Exame Admissional';
   }
+  if (servico === 'audiometria-ocupacional-clinica') {
+    return 'Audiometria Ocupacional';
+  }
 
   return fallback;
 }
@@ -39,7 +42,7 @@ export async function generateMetadata({
     ? `${serviceLabel} | SERMST`
     : servico === 'exame-toxicologico-clt'
       ? `${serviceLabel} | CNH C, D e E, Empresas e Pessoa Física`
-      : data.h1;
+      : data.seoTitle ?? data.h1;
   const description =
     servico === 'exame-admissional-expresso'
       ? 'Clínica de exame admissional em São Paulo com ASO, exames ocupacionais, apoio ao eSocial e fluxo pensado para empresas que precisam contratar sem atraso.'

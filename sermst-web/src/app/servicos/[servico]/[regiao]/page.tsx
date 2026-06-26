@@ -15,6 +15,9 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'exame-admissional-expresso') {
     return 'Clínica de Exame Admissional';
   }
+  if (servico === 'audiometria-ocupacional-clinica') {
+    return 'Audiometria Ocupacional';
+  }
   if (servico === 'ltcat-laudo-tecnico-previdenciario') {
     return 'LTCAT — Laudo Técnico Ambiental';
   }

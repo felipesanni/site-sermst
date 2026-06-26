@@ -64,7 +64,7 @@ describe('AssinaturaPlans contract flow', () => {
 
     expect(await screen.findByText('Empresa Assinatura')).toBeInTheDocument();
 
-    await user.click(screen.getByLabelText(/Solicitar contratação do Plano Essencial/i));
+    await user.click(screen.getByLabelText(/Contratar o Plano Essencial/i));
     expect(await screen.findByText(/Endereço encontrado pelo CNPJ/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Adicionar filial/i })).toBeInTheDocument();
 
@@ -75,15 +75,16 @@ describe('AssinaturaPlans contract flow', () => {
     expect(await screen.findByDisplayValue('Praca da Se')).toBeInTheDocument();
 
     await user.type(screen.getByLabelText(/^Número \*$/i), '10');
-    await user.type(screen.getByLabelText(/Nome do contato/i), 'Maria Silva');
-    await user.type(screen.getByLabelText(/Cargo/i), 'RH');
-    await user.type(screen.getByLabelText(/E-mail profissional/i), 'maria@empresa.com');
-    await user.type(screen.getByLabelText(/WhatsApp/i), '11999999999');
-    await user.selectOptions(screen.getByLabelText(/Melhor dia de pagamento/i), '10');
+    await user.type(screen.getByLabelText(/Nome completo/i), 'Maria Silva');
+    await user.type(screen.getByLabelText(/E-mail corporativo/i), 'maria@empresa.com');
+    await user.type(screen.getByLabelText(/Telefone\/WhatsApp/i), '11999999999');
+    await user.type(screen.getByLabelText(/^Cargo/i), 'RH');
+    await user.type(screen.getByLabelText(/Data de pagamento preferida/i), '10');
+    await user.type(screen.getByLabelText(/E-mail do financeiro/i), 'financeiro@empresa.com');
     await user.click(screen.getByRole('checkbox'));
-    await user.click(screen.getByRole('button', { name: /Enviar solicitação de contratação/i }));
+    await user.click(screen.getByRole('button', { name: /Confirmar envio/i }));
 
-    expect(await screen.findByText(/Solicitação enviada/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Contratação enviada/i)).toBeInTheDocument();
 
     const leadCall = fetchMock.mock.calls.find(([url]) => String(url) === '/api/lead');
     expect(leadCall).toBeTruthy();
@@ -93,12 +94,14 @@ describe('AssinaturaPlans contract flow', () => {
       empresa: 'Empresa Assinatura',
       dor: 'assinatura-sst',
       utm_source: 'google',
+      email_financeiro: 'financeiro@empresa.com',
     });
     expect(payload.mensagem).toContain('Plano escolhido: Plano Essencial');
+    expect(payload.mensagem).toContain('Itens incluídos no contrato');
     expect(payload.mensagem).toContain('Endereço principal: Praca da Se');
 
     await waitFor(() => {
       expect(fetchMock).toHaveBeenCalledWith('/api/cep/01001000');
     });
-  });
+  }, 10000);
 });

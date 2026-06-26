@@ -1,6 +1,14 @@
 import { Localidade, SEODocument } from '@/lib/data/seo-content';
 
-const getPrimaryServiceName = (h1: string) => h1.split('|')[0].trim();
+const getPrimaryServiceName = (h1: string) => {
+  const primaryName = h1.split('|')[0].trim();
+
+  if (primaryName === 'Audiometria Ocupacional e Audiometria Tonal') {
+    return 'Audiometria Ocupacional';
+  }
+
+  return primaryName;
+};
 
 const getServiceCategoryCopy = (data: SEODocument) => {
   if (data.isClinico) {
