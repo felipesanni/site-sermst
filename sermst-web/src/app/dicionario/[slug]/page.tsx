@@ -36,8 +36,23 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
   const detail = dicionarioDetails[slug];
   if (!data || !detail) notFound();
 
+  const definedTermSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
+    '@id': `https://sermst.com.br/dicionario/${slug}#term`,
+    name: data.h1,
+    description: data.hook,
+    url: `https://sermst.com.br/dicionario/${slug}`,
+    inDefinedTermSet: {
+      '@type': 'DefinedTermSet',
+      name: 'Dicionário SST — SERMST',
+      url: 'https://sermst.com.br/dicionario',
+    },
+  };
+
   return (
     <article className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }} />
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Dicionário SST', item: 'https://sermst.com.br/dicionario' }, { name: data.h1 }]} />
       <header className="bg-slate-50 pt-32 pb-20 border-b border-slate-200">
         <div className="max-w-[1280px] w-full mx-auto px-6 lg:px-8">

@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'DET: o que é e como evitar perda de prazo | SERMST',
   description:
-    'Entenda o que e o DET, para que serve o Domicilio Eletronico Trabalhista, quem precisa acompanhar e quais riscos surgem quando a empresa perde notificacoes do MTE e da SIT.',
+    'Entenda o que é o DET (Domicílio Eletrônico Trabalhista), quem precisa acompanhar e os riscos de perder notificações do MTE e da SIT.',
   keywords: [
     'DET',
     'Domicilio Eletronico Trabalhista',

@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Valor do exame admissional | SERMST',
   description:
-    'O exame admissional começa em R$ 70,00 para empresas conveniadas. Saiba o que influencia o preço, quais complementares são exigidos por função e como calcular o custo real por admissão.',
+    'Exame admissional a partir de R$ 70 para empresas conveniadas. Veja o que influencia o preço, complementares por função e o custo real por admissão.',
   alternates: { canonical: 'https://sermst.com.br/saude/valor-exame-admissional' },
   openGraph: {
     title: 'Valor do exame admissional | SERMST',

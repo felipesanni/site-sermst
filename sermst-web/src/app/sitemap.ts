@@ -38,6 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ],
     },
     { url: `${BASE_URL}/contato`, changeFrequency: "monthly", priority: 0.9 },
+    {
+      url: `${BASE_URL}/assinaturas`,
+      changeFrequency: "weekly",
+      priority: 0.88,
+      images: [
+        `${BASE_URL}${siteImages.home.clinicOperations.src}`,
+        `${BASE_URL}${siteImages.home.occupationalLab.src}`,
+      ],
+    },
     { url: `${BASE_URL}/solucoes`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/servicos`, changeFrequency: "weekly", priority: 0.85 },
     { url: `${BASE_URL}/saude`, changeFrequency: "weekly", priority: 0.7 },

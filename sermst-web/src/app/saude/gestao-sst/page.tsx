@@ -137,7 +137,7 @@ export default function GestãoSSTPage() {
         },
         {
           q: 'Quanto custa montar gestão de SST do zero?',
-          a: 'Em empresa pequena (até 30 funcionários, baixo risco), a estrutura inicial fica em torno de R$ 5.000 a R$ 15.000 (PGR + PCMSO + treinamentos básicos + ASOs admissionais). Empresa média (50-200 funcionários, risco médio): R$ 15.000 a R$ 50.000. Manutenção mensal é uma fração desse investimento inicial.',
+          a: 'Na prática, a gestão completa de SST costuma ser contratada em formato mensal. Para empresas com mais de 5 colaboradores, a referência informada é de R$ 14,00 a R$ 21,00 por colaborador. Já empresas com até 5 funcionários podem entrar em pacotes com valor fixo a partir de R$ 180,00 por mês. O valor final varia conforme grau de risco, volume de exames, necessidade de treinamentos e escopo técnico contratado.',
         },
         {
           q: 'Qual a diferença entre gestão de SST e SESMT?',

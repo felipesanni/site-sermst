@@ -9,6 +9,10 @@ interface PageProps {
   params: { slug: string };
 }
 
+export function generateStaticParams() {
+  return (trainingsData as Training[]).map((t) => ({ slug: t.slug }));
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const training = (trainingsData as Training[]).find((t) => t.slug === slug);
@@ -33,8 +37,49 @@ export default async function TrainingPage({ params }: PageProps) {
   const training = (trainingsData as Training[]).find((t) => t.slug === slug);
   if (!training) notFound();
 
+  const pageUrl = `https://sermst.com.br/treinamentos/${training.slug}`;
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    '@id': `${pageUrl}#course`,
+    name: training.title,
+    description: training.summary,
+    url: pageUrl,
+    provider: { '@id': 'https://sermst.com.br/#organization' },
+    timeRequired: training.workload,
+    audience: { '@type': 'Audience', audienceType: training.targetAudience },
+    syllabusSections: training.syllabus.map((item) => ({
+      '@type': 'Syllabus',
+      name: item,
+    })),
+    offers: {
+      '@type': 'Offer',
+      category: 'Treinamento corporativo de SST',
+      availability: 'https://schema.org/InStock',
+      url: 'https://sermst.com.br/contato',
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'Onsite',
+      location: { '@type': 'Place', name: 'SERMST — São Paulo e in company' },
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sermst.com.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Treinamentos', item: 'https://sermst.com.br/servicos/treinamentos-nrs-cipa-brigada' },
+      { '@type': 'ListItem', position: 3, name: training.title, item: pageUrl },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-slate-50 pt-32 pb-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },

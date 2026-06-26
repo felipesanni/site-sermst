@@ -159,10 +159,10 @@ export default async function LocalSEOPage({
       hasMap: 'https://maps.app.goo.gl/TcAza8i3jHKjHfjr5',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Largo do Paissandu, 72, 3º Andar',
+        streetAddress: 'Largo do Paissandu, 72, 3º Andar, Conjunto 301',
         addressLocality: 'São Paulo',
         addressRegion: 'SP',
-        postalCode: '01037-000',
+        postalCode: '01034-901',
         addressCountry: 'BR',
       },
     },

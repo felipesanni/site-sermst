@@ -5,7 +5,7 @@ import { ArrowRight, Building2, CheckCircle2, Clock, FileCheck2, Navigation, Shi
 import { siteImages } from '@/lib/site-images';
 
 export const metadata: Metadata = {
-  title: 'Clínica de Exame Admissional em São Paulo para Empresas | SERMST',
+  title: 'Clínica de Exame Admissional em São Paulo | SERMST',
   description:
     'Clínica de exame admissional em São Paulo com ASO no mesmo dia, PCMSO e apoio ao eSocial. A SERMST atende empresas que precisam contratar sem travar o RH.',
   alternates: {

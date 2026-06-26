@@ -51,7 +51,7 @@ const faq = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Exame periódico ocupacional: o que é, periodicidade e regras | SERMST',
+  title: 'Exame periódico ocupacional: periodicidade e regras | SERMST',
   description:
     'Entenda o que é o exame periódico ocupacional, quem define a periodicidade, quais exames podem entrar e por que atrasar isso aumenta o risco da empresa.',
   alternates: {

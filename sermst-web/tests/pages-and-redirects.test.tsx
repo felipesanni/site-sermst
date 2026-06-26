@@ -65,6 +65,21 @@ describe('redirects criticos', () => {
           destination: '/servicos/exame-admissional-expresso/sao-paulo',
           permanent: true,
         }),
+        expect.objectContaining({
+          source: '/exames/como-funciona-o-exame-admissional/',
+          destination: '/exames/como-funciona-o-exame-admissional',
+          permanent: true,
+        }),
+        expect.objectContaining({
+          source: '/exames/funcao-encarregado-responsabilidades-e-perfil-ideal/',
+          destination: '/rh/funcao-encarregado',
+          permanent: true,
+        }),
+        expect.objectContaining({
+          source: '/medicina-do-trabalho/nr-1-atualizada/',
+          destination: '/normas/nr-01-pgr-atualizada',
+          permanent: true,
+        }),
       ]),
     );
   });

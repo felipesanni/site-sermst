@@ -11,7 +11,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'exame-admissional-expresso') {
-    return 'Clinica de Exame Admissional';
+    return 'Clínica de Exame Admissional';
   }
 
   return fallback;
@@ -30,7 +30,7 @@ export async function generateMetadata({
   const data = servicosSEO[servico];
 
   if (!data) {
-    return { title: 'Servico não encontrado | SERMST' };
+    return { title: 'Serviço não encontrado | SERMST' };
   }
 
   const canonicalUrl = `https://sermst.com.br/servicos/${servico}`;
@@ -42,9 +42,9 @@ export async function generateMetadata({
       : data.h1;
   const description =
     servico === 'exame-admissional-expresso'
-      ? 'Clinica para exame admissional em Sao Paulo com ASO, exames ocupacionais, apoio ao eSocial e fluxo pensado para empresas que precisam contratar sem atrasar a admissao.'
+      ? 'Clínica de exame admissional em São Paulo com ASO, exames ocupacionais, apoio ao eSocial e fluxo pensado para empresas que precisam contratar sem atraso.'
       : servico === 'exame-toxicologico-clt'
-        ? 'Exame toxicológico com preço de R$ 200,00, validade nacional e atendimento para empresas e pessoa física. Suporte para admissão, demissão e renovação de CNH das categorias C, D e E.'
+        ? 'Exame toxicológico por R$ 200, validade nacional, para empresas e pessoa física. Suporte para admissão, demissão e renovação de CNH C, D e E.'
       : data.hook;
 
   return {
@@ -80,6 +80,32 @@ export default async function ServicoPage({
     topic: serviceName,
   });
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `https://sermst.com.br/servicos/${servico}#service`,
+    name: serviceName,
+    serviceType: serviceName,
+    description: data.hook,
+    url: `https://sermst.com.br/servicos/${servico}`,
+    provider: { '@id': 'https://sermst.com.br/#organization' },
+    areaServed: [
+      'São Paulo',
+      'Santo André',
+      'São Bernardo do Campo',
+      'São Caetano do Sul',
+      'Diadema',
+      'Osasco',
+      'Guarulhos',
+      'Barueri',
+    ],
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: 'https://sermst.com.br/contato',
+      servicePhone: '+55-11-91514-6447',
+    },
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -95,6 +121,7 @@ export default async function ServicoPage({
 
   return (
     <article className="flex min-h-screen flex-col bg-slate-50">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Serviços', item: 'https://sermst.com.br/servicos' }, { name: data.h1.split('|')[0].trim() }]} />
@@ -107,7 +134,7 @@ export default async function ServicoPage({
                 Especialidade SERMST
               </span>
               <h1 className="h1-standard mb-8 text-white">
-                {servico === 'exame-admissional-expresso' ? 'Clinica de Exame Admissional | Medicina do Trabalho' : data.h1}
+                {servico === 'exame-admissional-expresso' ? 'Clínica de Exame Admissional | Medicina do Trabalho' : data.h1}
               </h1>
               <p className="mx-auto max-w-3xl border-l-4 border-accent-pink pl-6 text-left text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
                 {data.hook}
@@ -365,17 +392,11 @@ export default async function ServicoPage({
                 Quanto mais claro o fluxo técnico, documental e operacional, mais fácil fica contratar, cumprir prazo e reduzir risco trabalhista sem travar o dia a dia do RH. Se sua empresa precisa decidir agora, a SERMST orienta o escopo antes que a demanda vire atraso, retrabalho ou exposição jurídica.
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                <Link
-                  href="/contato"
-                  className="btn-primary-safe"
-                >
+                <Link href="/contato" className="btn-primary-safe">
                   Falar com a SERMST
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-                <Link
-                  href="/servicos"
-                  className="btn-outline-safe"
-                >
+                <Link href="/servicos" className="btn-outline-safe">
                   Ver outros serviços
                 </Link>
               </div>

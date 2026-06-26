@@ -1,5 +1,7 @@
 # SERMST – Gestão Ocupacional e Medicina do Trabalho
 
+> Última atualização: 2026-06-11
+
 Empresa especializada em Medicina do Trabalho, Segurança do Trabalho e Gestão eSocial, com mais de 40 anos de atuação. Atende empresas de todos os portes na cidade de São Paulo, Grande ABC e região. Fundada em 1983, a SERMST oferece serviços clínicos, documentais e de gestão de SST (Saúde e Segurança do Trabalho) que garantem conformidade legal, previnem multas do eSocial e blindam juridicamente o negócio do cliente.
 
 ## Informações de contato
@@ -9,8 +11,9 @@ Empresa especializada em Medicina do Trabalho, Segurança do Trabalho e Gestão 
 - LLMs.txt: https://sermst.com.br/llms.txt
 - WhatsApp / Telefone: +55 11 91514-6447
 - E-mail: comercial@sermst.com.br
-- Endereço: Largo do Paissandu, 72, 3º Andar – São Paulo, SP, 01037-000
-- Horário: Segunda a Sexta, 07h30 às 18h00
+- Endereço: Largo do Paissandu, 72, 3º Andar, Conjunto 301 – São Paulo, SP, 01034-901
+- Telefone fixo: +55 11 3229-7567
+- Horário: Segunda a Sexta, 08h30 às 17h30
 
 ## Serviços
 
@@ -83,6 +86,8 @@ Página: https://sermst.com.br/servicos/treinamentos-nrs-cipa-brigada/sao-paulo
 - PGRS (Resíduos): https://sermst.com.br/normas/pgrs-residuos
 
 ## Conteúdo editorial
+
+Índice geral de conteúdo: https://sermst.com.br/blog
 
 ### Hub de Saúde Ocupacional
 Artigos técnicos sobre medicina do trabalho, PCMSO, ASO e gestão SST.

@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'A Empresa Pode Desistir Após o Exame Admissional? | SERMST',
   description:
-    'A empresa pode recusar a admissão após o exame admissional, mas com limites legais claros. Veja quando isso é permitido, quando gera passivo trabalhista e como se proteger.',
+    'A empresa pode recusar a admissão após o exame admissional, mas com limites legais. Veja quando é permitido, quando gera passivo e como se proteger.',
   alternates: { canonical: 'https://sermst.com.br/saude/empresa-pode-desistir-apos-exame-admissional' },
   openGraph: {
     title: 'A Empresa Pode Desistir Após o Exame Admissional?',

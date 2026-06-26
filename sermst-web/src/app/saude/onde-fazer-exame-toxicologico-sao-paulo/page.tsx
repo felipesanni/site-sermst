@@ -5,7 +5,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Exame toxicológico em São Paulo Centro | SERMST',
   description:
-    'Saiba onde fazer exame toxicológico em São Paulo Centro, no Largo do Paissandu, com atendimento para empresa e pessoa física, validade nacional e suporte para CNH C, D e E.',
+    'Onde fazer exame toxicológico em São Paulo Centro, no Largo do Paissandu: empresa e pessoa física, validade nacional e suporte para CNH C, D e E.',
   robots: 'index, follow',
   alternates: { canonical: 'https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo' },
   openGraph: {

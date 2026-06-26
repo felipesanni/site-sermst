@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'O que são EPIs: Tipos, Obrigações e Documentação | SERMST',
   description:
-    'EPI é exigência legal: fornecimento gratuito, treinamento de uso, fiscalização, troca periódica. Falhar em qualquer parte é responsabilidade da empresa. Veja o que NR-06 exige e como documentar.',
+    'EPI é exigência legal: fornecimento gratuito, treinamento, fiscalização e troca periódica. Veja o que a NR-06 exige e como a empresa deve documentar.',
   alternates: { canonical: 'https://sermst.com.br/saude/o-que-sao-epis' },
   openGraph: {
     title: 'EPIs: o que são, tipos obrigatórios e responsabilidades da empresa | SERMST',

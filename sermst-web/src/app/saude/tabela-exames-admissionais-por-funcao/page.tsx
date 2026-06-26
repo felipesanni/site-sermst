@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Tabela de Exames Admissionais por Função e Cargo | SERMST',
   description:
-    'Quais exames admissionais são obrigatórios para cada função e cargo? Veja a tabela completa, entenda como o PCMSO define os exames e saiba quando complementares são exigidos.',
+    'Quais exames admissionais são obrigatórios para cada função? Veja a tabela completa, como o PCMSO define os exames e quando complementares são exigidos.',
   alternates: { canonical: 'https://sermst.com.br/saude/tabela-exames-admissionais-por-funcao' },
   openGraph: {
     title: 'Tabela de Exames Admissionais por Função',

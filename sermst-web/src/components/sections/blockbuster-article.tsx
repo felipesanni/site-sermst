@@ -125,6 +125,17 @@ export function BlockbusterArticle({
     title: section.title,
   }));
 
+  const formatIsoDate = (value?: string) =>
+    value
+      ? new Intl.DateTimeFormat('pt-BR', {
+          dateStyle: 'long',
+          timeZone: 'UTC',
+        }).format(new Date(`${value}T12:00:00Z`))
+      : null;
+
+  const formattedPublishedDate = formatIsoDate(author?.datePublished);
+  const formattedModifiedDate = formatIsoDate(author?.dateModified);
+
   // ── Schema.org JSON-LD (BreadcrumbList + Article) ─────────────────────────
   const hubUrl = hubHref.startsWith('http')
     ? hubHref
@@ -264,6 +275,19 @@ export function BlockbusterArticle({
                   {' '}·{' '}
                   <span className="text-slate-500">{author.jobTitle}</span>
                 </p>
+              </div>
+            )}
+            {formattedModifiedDate && (
+              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-300">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+                  <Clock className="h-3.5 w-3.5 text-accent-pink" />
+                  Ultima revisao: {formattedModifiedDate}
+                </span>
+                {formattedPublishedDate && (
+                  <span className="text-slate-500">
+                    Publicado em {formattedPublishedDate}
+                  </span>
+                )}
               </div>
             )}
           </FadeIn>

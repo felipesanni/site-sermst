@@ -82,10 +82,10 @@ const organizationSchema = {
   medicalSpecialty: 'OccupationalMedicine',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Largo do Paissandu, 72, 3º Andar',
+    streetAddress: 'Largo do Paissandu, 72, 3º Andar, Conjunto 301',
     addressLocality: 'São Paulo',
     addressRegion: 'SP',
-    postalCode: '01037-000',
+    postalCode: '01034-901',
     addressCountry: 'BR',
   },
   geo: {
@@ -114,8 +114,8 @@ const organizationSchema = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '07:30',
-      closes: '18:00',
+      opens: '08:30',
+      closes: '17:30',
     },
   ],
   priceRange: '$$',
@@ -500,7 +500,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                       className="block transition-colors hover:text-accent-pink"
                     >
                       <p className="mb-1 text-xs font-black uppercase text-white transition-colors hover:text-accent-pink">Largo do Paissandu, 72</p>
-                      <p className="text-sm leading-relaxed text-slate-400 transition-colors hover:text-slate-300">Centro Histórico, 3º Andar<br />São Paulo - SP | 01037-000</p>
+                      <p className="text-sm leading-relaxed text-slate-400 transition-colors hover:text-slate-300">Centro Histórico, 3º Andar<br />São Paulo - SP | 01034-901</p>
                     </a>
                   </div>
                   <div className="flex gap-4">

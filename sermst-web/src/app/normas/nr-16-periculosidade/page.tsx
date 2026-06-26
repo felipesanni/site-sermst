@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-16: Periculosidade — Adicional 30% e Laudo | SERMST',
   description:
-    'A NR-16 define o adicional de periculosidade de 30%. Veja quem tem direito (eletricidade, inflamáveis, explosivos, segurança), como caracterizar e o erro de pagar sem laudo.',
+    'A NR-16 define o adicional de periculosidade de 30%. Veja quem tem direito, como caracterizar por laudo e o erro de pagar sem base técnica.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-16-periculosidade' },
   openGraph: {
     title: 'NR-16: periculosidade — adicional, atividades e como documentar | SERMST',

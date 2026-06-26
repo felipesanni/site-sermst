@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'DIR: quando a empresa pode usar a declaração | SERMST',
   description:
-    'Entenda o que é a DIR, quando a Declaração de Inexistência de Riscos pode ser usada, quem se enquadra e por que nem toda empresa de grau 1 ou 2 está dispensada de análise técnica.',
+    'O que é a DIR, quando a Declaração de Inexistência de Riscos pode ser usada e por que nem toda empresa de grau 1 ou 2 está dispensada de análise técnica.',
   keywords: [
     'DIR',
     'Declaração de Inexistência de Riscos',

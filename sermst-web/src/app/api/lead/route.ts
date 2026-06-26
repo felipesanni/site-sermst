@@ -13,7 +13,7 @@ const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 5;
 const WINDOW_MS = 60_000;
 const MIN_SUBMIT_MS = 4_000;
-const MAX_MESSAGE_LENGTH = 1500;
+const MAX_MESSAGE_LENGTH = 4000;
 const MAX_GENERIC_FIELD_LENGTH = 240;
 
 function checkRateLimit(ip: string): boolean {

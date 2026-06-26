@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Lei 15.377/2026: guia para empresas | SERMST',
   description:
-    'Lei dos 3 dias: empresa deve informar sobre vacinação, HPV e câncer, e comunicar o direito a 3 dias de folga para exame preventivo. Guia prático para RH e DP cumprirem a CLT.',
+    'Lei dos 3 dias: a empresa deve informar sobre vacinação, HPV e câncer e comunicar o direito a folga para exame preventivo. Guia prático para RH e DP.',
   alternates: {
     canonical: 'https://sermst.com.br/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos',
   },

@@ -6,7 +6,7 @@ import { siteImages } from '@/lib/site-images';
 
 export const metadata: Metadata = {
   title: 'A Clínica SERMST | Medicina do Trabalho em São Paulo',
-  description: 'Há décadas cuidando da saúde ocupacional e segurança do trabalho. Conheça nossa estrutura centralizada no Largo do Paissandú, nosso corpo clínico e nosso compromisso com o compliance SST.',
+  description: 'Clínica de medicina do trabalho no Largo do Paissandu, Centro de SP. Conheça a estrutura, o corpo clínico e o compromisso da SERMST com o compliance SST.',
 
   alternates: {
     canonical: 'https://sermst.com.br/a-clinica',

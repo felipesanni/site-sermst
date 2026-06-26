@@ -12,10 +12,55 @@ type NormalizedCnpjPayload = {
   cnaeFiscal: string;
   cnaeDescricao: string;
   source: 'brasilapi' | 'receitaws';
+  endereco?: {
+    cep: string;
+    logradouro: string;
+    numero: string;
+    complemento: string;
+    bairro: string;
+    cidade: string;
+    estado: string;
+  };
 };
 
 function onlyDigits(value: string) {
   return value.replace(/\D/g, '');
+}
+
+function formatCep(value: string) {
+  const digits = onlyDigits(value).slice(0, 8);
+  if (digits.length <= 5) return digits;
+  return `${digits.slice(0, 5)}-${digits.slice(5)}`;
+}
+
+function normalizeAddress(payload: {
+  cep?: string | number;
+  logradouro?: string;
+  numero?: string | number;
+  complemento?: string;
+  bairro?: string;
+  municipio?: string;
+  uf?: string;
+}) {
+  const cep = payload.cep != null ? formatCep(String(payload.cep)) : '';
+  const logradouro = payload.logradouro ? String(payload.logradouro).trim() : '';
+  const numero = payload.numero != null ? String(payload.numero).trim() : '';
+  const complemento = payload.complemento ? String(payload.complemento).trim() : '';
+  const bairro = payload.bairro ? String(payload.bairro).trim() : '';
+  const cidade = payload.municipio ? String(payload.municipio).trim() : '';
+  const estado = payload.uf ? String(payload.uf).trim().toUpperCase() : '';
+
+  if (!cep && !logradouro && !bairro && !cidade && !estado) return undefined;
+
+  return {
+    cep,
+    logradouro,
+    numero,
+    complemento,
+    bairro,
+    cidade,
+    estado,
+  };
 }
 
 function normalizeBrasilApi(data: unknown): NormalizedCnpjPayload | null {
@@ -23,6 +68,13 @@ function normalizeBrasilApi(data: unknown): NormalizedCnpjPayload | null {
     razao_social?: string;
     cnae_fiscal?: number | string;
     cnae_fiscal_descricao?: string;
+    cep?: string | number;
+    logradouro?: string;
+    numero?: string | number;
+    complemento?: string;
+    bairro?: string;
+    municipio?: string;
+    uf?: string;
   };
 
   const cnaeFiscal = payload.cnae_fiscal != null ? onlyDigits(String(payload.cnae_fiscal)).padStart(7, '0') : '';
@@ -33,6 +85,7 @@ function normalizeBrasilApi(data: unknown): NormalizedCnpjPayload | null {
     cnaeFiscal,
     cnaeDescricao: payload.cnae_fiscal_descricao || '',
     source: 'brasilapi',
+    endereco: normalizeAddress(payload),
   };
 }
 
@@ -41,6 +94,13 @@ function normalizeReceitaWs(data: unknown): NormalizedCnpjPayload | null {
     nome?: string;
     status?: string;
     atividade_principal?: Array<{ code?: string; text?: string }>;
+    cep?: string;
+    logradouro?: string;
+    numero?: string;
+    complemento?: string;
+    bairro?: string;
+    municipio?: string;
+    uf?: string;
   };
 
   const primary = payload.atividade_principal?.[0];
@@ -53,6 +113,7 @@ function normalizeReceitaWs(data: unknown): NormalizedCnpjPayload | null {
     cnaeFiscal,
     cnaeDescricao: primary?.text || '',
     source: 'receitaws',
+    endereco: normalizeAddress(payload),
   };
 }
 

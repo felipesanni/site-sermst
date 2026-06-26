@@ -24,6 +24,13 @@ describe('GET /api/cnpj/[cnpj]', () => {
           razao_social: 'Empresa BrasilAPI',
           cnae_fiscal: '6201501',
           cnae_fiscal_descricao: 'Desenvolvimento de software',
+          cep: '01311000',
+          logradouro: 'Avenida Paulista',
+          numero: '1000',
+          complemento: '10 andar',
+          bairro: 'Bela Vista',
+          municipio: 'Sao Paulo',
+          uf: 'SP',
         }),
         { status: 200 },
       ),
@@ -40,6 +47,15 @@ describe('GET /api/cnpj/[cnpj]', () => {
       cnaeFiscal: '6201501',
       cnaeDescricao: 'Desenvolvimento de software',
       source: 'brasilapi',
+      endereco: {
+        cep: '01311-000',
+        logradouro: 'Avenida Paulista',
+        numero: '1000',
+        complemento: '10 andar',
+        bairro: 'Bela Vista',
+        cidade: 'Sao Paulo',
+        estado: 'SP',
+      },
     });
   });
 
@@ -50,7 +66,13 @@ describe('GET /api/cnpj/[cnpj]', () => {
         new Response(
           JSON.stringify({
             nome: 'Empresa ReceitaWS',
-            atividade_principal: [{ code: '47.11-3-01', text: 'Comércio varejista' }],
+            atividade_principal: [{ code: '47.11-3-01', text: 'Comercio varejista' }],
+            cep: '01001-000',
+            logradouro: 'Praca da Se',
+            numero: '10',
+            bairro: 'Se',
+            municipio: 'Sao Paulo',
+            uf: 'SP',
           }),
           { status: 200 },
         ),
@@ -65,8 +87,17 @@ describe('GET /api/cnpj/[cnpj]', () => {
     await expect(response.json()).resolves.toEqual({
       razaoSocial: 'Empresa ReceitaWS',
       cnaeFiscal: '4711301',
-      cnaeDescricao: 'Comércio varejista',
+      cnaeDescricao: 'Comercio varejista',
       source: 'receitaws',
+      endereco: {
+        cep: '01001-000',
+        logradouro: 'Praca da Se',
+        numero: '10',
+        complemento: '',
+        bairro: 'Se',
+        cidade: 'Sao Paulo',
+        estado: 'SP',
+      },
     });
   });
 

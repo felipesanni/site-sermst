@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Clínica de exame admissional em SP | SERMST',
   description:
-    'Clínica de exame admissional em São Paulo com ASO, exames ocupacionais, PCMSO e apoio ao eSocial. Veja como escolher, quais documentos levar, prazo e o que avaliar.',
+    'Clínica de exame admissional em São Paulo com ASO, exames ocupacionais, PCMSO e apoio ao eSocial. Veja como escolher, documentos, prazo e o que avaliar.',
   alternates: { canonical: 'https://sermst.com.br/saude/clinica-exame-admissional-sao-paulo' },
   openGraph: {
     title: 'Clínica de exame admissional em SP | SERMST',

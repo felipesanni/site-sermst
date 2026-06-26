@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-35: Trabalho em Altura — Treinamento Obrigatório | SERMST',
   description:
-    'Guia completo da NR-35 (trabalho em altura): quem precisa, treinamento obrigatório de 8h, reciclagem a cada 2 anos, APR, supervisão técnica é o que acontece em caso de descumprimento. Por SERMST.',
+    'Guia da NR-35 (trabalho em altura): quem precisa, treinamento obrigatório de 8h, reciclagem a cada 2 anos, APR e o que acontece em caso de descumprimento.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura' },
   openGraph: {
     title: 'NR-35: trabalho em altura — treinamento, ART e obrigações | SERMST',

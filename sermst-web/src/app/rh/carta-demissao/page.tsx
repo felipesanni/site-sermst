@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Carta de demissão: modelo e cuidados | SERMST',
   description:
-    'A carta de rescisão é peça jurídica. O conteúdo dela define obrigações trabalhistas, abre janela para passivo e fica registrada no eSocial. Veja como redigir corretamente.',
+    'A carta de rescisão é peça jurídica: define obrigações trabalhistas, abre janela para passivo e fica registrada no eSocial. Veja como redigir corretamente.',
   alternates: { canonical: 'https://sermst.com.br/rh/carta-demissao' },
   robots: 'index, follow',
   openGraph: {

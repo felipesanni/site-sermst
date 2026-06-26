@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Validade do ASO admissional | SERMST',
   description:
-    'O ASO admissional não tem validade como certidão — ele é específico para o momento da contratação. Veja quando refazer exames e qual é a periodicidade correta do PCMSO.',
+    'O ASO admissional não tem validade como certidão — vale para o momento da contratação. Veja quando refazer exames e a periodicidade correta do PCMSO.',
   alternates: { canonical: 'https://sermst.com.br/saude/validade-aso-admissional' },
   openGraph: {
     title: 'Validade do ASO admissional | SERMST',

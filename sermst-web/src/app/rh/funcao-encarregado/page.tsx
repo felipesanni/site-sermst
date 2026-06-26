@@ -17,7 +17,7 @@ import { CheckCircle2, AlertTriangle, ShieldCheck, Users, ArrowRight, Target, Fi
 export const metadata: Metadata = {
   title: 'Encarregado: o que faz, função e responsabilidades | SERMST',
   description:
-    'Entenda o que faz um encarregado, quais são suas responsabilidades, diferença para supervisor, perfil ideal e os cuidados de SST que a empresa precisa documentar.',
+    'O que faz um encarregado, suas responsabilidades, a diferença para supervisor e os cuidados de SST que a empresa precisa documentar.',
   alternates: { canonical: 'https://sermst.com.br/rh/funcao-encarregado' },
   openGraph: {
     title: 'Encarregado: o que faz, função e responsabilidades',
