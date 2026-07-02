@@ -66,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/rh`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/normas`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/normas/nr-06-epi`, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${BASE_URL}/normas/nr-37`, changeFrequency: "monthly", priority: 0.72 },
     { url: `${BASE_URL}/normas/dds`, changeFrequency: "monthly", priority: 0.74 },
     { url: `${BASE_URL}/normas/sesmt`, changeFrequency: "monthly", priority: 0.74 },
     { url: `${BASE_URL}/dicionario`, changeFrequency: "monthly", priority: 0.5 },
@@ -106,6 +107,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "aso-atestado-saude-ocupacional",
     "gestao-sst",
     "insalubridade-o-que-e-adicional",
+    "acidente-de-trabalho",
+    "o-que-e-exame-toxicologico",
   ]);
   const saudePages: MetadataRoute.Sitemap = Object.keys(saudeSEO)
     .filter((slug) => !saúdeStaticSlugs.has(slug))
@@ -155,6 +158,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/rh/declaracao-inexistencia-risco-dir`,    changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE_URL}/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos`, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE_URL}/rh/evitar-processos-trabalhistas`,  changeFrequency: "monthly", priority: 0.70 },
+    { url: `${BASE_URL}/rh/o-que-um-gerente-faz`,           changeFrequency: "monthly", priority: 0.68 },
+    { url: `${BASE_URL}/rh/quando-demitir-funcionario`,     changeFrequency: "monthly", priority: 0.68 },
     { url: `${BASE_URL}/rh/carta-demissao`,                 changeFrequency: "monthly", priority: 0.65 },
     { url: `${BASE_URL}/rh/carta-recomendacao`,             changeFrequency: "monthly", priority: 0.60 },
     { url: `${BASE_URL}/rh/treinamento-gerentes`,           changeFrequency: "monthly", priority: 0.60 },
@@ -167,6 +172,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/saude/aso-atestado-saude-ocupacional`,      changeFrequency: "monthly", priority: 0.70 },
     { url: `${BASE_URL}/saude/gestao-sst`,                          changeFrequency: "monthly", priority: 0.65 },
     { url: `${BASE_URL}/saude/insalubridade-o-que-e-adicional`,     changeFrequency: "monthly", priority: 0.78 },
+    { url: `${BASE_URL}/saude/acidente-de-trabalho`,                changeFrequency: "monthly", priority: 0.78 },
+    { url: `${BASE_URL}/saude/o-que-e-exame-toxicologico`,          changeFrequency: "monthly", priority: 0.75 },
   ];
 
   // ── Páginas de equipe e institucionais ──────────────────────────────────────

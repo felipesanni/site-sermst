@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'SESMT: quando é obrigatório e como dimensionar | SERMST',
+  title: 'NR-4 e SESMT: obrigatoriedade, dimensionamento e grau de risco | SERMST',
   description:
-    'Entenda o que é SESMT, quando a empresa precisa, como dimensionar por CNAE, grau de risco e número de funcionários, e relação com NR-04.',
+    'NR-4 define quando o SESMT é obrigatório. Entenda como dimensionar por CNAE, grau de risco e número de empregados — e o que acontece quando a empresa ignora.',
   alternates: { canonical: 'https://sermst.com.br/normas/sesmt' },
   openGraph: {
-    title: 'SESMT: quando é obrigatório e como dimensionar | SERMST',
+    title: 'NR-4 e SESMT: obrigatoriedade, dimensionamento e grau de risco | SERMST',
     description:
-      'Guia prático sobre SESMT para empresas: NR-04, grau de risco, CNAE, quantidade de empregados, equipe obrigatória e alternativas técnicas.',
+      'Guia prático sobre NR-4 e SESMT: grau de risco, CNAE, número de empregados, composição da equipe e alternativas técnicas para empresas.',
     url: 'https://sermst.com.br/normas/sesmt',
     type: 'article',
     locale: 'pt_BR',
@@ -33,8 +33,8 @@ export default function SesmtPage() {
         dateModified: '2026-07-02',
       }}
       readingTime="9 min"
-      h1="SESMT: quando é obrigatório e como dimensionar na empresa"
-      intro="SESMT é o Serviço Especializado em Segurança e Medicina do Trabalho. A obrigatoriedade depende do grau de risco da atividade e do número de empregados, conforme a NR-04."
+      h1="NR-4 e SESMT: obrigatoriedade, dimensionamento e grau de risco"
+      intro="A NR-4 determina quando o SESMT — Serviço Especializado em Segurança e Medicina do Trabalho — é obrigatório. O enquadramento depende do grau de risco da atividade (CNAE) cruzado com o número de empregados do estabelecimento."
       quickAnswer={
         <p>
           Para saber se a empresa precisa de SESMT, é necessário cruzar CNAE, grau de risco e quantidade de empregados. Empresas maiores ou de maior risco podem precisar de técnico de segurança, engenheiro, médico do trabalho, enfermeiro ou auxiliar de enfermagem do trabalho.

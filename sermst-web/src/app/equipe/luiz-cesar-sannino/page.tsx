@@ -93,8 +93,8 @@ const articles = [
 ];
 
 const personSchema = {
-  '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': 'https://sermst.com.br/equipe/luiz-cesar-sannino#person',
   name: 'Luiz César Sannino',
   jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho',
   description:
@@ -132,12 +132,24 @@ const personSchema = {
   ],
 };
 
+const profilePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': 'https://sermst.com.br/equipe/luiz-cesar-sannino#profilepage',
+  url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
+  name: 'Luiz César Sannino — Higienista Ocupacional e TST | SERMST',
+  dateCreated: '2025-01-01T00:00:00-03:00',
+  dateModified: '2026-07-02T00:00:00-03:00',
+  inLanguage: 'pt-BR',
+  mainEntity: personSchema,
+};
+
 export default function LuizCesarSanninoPage() {
   return (
     <main className="min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
       />
 
       {/* ── Hero ─────────────────────────────────────────────── */}

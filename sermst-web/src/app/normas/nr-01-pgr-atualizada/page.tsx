@@ -39,6 +39,11 @@ export default function NR01Page() {
       }}
       h1="NR-01 atualizada: o que mudou no PGR, no GRO e nos riscos psicossociais"
       intro="A NR-01 organiza as disposicoes gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, os fatores de risco psicossociais relacionados ao trabalho passaram a exigir leitura mais explicita dentro do PGR. Aqui o foco e explicar a mudanca normativa e o que a empresa precisa revisar agora, sem confundir esta pagina com a contratacao do servico de PGR."
+      quickAnswer={
+        <p>
+          A <strong>NR-01</strong> organiza as disposições gerais de SST e o <strong>Gerenciamento de Riscos Ocupacionais (GRO)</strong>. Toda empresa com empregados CLT deve manter o <strong>PGR — Programa de Gerenciamento de Riscos</strong> com inventário de riscos, plano de ação com responsáveis e prazos, e revisão periódica ou sempre que houver mudança na operação. Desde 26 de maio de 2026, os <strong>fatores de risco psicossociais relacionados ao trabalho</strong> passaram a ser exigidos explicitamente dentro do GRO.
+        </p>
+      }
       sections={[
         {
           title: 'O que e a NR-01 atualizada e por que ela importa para qualquer empresa com empregado CLT',

@@ -35,6 +35,11 @@ export default function PPPPage() {
 
       h1="PPP eletrônico: o que é, como funciona e por que ele importa"
       intro="O PPP eletrônico é o documento que descreve as condições ambientais do trabalho de cada colaborador para fins previdenciários. Obrigatório no eSocial via evento S-2240, é base para aposentadoria especial e responsabilidade direta da empresa."
+      quickAnswer={
+        <p>
+          O <strong>PPP eletrônico</strong> (Perfil Profissiográfico Previdenciário) é gerado pelo <strong>eSocial a partir do evento S-2240</strong> (condições ambientais de trabalho) e S-2220 (monitoramento de saúde). Documenta a exposição do trabalhador a agentes nocivos durante todo o vínculo e é a base legal para <strong>aposentadoria especial</strong>. A empresa deve emitir o PPP ao término de cada vínculo e <strong>manter os documentos de base por 20 anos</strong> para fins previdenciários — esse prazo corre mesmo após o fechamento da empresa.
+        </p>
+      }
       sections={[
         {
           title: 'O que é o PPP',
@@ -110,6 +115,30 @@ export default function PPPPage() {
             </ol>
           ),
         },
+        {
+          title: 'Prazo de guarda: 20 anos após o término do vínculo',
+          body: (
+            <>
+              <p>
+                A empresa é obrigada a <strong>manter os documentos que embasam o PPP por no mínimo 20 anos após o término do vínculo empregatício</strong> do trabalhador — conforme o art. 58-A da Lei 8.213/91 e regulamentações previdenciárias. Esse prazo abrange:
+              </p>
+              <ul>
+                <li>LTCAT e laudos de agentes nocivos</li>
+                <li>Laudos NR-15 e NR-16</li>
+                <li>Fichas de entrega de EPI com assinatura e número de CA</li>
+                <li>ASOs dos exames periódicos do trabalhador</li>
+                <li>Registros de monitoração biológica e ambiental</li>
+                <li>Os próprios eventos S-2240 transmitidos ao eSocial</li>
+              </ul>
+              <p>
+                O prazo de 20 anos existe porque o trabalhador pode pedir aposentadoria especial décadas depois de encerrado o contrato — e precisa provar a exposição referente a cada emprego. Se a empresa não tiver os documentos, a responsabilidade de reconstituição recai sobre ela.
+              </p>
+              <p>
+                <strong>Atenção ao encerramento de empresa:</strong> o prazo corre independentemente da continuidade da empresa. Se a empresa fechar, os sócios são responsáveis pela guarda — ou por garantir a entrega dos documentos ao trabalhador antes do encerramento.
+              </p>
+            </>
+          ),
+        },
       ]}
       faq={[
         {
@@ -131,6 +160,10 @@ export default function PPPPage() {
         {
           q: 'PPP retroativo — empresa precisa fazer?',
           a: 'Para trabalhadores que já saíram, sim, se solicitado. Empresa precisa reconstituir o PPP com base em documentos da época (LTCAT, registros, ASO). Pode ser trabalhoso para períodos antigos — por isso documentação contemporânea é o melhor caminho.',
+        },
+        {
+          q: 'Por quanto tempo a empresa precisa guardar os documentos do PPP?',
+          a: 'A empresa deve manter os documentos que embasam o PPP por no mínimo 20 anos após o término do vínculo empregatício do trabalhador. Isso inclui LTCAT, laudos, fichas de entrega de EPI, ASOs e registros de monitoração. O prazo corre mesmo que a empresa encerre as atividades — os sócios são responsáveis pela guarda ou pela entrega dos documentos ao trabalhador antes do fechamento.',
         },
       ]}
       sidebarTitle="Seu PPP/S-2240 está consistente?"

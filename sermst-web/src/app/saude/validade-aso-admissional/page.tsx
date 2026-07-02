@@ -102,19 +102,19 @@ export default function ValidadeAsoPage() {
             ),
           },
           {
-            title: 'Periodicidade do exame periódico por grau de risco',
+            title: 'Periodicidade do exame periódico: a regra real da NR-07',
             body: (
               <>
                 <p>
-                  A periodicidade do exame periódico é definida pelo <strong>grau de risco da atividade (NR-04)</strong> e pelo PCMSO. Como referência geral da NR-07:
+                  A periodicidade do exame periódico (NR-07 item 7.4.3.2) não é definida pelo grau de risco da empresa — é definida pela <strong>combinação de dois critérios: tipo de exposição e idade do trabalhador</strong>.
                 </p>
                 <ul>
-                  <li><strong>Grau 1 e 2:</strong> a cada 2 anos para trabalhadores até 45 anos; anualmente acima de 45 anos.</li>
-                  <li><strong>Grau 3 e 4:</strong> anualmente, ou com menor intervalo quando o PCMSO assim determinar.</li>
-                  <li><strong>Com exposição a agente nocivo específico:</strong> a periodicidade pode ser mais curta, definida pelo médico do trabalho coordenador do PCMSO.</li>
+                  <li><strong>Trabalhadores expostos a agentes nocivos específicos</strong> (ruído, produtos químicos, radiação, agentes listados no Anexo da NR-07): periodicidade anual ou semestral, conforme o agente — independentemente da idade.</li>
+                  <li><strong>Trabalhadores sem exposição a agente nocivo específico, mas com risco de agravamento de doença:</strong> anual ou com intervalo menor, a critério do médico coordenador do PCMSO.</li>
+                  <li><strong>Demais trabalhadores (sem exposição específica e sem condição de saúde especial):</strong> bienal (a cada 2 anos) para a faixa de 18 a 45 anos; anual para menores de 18 e maiores de 45 anos.</li>
                 </ul>
                 <p>
-                  O PCMSO pode estabelecer periodicidade mais restritiva do que a NR-07 prevê — nunca menos restritiva.
+                  Na prática, empresas de GR3 e GR4 costumam ter trabalhadores expostos a agentes específicos (ruído, químicos, poeiras), o que torna o exame anual — mas pela natureza da exposição, não pelo grau de risco em si. O médico coordenador do PCMSO é quem define a periodicidade de cada função, e pode ser mais restritivo do que a NR-07 exige, nunca menos.
                 </p>
               </>
             ),
@@ -157,7 +157,7 @@ export default function ValidadeAsoPage() {
           },
           {
             q: 'Com que frequência deve ser feito o exame periódico?',
-            a: 'Depende do grau de risco e do PCMSO. Em geral: anualmente para graus 3 e 4, e bienalmente para graus 1 e 2 (trabalhadores até 45 anos).',
+            a: 'A NR-07 usa dois critérios: tipo de exposição e idade. Trabalhadores expostos a agentes nocivos específicos (ruído, químicos, radiação): anual ou semestral. Trabalhadores sem exposição específica: bienal para a faixa de 18 a 45 anos; anual para menores de 18 e maiores de 45 anos. O médico coordenador do PCMSO pode definir periodicidade mais curta quando necessário.',
           },
           {
             q: 'O que acontece se o exame periódico vencer?',

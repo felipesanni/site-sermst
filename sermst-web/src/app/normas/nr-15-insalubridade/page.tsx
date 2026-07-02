@@ -35,6 +35,11 @@ export default function NR15Page() {
 
       h1="NR-15: Insalubridade — guia para gestores e RH"
       intro="A NR-15 define quais atividades geram direito ao adicional de insalubridade — 10%, 20% ou 40% sobre o salário mínimo. Pagar errado é passivo trabalhista garantido. Se a sua dúvida é mais ampla sobre conceito, direito e cálculo, veja também o guia de insalubridade. Aqui, o foco é a norma e o enquadramento técnico."
+      quickAnswer={
+        <p>
+          A <strong>NR-15</strong> define as atividades e operações insalubres e os limites de tolerância para agentes nocivos (ruído, calor, químicos, poeiras, umidade, radiações). Quando a exposição ultrapassa o limite e é caracterizada por <strong>laudo técnico de engenheiro ou médico do trabalho</strong>, o trabalhador tem direito ao adicional de insalubridade: <strong>10% (grau mínimo)</strong>, <strong>20% (grau médio)</strong> ou <strong>40% (grau máximo)</strong> — calculados sobre o salário mínimo nacional. Pagar sem laudo ou deixar de pagar quando o laudo confirma a exposição são igualmente passivos trabalhistas.
+        </p>
+      }
       sections={[
         {
           title: 'O que é a NR-15 (em uma frase)',

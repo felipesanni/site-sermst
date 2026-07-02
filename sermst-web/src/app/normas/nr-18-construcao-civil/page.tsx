@@ -38,6 +38,11 @@ export default function NR18Page() {
       }}
       h1="NR-18: o que a Norma Regulamentadora 18 exige na construção civil"
       intro="A NR-18, também chamada de Norma Regulamentadora 18, reúne os principais requisitos de SST para canteiros de obra: PGR, PCMSO, treinamentos, proteções coletivas, áreas de vivência, EPIs e sinalização. Com a revisão da norma, o PCMAT foi substituído pelo PGR. Neste guia, você entende o que a NR-18 exige hoje, o que mudou na versão atualizada, como o eSocial afeta a construção civil e o que precisa estar em ordem para a obra não virar passivo."
+      quickAnswer={
+        <p>
+          A <strong>NR-18</strong> regula segurança e saúde na construção civil. O <strong>PCMAT foi substituído pelo PGR</strong> (NR-01), que deve contemplar todos os riscos do canteiro e ser atualizado conforme as fases da obra. Treinamento básico obrigatório: <strong>4 horas antes do início das atividades</strong>, com <strong>reciclagem de 4 horas a cada 2 anos</strong>. A obra precisa ter áreas de vivência adequadas (refeitório, alojamento, sanitários), proteções coletivas implantadas e dados de SST integrados ao <strong>eSocial (S-2220 e S-2240)</strong>.
+        </p>
+      }
       sections={[
         {
           title: 'O que é a NR-18 e quem precisa cumprir',

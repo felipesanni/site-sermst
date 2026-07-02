@@ -36,6 +36,11 @@ export default function NR35Page() {
 
       h1="NR-35: trabalho em altura, treinamento e o que a empresa precisa cumprir"
       intro="A NR-35 regulamenta toda atividade executada acima de 2 metros do nível inferior com risco de queda. O ponto central aqui não é só treinamento: a empresa precisa cumprir exigências de validade, reciclagem, análise de risco, permissão de trabalho, aptidão médica e plano de resgate."
+      quickAnswer={
+        <p>
+          A <strong>NR-35</strong> regula trabalho em altura — toda atividade acima de <strong>2 metros do nível inferior com risco de queda</strong>. Exige <strong>treinamento inicial de 8 horas</strong> (teórico e prático), <strong>reciclagem de 8 horas a cada 2 anos</strong>, ASO com aptidão específica para altura, <strong>Análise de Risco por escrito</strong> antes de cada atividade e <strong>Permissão de Trabalho (PT)</strong> para atividades não rotineiras ou críticas. Treinamento vencido equivale a trabalhador não autorizado — é infração direta em fiscalização.
+        </p>
+      }
       sections={[
         {
           title: 'O que é considerado trabalho em altura na NR-35',

@@ -35,6 +35,11 @@ export default function NR10Page() {
 
       h1="NR-10: Segurança em Instalações e Serviços em Eletricidade"
       intro="A NR-10 trata de uma das atividades de maior risco fatal do país. Define os requisitos para projeto, instalação, manutenção e operação de sistemas elétricos. Treinamento e laudo são obrigatórios — falha aqui é responsabilidade civil e criminal direta."
+      quickAnswer={
+        <p>
+          A <strong>NR-10</strong> regula segurança em instalações e serviços em eletricidade. Trabalhadores que intervêm ou operam próximo a sistemas elétricos devem ter <strong>Curso Básico de Segurança de no mínimo 40 horas</strong>. Para quem atua em <strong>Sistemas Elétricos de Potência (SEP — alta tensão)</strong>, são necessárias mais 40 horas de curso complementar. A <strong>reciclagem é obrigatória a cada 2 anos</strong>. A empresa também deve manter o <strong>Prontuário das Instalações Elétricas (PIE)</strong> atualizado — sem ele, a fiscalização autua mesmo que os treinamentos estejam em dia.
+        </p>
+      }
       sections={[
         {
           title: 'O que é a NR-10',
@@ -73,8 +78,8 @@ export default function NR10Page() {
               <ul>
                 <li><strong>Curso Básico (40h)</strong> — para trabalhadores autorizados que executam atividades em instalações elétricas. Conteúdo programático específico.</li>
                 <li><strong>Curso Complementar SEP (40h adicionais)</strong> — para quem trabalha em Sistemas Elétricos de Potência (alta tensão). Total mínimo de 80 horas com o básico.</li>
-                <li><strong>Reciclagem bienal</strong> — todo trabalhador autorizado precisa renovar, com carga horária definida no procedimento.</li>
-                <li><strong>Reciclagem extraordinária</strong> — após retorno de afastamento longo, mudança de função, evento de quase-acidente, ou alteração significativa nas instalações.</li>
+                <li><strong>Reciclagem bienal (a cada 2 anos)</strong> — todo trabalhador autorizado precisa renovar o treinamento a cada 2 anos para manter a autorização válida. Carga horária mínima definida no programa de treinamento da empresa. Treinamento vencido equivale a trabalhador não autorizado.</li>
+                <li><strong>Reciclagem extraordinária</strong> — obrigatória após retorno de afastamento longo, mudança de função, evento de quase-acidente ou alteração significativa nas instalações elétricas.</li>
               </ul>
               <p>
                 Treinamento de NR-10 é caro e crítico — não pode ser cópia barata, nem feito por instrutor sem habilitação. A consequência de um acidente fatal por treinamento inadequado vai muito além da multa.
@@ -116,6 +121,10 @@ export default function NR10Page() {
         },
       ]}
       faq={[
+        {
+          q: 'Qual a validade do treinamento NR-10 e quando precisa de reciclagem?',
+          a: 'O treinamento NR-10 tem validade de 2 anos. Após esse período, o trabalhador precisa fazer a reciclagem bienal para continuar autorizado. Além do prazo regular, a reciclagem é obrigatória também em casos extraordinários: retorno de afastamento prolongado, mudança de função, envolvimento em quase-acidente elétrico ou alteração significativa nas instalações. Trabalhador com treinamento vencido não pode ser considerado autorizado — é infração direta.',
+        },
         {
           q: 'NR-10 só vale para alta tensão?',
           a: 'Não. A NR-10 vale para qualquer instalação elétrica — baixa, média ou alta tensão. O Curso Complementar SEP é específico para Sistemas Elétricos de Potência, mas o Curso Básico (40h) cobre baixa tensão e é exigência para qualquer trabalhador autorizado.',

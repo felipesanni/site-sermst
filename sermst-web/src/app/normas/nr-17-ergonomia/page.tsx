@@ -35,6 +35,11 @@ export default function NR17Page() {
 
       h1="NR-17: Ergonomia — o que sua empresa precisa fazer para evitar LER/DORT"
       intro="A NR-17 trata da adaptação do trabalho às condições humanas: postura, mobiliário, ritmo, levantamento de peso, organização. Em ações trabalhistas por LER/DORT, a falta de Análise Ergonômica do Trabalho atualizada é responsabilidade direta da empresa."
+      quickAnswer={
+        <p>
+          A <strong>NR-17</strong> regula ergonomia no trabalho — mobiliário, equipamentos, condições ambientais (iluminação, ruído, temperatura), organização do trabalho, pausas e movimentação de cargas. A <strong>AET — Análise Ergonômica do Trabalho</strong> é obrigatória para funções com risco ergonômico e é a principal defesa da empresa em ações por LER/DORT. A norma tem dois anexos com exigências específicas: <strong>Anexo I para teleatendimento e call center</strong> (pausas obrigatórias, mobiliário, headset) e <strong>Anexo II para comércio varejista de gêneros alimentícios</strong> (supermercados — caixas, repositores e açougues).
+        </p>
+      }
       sections={[
         {
           title: 'O que é a NR-17',
@@ -129,6 +134,54 @@ export default function NR17Page() {
             </ol>
           ),
         },
+        {
+          title: 'Anexo I — Teleatendimento e call center: exigências específicas',
+          body: (
+            <>
+              <p>
+                O <strong>Anexo I da NR-17</strong> se aplica a <strong>teleatendimento, telemarketing, call center e centrais de atendimento</strong> — qualquer função que usa equipamento de escuta e fala com atendimento contínuo ao público. É um dos anexos mais detalhados e autuados do conjunto.
+              </p>
+              <p>Exigências principais:</p>
+              <ul>
+                <li><strong>Pausas obrigatórias:</strong> 20 minutos de descanso para cada 100 minutos trabalhados em atendimento telefônico ativo, computados como tempo de serviço.</li>
+                <li><strong>Headset com limitação de volume:</strong> proteção auditiva integrada — o equipamento deve limitar pico de pressão sonora. Queixas de PAIR (Perda Auditiva Induzida por Ruído) são frequentes nessa função.</li>
+                <li><strong>Monitor de vídeo:</strong> posicionado à altura dos olhos, a distância mínima de 45 cm, com ajuste de brilho e ausência de reflexo.</li>
+                <li><strong>Mobiliário regulável:</strong> mesa com altura ajustável ou plano de trabalho com apoio para punho; cadeira com regulagem de altura, assento e apoio lombar.</li>
+                <li><strong>Iluminação:</strong> sem ofuscamento direto ou reflexo na tela — lux mínimos definidos por tipo de tarefa.</li>
+                <li><strong>Conteúdo de trabalho e organização:</strong> vedação à pressão por metas que gerem sobrecarga psíquica. Monitoramento eletrônico de desempenho deve ser acompanhado de feedback e não gerar constrangimento.</li>
+                <li><strong>Capacitação:</strong> treinamento antes do início das atividades (manuseio de equipamento, postura, saúde vocal) e periodic refresh.</li>
+              </ul>
+              <p>
+                Empresa de call center com AET desatualizada ou que não documenta as pausas está exposta a autuação dupla: do MTE (NR-17 Anexo I) e de ações trabalhistas por doença ocupacional.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Anexo II — Comércio varejista de gêneros alimentícios: supermercados e açougues',
+          body: (
+            <>
+              <p>
+                O <strong>Anexo II da NR-17</strong> se aplica ao <strong>comércio varejista de gêneros alimentícios</strong> — supermercados, hipermercados, lojas de conveniência, açougues e similares. Foco nas funções de maior risco ergonômico: <strong>operadores de caixa, repositores de mercadoria e trabalhadores de açougue</strong>.
+              </p>
+              <p>Exigências principais por função:</p>
+              <ul>
+                <li>
+                  <strong>Operadores de checkout (caixa):</strong> assento regulável obrigatório — o trabalho deve poder ser realizado sentado ou em pé alternadamente; plano de trabalho em altura adequada; scanner de código de barras deve minimizar extensão e torção de punho; pausas periódicas computadas como tempo de serviço.
+                </li>
+                <li>
+                  <strong>Repositores:</strong> limitação de peso por unidade de carga; uso de equipamento auxiliar para cargas acima do limite; estantes em alturas compatíveis; vedação a posturas forçadas repetitivas sem pausas.
+                </li>
+                <li>
+                  <strong>Trabalhadores de açougue:</strong> piso antiderrapante; facas com cabo ergonômico; equipamento de corte com proteção; carga máxima definida; controle de temperatura no ambiente frio (câmara frigorífica) e alternância de posturas.
+                </li>
+              </ul>
+              <p>
+                Supermercados são alvo frequente de fiscalização do MTE justamente porque o perfil de risco é alto — esforço repetitivo, postura estática prolongada, carga física — e a conformidade costuma ser baixa. AET específica por função é o passo inicial.
+              </p>
+            </>
+          ),
+        },
       ]}
       faq={[
         {
@@ -150,6 +203,14 @@ export default function NR17Page() {
         {
           q: 'Ginástica laboral é obrigatória?',
           a: 'Não. A NR-17 não exige ginástica laboral. Mas é prática reconhecida como medida de prevenção. Quando faz parte da AET como recomendação implementada, melhora o paper trail de prevenção.',
+        },
+        {
+          q: 'Call center e teleatendimento precisam de regras específicas além da NR-17 geral?',
+          a: 'Sim. O Anexo I da NR-17 se aplica especificamente a teleatendimento, telemarketing e centrais de atendimento. Exige pausas de 20 minutos por cada 100 minutos de atendimento ativo (computadas como serviço), headset com limitação de volume, mobiliário regulável e vedação à pressão abusiva por metas. AET específica para essa atividade é obrigatória.',
+        },
+        {
+          q: 'Supermercado precisa cumprir algum anexo específico da NR-17?',
+          a: 'Sim. O Anexo II da NR-17 trata do comércio varejista de gêneros alimentícios — supermercados, hipermercados, lojas de conveniência e açougues. Foca em operadores de caixa (assento regulável obrigatório, alternância sentado/em pé), repositores (limite de carga, equipamento auxiliar) e açougue (piso antiderrapante, ferramentas ergonômicas, controle de temperatura). O segmento é alvo frequente de fiscalização por descumprimento.',
         },
       ]}
       sidebarTitle="Sua empresa tem AET atualizada?"

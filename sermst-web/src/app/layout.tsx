@@ -70,7 +70,9 @@ const organizationSchema = {
   '@type': ['MedicalOrganization', 'LocalBusiness'],
   '@id': 'https://sermst.com.br/#organization',
   name: 'SERMST - Gestão Ocupacional e Medicina do Trabalho',
+  legalName: 'SERMST Gestão Ocupacional Ltda',
   alternateName: 'SERMST',
+  taxID: '28.125.178/0001-88',
   url: 'https://sermst.com.br',
   logo: {
     '@type': 'ImageObject',

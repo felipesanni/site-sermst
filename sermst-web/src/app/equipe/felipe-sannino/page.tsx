@@ -78,8 +78,8 @@ const articles = [
 ];
 
 const personSchema = {
-  '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': 'https://sermst.com.br/equipe/felipe-sannino#person',
   name: 'Felipe Sannino',
   jobTitle: 'Advogado — Direito do Trabalho e SST',
   description:
@@ -113,12 +113,24 @@ const personSchema = {
   ],
 };
 
+const profilePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': 'https://sermst.com.br/equipe/felipe-sannino#profilepage',
+  url: 'https://sermst.com.br/equipe/felipe-sannino',
+  name: 'Felipe Sannino — Advogado Trabalhista e SST | SERMST',
+  dateCreated: '2025-01-01T00:00:00-03:00',
+  dateModified: '2026-07-02T00:00:00-03:00',
+  inLanguage: 'pt-BR',
+  mainEntity: personSchema,
+};
+
 export default function FelipeSanninoPage() {
   return (
     <main className="min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
       />
 
       {/* ── Hero ─────────────────────────────────────────────── */}

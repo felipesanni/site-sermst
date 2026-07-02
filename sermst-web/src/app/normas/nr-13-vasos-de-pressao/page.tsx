@@ -35,6 +35,11 @@ export default function NR13Page() {
 
       h1="NR-13: Caldeiras, Vasos de Pressão, Tubulações e Tanques"
       intro="A NR-13 obriga inspeção técnica periódica em equipamentos sob pressão. Sem laudo válido, a empresa não pode operar — risco de interdição imediata, acidente catastrófico e responsabilização. Veja como cumprir."
+      quickAnswer={
+        <p>
+          A <strong>NR-13</strong> obriga inspeção periódica em <strong>caldeiras, vasos de pressão, tubulações e tanques metálicos de armazenamento</strong>. Sem laudo válido assinado por <strong>PLH — Profissional Legalmente Habilitado</strong>, o equipamento está irregular e pode ser interditado. O <strong>operador de caldeira precisa de treinamento mínimo de 40 horas</strong> (NR-13 Anexo I). Cada equipamento deve ter prontuário individual com projeto, histórico de inspeções e laudos.
+        </p>
+      }
       sections={[
         {
           title: 'O que abrange a NR-13',

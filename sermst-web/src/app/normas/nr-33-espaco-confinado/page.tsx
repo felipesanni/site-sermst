@@ -35,6 +35,11 @@ export default function NR33Page() {
 
       h1="NR-33: Espaço Confinado — guia completo para empresas"
       intro="A NR-33 regula o trabalho em espaços confinados — cisternas, tanques, galerias, dutos, câmaras subterrâneas, silos. Esses ambientes matam por acúmulo de gás, falta de oxigênio ou incêndio em segundos. A norma exige identificação formal, permissão de entrada, equipe treinada e procedimento de resgate. Empresa sem esse controle responde penal e civilmente por qualquer acidente."
+      quickAnswer={
+        <p>
+          A <strong>NR-33</strong> regula o trabalho em espaços confinados — qualquer ambiente com entrada limitada, não projetado para ocupação contínua e com ao menos um risco grave potencial (atmosfera deficiente em oxigênio, gases tóxicos, inundação, soterramento). Exige <strong>Permissão de Entrada e Trabalho (PET)</strong> para cada intervenção e <strong>três funções distintas e não acumuláveis: supervisor de entrada, entrante autorizado e vigia</strong>. O treinamento mínimo é de <strong>16 horas com parte prática simulada</strong> e a <strong>reciclagem é anual</strong>.
+        </p>
+      }
       sections={[
         {
           title: 'O que é espaço confinado (definição legal)',

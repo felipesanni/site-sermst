@@ -35,6 +35,11 @@ export default function NR16Page() {
 
       h1="NR-16: Periculosidade — quando é devida e como blindar a empresa"
       intro="A NR-16 define quem tem direito ao adicional de periculosidade de 30%. Eletricidade, inflamáveis, explosivos, radiações, segurança patrimonial. Cada atividade exige laudo que enquadra a função, sob pena de pagar adicional indevido por anos."
+      quickAnswer={
+        <p>
+          A <strong>NR-16</strong> define quais atividades são perigosas e geram <strong>adicional de periculosidade de 30% sobre o salário base</strong> do trabalhador (não sobre o salário mínimo). As categorias são: <strong>eletricidade, inflamáveis, explosivos, radiações ionizantes, segurança pessoal ou patrimonial e motociclismo profissional</strong>. O enquadramento e o afastamento do adicional exigem <strong>laudo técnico de engenheiro ou médico do trabalho</strong> — sem laudo, tanto o pagamento quanto a não-concessão viram passivo trabalhista.
+        </p>
+      }
       sections={[
         {
           title: 'O que é a NR-16',

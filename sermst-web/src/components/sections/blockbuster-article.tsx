@@ -157,6 +157,7 @@ export function BlockbusterArticle({
     ? {
         '@context': 'https://schema.org',
         '@type': 'Article',
+        '@id': `${pageUrl}#article`,
         headline: h1,
         description: intro,
         url: pageUrl,
@@ -165,20 +166,21 @@ export function BlockbusterArticle({
           '@id': pageUrl,
         },
         inLanguage: 'pt-BR',
-        datePublished: author?.datePublished ?? '2024-11-01',
-        dateModified: author?.dateModified ?? '2026-05-01',
+        datePublished: `${author?.datePublished ?? '2024-11-01'}T00:00:00-03:00`,
+        dateModified: `${author?.dateModified ?? '2026-05-01'}T00:00:00-03:00`,
         image: coverImage
           ? [`https://sermst.com.br${coverImage.src}`]
           : undefined,
         author: author
           ? {
               '@type': 'Person',
+              '@id': `https://sermst.com.br/equipe/${author.url.split('/').pop()}#person`,
               name: author.name,
               jobTitle: author.jobTitle,
               url: author.url,
-              worksFor: { '@type': 'Organization', name: 'SERMST', url: 'https://sermst.com.br' },
+              worksFor: { '@type': 'Organization', '@id': 'https://sermst.com.br/#organization', name: 'SERMST', url: 'https://sermst.com.br' },
             }
-          : { '@type': 'Organization', name: 'SERMST', url: 'https://sermst.com.br' },
+          : { '@type': 'Organization', '@id': 'https://sermst.com.br/#organization', name: 'SERMST', url: 'https://sermst.com.br' },
         publisher: {
           '@type': 'Organization',
           name: 'SERMST',
