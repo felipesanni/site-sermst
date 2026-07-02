@@ -165,7 +165,7 @@ export default function EmpresaPodeDesistirPage() {
         related={[
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
           { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
-          { label: 'Exame Demissional: como funciona', href: '/saude/exame-demissional-guia' },
+          { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
           { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         ]}
       />

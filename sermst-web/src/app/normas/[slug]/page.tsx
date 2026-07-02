@@ -70,18 +70,18 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
 
   // Slug legado — o-que-e-nr-01 e o-que-e-nr-15 têm 301 para as páginas canônicas (next.config.ts)
   'o-que-e-nr-07': {
-    titulo: 'NR-07: o que a norma exige sobre PCMSO e exames ocupacionais',
+    titulo: 'NR-07: o que a norma exige sobre PCMSO, ASO e exames ocupacionais',
     descricao:
-      'A NR-07 organiza o monitoramento de saúde ocupacional. Como regra, exige PCMSO coerente com os riscos da empresa e exames admissionais, periódicos, de retorno, mudança de risco e demissionais.',
+      'A NR-07 organiza o monitoramento de saúde ocupacional. Como regra, exige PCMSO coerente com os riscos da empresa, emissão de ASO e exames admissionais, periódicos, de retorno, mudança de risco e demissionais.',
     conteudo: `A NR-07 é a norma regulamentadora que trata do monitoramento da saúde dos trabalhadores. Como regra, ela exige PCMSO ativo e coerente com os riscos identificados no PGR, definindo a lógica legal por trás dos exames admissionais, periódicos, de retorno ao trabalho, mudança de risco ocupacional e demissionais.
 
-Em outras palavras: a NR-07 é a regra; o PCMSO é o programa que coloca essa regra em prática. Quem pesquisa "NR-07" normalmente quer entender a exigência normativa, o que a empresa precisa cumprir e qual o risco de não cumprir. Quem pesquisa "PCMSO" geralmente quer saber como montar, revisar ou operacionalizar o programa.
+Em outras palavras: a NR-07 é a regra; o PCMSO é o programa que coloca essa regra em prática; e o ASO é a evidência documental de cada exame ocupacional. Quem pesquisa "NR-07" normalmente quer entender a exigência normativa, o que a empresa precisa cumprir e qual o risco de não cumprir. Quem pesquisa "PCMSO" geralmente quer saber como montar, revisar ou operacionalizar o programa.
 
 A NR-07 se aplica às organizações com empregados CLT. Como regra, o empregador deve garantir a elaboração e a efetiva implantação do PCMSO. A própria NR-07 prevê dispensa de elaboração para alguns MEI, ME e EPP de grau de risco 1 ou 2 que prestem as informações digitais previstas na NR-01 e não identifiquem as exposições ocupacionais previstas na norma. Mesmo nesses casos, exames ocupacionais e ASO continuam obrigatórios.
 
 A norma também se conecta ao eSocial: os ASOs emitidos no monitoramento da saúde alimentam o evento S-2220, e inconsistências entre PGR, PCMSO e exames deixam a empresa exposta em fiscalização.
 
-Se a sua necessidade é entender como estruturar o programa, cronogramas, exames por cargo e integração com ASO e eSocial, o caminho correto é a página específica de PCMSO. Aqui, o objetivo é esclarecer a norma e o que ela exige da empresa.`,
+Se a sua necessidade é entender como estruturar o programa, cronogramas, exames por cargo e integração com ASO e eSocial, o caminho correto é a página específica de PCMSO. Aqui, o objetivo é esclarecer a norma, responder o que a NR-07 exige e separar a intenção informacional da página transacional do serviço.`,
   },
 };
 

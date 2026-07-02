@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame demissional: como funciona | SERMST',
+  title: 'Exame demissional em Sao Paulo: agendamento e prazo | SERMST',
   description:
-    'O exame demissional fecha o ciclo ocupacional e protege a empresa de ação trabalhista por doença ocupacional. Veja prazo, regras e o erro de pular.',
+    'Agende exame demissional em Sao Paulo com mais rapidez operacional. Veja prazo, quando e obrigatorio e como evitar atraso na rescisao.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional-guia' },
   openGraph: {
-    title: 'Exame demissional: o que é, quando fazer e como protege a empresa | SERMST',
+    title: 'Exame demissional em Sao Paulo: agendamento e prazo | SERMST',
     description:
-      'Tudo sobre o exame demissional: quando é obrigatório, prazo para realização, o que acontece sem ele e como o ASO demissional reduz risco trabalhista.',
+      'Agendamento de exame demissional em Sao Paulo: prazo, quando e obrigatorio, como funciona e o que a empresa precisa resolver sem travar a rescisao.',
     url: 'https://sermst.com.br/saude/exame-demissional-guia',
     type: 'article',
     locale: 'pt_BR',
@@ -32,41 +32,42 @@ export default function ExameDemissionalPage() {
         dateModified: '2026-05-01',
       }}
 
-      h1="Exame Demissional: como funciona e por que ele protege a empresa"
-      intro="O exame demissional é a última oportunidade da empresa documentar o estado de saúde do trabalhador antes da rescisão. Sem ele, qualquer doença futura pode ser atribuída ao período trabalhado. Veja regras, prazos e como fazer certo."
+      h1="Exame demissional em Sao Paulo: agende sem travar a rescisao"
+      intro="Esta pagina concentra o formulario comercial para empresas que precisam resolver exame demissional com rapidez. Se a sua duvida principal e entender regra, prazo e dispensa, veja primeiro a pagina especifica sobre exame demissional; aqui o foco e agendamento e operacao."
       sections={[
         {
-          title: 'O que é o exame demissional',
+          title: 'Quando usar esta página de agendamento',
           body: (
             <>
               <p>
-                O exame demissional é a avaliação médica feita <strong>antes do término do contrato de trabalho</strong>, com objetivo de atestar o estado de saúde do trabalhador no momento da rescisão. É exigência da NR-07 e fica registrado no eSocial via evento S-2299.
+                Esta página existe para a empresa que já entendeu a obrigação e precisa <strong>resolver o exame demissional com rapidez operacional</strong>. O foco aqui é agendamento, prazo, atendimento e organização da rescisão sem travar RH, DP e eSocial.
               </p>
               <p>
-                A função do demissional é dupla: protege o trabalhador (recebe documento da sua condição na saída) e protege a empresa (cria evidência objetiva para defesa em ação trabalhista posterior por doença ocupacional).
+                Se a dúvida principal ainda é conceitual, de dispensa ou de regra da NR-07, a página mais adequada é <strong>/saude/exame-demissional</strong>. Aqui, a intenção é comercial e operacional.
               </p>
             </>
           ),
         },
         {
-          title: 'Quando ele é obrigatório',
+          title: 'Quando vale agendar sem esperar',
           body: (
             <>
               <p>
-                A obrigatoriedade depende de duas situações:
+                Na prática, a empresa costuma chegar aqui em três cenários:
               </p>
               <ol>
-                <li><strong>Sempre que houver rescisão</strong> — exceto se o último exame periódico ou de mudança de função tiver sido feito há menos de 135 dias (em empresa grau de risco 1 ou 2) ou 90 dias (grau de risco 3 ou 4).</li>
-                <li><strong>Independentemente do motivo da rescisão</strong> — dispensa imotivada, justa causa, pedido de demissão, fim de contrato a prazo, todos exigem demissional na regra geral.</li>
+                <li><strong>Rescisão já decidida</strong> e o RH precisa garantir exame e ASO sem perder prazo.</li>
+                <li><strong>Dúvida sobre dispensa</strong>, mas com receio de a janela legal não cobrir o caso concreto.</li>
+                <li><strong>Operação com volume</strong>, em que adiar o agendamento aumenta o risco de fila, atraso ou retrabalho documental.</li>
               </ol>
               <p>
-                A &quot;dispensa&quot; do exame quando há periódico recente vale apenas se o periódico anterior cobriu efetivamente os riscos da função. Se a função mudou ou novo risco apareceu, o demissional é obrigatório.
+                Mesmo quando existe hipótese de dispensa, muitas empresas preferem confirmar o caso e já organizar o fluxo para não descobrir o problema na véspera do desligamento.
               </p>
             </>
           ),
         },
         {
-          title: 'O prazo crítico que muita empresa erra',
+          title: 'O prazo crítico que trava a rescisão',
           body: (
             <>
               <p>
@@ -84,39 +85,39 @@ export default function ExameDemissionalPage() {
           ),
         },
         {
-          title: 'O que é avaliado no exame',
+          title: 'O que a empresa precisa ter em mãos para agilizar',
           body: (
             <>
               <p>
-                O exame demissional inclui:
+                Para reduzir atrito no atendimento, o ideal é chegar com:
               </p>
               <ul>
-                <li><strong>Anamnese ocupacional</strong> — histórico de exposições durante o contrato</li>
-                <li><strong>Exame clínico geral</strong> — avaliação física</li>
-                <li><strong>Exames complementares</strong> conforme PCMSO e função (audiometria, espirometria, ECG, hemograma, exame toxicológico, etc.)</li>
-                <li><strong>Comparação com exames anteriores</strong> — admissional, periódicos. Identifica alterações que aconteceram durante o contrato</li>
-                <li><strong>Conclusão sobre aptidão</strong> e registros eventualmente encontrados</li>
+                <li><strong>Dados corretos do trabalhador</strong> e da empresa.</li>
+                <li><strong>Função exercida</strong> e histórico ocupacional minimamente coerente.</li>
+                <li><strong>PCMSO e exames anteriores</strong> quando forem relevantes para leitura do caso.</li>
+                <li><strong>Prazo real da rescisão</strong> para encaixar exame, ASO e rotina do DP.</li>
+                <li><strong>Indicação de complementares</strong> quando a função exigir bateria mais robusta.</li>
               </ul>
               <p>
-                A profundidade do demissional depende do PCMSO da empresa e dos riscos da função. Cargo administrativo de baixo risco tem demissional mais simples. Cargo operacional em ambiente com ruído, químicos ou ergonômicos tem bateria mais robusta.
+                A profundidade do atendimento depende do PCMSO da empresa e dos riscos da função. Quanto mais claro esse contexto chega, menor a chance de retrabalho.
               </p>
             </>
           ),
         },
         {
-          title: 'O que acontece quando o demissional aponta problema',
+          title: 'O que costuma gerar atraso ou retrabalho',
           body: (
             <>
               <p>
-                Pode acontecer do exame identificar uma condição preexistente, uma alteração leve, ou — mais raramente — uma doença ocupacional. Cada cenário tem caminho:
+                Os gargalos mais comuns não estão no exame em si, mas na operação:
               </p>
               <ol>
-                <li><strong>Condição não relacionada ao trabalho</strong> (ex.: pressão alta, diabetes não controlado): registra no ASO, recomenda acompanhamento médico, segue rescisão.</li>
-                <li><strong>Alteração leve relacionada ao trabalho</strong> (ex.: alteração auditiva inicial em ambiente com ruído): registra no ASO, abre caminho para a empresa tomar medidas preventivas com os demais trabalhadores na mesma função, segue rescisão.</li>
-                <li><strong>Doença ocupacional confirmada</strong> (ex.: PAIR, LER/DORT, pneumoconiose): pode haver necessidade de emitir CAT, comunicar INSS, e a rescisão pode ficar suspensa por estabilidade. Caso para análise jurídica imediata.</li>
+                <li><strong>Agendamento deixado para o fim</strong>, quando RH e DP já estão correndo contra o prazo.</li>
+                <li><strong>Função mal descrita</strong>, o que atrapalha a leitura ocupacional correta.</li>
+                <li><strong>Exames anteriores ou PCMSO desconectados</strong>, gerando dúvida sobre complementares e documentação.</li>
               </ol>
               <p>
-                Em qualquer dos casos, o demissional <strong>protege a empresa</strong> ao documentar objetivamente o estado de saúde no momento da saída — em vez de deixar o trabalhador alegar anos depois sem prova contrária.
+                Quando a empresa organiza isso antes, o atendimento flui melhor e a chance de travar a rescisão cai bastante.
               </p>
             </>
           ),

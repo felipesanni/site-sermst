@@ -132,7 +132,7 @@ export default function SaúdeOcupacionalPage() {
       related={[
         { label: 'PCMSO (NR-07): programa', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
-        { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
+        { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
         { label: 'O que são EPIs', href: '/saude/o-que-sao-epis' },
       ]}
     />

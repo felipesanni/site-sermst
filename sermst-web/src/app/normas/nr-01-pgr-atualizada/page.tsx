@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-01 atualizada: PGR, GRO e riscos psicossociais | SERMST',
+  title: 'NR-01 atualizada: o que mudou no PGR e no GRO | SERMST',
   description:
     'Entenda o que mudou na NR-01 atualizada, quem precisa revisar o PGR, quando o documento deve ser atualizado e como tratar riscos psicossociais no GRO.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-01-pgr-atualizada' },
   openGraph: {
-    title: 'NR-01 atualizada: o que mudou no PGR, GRO e nas obrigacoes da empresa | SERMST',
+    title: 'NR-01 atualizada: o que mudou no PGR e no GRO | SERMST',
     description:
-      'Veja o que a empresa precisa fazer com a NR-01 atualizada: PGR, GRO, prazo de revisao, dispensas e riscos psicossociais.',
+      'Veja o que mudou na NR-01 atualizada, como isso afeta o PGR e o GRO e o que a empresa precisa revisar agora.',
     url: 'https://sermst.com.br/normas/nr-01-pgr-atualizada',
     type: 'article',
     locale: 'pt_BR',
@@ -38,10 +38,10 @@ export default function NR01Page() {
         dateModified: '2026-06-09',
       }}
       h1="NR-01 atualizada: o que mudou no PGR, no GRO e nos riscos psicossociais"
-      intro="A NR-01 organiza as disposicoes gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, os fatores de risco psicossociais relacionados ao trabalho passaram a exigir leitura mais explicita dentro do PGR. Neste guia, voce entende o que mudou, quem precisa revisar o documento, quando o PGR deixa de estar coerente e o que a empresa precisa fazer agora."
+      intro="A NR-01 organiza as disposicoes gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, os fatores de risco psicossociais relacionados ao trabalho passaram a exigir leitura mais explicita dentro do PGR. Aqui o foco e explicar a mudanca normativa, sem confundir esta pagina com a contratacao do servico de PGR."
       sections={[
         {
-          title: 'O que e a NR-01 e por que ela importa para qualquer empresa com empregado CLT',
+          title: 'O que e a NR-01 atualizada e por que ela importa para qualquer empresa com empregado CLT',
           body: (
             <>
               <p>

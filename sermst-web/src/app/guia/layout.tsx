@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
 
-// Página interna de geração de guia de encaminhamento — não deve ser indexada
 export const metadata: Metadata = {
-  title: 'Guia de Encaminhamento | SERMST',
-  robots: 'noindex, nofollow',
+  title: 'Guia interna | SERMST',
+  description: 'Ferramenta interna de solicitacao de exame da SERMST.',
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function GuiaLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return children;
 }

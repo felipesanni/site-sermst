@@ -53,7 +53,7 @@ export const articleImages: Record<string, SiteImage> = {
     src: '/images/articles/saude-ocupacional.jpg',
     alt: 'Profissional de saúde em ambiente corporativo representando saúde ocupacional',
   },
-  'exame-demissional-guia': {
+  'exame-demissional': {
     src: '/images/articles/exame-demissional.jpg',
     alt: 'Consulta médica ocupacional para exame demissional em clínica',
   },

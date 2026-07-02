@@ -147,7 +147,7 @@ export default function CartaDemissãoPage() {
       related={[
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
-        { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
+        { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />

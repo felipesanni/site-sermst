@@ -157,7 +157,7 @@ export default function ASOPage() {
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
         { label: 'Clínica de exame admissional em SP', href: '/saude/clinica-exame-admissional-sao-paulo' },
         { label: 'Exame toxicológico para CNH C, D e E e motoristas CLT', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
-        { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
+        { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />

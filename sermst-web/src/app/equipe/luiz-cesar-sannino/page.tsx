@@ -31,7 +31,7 @@ const articles = [
     hub: 'Saúde & Segurança',
   },
   {
-    href: '/saude/exame-demissional-guia',
+    href: '/saude/exame-demissional',
     title: 'Exame Demissional: como funciona e por que ele protege a empresa',
     hub: 'Saúde & Segurança',
   },

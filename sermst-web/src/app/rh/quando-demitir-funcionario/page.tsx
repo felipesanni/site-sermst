@@ -154,7 +154,7 @@ export default function QuandoDemitirPage() {
       related={[
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
-        { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
+        { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />

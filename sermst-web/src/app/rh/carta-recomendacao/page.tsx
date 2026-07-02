@@ -143,7 +143,7 @@ export default function CartaRecomendacaoPage() {
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
-        { label: 'Exame demissional: guia completo', href: '/saude/exame-demissional-guia' },
+        { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
       ]}
     />
   );

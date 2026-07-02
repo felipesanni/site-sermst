@@ -24,12 +24,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/cdn-cgi/', '/guia'],
+        disallow: ['/api/', '/cdn-cgi/'],
       },
       ...AI_CRAWLERS.map((bot) => ({
         userAgent: bot,
         allow: '/',
-        disallow: ['/api/', '/cdn-cgi/', '/guia'],
+        disallow: ['/api/', '/cdn-cgi/'],
       })),
     ],
     sitemap: 'https://sermst.com.br/sitemap.xml',

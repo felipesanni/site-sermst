@@ -103,6 +103,8 @@ export async function generateMetadata({
     ? local.slug === 'sao-paulo'
       ? `${mainTerm} em São Paulo Centro | CNH C, D e E`
       : `${mainTerm} em ${local.nome} | CNH C, D e E e Empresas`
+    : servico === 'exame-admissional-expresso' && local.slug === 'sao-paulo'
+      ? `${mainTerm} em ${local.nome}`
     : servico === 'audiometria-ocupacional-clinica' && local.slug === 'sao-paulo'
       ? `${mainTerm} em São Paulo Centro | SERMST`
       : `${mainTerm} em ${local.nome} | SERMST`;

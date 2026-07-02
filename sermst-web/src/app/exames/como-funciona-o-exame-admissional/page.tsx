@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame Admissional: o que é e como funciona | SERMST',
+  title: 'Exame admissional: o que é e como funciona | SERMST',
   description:
-    'Entenda o que é exame admissional, como funciona, quais exames podem ser solicitados, documentos necessários, ASO, jejum e prazo para empresas.',
+    'Entenda o que é exame admissional, como funciona, quais exames podem ser solicitados, quando precisa de jejum e como o ASO entra no processo.',
   alternates: { canonical: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional' },
   openGraph: {
-    title: 'Exame Admissional: o que é e como funciona',
+    title: 'Exame admissional: o que é e como funciona',
     description:
-      'Guia completo sobre exame admissional: o que é, quando fazer, quais exames entram no ASO, documentos, jejum, prazo e como empresas devem organizar o fluxo.',
+      'Veja o que é exame admissional, como o processo funciona, quais exames podem entrar no ASO e o que a empresa precisa organizar antes da contratação.',
     url: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional',
     type: 'article',
     locale: 'pt_BR',
@@ -173,7 +173,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
           dateModified: '2026-06-02',
         }}
         h1="Exame admissional: o que é, como funciona e quais exames podem ser solicitados"
-        intro="O exame admissional é a avaliação ocupacional feita antes do início das atividades do colaborador. Ele verifica se a pessoa está apta para a função, considerando os riscos do cargo e o PCMSO da empresa. Ao final, é emitido o ASO admissional."
+        intro="O exame admissional é o exame ocupacional feito antes do início das atividades. Ele verifica se o trabalhador está apto para a função conforme os riscos do cargo e o PCMSO da empresa. Ao final, o médico emite o ASO admissional."
         disableFaqSchema
         includeFallbackFaqs={false}
         maxFaqItems={9}
@@ -225,7 +225,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
           ),
         },
         {
-          title: 'Como funciona o exame admissional',
+          title: 'Como funciona o exame admissional na prática',
           body: (
             <ol>
               <li><strong>A empresa encaminha o candidato.</strong> O RH informa função, dados da empresa e, idealmente, os riscos do cargo previstos no PCMSO.</li>

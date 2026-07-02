@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-35: Trabalho em Altura — Treinamento Obrigatório | SERMST',
+  title: 'NR-35: o que a norma exige no trabalho em altura | SERMST',
   description:
-    'Guia da NR-35 (trabalho em altura): quem precisa, treinamento obrigatório de 8h, reciclagem a cada 2 anos, APR e o que acontece em caso de descumprimento.',
+    'Entenda o que a NR-35 exige no trabalho em altura: quem precisa, treinamento obrigatório de 8 horas, reciclagem, APR, PT e penalidades.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura' },
   openGraph: {
-    title: 'NR-35: trabalho em altura — treinamento, ART e obrigações | SERMST',
+    title: 'NR-35: o que a norma exige no trabalho em altura | SERMST',
     description:
-      'O que a NR-35 exige: definição de trabalho em altura, treinamento obrigatório, Análise de Risco, Permissão de Trabalho e responsabilidades do empregador.',
+      'Veja o que a NR-35 exige: definição de trabalho em altura, treinamento obrigatório, análise de risco, permissão de trabalho e responsabilidades do empregador.',
     url: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura',
     type: 'article',
     locale: 'pt_BR',
@@ -33,11 +33,11 @@ export default function NR35Page() {
         dateModified: '2026-05-01',
       }}
 
-      h1="NR-35: Trabalho em Altura — o que sua empresa precisa saber"
-      intro="A NR-35 regulamenta toda atividade executada acima de 2 metros do nível inferior com risco de queda. Falha aqui é responsabilidade civil, criminal e financeira direta. Veja o que a norma exige e como cumprir."
+      h1="NR-35: trabalho em altura e o que a norma exige da empresa"
+      intro="A NR-35 regulamenta toda atividade executada acima de 2 metros do nível inferior com risco de queda. O ponto central aqui não é só treinamento: a empresa precisa cumprir exigências de análise de risco, permissão de trabalho, aptidão médica e plano de resgate."
       sections={[
         {
-          title: 'O que é considerado trabalho em altura',
+          title: 'O que é considerado trabalho em altura na NR-35',
           body: (
             <>
               <p>
@@ -61,7 +61,7 @@ export default function NR35Page() {
           ),
         },
         {
-          title: 'O treinamento obrigatório (NR-35 + NR-18)',
+          title: 'Treinamento obrigatório na NR-35',
           body: (
             <>
               <p>

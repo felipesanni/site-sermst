@@ -803,8 +803,8 @@ export const saudeSEO: Record<string, SEODocument> = {
     "A maioria dos gestores trata saúde ocupacional como burocracia até o problema explodir — afastamento longo, perícia, ação judicial.",
     "Estruturar saúde ocupacional como rotina (não como reação) reduz afastamento, sustenta PCMSO e cria evidência técnica para defesa em fiscalização.",
   ),
-  "exame-demissional-guia": saudeEntry(
-    "Exame Demissional: como funciona e por que ele protege a empresa",
+  "exame-demissional": saudeEntry(
+    "Exame demissional: o que e quando fazer",
     "O exame demissional é a última oportunidade da empresa documentar o estado de saúde do colaborador antes da rescisão. Sem ele, qualquer doença futura pode ser atribuída ao período trabalhado.",
     "Empresas que pulam ou atrasam demissional acumulam passivo: a falta de evidência abre espaço para ação trabalhista por doença ocupacional anos depois.",
     "Demissional feito no prazo e registrado corretamente no eSocial fecha o ciclo ocupacional do trabalhador e protege a empresa de reclamação retroativa.",
@@ -882,7 +882,7 @@ export const dicionarioSEO: Record<string, SEODocument> = {
   "o-que-e-aso": dicionarioEntry(
     "O que é ASO: significado do atestado de saúde ocupacional",
     "ASO é o Atestado de Saúde Ocupacional, documento emitido ao fim do exame ocupacional para registrar se o trabalhador está apto ou inapto para a função.",
-    "Muita empresa trata o ASO como simples papel de admissão, mas ele é uma das evidências mais importantes da rotina ocupacional e da defesa jurídica da empresa.",
+    "Muita empresa trata o ASO como simples papel de admissão, mas ele é uma das evidências mais importantes da rotina ocupacional, do eSocial e da defesa jurídica da empresa.",
     "Entender o ASO no contexto certo ajuda a ligar exame, PCMSO, eSocial e responsabilidade da empresa sem confundir com atestado médico comum.",
   ),
   "o-que-e-pcmso": dicionarioEntry(
@@ -918,7 +918,7 @@ dicionarioSEO["o-que-e-ppp"].seoTitle =
 dicionarioSEO["o-que-e-pcmso"].seoTitle =
   "O que é PCMSO? Significado da sigla e para que serve | SERMST";
 dicionarioSEO["o-que-e-aso"].seoTitle =
-  "O que é ASO? Significado e para que serve | SERMST";
+  "O que é ASO? Significado, emissão e para que serve | SERMST";
 dicionarioSEO["o-que-e-pgr"].seoTitle =
   "O que significa PGR? Sigla e função do programa | SERMST";
 
@@ -932,9 +932,9 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
       "ASO não é atestado médico comum. O atestado comum normalmente justifica uma ausência por motivo de saúde. O ASO registra a conclusão de aptidão ocupacional para uma função e considera os riscos relacionados ao trabalho.",
     aprofundamento: {
       href: "/saude/aso-atestado-saude-ocupacional",
-      title: "Precisa entender tipos de ASO, campos obrigatórios e eSocial?",
+      title: "Precisa entender quando emitir ASO, campos obrigatórios e eSocial?",
       description:
-        "Veja quando cada exame ocupacional deve ocorrer, o que precisa constar no ASO e como o documento se conecta ao evento S-2220.",
+        "Veja quando cada exame ocupacional deve ocorrer, o que precisa constar no ASO e como o documento se conecta ao evento S-2220 sem confundir definição com guia completo.",
       label: "Ler guia completo de ASO",
     },
     faq: [
@@ -945,6 +945,10 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
       {
         q: "ASO e atestado médico são a mesma coisa?",
         a: "Não. O ASO registra aptidão ocupacional para uma função. O atestado médico comum costuma justificar ausência por motivo de saúde.",
+      },
+      {
+        q: "ASO serve só para admissão?",
+        a: "Não. O ASO também aparece em exames periódicos, retorno ao trabalho, mudança de risco ocupacional e demissão.",
       },
     ],
   },
