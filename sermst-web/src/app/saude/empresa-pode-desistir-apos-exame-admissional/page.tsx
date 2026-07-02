@@ -65,6 +65,7 @@ export default function EmpresaPodeDesistirPage() {
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/empresa-pode-desistir-apos-exame-admissional"
+        disableFaqSchema
         author={{
           name: 'Felipe Sannino',
           jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',

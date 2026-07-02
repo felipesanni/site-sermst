@@ -65,6 +65,7 @@ export default function ExameAdmissionalJejumPage() {
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/exame-admissional-precisa-de-jejum"
+        disableFaqSchema
         author={{
           name: 'Luiz César Sannino',
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',

@@ -65,6 +65,7 @@ export default function ValidadeAsoPage() {
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/validade-aso-admissional"
+        disableFaqSchema
         author={{
           name: 'Luiz César Sannino',
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',

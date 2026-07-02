@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import type { Metadata } from 'next';
 import sitemap from '@/app/sitemap';
@@ -8,6 +8,16 @@ import { generateMetadata as generateLocalServiceMetadata } from '@/app/servicos
 import { localidades, servicosSEO } from '@/lib/data/seo-content';
 
 const BASE_URL = 'https://sermst.com.br';
+
+function listPageSources(dir = 'src/app'): string[] {
+  return readdirSync(dir).flatMap((entry) => {
+    const path = `${dir}/${entry}`;
+    const stats = statSync(path);
+
+    if (stats.isDirectory()) return listPageSources(path);
+    return entry === 'page.tsx' ? [path] : [];
+  });
+}
 
 function getTitleText(title: Metadata['title']) {
   if (typeof title === 'string') return title;
@@ -146,6 +156,7 @@ describe('SEO guardrails de indexacao e duplicidade', () => {
   it('mantem schemas de calculadora e treinamentos validos para auditorias externas', () => {
     const calculatorPageSource = readFileSync('src/app/rh/calculadora-cnae-grau-de-risco/page.tsx', 'utf8');
     const trainingPageSource = readFileSync('src/app/treinamentos/[slug]/page.tsx', 'utf8');
+    const blockbusterSource = readFileSync('src/components/sections/blockbuster-article.tsx', 'utf8');
 
     expect(calculatorPageSource).not.toContain("'@type': ['SoftwareApplication', 'WebApplication']");
     expect(calculatorPageSource).toContain("'@type': 'WebPage'");
@@ -153,5 +164,27 @@ describe('SEO guardrails de indexacao e duplicidade', () => {
 
     expect(trainingPageSource).toContain("'@type': 'CourseInstance'");
     expect(trainingPageSource).toContain('courseWorkload: training.workload');
+    expect(trainingPageSource).not.toContain('aggregateRating');
+    expect(trainingPageSource).not.toContain("'@type': 'Review'");
+
+    expect(blockbusterSource).toContain("'@type': 'Article'");
+    expect(blockbusterSource).toContain("mainEntityOfPage: {");
+    expect(blockbusterSource).toContain("'@type': 'WebPage'");
+    expect(blockbusterSource).toContain("'@type': 'FAQPage'");
+  });
+
+  it('evita schema duplicado ou artificial em paginas editoriais', () => {
+    const pagesWithSchema = listPageSources()
+      .map((path) => ({ path, source: readFileSync(path, 'utf8') }))
+      .filter(({ source }) => source.includes('application/ld+json') || source.includes('<BlockbusterArticle'));
+
+    for (const { path, source } of pagesWithSchema) {
+      expect(source, `${path} nao deve usar aggregateRating sem avaliacao real`).not.toContain('aggregateRating');
+      expect(source, `${path} nao deve usar Review sem reviews reais`).not.toContain("'@type': 'Review'");
+
+      if (source.includes('const faqSchema') && source.includes('<BlockbusterArticle')) {
+        expect(source, `${path} injeta FAQ manual e precisa desativar FAQ automatico`).toContain('disableFaqSchema');
+      }
+    }
   });
 });

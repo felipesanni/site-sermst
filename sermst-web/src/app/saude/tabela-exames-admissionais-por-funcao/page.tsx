@@ -125,6 +125,7 @@ export default function TabelaExamesFuncaoPage() {
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/tabela-exames-admissionais-por-funcao"
+        disableFaqSchema
         author={{
           name: 'Luiz César Sannino',
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',

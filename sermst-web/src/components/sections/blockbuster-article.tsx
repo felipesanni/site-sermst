@@ -160,7 +160,10 @@ export function BlockbusterArticle({
         headline: h1,
         description: intro,
         url: pageUrl,
-        mainEntityOfPage: pageUrl,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': pageUrl,
+        },
         inLanguage: 'pt-BR',
         datePublished: author?.datePublished ?? '2024-11-01',
         dateModified: author?.dateModified ?? '2026-05-01',
