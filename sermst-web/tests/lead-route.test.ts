@@ -1,5 +1,16 @@
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { POST } from '@/app/api/lead/route';
+
+const deliveryEnvKeys = [
+  'LEAD_WEBHOOK_URL',
+  'SMTP_HOST',
+  'SMTP_PORT',
+  'SMTP_USER',
+  'SMTP_PASS',
+  'SMTP_FROM',
+  'LEAD_NOTIFY_EMAIL',
+  'TURNSTILE_SECRET_KEY',
+] as const;
 
 function buildLeadRequest(body: Record<string, unknown>, ip = '203.0.113.10') {
   return new Request('http://localhost/api/lead', {
@@ -27,6 +38,12 @@ function validPayload(overrides: Record<string, unknown> = {}) {
 }
 
 describe('POST /api/lead', () => {
+  beforeEach(() => {
+    for (const key of deliveryEnvKeys) {
+      delete process.env[key];
+    }
+  });
+
   it('aceita um lead valido', async () => {
     const response = await POST(buildLeadRequest(validPayload(), '203.0.113.11'));
 
