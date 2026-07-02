@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -197,13 +198,21 @@ export default function TabelaExamesFuncaoPage() {
           {
             title: 'Exames especiais que merecem atenção',
             body: (
-              <ul>
-                <li><strong>Toxicológico de longa janela</strong> — obrigatório por lei (art. 168 CLT) para motoristas profissionais de carga e passageiros. Não é opcional e não pode ser substituído por outro exame.</li>
-                <li><strong>Audiometria ocupacional</strong> — obrigatória quando o cargo tem exposição habitual a ruído acima do nível de ação (85 dB). Exigida pela NR-07 e serve de baseline para comparação nos exames periódicos.</li>
-                <li><strong>Espirometria</strong> — exigida quando há exposição a poeiras, fumaças ou gases que afetam a função pulmonar (construção civil, fundições, indústria química).</li>
-                <li><strong>Sorologias</strong> — obrigatórias para profissionais de saúde com risco biológico (HBsAg, Anti-HCV, Anti-HIV, vacinação contra Hepatite B).</li>
-                <li><strong>Aptidão específica NR-35</strong> — trabalho em altura exige declaração de aptidão específica, além do exame clínico padrão.</li>
-              </ul>
+              <>
+                <ul>
+                  <li><strong>Toxicológico de longa janela</strong> — obrigatório por lei (art. 168 CLT) para motoristas profissionais de carga e passageiros. Não é opcional e não pode ser substituído por outro exame.</li>
+                  <li><strong>Audiometria ocupacional</strong> — obrigatória quando o cargo tem exposição habitual a ruído acima do nível de ação (85 dB). Exigida pela NR-07 e serve de baseline para comparação nos exames periódicos.</li>
+                  <li><strong>Espirometria</strong> — exigida quando há exposição a poeiras, fumaças ou gases que afetam a função pulmonar (construção civil, fundições, indústria química).</li>
+                  <li><strong>Sorologias</strong> — obrigatórias para profissionais de saúde com risco biológico (HBsAg, Anti-HCV, Anti-HIV, vacinação contra Hepatite B).</li>
+                  <li><strong>Aptidão específica NR-35</strong> — trabalho em altura exige declaração de aptidão específica, além do exame clínico padrão.</li>
+                </ul>
+                <p>
+                  Quando a função está ligada a obra, canteiro e exposição típica da construção civil, o exame admissional precisa conversar com a lógica da{' '}
+                  <Link href="/normas/nr-18-construcao-civil" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4">
+                    NR-18
+                  </Link>, não apenas com uma lista genérica de exames.
+                </p>
+              </>
             ),
           },
           {

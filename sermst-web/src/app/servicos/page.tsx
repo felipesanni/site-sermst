@@ -124,6 +124,25 @@ export default function ServicosIndexPage() {
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
               <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.18em] text-accent-pink">
+                Gestão integrada de SST
+              </span>
+              <h2 className="text-2xl font-black text-brand-900">
+                Empresa de segurança do trabalho em São Paulo
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Página focada em empresas que querem centralizar PGR, PCMSO, LTCAT, exames ocupacionais, treinamentos e eSocial em uma operação de SST mais coerente.
+              </p>
+            </div>
+            <Link href="/servicos/empresa-seguranca-do-trabalho/sao-paulo" className="btn-dark-safe w-full lg:w-auto">
+              Ver serviço
+            </Link>
+          </div>
+        </div>
+
+        <div className="mb-8 rounded-[2rem] border border-brand-900/10 bg-white p-6 shadow-sm">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-3xl">
+              <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.18em] text-accent-pink">
                 Diagnóstico antes do orçamento
               </span>
               <h2 className="text-2xl font-black text-brand-900">

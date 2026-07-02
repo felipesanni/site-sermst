@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight, CheckCircle2, HelpCircle, ShieldAlert, TrendingUp } from 'lucide-react';
 import { FadeIn } from '@/components/ui/fade-in';
-import { servicosSEO } from '@/lib/data/seo-content';
+import { localidades, servicosSEO } from '@/lib/data/seo-content';
 import { buildFrequentFaqs } from '@/lib/faq';
 import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildServiceCopy } from '@/lib/seo-copy';
@@ -78,6 +78,9 @@ export default async function ServicoPage({
 
   const seoCopy = buildServiceCopy(data);
   const serviceName = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
+  const areaServed = (data.allowedLocalSlugs
+    ? localidades.filter((local) => data.allowedLocalSlugs?.includes(local.slug))
+    : localidades).map((local) => local.nome);
   const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {
     context: 'service',
     topic: serviceName,
@@ -92,16 +95,7 @@ export default async function ServicoPage({
     description: data.hook,
     url: `https://sermst.com.br/servicos/${servico}`,
     provider: { '@id': 'https://sermst.com.br/#organization' },
-    areaServed: [
-      'São Paulo',
-      'Santo André',
-      'São Bernardo do Campo',
-      'São Caetano do Sul',
-      'Diadema',
-      'Osasco',
-      'Guarulhos',
-      'Barueri',
-    ],
+    areaServed,
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: 'https://sermst.com.br/contato',

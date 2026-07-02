@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -76,6 +77,10 @@ export default function NR35Page() {
               </ul>
               <p>
                 Em construção civil, a NR-35 é frequentemente combinada com a NR-18. Trabalhador que vai para obra em altura precisa dos dois treinamentos — não basta um.
+                Se a sua dúvida envolve organização do canteiro, PGR, áreas de vivência, proteção coletiva e rotina documental da obra, vale ler também o guia da{' '}
+                <Link href="/normas/nr-18-construcao-civil" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4">
+                  NR-18 na construção civil
+                </Link>.
               </p>
             </>
           ),
@@ -159,7 +164,7 @@ export default function NR35Page() {
       sidebarHook="Treinamento NR-35 vencido ou inexistente, ASO sem avaliação específica, plano de resgate ausente — qualquer um desses três é exposição direta. A SERMST faz auditoria do que sua operação tem hoje."
       sidebarCtaLabel="Auditar conformidade NR-35"
       related={[
-        { label: 'NR-18: Construção civil', href: '/normas/nr-18-construcao-civil' },
+        { label: 'Guia da NR-18 na construção civil', href: '/normas/nr-18-construcao-civil' },
         { label: 'NR-10: Eletricidade', href: '/normas/nr-10-eletricidade' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'Treinamentos NR / CIPA / brigada', href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo' },

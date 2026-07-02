@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-18: o que a norma exige na construção civil | SERMST',
+  title: 'NR-18: Norma Regulamentadora 18 da Construção Civil | SERMST',
   description:
-    'Entenda o que a NR-18 exige hoje na construção civil: PGR no lugar do PCMAT, PCMSO, treinamentos, eSocial SST e responsabilidade solidária em obra.',
+    'Entenda o que a NR-18, a Norma Regulamentadora 18, exige hoje na construção civil: PGR no lugar do PCMAT, PCMSO, treinamentos, áreas de vivência, eSocial SST e responsabilidade em obra.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },
   openGraph: {
-    title: 'NR-18: o que a norma exige na construção civil | SERMST',
+    title: 'NR-18: Norma Regulamentadora 18 da Construção Civil | SERMST',
     description:
-      'Veja o que a NR-18 exige para canteiros, reformas e obras de diferentes portes, com foco em PGR, PCMSO, treinamentos e fiscalização.',
+      'Veja o que a NR-18 exige para canteiros, reformas e obras de diferentes portes, com foco em PGR, PCMSO, treinamentos, áreas de vivência e fiscalização.',
     url: 'https://sermst.com.br/normas/nr-18-construcao-civil',
     type: 'article',
     locale: 'pt_BR',
@@ -19,7 +19,10 @@ export const metadata: Metadata = {
 export default function NR18Page() {
   return (
     <BlockbusterArticle
-      coverImage={{ src: "/images/site/safety-equipment.jpg", alt: "Canteiro de obra com sinalização e equipamentos de segurança conforme NR-18" }}
+      coverImage={{
+        src: '/images/site/safety-equipment.jpg',
+        alt: 'Canteiro de obra com sinalização e equipamentos de segurança conforme a NR-18',
+      }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas"
@@ -28,27 +31,42 @@ export default function NR18Page() {
       readingTime="15 min"
       author={{
         name: 'Luiz César Sannino',
-        jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
+        jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
         dateModified: '2026-07-02',
       }}
-
-      h1="NR-18: o que a norma exige na construção civil"
-      intro="A NR-18 reúne os principais requisitos de SST para canteiros de obra: PGR, PCMSO, treinamentos, proteções coletivas, EPIs e sinalização. Com a revisão da norma, o PCMAT foi extinto e substituído pelo PGR. Este guia explica o que a NR-18 exige hoje, como o eSocial impacta a construção civil e o que precisa estar documentado para não embargar a obra."
+      h1="NR-18: o que a Norma Regulamentadora 18 exige na construção civil"
+      intro="A NR-18, também chamada de Norma Regulamentadora 18, reúne os principais requisitos de SST para canteiros de obra: PGR, PCMSO, treinamentos, proteções coletivas, áreas de vivência, EPIs e sinalização. Com a revisão da norma, o PCMAT foi substituído pelo PGR. Neste guia, você entende o que a NR-18 exige hoje, o que mudou na versão atualizada, como o eSocial afeta a construção civil e o que precisa estar em ordem para a obra não virar passivo."
       sections={[
         {
           title: 'O que é a NR-18 e quem precisa cumprir',
           body: (
             <>
               <p>
-                A NR-18 estabelece as diretrizes de ordem administrativa, de planejamento e de organização aplicáveis à <strong>indústria da construção civil</strong>. A norma cobre obra residencial, comercial, industrial, pavimentação, demolição, reforma, restauração e todas as atividades correlatas executadas em canteiro de obras.
+                A <strong>NR-18, ou Norma Regulamentadora 18</strong>, estabelece diretrizes administrativas, de planejamento e de organização aplicáveis à <strong>indústria da construção civil</strong>. A norma alcança obra residencial, comercial e industrial, além de demolição, pavimentação, reforma, restauração e outras atividades executadas em canteiro.
               </p>
               <p>
-                A obrigatoriedade vale para qualquer empresa que empregue trabalhadores regidos pela CLT em atividade de construção, independentemente do porte. Isso inclui a grande construtora com centenas de funcionários, a empreiteira de médio porte, a empresa de reforma e o microempreendedor que contrata um ajudante.
+                A obrigação vale para qualquer empresa que tenha trabalhadores regidos pela CLT em atividade de construção, independentemente do porte. Isso inclui construtoras grandes, empreiteiras de médio porte, empresas de reforma e negócios menores que contratam ajudantes, pedreiros, eletricistas ou equipes de apoio.
               </p>
               <p>
-                A construção civil é o setor com maior taxa de acidente fatal no Brasil. Por isso, a fiscalização da NR-18 é uma das mais ativas e recorrentes do Ministério do Trabalho e Emprego (MTE). A norma é extensa e detalhada, e as autuações em construção representam uma parcela significativa de todas as infrações aplicadas no país a cada ano.
+                A construção civil está entre os setores com maior incidência de acidentes graves e fatais no trabalho. Por isso, a fiscalização da NR-18 é recorrente, detalhada e costuma observar tanto a condição real do canteiro quanto a coerência da documentação apresentada.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'NR-18 atualizada, PDF oficial e validade: o que a empresa precisa entender',
+          body: (
+            <>
+              <p>
+                Quando alguém pesquisa por <strong>NR-18 atualizada</strong>, normalmente quer saber três coisas: se a versão em uso já substituiu regras antigas, onde consultar o texto oficial e se existe algum prazo de validade da norma. Na prática, a NR-18 não “vence”. O que muda é a versão vigente da regulamentação. O que pode vencer são treinamentos, evidências e revisões exigidas pela rotina da obra.
+              </p>
+              <p>
+                Para consultar a <strong>Norma Regulamentadora 18 em PDF</strong>, o caminho mais seguro é usar a publicação oficial do governo, especialmente os canais do MTE e da ENIT. Isso evita trabalhar com arquivo antigo, resumo incompleto ou texto replicado sem controle de revisão.
+              </p>
+              <p>
+                Para a empresa, baixar o PDF não basta. O ponto central é verificar se o PGR do canteiro, o PCMSO, os treinamentos, as áreas de vivência e as proteções coletivas estão alinhados à versão vigente da norma e à fase real da obra.
               </p>
             </>
           ),
@@ -58,32 +76,32 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                A construção civil está enquadrada no <strong>Grau de Risco 3</strong> para a maioria dos CNAEs do setor. Esse enquadramento define diretamente quais obrigações de SST se aplicam à empresa.
+                A construção civil está enquadrada, na maior parte dos CNAEs do setor, no <strong>Grau de Risco 3</strong>. Esse enquadramento influencia diretamente as obrigações de SST da empresa.
               </p>
               <p>
-                Com Grau de Risco 3, a empresa precisa ter PCMSO, PGR elaborado por profissional habilitado em segurança do trabalho e, dependendo do número de empregados do estabelecimento e da forma de contratação, SESMT (Serviço Especializado em Engenharia de Segurança e em Medicina do Trabalho). No Anexo II da NR-04, para Grau de Risco 3, o dimensionamento já começa na faixa de 50 a 100 empregados, com pelo menos um Técnico de Segurança do Trabalho.
+                Em linhas gerais, isso exige PCMSO, PGR elaborado por profissional habilitado em segurança do trabalho e, conforme o número de empregados do estabelecimento e o enquadramento da atividade, dimensionamento de SESMT. No Anexo II da NR-04, para Grau de Risco 3, esse dimensionamento já começa a partir de determinadas faixas de empregados.
               </p>
               <p>
-                Abaixo desse patamar, a empresa continua obrigada a manter a gestão de SST e a documentação exigida em dia. A ausência de SESMT quando obrigatório ou de PCMSO e PGR em vigor é uma das infrações mais comuns em construção.
+                Mesmo abaixo desse patamar, a empresa continua obrigada a manter a gestão de SST e a documentação exigida em ordem. A ausência de PGR, PCMSO ou estrutura mínima de gestão é uma das falhas mais comuns em obras, reformas e frentes de trabalho temporárias.
               </p>
             </>
           ),
         },
         {
-          title: 'O PCMAT foi extinto: o que substituiu e o que isso muda na prática',
+          title: 'O PCMAT foi substituído: o que mudou de verdade na prática',
           body: (
             <>
               <p>
-                O <strong>PCMAT (Programa de Condições e Meio Ambiente de Trabalho na Indústria da Construção)</strong> foi durante décadas o documento central de planejamento de SST exigido pela NR-18. Para obras com 20 ou mais trabalhadores, era obrigatório elaborar o PCMAT antes do início das atividades, com conteúdo específico: memorial descritivo, projetos de proteção coletiva, layout do canteiro, cronograma de medidas preventivas e programa de treinamento.
+                O <strong>PCMAT (Programa de Condições e Meio Ambiente de Trabalho na Indústria da Construção)</strong> foi, por muitos anos, o documento central de planejamento de SST na construção civil. Em obras com 20 ou mais trabalhadores, ele precisava ser elaborado antes do início das atividades, com memorial descritivo, layout do canteiro, cronograma preventivo e projetos de proteção coletiva.
               </p>
               <p>
-                Com a revisão da NR-18, o PCMAT foi <strong>oficialmente extinto</strong>. O PPRA (Programa de Prevenção de Riscos Ambientais) também foi descontinuado. Na construção civil, o <strong>PGR (Programa de Gerenciamento de Riscos)</strong> previsto na NR-01 e detalhado pela NR-18 passou a organizar a gestão de riscos ocupacionais do canteiro.
+                Com a revisão da NR-18, o PCMAT deixou de ser o documento exigido para obras novas. No lugar dele, a gestão de riscos do canteiro passou a ser estruturada pelo <strong>PGR (Programa de Gerenciamento de Riscos)</strong>, previsto na NR-01 e detalhado pela própria NR-18.
               </p>
               <p>
-                Obras que já tinham um PCMAT válido em andamento puderam manter o documento até a conclusão daquela obra específica. Para qualquer canteiro iniciado após a transição da norma, o PGR é o único documento aceito. Apresentar PCMAT para obra nova não atende mais à legislação e configura ausência de programa de gestão de riscos.
+                Obras que já estavam em andamento durante a transição puderam manter o PCMAT até o encerramento daquela frente específica. Para canteiros iniciados depois da mudança, apresentar PCMAT como documento principal já não atende à lógica atual da norma.
               </p>
               <p>
-                Na prática, o PGR é mais abrangente que o PCMAT. Enquanto o PCMAT era específico da obra e da NR-18, o PGR integra todos os ambientes de trabalho da empresa sob um único instrumento, com metodologia estruturada de inventário de riscos, hierarquia de controles e plano de ação com prazo e responsável definidos.
+                A mudança não foi só de nome. O PGR pede inventário de riscos, plano de ação, revisão conforme a fase da obra e integração real com PCMSO, treinamentos, controles de engenharia e rotina documental. Em outras palavras, exige uma gestão mais viva e menos estática.
               </p>
             </>
           ),
@@ -93,21 +111,22 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                O PGR na construção civil segue a estrutura da NR-01 e precisa ser específico para o canteiro de obras. Não é possível usar um PGR genérico da empresa para cobrir o canteiro. O documento deve incluir:
+                O PGR da construção civil precisa ser específico para o canteiro de obras. Não basta reaproveitar um modelo genérico da empresa e trocar o nome da obra. O documento precisa refletir a realidade do ambiente, da fase executiva e dos riscos efetivos daquela operação.
               </p>
+              <p>Em geral, o PGR do canteiro deve contemplar:</p>
               <ul>
-                <li>Inventário de riscos do canteiro: físicos (ruído, calor, vibração), químicos (poeira, solventes, tintas), biológicos, ergonômicos e de acidentes (queda de altura, soterramento, choque elétrico)</li>
-                <li>Classificação dos riscos por severidade e probabilidade, com priorização das medidas de controle</li>
-                <li>Plano de ação com medidas preventivas, responsáveis e prazos definidos para cada risco identificado</li>
-                <li>Hierarquia das medidas de controle: eliminação, substituição, controles de engenharia, controles administrativos e, por último, EPI</li>
-                <li>Integração com o PCMSO para definição dos exames periódicos baseados nos riscos levantados</li>
-                <li>Cronograma de revisão periódica do documento, adequado às fases da obra</li>
+                <li>Inventário de riscos físicos, químicos, biológicos, ergonômicos e de acidentes</li>
+                <li>Classificação dos riscos por severidade e probabilidade</li>
+                <li>Plano de ação com medidas preventivas, responsáveis e prazos</li>
+                <li>Hierarquia de controle, priorizando eliminação, substituição e controles de engenharia antes do EPI</li>
+                <li>Integração com o PCMSO para definir exames coerentes com os riscos levantados</li>
+                <li>Revisão periódica conforme a evolução da obra</li>
               </ul>
               <p>
-                Um ponto crítico: o PGR do canteiro precisa ser revisado conforme a obra avança. Os riscos da fase de fundação são diferentes dos riscos da fase de estrutura, que são diferentes dos riscos do acabamento. Um PGR estático, elaborado no início e nunca atualizado, já representa um passivo em fiscalização.
+                Esse último ponto costuma ser negligenciado. Os riscos da fundação não são os mesmos da estrutura, nem os da estrutura são iguais aos do acabamento. Um PGR feito no começo da obra e nunca revisado já nasce com potencial de fragilidade em fiscalização.
               </p>
               <p>
-                Pela NR-18, o PGR deve ser elaborado por profissional legalmente habilitado em segurança do trabalho. Em canteiros com até 7 metros de altura e, no máximo, 10 trabalhadores, a norma admite elaboração por profissional qualificado em segurança do trabalho. A exigência de ART ou outro registro de responsabilidade técnica deve ser validada conforme o enquadramento do serviço e do responsável técnico, sem tratar isso como regra única para toda obra.
+                A elaboração deve seguir o enquadramento técnico previsto na norma. Em alguns cenários mais simples, a NR-18 admite profissional qualificado. Em outros, exige profissional legalmente habilitado. A necessidade de ART, RRT ou outro registro de responsabilidade técnica deve ser analisada conforme o serviço e o responsável envolvido.
               </p>
             </>
           ),
@@ -117,16 +136,16 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                O <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong>, exigido pela NR-07, é obrigatório para toda empresa de construção civil com empregados CLT. Deve ser elaborado por médico do trabalho e estar diretamente integrado ao PGR: os exames complementares exigidos no PCMSO são definidos com base nos riscos identificados no inventário do PGR.
+                O <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong>, exigido pela NR-07, é obrigatório para empresas da construção civil com empregados CLT. Ele deve ser elaborado por médico do trabalho e precisa conversar com o PGR. Sem essa integração, o programa médico perde coerência.
               </p>
               <p>
-                Na construção civil, os riscos mais comuns que determinam exames específicos incluem exposição a ruído (audiometria tonal obrigatória), poeira de sílica (espirometria e radiografia de tórax), solventes e tintas (hemograma e função hepática), calor intenso e trabalho em altura. A ausência de exames complementares adequados ao perfil de risco da obra é uma das principais inconsistências encontradas em auditoria.
+                Na construção civil, é comum que o perfil de risco exija audiometria tonal, espirometria, radiografia de tórax, exames laboratoriais e avaliações ligadas a trabalho em altura, ruído, poeira mineral, solventes ou calor intenso. Quando esses riscos aparecem no canteiro e não aparecem no PCMSO, a inconsistência fica evidente.
               </p>
               <p>
-                O ASO (Atestado de Saúde Ocupacional) precisa ser emitido para os exames clínicos ocupacionais aplicáveis: admissional, periódico, retorno ao trabalho após afastamento igual ou superior a 30 dias, mudança de risco ocupacional e demissional. Em obra, é comum encontrar trabalhadores admitidos sem ASO válido, especialmente em contratações emergenciais. Cada trabalhador sem ASO é um passivo individual em fiscalização.
+                O ASO precisa ser emitido nos exames ocupacionais aplicáveis: admissional, periódico, retorno ao trabalho, mudança de risco e demissional. Em obra, contratações urgentes e mobilizações rápidas costumam expor um problema recorrente: trabalhador já ativo no canteiro sem ASO válido.
               </p>
               <p>
-                Os exames ocupacionais aplicáveis precisam alimentar o evento S-2220 (monitoramento da saúde do trabalhador) conforme o leiaute e os prazos do eSocial. A ausência de envio ou a divergência entre documentos pode gerar inconsistências e exposição em auditorias e fiscalizações.
+                Além disso, os exames precisam sustentar o envio do evento S-2220 no eSocial. Quando há divergência entre exame, ASO, PCMSO e informação transmitida, a empresa passa a carregar um risco documental difícil de defender depois.
               </p>
             </>
           ),
@@ -136,42 +155,36 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                A construção civil tem obrigações específicas no eSocial que vão além do que é exigido em outros setores. Os dois principais eventos de SST para construtoras são o <strong>S-2220</strong> e o <strong>S-2240</strong>.
+                Na construção civil, o eSocial SST costuma ficar mais sensível porque o canteiro muda rápido, a mão de obra gira com frequência e os riscos não permanecem estáticos ao longo da obra. Isso exige um fluxo mais disciplinado entre campo, RH, clínica e documentação.
               </p>
               <p>
-                O <strong>S-2220</strong> registra o monitoramento de saúde do trabalhador: exames admissionais, periódicos, de retorno ao trabalho e demissionais. Precisa ser enviado sempre que um ASO é emitido. Construtoras com alta rotatividade de mão de obra e admissões frequentes precisam de um fluxo operacional eficiente para não acumular eventos em atraso.
+                O <strong>S-2220</strong> registra o monitoramento de saúde do trabalhador. Já o <strong>S-2240</strong> trata das condições ambientais de trabalho, agentes nocivos e medidas de controle adotadas.
               </p>
               <p>
-                O <strong>S-2240</strong> registra as condições ambientais de trabalho: agentes nocivos, intensidade ou concentração de exposição e as medidas de controle adotadas. Na construção civil, o S-2240 é especialmente relevante porque o canteiro tem múltiplos agentes nocivos reconhecidos (ruído, vibração, calor, poeira de sílica) que precisam ser informados com base no LTCAT ou no inventário do PGR.
-              </p>
-              <p>
-                Inconsistências no S-2240 podem indicar divergências entre a realidade da operação e as informações transmitidas. Isso acontece quando o PGR descreve riscos, mas o S-2240 não acompanha as medidas de controle correspondentes.
+                Em obras com ruído, calor, vibração, poeira de sílica, eletricidade e trabalho em altura, o S-2240 precisa estar coerente com o inventário do PGR e com os laudos técnicos usados pela empresa. Quando a operação real segue por um caminho e o eSocial vai por outro, a inconsistência fica exposta.
               </p>
             </>
           ),
         },
         {
-          title: 'Treinamentos obrigatórios em obra: o que exige a NR-18',
+          title: 'Treinamentos obrigatórios em obra: o que a NR-18 exige',
           body: (
             <>
               <p>
-                A NR-18 exige treinamento <strong>inicial e periódico</strong> para os trabalhadores do canteiro. No Anexo I da norma, a capacitação básica em segurança do trabalho tem carga horária mínima de 4 horas no treinamento inicial e 4 horas a cada 2 anos no periódico. Não é possível usar treinamento genérico de outro setor: o conteúdo precisa ser adequado aos riscos da função e do canteiro.
+                A NR-18 exige treinamento <strong>inicial e periódico</strong> para os trabalhadores do canteiro. No Anexo I da norma, a capacitação básica em segurança do trabalho tem carga horária mínima de 4 horas no treinamento inicial e 4 horas no periódico a cada 2 anos.
               </p>
               <p>
-                Além do treinamento geral da NR-18, atividades específicas exigem treinamentos adicionais obrigatórios:
+                Além do treinamento geral da NR-18, várias atividades do canteiro exigem capacitações complementares. Entre as mais comuns estão:
               </p>
               <ul>
-                <li><strong>NR-35 (trabalho em altura):</strong> obrigatório para qualquer trabalhador que execute atividade a partir de 2 metros de altura. Inclui andaimes, telhados, fachadas, lajes e plataformas. Validade de 2 anos, carga mínima de 8 horas.</li>
-                <li><strong>NR-10 (segurança em instalações elétricas):</strong> obrigatório para eletricistas e para qualquer trabalhador que atue em proximidade de instalações energizadas.</li>
-                <li><strong>NR-12 (máquinas e equipamentos):</strong> obrigatório para operadores de betoneira, serra circular, compactador, guindaste e qualquer outra máquina com risco de acidente.</li>
-                <li><strong>NR-33 (espaço confinado):</strong> obrigatório para trabalhadores que entram em poços, fossas, tanques, galerias e qualquer ambiente com risco de atmosfera deficiente ou tóxica.</li>
-                <li><strong>NR-34 (construção e reparação naval):</strong> específico para obras em embarcações e estruturas flutuantes.</li>
+                <li><strong>NR-35:</strong> para trabalho em altura acima de 2 metros, com reciclagem periódica conforme a própria norma</li>
+                <li><strong>NR-10:</strong> para atividades com eletricidade ou proximidade de instalações energizadas</li>
+                <li><strong>NR-12:</strong> para operação de máquinas e equipamentos com risco de acidente</li>
+                <li><strong>NR-33:</strong> para entrada em espaço confinado, quando aplicável</li>
+                <li><strong>Treinamentos específicos do canteiro:</strong> conforme risco, função, equipamento e fase da obra</li>
               </ul>
               <p>
-                Cada treinamento precisa ser documentado com lista de presença nominal, conteúdo programático, carga horária, data, local, nome do instrutor e certificado individual. Em fiscalização, a ausência de qualquer um desses registros para trabalhadores que executam as atividades correspondentes é infração autuável.
-              </p>
-              <p>
-                A validade dos treinamentos também é fiscalizada. Treinamento de NR-35 com mais de 2 anos sem reciclagem, por exemplo, já é passivo mesmo que o certificado exista.
+                Não basta dizer que houve treinamento. Em fiscalização, a empresa precisa comprovar lista de presença, conteúdo programático, carga horária, data, local, instrutor e certificado ou registro individual correspondente.
               </p>
             </>
           ),
@@ -181,63 +194,56 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                A NR-18 prioriza as medidas de proteção coletiva (EPC) sobre as individuais (EPI). Isso significa que antes de exigir capacete e cinto do trabalhador, a obra precisa ter as proteções coletivas instaladas. O fiscal verifica se o EPI está sendo usado apenas como complemento a medidas coletivas instaladas, não como substituto delas.
+                A NR-18 prioriza as medidas de proteção coletiva sobre as individuais. Isso significa que o EPI não entra como substituto de guarda-corpo, fechamento, sinalização, isolamento ou adequação de instalações. Ele entra como complemento.
               </p>
-              <p>
-                As principais proteções coletivas exigidas pela NR-18 incluem:
-              </p>
+              <p>Entre as proteções coletivas mais sensíveis em obra estão:</p>
               <ul>
-                <li><strong>Guarda-corpo e rodapé:</strong> obrigatórios em todas as aberturas de laje, escadas, rampas e plataformas com desnível superior a 2 metros.</li>
-                <li><strong>Redes de proteção:</strong> exigidas em fachadas e em aberturas internas quando o guarda-corpo fixo não é viável.</li>
-                <li><strong>Fechamento de poços de elevador:</strong> obrigatório em todos os pavimentos não ocupados.</li>
-                <li><strong>Plataformas de proteção:</strong> em obras com mais de 2 pavimentos, exigidas nas fachadas e nas áreas de circulação.</li>
-                <li><strong>Sinalização e isolamento de áreas de risco:</strong> tapumes, cones, faixas e placas em áreas de trabalho, trânsito de máquinas e queda de objetos.</li>
-                <li><strong>Instalações elétricas provisórias:</strong> quadros aterrados, cabos em eletroduto ou bandeja, dispositivos de proteção diferencial residual (DR) em todos os circuitos.</li>
+                <li><strong>Guarda-corpo e rodapé</strong> em aberturas, escadas, rampas e plataformas com desnível</li>
+                <li><strong>Redes de proteção</strong> e fechamentos quando o risco de queda exige contenção</li>
+                <li><strong>Fechamento de poços de elevador</strong> e outras aberturas críticas</li>
+                <li><strong>Plataformas de proteção</strong> e contenção em fachadas e áreas de circulação</li>
+                <li><strong>Sinalização e isolamento</strong> de áreas de risco, trânsito de máquinas e queda de objetos</li>
+                <li><strong>Instalações elétricas provisórias</strong> com aterramento e dispositivos de proteção adequados</li>
               </ul>
               <p>
-                A ausência de proteção coletiva obrigatória é uma das infrações com maior probabilidade de resultar em embargo imediato. O fiscal pode interromper a obra no mesmo dia se identificar risco grave e iminente sem medida coletiva instalada.
+                A ausência dessas medidas é uma das situações com maior risco de embargo imediato. Quando o fiscal identifica risco grave e iminente sem proteção coletiva instalada, a paralisação pode acontecer na hora.
               </p>
             </>
           ),
         },
         {
-          title: 'Áreas de vivência: o que a norma exige para trabalhadores em canteiro',
+          title: 'Áreas de vivência: o que a norma exige para os trabalhadores',
           body: (
             <>
               <p>
-                A NR-18 define requisitos detalhados para as instalações de apoio aos trabalhadores no canteiro. O descumprimento das exigências de áreas de vivência é uma das infrações mais comuns em obras de pequeno e médio porte, porque construtoras tratam as instalações de apoio como secundárias em relação ao andamento físico da obra.
+                A NR-18 dedica atenção específica às instalações de apoio do canteiro. Em obra pequena ou média, esse costuma ser um dos pontos mais negligenciados, porque a empresa concentra energia na execução física e deixa a infraestrutura dos trabalhadores em segundo plano.
               </p>
-              <p>
-                As exigências incluem:
-              </p>
+              <p>Em linhas gerais, a norma exige condições adequadas para:</p>
               <ul>
-                <li><strong>Vestiário:</strong> com armários individuais (ou locais equivalentes), separado por sexo, com ventilação e iluminação adequadas.</li>
-                <li><strong>Sanitários:</strong> um vaso para cada 20 trabalhadores do sexo masculino e um mictório para cada 20 trabalhadores, mais um vaso para cada 20 trabalhadoras. Exige limpeza diária documentada.</li>
-                <li><strong>Local para refeições:</strong> mesas e assentos suficientes para o turno, protegido de intempéries, com lixeira, lavatório próximo e sem comunicação direta com o vestiário.</li>
-                <li><strong>Água potável:</strong> fornecimento em quantidade suficiente e com qualidade comprovada.</li>
-                <li><strong>Alojamento (quando houver):</strong> com ventilação cruzada, área mínima por trabalhador, camas, armários e instalações sanitárias adequadas.</li>
+                <li><strong>Vestiário</strong> com organização, ventilação e separação adequada</li>
+                <li><strong>Sanitários</strong> em quantidade compatível com o efetivo e com higiene regular</li>
+                <li><strong>Local para refeições</strong> protegido, limpo e funcional</li>
+                <li><strong>Água potável</strong> em quantidade suficiente</li>
+                <li><strong>Alojamento</strong>, quando houver, com condições mínimas de habitabilidade</li>
               </ul>
               <p>
-                Obras que funcionam com trabalhadores em regime de alojamento têm obrigações adicionais e são fiscalizadas com maior frequência. A precariedade das instalações de vivência é um dos principais motivos de reclamação de trabalhadores ao MTE e de abertura de inspeções.
+                Quando essas áreas estão precárias, o problema não é apenas formal. Isso costuma gerar reclamação de trabalhador, inspeção, desgaste operacional e sinal de desorganização para o fiscal logo no primeiro olhar.
               </p>
             </>
           ),
         },
         {
-          title: 'Responsabilidade solidária: construtora, empreiteira e subcontratadas',
+          title: 'Responsabilidade da construtora, empreiteira e subcontratada',
           body: (
             <>
               <p>
-                Um dos pontos mais relevantes da NR-18 para gestores é a <strong>responsabilidade solidária</strong> entre a empresa contratante da obra e todas as empresas subcontratadas. A construtora dona do canteiro responde pelas condições de SST de todos os trabalhadores que executam serviços no local, independentemente de quem os emprega diretamente.
+                Na prática da construção civil, um dos pontos mais sensíveis é a responsabilidade sobre terceiros que atuam no mesmo canteiro. A empresa contratante da obra não pode simplesmente presumir que a empreiteira está cuidando sozinha de toda a parte ocupacional.
               </p>
               <p>
-                Isso significa que se uma empreiteira terceirizada estiver com trabalhadores sem ASO, sem treinamento de NR-35 ou sem EPI adequado, a construtora responde solidariamente na fiscalização. O auto de infração pode ser lavrado contra a construtora mesmo que ela não seja a empregadora direta dos trabalhadores.
+                Se a subcontratada mantém trabalhadores sem ASO, sem treinamento obrigatório ou sem proteção mínima, o problema não fica isolado nela. Ele se projeta sobre a gestão do canteiro e pode atingir a construtora ou contratante principal em fiscalização, ação trabalhista e discussão judicial.
               </p>
               <p>
-                Em acidente de trabalho com trabalhador terceirizado, a construtora pode ser incluída como ré em ação trabalhista, civil e, dependendo da gravidade, em inquérito criminal. A responsabilidade solidária não é afastada por cláusula contratual com a terceirizada.
-              </p>
-              <p>
-                A gestão documental das subcontratadas é, portanto, uma obrigação operacional da construtora. Isso inclui verificar periodicamente: PGR da subcontratada, ASOs de todos os trabalhadores alocados na obra, certificados de treinamento atualizados para cada atividade executada e registros de entrega de EPI. Construtoras que não têm esse controle estão gerindo risco trabalhista invisível.
+                Por isso, controle documental de terceiros não é burocracia extra. É parte central da gestão da obra. Isso inclui conferir PGR aplicável, ASOs, treinamentos, entrega de EPI e aderência da equipe terceirizada às regras do canteiro.
               </p>
             </>
           ),
@@ -247,35 +253,32 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                No texto antigo da norma, obras com menos de 20 trabalhadores não precisavam de PCMAT. Com a extinção do PCMAT, essa distinção deixou de existir para o programa específico do canteiro. A análise atual deve considerar as exigências da NR-18 e as hipóteses de tratamento simplificado ou dispensa previstas na NR-01 e na NR-07, sem presumir que uma obra pequena está livre de obrigações de SST.
+                Um erro comum é achar que obra pequena ou reforma rápida está praticamente fora do alcance da NR-18. Não está. O porte pode mudar a complexidade da documentação, mas não elimina as obrigações básicas de SST.
               </p>
               <p>
-                Uma empresa de reforma com 3 trabalhadores contratados pela CLT precisa ter ASO admissional para cada um, treinamento de NR-35 se houver qualquer atividade acima de 2 metros, PGR documentando os riscos da atividade e PCMSO com os exames pertinentes. O porte da obra pode influenciar a extensão dos documentos, mas não elimina as obrigações básicas.
+                Se há empregados CLT, continua sendo necessário analisar PGR, PCMSO, ASO, treinamentos e medidas de controle compatíveis com a atividade executada. Trabalho em altura, eletricidade, demolição parcial, poeira, calor e risco de queda continuam existindo mesmo em obras menores.
               </p>
               <p>
-                Microempreendedores individuais (MEI) que contratam funcionários também estão sujeitos às obrigações aplicáveis de SST. A inscrição como MEI não afasta a responsabilidade do empregador. A NR-01 prevê dispensa de elaboração do PGR para o MEI, mas isso não autoriza ignorar os riscos reais da atividade nem as obrigações que continuem aplicáveis.
-              </p>
-              <p>
-                Para obras iniciadas com prazo curto, um erro comum é tratar SST como burocracia a ser resolvida depois do início das atividades. O PGR e o ASO admissional precisam existir antes de o trabalhador entrar no canteiro, não depois. Autuação por ausência de documentação na fase inicial da obra cobre também os períodos anteriores ao início da fiscalização.
+                No caso do MEI e de estruturas muito pequenas, é preciso olhar com atenção as hipóteses de simplificação ou dispensa previstas em outras normas, sem transformar isso em salvo-conduto para ignorar risco real. Quando a obra começa antes da documentação mínima, o passivo já começou junto.
               </p>
             </>
           ),
         },
         {
-          title: 'O que acontece em fiscalização e como se defender',
+          title: 'O que acontece em fiscalização e como a empresa se protege',
           body: (
             <>
               <p>
-                A fiscalização do MTE em canteiro de obras pode ser programada (planejamento periódico da regional) ou reativa (denúncia de trabalhador, acidente registrado, queixa sindical). Em ambos os casos, o fiscal verifica in loco as condições do canteiro e solicita documentação no ato.
+                A fiscalização pode ser programada ou motivada por denúncia, acidente, queixa sindical ou histórico da obra. No canteiro, o auditor costuma cruzar condição real e documentação: o que está no papel precisa aparecer na operação.
               </p>
               <p>
-                Os documentos solicitados com maior frequência incluem: PGR vigente e assinado, PCMSO com os exames definidos, ASOs de todos os trabalhadores presentes, certificados de treinamento (NR-18, NR-35, NR-10, NR-12 conforme aplicável), fichas de entrega de EPI e ordens de serviço de segurança assinadas pelos trabalhadores.
+                Os documentos mais cobrados costumam incluir PGR vigente, PCMSO, ASOs, treinamentos aplicáveis, fichas de EPI, ordens de serviço e evidências de controle dos riscos presentes naquela fase da obra.
               </p>
               <p>
-                A ausência de qualquer desses documentos resulta em lavratura de auto de infração. A multa pode ser contestada via defesa administrativa, mas a defesa é mais eficiente quando os documentos existem e há erro formal, não quando os documentos simplesmente não existem.
+                A melhor defesa é preventiva. Quando os documentos existem, estão coerentes e a obra foi organizada com critério, a empresa discute detalhe técnico. Quando não existem, a conversa vira contenção de dano.
               </p>
               <p>
-                Em casos de risco grave e iminente verificado durante a fiscalização, como proteção coletiva ausente em trabalho em altura ou instalação elétrica precária, o fiscal pode lavrar embargo ou interdição de trecho da obra sem necessidade de notificação prévia. O custo da paralisação por embargo é, em geral, muito superior ao custo de adequação preventiva.
+                Em risco grave e iminente, pode haver embargo ou interdição. E, quase sempre, o custo da paralisação supera com folga o custo de organizar a obra antes.
               </p>
             </>
           ),
@@ -284,56 +287,64 @@ export default function NR18Page() {
       faq={[
         {
           q: 'O PCMAT ainda é exigido pela NR-18?',
-          a: 'Não. O PCMAT foi oficialmente extinto com a revisão da NR-18. O documento foi substituído pelo PGR (Programa de Gerenciamento de Riscos), previsto na NR-01. Para obras novas, iniciadas após a transição da norma, o PGR é o documento obrigatório. Obras que tinham PCMAT válido em andamento puderam mantê-lo até a conclusão daquela obra específica.',
+          a: 'Para obras novas, o PCMAT deixou de ser o documento central. A gestão de riscos do canteiro passou a ser estruturada pelo PGR, conforme a lógica atual da NR-18 e da NR-01.',
+        },
+        {
+          q: 'NR-18 atualizada: o que mudou de forma mais importante?',
+          a: 'A mudança mais relevante foi a substituição do PCMAT pelo PGR como eixo da gestão de riscos no canteiro. Isso trouxe mais integração com NR-01, PCMSO, controles de engenharia, treinamentos e revisão conforme a fase da obra.',
+        },
+        {
+          q: 'A NR-18 tem validade?',
+          a: 'A NR-18, como norma, não vence como certificado. O que precisa ser verificado é a versão vigente da regulamentação e a atualização prática dos treinamentos, programas, evidências e revisões ligadas à obra.',
+        },
+        {
+          q: 'Onde baixar a NR-18 em PDF oficial?',
+          a: 'O mais seguro é consultar a publicação oficial nos canais do governo, especialmente MTE e ENIT. Assim a empresa evita usar texto desatualizado ou material sem controle de revisão.',
         },
         {
           q: 'Qual a diferença entre PCMAT e PGR?',
-          a: 'O PCMAT era um documento exclusivo da construção civil, exigido pela NR-18 para obras com 20 ou mais trabalhadores. Na construção civil, o PGR passou a organizar a gestão de riscos do canteiro com inventário, plano de ação e controles. A análise deve observar a NR-18 e as hipóteses específicas de simplificação ou dispensa previstas na NR-01.',
-        },
-        {
-          q: 'Construtora que terceiriza tudo: quem responde pelos acidentes?',
-          a: 'A construtora dona da obra é responsável solidária pelas condições de SST do canteiro, mesmo quando a execução é totalmente terceirizada. Em fiscalização, o auto de infração pode ser lavrado contra a construtora por irregularidade de trabalhador subcontratado. Em acidente, a construtora pode ser incluída em ação trabalhista e criminal independentemente de cláusula contratual com a terceirizada.',
+          a: 'O PCMAT era o documento tradicional da construção civil. O PGR, além de substituir esse papel nas obras novas, exige inventário de riscos, plano de ação e revisão mais aderente à realidade do canteiro.',
         },
         {
           q: 'O PGR precisa ser atualizado durante a obra?',
-          a: 'Sim. O PGR do canteiro precisa ser revisado conforme a obra avança. Os riscos da fase de fundação são diferentes dos da estrutura e do acabamento. Um PGR elaborado no início e nunca revisado já representa passivo em fiscalização, porque o documento não reflete os riscos reais da fase atual da obra.',
+          a: 'Sim. À medida que a obra muda de fase, os riscos também mudam. Um PGR que não acompanha essa evolução perde força técnica e pode se tornar frágil em fiscalização.',
         },
         {
-          q: 'Obra de reforma pequena também precisa de PGR e PCMSO?',
-          a: 'Sim. Qualquer obra com trabalhadores CLT precisa de PGR e PCMSO, independentemente do número de funcionários ou do porte da reforma. A extinção do PCMAT eliminou a distinção anterior que eximia obras com menos de 20 trabalhadores do documento específico. O que muda é a complexidade do PGR, não a obrigatoriedade.',
+          q: 'Obra pequena ou reforma também precisa de PGR e PCMSO?',
+          a: 'Em regra, sim, quando há empregados CLT e riscos ocupacionais envolvidos. O porte da obra pode reduzir a complexidade documental, mas não elimina automaticamente as obrigações básicas.',
         },
         {
           q: 'Qual a multa por descumprimento da NR-18?',
-          a: 'Varia conforme a infração e o número de trabalhadores expostos. Cada item da NR-18 tem código próprio de autuação. Multas individuais começam em poucos milhares de reais e podem somar dezenas de milhares em uma única visita fiscal quando há múltiplas infrações. Em caso de embargo por risco grave e iminente, o custo da paralisação costuma superar o valor das multas.',
+          a: 'O valor depende da infração, do enquadramento legal e do número de trabalhadores expostos. Em obra, o impacto financeiro raramente vem só da multa. Embargo, atraso e retrabalho costumam pesar ainda mais.',
         },
         {
-          q: 'O que é fiscalizado com mais frequência em canteiro de obras?',
-          a: 'Os itens autuados com mais frequência são: ausência ou desatualização do PGR, ausência de ASO admissional de trabalhadores, falta de treinamento de NR-35 para trabalho em altura, ausência de proteções coletivas obrigatórias (guarda-corpo, fechamento de lajes), instalação elétrica provisória sem aterramento ou dispositivo DR, e áreas de vivência (sanitários e refeitório) em desconformidade.',
+          q: 'O que costuma ser fiscalizado com mais frequência no canteiro?',
+          a: 'PGR desatualizado ou ausente, ASO de admissão, treinamentos obrigatórios, proteção coletiva, instalações provisórias, áreas de vivência e coerência entre risco real e documentação são pontos recorrentes.',
         },
         {
           q: 'Como funciona o eSocial SST na construção civil?',
-          a: 'As construtoras precisam enviar as informações aplicáveis ao S-2220 e usar o S-2240 para registrar as condições ambientais de trabalho conforme as regras do eSocial. Divergências entre S-2240, PGR e LTCAT fragilizam a conformidade documental da empresa.',
+          a: 'A empresa precisa manter coerência entre exames, ASOs, riscos do canteiro e eventos como S-2220 e S-2240. Quando a documentação e a operação não conversam, o eSocial expõe essa falha.',
         },
         {
-          q: 'O PGR na construção civil precisa de ART?',
-          a: 'A NR-18 exige que o PGR seja elaborado por profissional legalmente habilitado em segurança do trabalho e, em canteiros com até 7 metros de altura e no máximo 10 trabalhadores, admite profissional qualificado em segurança do trabalho. A necessidade de ART, RRT ou outro registro deve ser analisada conforme o serviço contratado e o responsável técnico, porque a norma não trata isso como regra única para toda obra.',
+          q: 'O PGR da construção civil precisa de ART?',
+          a: 'Isso depende do enquadramento técnico do serviço e do profissional responsável. A análise precisa considerar a própria NR-18, a natureza da obra e a responsabilidade técnica envolvida.',
         },
         {
           q: 'Trabalhador sem ASO pode entrar no canteiro?',
-          a: 'Não. O ASO admissional precisa ser emitido antes do início das atividades. Trabalhador que entra no canteiro sem ASO válido já configura infração, independentemente do tempo que ficou trabalhando sem o documento. Em fiscalização, cada trabalhador sem ASO é contabilizado individualmente no auto de infração.',
+          a: 'Não é o cenário seguro. O ASO admissional deve existir antes do início das atividades para que a empresa não assuma um passivo logo no começo da obra.',
         },
         {
-          q: 'CIPA é obrigatória em empresas de construção civil?',
-          a: 'Na construção civil, a NR-05 manda dimensionar a CIPA por canteiro de obras conforme o Quadro I. Quando o canteiro não se enquadra no dimensionamento, a organização deve nomear ao menos um representante da NR-05. Além disso, obras com até 180 dias de duração ficam dispensadas da constituição da CIPA, mas continuam obrigadas a nomear representante. O treinamento do representante nomeado na construção tem carga mínima de 8 horas.',
+          q: 'CIPA é obrigatória em empresa de construção civil?',
+          a: 'A análise depende do dimensionamento aplicável ao canteiro e das regras da NR-05 para a situação concreta. Quando não há enquadramento para constituição formal, ainda assim podem existir obrigações de representação e treinamento.',
         },
       ]}
       sidebarTitle="Sua obra tem PGR, PCMSO e treinamentos em dia?"
-      sidebarHook="A NR-18 é a norma mais fiscalizada do país. A SERMST faz auditoria documental e visita técnica de canteiro antes da fiscalização chegar."
+      sidebarHook="A NR-18 está entre as normas mais observadas em fiscalização de obra. A SERMST audita a documentação e revisa o canteiro antes que a irregularidade vire embargo, multa ou atraso."
       sidebarCtaLabel="Solicitar PGR para obra"
       sidebarCtaHref="/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo"
       finalCta={{
         title: 'Sua obra precisa de PGR, PCMSO e treinamentos?',
-        desc: 'A SERMST elabora o PGR para canteiros de obra, gerencia o PCMSO com ASO no mesmo dia e ministra treinamentos de NR-18, NR-35 e NR-10. Atendimento em São Paulo e Grande ABC.',
+        desc: 'A SERMST estrutura o PGR do canteiro, apoia o PCMSO e organiza os treinamentos obrigatórios para obras em São Paulo e Grande ABC.',
         label: 'Solicitar diagnóstico para minha obra',
         href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo',
       }}

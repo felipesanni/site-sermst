@@ -173,6 +173,52 @@ export default function RHIndexPage() {
         </div>
       </section>
 
+      <section className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 pb-12">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <FadeIn direction="right">
+            <Link
+              href="/rh/riscos-psicossociais"
+              className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+            >
+              <span className="kicker">NR-01 e governança</span>
+              <h2 className="mb-4 text-2xl font-black text-brand-900">
+                Riscos psicossociais: o que mudou e o que o RH precisa revisar
+              </h2>
+              <p className="mb-6 text-slate-700 leading-relaxed">
+                Pressão excessiva, assédio, sobrecarga e adoecimento mental deixaram de ser tema
+                periférico. O guia mostra como isso entra no radar do PGR, da liderança e da
+                documentação de SST.
+              </p>
+              <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
+                Ler guia de riscos psicossociais
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </FadeIn>
+
+          <FadeIn direction="left" delay={0.08}>
+            <Link
+              href="/rh/cat-acidente-de-trabalho"
+              className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+            >
+              <span className="kicker">Acidente e passivo trabalhista</span>
+              <h2 className="mb-4 text-2xl font-black text-brand-900">
+                CAT: quando emitir, quem pode registrar e onde a empresa mais erra
+              </h2>
+              <p className="mb-6 text-slate-700 leading-relaxed">
+                Quando a CAT entra em cena, o RH já está sob pressão. Este conteúdo ajuda a agir
+                com mais rapidez, reduzir falhas de prazo e evitar omissão documental em acidente
+                ou suspeita de doença ocupacional.
+              </p>
+              <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
+                Ler guia da CAT
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── Destaque: Lei 15.377/2026 ── */}
       <section className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 pb-12">
         <FadeIn direction="up">

@@ -72,8 +72,14 @@ const organizationSchema = {
   name: 'SERMST - Gestão Ocupacional e Medicina do Trabalho',
   alternateName: 'SERMST',
   url: 'https://sermst.com.br',
-  logo: 'https://sermst.com.br/images/site/logo-branco.png',
-  image: 'https://sermst.com.br/images/site/og-cover.jpg',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://sermst.com.br/images/site/logo-cor.png',
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://sermst.com.br/images/site/og-cover.jpg',
+  },
   description:
     'Há mais de 40 anos prestando serviços de Medicina e Segurança do Trabalho para empresas de São Paulo e Grande ABC. PCMSO, PGR, LTCAT, ASO Expresso e Gestão eSocial.',
   foundingDate: '1983',
@@ -103,6 +109,16 @@ const organizationSchema = {
     'Osasco',
     'Guarulhos',
     'Barueri',
+  ],
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      telephone: '+55-11-91514-6447',
+      email: 'comercial@sermst.com.br',
+      areaServed: 'BR',
+      availableLanguage: ['pt-BR'],
+    },
   ],
   sameAs: [
     'https://wa.me/5511915146447',

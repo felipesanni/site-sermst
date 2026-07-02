@@ -146,7 +146,7 @@ export default function NR13Page() {
       sidebarCtaLabel="Solicitar inspeção NR-13"
       related={[
         { label: 'NR-10: Eletricidade', href: '/normas/nr-10-eletricidade' },
-        { label: 'NR-18: Construção civil', href: '/normas/nr-18-construcao-civil' },
+        { label: 'Norma Regulamentadora 18 na construção civil', href: '/normas/nr-18-construcao-civil' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },
       ]}

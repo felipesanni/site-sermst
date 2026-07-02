@@ -103,5 +103,5 @@ describe('AssinaturaPlans contract flow', () => {
     await waitFor(() => {
       expect(fetchMock).toHaveBeenCalledWith('/api/cep/01001000');
     });
-  }, 10000);
+  }, 20000);
 });

@@ -46,7 +46,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
       },
       {
         q: `Qual o valor do exame toxicológico${localPhrase}?`,
-        a: `Nesta página, o preço de referência informado pela SERMST para realização do exame toxicológico é R$ 200,00.`,
+        a: `O preço de referência informado pela SERMST para realização do exame toxicológico é R$ 200,00.`,
       },
       {
         q: `Exame toxicológico serve para admissão, demissão e renovação de CNH?`,
@@ -54,7 +54,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
       },
       {
         q: `Quem precisa fazer exame toxicológico?`,
-        a: `Nesta página, o foco está em motoristas e condutores das categorias C, D e E, tanto em demandas de empresas quanto em atendimentos de pessoa física relacionados à CNH.`,
+        a: `Aqui, o foco está em motoristas e condutores das categorias C, D e E, tanto em demandas de empresas quanto em atendimentos de pessoa física relacionados à CNH.`,
       },
       {
         q: `Quanto tempo leva para organizar o exame toxicológico?`,
@@ -71,7 +71,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
       },
       {
         q: `Quanto custa o exame toxicológico?`,
-        a: `O preço de referência informado pela SERMST nesta página é R$ 200,00 para realização do exame toxicológico.`,
+        a: `O preço de referência informado pela SERMST é R$ 200,00 para realização do exame toxicológico.`,
       },
       {
         q: `Onde fazer exame toxicológico com validade nacional?`,
@@ -79,7 +79,7 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
       },
       {
         q: `O exame toxicológico é só para admissão de motorista?`,
-        a: `Não. Nesta página, ele aparece tanto no contexto ocupacional de empresas quanto no contexto de pessoa física ligado à CNH das categorias C, D e E.`,
+        a: `Não. Aqui, ele aparece tanto no contexto ocupacional de empresas quanto no contexto de pessoa física ligado à CNH das categorias C, D e E.`,
       },
       {
         q: `Como saber se meu caso é ocupacional ou ligado à CNH?`,
@@ -96,27 +96,27 @@ function buildFallbackFaqs({ context, topic, localidade }: FrequentFAQOptions): 
     case 'service-local':
       return [
         {
-          q: `Como saber se ${topicLower} se aplica a minha empresa${localPhrase}?`,
-          a: `A forma mais segura é cruzar atividade, riscos do cargo, rotina operacional e obrigações do eSocial. A SERMST avalia esse contexto antes de indicar ${topicLower}, evitando escopo genérico ou custo desnecessário.`,
+          q: `Em que situação ${topicLower} costuma fazer sentido para a empresa${localPhrase}?`,
+          a: `A resposta depende da atividade, dos riscos do cargo, da rotina operacional e das obrigações ocupacionais já existentes. A SERMST cruza esse contexto antes de orientar ${topicLower}, evitando contratação desalinhada ou custo desnecessário.`,
         },
         {
-          q: `Quais informações a SERMST precisa para orientar ${topicLower}${localPhrase}?`,
-          a: `Normalmente precisamos entender CNPJ, quantidade de colaboradores, função envolvida, exposições ocupacionais e urgência da demanda. Com isso, a equipe consegue direcionar o fluxo certo para ${topicLower}.`,
+          q: `O que a SERMST precisa entender antes de orientar ${topicLower}${localPhrase}?`,
+          a: `Normalmente a equipe avalia CNPJ, quantidade de colaboradores, função envolvida, exposições ocupacionais e urgência da demanda. Com isso, fica mais fácil indicar o fluxo certo para ${topicLower}.`,
         },
         {
-          q: `${topic} impacta o eSocial ou outros documentos obrigatórios?`,
-          a: `Na maioria dos cenários, sim. Dependendo do serviço, ele sustenta eventos ocupacionais, atualização de programas como PCMSO e PGR ou evidência técnica para auditoria e fiscalização.`,
+          q: `${topic} pode afetar eSocial, PCMSO, PGR ou outros documentos da empresa?`,
+          a: `Em muitos cenários, sim. Dependendo do serviço, ele pode sustentar eventos ocupacionais, atualização de programas como PCMSO e PGR ou evidência técnica para auditoria e fiscalização.`,
         },
         {
-          q: `O atendimento de ${topicLower} pode ser feito na empresa ou exige deslocamento?`,
-          a: `Isso depende da natureza do serviço. Alguns fluxos exigem atendimento em unidade, enquanto outros podem ser organizados in company ou de forma híbrida. A orientação correta depende da operação da empresa.`,
+          q: `${topic} pode ser resolvido na empresa ou exige atendimento externo?`,
+          a: `Isso depende da natureza do serviço. Alguns fluxos exigem atendimento em unidade, enquanto outros podem ser organizados in company ou de forma híbrida. A definição correta depende da operação da empresa.`,
         },
         {
-          q: `Quanto tempo leva para organizar ${topicLower}${localPhrase}?`,
-          a: `O prazo varia conforme urgência, volume de colaboradores e complexidade técnica. Em demandas bem alinhadas, a SERMST estrutura o fluxo rapidamente e evita atraso no RH ou na operação.`,
+          q: `Quanto tempo a empresa costuma levar para organizar ${topicLower}${localPhrase}?`,
+          a: `O prazo varia conforme urgência, volume de colaboradores e complexidade técnica. Quando a demanda já chega bem alinhada, a SERMST consegue estruturar o fluxo com mais rapidez e menos atraso para o RH ou para a operação.`,
         },
         {
-          q: `Como pedir proposta de ${topicLower} com o escopo correto?`,
+          q: `Como pedir proposta de ${topicLower} sem errar no escopo?`,
           a: `O ideal é falar com a equipe comercial informando cidade, quantidade de colaboradores, função ou área impactada e o prazo da empresa. Isso reduz retrabalho e acelera uma proposta aderente ao cenário real.`,
         },
       ];

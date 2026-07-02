@@ -156,6 +156,7 @@ export default function MedicinaDoTrabalhoPage() {
       sidebarHook="A SERMST estrutura e executa a medicina do trabalho da sua empresa: PCMSO, ASOs, exames e eSocial, com responsabilidade técnica definida e fluxo que não trava contratação."
       sidebarCtaLabel="Estruturar medicina do trabalho"
       related={[
+        { label: 'Empresa de segurança do trabalho em São Paulo', href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo' },
         { label: 'PCMSO: o programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
         { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },

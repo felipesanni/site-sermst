@@ -130,6 +130,7 @@ export default function SaúdeOcupacionalPage() {
       sidebarHook="A diferença aparece no primeiro afastamento longo, na primeira fiscalização ou na primeira ação trabalhista. A SERMST faz auditoria gratuita do que sua empresa tem hoje."
       sidebarCtaLabel="Auditar saúde ocupacional"
       related={[
+        { label: 'Empresa de segurança do trabalho em São Paulo', href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo' },
         { label: 'PCMSO (NR-07): programa', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },

@@ -171,6 +171,7 @@ export default function PCMSOPage() {
       sidebarCtaLabel="Revisar meu PCMSO"
       related={[
         { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
+        { label: 'O que é PCMSO? Significado e aplicação prática', href: '/dicionario/o-que-e-pcmso' },
         { label: 'DIR: quando pode haver dispensa de elaborar PCMSO', href: '/rh/declaracao-inexistencia-risco-dir' },
         { label: 'Contratar elaboração e gestão de PCMSO', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
         { label: 'Gestão de SST', href: '/saude/gestao-sst' },

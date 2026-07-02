@@ -283,3 +283,31 @@ Antes de criar ou fortalecer qualquer geo page nova, validar:
 - existe satelite informacional que empurre para a pagina principal?
 
 Se a resposta for "nao" para 2 ou mais pontos, o conteudo deve nascer como pagina por setor/dor, nao como pagina geo.
+
+## Monitoramento de canibalizacao
+
+Este e o controle mais importante da estrategia geo, porque muitas paginas parecidas podem disputar a mesma busca e diluir autoridade.
+
+Revisar mensalmente no Google Search Console:
+
+- consultas em que duas ou mais URLs geo aparecem para a mesma palavra-chave
+- paginas geo com muitas impressoes e CTR muito baixo
+- queda de posicao de pagina principal depois que uma pagina geo comecou a ranquear
+- paginas geo que recebem impressoes para busca informacional, mas deveriam atender busca local/comercial
+- paginas geo sem clique, sem impressao relevante e com conteudo muito parecido com outras cidades
+
+Regra de decisao:
+
+- se uma geo page tem busca local clara e sinais de impressao, melhorar conteudo local, FAQ e links internos
+- se duas paginas disputam a mesma intencao, manter a mais forte como destino principal e ajustar links/titles da outra
+- se a pagina nao tem intencao local clara, transformar o tema em pagina por setor, dor ou obrigacao
+- se a pagina existe apenas para trocar o nome da cidade, nao criar novas variacoes nesse modelo
+- se a pagina for removida do foco estrategico, avaliar noindex, consolidacao ou retirada futura do sitemap somente com dados, nunca por palpite
+
+Checklist tecnico obrigatorio:
+
+- o slug da localidade precisa existir em `localidades`
+- o sitemap deve listar apenas paginas geo canonicas realmente geradas
+- `llms.txt` e `robots.txt` devem apontar para a estrategia canonica, sem expor URLs bloqueadas ou inexistentes
+- paginas da Onda 1 precisam ter copy local unica, nao apenas troca de cidade
+- qualquer ajuste de geo SEO deve rodar testes de sitemap, robots, llms e copy local antes de publicar

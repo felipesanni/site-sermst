@@ -187,6 +187,7 @@ export default function NR05Page() {
       related={[
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'Treinamento NR-05 CIPA', href: '/treinamentos/nr-05-cipa-comissao-interna' },
+        { label: 'NR-18: Construção civil, canteiro e frentes de obra', href: '/normas/nr-18-construcao-civil' },
         { label: 'NR-35: Trabalho em Altura', href: '/normas/nr-35-trabalho-em-altura' },
         { label: 'Calculadora de grau de risco CNAE', href: '/rh/calculadora-cnae-grau-de-risco' },
       ]}

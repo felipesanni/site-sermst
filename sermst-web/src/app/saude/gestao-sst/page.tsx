@@ -152,6 +152,7 @@ export default function GestãoSSTPage() {
       sidebarHook="A SERMST faz simulação de auditoria SST gratuita: cobre os pontos críticos e mostra exatamente onde sua empresa está exposta. Sem compromisso comercial."
       sidebarCtaLabel="Simular auditoria SST"
       related={[
+        { label: 'Empresa de segurança do trabalho em São Paulo', href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo' },
         { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'PCMSO (NR-07): programa', href: '/servicos/pcmso-nr07-programa/sao-paulo' },

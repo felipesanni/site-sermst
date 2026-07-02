@@ -142,7 +142,7 @@ export default function NR10Page() {
       sidebarCtaLabel="Auditar conformidade NR-10"
       related={[
         { label: 'NR-35: Trabalho em altura', href: '/normas/nr-35-trabalho-em-altura' },
-        { label: 'NR-18: Construção civil', href: '/normas/nr-18-construcao-civil' },
+        { label: 'NR-18 para obras e canteiros', href: '/normas/nr-18-construcao-civil' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },
         { label: 'PGR (NR-01) atualizado', href: '/normas/nr-01-pgr-atualizada' },
       ]}

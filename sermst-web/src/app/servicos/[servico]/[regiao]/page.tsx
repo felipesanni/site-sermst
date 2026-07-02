@@ -56,6 +56,10 @@ function getLocalServiceDescription(servico: string, serviceName: string, local:
     return `PCMSO em ${local.nome}: programa de saúde ocupacional elaborado por médico do trabalho com grade de exames por risco, periodicidade definida e sustentação correta para o eSocial S-2220.`;
   }
 
+  if (servico === 'empresa-seguranca-do-trabalho') {
+    return `Empresa de segurança do trabalho em ${local.nome} para empresas que precisam integrar PGR, PCMSO, LTCAT, exames ocupacionais, treinamentos e eSocial com mais controle sobre RH, operação e conformidade.`;
+  }
+
   if (servico === 'pgr-nr01-gerenciamento-riscos') {
     const setor = local.setoresPredominantes?.[0]?.split('—')[0].trim() ?? 'indústria e serviços';
     return `PGR em ${local.nome}: levantamento de riscos e elaboração do programa conforme NR-01 para empresas de ${setor.toLowerCase()}. Revisão no prazo, base técnica sólida e defesa em fiscalização.`;
@@ -75,10 +79,14 @@ function getLocalServiceDescription(servico: string, serviceName: string, local:
 export function generateStaticParams() {
   const params: { servico: string; regiao: string }[] = [];
 
-  Object.keys(servicosSEO).forEach((servico) => {
-    localidades.forEach((local) => {
-      params.push({ servico, regiao: local.slug });
-    });
+  Object.entries(servicosSEO).forEach(([servico, data]) => {
+    const allowedLocalSlugs = data.allowedLocalSlugs ?? localidades.map((local) => local.slug);
+
+    localidades
+      .filter((local) => allowedLocalSlugs.includes(local.slug))
+      .forEach((local) => {
+        params.push({ servico, regiao: local.slug });
+      });
   });
 
   return params;
@@ -92,8 +100,9 @@ export async function generateMetadata({
   const { servico, regiao } = await params;
   const data = servicosSEO[servico];
   const local = localidades.find((item) => item.slug === regiao);
+  const regionAllowed = data?.allowedLocalSlugs ? data.allowedLocalSlugs.includes(regiao) : true;
 
-  if (!data || !local) {
+  if (!data || !local || !regionAllowed) {
     return { title: 'Página não encontrada | SERMST' };
   }
 
@@ -135,8 +144,9 @@ export default async function LocalSEOPage({
   const { servico, regiao } = await params;
   const data = servicosSEO[servico];
   const local = localidades.find((item) => item.slug === regiao);
+  const regionAllowed = data?.allowedLocalSlugs ? data.allowedLocalSlugs.includes(regiao) : true;
 
-  if (!data || !local) notFound();
+  if (!data || !local || !regionAllowed) notFound();
 
   const servicoNome = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
   const waMessage = `Preciso de ${servicoNome} em ${local.nome}`;
@@ -156,7 +166,7 @@ export default async function LocalSEOPage({
     description: pageDescription,
     serviceType: servicoNome,
     url: `https://sermst.com.br/servicos/${servico}/${regiao}`,
-    provider: {
+    /* providerLegacy: {
       '@type': ['MedicalOrganization', 'LocalBusiness'],
       name: 'SERMST - Medicina e Segurança do Trabalho',
       url: 'https://sermst.com.br',
@@ -170,6 +180,9 @@ export default async function LocalSEOPage({
         postalCode: '01034-901',
         addressCountry: 'BR',
       },
+    }, */
+    provider: {
+      '@id': 'https://sermst.com.br/#organization',
     },
     areaServed: {
       '@type': 'City',
@@ -287,7 +300,7 @@ export default async function LocalSEOPage({
                 <span className="text-sm font-black uppercase">Leitura de especialista</span>
               </div>
               <p className="font-medium italic text-slate-700">
-                {local.contextoEmpresarial} Unimos a expertise em medicina do trabalho a precisão regulatória do eSocial.
+                {local.contextoEmpresarial} Unimos medicina ocupacional, engenharia de segurança e leitura regulatória para sustentar a rotina de SST com mais coerência.
               </p>
             </div>
           </FadeIn>
@@ -403,7 +416,7 @@ export default async function LocalSEOPage({
                       A página também atende motorista pessoa física que precisa realizar o exame toxicológico ligado à renovação da CNH nas categorias C, D e E.
                     </p>
                     <p>
-                      Para esse público, normalmente importa saber três coisas: onde fazer o exame toxicológico em {local.nome}, qual é o valor e se o atendimento transmite segurança. Nesta página, o valor de referência informado é de R$ 200,00.
+                      Para esse público, normalmente importa saber três coisas: onde fazer o exame toxicológico em {local.nome}, qual é o valor e se o atendimento transmite segurança. Aqui, o valor de referência informado é de R$ 200,00.
                     </p>
                   </div>
                 </div>
@@ -698,7 +711,7 @@ export default async function LocalSEOPage({
           <div className="absolute -mr-48 -mt-48 right-0 top-0 h-96 w-96 rounded-full bg-accent-pink/20 blur-[100px]"></div>
           <div className="relative z-10">
             <h2 className="mb-8 text-4xl font-black leading-tight md:text-6xl">
-              Escolha uma referência em Medicina do Trabalho <br /> para sua sede em {local.nome}.
+              Escolha uma referência em SST <br /> para sua empresa em {local.nome}.
             </h2>
             <div className="flex flex-col justify-center gap-6 md:flex-row">
               <a href={`https://wa.me/5511915146447?text=${encodeURIComponent(waMessage)}`} className="btn-primary-safe-lg px-16 py-6 text-2xl font-black shadow-2xl hover:scale-105 active:scale-95">

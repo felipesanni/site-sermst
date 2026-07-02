@@ -162,7 +162,7 @@ export default function EPIsPage() {
       sidebarCtaLabel="Auditar gestão de EPI"
       related={[
         { label: 'NR-35: Trabalho em altura', href: '/normas/nr-35-trabalho-em-altura' },
-        { label: 'NR-18: Construção civil', href: '/normas/nr-18-construcao-civil' },
+        { label: 'Guia da NR-18 para canteiros e obras', href: '/normas/nr-18-construcao-civil' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },
       ]}

@@ -167,6 +167,38 @@ export default function SaudeIndexPage() {
           </div>
         </FadeIn>
 
+        <FadeIn direction="up" delay={0.07}>
+          <div className="mb-14 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Rotina ocupacional
+            </span>
+            <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+              Exame periódico ocupacional: onde a rotina médica costuma começar a falhar
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
+              Atraso de periódico, convocação sem critério e PCMSO desatualizado costumam aparecer
+              juntos. Este guia mostra por que o exame periódico não é mera formalidade e como ele
+              se conecta ao ASO, à NR-07 e à previsibilidade do RH.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Link
+                href="/saude/importancia-do-exame-periodico"
+                className="btn-primary-safe inline-flex"
+              >
+                Ler guia do exame periódico
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/servicos/exames-complementares-laboratoriais/sao-paulo"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-3 font-bold text-brand-900 transition-colors hover:border-accent-pink hover:text-accent-pink"
+              >
+                Ver exames complementares
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </FadeIn>
+
         <FadeIn direction="up" delay={0.08}>
           <div className="mb-14 grid gap-6 lg:grid-cols-2">
             <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">

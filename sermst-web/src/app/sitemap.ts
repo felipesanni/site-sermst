@@ -74,13 +74,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // ── Páginas geo-SEO ───────────────────────────────────────────────────────
-  const geoPages: MetadataRoute.Sitemap = Object.keys(servicosSEO).flatMap((servico) =>
-    localidades.map((localidade) => ({
+  const geoPages: MetadataRoute.Sitemap = Object.entries(servicosSEO).flatMap(([servico, data]) => {
+    const allowedLocalSlugs = data.allowedLocalSlugs ?? localidades.map((localidade) => localidade.slug);
+
+    return localidades
+    .filter((localidade) => allowedLocalSlugs.includes(localidade.slug))
+    .map((localidade) => ({
       url: `${BASE_URL}/servicos/${servico}/${localidade.slug}`,
       changeFrequency: "monthly" as const,
       priority: localidade.isHub ? 0.9 : 0.72,
-    }))
-  );
+    }));
+  });
 
   // ── Treinamentos ──────────────────────────────────────────────────────────
   const treinamentoPages: MetadataRoute.Sitemap = trainingsData.map((treinamento) => ({

@@ -179,6 +179,7 @@ export default function NR33Page() {
       sidebarCtaLabel="Falar sobre NR-33"
       related={[
         { label: 'Treinamento NR-33: Espaço Confinado', href: '/treinamentos/nr-33-espaco-confinado' },
+        { label: 'NR-18: Construção civil, escavações e canteiro', href: '/normas/nr-18-construcao-civil' },
         { label: 'NR-35: Trabalho em Altura', href: '/normas/nr-35-trabalho-em-altura' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'NR-15: Insalubridade', href: '/normas/nr-15-insalubridade' },

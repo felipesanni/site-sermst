@@ -8,6 +8,7 @@ export interface FAQItem {
 export interface SEODocument {
   h1: string;
   seoTitle?: string;
+  allowedLocalSlugs?: string[];
   hook: string;
   isClinico: boolean;
   fluxoCorporativo?: string[];
@@ -289,6 +290,59 @@ export const estatisticasSERMST = {
 };
 
 export const servicosSEO: Record<string, SEODocument> = {
+  "empresa-seguranca-do-trabalho": {
+    h1: "Empresa de Segurança do Trabalho | Gestão de SST para Empresas",
+    seoTitle: "Empresa de Segurança do Trabalho em São Paulo | SERMST",
+    allowedLocalSlugs: ["sao-paulo"],
+    hook:
+      "A SERMST atende empresas que precisam organizar PGR, PCMSO, LTCAT, exames ocupacionais, treinamentos e eSocial em um fluxo de SST mais coerente, previsível e seguro para o RH.",
+    isClinico: false,
+    fluxoCorporativo: [
+      "Diagnóstico da operação e leitura do CNAE e do grau de risco",
+      "Definição do escopo técnico: exames, laudos, programas e treinamentos",
+      "Implantação da rotina de SST com acompanhamento recorrente",
+    ],
+    quandoRequerido:
+      "Faz sentido contratar uma empresa de Segurança do Trabalho quando a organização precisa estruturar ou reorganizar a rotina de SST, alinhar documentos com a operação real e reduzir risco de autuação, passivo trabalhista e falhas no eSocial.",
+    content: {
+      dor:
+        "Muita empresa cresce com o SST fragmentado: exame em uma clínica, PGR com outro fornecedor, treinamento sem cronograma e eSocial saindo no improviso. O resultado aparece rápido: retrabalho no RH, documentos que não conversam entre si e uma operação mais exposta quando surge fiscalização, acidente ou auditoria.",
+      solucao:
+        "A SERMST centraliza a gestão técnica de Saúde e Segurança do Trabalho com visão corporativa. Em vez de peças soltas, a empresa passa a ter medicina ocupacional, engenharia de segurança, documentação obrigatória e rotina operacional trabalhando no mesmo sentido.",
+      beneficios: [
+        "Menos atrito entre RH, clínica, laudos e eSocial",
+        "Mais coerência entre PGR, PCMSO, LTCAT, ASO e treinamentos",
+        "Menos fragilidade documental e menos exposição trabalhista",
+        "Acompanhamento técnico para empresas com rotina recorrente",
+        "Base mais sólida para fiscalização, auditoria e crescimento da operação",
+      ],
+    },
+    geoOpt: {
+      expertQuote: {
+        text: "A empresa não precisa de documento solto. Precisa de uma rotina de SST em que risco, exame, laudo e eSocial contem a mesma história.",
+        author: "Equipe Técnica SERMST",
+        role: "Medicina e Segurança do Trabalho",
+      },
+      faq: [
+        {
+          q: "O que uma empresa de Segurança do Trabalho faz?",
+          a: "Ela ajuda a organizar a rotina de SST da empresa, conectando PGR, PCMSO, exames ocupacionais, laudos, treinamentos e suporte ao eSocial de acordo com a operação real do negócio.",
+        },
+        {
+          q: "Qual a diferença entre empresa de Segurança do Trabalho e clínica ocupacional?",
+          a: "A clínica ocupacional costuma ficar mais concentrada em exames e ASOs. Uma empresa de Segurança do Trabalho com escopo mais completo integra exames, engenharia, documentos, treinamentos e gestão de SST.",
+        },
+        {
+          q: "Pequena empresa também precisa contratar esse tipo de serviço?",
+          a: "Na maioria dos casos, sim. Mesmo empresas menores precisam cumprir obrigações de SST quando têm empregados, e a terceirização técnica costuma ser o caminho mais viável para manter conformidade sem montar estrutura própria.",
+        },
+        {
+          q: "A SERMST atende só medicina ocupacional ou também segurança do trabalho?",
+          a: "Atende os dois lados. A proposta é unir medicina ocupacional, engenharia de segurança, documentação obrigatória, treinamentos e apoio operacional dentro de uma mesma gestão.",
+        },
+      ],
+    },
+  },
   "exame-admissional-expresso": {
     h1: "Exame Admissional | Clínica de Medicina do Trabalho",
     hook:
@@ -312,7 +366,7 @@ export const servicosSEO: Record<string, SEODocument> = {
         "Liberação de ASO com mais velocidade operacional",
         "Clínica de medicina do trabalho centralizada",
         "ASO com validade plena para eSocial",
-        "Resultados integrados em um so fluxo para o RH",
+        "Resultados integrados em um só fluxo para o RH",
       ],
     },
     geoOpt: {
