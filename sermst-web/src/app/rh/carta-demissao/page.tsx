@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Carta de demissão: modelo e cuidados | SERMST',
+  title: 'Comunicado de desligamento: como formalizar a demissão | SERMST',
   description:
-    'A carta de rescisão é peça jurídica: define obrigações trabalhistas, abre janela para passivo e fica registrada no eSocial. Veja como redigir corretamente.',
+    'Veja como formalizar o desligamento de um funcionário, o que escrever no comunicado da empresa e quais erros podem gerar passivo trabalhista.',
   alternates: { canonical: 'https://sermst.com.br/rh/carta-demissao' },
   robots: 'index, follow',
   openGraph: {
-    title: 'Carta de demissão: modelo e cuidados | SERMST',
+    title: 'Comunicado de desligamento: como formalizar a demissão | SERMST',
     description:
-      'Saiba como redigir uma carta de demissão corretamente, quais elementos são obrigatórios, quando usar carta de demissão por justa causa e como evitar passivo trabalhista.',
+      'Saiba como redigir o comunicado de desligamento, quais elementos são obrigatórios e como evitar passivo trabalhista na rescisão.',
     url: 'https://sermst.com.br/rh/carta-demissao',
     type: 'article',
     locale: 'pt_BR',
@@ -30,31 +30,31 @@ export default function CartaDemissãoPage() {
         jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-02',
       }}
 
-      h1="Como fazer uma carta de demissão: o que escrever é o que evitar"
-      intro="A carta de rescisão é peça jurídica. O conteúdo define obrigações, abre porta para passivo e fica registrada no eSocial. Veja como redigir certo — para quem está sendo demitido e para quem está demitindo."
+      h1="Comunicado de desligamento: como formalizar a demissão sem criar passivo"
+      intro="Esta página é para empresas. O comunicado de desligamento é a peça formal usada para registrar a demissão do empregado, alinhar aviso prévio, rescisão e exame demissional e reduzir risco trabalhista por erro de redação ou de fluxo."
       sections={[
         {
-          title: 'Carta de demissão é diferente de carta de pedido de demissão',
+          title: 'Comunicado de desligamento é diferente de pedido de demissão',
           body: (
             <>
               <p>
                 Confusão comum. Os dois documentos têm efeitos jurídicos opostos:
               </p>
               <ul>
-                <li><strong>Carta de pedido de demissão</strong> — escrita pelo <em>empregado</em> que pede para sair. Empresa não paga aviso prévio nem multa de FGTS, mas o empregado também não recebe seguro-desemprego.</li>
-                <li><strong>Carta/comunicado de demissão</strong> — escrita pela <em>empresa</em> que está dispensando o trabalhador. Sem justa causa, gera aviso prévio, multa de FGTS e direito a seguro-desemprego.</li>
+                <li><strong>Pedido de demissão</strong> — escrito pelo <em>empregado</em> que pede para sair. Empresa não paga aviso prévio nem multa de FGTS, mas o empregado também não recebe seguro-desemprego.</li>
+                <li><strong>Comunicado de desligamento</strong> — escrito pela <em>empresa</em> que está dispensando o trabalhador. Sem justa causa, gera aviso prévio, multa de FGTS e direito a seguro-desemprego.</li>
               </ul>
               <p>
-                A confusão entre os dois é a primeira fonte de litígio em rescisão. Empresa que &quot;sugere&quot; o pedido de demissão para evitar custo está práticando coação — uma das brechas mais comuns de ação trabalhista posterior.
+                Mantivemos nesta URL o termo &quot;carta de demissão&quot; porque ele ainda aparece nas buscas, mas o foco real da página é o <strong>documento de desligamento emitido pela empresa</strong>. Confundir os dois é uma das fontes mais comuns de litígio em rescisão.
               </p>
             </>
           ),
         },
         {
-          title: 'Estrutura mínima da carta (escrita pela empresa)',
+          title: 'Estrutura mínima do comunicado da empresa',
           body: (
             <ol>
               <li><strong>Cabeçalho</strong>: dados da empresa, dados do empregado, data.</li>

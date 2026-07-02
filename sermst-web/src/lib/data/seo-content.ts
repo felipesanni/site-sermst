@@ -918,7 +918,7 @@ dicionarioSEO["o-que-e-ppp"].seoTitle =
 dicionarioSEO["o-que-e-pcmso"].seoTitle =
   "O que é PCMSO? Significado da sigla e para que serve | SERMST";
 dicionarioSEO["o-que-e-aso"].seoTitle =
-  "O que é ASO? Significado, emissão e para que serve | SERMST";
+  "O que é ASO? Significado, quando emitir e para que serve | SERMST";
 dicionarioSEO["o-que-e-pgr"].seoTitle =
   "O que significa PGR? Sigla e função do programa | SERMST";
 
@@ -932,7 +932,7 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
       "ASO não é atestado médico comum. O atestado comum normalmente justifica uma ausência por motivo de saúde. O ASO registra a conclusão de aptidão ocupacional para uma função e considera os riscos relacionados ao trabalho.",
     aprofundamento: {
       href: "/saude/aso-atestado-saude-ocupacional",
-      title: "Precisa entender quando emitir ASO, campos obrigatórios e eSocial?",
+      title: "Precisa entender quando emitir o ASO, os campos obrigatórios e o eSocial?",
       description:
         "Veja quando cada exame ocupacional deve ocorrer, o que precisa constar no ASO e como o documento se conecta ao evento S-2220 sem confundir definição com guia completo.",
       label: "Ler guia completo de ASO",

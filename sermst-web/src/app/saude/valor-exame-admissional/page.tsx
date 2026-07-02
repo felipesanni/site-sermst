@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Valor do exame admissional | SERMST',
+  title: 'Quanto custa o exame admissional? | SERMST',
   description:
-    'Exame admissional a partir de R$ 70 para empresas conveniadas. Veja o que influencia o preço, complementares por função e o custo real por admissão.',
+    'Veja quanto custa o exame admissional, o que influencia o preço, quais complementares pesam no valor e o custo real por admissão.',
   alternates: { canonical: 'https://sermst.com.br/saude/valor-exame-admissional' },
   openGraph: {
-    title: 'Valor do exame admissional | SERMST',
+    title: 'Quanto custa o exame admissional? | SERMST',
     description:
-      'Exame admissional a partir de R$ 70,00 para empresas conveniadas. O valor final depende dos exames complementares exigidos pelo PCMSO para cada função.',
+      'Exame admissional a partir de R$ 70,00 para empresas conveniadas. O valor final depende dos complementares exigidos pelo PCMSO para cada função.',
     url: 'https://sermst.com.br/saude/valor-exame-admissional',
     type: 'article',
     locale: 'pt_BR',
@@ -70,10 +70,10 @@ export default function ValorExameAdmissionalPage() {
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
           url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
           datePublished: '2026-06-01',
-          dateModified: '2026-06-01',
+          dateModified: '2026-07-02',
         }}
-        h1="Valor do exame admissional: quanto custa para empresas"
-        intro="O exame admissional começa em R$ 70,00 para empresas com convênio corporativo e pode chegar a R$ 150,00 no atendimento avulso. Esse valor cobre o exame clínico e a emissão do ASO. O custo total por admissão depende dos exames complementares que o PCMSO exige para cada função."
+        h1="Quanto custa o exame admissional para empresas"
+        intro="O exame admissional começa em R$ 70,00 para empresas com convênio corporativo e pode chegar a R$ 150,00 no atendimento avulso. Esse valor cobre o exame clínico e a emissão do ASO, mas o custo total por admissão depende dos exames complementares que o PCMSO exige para cada função."
         sections={[
           {
             title: 'Como o preço do exame admissional é formado',

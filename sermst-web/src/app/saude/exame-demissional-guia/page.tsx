@@ -29,11 +29,11 @@ export default function ExameDemissionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-02',
       }}
 
       h1="Exame demissional em Sao Paulo: agende sem travar a rescisao"
-      intro="Esta pagina concentra o formulario comercial para empresas que precisam resolver exame demissional com rapidez. Se a sua duvida principal e entender regra, prazo e dispensa, veja primeiro a pagina especifica sobre exame demissional; aqui o foco e agendamento e operacao."
+      intro="Esta pagina concentra o formulario comercial para empresas que precisam resolver exame demissional em Sao Paulo com rapidez. Se a sua duvida principal e entender regra, prazo e dispensa, veja primeiro a pagina especifica sobre exame demissional; aqui o foco e agendamento e operacao."
       sections={[
         {
           title: 'Quando usar esta página de agendamento',

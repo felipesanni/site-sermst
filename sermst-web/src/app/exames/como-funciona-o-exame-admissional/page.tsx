@@ -170,10 +170,10 @@ export default function ComoFuncionaExameAdmissionalPage() {
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
           url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
           datePublished: '2024-03-01',
-          dateModified: '2026-06-02',
+          dateModified: '2026-07-02',
         }}
         h1="Exame admissional: o que é, como funciona e quais exames podem ser solicitados"
-        intro="O exame admissional é o exame ocupacional feito antes do início das atividades. Ele verifica se o trabalhador está apto para a função conforme os riscos do cargo e o PCMSO da empresa. Ao final, o médico emite o ASO admissional."
+        intro="O exame admissional é o exame ocupacional feito antes do início das atividades. Ele verifica se o trabalhador está apto para a função conforme os riscos do cargo e o PCMSO da empresa, define se haverá complementares e termina com a emissão do ASO admissional."
         disableFaqSchema
         includeFallbackFaqs={false}
         maxFaqItems={9}

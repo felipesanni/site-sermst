@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Gerente: o que faz, funções e responsabilidades | SERMST',
+  title: 'O que faz um gerente? Funções e responsabilidades | SERMST',
   description:
-    'Veja o que faz um gerente, quais responsabilidades o cargo assume, diferença para supervisor e coordenador, e como SST entra na rotina dessa liderança.',
+    'Entenda o que faz um gerente, quais funções e responsabilidades o cargo assume, a diferença para supervisor e coordenador e onde SST entra nessa liderança.',
   alternates: { canonical: 'https://sermst.com.br/rh/o-que-um-gerente-faz' },
   robots: 'index, follow',
   openGraph: {
-    title: 'Gerente: o que faz, funções e responsabilidades | SERMST',
+    title: 'O que faz um gerente? Funções e responsabilidades | SERMST',
     description:
       'Entenda o que faz um gerente, como o cargo se diferencia de outras lideranças e quais obrigações de SST recaem sobre essa função.',
     url: 'https://sermst.com.br/rh/o-que-um-gerente-faz',
@@ -30,14 +30,14 @@ export default function OQueUmGerenteFazPage() {
         jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-02',
       }}
 
-      h1="Gerente: o que faz, funções, responsabilidades e impacto na empresa"
-      intro="Guia para gestores e RH que estão estruturando o cargo: o que entrega o gerente, perfil que funciona, erros que custam caro e por que SST é responsabilidade direta dele."
+      h1="O que faz um gerente? Funções, responsabilidades e impacto na empresa"
+      intro="Guia para gestores e RH que estão estruturando o cargo: o que um gerente entrega na prática, como esse papel difere de outras lideranças e por que SST passa a ser responsabilidade direta dele."
       sections={[
         {
-          title: 'O papel real do gerente',
+          title: 'O que faz um gerente na prática',
           body: (
             <>
               <p>

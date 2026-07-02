@@ -15,14 +15,14 @@ import { CheckCircle2, AlertTriangle, ShieldCheck, Users, ArrowRight, Target, Fi
  * orientados para CONVERTER o gestor — que é quem fecha contrato com a SERMST.
  */
 export const metadata: Metadata = {
-  title: 'Encarregado: o que faz, função e responsabilidades | SERMST',
+  title: 'O que faz um encarregado? Função e responsabilidades | SERMST',
   description:
-    'O que faz um encarregado, suas responsabilidades, a diferença para supervisor e os cuidados de SST que a empresa precisa documentar.',
+    'Entenda o que faz um encarregado, quais responsabilidades ele assume, a diferença para supervisor e os cuidados de SST que a empresa precisa formalizar.',
   alternates: { canonical: 'https://sermst.com.br/rh/funcao-encarregado' },
   openGraph: {
-    title: 'Encarregado: o que faz, função e responsabilidades',
+    title: 'O que faz um encarregado? Função e responsabilidades | SERMST',
     description:
-      'O que faz um encarregado, quais responsabilidades assume e onde a empresa costuma errar ao estruturar esse cargo.',
+      'Veja o que faz um encarregado, quais responsabilidades assume e onde a empresa costuma errar ao estruturar esse cargo.',
     url: 'https://sermst.com.br/rh/funcao-encarregado',
     type: 'article',
     locale: 'pt_BR',
@@ -106,10 +106,10 @@ export default function FunçãoEncarregadoPage() {
               ← Hub de RH e Departamento Pessoal
             </Link>
             <h1 className="h1-standard mb-8 max-w-4xl">
-              Encarregado: o que faz, responsabilidades e o ponto cego que pega gestores
+              O que faz um encarregado? Função, responsabilidades e o ponto cego que pega gestores
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">
-              Guia direto para gestores, RH e quem está estruturando o cargo: responsabilidades reais, perfil que funciona, erros que custam caro é o que SST tem a ver com isso.
+              Guia direto para gestores, RH e quem está estruturando o cargo: o que esse profissional faz na prática, quais responsabilidades assume, que perfil costuma funcionar e onde SST entra nessa decisão.
             </p>
           </FadeIn>
         </div>
@@ -123,7 +123,7 @@ export default function FunçãoEncarregadoPage() {
             <FadeIn direction="up">
               <h2>O que é a função de encarregado</h2>
               <p>
-                Encarregado é a primeira camada formal de liderança operacional dentro da empresa. É quem está no campo, no chão de fábrica, na obra ou no ponto de operação coordenando a execução do trabalho da equipe diretamente. Diferente do operador, tem responsabilidade sobre o resultado do grupo. Diferente do supervisor, está com a mão na execução todo dia.
+                O encarregado é a primeira camada formal de liderança operacional dentro da empresa. É quem está no campo, no chão de fábrica, na obra ou no ponto de operação coordenando a execução do trabalho da equipe diretamente. Diferente do operador, tem responsabilidade sobre o resultado do grupo. Diferente do supervisor, está com a mão na execução todo dia.
               </p>
               <p>
                 Em empresas familiares, é o cargo mais subestimado e mais decisivo: subestimado porque parece &quot;só mais um da equipe&quot;, decisivo porque é quem traduz o plano da diretoria em comportamento real no turno.

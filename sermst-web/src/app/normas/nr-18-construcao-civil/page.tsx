@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-18 na construção civil: guia para empresas | SERMST',
+  title: 'NR-18: o que a norma exige na construção civil | SERMST',
   description:
-    'NR-18 para construtoras: PCMAT extinto, substituído pelo PGR. Abrange PCMSO, treinamentos, eSocial SST e responsabilidade solidária em canteiro de obras.',
+    'Entenda o que a NR-18 exige hoje na construção civil: PGR no lugar do PCMAT, PCMSO, treinamentos, eSocial SST e responsabilidade solidária em obra.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },
   openGraph: {
-    title: 'NR-18: Construção Civil — guia completo de SST | SERMST',
+    title: 'NR-18: o que a norma exige na construção civil | SERMST',
     description:
-      'Tudo sobre a NR-18 para construtoras: PGR no lugar do PCMAT, PCMSO, treinamentos, eSocial SST, proteções coletivas e responsabilidade solidária em obra.',
+      'Veja o que a NR-18 exige para canteiros, reformas e obras de diferentes portes, com foco em PGR, PCMSO, treinamentos e fiscalização.',
     url: 'https://sermst.com.br/normas/nr-18-construcao-civil',
     type: 'article',
     locale: 'pt_BR',
@@ -31,11 +31,11 @@ export default function NR18Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-21',
+        dateModified: '2026-07-02',
       }}
 
-      h1="NR-18: Segurança e Saúde no Trabalho na Construção Civil"
-      intro="A NR-18 é a norma com mais autuação aplicada do país. Reúne os requisitos de SST para canteiros de obra: PGR, PCMSO, treinamentos, proteções coletivas, EPIs e sinalização. Com a revisão da norma, o PCMAT foi extinto e substituído pelo PGR. Este guia explica o que a NR-18 exige hoje, como o eSocial impacta a construção civil e o que precisa estar documentado para não embargar a obra."
+      h1="NR-18: o que a norma exige na construção civil"
+      intro="A NR-18 reúne os principais requisitos de SST para canteiros de obra: PGR, PCMSO, treinamentos, proteções coletivas, EPIs e sinalização. Com a revisão da norma, o PCMAT foi extinto e substituído pelo PGR. Este guia explica o que a NR-18 exige hoje, como o eSocial impacta a construção civil e o que precisa estar documentado para não embargar a obra."
       sections={[
         {
           title: 'O que é a NR-18 e quem precisa cumprir',

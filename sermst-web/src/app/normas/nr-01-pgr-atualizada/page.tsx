@@ -5,7 +5,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-01 atualizada: o que mudou no PGR e no GRO | SERMST',
   description:
-    'Entenda o que mudou na NR-01 atualizada, quem precisa revisar o PGR, quando o documento deve ser atualizado e como tratar riscos psicossociais no GRO.',
+    'Veja o que mudou na NR-01 atualizada, quem precisa revisar o PGR, quando atualizar o documento e o que a empresa precisa fazer agora no GRO.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-01-pgr-atualizada' },
   openGraph: {
     title: 'NR-01 atualizada: o que mudou no PGR e no GRO | SERMST',
@@ -35,10 +35,10 @@ export default function NR01Page() {
         jobTitle: 'Advogado - Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-06-09',
+        dateModified: '2026-07-02',
       }}
       h1="NR-01 atualizada: o que mudou no PGR, no GRO e nos riscos psicossociais"
-      intro="A NR-01 organiza as disposicoes gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, os fatores de risco psicossociais relacionados ao trabalho passaram a exigir leitura mais explicita dentro do PGR. Aqui o foco e explicar a mudanca normativa, sem confundir esta pagina com a contratacao do servico de PGR."
+      intro="A NR-01 organiza as disposicoes gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, os fatores de risco psicossociais relacionados ao trabalho passaram a exigir leitura mais explicita dentro do PGR. Aqui o foco e explicar a mudanca normativa e o que a empresa precisa revisar agora, sem confundir esta pagina com a contratacao do servico de PGR."
       sections={[
         {
           title: 'O que e a NR-01 atualizada e por que ela importa para qualquer empresa com empregado CLT',

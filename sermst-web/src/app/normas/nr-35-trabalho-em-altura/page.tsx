@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-35: o que a norma exige no trabalho em altura | SERMST',
+  title: 'NR-35: trabalho em altura, treinamento e validade | SERMST',
   description:
-    'Entenda o que a NR-35 exige no trabalho em altura: quem precisa, treinamento obrigatório de 8 horas, reciclagem, APR, PT e penalidades.',
+    'Entenda o que a NR-35 exige no trabalho em altura: quem precisa, treinamento de 8 horas, validade, reciclagem, APR, PT e penalidades.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura' },
   openGraph: {
-    title: 'NR-35: o que a norma exige no trabalho em altura | SERMST',
+    title: 'NR-35: trabalho em altura, treinamento e validade | SERMST',
     description:
       'Veja o que a NR-35 exige: definição de trabalho em altura, treinamento obrigatório, análise de risco, permissão de trabalho e responsabilidades do empregador.',
     url: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura',
@@ -30,11 +30,11 @@ export default function NR35Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-02',
       }}
 
-      h1="NR-35: trabalho em altura e o que a norma exige da empresa"
-      intro="A NR-35 regulamenta toda atividade executada acima de 2 metros do nível inferior com risco de queda. O ponto central aqui não é só treinamento: a empresa precisa cumprir exigências de análise de risco, permissão de trabalho, aptidão médica e plano de resgate."
+      h1="NR-35: trabalho em altura, treinamento e o que a empresa precisa cumprir"
+      intro="A NR-35 regulamenta toda atividade executada acima de 2 metros do nível inferior com risco de queda. O ponto central aqui não é só treinamento: a empresa precisa cumprir exigências de validade, reciclagem, análise de risco, permissão de trabalho, aptidão médica e plano de resgate."
       sections={[
         {
           title: 'O que é considerado trabalho em altura na NR-35',
@@ -76,6 +76,28 @@ export default function NR35Page() {
               </ul>
               <p>
                 Em construção civil, a NR-35 é frequentemente combinada com a NR-18. Trabalhador que vai para obra em altura precisa dos dois treinamentos — não basta um.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Validade e reciclagem da NR-35: o que a empresa precisa controlar',
+          body: (
+            <>
+              <p>
+                Na prática, quando a empresa pergunta sobre validade da NR-35, ela está falando do <strong>prazo da reciclagem do treinamento</strong>. A referência mais comum é de <strong>2 em 2 anos</strong>, desde que não exista situação que exija reciclagem antes disso.
+              </p>
+              <p>
+                Isso significa que o certificado inicial não resolve o problema para sempre. A empresa precisa controlar vencimento, listar quem está apto hoje e antecipar renovações para não descobrir a falha só quando surgir fiscalização, acidente ou obra urgente.
+              </p>
+              <ul>
+                <li><strong>Reciclagem periódica:</strong> normalmente a cada 2 anos.</li>
+                <li><strong>Reciclagem extraordinária:</strong> quando muda procedimento, equipamento, condição de risco ou quando ocorre quase-acidente, acidente ou afastamento relevante.</li>
+                <li><strong>ASO específico:</strong> segue a periodicidade do PCMSO e não substitui a reciclagem do treinamento.</li>
+                <li><strong>Controle documental:</strong> certificado, lista nominal, conteúdo programático e evidência de avaliação precisam estar organizados e acessíveis.</li>
+              </ul>
+              <p>
+                O erro mais comum é tratar a NR-35 como &quot;curso feito&quot; em vez de tratá-la como <strong>rotina de conformidade recorrente</strong>. Para a fiscalização, treinamento vencido vale quase como treinamento inexistente.
               </p>
             </>
           ),
