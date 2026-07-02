@@ -2,23 +2,21 @@ import type { Metadata } from 'next';
 import { CnaeCalculator } from '@/components/sections/cnae-calculator';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
-const webAppSchema = {
+const calculatorPageSchema = {
   '@context': 'https://schema.org',
-  '@type': ['SoftwareApplication', 'WebApplication'],
+  '@type': 'WebPage',
+  '@id': 'https://sermst.com.br/rh/calculadora-cnae-grau-de-risco#webpage',
   name: 'Calculadora CNAE - Grau de Risco, RAT e CIPA',
   url: 'https://sermst.com.br/rh/calculadora-cnae-grau-de-risco',
   description:
     'Ferramenta gratuita para consultar o CNAE principal pelo CNPJ ou pesquisar uma atividade economica, identificar o grau de risco da NR-04 e obter referencias iniciais de SST.',
-  applicationCategory: 'BusinessApplication',
-  operatingSystem: 'Any',
   isAccessibleForFree: true,
-  browserRequirements: 'Requer navegador moderno com JavaScript habilitado.',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'BRL',
-    availability: 'https://schema.org/InStock',
-    url: 'https://sermst.com.br/rh/calculadora-cnae-grau-de-risco',
+  inLanguage: 'pt-BR',
+  mainEntity: {
+    '@type': 'Thing',
+    name: 'Consulta CNAE por CNPJ',
+    description:
+      'Consulta guiada para identificar CNAE principal, grau de risco NR-04, RAT, CIPA, SESMT e referencias iniciais de SST.',
   },
   provider: {
     '@id': 'https://sermst.com.br/#organization',
@@ -119,7 +117,7 @@ export default function CalculadoraCnaePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorPageSchema) }}
       />
       <script
         type="application/ld+json"

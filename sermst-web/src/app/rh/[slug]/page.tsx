@@ -7,8 +7,12 @@ import { rhDoresSEO } from '@/lib/data/seo-content';
 import { buildFrequentFaqs } from '@/lib/faq';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
+const staticRhPageSlugs = new Set(['cat-acidente-de-trabalho']);
+
 export function generateStaticParams() {
-  return Object.keys(rhDoresSEO).map((slug) => ({ slug }));
+  return Object.keys(rhDoresSEO)
+    .filter((slug) => !staticRhPageSlugs.has(slug))
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

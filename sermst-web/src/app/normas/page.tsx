@@ -25,7 +25,9 @@ export const metadata: Metadata = {
 
 const ordemPreferida = [
   'nr-01-pgr-atualizada',
+  'nr-06-epi',
   'o-que-e-nr-07',
+  'sesmt',
   'nr-35-trabalho-em-altura',
   'nr-18-construcao-civil',
   'nr-15-insalubridade',
@@ -33,12 +35,37 @@ const ordemPreferida = [
   'nr-10-eletricidade',
   'nr-17-ergonomia',
   'nr-13-vasos-de-pressao',
+  'dds',
   'ppp-eletronico',
   'pgrs-residuos',
 ];
 
+const staticNormaPages = [
+  {
+    slug: 'nr-06-epi',
+    titulo: 'NR-06 EPI: o que é e como cumprir',
+    descricao:
+      'Guia para empresas sobre Equipamentos de Proteção Individual, entrega de EPI, CA, treinamento, registro e responsabilidade do empregador.',
+  },
+  {
+    slug: 'sesmt',
+    titulo: 'SESMT: quando é obrigatório e como dimensionar',
+    descricao:
+      'Entenda quando a empresa precisa de SESMT, como o grau de risco e número de empregados influenciam a obrigação e o que observar na rotina de SST.',
+  },
+  {
+    slug: 'dds',
+    titulo: 'DDS: diálogo diário de segurança',
+    descricao:
+      'Veja o que é DDS, para que serve, como registrar e como usar a ferramenta sem confundir com treinamentos obrigatórios das NRs.',
+  },
+];
+
 export default function NormasIndexPage() {
-  const todos = Object.entries(normasKnown).map(([slug, data]) => ({ slug, ...data }));
+  const todos = [
+    ...staticNormaPages,
+    ...Object.entries(normasKnown).map(([slug, data]) => ({ slug, ...data })),
+  ];
   const visiveis = ordemPreferida
     .map((slug) => todos.find((n) => n.slug === slug))
     .filter((n): n is NonNullable<typeof n> => Boolean(n));

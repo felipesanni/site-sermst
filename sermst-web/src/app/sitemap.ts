@@ -55,6 +55,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/saude/onde-fazer-audiometria-ocupacional-sao-paulo`, changeFrequency: "monthly", priority: 0.72 },
     { url: `${BASE_URL}/saude/onde-fazer-exame-toxicologico-sao-paulo`, changeFrequency: "monthly", priority: 0.72 },
     { url: `${BASE_URL}/saude/valor-exame-toxicologico-cnh`, changeFrequency: "monthly", priority: 0.72 },
+    { url: `${BASE_URL}/saude/doencas-ocupacionais`, changeFrequency: "monthly", priority: 0.78 },
+    { url: `${BASE_URL}/saude/medico-do-trabalho`, changeFrequency: "monthly", priority: 0.76 },
     // ── BOFU cluster (pré-compra admissional) ─────────────────────────────
     { url: `${BASE_URL}/saude/valor-exame-admissional`, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE_URL}/saude/exame-admissional-precisa-de-jejum`, changeFrequency: "yearly", priority: 0.7 },
@@ -63,6 +65,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/saude/tabela-exames-admissionais-por-funcao`, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE_URL}/rh`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/normas`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/normas/nr-06-epi`, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${BASE_URL}/normas/dds`, changeFrequency: "monthly", priority: 0.74 },
+    { url: `${BASE_URL}/normas/sesmt`, changeFrequency: "monthly", priority: 0.74 },
     { url: `${BASE_URL}/dicionario`, changeFrequency: "monthly", priority: 0.5 },
   ];
 

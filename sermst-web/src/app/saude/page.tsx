@@ -203,6 +203,48 @@ export default function SaudeIndexPage() {
           <div className="mb-14 grid gap-6 lg:grid-cols-2">
             <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
               <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                Doenças ocupacionais
+              </span>
+              <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+                Doenças ocupacionais: exemplos, prevenção e responsabilidade da empresa
+              </h2>
+              <p className="mt-4 text-lg font-medium leading-relaxed text-slate-700">
+                Conteúdo para RH e gestores entenderem quando um adoecimento pode ter relação com o trabalho, como prevenir e por que PCMSO, PGR e registros importam.
+              </p>
+              <Link
+                href="/saude/doencas-ocupacionais"
+                className="btn-primary-safe mt-6 inline-flex"
+              >
+                Ler guia de doenças ocupacionais
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+              <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                Médico do trabalho
+              </span>
+              <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+                Médico do trabalho: o que faz e quando contratar
+              </h2>
+              <p className="mt-4 text-lg font-medium leading-relaxed text-slate-700">
+                Entenda o papel do médico do trabalho na emissão de ASO, no PCMSO, nos exames ocupacionais e na organização da saúde ocupacional da empresa.
+              </p>
+              <Link
+                href="/saude/medico-do-trabalho"
+                className="btn-primary-safe mt-6 inline-flex"
+              >
+                Ler guia de médico do trabalho
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn direction="up" delay={0.09}>
+          <div className="mb-14 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+              <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
                 Exame toxicológico
               </span>
               <h2 className="text-3xl font-black text-brand-900 md:text-4xl">

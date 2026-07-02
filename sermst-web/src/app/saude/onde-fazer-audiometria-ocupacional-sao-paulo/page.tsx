@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Audiometria ocupacional em São Paulo Centro | SERMST',
+  title: 'Onde Fazer Audiometria Ocupacional em SP | SERMST',
   description:
     'Saiba onde fazer audiometria ocupacional em São Paulo Centro, no Largo do Paissandu, com estrutura para audiometria tonal, integração ao ASO e apoio ao PCMSO.',
   robots: 'index, follow',
   alternates: { canonical: 'https://sermst.com.br/saude/onde-fazer-audiometria-ocupacional-sao-paulo' },
   openGraph: {
-    title: 'Audiometria ocupacional em São Paulo Centro | SERMST',
+    title: 'Onde Fazer Audiometria Ocupacional em SP | SERMST',
     description:
       'Guia para empresas que buscam clínica de audiometria ocupacional e audiometria tonal no centro de São Paulo, com acesso fácil e fluxo integrado ao PCMSO.',
     url: 'https://sermst.com.br/saude/onde-fazer-audiometria-ocupacional-sao-paulo',

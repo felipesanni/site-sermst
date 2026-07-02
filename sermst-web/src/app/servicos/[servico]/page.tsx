@@ -48,6 +48,10 @@ export async function generateMetadata({
       ? 'Clínica de exame admissional em São Paulo com ASO, exames ocupacionais, apoio ao eSocial e fluxo pensado para empresas que precisam contratar sem atraso.'
       : servico === 'exame-toxicologico-clt'
         ? 'Exame toxicológico por R$ 200, validade nacional, para empresas e pessoa física. Suporte para admissão, demissão e renovação de CNH C, D e E.'
+      : servico === 'audiometria-ocupacional-clinica'
+        ? 'Audiometria ocupacional para empresas, com cabine acústica, orientação sobre repouso auditivo, integração ao ASO e apoio ao PCMSO.'
+      : servico === 'exames-complementares-laboratoriais'
+        ? 'Exames complementares ocupacionais para empresas, com apoio ao ASO, PCMSO, admissões, periódicos e rotinas de saúde ocupacional.'
       : data.hook;
 
   return {
@@ -94,12 +98,21 @@ export default async function ServicoPage({
     serviceType: serviceName,
     description: data.hook,
     url: `https://sermst.com.br/servicos/${servico}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://sermst.com.br/servicos/${servico}`,
+    },
     provider: { '@id': 'https://sermst.com.br/#organization' },
     areaServed,
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: 'https://sermst.com.br/contato',
       servicePhone: '+55-11-91514-6447',
+      availableLanguage: 'pt-BR',
+    },
+    potentialAction: {
+      '@type': 'ContactAction',
+      target: 'https://wa.me/5511915146447',
     },
   };
 

@@ -62,6 +62,7 @@ export default async function TrainingPage({ params }: PageProps) {
     hasCourseInstance: {
       '@type': 'CourseInstance',
       courseMode: 'Onsite',
+      courseWorkload: training.workload,
       location: { '@type': 'Place', name: 'SERMST — São Paulo e in company' },
     },
   };

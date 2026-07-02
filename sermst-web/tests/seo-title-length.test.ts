@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { describe, expect, it } from 'vitest';
 import { metadata as homeMetadata } from '@/app/page';
 import { metadata as examePeriodicoMetadata } from '@/app/saude/importancia-do-exame-periodico/page';
+import { metadata as ondeFazerAudiometriaMetadata } from '@/app/saude/onde-fazer-audiometria-ocupacional-sao-paulo/page';
 import { generateMetadata as generateLocalServiceMetadata } from '@/app/servicos/[servico]/[regiao]/page';
+import { generateMetadata as generateServiceMetadata } from '@/app/servicos/[servico]/page';
 
 function getTitleText(title: Metadata['title']) {
   if (typeof title === 'string') return title;
@@ -55,5 +57,35 @@ describe('SEO title length', () => {
         expect(title.length).toBeLessThanOrEqual(60);
       }),
     );
+  });
+
+  it('evita duplicidade apontada pela auditoria entre paginas estaticas e comerciais', async () => {
+    const audiometriaGuiaTitle = getTitleText(ondeFazerAudiometriaMetadata.title);
+    const audiometriaServicoMetadata = await generateLocalServiceMetadata({
+      params: Promise.resolve({
+        servico: 'audiometria-ocupacional-clinica',
+        regiao: 'sao-paulo',
+      }),
+    });
+    const audiometriaServicoTitle = getTitleText(audiometriaServicoMetadata.title);
+
+    const empresaBaseMetadata = await generateServiceMetadata({
+      params: Promise.resolve({
+        servico: 'empresa-seguranca-do-trabalho',
+      }),
+    });
+    const empresaGeoMetadata = await generateLocalServiceMetadata({
+      params: Promise.resolve({
+        servico: 'empresa-seguranca-do-trabalho',
+        regiao: 'sao-paulo',
+      }),
+    });
+
+    expect(audiometriaGuiaTitle).toBe('Onde Fazer Audiometria Ocupacional em SP | SERMST');
+    expect(audiometriaServicoTitle).toBe('Audiometria Ocupacional em São Paulo Centro | SERMST');
+    expect(audiometriaGuiaTitle).not.toBe(audiometriaServicoTitle);
+    expect(getTitleText(empresaBaseMetadata.title)).toBe('Empresa de Segurança do Trabalho em São Paulo | SERMST');
+    expect(getTitleText(empresaGeoMetadata.title)).toBe('Empresa de Segurança do Trabalho no Centro de SP | SERMST');
+    expect(getTitleText(empresaBaseMetadata.title)).not.toBe(getTitleText(empresaGeoMetadata.title));
   });
 });

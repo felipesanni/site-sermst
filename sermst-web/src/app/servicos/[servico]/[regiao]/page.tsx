@@ -112,6 +112,8 @@ export async function generateMetadata({
     ? local.slug === 'sao-paulo'
       ? `${mainTerm} em São Paulo Centro | CNH C, D e E`
       : `${mainTerm} em ${local.nome} | CNH C, D e E e Empresas`
+    : servico === 'empresa-seguranca-do-trabalho' && local.slug === 'sao-paulo'
+      ? `${mainTerm} no Centro de SP | SERMST`
     : servico === 'exame-admissional-expresso' && local.slug === 'sao-paulo'
       ? `${mainTerm} em ${local.nome}`
     : servico === 'audiometria-ocupacional-clinica' && local.slug === 'sao-paulo'
@@ -162,10 +164,15 @@ export default async function LocalSEOPage({
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `https://sermst.com.br/servicos/${servico}/${regiao}#service`,
     name: `${servicoNome} em ${local.nome}`,
     description: pageDescription,
     serviceType: servicoNome,
     url: `https://sermst.com.br/servicos/${servico}/${regiao}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://sermst.com.br/servicos/${servico}/${regiao}`,
+    },
     /* providerLegacy: {
       '@type': ['MedicalOrganization', 'LocalBusiness'],
       name: 'SERMST - Medicina e Segurança do Trabalho',
@@ -187,6 +194,20 @@ export default async function LocalSEOPage({
     areaServed: {
       '@type': 'City',
       name: local.nome,
+      containedInPlace: {
+        '@type': 'State',
+        name: 'São Paulo',
+      },
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: 'https://sermst.com.br/contato',
+      servicePhone: '+55-11-91514-6447',
+      availableLanguage: 'pt-BR',
+    },
+    potentialAction: {
+      '@type': 'ContactAction',
+      target: `https://wa.me/5511915146447?text=${encodeURIComponent(`Quero orçamento para ${servicoNome} em ${local.nome}`)}`,
     },
     ...(isToxicologicoPage
       ? {

@@ -138,16 +138,35 @@ const organizationSchema = {
 }
 
 const strategicLinks = [
-  { name: 'Exame Admissional Expresso', link: '/servicos/exame-admissional-expresso/sao-paulo' },
-  { name: 'Servico de PGR NR-01', link: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
-  { name: 'PCMSO e Saúde Ocupacional', link: '/servicos/pcmso-nr07-programa/sao-paulo' },
-  { name: 'Servico de LTCAT previdenciario', link: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
-  { name: 'Gestão eSocial S-2220/S-2240', link: '/servicos/gestao-esocial-s2220-s2240/sao-paulo' },
-  { name: 'Audiometria Ocupacional', link: '/servicos/audiometria-ocupacional-clinica/sao-paulo' },
-  { name: 'Exame Toxicológico para CNH C, D e E', link: '/servicos/exame-toxicologico-clt/sao-paulo' },
-  { name: 'Exames Complementares', link: '/servicos/exames-complementares-laboratoriais/sao-paulo' },
-  { name: 'Perícia Trabalhista', link: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo' },
-  { name: 'Treinamentos de NRs', link: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo' },
+  { name: 'Exame Admissional Expresso', link: '/servicos/exame-admissional-expresso' },
+  { name: 'Empresa de Segurança do Trabalho', link: '/servicos/empresa-seguranca-do-trabalho' },
+  { name: 'Servico de PGR NR-01', link: '/servicos/pgr-nr01-gerenciamento-riscos' },
+  { name: 'PCMSO e Saúde Ocupacional', link: '/servicos/pcmso-nr07-programa' },
+  { name: 'Servico de LTCAT previdenciario', link: '/servicos/ltcat-laudo-tecnico-previdenciario' },
+  { name: 'Gestão eSocial S-2220/S-2240', link: '/servicos/gestao-esocial-s2220-s2240' },
+  { name: 'Audiometria Ocupacional', link: '/servicos/audiometria-ocupacional-clinica' },
+  { name: 'Exame Toxicológico para CNH C, D e E', link: '/servicos/exame-toxicologico-clt' },
+  { name: 'Exames Complementares', link: '/servicos/exames-complementares-laboratoriais' },
+  { name: 'Perícia Trabalhista', link: '/servicos/pericia-trabalhista-assistente-tecnico' },
+  { name: 'Treinamentos de NRs', link: '/servicos/treinamentos-nrs-cipa-brigada' },
+]
+
+const priorityKnowledgeLinks = [
+  { name: 'Exame periódico ocupacional', link: '/saude/importancia-do-exame-periodico' },
+  { name: 'Audiometria ocupacional em SP', link: '/saude/onde-fazer-audiometria-ocupacional-sao-paulo' },
+  { name: 'CAT: acidente de trabalho', link: '/rh/cat-acidente-de-trabalho' },
+  { name: 'Doenças ocupacionais', link: '/saude/doencas-ocupacionais' },
+  { name: 'Médico do trabalho', link: '/saude/medico-do-trabalho' },
+  { name: 'Riscos psicossociais', link: '/rh/riscos-psicossociais' },
+  { name: 'Lei 15.377/2026 e exames', link: '/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos' },
+  { name: 'Carta de recomendação', link: '/rh/carta-recomendacao' },
+  { name: 'NR-05 CIPA', link: '/normas/nr-05-cipa' },
+  { name: 'NR-06 EPI', link: '/normas/nr-06-epi' },
+  { name: 'DDS', link: '/normas/dds' },
+  { name: 'SESMT', link: '/normas/sesmt' },
+  { name: 'NR-33 Espaço Confinado', link: '/normas/nr-33-espaco-confinado' },
+  { name: 'O que é LTCAT', link: '/dicionario/o-que-e-ltcat' },
+  { name: 'O que é PPP', link: '/dicionario/o-que-e-ppp' },
 ]
 
 const servedRegions = [
@@ -584,6 +603,14 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                       <span className="font-medium">Quem somos</span>
                     </Link>
                   </li>
+                  {priorityKnowledgeLinks.map((item) => (
+                    <li key={item.link}>
+                      <Link href={item.link} className="group flex items-center gap-3 text-sm text-slate-400 transition-colors hover:text-white">
+                        <span className="h-1.5 w-1.5 rounded-full bg-accent-pink/40 transition-colors group-hover:bg-accent-pink"></span>
+                        <span className="font-medium">{item.name}</span>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
 
                 <div className="mt-8 border-t border-white/5 pt-8">
