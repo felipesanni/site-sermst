@@ -233,7 +233,7 @@ export default function NR05Page() {
                 <li>A <strong>ausência total de qualquer medida</strong> (nem CIPA, nem designado) é infração para qualquer empresa com empregados registrados.</li>
               </ul>
               <p>
-                Na prática, muitas microempresas e escritórios confundem "não preciso de CIPA" com "não preciso fazer nada". A obrigação do designado permanece, e o treinamento da NR-05 deve ser documentado.
+                Na prática, muitas microempresas e escritórios confundem &quot;não preciso de CIPA&quot; com &quot;não preciso fazer nada&quot;. A obrigação do designado permanece, e o treinamento da NR-05 deve ser documentado.
               </p>
             </>
           ),

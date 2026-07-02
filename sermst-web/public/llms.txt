@@ -89,6 +89,7 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - NR-33 Espaco Confinado (PET, 3 funcoes, 16h treinamento, reciclagem anual): https://sermst.com.br/normas/nr-33-espaco-confinado
 - NR-35 Trabalho em Altura (8h treinamento, reciclagem bienal, APR, PT): https://sermst.com.br/normas/nr-35-trabalho-em-altura
 - NR-37 Plataformas de Petroleo e Gas offshore (CIPLAT, treinamento basico 6h/avancado 8h, 14x14 via CLT/CCT): https://sermst.com.br/normas/nr-37
+- PGRS Residuos de Servicos de Saude (clinicas, laboratorios, hospitais): https://sermst.com.br/normas/pgrs-residuos
 - DDS: https://sermst.com.br/normas/dds
 - SESMT: https://sermst.com.br/normas/sesmt
 - PPP eletronico (S-2240, aposentadoria especial, guarda 20 anos): https://sermst.com.br/normas/ppp-eletronico
