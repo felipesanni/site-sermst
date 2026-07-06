@@ -29,9 +29,37 @@ const diferenciais = [
   { icon: Users, label: 'Equipe multidisciplinar', desc: 'médicos, engenheiros, técnicos em SST e gestão de riscos.' },
 ];
 
+const aboutPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': 'https://sermst.com.br/quem-somos#aboutpage',
+  url: 'https://sermst.com.br/quem-somos',
+  name: 'Quem somos | SERMST — 40 anos protegendo empresas familiares',
+  inLanguage: 'pt-BR',
+  about: {
+    '@type': 'MedicalOrganization',
+    '@id': 'https://sermst.com.br/#organization',
+    name: 'SERMST',
+    legalName: 'SERMST Gestão Ocupacional Ltda',
+    foundingDate: '1983',
+    url: 'https://sermst.com.br',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Largo do Paissandu',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      addressCountry: 'BR',
+    },
+  },
+};
+
 export default function QuemSomosPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Quem Somos' }]} />
       <section className="relative overflow-hidden bg-brand-900 text-white">
         <div className="absolute inset-0 z-0 opacity-15">
@@ -74,7 +102,7 @@ export default function QuemSomosPage() {
           <div className="space-y-7 text-lg font-medium leading-relaxed text-slate-700 md:text-xl">
             <FadeIn direction="up" delay={0.1}>
               <p>
-                Nascemos como uma consultoria especializada em Segurança e Saúde no Trabalho atendendo micro e pequenas empresas. Mas, ao longo de mais de 40 anos de história, percebemos que isso, por si só, não era suficiente.
+                Fundada em 1983 no Largo do Paissandu, em São Paulo, a SERMST nasceu como uma consultoria especializada em Segurança e Saúde no Trabalho atendendo micro e pequenas empresas. Ao longo de mais de 40 anos de história, percebemos que isso, por si só, não era suficiente.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
@@ -135,18 +163,18 @@ export default function QuemSomosPage() {
                 </p>
                 <p>
                   Atendimento in company ou presencial, sem necessidade de agendamento. Equipe multidisciplinar com médicos, engenheiros e técnicos em SST. Laboratório próprio para exames complementares, com estrutura apresentada na página da{' '}
-                  <Link href="/a-clinica" className="font-bold text-white underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                  <Link href="/a-clinica" className="font-bold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
                     clínica SERMST
                   </Link>
                   . Tudo conectado em um fluxo que reduz tempo, reduz custo e reduz risco.
                 </p>
                 <p>
                   A condução técnica também tem rosto: conheça o perfil de{' '}
-                  <Link href="/equipe/felipe-sannino" className="font-bold text-white underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                  <Link href="/equipe/felipe-sannino" className="font-bold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
                     Felipe Sannino
                   </Link>{' '}
                   e de{' '}
-                  <Link href="/equipe/luiz-cesar-sannino" className="font-bold text-white underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                  <Link href="/equipe/luiz-cesar-sannino" className="font-bold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
                     Luiz Cesar Sannino
                   </Link>{' '}
                   para entender melhor a experiência por trás da operação.
