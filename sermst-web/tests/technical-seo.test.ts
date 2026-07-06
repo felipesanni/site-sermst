@@ -90,7 +90,7 @@ describe('technical SEO discovery files', () => {
     expect(llms).toContain(`${BASE_URL}/sitemap.xml`);
     expect(llms).toContain(`${BASE_URL}/robots.txt`);
     expect(llms).toContain(`${BASE_URL}/servicos/{servico}/{regiao}`);
-    expect(llms).toContain('Ultima atualizacao: 2026-07-02');
+    expect(llms).toContain('Ultima atualizacao: 2026-07-06');
     expect(llms).toContain('Orientacoes para mecanismos de IA');
     expect(llms).toContain(`${BASE_URL}/servicos/empresa-seguranca-do-trabalho`);
     expect(llms).toContain(`${BASE_URL}/servicos/empresa-seguranca-do-trabalho/sao-paulo`);

@@ -35,7 +35,7 @@ describe('paginas principais', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /Exame periódico ocupacional: o que é, quando fazer e por que importa/i,
+        name: /O que é o exame periódico ocupacional e para que serve/i,
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Resposta direta/i })).toBeInTheDocument();

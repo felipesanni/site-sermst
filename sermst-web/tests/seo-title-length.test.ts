@@ -43,7 +43,7 @@ describe('SEO title length', () => {
     const title = getTitleText(examePeriodicoMetadata.title);
     const ogTitle = getTitleText(examePeriodicoMetadata.openGraph?.title);
 
-    expect(title).toBe('Exame Periódico Ocupacional | SERMST');
+    expect(title).toBe('O que é o Exame Periódico Ocupacional | SERMST');
     expect(title.length).toBeLessThanOrEqual(60);
     expect(ogTitle.length).toBeLessThanOrEqual(60);
   });
