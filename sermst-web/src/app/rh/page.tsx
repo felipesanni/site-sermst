@@ -64,7 +64,11 @@ export default function RHIndexPage() {
                   Quando uma empresa procura por eSocial SST, S-2220, S-2240, medicina do trabalho ou multa trabalhista, está quase sempre tentando resolver um problema prático do dia a dia. O RH quer contratar sem gargalo, o DP quer evitar erro de prazo, e a direção quer reduzir exposição a risco jurídico e fiscal.
                 </p>
                 <p>
-                  Por isso este hub é estruturado como conteúdo de decisão. Em vez de falar apenas em norma, conecta saúde ocupacional, documentação obrigatória, ASO, PGR, PCMSO e envio de eventos a uma linguagem útil para quem precisa operar o processo.
+                  Por isso este hub é estruturado como conteúdo de decisão. Em vez de falar apenas em norma, conecta saúde ocupacional, documentação obrigatória, ASO, PGR, PCMSO e envio de eventos a uma linguagem útil para quem precisa operar o processo. Até rotinas menores, como uma{' '}
+                  <Link href="/rh/carta-recomendacao" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                    carta de recomendação
+                  </Link>
+                  , entram nessa lógica quando o RH precisa documentar bem o histórico do colaborador.
                 </p>
                 <p>
                   O resultado é prático: você entende mais rápido se precisa de orientação, de regularização ou de proposta comercial — e a SERMST entrega o que cabe ao seu cenário, sem empurrar serviço genérico.

@@ -16,6 +16,9 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'audiometria-ocupacional-clinica') {
     return 'Audiometria Ocupacional';
   }
+  if (servico === 'treinamentos-nrs-cipa-brigada') {
+    return 'Treinamentos corporativos de NRs';
+  }
 
   return fallback;
 }

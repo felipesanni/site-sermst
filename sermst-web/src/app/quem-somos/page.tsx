@@ -134,7 +134,22 @@ export default function QuemSomosPage() {
                   A SERMST não está aqui para te assustar com multa de eSocial e processo trabalhista. Está aqui para garantir que a sua empresa esteja sempre um passo a frente, com documentação correta, exames em dia, laudos que refletem a operação real e um fluxo de SST que não trava admissão.
                 </p>
                 <p>
-                  Atendimento in company ou presencial, sem necessidade de agendamento. Equipe multidisciplinar com médicos, engenheiros e técnicos em SST. Laboratório próprio para exames complementares. Tudo conectado em um fluxo que reduz tempo, reduz custo e reduz risco.
+                  Atendimento in company ou presencial, sem necessidade de agendamento. Equipe multidisciplinar com médicos, engenheiros e técnicos em SST. Laboratório próprio para exames complementares, com estrutura apresentada na página da{' '}
+                  <Link href="/a-clinica" className="font-bold text-white underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                    clínica SERMST
+                  </Link>
+                  . Tudo conectado em um fluxo que reduz tempo, reduz custo e reduz risco.
+                </p>
+                <p>
+                  A condução técnica também tem rosto: conheça o perfil de{' '}
+                  <Link href="/equipe/felipe-sannino" className="font-bold text-white underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                    Felipe Sannino
+                  </Link>{' '}
+                  e de{' '}
+                  <Link href="/equipe/luiz-cesar-sannino" className="font-bold text-white underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                    Luiz Cesar Sannino
+                  </Link>{' '}
+                  para entender melhor a experiência por trás da operação.
                 </p>
                 <p className="font-bold text-brand-900">
                   Você cuida do crescimento do seu negócio. A SERMST cuida de blindar o que você já construiu.

@@ -116,13 +116,57 @@ export default function NormasIndexPage() {
           <p className="text-slate-600 leading-relaxed">
             A conformidade com as NRs não é estática — normas são atualizadas periodicamente. A NR-01, por exemplo,
             passou por revisão e incluiu expressamente os fatores de risco psicossociais relacionados ao trabalho no GRO a partir de 26 de maio de 2026. A NR-07 (PCMSO) define os
-            exames obrigatórios conforme os riscos levantados no PGR. Manter os documentos de SST atualizados é
+            exames obrigatórios conforme os riscos levantados no PGR. Em setores específicos, como
+            plataformas de petróleo e gás, a{' '}
+            <Link href="/normas/nr-37" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+              NR-37
+            </Link>{' '}
+            também precisa ser analisada dentro do contexto real da operação. Manter os documentos de SST atualizados é
             responsabilidade do empregador e não pode ser delegada ao trabalhador.
           </p>
         </div>
       </section>
 
       <section className="py-20 max-w-[1280px] w-full mx-auto px-6 lg:px-8">
+        <FadeIn direction="up">
+          <div className="mb-12 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              NRs que mais aparecem na rotina das empresas
+            </span>
+            <h2 className="mb-5 text-3xl font-black text-brand-900">
+              Pontes rapidas entre norma, treinamento e documento
+            </h2>
+            <p className="mb-8 max-w-3xl text-slate-700 leading-relaxed">
+              Algumas NRs sao portas de entrada para decisoes comerciais e operacionais. Use estes
+              atalhos para entender obrigacao, risco e proximo passo sem depender de uma unica
+              pagina de origem.
+            </p>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { href: '/normas/nr-05-cipa', label: 'NR-05 CIPA' },
+                { href: '/normas/nr-06-epi', label: 'NR-06 EPI' },
+                { href: '/normas/nr-33-espaco-confinado', label: 'NR-33 espaco confinado' },
+                { href: '/normas/dds', label: 'DDS em seguranca do trabalho' },
+                { href: '/normas/nr-01-pgr-atualizada', label: 'NR-01, PGR e riscos psicossociais' },
+                { href: '/normas/sesmt', label: 'NR-04 e SESMT' },
+                { href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo', label: 'Servico de PGR NR-01' },
+                { href: '/servicos/pcmso-nr07-programa/sao-paulo', label: 'PCMSO NR-07' },
+                { href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo', label: 'LTCAT previdenciario' },
+                { href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo', label: 'Pericia trabalhista' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
+                >
+                  {item.label}
+                  <ArrowRight className="mt-4 h-4 w-4" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {normas.map((norma, idx) => (
             <FadeIn key={norma.slug} delay={idx * 0.05}>

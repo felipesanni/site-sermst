@@ -94,7 +94,12 @@ export default function SaudeIndexPage() {
                 <p>
                   Este hub transforma esses temas em leitura clara para RH, lideranças e gestores.
                   Não fala de saúde no abstrato: explica como a vigilância médica e os exames
-                  ocupacionais se conectam a prevenção, produtividade e conformidade.
+                  ocupacionais se conectam a prevenção, produtividade e conformidade. Para navegar
+                  por conteúdos mais amplos de SST, o{' '}
+                  <Link href="/blog" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                    blog da SERMST
+                  </Link>{' '}
+                  reúne temas complementares de normas, RH e gestão ocupacional.
                 </p>
               </div>
             </div>
@@ -132,7 +137,17 @@ export default function SaudeIndexPage() {
             <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
               RH que já perdeu candidato por ASO demorado sabe: a clínica importa tanto quanto o
               processo. Veja o que avaliar antes de escolher: fluxo de atendimento, integração com
-              PCMSO, exames complementares e o que define se a admissão vai andar ou travar.
+              PCMSO, exames complementares e{' '}
+              <Link href="/exames/como-funciona-o-exame-admissional" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                como funciona o exame admissional
+              </Link>{' '}
+              na prática para definir se a admissão vai andar ou travar.
+              Se o problema já apareceu depois da avaliação médica, veja também quando a empresa
+              pode{' '}
+              <Link href="/saude/empresa-pode-desistir-apos-exame-admissional" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                desistir após o exame admissional
+              </Link>{' '}
+              sem criar uma exposição trabalhista desnecessária.
             </p>
             <Link
               href="/saude/clinica-exame-admissional-sao-paulo"
@@ -209,7 +224,13 @@ export default function SaudeIndexPage() {
                 Doenças ocupacionais: exemplos, prevenção e responsabilidade da empresa
               </h2>
               <p className="mt-4 text-lg font-medium leading-relaxed text-slate-700">
-                Conteúdo para RH e gestores entenderem quando um adoecimento pode ter relação com o trabalho, como prevenir e por que PCMSO, PGR e registros importam.
+                Conteúdo para RH e gestores entenderem quando um adoecimento pode ter relação com
+                o trabalho, como prevenir e por que PCMSO, PGR e registros importam. Quando já
+                houve ocorrência, o guia de{' '}
+                <Link href="/saude/acidente-de-trabalho" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  acidente de trabalho
+                </Link>{' '}
+                ajuda a separar tipos, consequências e próximos passos.
               </p>
               <Link
                 href="/saude/doencas-ocupacionais"
@@ -251,7 +272,13 @@ export default function SaudeIndexPage() {
                 Onde fazer exame toxicológico em São Paulo
               </h2>
               <p className="mt-4 text-lg font-medium leading-relaxed text-slate-700">
-                Um guia direto para quem quer ver localização, atendimento para empresa e pessoa física e o momento certo de avançar para a página principal do serviço.
+                Um guia direto para quem quer ver localização, atendimento para empresa e pessoa
+                física e o momento certo de avançar para a página principal do serviço. Se a dúvida
+                ainda for conceitual, comece pelo conteúdo que explica{' '}
+                <Link href="/saude/o-que-e-exame-toxicologico" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  o que é exame toxicológico
+                </Link>{' '}
+                e quando ele costuma ser exigido.
               </p>
               <Link
                 href="/saude/onde-fazer-exame-toxicologico-sao-paulo"
@@ -321,6 +348,41 @@ export default function SaudeIndexPage() {
                 Ver a página principal
                 <ArrowRight className="h-4 w-4" />
               </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn direction="up" delay={0.11}>
+          <div className="mb-14 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Exames ocupacionais mais procurados
+            </span>
+            <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+              Da admissao ao periodico: caminhos rapidos para RH
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
+              Reunimos as paginas que mais se conectam com ASO, PCMSO, audiometria e exames
+              complementares para facilitar o rastreamento e a decisao de quem chegou pelo hub de
+              saude ocupacional.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                { href: '/saude/clinica-exame-admissional-sao-paulo', label: 'Clinica de exame admissional em Sao Paulo' },
+                { href: '/servicos/exame-admissional-expresso/sao-paulo', label: 'Exame admissional expresso' },
+                { href: '/saude/importancia-do-exame-periodico', label: 'Exame periodico ocupacional' },
+                { href: '/saude/onde-fazer-audiometria-ocupacional-sao-paulo', label: 'Onde fazer audiometria ocupacional' },
+                { href: '/servicos/audiometria-ocupacional-clinica/sao-paulo', label: 'Audiometria ocupacional em Sao Paulo' },
+                { href: '/servicos/exames-complementares-laboratoriais/sao-paulo', label: 'Exames complementares em SST' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
+                >
+                  {item.label}
+                  <ArrowRight className="mt-4 h-4 w-4" />
+                </Link>
+              ))}
             </div>
           </div>
         </FadeIn>

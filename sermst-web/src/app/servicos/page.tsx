@@ -84,7 +84,12 @@ export default function ServicosIndexPage() {
             Empresas com funcionários CLT têm obrigações periódicas de SST que variam conforme o
             CNAE, o grau de risco e o número de empregados. Exame periódico, envio do S-2220,
             atualização de PCMSO e PGR e renovação de treinamentos obrigatórios fazem parte do
-            ciclo anual de conformidade de qualquer empresa regularmente constituída.
+            ciclo anual de conformidade de qualquer empresa regularmente constituída. Quando esse
+            controle precisa deixar de ser compra avulsa e virar rotina, os{' '}
+            <Link href="/assinaturas" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+              planos de SST por assinatura
+            </Link>{' '}
+            ajudam a organizar vencimentos, exames e documentos em uma trilha recorrente.
           </p>
           <p className="leading-relaxed text-slate-600">
             Não sabe por onde começar? Use a Calculadora de Risco abaixo para identificar as
@@ -157,6 +162,42 @@ export default function ServicosIndexPage() {
             <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">
               Abrir Calculadora de Risco
             </Link>
+          </div>
+        </div>
+
+        <div className="mb-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+          <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+            Atalhos para os servicos mais conectados
+          </span>
+          <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+            Exames, laudos e assistencia tecnica em uma mesma trilha
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-700">
+            Estes links ajudam a conectar paginas comerciais que costumam ser avaliadas em conjunto
+            quando a empresa esta regularizando SST, exames ocupacionais, eSocial ou passivo
+            trabalhista.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { href: '/servicos/exame-admissional-expresso/sao-paulo', label: 'Exame admissional expresso' },
+              { href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo', label: 'Empresa de seguranca do trabalho' },
+              { href: '/servicos/audiometria-ocupacional-clinica/sao-paulo', label: 'Audiometria ocupacional' },
+              { href: '/servicos/exame-toxicologico-clt/sao-paulo', label: 'Exame toxicologico' },
+              { href: '/servicos/exames-complementares-laboratoriais/sao-paulo', label: 'Exames complementares' },
+              { href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo', label: 'LTCAT previdenciario' },
+              { href: '/servicos/pcmso-nr07-programa/sao-paulo', label: 'PCMSO NR-07' },
+              { href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo', label: 'Pericia trabalhista' },
+              { href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo', label: 'PGR NR-01' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
+              >
+                {item.label}
+                <ChevronRight className="mt-4 h-4 w-4" />
+              </Link>
+            ))}
           </div>
         </div>
 

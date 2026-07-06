@@ -21,6 +21,9 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'ltcat-laudo-tecnico-previdenciario') {
     return 'LTCAT — Laudo Técnico Ambiental';
   }
+  if (servico === 'treinamentos-nrs-cipa-brigada') {
+    return 'Treinamentos corporativos de NRs';
+  }
 
   return fallback;
 }
@@ -49,7 +52,7 @@ function getLocalServiceDescription(servico: string, serviceName: string, local:
   }
 
   if (servico === 'treinamentos-nrs-cipa-brigada') {
-    return `Treinamentos de NRs, CIPA e brigada em ${local.nome} para empresas que precisam capacitar equipes e manter evidências de conformidade em SST.`;
+    return `Treinamentos corporativos de NRs em ${local.nome} para empresas que precisam capacitar equipes, organizar certificados e manter evidências de conformidade em SST. Inclui CIPA, brigada e outros treinamentos conforme o risco da operação.`;
   }
 
   if (servico === 'pcmso-nr07-programa') {

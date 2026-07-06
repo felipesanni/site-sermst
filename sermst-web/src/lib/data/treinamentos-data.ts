@@ -71,11 +71,11 @@ export const trainingsData: Training[] = [
   },
   {
     slug: 'nr-05-cipa-comissao-interna',
-    title: 'NR-05 - CIPA (Comissão Interna)',
+    title: 'Treinamento de CIPA NR-05 para membros e designados',
     category: 'Gestão',
     workload: '8h a 20h (Conforme Grau de Risco)',
     targetAudience: 'Integrantes da comissão (eleitos e indicados) e designados.',
-    summary: 'Formação de multiplicadores de segurança interna, focada em análise de acidentes, vistorias e promoção da SIPAT.',
+    summary: 'Curso de CIPA NR-05 para membros eleitos, indicados e designados, com carga horária conforme o grau de risco, conteúdo obrigatório, SIPAT, mapa de riscos e certificados.',
     description: 'A CIPA (Comissão Interna de Prevenção de Acidentes) é obrigatória pela NR-05 para empresas com funcionários CLT a partir de determinado porte e grau de risco. Sua missão é investigar e analisar acidentes, realizar vistorias periódicas no ambiente de trabalho, propor medidas corretivas e promover a cultura de prevenção entre todos os colaboradores por meio da SIPAT.\n\nO treinamento habilita membros eleitos e indicados a cumprir suas atribuições legais: mapear riscos no Mapa de Riscos, investigar causas de acidentes e incidentes, propor melhorias estruturais e organizar a Semana Interna de Prevenção de Acidentes do Trabalho (SIPAT). O Designado de CIPA, exigido em empresas de menor porte que não atingem o dimensionamento mínimo para a comissão, também precisa de capacitação equivalente.\n\nEmpresas sem CIPA constituída ou com membros sem o treinamento adequado estão expostas a autos de infração do Ministério do Trabalho, agravamento de penalidades em caso de acidente e aumento do passivo trabalhista. Toda documentação — atas de eleição, lista de presença e certificados — deve ficar disponível para fiscalização a qualquer momento.',
     syllabus: [
       'O ambiente e as condições de trabalho',

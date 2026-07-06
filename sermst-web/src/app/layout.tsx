@@ -153,24 +153,6 @@ const strategicLinks = [
   { name: 'Treinamentos de NRs', link: '/servicos/treinamentos-nrs-cipa-brigada' },
 ]
 
-const priorityKnowledgeLinks = [
-  { name: 'Exame periódico ocupacional', link: '/saude/importancia-do-exame-periodico' },
-  { name: 'Audiometria ocupacional em SP', link: '/saude/onde-fazer-audiometria-ocupacional-sao-paulo' },
-  { name: 'CAT: acidente de trabalho', link: '/rh/cat-acidente-de-trabalho' },
-  { name: 'Doenças ocupacionais', link: '/saude/doencas-ocupacionais' },
-  { name: 'Médico do trabalho', link: '/saude/medico-do-trabalho' },
-  { name: 'Riscos psicossociais', link: '/rh/riscos-psicossociais' },
-  { name: 'Lei 15.377/2026 e exames', link: '/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos' },
-  { name: 'Carta de recomendação', link: '/rh/carta-recomendacao' },
-  { name: 'NR-05 CIPA', link: '/normas/nr-05-cipa' },
-  { name: 'NR-06 EPI', link: '/normas/nr-06-epi' },
-  { name: 'DDS', link: '/normas/dds' },
-  { name: 'SESMT', link: '/normas/sesmt' },
-  { name: 'NR-33 Espaço Confinado', link: '/normas/nr-33-espaco-confinado' },
-  { name: 'O que é LTCAT', link: '/dicionario/o-que-e-ltcat' },
-  { name: 'O que é PPP', link: '/dicionario/o-que-e-ppp' },
-]
-
 const servedRegions = [
   { name: 'São Paulo', slug: 'sao-paulo' },
   { name: 'Santo André', slug: 'santo-andre' },
@@ -605,14 +587,6 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                       <span className="font-medium">Quem somos</span>
                     </Link>
                   </li>
-                  {priorityKnowledgeLinks.map((item) => (
-                    <li key={item.link}>
-                      <Link href={item.link} className="group flex items-center gap-3 text-sm text-slate-400 transition-colors hover:text-white">
-                        <span className="h-1.5 w-1.5 rounded-full bg-accent-pink/40 transition-colors group-hover:bg-accent-pink"></span>
-                        <span className="font-medium">{item.name}</span>
-                      </Link>
-                    </li>
-                  ))}
                 </ul>
 
                 <div className="mt-8 border-t border-white/5 pt-8">

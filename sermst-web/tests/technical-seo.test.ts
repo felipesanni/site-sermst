@@ -107,8 +107,15 @@ describe('technical SEO discovery files', () => {
     expect(llms).toContain('barueri');
   });
 
-  it('mantem links internos para paginas prioritarias apontadas pela auditoria', () => {
-    const layout = readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8');
+  it('mantem links internos para paginas prioritarias apontadas pela auditoria sem poluir o footer', () => {
+    const internalLinkSources = [
+      readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8'),
+      readFileSync(join(process.cwd(), 'src', 'app', 'servicos', 'page.tsx'), 'utf8'),
+      readFileSync(join(process.cwd(), 'src', 'app', 'saude', 'page.tsx'), 'utf8'),
+      readFileSync(join(process.cwd(), 'src', 'app', 'rh', 'page.tsx'), 'utf8'),
+      readFileSync(join(process.cwd(), 'src', 'app', 'normas', 'page.tsx'), 'utf8'),
+      readFileSync(join(process.cwd(), 'src', 'app', 'dicionario', 'page.tsx'), 'utf8'),
+    ].join('\n');
     const priorityLinks = [
       '/servicos/exame-admissional-expresso',
       '/servicos/empresa-seguranca-do-trabalho',
@@ -137,7 +144,7 @@ describe('technical SEO discovery files', () => {
     ];
 
     for (const link of priorityLinks) {
-      expect(layout).toContain(link);
+      expect(internalLinkSources).toContain(link);
     }
   });
 
