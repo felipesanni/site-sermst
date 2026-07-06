@@ -347,8 +347,9 @@ function buildSubscriptionEmailText(lead: ReturnType<typeof buildLead>): string 
     `Plano:                ${textOrEmpty(plan.nome || lead.dor)}\n` +
     `Funcionários:         ${textOrEmpty(plan.funcionarios || lead.porte)}\n` +
     `Pagamento:            ${plan.ciclo_pagamento === 'annual' ? 'Anual à vista via PIX' : 'Mensal recorrente'}\n` +
-    `Valor mensal:         ${textOrEmpty(plan.valor_mensal)}\n` +
-    `Valor anual PIX:      ${textOrEmpty(plan.valor_anual_pix)}\n\n` +
+    `Valor contratado:     ${plan.ciclo_pagamento === 'annual' ? textOrEmpty(plan.valor_anual_pix) : textOrEmpty(plan.valor_mensal)}\n` +
+    `Valor mensal (ref.):  ${textOrEmpty(plan.valor_mensal)}\n` +
+    `Valor anual PIX (ref.): ${textOrEmpty(plan.valor_anual_pix)}\n\n` +
     `Responsável:          ${textOrEmpty(responsible.nome || lead.nome)}\n` +
     `Cargo:                ${textOrEmpty(responsible.cargo)}\n` +
     `E-mail:               ${textOrEmpty(responsible.email || lead.email)}\n` +
@@ -427,8 +428,8 @@ function buildSubscriptionEmailHtml(lead: ReturnType<typeof buildLead>): string 
                 <p style="margin:0;color:#0f172a;font-size:18px;font-weight:900">${htmlValue(plan.nome)}</p>
               </td>
               <td style="width:33.33%;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc">
-                <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">Mensal</p>
-                <p style="margin:0;color:#0f172a;font-size:18px;font-weight:900">${htmlValue(plan.valor_mensal)}</p>
+                <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">${plan.ciclo_pagamento === 'annual' ? 'Total à vista' : 'Mensal'}</p>
+                <p style="margin:0;color:#0f172a;font-size:18px;font-weight:900">${htmlValue(plan.ciclo_pagamento === 'annual' ? plan.valor_anual_pix : plan.valor_mensal)}</p>
               </td>
               <td style="width:33.33%;padding:12px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc">
                 <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">Pagamento</p>
@@ -449,9 +450,10 @@ function buildSubscriptionEmailHtml(lead: ReturnType<typeof buildLead>): string 
 
         ${section('Plano selecionado', infoTable([
           ['Funcionários', htmlValue(plan.funcionarios)],
-          ['Valor mensal', htmlValue(plan.valor_mensal)],
-          ['Valor anual PIX', htmlValue(plan.valor_anual_pix)],
           ['Forma de pagamento', escapeHtml(paymentLabel)],
+          ['Valor contratado', `<strong style="color:#e11d48">${htmlValue(plan.ciclo_pagamento === 'annual' ? plan.valor_anual_pix : plan.valor_mensal)}</strong>`],
+          ['Valor mensal (ref.)', htmlValue(plan.valor_mensal)],
+          ['Valor anual PIX (ref.)', htmlValue(plan.valor_anual_pix)],
         ]))}
 
         ${section('Itens incluídos no contrato', itemsHtml, 'Escopo informado ao cliente no formulário de contratação.')}

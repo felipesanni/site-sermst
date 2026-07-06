@@ -255,8 +255,10 @@ export default function TabelaExamesFuncaoPage() {
         related={[
           { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
-          { label: 'Onde fazer audiometria ocupacional em São Paulo', href: '/saude/onde-fazer-audiometria-ocupacional-sao-paulo' },
-          { label: 'Exame admissional precisa de jejum?', href: '/saude/exame-admissional-precisa-de-jejum' },
+          { label: 'Espirometria ocupacional: quando o PCMSO exige', href: '/saude/espirometria-ocupacional' },
+          { label: 'Acuidade visual ocupacional: motoristas e operadores', href: '/saude/acuidade-visual-ocupacional' },
+          { label: 'Eletrocardiograma ocupacional: risco cardíaco e NR-10', href: '/saude/eletrocardiograma-ocupacional' },
+          { label: 'Avaliação psicossocial ocupacional: NR-35 e NR-01', href: '/saude/avaliacao-psicossocial-ocupacional' },
           { label: 'PCMSO: o que é e quem precisa', href: '/saude/pcmso-programa-controle-medico' },
           { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
         ]}

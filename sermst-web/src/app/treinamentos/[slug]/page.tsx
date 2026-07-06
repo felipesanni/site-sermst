@@ -3,7 +3,7 @@ import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { FadeIn } from '@/components/ui/fade-in';
 import { trainingsData, type Training } from '@/lib/data/treinamentos-data';
 import { notFound } from 'next/navigation';
-import { Clock, Users, BookOpen, CheckCircle, ArrowRight, Shield } from 'lucide-react';
+import { Clock, Users, BookOpen, CheckCircle, ArrowRight, Shield, Monitor, MapPin } from 'lucide-react';
 
 interface PageProps {
   params: { slug: string };
@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!training) return { title: 'Treinamento não encontrado' };
   
   return {
-    title: `${training.title} | Treinamentos NR | SERMST`,
+    title: `${training.title} | SERMST`,
     description: training.summary,
     alternates: { canonical: `https://sermst.com.br/treinamentos/${training.slug}` },
     openGraph: {
-      title: `${training.title} | Treinamentos NR | SERMST`,
+      title: `${training.title} | SERMST`,
       description: training.summary,
       url: `https://sermst.com.br/treinamentos/${training.slug}`,
       type: 'article',
@@ -59,12 +59,20 @@ export default async function TrainingPage({ params }: PageProps) {
       availability: 'https://schema.org/InStock',
       url: 'https://sermst.com.br/contato',
     },
-    hasCourseInstance: {
-      '@type': 'CourseInstance',
-      courseMode: 'Onsite',
-      courseWorkload: training.workload,
-      location: { '@type': 'Place', name: 'SERMST — São Paulo e in company' },
-    },
+    hasCourseInstance: [
+      {
+        '@type': 'CourseInstance',
+        courseMode: 'Onsite',
+        courseWorkload: training.workload,
+        location: { '@type': 'Place', name: 'SERMST — São Paulo e in company' },
+      },
+      {
+        '@type': 'CourseInstance',
+        courseMode: 'Online',
+        courseWorkload: training.workload,
+        url: 'https://sermstgestao.formasegead.com/',
+      },
+    ],
   };
 
   const breadcrumbSchema = {
@@ -149,8 +157,28 @@ export default async function TrainingPage({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="mt-12 pt-12 border-t border-white/10 uppercase">
-                <a href={`https://wa.me/5511915146447?text=Olá, gostaria de um orçamento para o treinamento ${training.title}`} 
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <span className="block text-xs uppercase tracking-widest text-slate-400 font-black mb-4">Modalidades disponíveis</span>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3">
+                    <Monitor className="w-5 h-5 text-accent-pink shrink-0" />
+                    <div>
+                      <span className="block text-sm font-black text-white">EAD — Online</span>
+                      <span className="text-xs text-slate-400">Plataforma com certificado digital</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3">
+                    <MapPin className="w-5 h-5 text-accent-pink shrink-0" />
+                    <div>
+                      <span className="block text-sm font-black text-white">Presencial com prática</span>
+                      <span className="text-xs text-slate-400">In company ou na clínica SERMST</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-white/10 uppercase">
+                <a href={`https://wa.me/5511915146447?text=Olá, gostaria de um orçamento para o treinamento ${training.title}`}
                    className="btn-primary-safe flex w-full gap-3 group">
                   Solicitar Orçamento <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </a>

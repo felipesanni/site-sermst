@@ -51,16 +51,16 @@ const faq = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Exame Periódico Ocupacional | SERMST',
+  title: 'O que é o Exame Periódico Ocupacional | SERMST',
   description:
-    'Entenda o que é o exame periódico ocupacional, quem define a periodicidade, quais exames podem entrar e por que atrasar isso aumenta o risco da empresa.',
+    'O que é o exame periódico ocupacional, para que serve, quais exames podem fazer parte e o que acontece quando a empresa atrasa ou ignora o programa.',
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: 'Exame Periódico Ocupacional | SERMST',
+    title: 'O que é o Exame Periódico Ocupacional | SERMST',
     description:
-      'Veja como o exame periódico se conecta ao PCMSO, ao ASO e à rotina de saúde ocupacional da empresa.',
+      'Entenda o que é o exame periódico, como ele se conecta ao PCMSO e ao ASO e por que atrasar gera risco jurídico para a empresa.',
     url: pageUrl,
     type: 'article',
     locale: 'pt_BR',
@@ -71,9 +71,9 @@ export default function ImportanciaDoExamePeriodicoPage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Exame periódico ocupacional: o que é, quando fazer e por que importa',
+    headline: 'O que é o exame periódico ocupacional e para que serve',
     description:
-      'Guia prático sobre exame periódico ocupacional, periodicidade, exames complementares e risco de deixar vencido.',
+      'O que é o exame periódico ocupacional, para que serve, quais exames fazem parte e por que atrasar aumenta o risco da empresa.',
     url: pageUrl,
     mainEntityOfPage: pageUrl,
     inLanguage: 'pt-BR',
@@ -131,7 +131,7 @@ export default function ImportanciaDoExamePeriodicoPage() {
                 Saúde ocupacional
               </span>
               <h1 className="mb-8 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
-                Exame periódico ocupacional: o que é, quando fazer e por que importa
+                O que é o exame periódico ocupacional e para que serve
               </h1>
               <p className="max-w-3xl border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
                 O exame periódico ajuda a empresa a acompanhar a saúde do trabalhador ao longo do
@@ -361,6 +361,22 @@ export default function ImportanciaDoExamePeriodicoPage() {
               <ul className="space-y-3 text-sm">
                 <li>
                   <Link
+                    href="/saude/exame-periodico-ocupacional"
+                    className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
+                  >
+                    Periodicidade, grau de risco e como organizar o programa
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/saude/exame-retorno-ao-trabalho"
+                    className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
+                  >
+                    Exame de retorno ao trabalho
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/saude/pcmso-programa-controle-medico"
                     className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
                   >
@@ -373,14 +389,6 @@ export default function ImportanciaDoExamePeriodicoPage() {
                     className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
                   >
                     O que é ASO e como ele protege a empresa
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/saude/o-que-e-saude-ocupacional"
-                    className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
-                  >
-                    O que é saúde ocupacional
                   </Link>
                 </li>
               </ul>

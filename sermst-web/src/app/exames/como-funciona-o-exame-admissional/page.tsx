@@ -465,9 +465,9 @@ export default function ComoFuncionaExameAdmissionalPage() {
       sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'Exame admissional expresso em São Paulo', href: '/servicos/exame-admissional-expresso/sao-paulo' },
-        { label: 'Clínica de exame admissional em São Paulo', href: '/saude/clinica-exame-admissional-sao-paulo' },
+        { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
+        { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
-        { label: 'NR-18: obra, canteiro e exigências de segurança', href: '/normas/nr-18-construcao-civil' },
         { label: 'Exame admissional precisa de jejum?', href: '/saude/exame-admissional-precisa-de-jejum' },
         { label: 'Tabela de exames por função', href: '/saude/tabela-exames-admissionais-por-funcao' },
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },

@@ -154,9 +154,9 @@ export default function ASOPage() {
       sidebarCtaLabel="Solicitar ASO admissional"
       related={[
         { label: 'ASO no dicionário: definição rápida', href: '/dicionario/o-que-e-aso' },
+        { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
+        { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
-        { label: 'Clínica de exame admissional em SP', href: '/saude/clinica-exame-admissional-sao-paulo' },
-        { label: 'Exame toxicológico para CNH C, D e E e motoristas CLT', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
         { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}

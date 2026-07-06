@@ -169,6 +169,7 @@ export default function NR35Page() {
       sidebarHook="Treinamento NR-35 vencido ou inexistente, ASO sem avaliação específica, plano de resgate ausente — qualquer um desses três é exposição direta. A SERMST faz auditoria do que sua operação tem hoje."
       sidebarCtaLabel="Auditar conformidade NR-35"
       related={[
+        { label: 'Avaliação psicossocial ocupacional para trabalho em altura', href: '/saude/avaliacao-psicossocial-ocupacional' },
         { label: 'Guia da NR-18 na construção civil', href: '/normas/nr-18-construcao-civil' },
         { label: 'NR-10: Eletricidade', href: '/normas/nr-10-eletricidade' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },

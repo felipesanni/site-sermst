@@ -150,6 +150,7 @@ export default function NR10Page() {
       sidebarHook="Acidente elétrico fatal é uma das maiores fontes de responsabilização criminal de gestor. PIE atualizado, treinamentos em dia e laudo SPDA são obrigatórios. A SERMST audita."
       sidebarCtaLabel="Auditar conformidade NR-10"
       related={[
+        { label: 'Eletrocardiograma ocupacional e risco elétrico', href: '/saude/eletrocardiograma-ocupacional' },
         { label: 'NR-35: Trabalho em altura', href: '/normas/nr-35-trabalho-em-altura' },
         { label: 'NR-18 para obras e canteiros', href: '/normas/nr-18-construcao-civil' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },

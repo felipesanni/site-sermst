@@ -2,7 +2,7 @@
 
 > Empresa brasileira de Medicina do Trabalho, Seguranca do Trabalho e Gestao de SST/eSocial com mais de 40 anos de atuacao em Sao Paulo e Grande ABC. Atende empresas com exames ocupacionais (ASO Expresso), PCMSO, PGR, LTCAT, gestao de eSocial (S-2220/S-2240), treinamentos de NRs e pericia trabalhista. Fundada em 1983, combina tecnologia e blindagem juridica para proteger o CNPJ de seus clientes.
 
-Ultima atualizacao: 2026-07-02 (rev. 3)
+Ultima atualizacao: 2026-07-06 (rev. 6)
 
 A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao de SST/eSocial com mais de 40 anos de atuacao. Fundada em 1983, atende empresas em Sao Paulo, Grande ABC e Grande SP com exames ocupacionais, ASO, PCMSO, PGR, LTCAT, eSocial, treinamentos de NRs, pericia trabalhista e gestao tecnica de saude e seguranca do trabalho.
 
@@ -55,7 +55,8 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 ## Paginas de alta intencao informacional
 - Consulta CNAE por CNPJ e grau de risco: https://sermst.com.br/rh/calculadora-cnae-grau-de-risco
 - Lista CNAE Brasil: https://sermst.com.br/rh/lista-cnae-brasil
-- Exame Periodico Ocupacional: https://sermst.com.br/saude/importancia-do-exame-periodico
+- Exame Periodico Ocupacional (periodicidade por grau de risco, complementares, eSocial S-2220): https://sermst.com.br/saude/exame-periodico-ocupacional
+- Exame de Retorno ao Trabalho (obrigatorio apos 30 dias de afastamento, ASO antes de reassumir, eSocial): https://sermst.com.br/saude/exame-retorno-ao-trabalho
 - Onde fazer audiometria ocupacional em Sao Paulo: https://sermst.com.br/saude/onde-fazer-audiometria-ocupacional-sao-paulo
 - Onde fazer exame toxicologico em Sao Paulo: https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo
 - Valor do exame admissional: https://sermst.com.br/saude/valor-exame-admissional
@@ -101,15 +102,24 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - O que e PPP: https://sermst.com.br/dicionario/o-que-e-ppp
 
 ## Treinamentos
-- NR-10 Seguranca em Eletricidade: https://sermst.com.br/treinamentos/nr-10-seguranca-eletrica
-- NR-35 Trabalho em Altura: https://sermst.com.br/treinamentos/nr-35-trabalho-em-altura
-- NR-33 Espaco Confinado: https://sermst.com.br/treinamentos/nr-33-espaco-confinado
-- NR-05 CIPA: https://sermst.com.br/treinamentos/nr-05-cipa-comissao-interna
-- Brigada de Incendio IT-17: https://sermst.com.br/treinamentos/brigada-de-incendio-it17
-- NR-11 Transporte e Movimentacao: https://sermst.com.br/treinamentos/nr-11-transporte-movimentacao
-- NR-12 Seguranca em Maquinas: https://sermst.com.br/treinamentos/nr-12-maquinas-equipamentos
-- NR-18 Construcao Civil: https://sermst.com.br/treinamentos/nr-18-seguranca-construcao-civil
-- NR-20 Liquidos Inflamaveis: https://sermst.com.br/treinamentos/nr-20-inflamaveis-combustiveis
+- Treinamento NR-10 Seguranca em Eletricidade (40h basico, complementar SEP, reciclagem bienal): https://sermst.com.br/treinamentos/nr-10-seguranca-eletrica
+- Treinamento NR-35 Trabalho em Altura (8h, reciclagem bienal, AR, PT, cinto paraquedista): https://sermst.com.br/treinamentos/nr-35-trabalho-em-altura
+- Treinamento NR-33 Espaco Confinado (vigias 16h, supervisores 40h, PET, monitoramento de gases): https://sermst.com.br/treinamentos/nr-33-espaco-confinado
+- Treinamento CIPA NR-05 para membros eleitos, indicados e designados (Mapa de Riscos, SIPAT): https://sermst.com.br/treinamentos/nr-05-cipa-comissao-interna
+- Treinamento Brigada de Incendio IT-17 Sao Paulo (8h, AVCB, extintores, reciclagem anual): https://sermst.com.br/treinamentos/brigada-de-incendio-it17
+- Treinamento NR-11 Operador de Empilhadeira (16h, checklist, estabilidade, rampa e doca): https://sermst.com.br/treinamentos/nr-11-transporte-movimentacao
+- Treinamento NR-12 Seguranca em Maquinas (8h a 16h, LOTO, protecoes, parada de emergencia): https://sermst.com.br/treinamentos/nr-12-maquinas-equipamentos
+- Treinamento NR-18 Seguranca na Construcao Civil (integracao 4h, queda, EPI e andaimes): https://sermst.com.br/treinamentos/nr-18-seguranca-construcao-civil
+- Treinamento NR-06 EPI — Equipamento de Protecao Individual (4h, Ficha de EPI, CA): https://sermst.com.br/treinamentos/nr-06-epi
+- Treinamento NR-17 Ergonomia no Trabalho (8h, LER/DORT, posto, postura e pausas): https://sermst.com.br/treinamentos/nr-17-ergonomia
+- Treinamento Brigada Avancado Combate a Incendio 16h (SCBA, mangueiras, evacuacao, CSCIP/SP): https://sermst.com.br/treinamentos/combate-a-incendio-avancado
+- Treinamento NR-20 Inflamaveis e Combustiveis (4h a 16h, areas classificadas, postos e industrias): https://sermst.com.br/treinamentos/nr-20-inflamaveis-combustiveis
+
+## Exames complementares ocupacionais
+- Espirometria ocupacional (funcao pulmonar, CVF/VEF1/FEF 25-75%, PCMSO, poeiras e agentes quimicos): https://sermst.com.br/saude/espirometria-ocupacional
+- Avaliacao psicossocial ocupacional (NR-35 trabalho em altura, NR-01 riscos psicossociais, ASO, laudo medico): https://sermst.com.br/saude/avaliacao-psicossocial-ocupacional
+- Acuidade visual ocupacional (motoristas CNH C/D/E, operadores de empilhadeira, Ishihara, ASO): https://sermst.com.br/saude/acuidade-visual-ocupacional
+- Eletrocardiograma ocupacional (ECG, risco cardiovascular, NR-10 risco eletrico, acima de 40 anos, ASO): https://sermst.com.br/saude/eletrocardiograma-ocupacional
 
 ## Cobertura regional indexavel
 O sitemap lista paginas canonicas de servicos por regiao quando a URL segue o padrao:

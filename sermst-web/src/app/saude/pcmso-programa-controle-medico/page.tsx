@@ -172,10 +172,11 @@ export default function PCMSOPage() {
       related={[
         { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
         { label: 'O que é PCMSO? Significado e aplicação prática', href: '/dicionario/o-que-e-pcmso' },
+        { label: 'Espirometria ocupacional no PCMSO', href: '/saude/espirometria-ocupacional' },
+        { label: 'Eletrocardiograma ocupacional no PCMSO', href: '/saude/eletrocardiograma-ocupacional' },
+        { label: 'Avaliação psicossocial ocupacional (NR-35 e NR-01)', href: '/saude/avaliacao-psicossocial-ocupacional' },
         { label: 'DIR: quando pode haver dispensa de elaborar PCMSO', href: '/rh/declaracao-inexistencia-risco-dir' },
         { label: 'Contratar elaboração e gestão de PCMSO', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
-        { label: 'Gestão de SST', href: '/saude/gestao-sst' },
-        { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },
         { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
       ]}

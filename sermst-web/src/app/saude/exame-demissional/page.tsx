@@ -159,11 +159,11 @@ export default function ExameDemissionalPage() {
       sidebarCtaHref="/saude/exame-demissional-guia"
       related={[
         { label: 'Agendar exame demissional', href: '/saude/exame-demissional-guia' },
+        { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
+        { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
-        { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
-        { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },
       ]}
     />
   );

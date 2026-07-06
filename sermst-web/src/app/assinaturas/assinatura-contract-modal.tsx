@@ -913,6 +913,7 @@ export function AssinaturaContractModal({
       funcionarios: String(employees),
       valor_mensal: formatter.format(plan.monthly),
       valor_anual: formatter.format(plan.annualPix),
+      valor_contrato: billingCycle === 'annual' ? formatter.format(plan.annualPix) : formatter.format(plan.monthly),
       ciclo_pagamento: billingCycle === 'annual' ? 'anual-a-vista' : 'mensal',
       cnpj: digits(cnpj),
       cnae: cnpjInfo?.cnaeFiscal || '',
@@ -1092,8 +1093,14 @@ export function AssinaturaContractModal({
               </div>
 
               <div className="mt-5 flex items-center justify-between gap-4 rounded-2xl bg-white/80 p-4">
-                <span className="font-bold text-slate-600">Valor mensal:</span>
-                <span className="text-right text-2xl font-black text-brand-900">{formatter.format(plan.monthly)}/mês</span>
+                <span className="font-bold text-slate-600">
+                  {billingCycle === 'annual' ? 'Valor total à vista:' : 'Valor mensal:'}
+                </span>
+                <span className="text-right text-2xl font-black text-brand-900">
+                  {billingCycle === 'annual'
+                    ? formatter.format(plan.annualPix)
+                    : `${formatter.format(plan.monthly)}/mês`}
+                </span>
               </div>
             </section>
 
