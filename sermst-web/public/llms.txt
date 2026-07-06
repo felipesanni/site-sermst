@@ -56,6 +56,7 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - Consulta CNAE por CNPJ e grau de risco: https://sermst.com.br/rh/calculadora-cnae-grau-de-risco
 - Lista CNAE Brasil: https://sermst.com.br/rh/lista-cnae-brasil
 - Exame Periodico Ocupacional (periodicidade por grau de risco, complementares, eSocial S-2220): https://sermst.com.br/saude/exame-periodico-ocupacional
+- O que e exame periodico ocupacional e para que serve (definicao, obrigatoriedade, PCMSO): https://sermst.com.br/saude/importancia-do-exame-periodico
 - Exame de Retorno ao Trabalho (obrigatorio apos 30 dias de afastamento, ASO antes de reassumir, eSocial): https://sermst.com.br/saude/exame-retorno-ao-trabalho
 - Onde fazer audiometria ocupacional em Sao Paulo: https://sermst.com.br/saude/onde-fazer-audiometria-ocupacional-sao-paulo
 - Onde fazer exame toxicologico em Sao Paulo: https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo
