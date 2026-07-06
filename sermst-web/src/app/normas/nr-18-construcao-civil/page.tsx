@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-18: Norma Regulamentadora 18 da Construção Civil | SERMST',
+  title: 'NR-18 construção civil: resumo e PGR | SERMST',
   description:
-    'Entenda o que a NR-18, a Norma Regulamentadora 18, exige hoje na construção civil: PGR no lugar do PCMAT, PCMSO, treinamentos, áreas de vivência, eSocial SST e responsabilidade em obra.',
+    'Resumo da NR-18 atualizada: PGR no lugar do PCMAT, validade, áreas de vivência, canteiro de obras, grau de infração e exigências da construção civil.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },
   openGraph: {
-    title: 'NR-18: Norma Regulamentadora 18 da Construção Civil | SERMST',
+    title: 'NR-18 construção civil: resumo e PGR | SERMST',
     description:
-      'Veja o que a NR-18 exige para canteiros, reformas e obras de diferentes portes, com foco em PGR, PCMSO, treinamentos, áreas de vivência e fiscalização.',
+      'Veja o que a NR-18 exige para canteiros, reformas e obras: PGR, PCMAT, treinamentos, áreas de vivência, validade e fiscalização.',
     url: 'https://sermst.com.br/normas/nr-18-construcao-civil',
     type: 'article',
     locale: 'pt_BR',
@@ -29,6 +29,7 @@ export default function NR18Page() {
       pageUrl="https://sermst.com.br/normas/nr-18-construcao-civil"
       badgeText="NR-18"
       readingTime="15 min"
+      showTableOfContents
       author={{
         name: 'Luiz César Sannino',
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
@@ -44,6 +45,22 @@ export default function NR18Page() {
         </p>
       }
       sections={[
+        {
+          title: 'Resumo da NR-18 para empresas',
+          body: (
+            <>
+              <p>
+                Em resumo, a <strong>NR-18</strong> define como a construção civil deve organizar segurança e saúde no trabalho em obras, reformas, demolições, escavações, canteiros e frentes de serviço. Ela exige planejamento antes do início das atividades e controle contínuo conforme a obra muda de fase.
+              </p>
+              <p>
+                Os pontos mais procurados por empresas são: PGR no lugar do PCMAT, treinamento inicial de NR-18, áreas de vivência, proteção coletiva, controle de terceiros, documentos para fiscalização e integração com PCMSO, ASO e eSocial SST.
+              </p>
+              <p>
+                A lógica prática é simples: se existe trabalhador em canteiro de obra, a empresa precisa provar que avaliou riscos, treinou a equipe, organizou o ambiente e manteve medidas de prevenção compatíveis com a atividade executada.
+              </p>
+            </>
+          ),
+        },
         {
           title: 'O que é a NR-18 e quem precisa cumprir',
           body: (
@@ -61,7 +78,7 @@ export default function NR18Page() {
           ),
         },
         {
-          title: 'NR-18 atualizada, PDF oficial e validade: o que a empresa precisa entender',
+          title: 'NR-18 atualizada, PDF oficial e validade',
           body: (
             <>
               <p>
@@ -72,6 +89,27 @@ export default function NR18Page() {
               </p>
               <p>
                 Para a empresa, baixar o PDF não basta. O ponto central é verificar se o PGR do canteiro, o PCMSO, os treinamentos, as áreas de vivência e as proteções coletivas estão alinhados à versão vigente da norma e à fase real da obra.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Canteiro de obras na NR-18: o que precisa estar em ordem',
+          body: (
+            <>
+              <p>
+                A maior parte das falhas de NR-18 aparece no canteiro de obras, não apenas no documento. Por isso, a empresa precisa verificar se a condição real do local acompanha o que está escrito no PGR e nos treinamentos.
+              </p>
+              <ul>
+                <li>Acesso seguro, circulação organizada e sinalização de áreas de risco.</li>
+                <li>Proteção contra queda de pessoas e materiais.</li>
+                <li>Instalações elétricas provisórias protegidas e organizadas.</li>
+                <li>Máquinas, equipamentos, andaimes e escadas em condição segura.</li>
+                <li>Áreas de vivência compatíveis com o efetivo da obra.</li>
+                <li>Documentos de trabalhadores próprios e terceirizados disponíveis para conferência.</li>
+              </ul>
+              <p>
+                Quando o fiscal chega ao canteiro, ele compara documento, treinamento e realidade. Se o papel promete controle, mas a obra mostra improviso, a empresa perde força imediatamente.
               </p>
             </>
           ),
@@ -217,7 +255,7 @@ export default function NR18Page() {
           ),
         },
         {
-          title: 'Áreas de vivência: o que a norma exige para os trabalhadores',
+          title: 'Área de vivência na construção civil NR-18',
           body: (
             <>
               <p>
@@ -233,6 +271,22 @@ export default function NR18Page() {
               </ul>
               <p>
                 Quando essas áreas estão precárias, o problema não é apenas formal. Isso costuma gerar reclamação de trabalhador, inspeção, desgaste operacional e sinal de desorganização para o fiscal logo no primeiro olhar.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Grau de infração da NR-18 e risco de embargo',
+          body: (
+            <>
+              <p>
+                Quem pesquisa por <strong>grau de infração da NR-18</strong> normalmente quer saber o tamanho do risco em uma fiscalização. O valor da multa depende do item descumprido, do enquadramento normativo, do número de trabalhadores expostos e da gradação prevista na fiscalização trabalhista.
+              </p>
+              <p>
+                Na prática, em construção civil, o maior prejuízo nem sempre é a multa. Falhas com risco grave e iminente podem gerar embargo ou interdição, paralisando parte da obra e criando custo com atraso, retrabalho, contratante, cronograma e imagem.
+              </p>
+              <p>
+                Pontos como ausência de proteção contra queda, instalações elétricas improvisadas, falta de treinamento, ausência de PGR, áreas de vivência precárias e trabalhador sem ASO costumam acender alerta rápido em auditoria.
               </p>
             </>
           ),
@@ -303,6 +357,10 @@ export default function NR18Page() {
           a: 'A NR-18, como norma, não vence como certificado. O que precisa ser verificado é a versão vigente da regulamentação e a atualização prática dos treinamentos, programas, evidências e revisões ligadas à obra.',
         },
         {
+          q: 'Qual a validade da NR-18 na construção civil?',
+          a: 'A norma em si não tem validade como um curso ou certificado. O que precisa estar válido e atualizado são treinamentos, PGR, PCMSO, ASO, evidências de fiscalização e documentos compatíveis com a fase atual da obra.',
+        },
+        {
           q: 'Onde baixar a NR-18 em PDF oficial?',
           a: 'O mais seguro é consultar a publicação oficial nos canais do governo, especialmente MTE e ENIT. Assim a empresa evita usar texto desatualizado ou material sem controle de revisão.',
         },
@@ -321,6 +379,14 @@ export default function NR18Page() {
         {
           q: 'Qual a multa por descumprimento da NR-18?',
           a: 'O valor depende da infração, do enquadramento legal e do número de trabalhadores expostos. Em obra, o impacto financeiro raramente vem só da multa. Embargo, atraso e retrabalho costumam pesar ainda mais.',
+        },
+        {
+          q: 'O que é área de vivência na NR-18?',
+          a: 'Área de vivência é o conjunto de instalações de apoio ao trabalhador no canteiro, como sanitários, vestiário, local para refeições, água potável e alojamento quando houver. A condição dessas áreas costuma ser observada em fiscalização.',
+        },
+        {
+          q: 'O que a NR-18 exige no canteiro de obras?',
+          a: 'A NR-18 exige planejamento de SST, PGR coerente com a obra, treinamentos, proteção coletiva, controle de máquinas e instalações, áreas de vivência adequadas e documentação compatível com os riscos e a fase do canteiro.',
         },
         {
           q: 'O que costuma ser fiscalizado com mais frequência no canteiro?',
@@ -343,6 +409,7 @@ export default function NR18Page() {
           a: 'A análise depende do dimensionamento aplicável ao canteiro e das regras da NR-05 para a situação concreta. Quando não há enquadramento para constituição formal, ainda assim podem existir obrigações de representação e treinamento.',
         },
       ]}
+      maxFaqItems={12}
       sidebarTitle="Sua obra tem PGR, PCMSO e treinamentos em dia?"
       sidebarHook="A NR-18 está entre as normas mais observadas em fiscalização de obra. A SERMST audita a documentação e revisa o canteiro antes que a irregularidade vire embargo, multa ou atraso."
       sidebarCtaLabel="Solicitar PGR para obra"

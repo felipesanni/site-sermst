@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-4 e SESMT: obrigatoriedade, dimensionamento e grau de risco | SERMST',
+  title: 'NR-4 e SESMT: quando é obrigatório | SERMST',
   description:
     'NR-4 define quando o SESMT é obrigatório. Entenda como dimensionar por CNAE, grau de risco e número de empregados — e o que acontece quando a empresa ignora.',
   alternates: { canonical: 'https://sermst.com.br/normas/sesmt' },
   openGraph: {
-    title: 'NR-4 e SESMT: obrigatoriedade, dimensionamento e grau de risco | SERMST',
+    title: 'NR-4 e SESMT: quando é obrigatório | SERMST',
     description:
       'Guia prático sobre NR-4 e SESMT: grau de risco, CNAE, número de empregados, composição da equipe e alternativas técnicas para empresas.',
     url: 'https://sermst.com.br/normas/sesmt',

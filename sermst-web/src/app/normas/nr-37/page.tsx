@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-37: segurança em plataformas de petróleo e gás — guia completo | SERMST',
+  title: 'NR-37: plataformas de petróleo e gás | SERMST',
   description:
     'A NR-37 regula segurança e saúde em plataformas de petróleo e gás offshore. Entenda CIPLAT, treinamentos básico (6h) e avançado (8h), SESMT offshore, alojamento e planos de emergência.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-37' },
   openGraph: {
-    title: 'NR-37: segurança em plataformas de petróleo e gás — guia completo | SERMST',
+    title: 'NR-37: plataformas de petróleo e gás | SERMST',
     description:
       'Guia da NR-37 para empresas offshore: jornada de embarque, SESMT, alojamento, treinamentos, gestão de emergências e obrigações em plataformas de petróleo e gás natural.',
     url: 'https://sermst.com.br/normas/nr-37',

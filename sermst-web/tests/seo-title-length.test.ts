@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { describe, expect, it } from 'vitest';
 import { metadata as homeMetadata } from '@/app/page';
+import { metadata as nr01Metadata } from '@/app/normas/nr-01-pgr-atualizada/page';
+import { metadata as nr37Metadata } from '@/app/normas/nr-37/page';
+import { metadata as nr18Metadata } from '@/app/normas/nr-18-construcao-civil/page';
+import { metadata as sesmtMetadata } from '@/app/normas/sesmt/page';
+import { metadata as acidenteDeTrabalhoMetadata } from '@/app/saude/acidente-de-trabalho/page';
 import { metadata as examePeriodicoMetadata } from '@/app/saude/importancia-do-exame-periodico/page';
 import { metadata as ondeFazerAudiometriaMetadata } from '@/app/saude/onde-fazer-audiometria-ocupacional-sao-paulo/page';
 import { generateMetadata as generateLocalServiceMetadata } from '@/app/servicos/[servico]/[regiao]/page';
@@ -14,6 +19,26 @@ function getTitleText(title: Metadata['title']) {
 }
 
 describe('SEO title length', () => {
+  it('mantem curtos os titles apontados pela auditoria Ubersuggest', () => {
+    const auditedPages = [
+      { metadata: nr01Metadata, title: 'NR-01: PGR e riscos psicossociais | SERMST' },
+      { metadata: nr18Metadata, title: 'NR-18 construção civil: resumo e PGR | SERMST' },
+      { metadata: nr37Metadata, title: 'NR-37: plataformas de petróleo e gás | SERMST' },
+      { metadata: sesmtMetadata, title: 'NR-4 e SESMT: quando é obrigatório | SERMST' },
+      { metadata: acidenteDeTrabalhoMetadata, title: 'Acidente de trabalho: tipos e riscos | SERMST' },
+    ];
+
+    for (const { metadata, title } of auditedPages) {
+      const pageTitle = getTitleText(metadata.title);
+      const ogTitle = getTitleText(metadata.openGraph?.title);
+
+      expect(pageTitle).toBe(title);
+      expect(pageTitle.length).toBeLessThanOrEqual(60);
+      expect(ogTitle).toBe(title);
+      expect(ogTitle.length).toBeLessThanOrEqual(60);
+    }
+  });
+
   it('mantem curto o title do artigo de exame periodico', () => {
     const title = getTitleText(examePeriodicoMetadata.title);
     const ogTitle = getTitleText(examePeriodicoMetadata.openGraph?.title);

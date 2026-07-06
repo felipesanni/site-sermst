@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Acidente de trabalho: o que é, tipos e consequências para a empresa | SERMST',
+  title: 'Acidente de trabalho: tipos e riscos | SERMST',
   description:
     'Acidente de trabalho é todo evento que causa lesão ou morte ao trabalhador no exercício da atividade. Entenda o conceito legal, tipos, nexo causal e o que muda para a empresa.',
   alternates: { canonical: 'https://sermst.com.br/saude/acidente-de-trabalho' },
   openGraph: {
-    title: 'Acidente de trabalho: o que é, tipos e consequências para a empresa | SERMST',
+    title: 'Acidente de trabalho: tipos e riscos | SERMST',
     description:
       'Conceito legal de acidente de trabalho, tipos (típico, de trajeto, doença ocupacional), nexo causal, estabilidade acidentária e como a empresa deve agir.',
     url: 'https://sermst.com.br/saude/acidente-de-trabalho',
