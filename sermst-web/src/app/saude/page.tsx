@@ -289,6 +289,7 @@ export default function SaudeIndexPage() {
                 { href: '/normas/o-que-e-nr-07', label: 'NR-07: o que a norma exige' },
                 { href: '/saude/aso-atestado-saude-ocupacional', label: 'ASO: o que é e quando emitir' },
                 { href: '/saude/importancia-do-exame-periodico', label: 'Exame periódico ocupacional' },
+                { href: '/saude/onde-fazer-audiometria-ocupacional-sao-paulo', label: 'Onde fazer audiometria ocupacional em SP' },
                 { href: '/rh/declaracao-inexistencia-risco-dir', label: 'DIR e dispensa de elaborar PCMSO' },
               ].map((item) => (
                 <Link
