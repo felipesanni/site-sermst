@@ -73,7 +73,7 @@ export default function QuandoDemitirPage() {
             <>
               <p>Antes de tomar a decisão e, principalmente, antes de comunicar, três etapas ajudam a proteger a empresa:</p>
               <ol>
-                <li><strong>Feedback formal documentado.</strong> Não basta "eu falei". É importante ter registro escrito com data, problema apontado, expectativa e prazo.</li>
+                <li><strong>Feedback formal documentado.</strong> Não basta &ldquo;eu falei&rdquo;. É importante ter registro escrito com data, problema apontado, expectativa e prazo.</li>
                 <li><strong>Plano de melhoria com prazo.</strong> Em geral, 30 a 90 dias são suficientes para medir evolução ou estagnação com critérios objetivos.</li>
                 <li><strong>Advertências formais quando aplicável.</strong> Em casos disciplinares, a gradação costuma fortalecer a segurança jurídica da decisão.</li>
               </ol>
