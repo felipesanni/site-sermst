@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'PCMSO: o que é, validade e quem precisa do programa | SERMST',
+  title: 'PCMSO: o que é, quem precisa e qual a validade do programa | SERMST',
   description:
-    'Entenda o que é PCMSO, qual a validade do programa, quem precisa elaborar e quando MEI, ME ou EPP pode ter dispensa prevista na NR-07.',
+    'Entenda o que é o PCMSO, quem precisa elaborar o programa, quando há dispensa prevista na NR-07, qual a validade prática e como ele se conecta ao PGR, ASO e eSocial.',
   alternates: { canonical: 'https://sermst.com.br/saude/pcmso-programa-controle-medico' },
   openGraph: {
     title: 'PCMSO: o que é, quem precisa e como estruturar corretamente | SERMST',
     description:
-      'Guia completo sobre o Programa de Controle Médico de Saúde Ocupacional: obrigatoriedade, conteúdo mínimo, integração com eSocial e erros comuns a evitar.',
+      'Guia completo sobre o Programa de Controle Médico de Saúde Ocupacional: obrigatoriedade, conteúdo mínimo, validade prática, integração com eSocial e erros comuns a evitar.',
     url: 'https://sermst.com.br/saude/pcmso-programa-controle-medico',
     type: 'article',
     locale: 'pt_BR',
@@ -21,36 +21,60 @@ export default function PCMSOPage() {
   return (
     <BlockbusterArticle
       hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabelShort="Voltar para Saúde"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/pcmso-programa-controle-medico"
       coverImage={{
         src: '/images/articles/pcmso-programa.jpg',
-        alt: 'Documentação de programa de controle médico de saúde ocupacional PCMSO',
+        alt: 'Documentação do Programa de Controle Médico de Saúde Ocupacional',
       }}
       author={{
         name: 'Luiz César Sannino',
-        jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
+        jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-06-02',
+        dateModified: '2026-07-07',
       }}
-
-      h1="PCMSO: o que é, validade e quem precisa do programa"
-      intro="PCMSO significa Programa de Controle Médico de Saúde Ocupacional. A NR-07 traz a regra; o PCMSO transforma essa regra em planejamento médico, exames e critérios coerentes com os riscos de cada função."
+      h1="PCMSO: o que é, quem precisa e qual a validade do programa"
+      intro="PCMSO significa Programa de Controle Médico de Saúde Ocupacional. A NR-07 traz a regra; o PCMSO transforma essa regra em planejamento médico, protocolo de exames e acompanhamento coerente com os riscos de cada função. Na prática, ele organiza como a empresa monitora a saúde dos empregados, em que periodicidade os exames acontecem e como isso se conecta ao ASO, ao PGR e ao eSocial."
       sections={[
         {
           title: 'O que é o PCMSO',
           body: (
             <>
               <p>
-                PCMSO é a sigla para <strong>Programa de Controle Médico de Saúde Ocupacional</strong>. Previsto na <strong>NR-07</strong>, ele define, conforme os riscos identificados e classificados no PGR, quais exames ocupacionais e ações de vigilância da saúde precisam ser planejados para os empregados.
+                PCMSO é a sigla para <strong>Programa de Controle Médico de Saúde Ocupacional</strong>. Previsto na
+                <strong> NR-07</strong>, ele define, com base nos riscos identificados no PGR, quais exames ocupacionais e
+                quais ações de vigilância da saúde precisam ser planejados para os empregados.
               </p>
               <p>
-                Diferente do que muitos pensam, o PCMSO não é uma lista genérica de exames. É um documento personalizado: uma empresa com trabalho em altura tem exigências distintas de uma empresa de escritório. O programa precisa refletir a realidade da operação.
+                O ponto mais importante é este: <strong>PCMSO não é uma lista padrão de exames</strong>. O programa precisa
+                refletir a realidade da operação. Uma empresa com ruído, calor, agentes químicos, trabalho em altura ou
+                risco ergonômico relevante não pode usar o mesmo desenho médico de um escritório sem essas exposições.
               </p>
               <p>
-                Se a sua busca é entender a <strong>norma</strong>, a página de <strong>NR-07</strong> explica a obrigação legal. Aqui, o foco é a aplicação do programa dentro da rotina da empresa.
+                Se a sua busca é apenas entender a sigla, vale começar no{' '}
+                <Link href="/dicionario/o-que-e-pcmso">dicionário sobre o que é PCMSO</Link>. Se a dúvida é sobre a
+                obrigação normativa, a página de <Link href="/normas/o-que-e-nr-07">NR-07</Link> explica a base legal.
+                Aqui, o foco é mostrar como o programa funciona na prática da empresa.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quando a busca é por significado, obrigação ou contratação',
+          body: (
+            <>
+              <p>Na SERP, “PCMSO” costuma carregar três intenções diferentes:</p>
+              <ul>
+                <li><strong>Significado:</strong> a pessoa quer saber o que a sigla quer dizer.</li>
+                <li><strong>Entendimento técnico:</strong> a empresa quer saber quem precisa, validade, dispensa, assinatura e como o programa funciona.</li>
+                <li><strong>Contratação:</strong> a empresa já precisa revisar, elaborar ou operacionalizar o programa.</li>
+              </ul>
+              <p>
+                Este guia cobre principalmente a segunda intenção e prepara a transição para a terceira. Por isso ele precisa
+                conversar com a definição curta do dicionário, com a página normativa da NR-07 e com a página comercial
+                do serviço, sem repetir exatamente a mesma promessa em todas elas.
               </p>
             </>
           ),
@@ -60,17 +84,35 @@ export default function PCMSOPage() {
           body: (
             <>
               <p>
-                A NR-07 se aplica às organizações que possuem empregados regidos pela CLT. Como regra, o empregador deve garantir a elaboração e a efetiva implantação do PCMSO, custear os procedimentos e indicar o médico do trabalho responsável pelo programa.
+                Como regra, organizações com empregados regidos pela CLT precisam garantir a elaboração e a efetiva
+                implantação do PCMSO. O empregador também precisa custear os procedimentos e indicar o médico responsável
+                pelo programa.
               </p>
               <p>
-                Existe uma exceção importante. A NR-07 prevê que MEI, ME e EPP de <strong>grau de risco 1 ou 2</strong> podem ser dispensadas da elaboração do PCMSO quando prestam as informações digitais previstas na NR-01 e não identificam exposições ocupacionais a agentes físicos, químicos, biológicos nem riscos relacionados a fatores ergonômicos.
+                Existe, porém, uma exceção importante: a NR-07 prevê dispensa de elaboração para alguns MEI, ME e EPP de
+                <strong> grau de risco 1 ou 2</strong>, desde que atendam às condições da NR-01 e não identifiquem as
+                exposições ocupacionais previstas na regra.
               </p>
               <p>
-                A dispensa de elaborar o programa não elimina os exames médicos ocupacionais nem a emissão do ASO. Veja os critérios e limites no guia sobre{' '}
-                <Link href="/rh/declaracao-inexistencia-risco-dir">
-                  Declaração de Inexistência de Riscos (DIR)
-                </Link>
-                .
+                Essa dispensa <strong>não elimina</strong> os exames ocupacionais nem a emissão do ASO. Para entender os
+                critérios com mais precisão, vale ver o guia sobre{' '}
+                <Link href="/rh/declaracao-inexistencia-risco-dir">Declaração de Inexistência de Riscos (DIR)</Link>.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quem assina o PCMSO',
+          body: (
+            <>
+              <p>
+                A organização deve indicar <strong>médico responsável pelo PCMSO</strong>. Em regra, esse papel recai sobre
+                médico do trabalho. Quando não houver médico do trabalho disponível na localidade, a NR-07 admite, nas
+                hipóteses da própria norma, médico de outra especialidade como responsável pelo programa.
+              </p>
+              <p>
+                Na prática, a pergunta “quem assina o PCMSO?” normalmente esconde outra dúvida: se existe responsabilidade
+                técnica real por trás do documento. E é justamente aí que programas genéricos costumam falhar.
               </p>
             </>
           ),
@@ -80,10 +122,13 @@ export default function PCMSOPage() {
           body: (
             <>
               <p>
-                A NR-07 não estabelece uma validade fixa de 12 meses para o PCMSO. O programa precisa acompanhar a realidade da organização e ser revisto quando o PGR indicar mudanças nos riscos, quando surgirem novas atividades ou quando os resultados médicos apontarem necessidade de ajuste.
+                A NR-07 <strong>não estabelece validade fixa de 12 meses para o PCMSO</strong>. O programa precisa acompanhar
+                a realidade da organização e ser revisto sempre que o PGR indicar mudanças nos riscos, quando surgirem novas
+                atividades, quando cargos forem alterados ou quando os resultados médicos apontarem necessidade de ajuste.
               </p>
               <p>
-                O que possui periodicidade anual é o <strong>relatório analítico do PCMSO</strong>, elaborado pelo médico responsável pelo programa. Esse relatório compara os resultados com o período anterior e ajuda a discutir medidas de prevenção com os responsáveis por SST e com a CIPA, quando existente.
+                O que tem lógica anual é o <strong>relatório analítico do PCMSO</strong>, elaborado pelo médico responsável,
+                salvo as hipóteses de dispensa previstas na própria norma.
               </p>
             </>
           ),
@@ -92,28 +137,32 @@ export default function PCMSOPage() {
           title: 'O que o PCMSO deve conter',
           body: (
             <ul>
-              <li><strong>Identificação da empresa:</strong> CNPJ, endereço, ramo de atividade, grau de risco, CNAE.</li>
-              <li><strong>Responsável técnico:</strong> nome e CRM do médico responsável pelo PCMSO.</li>
-              <li><strong>Relação de cargos e riscos:</strong> baseada no PGR vigente — cada cargo com seus agentes de risco identificados.</li>
-              <li><strong>Relação de exames por cargo:</strong> quais exames clínicos e complementares cada função realiza (admissional, periódico, retorno, mudança de risco ocupacional e demissional).</li>
-              <li><strong>Periodicidade dos exames periódicos:</strong> por cargo e por risco. A NR-07 prevê exame anual, bienal ou em intervalo menor definido pelo médico responsável conforme o caso.</li>
-              <li><strong>Planejamento de ações de saúde coletiva:</strong> campanhas, imunização, avaliações ergonômicas, quando aplicável.</li>
-              <li><strong>Relatório analítico anual:</strong> número e tipos de exames realizados, resultados anormais, doenças relacionadas ao trabalho, CATs e comparação com o relatório anterior.</li>
+              <li><strong>Identificação da empresa:</strong> CNPJ, endereço, ramo de atividade, grau de risco e CNAE.</li>
+              <li><strong>Responsável técnico:</strong> nome e CRM do médico responsável pelo programa.</li>
+              <li><strong>Relação de cargos e riscos:</strong> baseada no PGR vigente e ligada à exposição real de cada função.</li>
+              <li><strong>Relação de exames por cargo:</strong> admissional, periódico, retorno ao trabalho, mudança de risco e demissional.</li>
+              <li><strong>Periodicidade dos exames:</strong> definida por cargo, risco e critério médico.</li>
+              <li><strong>Ações de saúde ocupacional:</strong> quando aplicáveis, campanhas, orientações e medidas coletivas.</li>
+              <li><strong>Relatório analítico:</strong> consolidação dos exames, achados e comparação com o período anterior.</li>
             </ul>
           ),
         },
         {
-          title: 'PCMSO e eSocial: a conexão que ninguém explica direito',
+          title: 'PCMSO, ASO, PGR e eSocial: como tudo se conecta',
           body: (
             <>
               <p>
-                O PCMSO orienta os exames ocupacionais informados no <strong>evento S-2220 (Monitoramento da Saúde do Trabalhador)</strong> no eSocial. Os exames clínicos e complementares aplicáveis precisam ser informados conforme o leiaute e os prazos do evento.
+                O PCMSO orienta os exames ocupacionais que sustentam o <strong>ASO</strong> e as informações lançadas no
+                <strong> S-2220</strong> do eSocial. Mas esse fluxo só funciona quando existe coerência técnica.
               </p>
               <p>
-                O problema é que o S-2220 exige consistência: o exame enviado precisa estar previsto no PCMSO do cargo. Se o PCMSO está desatualizado ou não reflete o cargo real do trabalhador, o evento fica inconsistente — o que aumenta o risco de autuação em cruzamento de dados.
+                Se o exame enviado ao eSocial não conversa com o cargo real do trabalhador e com o protocolo previsto no
+                PCMSO, o evento fica inconsistente. E se o <strong>S-2240</strong> informa um risco que não aparece refletido
+                no programa médico, a empresa passa a contar duas histórias diferentes.
               </p>
               <p>
-                Além disso, o <strong>S-2240 (Condições Ambientais do Trabalho)</strong> precisa estar alinhado com o PCMSO para que os exames previstos façam sentido técnico. PGR, PCMSO e eSocial precisam contar a mesma história.
+                Em termos práticos, <strong>PGR, PCMSO, ASO e eSocial</strong> precisam falar a mesma língua. Quando isso não
+                acontece, a inconsistência aparece rápido em fiscalização, perícia, auditoria ou revisão interna.
               </p>
             </>
           ),
@@ -122,23 +171,26 @@ export default function PCMSOPage() {
           title: 'Os erros mais comuns no PCMSO',
           body: (
             <ol>
-              <li><strong>PCMSO genérico, copiado de modelo da internet:</strong> não reflete a operação real. Em fiscalização, não sustenta.</li>
-              <li><strong>PCMSO desatualizado:</strong> foi elaborado quando a empresa tinha outra atividade, outro porte ou outros riscos ocupacionais.</li>
-              <li><strong>Responsável técnico mal definido:</strong> a organização precisa indicar médico do trabalho responsável pelo PCMSO. Se não houver médico do trabalho na localidade, a NR-07 admite a contratação de médico de outra especialidade.</li>
-              <li><strong>Exames periódicos vencidos:</strong> o programa define periodicidade, mas ninguém controla quem está em atraso.</li>
-              <li><strong>PCMSO e PGR desconectados:</strong> o PGR identifica risco químico em determinado cargo, mas o PCMSO não inclui o exame correspondente.</li>
+              <li><strong>PCMSO genérico:</strong> documento copiado de modelo pronto, sem relação real com a operação.</li>
+              <li><strong>Programa desatualizado:</strong> a empresa mudou riscos, atividades ou cargos, mas o programa ficou antigo.</li>
+              <li><strong>Responsável técnico mal definido:</strong> ninguém assume de fato a lógica médica do programa.</li>
+              <li><strong>Exames vencidos:</strong> a periodicidade existe no papel, mas não existe controle operacional.</li>
+              <li><strong>PCMSO e PGR desconectados:</strong> o PGR identifica um risco, mas o programa médico não acompanha esse cenário.</li>
             </ol>
           ),
         },
         {
-          title: 'Como a SERMST estrutura o PCMSO',
+          title: 'Quando faz sentido avançar para a página comercial',
           body: (
             <>
               <p>
-                A SERMST integra o PCMSO com a rotina operacional da empresa: o médico responsável analisa o PGR vigente, mapeia cargos e riscos, define exames e periodicidades, e entrega o programa com cronograma de execução.
+                Quando a empresa já sabe que precisa revisar o programa, definir grade de exames, organizar vencimentos,
+                alinhar S-2220 ou corrigir incoerência com o PGR, a busca deixa de ser apenas informacional.
               </p>
               <p>
-                Na prática, isso significa que a empresa sabe exatamente quais exames estão previstos para cada cargo, quais vencem em qual mês, e como isso se conecta ao envio dos eventos de SST no eSocial — sem depender de planilhas manuais ou controles informais.
+                Nessa hora, o destino correto passa a ser a página de{' '}
+                <Link href="/servicos/pcmso-nr07-programa/sao-paulo">elaboração e gestão de PCMSO</Link>, porque a intenção
+                já está mais próxima de contratação do que de estudo.
               </p>
             </>
           ),
@@ -146,38 +198,40 @@ export default function PCMSOPage() {
       ]}
       faq={[
         {
-          q: 'Quem pode ser médico responsável pelo PCMSO?',
-          a: 'A organização deve indicar médico do trabalho responsável pelo PCMSO. Se não houver médico do trabalho na localidade, a NR-07 permite contratar médico de outra especialidade como responsável pelo programa.',
+          q: 'Quem pode ser o médico responsável pelo PCMSO?',
+          a: 'Como regra, a organização deve indicar médico do trabalho responsável pelo programa. Quando não houver médico do trabalho disponível na localidade, a NR-07 admite médico de outra especialidade nas hipóteses previstas.',
         },
         {
           q: 'O PCMSO precisa ser renovado todo ano?',
-          a: 'A NR-07 não estabelece prazo fixo de validade para o PCMSO. O programa precisa acompanhar os riscos da organização e ser atualizado quando necessário. O relatório analítico do PCMSO, por sua vez, é elaborado anualmente, salvo as dispensas previstas na norma.',
+          a: 'A NR-07 não fixa validade anual para o programa em si. O PCMSO precisa acompanhar a realidade da empresa e ser atualizado quando necessário. O relatório analítico tem lógica anual, salvo as dispensas previstas na norma.',
         },
         {
           q: 'O PCMSO pode ser o mesmo para todas as filiais?',
-          a: 'Não necessariamente. Se as filiais têm CNPJs diferentes ou atividades distintas, o programa pode precisar ser individualizado. Se operam sob o mesmo CNPJ e têm atividades equivalentes, pode-se usar um programa unificado com as especificidades de cada unidade documentadas.',
+          a: 'Nem sempre. Se as unidades têm atividades, riscos ou estruturas diferentes, o programa pode precisar de individualização ou, no mínimo, de especificidades bem documentadas por unidade.',
         },
         {
           q: 'A dispensa do PCMSO elimina a obrigação de fazer exames ocupacionais?',
-          a: 'Não. Mesmo quando MEI, ME ou EPP atende aos critérios de dispensa previstos na NR-07, a empresa continua obrigada a realizar e custear os exames ocupacionais e a emitir o ASO.',
+          a: 'Não. Mesmo quando há dispensa de elaborar o programa nas hipóteses previstas na NR-07, a empresa continua obrigada a realizar e custear os exames ocupacionais e a emitir o ASO.',
         },
         {
           q: 'PCMSO e PPRA são a mesma coisa?',
-          a: 'Não. O PPRA foi substituído pelo PGR (Programa de Gerenciamento de Riscos) com a revisão da NR-01 em 2021. O PGR identifica e controla os riscos; o PCMSO define os exames de vigilância médica baseados nesses riscos. Os dois precisam estar alinhados.',
+          a: 'Não. O PPRA foi substituído pelo PGR com a revisão da NR-01. O PGR identifica e controla riscos; o PCMSO transforma esses riscos em protocolo de vigilância médica.',
+        },
+        {
+          q: 'Para que serve o PCMSO?',
+          a: 'O PCMSO serve para organizar o monitoramento médico ocupacional da empresa com base nos riscos reais de cada função, estruturando exames, periodicidades, ASO e coerência com o eSocial.',
         },
       ]}
       sidebarTitle="Seu PCMSO reflete a operação atual?"
-      sidebarHook="A SERMST revisa e atualiza o PCMSO da sua empresa — alinhado com o PGR vigente e com os eventos de SST do eSocial. Sem enrolação, sem modelo genérico."
+      sidebarHook="A SERMST revisa e atualiza o PCMSO da sua empresa, alinhando o programa ao PGR vigente e aos eventos de SST do eSocial. Sem enrolação e sem modelo genérico."
       sidebarCtaLabel="Revisar meu PCMSO"
       related={[
         { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
         { label: 'O que é PCMSO? Significado e aplicação prática', href: '/dicionario/o-que-e-pcmso' },
-        { label: 'Espirometria ocupacional no PCMSO', href: '/saude/espirometria-ocupacional' },
-        { label: 'Eletrocardiograma ocupacional no PCMSO', href: '/saude/eletrocardiograma-ocupacional' },
-        { label: 'Avaliação psicossocial ocupacional (NR-35 e NR-01)', href: '/saude/avaliacao-psicossocial-ocupacional' },
-        { label: 'DIR: quando pode haver dispensa de elaborar PCMSO', href: '/rh/declaracao-inexistencia-risco-dir' },
-        { label: 'Contratar elaboração e gestão de PCMSO', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
         { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
+        { label: 'DIR: quando pode haver dispensa de elaborar PCMSO', href: '/rh/declaracao-inexistencia-risco-dir' },
+        { label: 'Importância do exame periódico ocupacional', href: '/saude/importancia-do-exame-periodico' },
+        { label: 'Contratar elaboração e gestão de PCMSO', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
       ]}
     />

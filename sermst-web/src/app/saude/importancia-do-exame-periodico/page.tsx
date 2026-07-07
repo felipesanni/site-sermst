@@ -78,7 +78,7 @@ export default function ImportanciaDoExamePeriodicoPage() {
     mainEntityOfPage: pageUrl,
     inLanguage: 'pt-BR',
     datePublished: '2024-11-01',
-    dateModified: '2026-06-10',
+    dateModified: '2026-07-07',
     author: {
       '@type': 'Organization',
       name: 'SERMST',
@@ -134,14 +134,13 @@ export default function ImportanciaDoExamePeriodicoPage() {
                 O que é o exame periódico ocupacional e para que serve
               </h1>
               <p className="max-w-3xl border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
-                O exame periódico ajuda a empresa a acompanhar a saúde do trabalhador ao longo do
-                tempo. Quando ele atrasa ou vira mera formalidade, o problema costuma aparecer em
-                afastamento, falha de PCMSO, retrabalho do RH e risco jurídico desnecessário.
+                O exame periódico ajuda a empresa a acompanhar a saúde do trabalhador ao longo do tempo. Quando ele atrasa
+                ou vira mera formalidade, o problema costuma aparecer em falha de PCMSO, retrabalho do RH e risco jurídico desnecessário.
               </p>
               <div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-300">
                 <span className="inline-flex items-center gap-2">
                   <CalendarDays className="h-4 w-4 text-accent-pink" />
-                  Atualizado em 10 de junho de 2026
+                  Atualizado em 7 de julho de 2026
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <Clock3 className="h-4 w-4 text-accent-pink" />
@@ -156,26 +155,18 @@ export default function ImportanciaDoExamePeriodicoPage() {
       <div className="mx-auto grid w-full max-w-[1280px] gap-14 px-6 py-20 lg:grid-cols-[minmax(0,1fr)_340px] lg:px-8">
         <main className="min-w-0">
           <FadeIn delay={0.05}>
-            <section
-              id="resposta-direta"
-              className="mb-12 rounded-3xl border border-brand-100 bg-brand-50/60 p-8 shadow-sm"
-            >
+            <section id="resposta-direta" className="mb-12 rounded-3xl border border-brand-100 bg-brand-50/60 p-8 shadow-sm">
               <div className="mb-5 flex items-center gap-3">
                 <CheckCircle2 className="h-6 w-6 text-brand-500" />
                 <h2 className="text-2xl font-black text-brand-900">Resposta direta</h2>
               </div>
               <p className="text-lg leading-relaxed text-slate-700">
-                O exame periódico ocupacional é o acompanhamento médico feito durante o vínculo do
-                trabalhador para verificar se a atividade está afetando sua saúde e se o cronograma
-                previsto no{' '}
-                <Link
-                  href="/saude/pcmso-programa-controle-medico"
-                  className="font-bold text-accent-pink hover:underline"
-                >
+                O exame periódico ocupacional é o acompanhamento médico feito durante o vínculo do trabalhador para verificar
+                se a atividade está afetando sua saúde e se o cronograma previsto no{' '}
+                <Link href="/saude/pcmso-programa-controle-medico" className="font-bold text-accent-pink hover:underline">
                   PCMSO
                 </Link>{' '}
-                está sendo cumprido. A periodicidade e os exames complementares não devem ser
-                copiados de outra empresa: eles precisam conversar com os riscos reais da função,
+                está sendo cumprido. A periodicidade e os exames complementares precisam conversar com os riscos reais da função,
                 com a NR-07 e com a rotina operacional do negócio.
               </p>
             </section>
@@ -203,26 +194,43 @@ export default function ImportanciaDoExamePeriodicoPage() {
           </FadeIn>
 
           <div className="space-y-12">
+            <FadeIn delay={0.1}>
+              <section className="scroll-mt-28">
+                <h2 className="mb-5 text-3xl font-black text-brand-900">Quando a busca é por rotina, ASO ou PCMSO</h2>
+                <div className="prose prose-lg max-w-none prose-p:text-slate-700 prose-li:text-slate-700">
+                  <p>No cluster médico, “exame periódico” costuma aparecer em três cenários:</p>
+                  <ul>
+                    <li><strong>Rotina operacional:</strong> a empresa quer saber prazo, convocação e organização.</li>
+                    <li><strong>Documento:</strong> quer entender onde o ASO entra e como comprovar o acompanhamento.</li>
+                    <li><strong>Programa médico:</strong> precisa revisar o PCMSO para corrigir periodicidade, exames e vencimentos.</li>
+                  </ul>
+                  <p>
+                    Por isso, esta página conversa diretamente com{' '}
+                    <Link href="/saude/aso-atestado-saude-ocupacional" className="font-bold text-accent-pink hover:underline">
+                      ASO
+                    </Link>{' '}
+                    e <Link href="/saude/pcmso-programa-controle-medico" className="font-bold text-accent-pink hover:underline">
+                      PCMSO
+                    </Link>, em vez de tratar o periódico como assunto isolado.
+                  </p>
+                </div>
+              </section>
+            </FadeIn>
+
             <FadeIn delay={0.12}>
               <section id="o-que-e" className="scroll-mt-28">
-                <h2 className="mb-5 text-3xl font-black text-brand-900">
-                  O que é o exame periódico ocupacional
-                </h2>
+                <h2 className="mb-5 text-3xl font-black text-brand-900">O que é o exame periódico ocupacional</h2>
                 <div className="prose prose-lg max-w-none prose-p:text-slate-700 prose-strong:text-brand-900">
                   <p>
-                    Pense no exame periódico como uma revisão de rotina. Assim como um carro precisa
-                    ser acompanhado para não quebrar de surpresa, o trabalhador também precisa de
-                    acompanhamento para que a empresa não descubra tarde demais sinais de adoecimento,
-                    sobrecarga ou exposição ocupacional mal controlada.
+                    Pense no exame periódico como uma revisão de rotina. Assim como um carro precisa ser acompanhado para
+                    não quebrar de surpresa, o trabalhador também precisa de acompanhamento para que a empresa não descubra
+                    tarde demais sinais de adoecimento, sobrecarga ou exposição ocupacional mal controlada.
                   </p>
                   <p>
-                    Ele não existe para gerar papel. Ele existe para mostrar, ao longo do tempo, se
-                    a função está sendo exercida com segurança e se o monitoramento de saúde está
-                    coerente com o risco. Ao final, a empresa emite o{' '}
-                    <Link
-                      href="/saude/aso-atestado-saude-ocupacional"
-                      className="font-bold text-accent-pink hover:underline"
-                    >
+                    Ele não existe para gerar papel. Ele existe para mostrar, ao longo do tempo, se a função está sendo
+                    exercida com segurança e se o monitoramento de saúde está coerente com o risco. Ao final, a empresa
+                    emite o{' '}
+                    <Link href="/saude/aso-atestado-saude-ocupacional" className="font-bold text-accent-pink hover:underline">
                       ASO
                     </Link>{' '}
                     correspondente ao atendimento.
@@ -233,20 +241,17 @@ export default function ImportanciaDoExamePeriodicoPage() {
 
             <FadeIn delay={0.16}>
               <section id="periodicidade" className="scroll-mt-28">
-                <h2 className="mb-5 text-3xl font-black text-brand-900">
-                  Quem define a periodicidade
-                </h2>
+                <h2 className="mb-5 text-3xl font-black text-brand-900">Quem define a periodicidade</h2>
                 <div className="prose prose-lg max-w-none prose-p:text-slate-700 prose-strong:text-brand-900 prose-li:text-slate-700">
                   <p>
-                    A periodicidade não deve ser decidida por costume nem por agenda vazia da
-                    clínica. Ela precisa seguir o PCMSO, a avaliação médica e os riscos ocupacionais
-                    mapeados na empresa.
+                    A periodicidade não deve ser decidida por costume nem por agenda vazia da clínica. Ela precisa seguir
+                    o <Link href="/saude/pcmso-programa-controle-medico" className="font-bold text-accent-pink hover:underline">
+                      PCMSO
+                    </Link>, a avaliação médica e os riscos ocupacionais mapeados na empresa.
                   </p>
                   <p>
-                    Em outras palavras: o ritmo do periódico precisa conversar com a realidade da
-                    operação. Empresa com exposições relevantes, função mais crítica ou histórico de
-                    risco costuma exigir um acompanhamento mais atento do que uma rotina
-                    administrativa mais simples.
+                    Em outras palavras: o ritmo do periódico precisa conversar com a realidade da operação. Empresa com
+                    exposições relevantes, função mais crítica ou histórico de risco costuma exigir acompanhamento mais atento.
                   </p>
                   <ul>
                     <li>A NR-07 dá a base legal do acompanhamento médico ocupacional.</li>
@@ -259,14 +264,11 @@ export default function ImportanciaDoExamePeriodicoPage() {
 
             <FadeIn delay={0.2}>
               <section id="quais-exames" className="scroll-mt-28">
-                <h2 className="mb-5 text-3xl font-black text-brand-900">
-                  Quais exames podem fazer parte do periódico
-                </h2>
+                <h2 className="mb-5 text-3xl font-black text-brand-900">Quais exames podem fazer parte do periódico</h2>
                 <div className="prose prose-lg max-w-none prose-p:text-slate-700 prose-strong:text-brand-900 prose-li:text-slate-700">
                   <p>
-                    O exame periódico não é sempre igual. O núcleo costuma ser o exame clínico
-                    ocupacional, mas os complementares dependem do risco e do que o programa médico
-                    precisa monitorar.
+                    O exame periódico não é sempre igual. O núcleo costuma ser o exame clínico ocupacional, mas os
+                    complementares dependem do risco e do que o programa médico precisa monitorar.
                   </p>
                   <ul>
                     <li>Audiometria, quando há exposição a ruído.</li>
@@ -275,9 +277,8 @@ export default function ImportanciaDoExamePeriodicoPage() {
                     <li>ECG, acuidade visual ou outros complementares, conforme função e exposição.</li>
                   </ul>
                   <p>
-                    O erro comum é transformar isso numa tabela copiada. O caminho seguro é fazer com
-                    que o exame acompanhe o risco real do cargo e converse com o restante da gestão
-                    de SST.
+                    O erro comum é transformar isso numa tabela copiada. O caminho seguro é fazer com que o exame acompanhe
+                    o risco real do cargo e converse com o restante da gestão de SST.
                   </p>
                 </div>
               </section>
@@ -285,19 +286,16 @@ export default function ImportanciaDoExamePeriodicoPage() {
 
             <FadeIn delay={0.24}>
               <section id="atraso" className="scroll-mt-28">
-                <h2 className="mb-5 text-3xl font-black text-brand-900">
-                  O que acontece se a empresa atrasa o exame periódico
-                </h2>
+                <h2 className="mb-5 text-3xl font-black text-brand-900">O que acontece se a empresa atrasa o exame periódico</h2>
                 <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6">
                   <div className="mb-4 flex items-center gap-3">
                     <AlertTriangle className="h-5 w-5 text-amber-700" />
                     <p className="text-lg font-black text-amber-900">O risco não é só multa.</p>
                   </div>
                   <p className="leading-relaxed text-amber-900/90">
-                    Quando o exame periódico vence, a empresa perde previsibilidade. O RH corre
-                    atrás do prazo, o histórico médico fica mais frágil, o PCMSO perde disciplina e
-                    a organização fica menos preparada para auditoria, fiscalização ou discussão
-                    trabalhista sobre monitoramento da saúde.
+                    Quando o exame periódico vence, a empresa perde previsibilidade. O RH corre atrás do prazo, o histórico
+                    médico fica mais frágil, o PCMSO perde disciplina e a organização fica menos preparada para auditoria,
+                    fiscalização ou discussão trabalhista sobre monitoramento da saúde.
                   </p>
                 </div>
                 <div className="prose prose-lg mt-6 max-w-none prose-p:text-slate-700 prose-li:text-slate-700">
@@ -313,14 +311,11 @@ export default function ImportanciaDoExamePeriodicoPage() {
 
             <FadeIn delay={0.28}>
               <section id="organizacao" className="scroll-mt-28">
-                <h2 className="mb-5 text-3xl font-black text-brand-900">
-                  Como organizar isso na prática sem virar bagunça
-                </h2>
+                <h2 className="mb-5 text-3xl font-black text-brand-900">Como organizar isso na prática sem virar bagunça</h2>
                 <div className="prose prose-lg max-w-none prose-p:text-slate-700 prose-strong:text-brand-900 prose-li:text-slate-700">
                   <p>
-                    O melhor fluxo não é o mais bonito no papel. É o que faz o RH saber quem vence,
-                    quando vence e qual exame precisa ser convocado, sem depender de memória ou de
-                    planilha perdida.
+                    O melhor fluxo não é o mais bonito no papel. É o que faz o RH saber quem vence, quando vence e qual
+                    exame precisa ser convocado, sem depender de memória ou de planilha perdida.
                   </p>
                   <ol>
                     <li>Defina um PCMSO coerente com os riscos atuais da empresa.</li>
@@ -330,9 +325,8 @@ export default function ImportanciaDoExamePeriodicoPage() {
                     <li>Revise o fluxo sempre que cargo, risco ou operação mudarem.</li>
                   </ol>
                   <p>
-                    Quando a empresa cresce, a melhor saída costuma ser tirar isso do improviso e
-                    colocar em uma rotina acompanhada por equipe que enxergue clínica, documento e
-                    operação ao mesmo tempo.
+                    Quando a empresa cresce, a melhor saída costuma ser tirar isso do improviso e colocar em uma rotina
+                    acompanhada por equipe que enxergue clínica, documento e operação ao mesmo tempo.
                   </p>
                 </div>
               </section>
@@ -345,12 +339,10 @@ export default function ImportanciaDoExamePeriodicoPage() {
             <div className="rounded-3xl bg-brand-900 p-8 text-white shadow-xl">
               <h2 className="mb-4 text-2xl font-black">Quando vale sair da leitura e agir</h2>
               <p className="mb-6 text-sm leading-relaxed text-slate-300">
-                Se a empresa está perdendo prazo de periódico, sem clareza sobre quem precisa ser
-                convocado ou com dúvida se o PCMSO está coerente, já vale organizar isso com apoio
-                técnico.
+                Se a empresa está perdendo prazo de periódico, sem clareza sobre quem precisa ser convocado ou com dúvida se o PCMSO está coerente, já vale organizar isso com apoio técnico.
               </p>
-              <Link href="/contato" className="btn-primary-safe flex w-full justify-center">
-                Falar com a SERMST
+              <Link href="/servicos/pcmso-nr07-programa/sao-paulo" className="btn-primary-safe flex w-full justify-center">
+                Organizar meu PCMSO
               </Link>
             </div>
           </FadeIn>
@@ -360,35 +352,23 @@ export default function ImportanciaDoExamePeriodicoPage() {
               <h2 className="mb-4 text-xl font-black text-brand-900">Leituras relacionadas</h2>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <Link
-                    href="/saude/exame-periodico-ocupacional"
-                    className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
-                  >
-                    Periodicidade, grau de risco e como organizar o programa
+                  <Link href="/normas/o-que-e-nr-07" className="font-semibold text-slate-700 hover:text-accent-pink hover:underline">
+                    NR-07: a regra por trás dos periódicos
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/saude/exame-retorno-ao-trabalho"
-                    className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
-                  >
-                    Exame de retorno ao trabalho
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/saude/pcmso-programa-controle-medico"
-                    className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
-                  >
+                  <Link href="/saude/pcmso-programa-controle-medico" className="font-semibold text-slate-700 hover:text-accent-pink hover:underline">
                     PCMSO: programa de controle médico
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/saude/aso-atestado-saude-ocupacional"
-                    className="font-semibold text-slate-700 hover:text-accent-pink hover:underline"
-                  >
-                    O que é ASO e como ele protege a empresa
+                  <Link href="/saude/aso-atestado-saude-ocupacional" className="font-semibold text-slate-700 hover:text-accent-pink hover:underline">
+                    ASO: o documento que fecha o atendimento
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/saude/exame-retorno-ao-trabalho" className="font-semibold text-slate-700 hover:text-accent-pink hover:underline">
+                    Exame de retorno ao trabalho
                   </Link>
                 </li>
               </ul>

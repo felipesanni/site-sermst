@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -32,21 +33,44 @@ export default function ASOPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-07',
       }}
-
       h1="ASO: o que é, quando emitir e por que ele protege a empresa"
-      intro="O Atestado de Saúde Ocupacional é o documento que fecha o ciclo de cada exame ocupacional. Se a dúvida é só conceitual, o dicionário resolve. Aqui, o foco é quando emitir, como usar e onde a empresa se expõe quando o ASO está errado ou vencido."
+      intro="O Atestado de Saúde Ocupacional fecha o ciclo de cada exame ocupacional. Se a dúvida é apenas conceitual, o dicionário resolve rápido. Aqui, o foco é outro: quando emitir, o que precisa constar, como o ASO conversa com PCMSO, NR-07 e eSocial e onde a empresa se expõe quando esse documento está errado, vencido ou desconectado da operação."
       sections={[
         {
           title: 'O que é o ASO',
           body: (
             <>
               <p>
-                O ASO é o documento emitido pelo <strong>médico que realiza o exame clínico ocupacional</strong> — admissional, periódico, de retorno ao trabalho, de mudança de risco ocupacional ou demissional. Ele registra formalmente se o trabalhador está <strong>apto ou inapto</strong> para exercer a função, com base nos exames clínicos e complementares realizados.
+                O ASO é o documento emitido pelo <strong>médico que realiza o exame clínico ocupacional</strong>:
+                admissional, periódico, de retorno ao trabalho, de mudança de risco ocupacional ou demissional. Ele
+                registra formalmente se o trabalhador está <strong>apto ou inapto</strong> para exercer a função, com
+                base nos exames clínicos e complementares realizados.
               </p>
               <p>
-                Tecnicamente, o ASO não é só um papel: é a <strong>evidência jurídica</strong> de que a empresa avaliou a saúde do trabalhador naquele momento. É essa evidência que protege o empregador em casos de ação trabalhista por doença ocupacional, perícia do INSS ou fiscalização do MTE.
+                Tecnicamente, o ASO não é só um papel. Ele é a <strong>evidência documental</strong> de que a empresa
+                avaliou a saúde do trabalhador naquele momento. É isso que fortalece a defesa do empregador em
+                fiscalizações, discussões trabalhistas e revisões previdenciárias.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quando a busca é por significado, documento ou operação',
+          body: (
+            <>
+              <p>Em SEO, “ASO” costuma carregar três intenções diferentes:</p>
+              <ul>
+                <li><strong>Significado:</strong> o usuário quer saber o que a sigla quer dizer.</li>
+                <li><strong>Entendimento técnico:</strong> quer saber quando emitir, o que deve constar e como o documento funciona.</li>
+                <li><strong>Execução:</strong> a empresa já precisa emitir, controlar vencimento ou integrar o envio ao eSocial.</li>
+              </ul>
+              <p>
+                Se a busca é só conceitual, a página mais curta é o{' '}
+                <Link href="/dicionario/o-que-e-aso">verbete do dicionário sobre ASO</Link>. Se a dúvida é normativa,
+                a base está na <Link href="/normas/o-que-e-nr-07">NR-07</Link>. Este guia cobre o meio do caminho:
+                entender o documento no contexto real da rotina ocupacional.
               </p>
             </>
           ),
@@ -56,10 +80,10 @@ export default function ASOPage() {
           body: (
             <ul>
               <li><strong>Exame admissional:</strong> antes do início das atividades. Sem ASO admissional, o trabalhador não deveria começar a trabalhar.</li>
-              <li><strong>Exame periódico:</strong> conforme a periodicidade definida no PCMSO para o cargo. Pode ser anual, semestral ou bienal dependendo do risco.</li>
-              <li><strong>Exame de retorno ao trabalho:</strong> obrigatório antes do retorno quando o afastamento por doença ou acidente, ocupacional ou não, for igual ou superior a 30 dias.</li>
+              <li><strong>Exame periódico:</strong> conforme a periodicidade definida no PCMSO para o cargo.</li>
+              <li><strong>Exame de retorno ao trabalho:</strong> antes do retorno quando o afastamento por doença ou acidente for igual ou superior a 30 dias.</li>
               <li><strong>Exame de mudança de risco ocupacional:</strong> antes da mudança, adequando o controle médico aos novos riscos.</li>
-              <li><strong>Exame demissional:</strong> em até 10 dias contados do término do contrato, podendo ser dispensado se o exame clínico ocupacional mais recente ocorreu há menos de 135 dias para grau de risco 1 ou 2, ou 90 dias para grau de risco 3 ou 4.</li>
+              <li><strong>Exame demissional:</strong> dentro do fluxo correto de desligamento, observando os critérios de dispensa previstos na norma.</li>
             </ul>
           ),
         },
@@ -73,13 +97,27 @@ export default function ASOPage() {
                 <li>Nome e CNPJ da empresa</li>
                 <li>Função e setor do trabalhador</li>
                 <li>Riscos ocupacionais específicos do cargo</li>
-                <li>Indicação dos procedimentos médicos realizados (exames clínicos e complementares)</li>
+                <li>Indicação dos procedimentos médicos realizados</li>
                 <li>Conclusão: apto ou inapto para a função</li>
-                <li>Nome e CRM do médico responsável pelo PCMSO, se houver</li>
+                <li>Nome e CRM do médico responsável pelo PCMSO, quando houver</li>
                 <li>Data, CRM e assinatura do médico que realizou o exame clínico</li>
               </ul>
+              <p>ASO sem todos esses campos é tecnicamente fraco, mesmo que o atendimento médico tenha existido.</p>
+            </>
+          ),
+        },
+        {
+          title: 'ASO, PCMSO e NR-07: por que não dá para separar',
+          body: (
+            <>
               <p>
-                ASO sem todos esses campos é tecnicamente inválido — mesmo que o exame tenha sido realizado.
+                O ASO não vive sozinho. Ele depende do <Link href="/saude/pcmso-programa-controle-medico">PCMSO</Link>,
+                que organiza os exames conforme os riscos, e da <Link href="/normas/o-que-e-nr-07">NR-07</Link>, que
+                dá a base legal do monitoramento da saúde ocupacional.
+              </p>
+              <p>
+                Quando o programa médico, o risco informado e o ASO emitido contam histórias diferentes, a empresa fica
+                sem coerência documental. E é exatamente aí que fiscalização, perícia e eSocial costumam encontrar problema.
               </p>
             </>
           ),
@@ -89,39 +127,61 @@ export default function ASOPage() {
           body: (
             <>
               <p>
-                O <strong>evento S-2220 (Monitoramento da Saúde do Trabalhador)</strong> registra no eSocial as informações dos exames ocupacionais aplicáveis. O envio deve seguir o leiaute e os prazos vigentes do evento.
+                O <strong>evento S-2220</strong> registra no eSocial as informações dos exames ocupacionais aplicáveis.
+                O envio precisa conversar com o ASO físico, com o protocolo do PCMSO e com a realidade da função.
               </p>
               <p>
-                O S-2220 inclui: tipo de exame, data, resultado de aptidão, e os exames complementares realizados com seus resultados. Envio fora do prazo ou com dados divergentes do ASO físico gera inconsistência — o que pode resultar em notificação ou multa em cruzamento de dados.
-              </p>
-              <p>
-                Empresas que acumulam ASOs pendentes de envio criam um passivo silencioso: quanto mais tempo passa, maior o volume de eventos atrasados e maior o risco de penalidade em bloco.
-              </p>
-            </>
-          ),
-        },
-        {
-          title: 'ASO vencido: o risco que muitos subestimam',
-          body: (
-            <>
-              <p>
-                ASO periódico vencido significa que, do ponto de vista legal, a empresa <strong>não tem evidência</strong> de que monitorou a saúde do trabalhador no período. Se nesse intervalo o trabalhador desenvolver qualquer condição de saúde — ainda que não relacionada ao trabalho — a ausência de ASO válido facilita a atribuição de responsabilidade à empresa.
-              </p>
-              <p>
-                Em empresas com alta rotatividade ou muitos funcionários, controlar os vencimentos manualmente é impraticável. O controle precisa ser sistemático: planilha com alertas, ou sistema integrado à clínica que acompanha a periodicidade do PCMSO de cada cargo.
+                Se o exame enviado ao eSocial divergir do que está no ASO, ou se o ASO não refletir corretamente a
+                exposição do trabalhador, a inconsistência aparece. Empresas que acumulam eventos atrasados criam um
+                passivo silencioso que cresce com o tempo.
               </p>
             </>
           ),
         },
         {
-          title: 'ASO de resultado inapto: o que fazer',
+          title: 'ASO vencido: o risco que muita empresa subestima',
           body: (
             <>
               <p>
-                Quando o ASO conclui <strong>inapto</strong>, o trabalhador não pode exercer aquela função até que a situação seja resolvida. O médico do trabalho indica o caminho: tratamento, readaptação, mudança de função, ou afastamento.
+                ASO periódico vencido significa que, do ponto de vista documental, a empresa <strong>perde evidência</strong>
+                de que acompanhou a saúde do trabalhador no período certo. Se surgir qualquer questionamento, o vazio
+                de monitoramento enfraquece a defesa.
               </p>
               <p>
-                O erro mais comum é ignorar o resultado inapto ou pressionar o médico a emitir ASO apto sem a devida avaliação. Além de antiético, esse caminho cria responsabilidade direta para a empresa em caso de acidente ou agravamento posterior.
+                Em empresas com alta rotatividade ou muitos empregados, controlar isso manualmente costuma falhar.
+                O caminho seguro é organizar vencimentos com lógica de programa e não só com agenda de última hora.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'ASO com resultado inapto: o que fazer',
+          body: (
+            <>
+              <p>
+                Quando o ASO conclui <strong>inapto</strong>, o trabalhador não pode exercer aquela função até que a
+                situação seja tratada adequadamente. O médico do trabalho pode indicar tratamento, readaptação, mudança
+                de função ou afastamento, conforme o caso.
+              </p>
+              <p>
+                O erro mais grave é tratar o documento como mero obstáculo burocrático e pressionar por aptidão sem base
+                técnica. Isso transfere risco direto para a empresa.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quando a busca já deixou de ser só leitura',
+          body: (
+            <>
+              <p>
+                Quando a empresa precisa emitir ASO admissional rápido, controlar vencimentos de periódicos, alinhar o
+                documento ao eSocial ou corrigir falhas do PCMSO, a intenção já não é só informacional.
+              </p>
+              <p>
+                Nessa hora, faz sentido avançar para páginas mais operacionais, como a de{' '}
+                <Link href="/servicos/exame-admissional-expresso/sao-paulo">exame admissional com ASO</Link> ou a de{' '}
+                <Link href="/servicos/pcmso-nr07-programa/sao-paulo">gestão de PCMSO</Link>, conforme o problema principal.
               </p>
             </>
           ),
@@ -130,35 +190,35 @@ export default function ASOPage() {
       faq={[
         {
           q: 'O ASO admissional pode ser feito depois que o funcionário começou a trabalhar?',
-          a: 'Não. A NR-07 determina que o exame admissional e o ASO devem ser realizados antes do início das atividades. Funcionário trabalhando sem ASO válido coloca a empresa em infração e elimina a proteção que o documento oferece.',
+          a: 'Não. A lógica da NR-07 exige que o exame admissional e o ASO venham antes do início das atividades. Colocar alguém para trabalhar sem esse documento enfraquece a proteção da empresa.',
         },
         {
           q: 'Qual médico pode emitir ASO?',
-          a: 'Para cada exame clínico ocupacional, o médico que realizou o exame emite o ASO. O documento também deve informar o médico responsável pelo PCMSO, quando houver.',
+          a: 'O ASO é emitido pelo médico que realizou o exame clínico ocupacional. O documento também deve apontar o médico responsável pelo PCMSO, quando houver.',
         },
         {
           q: 'O trabalhador tem direito a receber uma via do ASO?',
-          a: 'Sim. A NR-07 determina que o ASO seja comprovadamente disponibilizado ao trabalhador. A empresa precisa manter evidência dessa disponibilização.',
+          a: 'Sim. A empresa precisa disponibilizar o documento ao trabalhador e manter evidência dessa entrega ou disponibilização.',
         },
         {
-          q: 'ASO de empresa diferente tem validade?',
-          a: 'O ASO de um emprego anterior não tem validade para o novo vínculo. Cada contratação exige exame admissional próprio, pois os riscos do novo cargo podem ser diferentes.',
+          q: 'ASO de empresa anterior tem validade para o novo vínculo?',
+          a: 'Não. Cada contratação exige avaliação própria, porque os riscos da nova função e da nova empresa podem ser diferentes.',
         },
         {
           q: 'Qual a diferença entre ASO e atestado médico comum?',
-          a: 'São documentos distintos. O atestado médico comum costuma justificar ausência por motivo de saúde. O ASO registra a conclusão de aptidão ocupacional e é emitido pelo médico que realizou o exame clínico, considerando os riscos relacionados ao trabalho.',
+          a: 'O atestado comum costuma justificar ausência por motivo de saúde. O ASO registra aptidão ocupacional para uma função dentro da lógica da medicina do trabalho.',
         },
       ]}
-      sidebarTitle="Seus ASOs estão em dia e no eSocial?"
-      sidebarHook="A SERMST emite ASO no mesmo dia para admissões urgentes e controla o vencimento dos periódicos da sua empresa — integrado ao envio do S-2220 no eSocial."
-      sidebarCtaLabel="Solicitar ASO admissional"
+      sidebarTitle="Seus ASOs estão em dia e coerentes com o eSocial?"
+      sidebarHook="A SERMST emite ASO com lógica ocupacional, apoia o controle de vencimentos e ajuda a reduzir inconsistências entre documento, PCMSO e S-2220."
+      sidebarCtaLabel="Organizar meus ASOs"
       related={[
         { label: 'ASO no dicionário: definição rápida', href: '/dicionario/o-que-e-aso' },
-        { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
-        { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
+        { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
+        { label: 'Exame periódico ocupacional: prazo e rotina', href: '/saude/importancia-do-exame-periodico' },
+        { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
-        { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },
       ]}
     />
   );

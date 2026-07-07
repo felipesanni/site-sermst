@@ -112,6 +112,30 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
+
+                {slug === 'o-que-e-ppp' && (
+                  <div className="my-12 grid gap-6 md:grid-cols-2">
+                    <Link href="/dicionario/o-que-e-ltcat" className="rounded-2xl border border-slate-200 bg-white p-7 no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
+                      <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                        Ponte técnica
+                      </span>
+                      <h2 className="mt-0 text-2xl font-black text-brand-900">O que significa LTCAT e por que ele sustenta o PPP</h2>
+                      <p className="mb-0 text-base leading-relaxed text-slate-700">
+                        Se a dúvida ainda está na diferença entre documento final e base técnica, este é o melhor próximo passo.
+                      </p>
+                    </Link>
+
+                    <Link href="/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo" className="rounded-2xl bg-brand-900 p-7 text-white no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
+                      <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                        Intenção comercial
+                      </span>
+                      <h2 className="mt-0 text-2xl font-black text-white">Precisa revisar a base do PPP, S-2240 e aposentadoria especial?</h2>
+                      <p className="mb-0 text-base leading-relaxed text-slate-300">
+                        Quando o problema já é coerência documental, o LTCAT costuma ser a peça mais crítica para corrigir a história toda.
+                      </p>
+                    </Link>
+                  </div>
+                )}
               </div>
             </FadeIn>
           </div>

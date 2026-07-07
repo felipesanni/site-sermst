@@ -17,7 +17,7 @@ function getServiceSearchLabel(servico: string, fallback: string) {
     return 'Audiometria Ocupacional';
   }
   if (servico === 'treinamentos-nrs-cipa-brigada') {
-    return 'Treinamentos corporativos de NRs';
+    return 'Treinamentos de NRs, CIPA e brigada';
   }
 
   return fallback;
@@ -247,6 +247,132 @@ export default async function ServicoPage({
             </FadeIn>
           </div>
 
+          {servico === 'treinamentos-nrs-cipa-brigada' && (
+            <div className="grid gap-6 lg:grid-cols-2">
+              <FadeIn direction="right">
+                <Link
+                  href="/normas/nr-05-cipa"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    NR-05: quando a empresa precisa constituir CIPA ou nomear designado
+                  </h2>
+                  <p className="mb-6 leading-relaxed text-slate-700">
+                    Se a dúvida ainda é sobre obrigatoriedade, grau de risco, eleição ou carga horária, a página da NR-05 ajuda a separar entendimento normativo de contratação do treinamento.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Entender a NR-05
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={0.08}>
+                <Link
+                  href="/rh/calculadora-cnae-grau-de-risco"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    CNAE e grau de risco: como definir a carga horária correta do treinamento
+                  </h2>
+                  <p className="mb-6 leading-relaxed text-slate-700">
+                    Em CIPA e designado, a carga horária não é genérica. O enquadramento certo evita treinamento insuficiente, certificado fraco e problema em fiscalização.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Validar o enquadramento
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+            </div>
+          )}
+
+          {servico === 'pcmso-nr07-programa' && (
+            <div className="grid gap-6 lg:grid-cols-2">
+              <FadeIn direction="right">
+                <Link
+                  href="/normas/o-que-e-nr-07"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    NR-07: o que a norma exige antes da contratação do serviço
+                  </h2>
+                  <p className="mb-6 leading-relaxed text-slate-700">
+                    Quando a empresa ainda está validando obrigação, exames ocupacionais, ASO e relação com o eSocial, a página da NR-07 ajuda a consolidar a base normativa antes da decisão comercial.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Entender a NR-07
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={0.08}>
+                <Link
+                  href="/rh/declaracao-inexistencia-risco-dir"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    DIR: quando pode existir dispensa de elaborar PCMSO
+                  </h2>
+                  <p className="mb-6 leading-relaxed text-slate-700">
+                    Muitas empresas chegam à página comercial sem saber se realmente precisam elaborar o programa. A DIR ajuda a separar simplificação legítima de risco de enquadramento errado.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Validar a dispensa
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+            </div>
+          )}
+
+          {servico === 'ltcat-laudo-tecnico-previdenciario' && (
+            <div className="grid gap-6 lg:grid-cols-2">
+              <FadeIn direction="right">
+                <Link
+                  href="/dicionario/o-que-e-ltcat"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    O que significa LTCAT e quando a busca ainda é conceitual
+                  </h2>
+                  <p className="mb-6 leading-relaxed text-slate-700">
+                    Parte das buscas ainda está tentando entender sigla, obrigatoriedade, assinatura e diferença para PPP. A definição curta ajuda a separar intenção informacional de contratação.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Ver significado do LTCAT
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={0.08}>
+                <Link
+                  href="/normas/ppp-eletronico"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Leitura complementar</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    PPP eletrônico, S-2240 e aposentadoria especial: onde o LTCAT entra
+                  </h2>
+                  <p className="mb-6 leading-relaxed text-slate-700">
+                    Quem chega buscando LTCAT geralmente quer entender como o laudo sustenta PPP, eSocial e discussão previdenciária. Essa ponte ajuda o Google a ler o cluster completo.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Entender PPP e S-2240
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+            </div>
+          )}
+
           {servico === 'gestao-esocial-s2220-s2240' && (
             <div className="grid gap-6 lg:grid-cols-2">
               <FadeIn direction="right">
@@ -333,7 +459,7 @@ export default async function ServicoPage({
                     Grade técnica completa
                   </span>
                   <h2 className="text-4xl font-black tracking-tighter italic md:text-5xl">
-                    Nossos treinamentos NRs
+                    Nossos treinamentos de NRs, CIPA e brigada
                   </h2>
                   <p className="mx-auto mt-4 max-w-2xl text-xl font-medium text-slate-500">
                     Capacitação teórica e prática com certificação válida em todo o território nacional.

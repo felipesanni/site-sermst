@@ -216,6 +216,10 @@ export default function InsalubridadePage() {
           a: 'Nao. O criterio trabalhista da NR-15 e o criterio previdenciario do LTCAT/PPP nao sao identicos. Ha casos com adicional de insalubridade sem enquadramento para aposentadoria especial.',
         },
         {
+          q: 'Insalubridade e LTCAT sao a mesma coisa?',
+          a: 'Nao. Insalubridade e o enquadramento trabalhista da exposicao nociva. O LTCAT entra na leitura previdenciaria e ajuda a sustentar PPP, S-2240 e analise de aposentadoria especial.',
+        },
+        {
           q: 'Qual a diferenca entre pagina de insalubridade e pagina da NR-15?',
           a: 'Esta pagina responde a duvida ampla sobre conceito, direito, calculo e aplicacao pratica. A pagina de NR-15 foca a norma regulamentadora e seus criterios tecnicos de enquadramento.',
         },
@@ -226,7 +230,9 @@ export default function InsalubridadePage() {
       related={[
         { label: 'NR-15: regra tecnica da insalubridade', href: '/normas/nr-15-insalubridade' },
         { label: 'NR-16: periculosidade', href: '/normas/nr-16-periculosidade' },
+        { label: 'O que significa LTCAT', href: '/dicionario/o-que-e-ltcat' },
         { label: 'Servico de LTCAT previdenciario', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
+        { label: 'PPP eletronico (S-2240)', href: '/normas/ppp-eletronico' },
         { label: 'Guia da NR-01 e atualizacao do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'Pericia trabalhista e assistente tecnico', href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo' },
         { label: 'Medicina do trabalho: guia para empresas', href: '/saude/medicina-do-trabalho-guia' },

@@ -133,6 +133,10 @@ export default function NR15Page() {
           a: 'A aposentadoria especial exige exposição habitual e permanente acima dos limites previdenciários. Insalubridade caracterizada para fins trabalhistas (NR-15) e para fins previdenciários (PPP/LTCAT) pode ter critérios diferentes — exposição esporádica gera adicional mas não necessariamente aposentadoria especial.',
         },
         {
+          q: 'NR-15 e LTCAT são a mesma coisa?',
+          a: 'Não. A NR-15 organiza o enquadramento trabalhista da insalubridade. O LTCAT entra na base previdenciária que sustenta PPP, S-2240 e discussões sobre aposentadoria especial.',
+        },
+        {
           q: 'Como contestar insalubridade alegada em ação trabalhista?',
           a: 'Com laudo técnico próprio (assistente técnico), evidência de neutralização (PGR, PCMSO, fichas de EPI), histórico documental consistente. Em perícia, a divergência entre laudo do juízo e do assistente da empresa é avaliada pelo juiz com base nas evidências.',
         },
@@ -143,7 +147,9 @@ export default function NR15Page() {
       related={[
         { label: 'Insalubridade: conceito, direito e cálculo', href: '/saude/insalubridade-o-que-e-adicional' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },
+        { label: 'O que significa LTCAT', href: '/dicionario/o-que-e-ltcat' },
         { label: 'Serviço de LTCAT previdenciário', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
+        { label: 'PPP eletrônico (S-2240)', href: '/normas/ppp-eletronico' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'PCMSO (NR-07): programa', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
       ]}

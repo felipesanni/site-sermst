@@ -9,15 +9,14 @@ export const dynamic = 'force-static';
 export const metadata = {
   title: 'Dicionário SST | Termos de Saúde e Segurança | SERMST',
   description:
-    'Entenda termos como ASO, PGR, PCMSO, eSocial SST e outros conceitos da medicina e segurança do trabalho, explicados em linguagem útil para gestores e RH.',
-
+    'Entenda termos como ASO, PGR, PCMSO e eSocial SST em linguagem clara para gestores, RH e empresas que precisam agir com segurança.',
   alternates: {
     canonical: 'https://sermst.com.br/dicionario',
   },
   openGraph: {
     title: 'Dicionário SST | Termos de Saúde e Segurança do Trabalho | SERMST',
     description:
-      'Glossário completo dos principais termos de saúde e segurança do trabalho: ASO, PCMSO, PGR, eSocial, NRs e muito mais.',
+      'Glossário dos principais termos de saúde e segurança do trabalho, com respostas rápidas e links para guias mais completos.',
     url: 'https://sermst.com.br/dicionario',
     type: 'website',
     locale: 'pt_BR',
@@ -28,26 +27,22 @@ const termosEmAlta = [
   {
     href: '/dicionario/o-que-e-pgr',
     title: 'O que é PGR',
-    description:
-      'Entenda a sigla, a relação com a NR-01 e quando o programa precisa ser atualizado.',
+    description: 'Entenda a sigla, a relação com a NR-01 e quando o programa precisa ser revisado.',
   },
   {
     href: '/dicionario/o-que-e-pcmso',
     title: 'O que é PCMSO',
-    description:
-      'Veja o significado do programa, a lógica da NR-07 e como ele se conecta aos exames ocupacionais.',
+    description: 'Veja o significado do programa, a lógica da NR-07 e sua conexão com exames ocupacionais.',
   },
   {
     href: '/dicionario/o-que-e-ltcat',
     title: 'O que é LTCAT',
-    description:
-      'Guia direto sobre laudo técnico previdenciário, aposentadoria especial e coerência documental.',
+    description: 'Guia direto sobre laudo técnico previdenciário, aposentadoria especial e coerência documental.',
   },
   {
     href: '/dicionario/o-que-e-ppp',
     title: 'O que é PPP',
-    description:
-      'Saiba quando o Perfil Profissiográfico Previdenciário é exigido e quais erros costumam gerar retrabalho.',
+    description: 'Saiba quando o Perfil Profissiográfico Previdenciário é exigido e quais erros geram retrabalho.',
   },
 ];
 
@@ -57,6 +52,7 @@ export default function DicionarioIndexPage() {
   return (
     <main className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Dicionário SST' }]} />
+
       <header className="border-b border-slate-200 bg-slate-50 pb-24 pt-32">
         <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
           <FadeIn direction="down">
@@ -67,8 +63,8 @@ export default function DicionarioIndexPage() {
               <h1 className="h1-standard tracking-tighter text-brand-900">Dicionário de SST</h1>
             </div>
             <p className="max-w-3xl text-xl font-medium leading-relaxed text-slate-600">
-              Respostas rápidas para entender siglas e termos de SST, com links para guias
-              completos quando você precisar aprofundar o assunto.
+              Respostas rápidas para entender siglas e termos de SST, com links para conteúdos mais completos quando você
+              quiser se aprofundar.
             </p>
           </FadeIn>
         </div>
@@ -82,18 +78,18 @@ export default function DicionarioIndexPage() {
                 Para gestores e RH
               </span>
               <h2 className="mb-6 text-3xl font-black text-brand-900 md:text-4xl">
-                Primeiro a resposta direta. Depois, o aprofundamento.
+                Primeiro a resposta direta. Depois, o contexto.
               </h2>
               <div className="space-y-5 text-lg leading-relaxed text-slate-700">
                 <p>
-                  Quem busca o significado de ASO, PCMSO, PGR ou outros termos de SST geralmente
-                  não está apenas estudando. Está tentando resolver um problema real da empresa,
-                  entender uma exigência legal ou ganhar clareza antes de falar com um fornecedor.
+                  Quem busca o significado de ASO, PCMSO, PGR ou outros termos de SST raramente está apenas estudando.
+                  Normalmente está tentando resolver uma demanda real da empresa, entender uma exigência legal ou ganhar
+                  clareza antes de contratar um serviço.
                 </p>
                 <p>
-                  Por isso este dicionário começa com uma resposta curta, mostra onde o termo
-                  aparece na prática e diferencia conceitos que costumam ser confundidos. Quando o
-                  tema exige mais profundidade, cada verbete aponta para um guia específico.
+                  Por isso, este dicionário começa com uma definição curta, mostra onde o termo aparece na prática e ajuda
+                  a separar conceitos que costumam ser confundidos. Quando o tema pede mais profundidade, cada verbete
+                  aponta para um guia específico.
                 </p>
               </div>
             </div>
@@ -105,12 +101,11 @@ export default function DicionarioIndexPage() {
                 Próximo passo
               </span>
               <h2 className="mb-5 text-2xl font-black">
-                Se o termo já está ligado a uma dor do seu negócio, fale com a SERMST
+                Se o termo já está ligado a uma dor do negócio, vale falar com a SERMST
               </h2>
               <p className="mb-8 leading-relaxed text-slate-300">
-                O glossário ajuda a entender. Quando a empresa precisa agir, vale transformar
-                definição em processo, documento e solução antes que a dúvida vire atraso,
-                retrabalho ou exposição jurídica.
+                O glossário ajuda a entender. Quando a empresa precisa agir, o ideal é transformar definição em processo,
+                documento e solução antes que a dúvida vire atraso, retrabalho ou exposição jurídica.
               </p>
               <Link href="/contato" className="btn-primary-safe">
                 Solicitar orientação
@@ -126,12 +121,11 @@ export default function DicionarioIndexPage() {
               Termos mais buscados
             </span>
             <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
-              PGR, PCMSO, LTCAT e PPP concentram as dúvidas mais estratégicas
+              PGR, PCMSO, LTCAT e PPP concentram dúvidas mais estratégicas
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-700">
-              Se a sua empresa está tentando entender documentos, programas e obrigações que
-              afetam eSocial, exames ocupacionais e passivo previdenciário, estes são os verbetes
-              mais importantes para começar.
+              Se a sua empresa está tentando entender documentos, programas e obrigações que afetam eSocial, exames
+              ocupacionais e passivo previdenciário, estes são os melhores verbetes para começar.
             </p>
           </div>
 

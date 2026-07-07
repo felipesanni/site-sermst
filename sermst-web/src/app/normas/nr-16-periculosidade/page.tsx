@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-16: Periculosidade — Adicional 30% e Laudo | SERMST',
+  title: 'NR-16: Periculosidade - adicional de 30% e laudo | SERMST',
   description:
-    'A NR-16 define o adicional de periculosidade de 30%. Veja quem tem direito, como caracterizar por laudo e o erro de pagar sem base técnica.',
+    'A NR-16 define o adicional de periculosidade de 30%. Veja quem pode ter direito, como caracterizar por laudo e o risco de pagar sem base técnica.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-16-periculosidade' },
   openGraph: {
-    title: 'NR-16: periculosidade — adicional, atividades e como documentar | SERMST',
+    title: 'NR-16: periculosidade, atividades e como documentar | SERMST',
     description:
-      'Guia da NR-16: quais atividades geram adicional de periculosidade, como o laudo técnico comprova ou afasta o risco e responsabilidades do empregador.',
+      'Guia da NR-16 sobre atividades perigosas, adicional de periculosidade, laudo técnico e responsabilidades do empregador.',
     url: 'https://sermst.com.br/normas/nr-16-periculosidade',
     type: 'article',
     locale: 'pt_BR',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function NR16Page() {
   return (
     <BlockbusterArticle
-      coverImage={{ src: "/images/site/safety-equipment.jpg", alt: "Área de risco com sinalização de periculosidade conforme NR-16" }}
+      coverImage={{ src: '/images/site/safety-equipment.jpg', alt: 'Área de risco com sinalização de periculosidade conforme NR-16' }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
       hubHref="/normas"
@@ -27,17 +27,19 @@ export default function NR16Page() {
       badgeText="NR-16"
       author={{
         name: 'Felipe Sannino',
-        jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+        jobTitle: 'Advogado - Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
         dateModified: '2026-05-01',
       }}
-
-      h1="NR-16: Periculosidade — quando é devida e como blindar a empresa"
-      intro="A NR-16 define quem tem direito ao adicional de periculosidade de 30%. Eletricidade, inflamáveis, explosivos, radiações, segurança patrimonial. Cada atividade exige laudo que enquadra a função, sob pena de pagar adicional indevido por anos."
+      h1="NR-16: periculosidade, quando é devida e como blindar a empresa"
+      intro="A NR-16 define quem pode ter direito ao adicional de periculosidade de 30%. Eletricidade, inflamáveis, explosivos, radiações e segurança patrimonial são exemplos clássicos. O enquadramento correto depende de análise técnica."
       quickAnswer={
         <p>
-          A <strong>NR-16</strong> define quais atividades são perigosas e geram <strong>adicional de periculosidade de 30% sobre o salário base</strong> do trabalhador (não sobre o salário mínimo). As categorias são: <strong>eletricidade, inflamáveis, explosivos, radiações ionizantes, segurança pessoal ou patrimonial e motociclismo profissional</strong>. O enquadramento e o afastamento do adicional exigem <strong>laudo técnico de engenheiro ou médico do trabalho</strong> — sem laudo, tanto o pagamento quanto a não-concessão viram passivo trabalhista.
+          A <strong>NR-16</strong> define quais atividades são consideradas perigosas e podem gerar
+          <strong> adicional de periculosidade de 30% sobre o salário-base</strong>. Entre os casos mais conhecidos estão
+          eletricidade, inflamáveis, explosivos, radiações ionizantes, segurança patrimonial e motociclismo profissional.
+          O enquadramento e a descaracterização exigem <strong>laudo técnico assinado por profissional habilitado</strong>.
         </p>
       }
       sections={[
@@ -46,68 +48,72 @@ export default function NR16Page() {
           body: (
             <>
               <p>
-                A NR-16 estabelece quais atividades e operações são consideradas <strong>perigosas</strong> — aquelas que, por sua natureza, expõem o trabalhador a risco acentuado em razão de exposição permanente ou intermitente. O adicional é fixo: <strong>30% sobre o salário base</strong> do trabalhador (não sobre o salário mínimo, ao contrário da insalubridade).
+                A NR-16 estabelece quais atividades e operações são consideradas perigosas, ou seja, situações em que o
+                trabalhador fica exposto a risco acentuado por causa da própria natureza da função.
+              </p>
+              <p>
+                O adicional é de 30% sobre o salário-base do trabalhador. Diferentemente da insalubridade, a lógica aqui
+                não gira em torno de grau mínimo, médio ou máximo, mas da caracterização do risco perigoso.
               </p>
             </>
           ),
         },
         {
-          title: 'Atividades com direito ao adicional',
+          title: 'Atividades que costumam gerar direito ao adicional',
           body: (
             <ul>
-              <li><strong>Inflamáveis e explosivos</strong> — armazenamento, transporte, manuseio acima de quantidades fixadas em regulamento.</li>
-              <li><strong>Radiações ionizantes</strong> — radioscopia, radiografia, gamagrafia, atividades com fontes radioativas.</li>
-              <li><strong>Energia elétrica</strong> — atividades em sistemas elétricos de potência, instalações em alta tensão, eletricistas em redes.</li>
-              <li><strong>Segurança pessoal ou patrimonial</strong> — vigilantes, segurança privada, transporte de valores.</li>
-              <li><strong>Motociclistas</strong> — uso de motocicleta como meio de trabalho (entrega, vistoria, atendimento).</li>
-              <li><strong>Trabalhadores rurais</strong> — em algumas atividades específicas com agentes biológicos ou explosivos.</li>
+              <li><strong>Inflamáveis e explosivos.</strong> Armazenamento, transporte ou manuseio dentro das hipóteses previstas em norma.</li>
+              <li><strong>Radiações ionizantes.</strong> Atividades com fontes radioativas ou exposição típica do setor.</li>
+              <li><strong>Energia elétrica.</strong> Atuação em sistemas elétricos de potência e situações equivalentes.</li>
+              <li><strong>Segurança pessoal ou patrimonial.</strong> Vigilância, transporte de valores e funções correlatas.</li>
+              <li><strong>Motociclismo profissional.</strong> Quando a motocicleta é meio de trabalho e não uso eventual.</li>
             </ul>
           ),
         },
         {
-          title: 'O que precisa estar documentado para pagar (ou para NÃO pagar)',
+          title: 'O que precisa estar documentado para pagar ou para não pagar',
           body: (
             <>
               <ol>
-                <li><strong>Laudo Técnico de Periculosidade</strong> assinado por engenheiro de segurança ou médico do trabalho — caracteriza a função, descreve a exposição, conclui sobre o enquadramento.</li>
-                <li><strong>PGR e PCMSO</strong> alinhados — riscos consistentes em todos os documentos.</li>
-                <li><strong>S-2240 no eSocial</strong> refletindo a exposição.</li>
-                <li><strong>Folha pagamento</strong> com adicional separado e identificável.</li>
-                <li><strong>Procedimentos de trabalho</strong> que descrevem como a função interage com o agente perigoso.</li>
+                <li><strong>Laudo técnico de periculosidade</strong> assinado por engenheiro de segurança ou médico do trabalho habilitado.</li>
+                <li><strong>PGR e PCMSO coerentes</strong> com a realidade operacional e com os riscos informados.</li>
+                <li><strong>eSocial alinhado</strong>, especialmente quando a exposição interfere em eventos ocupacionais e previdenciários.</li>
+                <li><strong>Descrição real da função</strong> e dos procedimentos de trabalho.</li>
+                <li><strong>Folha de pagamento correta</strong>, quando o adicional for devido.</li>
               </ol>
               <p>
-                Para descaracterizar quando a empresa entende que não há periculosidade real, o caminho é o oposto: laudo técnico atestando a não exposição, com metodologia e evidências objetivas.
+                Quando a empresa entende que não há periculosidade, o caminho também é técnico: laudo bem fundamentado,
+                evidências objetivas e coerência documental.
               </p>
             </>
           ),
         },
         {
-          title: 'Atenção especial: motociclistas',
+          title: 'Atenção especial aos motociclistas',
           body: (
             <>
               <p>
-                Após a Lei 12.997/2014, motoboy/motofretista que usa motocicleta como meio de trabalho tem direito a periculosidade. <strong>Não basta ser empregado e ter moto</strong> — é a moto como ferramenta de trabalho que caracteriza. Empresa que tem motociclistas (entregador, oficial de manutenção, vistoriador, atendente externo) precisa avaliar.
+                Depois da regulamentação específica, muitas empresas passaram a errar no enquadramento de quem usa moto.
+                O ponto principal é simples: <strong>não basta o empregado possuir moto; ela precisa ser instrumento de trabalho</strong>.
               </p>
-              <p>
-                Casos comuns onde empresas erram:
-              </p>
+              <p>Alguns cenários exigem análise fina:</p>
               <ul>
-                <li>Vendedor externo que ESCOLHEU usar moto para visitas — depende da convenção e da formalização. Pode ou não ser devido.</li>
-                <li>Funcionário interno que usa moto pessoal eventualmente — em regra, não caracteriza.</li>
-                <li>Funcionário CLT em entregador de aplicativo — caracteriza, é meio de trabalho.</li>
+                <li>Vendedor externo que usa moto por escolha própria.</li>
+                <li>Funcionário interno que usa a moto apenas ocasionalmente.</li>
+                <li>Entregador, vistoriador ou técnico externo cuja rotina depende da motocicleta.</li>
               </ul>
             </>
           ),
         },
         {
-          title: 'Os 5 erros que viram processo',
+          title: 'Erros comuns que viram passivo',
           body: (
             <ol>
-              <li><strong>Vigilante sem adicional.</strong> Empresa de segurança patrimonial que não paga periculosidade para todos os vigilantes acumula passivo enorme — categoria fortemente sindicalizada.</li>
-              <li><strong>Eletricista terceirizado sem documentação.</strong> Mesmo sendo terceirizado, a contratante responde solidariamente. Sem laudo, indenização sobre o valor pleno.</li>
-              <li><strong>Motociclista sem adicional.</strong> Caso mais litigado da última década. Empresa de delivery que não paga acumula ações em escala.</li>
-              <li><strong>Pagamento sobre salário mínimo.</strong> Periculosidade incide sobre o salário base, não sobre mínimo. Empresa que paga mal calculado gera diferença retroativa.</li>
-              <li><strong>Insalubridade + periculosidade pagas juntas.</strong> Trabalhador escolhe a mais favorável, recebe uma só. Empresa que paga os dois cria passivo de dobro.</li>
+              <li><strong>Não pagar quando a atividade é claramente enquadrável.</strong></li>
+              <li><strong>Pagar sem laudo e sem critério.</strong> Isso fragiliza a defesa futura e cria precedente interno.</li>
+              <li><strong>Calcular sobre base incorreta.</strong></li>
+              <li><strong>Desalinhamento entre laudo, folha, PGR, PPP e eSocial.</strong></li>
+              <li><strong>Confundir insalubridade com periculosidade.</strong> As lógicas são diferentes e não podem ser tratadas como se fossem a mesma coisa.</li>
             </ol>
           ),
         },
@@ -115,31 +121,36 @@ export default function NR16Page() {
       faq={[
         {
           q: 'Periculosidade pode ser cumulativa com insalubridade?',
-          a: 'Não. O trabalhador escolhe o adicional mais favorável (Súmula 47 do TST). Pagar ambos simultaneamente é desperdício e cria expectativa que vira passivo se um dia a empresa quiser ajustar.',
+          a: 'Em regra, não. O trabalhador normalmente opta pelo adicional mais vantajoso, salvo exceções específicas discutidas juridicamente.',
         },
         {
-          q: 'Adicional de periculosidade incide sobré o que?',
-          a: '30% sobre o salário base do trabalhador, sem incluir gratificações, prêmios ou outros adicionais — em regra. Norma coletiva da categoria pode estabelecer base mais ampla.',
+          q: 'O adicional de periculosidade incide sobre o quê?',
+          a: 'Em regra, sobre o salário-base do trabalhador. Convenções coletivas podem trazer particularidades.',
         },
         {
-          q: 'Empresa pode neutralizar periculosidade?',
-          a: 'Diferente da insalubridade, a periculosidade na maior parte dos casos não pode ser neutralizada via EPI — o risco é da atividade em si. Eletricista com EPI continua exposto à eletricidade. Vigilante com colete continua exposto a risco patrimonial. Para descaracterizar, o caminho é eliminar a atividade ou retirar o trabalhador da função.',
+          q: 'Empresa pode neutralizar periculosidade com EPI?',
+          a: 'Na maior parte dos casos, não da mesma forma que se discute insalubridade. Muitas vezes a periculosidade decorre da própria atividade ou do contexto de exposição.',
         },
         {
           q: 'Quem assina o laudo de periculosidade?',
-          a: 'Engenheiro de segurança do trabalho ou médico do trabalho legalmente habilitado, com ART recolhida quando aplicável. Sem profissional habilitado o documento não vale em fiscalização nem em ação.',
+          a: 'Profissional legalmente habilitado, como engenheiro de segurança do trabalho ou médico do trabalho, conforme o caso.',
         },
         {
-          q: 'Periculosidade gera direito a aposentadoria especial?',
-          a: 'Sim, em geral, para algumas atividades — mas é necessário enquadramento previdenciário específico via PPP e LTCAT. Periculosidade trabalhista (NR-16) e periculosidade previdenciária têm critérios distintos. Empresa precisa cuidar dos dois lados.',
+          q: 'Periculosidade sempre gera aposentadoria especial?',
+          a: 'Não automaticamente. A análise previdenciária tem critérios próprios e precisa conversar com PPP, LTCAT e demais documentos.',
+        },
+        {
+          q: 'Periculosidade e LTCAT são a mesma coisa?',
+          a: 'Não. A periculosidade da NR-16 trata do adicional trabalhista de 30% em atividades perigosas. O LTCAT faz parte da base técnica previdenciária usada para sustentar PPP, S-2240 e análises ligadas à aposentadoria especial.',
         },
       ]}
-      sidebarTitle="Sua empresa enquadra periculosidade certo?"
-      sidebarHook="Pagar adicional sem laudo é admissão de fato em ação. Não pagar quando devido é passivo retroativo de 5 anos. A SERMST faz laudo técnico que sustenta a decisão."
+      sidebarTitle="Sua empresa enquadra periculosidade do jeito certo?"
+      sidebarHook="Pagar adicional sem base técnica enfraquece a defesa. Não pagar quando devido gera passivo retroativo. O ponto de equilíbrio está na análise bem documentada."
       sidebarCtaLabel="Solicitar laudo NR-16"
       related={[
         { label: 'NR-15: Insalubridade', href: '/normas/nr-15-insalubridade' },
         { label: 'NR-10: Eletricidade', href: '/normas/nr-10-eletricidade' },
+        { label: 'O que significa LTCAT', href: '/dicionario/o-que-e-ltcat' },
         { label: 'Serviço de LTCAT previdenciário', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
         { label: 'PPP eletrônico (S-2240)', href: '/normas/ppp-eletronico' },
       ]}

@@ -431,8 +431,20 @@ export const servicosSEO: Record<string, SEODocument> = {
           a: "E o Programa de Controle Médico de Saúde Ocupacional previsto na NR-07. Ele organiza o monitoramento da saúde dos empregados conforme os riscos ocupacionais da empresa.",
         },
         {
+          q: "O PCMSO é obrigatório?",
+          a: "Como regra, sim, para organizações com empregados CLT. A NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP de grau de risco 1 ou 2, sem eliminar exames ocupacionais nem ASO.",
+        },
+        {
           q: "Quem assina o PCMSO?",
           a: "A organização deve indicar médico do trabalho responsável pelo PCMSO. Se não houver médico do trabalho na localidade, a NR-07 admite médico de outra especialidade como responsável pelo programa.",
+        },
+        {
+          q: "Qual a validade do PCMSO?",
+          a: "O programa não tem validade fixa anual. Ele precisa acompanhar a realidade da empresa e ser revisto quando mudam riscos, atividades, cargos ou protocolos médicos. O relatório analítico segue lógica anual, salvo as dispensas previstas.",
+        },
+        {
+          q: "Vocês revisam PCMSO já existente?",
+          a: "Sim. A SERMST pode revisar PCMSO antigo, realinhar o programa ao PGR vigente, ajustar a grade de exames e corrigir incoerências que afetam ASO e eSocial.",
         },
       ],
     },
@@ -512,6 +524,18 @@ export const servicosSEO: Record<string, SEODocument> = {
         role: "SERMST",
       },
       faq: [
+        {
+          q: "Quando o LTCAT é obrigatório?",
+          a: "O LTCAT entra quando a empresa precisa sustentar tecnicamente exposição a agentes nocivos para PPP, eSocial S-2240, auditoria previdenciária ou análise de aposentadoria especial.",
+        },
+        {
+          q: "Quem pode elaborar e assinar o LTCAT?",
+          a: "O LTCAT deve ser emitido por profissional legalmente habilitado para a responsabilidade técnica do laudo, normalmente engenheiro de segurança do trabalho ou médico do trabalho, conforme o escopo da avaliação.",
+        },
+        {
+          q: "LTCAT tem validade fixa?",
+          a: "O ponto principal não é um prazo genérico, mas a aderência à realidade. Sempre que processo, agente, intensidade de exposição, layout ou função mudam, o LTCAT precisa ser revisto para não sustentar PPP e S-2240 com base antiga.",
+        },
         {
           q: "Qual a diferença entre PGR e LTCAT?",
           a: "O PGR organiza a gestão dos riscos ocupacionais. O LTCAT sustenta o enquadramento previdênciario ligado a exposição nociva.",
@@ -701,9 +725,9 @@ export const servicosSEO: Record<string, SEODocument> = {
     },
   },
   "treinamentos-nrs-cipa-brigada": {
-    h1: "Treinamentos de NRs | Capacitação e Segurança do Trabalho",
+    h1: "Treinamentos de NRs, CIPA e Brigada | Capacitação em SST",
     hook:
-      "Treinamentos de NRs com foco em validade documental, aplicação prática e redução de risco operacional. A SERMST oferece capacitação para diferentes exigências regulamentares com controle de certificados e recertificações.",
+      "Treinamentos de NRs com foco em validade documental, aplicação prática e redução de risco operacional. A SERMST oferece capacitação em CIPA, brigada e outras exigências regulamentares com controle de certificados e recertificações.",
     isClinico: false,
     fluxoCorporativo: [
       "Mapeamento de necessidades",
@@ -734,6 +758,10 @@ export const servicosSEO: Record<string, SEODocument> = {
         {
           q: "Quais NRs minha empresa precisa?",
           a: "A necessidade depende dos riscos e da operação. O PGR é um dos caminhos para definir as prioridades técnicas de treinamento.",
+        },
+        {
+          q: "Vocês fazem treinamento de CIPA conforme a NR-05?",
+          a: "Sim. A SERMST realiza treinamento de CIPA e de designado da NR-05 com carga horária compatível com o grau de risco da empresa e emissão de certificado.",
         },
         {
           q: "Os treinamentos podem ser feitos na minha empresa?",
@@ -873,7 +901,7 @@ export const saudeSEO: Record<string, SEODocument> = {
     "Gestão de SST: o que é e como organizar sem virar burocracia",
     "Gestão de Saúde e Segurança do Trabalho não é um documento — é um sistema. Conecta exame, laudo, treinamento e eSocial em fluxo único que sustenta operação e defende o CNPJ.",
     "Empresas tratam SST como pasta de arquivo. Resultado: documento existe, mas não reflete a operação real. Em fiscalização ou processo, isso desmonta.",
-    "Gestão de SST bem feita é cíclica: identifica risco â†’ atualiza PGR â†’ ajusta PCMSO â†’ documenta treinamento â†’ envia eSocial â†’ audita. Cada etapa alimenta a próxima.",
+    "Gestão de SST bem feita é cíclica: identifica risco -> atualiza PGR -> ajusta PCMSO -> documenta treinamento -> envia eSocial -> audita. Cada etapa alimenta a próxima.",
   ),
   "pcmso-programa-controle-medico": saudeEntry(
     "PCMSO: o que é, validade e quem precisa elaborar",
@@ -1026,6 +1054,18 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
         a: "PCMSO significa Programa de Controle Médico de Saúde Ocupacional.",
       },
       {
+        q: "PCMSO é obrigatório?",
+        a: "Como regra, sim, para empresas com empregados CLT. A NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP de grau de risco 1 ou 2, sem eliminar exames ocupacionais nem ASO.",
+      },
+      {
+        q: "Quem assina o PCMSO?",
+        a: "A organização deve indicar médico responsável pelo programa. Em regra, esse papel recai sobre médico do trabalho, observadas as hipóteses previstas na NR-07.",
+      },
+      {
+        q: "PCMSO tem validade fixa?",
+        a: "O programa não tem um vencimento anual automático. Ele precisa acompanhar a realidade da empresa e ser revisto quando mudam riscos, cargos, atividades ou protocolos médicos.",
+      },
+      {
         q: "Dispensa de PCMSO elimina os exames ocupacionais?",
         a: "Não. Mesmo quando a dispensa de elaboração se aplica, os exames ocupacionais e a emissão do ASO continuam obrigatórios.",
       },
@@ -1060,9 +1100,9 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
     respostaCurta:
       "LTCAT significa Laudo Técnico das Condições Ambientais do Trabalho. É o documento técnico-previdenciário usado para caracterizar exposição a agentes nocivos e sustentar o PPP, o eSocial S-2240 e análises ligadas à aposentadoria especial.",
     ondeAparece:
-      "A sigla LTCAT aparece quando a empresa precisa documentar exposições ocupacionais com base técnica, revisar o PPP, sustentar dados do eSocial S-2240, responder auditoria previdenciária ou analisar possível enquadramento para aposentadoria especial.",
+      "A sigla LTCAT aparece quando a empresa precisa documentar exposições ocupacionais com base técnica, revisar o PPP, sustentar dados do eSocial S-2240, responder auditoria previdenciária, validar se o laudo é obrigatório ou analisar possível enquadramento para aposentadoria especial.",
     naoConfunda:
-      "LTCAT não é o mesmo que PGR, PPP nem laudo de insalubridade. Esta página explica a sigla e a função do laudo. A página de serviço é a que trata de elaboração, revisão e escopo técnico do LTCAT na empresa.",
+      "LTCAT não é o mesmo que PGR, PPP nem laudo de insalubridade. Esta página explica a sigla, a função do laudo e dúvidas comuns como obrigatoriedade, assinatura e revisão. A página de serviço é a que trata de elaboração, revisão e escopo técnico do LTCAT na empresa.",
     aprofundamento: {
       href: "/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo",
       title: "Precisa elaborar ou revisar o LTCAT da empresa?",
@@ -1080,6 +1120,10 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
         a: "O LTCAT serve para caracterizar tecnicamente a exposição a agentes nocivos e dar base ao PPP, ao eSocial S-2240 e à análise previdenciária ligada à aposentadoria especial.",
       },
       {
+        q: "LTCAT é obrigatório para toda empresa?",
+        a: "Não de forma automática para qualquer cenário. A necessidade aparece quando a empresa precisa sustentar tecnicamente informações previdenciárias e ambientais ligadas à exposição ocupacional, especialmente em PPP, S-2240 e aposentadoria especial.",
+      },
+      {
         q: "LTCAT e laudo de insalubridade são iguais?",
         a: "Não. O LTCAT tem finalidade previdenciária. A insalubridade trabalhista segue critérios próprios, embora as avaliações técnicas possam se relacionar.",
       },
@@ -1087,15 +1131,23 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
         q: "PPP e LTCAT são a mesma coisa?",
         a: "Não. O PPP consolida o histórico previdenciário e laboral do trabalhador. O LTCAT é um dos documentos técnicos que podem sustentar as informações de exposição usadas nesse histórico.",
       },
+      {
+        q: "Quem assina o LTCAT?",
+        a: "O laudo deve ser emitido por profissional habilitado para a responsabilidade técnica da avaliação, normalmente engenheiro de segurança do trabalho ou médico do trabalho.",
+      },
+      {
+        q: "LTCAT vence?",
+        a: "Mais importante do que falar em vencimento fixo é saber se o documento ainda retrata a operação real. Mudança de processo, agente nocivo, intensidade de exposição, função ou layout pede revisão.",
+      },
     ],
   },
   "o-que-e-ppp": {
     respostaCurta:
       "PPP significa Perfil Profissiográfico Previdenciário. É o documento que consolida o histórico laboral do trabalhador, suas atividades e as informações sobre exposição a agentes nocivos para fins previdenciários.",
     ondeAparece:
-      "O PPP aparece em pedidos previdenciários, desligamentos, auditorias e revisões do histórico de exposição. No fluxo atual, suas informações se conectam aos dados ambientais enviados ao eSocial, especialmente pelo evento S-2240.",
+      "O PPP aparece em pedidos previdenciários, desligamentos, auditorias, revisões do histórico de exposição e análises de aposentadoria especial. No fluxo atual, suas informações se conectam aos dados ambientais enviados ao eSocial, especialmente pelo evento S-2240.",
     naoConfunda:
-      "PPP não é um laudo técnico. Ele consolida informações que precisam ter base consistente em documentos como o LTCAT e nos registros da empresa. Se os documentos contam histórias diferentes, a inconsistência aparece.",
+      "PPP não é um laudo técnico. Ele consolida informações que precisam ter base consistente em documentos como o LTCAT e nos registros da empresa. Também não é sinônimo de S-2240: o evento transmite parte da base ambiental, mas o PPP é o documento final que precisa fechar a mesma história.",
     aprofundamento: {
       href: "/normas/ppp-eletronico",
       title: "Precisa entender PPP eletrônico, S-2240 e responsabilidades?",
@@ -1111,6 +1163,14 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
       {
         q: "PPP e LTCAT são a mesma coisa?",
         a: "Não. O PPP consolida o histórico laboral e previdenciário do trabalhador. O LTCAT fornece base técnica para caracterizar exposições a agentes nocivos.",
+      },
+      {
+        q: "PPP e S-2240 são a mesma coisa?",
+        a: "Não. O S-2240 é o evento do eSocial que leva informações ambientais. O PPP é o documento previdenciário que precisa refletir esse histórico com base técnica consistente.",
+      },
+      {
+        q: "PPP entra em aposentadoria especial?",
+        a: "Sim. O PPP é uma das peças centrais nas análises de aposentadoria especial porque consolida histórico laboral, agentes nocivos e dados que precisam estar sustentados por LTCAT e demais registros.",
       },
     ],
   },
@@ -1143,6 +1203,14 @@ export const rhDoresSEO: Record<string, SEODocument> = {
         {
           q: "Qual o prazo do S-2220?",
           a: "O evento deve seguir o prazo operacional aplicável ao envio de informações de saúde do trabalhador, conforme a rotina e a obrigação da empresa.",
+        },
+        {
+          q: "Erro no S-2240 pode afetar PPP e aposentadoria especial?",
+          a: "Sim. Quando a base ambiental do S-2240 está errada ou inconsistente, isso pode contaminar o PPP, enfraquecer a coerência documental e abrir risco previdenciário e trabalhista.",
+        },
+        {
+          q: "O S-2240 depende de LTCAT?",
+          a: "Os dados ambientais do S-2240 precisam de base técnica consistente. Em cenários com agentes nocivos e exposição previdenciária, o LTCAT costuma ser uma das referências principais para sustentar esse envio.",
         },
       ],
     },

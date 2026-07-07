@@ -22,7 +22,7 @@ function getServiceSearchLabel(servico: string, fallback: string) {
     return 'LTCAT — Laudo Técnico Ambiental';
   }
   if (servico === 'treinamentos-nrs-cipa-brigada') {
-    return 'Treinamentos corporativos de NRs';
+    return 'Treinamentos de NRs, CIPA e brigada';
   }
 
   return fallback;
@@ -663,6 +663,150 @@ export default async function LocalSEOPage({
       )}
 
       {servico === 'treinamentos-nrs-cipa-brigada' && (
+        <section className="bg-slate-50 py-20">
+          <div className="mx-auto w-full max-w-[1280px] px-6">
+            <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
+              <FadeIn direction="right">
+                <Link
+                  href="/normas/nr-05-cipa"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Ponte normativa</span>
+                  <h2 className="mb-5 text-3xl font-black text-brand-900 md:text-4xl">
+                    NR-05, CIPA e designado: quando o treinamento deixa de ser opcional
+                  </h2>
+                  <p className="leading-relaxed text-slate-700">
+                    Se a empresa ainda está tentando entender obrigatoriedade, eleição, designado e carga horária por grau de risco, a página da NR-05 organiza esse entendimento antes da contratação.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Ler guia da NR-05
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={0.08}>
+                <Link
+                  href="/rh/calculadora-cnae-grau-de-risco"
+                  className="group h-full rounded-[2rem] bg-brand-900 p-8 text-white transition-all hover:-translate-y-1 hover:shadow-xl lg:p-10"
+                >
+                  <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                    Enquadramento correto
+                  </span>
+                  <h2 className="mb-5 text-3xl font-black md:text-4xl">
+                    Valide o CNAE e o grau de risco antes de fechar a carga horária
+                  </h2>
+                  <p className="leading-relaxed text-slate-200">
+                    Em CIPA, designado e vários treinamentos obrigatórios, o erro de enquadramento costuma gerar certificado fraco, reciclagem inadequada e problema em fiscalização.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-bold text-white transition-colors group-hover:text-accent-pink">
+                    Ir para a calculadora
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {servico === 'pcmso-nr07-programa' && (
+        <section className="bg-slate-50 py-20">
+          <div className="mx-auto w-full max-w-[1280px] px-6">
+            <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
+              <FadeIn direction="right">
+                <Link
+                  href="/normas/o-que-e-nr-07"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Ponte normativa</span>
+                  <h2 className="mb-5 text-3xl font-black text-brand-900 md:text-4xl">
+                    NR-07, ASO e exames: a base legal por trás do PCMSO
+                  </h2>
+                  <p className="leading-relaxed text-slate-700">
+                    Se a empresa ainda está consolidando entendimento sobre obrigação, monitoramento da saúde e coerência com eSocial, a melhor leitura complementar é a página da NR-07.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Ler guia da NR-07
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={0.08}>
+                <Link
+                  href="/dicionario/o-que-e-pcmso"
+                  className="group h-full rounded-[2rem] bg-brand-900 p-8 text-white transition-all hover:-translate-y-1 hover:shadow-xl lg:p-10"
+                >
+                  <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                    Intenção de significado
+                  </span>
+                  <h2 className="mb-5 text-3xl font-black md:text-4xl">
+                    O que significa PCMSO e quando essa busca ainda não é comercial
+                  </h2>
+                  <p className="leading-relaxed text-slate-200">
+                    A definição curta ajuda a separar a busca conceitual da empresa que já quer revisar ou contratar o programa. Isso reduz ambiguidade e fortalece o cluster.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-bold text-white transition-colors group-hover:text-accent-pink">
+                    Ver definição rápida
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {servico === 'ltcat-laudo-tecnico-previdenciario' && (
+        <section className="bg-slate-50 py-20">
+          <div className="mx-auto w-full max-w-[1280px] px-6">
+            <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
+              <FadeIn direction="right">
+                <Link
+                  href="/normas/ppp-eletronico"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Ponte previdenciária</span>
+                  <h2 className="mb-5 text-3xl font-black text-brand-900 md:text-4xl">
+                    PPP eletrônico, S-2240 e aposentadoria especial: a camada que o LTCAT sustenta
+                  </h2>
+                  <p className="leading-relaxed text-slate-700">
+                    Em muitas empresas de {local.nome}, a dúvida não é só o laudo em si, mas como ele precisa conversar com PPP, eSocial e histórico de exposição sem abrir inconsistência documental.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Ler guia do PPP eletrônico
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="left" delay={0.08}>
+                <Link
+                  href="/dicionario/o-que-e-ltcat"
+                  className="group h-full rounded-[2rem] bg-brand-900 p-8 text-white transition-all hover:-translate-y-1 hover:shadow-xl lg:p-10"
+                >
+                  <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                    Intenção de significado
+                  </span>
+                  <h2 className="mb-5 text-3xl font-black md:text-4xl">
+                    O que significa LTCAT, quando ele entra e por que não é o mesmo que PPP
+                  </h2>
+                  <p className="leading-relaxed text-slate-200">
+                    Essa camada cobre as buscas conceituais mais comuns, como obrigatoriedade, assinatura e diferença entre laudo previdenciário e documento final do trabalhador.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-bold text-white transition-colors group-hover:text-accent-pink">
+                    Ver definição rápida
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {servico === 'treinamentos-nrs-cipa-brigada' && (
         <section className="bg-white py-24">
           <div className="mx-auto max-w-[1280px] px-6">
             <FadeIn className="mb-16 text-center">
@@ -670,7 +814,7 @@ export default async function LocalSEOPage({
                 Catálogo in-company e presencial
               </span>
               <h2 className="text-4xl font-black tracking-tighter italic text-brand-900 md:text-5xl">
-                Grade de treinamentos NRs <br /> <small className="not-italic text-slate-400">em {local.nome}</small>
+                Grade de treinamentos de NRs, CIPA e brigada <br /> <small className="not-italic text-slate-400">em {local.nome}</small>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-xl font-medium text-slate-500">
                 Clique na norma para ver a carga horária e o conteúdo programático completo.

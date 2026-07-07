@@ -170,6 +170,7 @@ export default function PPPPage() {
       sidebarHook="PPP errado é passivo dobrado: na Previdência (FAP, aposentadoria especial) e na Justiça do Trabalho. A SERMST audita a consistência entre LTCAT, PGR, PCMSO e PPP."
       sidebarCtaLabel="Auditar PPP/S-2240"
       related={[
+        { label: 'O que significa LTCAT', href: '/dicionario/o-que-e-ltcat' },
         { label: 'Serviço de LTCAT previdenciário', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
         { label: 'NR-15: Insalubridade', href: '/normas/nr-15-insalubridade' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },
