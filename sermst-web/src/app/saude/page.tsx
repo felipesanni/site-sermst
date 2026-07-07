@@ -290,6 +290,8 @@ export default function SaudeIndexPage() {
                 { href: '/saude/aso-atestado-saude-ocupacional', label: 'ASO: o que é e quando emitir' },
                 { href: '/saude/importancia-do-exame-periodico', label: 'Exame periódico ocupacional' },
                 { href: '/saude/onde-fazer-audiometria-ocupacional-sao-paulo', label: 'Onde fazer audiometria ocupacional em SP' },
+                { href: '/saude/doencas-ocupacionais', label: 'Doenças ocupacionais: tipos e prevenção' },
+                { href: '/saude/medico-do-trabalho', label: 'Médico do trabalho: papel e obrigações' },
                 { href: '/rh/declaracao-inexistencia-risco-dir', label: 'DIR e dispensa de elaborar PCMSO' },
               ].map((item) => (
                 <Link
