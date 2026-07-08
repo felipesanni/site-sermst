@@ -311,11 +311,12 @@ export default function CalculadoraCnaePage() {
         sidebarTitle="Seu CNAE esta correto?"
         sidebarHook="CNAE, atividade preponderante e riscos reais precisam conversar entre si. A SERMST revisa o enquadramento, identifica inconsistencias e aponta o que precisa ajustar antes que vire retrabalho ou exposicao desnecessaria."
         sidebarCtaLabel="Revisar meu enquadramento"
+        sidebarCtaHref="/assinaturas"
         related={[
           { label: 'Lista CNAE Brasil - guia completo', href: '/rh/lista-cnae-brasil' },
           { label: 'O que e PCMSO e quando e obrigatorio', href: '/saude/pcmso-programa-controle-medico' },
           { label: 'Guia da NR-01: o que muda no PGR', href: '/normas/nr-01-pgr-atualizada' },
-          { label: 'Multa eSocial S-2220 - quanto pode chegar', href: '/rh/multa-esocial-s2220' },
+          { label: 'Planos de SST por assinatura', href: '/assinaturas' },
         ]}
       />
     </>

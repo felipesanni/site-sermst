@@ -234,10 +234,12 @@ export default function CatAcidenteTrabalhoPage() {
       sidebarTitle="Teve acidente ou suspeita ocupacional?"
       sidebarHook="A SERMST ajuda a organizar leitura técnica, PGR, PCMSO, documentos e apoio pericial para reduzir risco depois de acidente de trabalho."
       sidebarCtaLabel="Falar sobre CAT"
+      sidebarCtaHref="/servicos/gestao-esocial-s2220-s2240"
       related={[
         { label: 'Perícia trabalhista e assistente técnico', href: '/servicos/pericia-trabalhista-assistente-tecnico' },
         { label: 'PGR NR-01', href: '/servicos/pgr-nr01-gerenciamento-riscos' },
         { label: 'PCMSO NR-07', href: '/servicos/pcmso-nr07-programa' },
+        { label: 'Calculadora CNAE e grau de risco', href: '/rh/calculadora-cnae-grau-de-risco' },
         { label: 'Doenças ocupacionais', href: '/saude/doencas-ocupacionais' },
         { label: 'NR-6 e EPI', href: '/normas/nr-06-epi' },
       ]}

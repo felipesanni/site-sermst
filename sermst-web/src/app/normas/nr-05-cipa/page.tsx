@@ -400,7 +400,7 @@ export default function NR05Page() {
       sidebarTitle="Sua empresa está com a CIPA em ordem?"
       sidebarHook="CIPA vencida, treinamento sem registro ou cipeiro dispensado indevidamente viram autuação e passivo. A SERMST apoia constituição, treinamento e documentação completa do mandato."
       sidebarCtaLabel="Falar sobre CIPA"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo"
       related={[
         { label: 'Treinamentos NR, CIPA e brigada', href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo' },
         { label: 'NR-04 e SESMT: dimensionamento', href: '/normas/sesmt' },

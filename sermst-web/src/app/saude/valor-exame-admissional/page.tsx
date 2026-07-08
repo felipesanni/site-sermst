@@ -180,6 +180,7 @@ export default function ValorExameAdmissionalPage() {
         sidebarTitle="Solicitar orçamento corporativo"
         sidebarHook="Empresas com contrato corporativo acessam tarifas a partir de R$ 70,00 por exame admissional, com ASO no mesmo dia, laboratório próprio e integração com o eSocial."
         sidebarCtaLabel="Solicitar orçamento"
+        sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
         related={[
           { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Tabela de exames por função e cargo', href: '/saude/tabela-exames-admissionais-por-funcao' },

@@ -180,7 +180,7 @@ export default function ExameRetornoAoTrabalhoPage() {
       sidebarTitle="Trabalhador retornando de afastamento?"
       sidebarHook="A SERMST realiza o exame de retorno ao trabalho em São Paulo com ASO e lançamento no eSocial. Agendamento prioritário para retornos com data definida pelo INSS."
       sidebarCtaLabel="Agendar exame de retorno"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'Exame periódico ocupacional', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Como funciona o exame admissional', href: '/exames/como-funciona-o-exame-admissional' },

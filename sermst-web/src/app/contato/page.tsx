@@ -53,6 +53,31 @@ const differentiators = [
   'Foco em reduzir risco trabalhista, atraso de contratação e falhas de eSocial.',
 ];
 
+const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': 'https://sermst.com.br/contato',
+  url: 'https://sermst.com.br/contato',
+  name: 'Contato SERMST',
+  description: 'Fale com a SERMST para solicitar orçamento de exames admissionais, PGR, PCMSO, LTCAT, treinamentos e gestão de eSocial SST em São Paulo e Grande SP.',
+  provider: { '@id': 'https://sermst.com.br/#organization' },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: '+55-11-3229-7567',
+      email: 'comercial@sermst.com.br',
+      availableLanguage: 'Portuguese',
+    },
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      url: 'https://wa.me/5511915146447',
+      availableLanguage: 'Portuguese',
+    },
+  ],
+};
+
 const objections = [
   {
     q: 'Minha empresa ainda não sabe exatamente o que precisa.',
@@ -72,6 +97,7 @@ export default function ContatoPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Contato' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
       <section className="relative overflow-hidden bg-brand-900 text-white">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-14 md:py-20 lg:px-8 lg:py-24">

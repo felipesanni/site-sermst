@@ -172,7 +172,7 @@ export default function EletrocardiogramaOcupacionalPage() {
       sidebarTitle="Precisa incluir ECG no PCMSO da empresa?"
       sidebarHook="A SERMST realiza eletrocardiograma ocupacional em São Paulo integrado ao fluxo do ASO e ao protocolo do PCMSO. Para orçamento corporativo ou dúvida sobre o protocolo da sua empresa, fale com a equipe."
       sidebarCtaLabel="Solicitar orçamento"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'Exames complementares e laboratoriais', href: '/servicos/exames-complementares-laboratoriais' },
         { label: 'PCMSO: programa de controle médico de saúde ocupacional', href: '/saude/pcmso-programa-controle-medico' },

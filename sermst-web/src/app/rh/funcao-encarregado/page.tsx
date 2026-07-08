@@ -84,14 +84,91 @@ const faq = [
     a: 'Pode, e é comum. A responsabilidade do encarregado por SST é solidária com a empresa. Se houver acidente e ficar provado que o encarregado tinha conhecimento do risco e não agiu, ele responde junto. Por isso é crítico que o encarregado tenha treinamento formal nas NRs aplicáveis e que a empresa documente o repasse das instruções.',
   },
   {
-    q: 'Como saber sé preciso de mais encarregados na operação?',
+    q: 'Como saber se preciso de mais encarregados na operação?',
     a: 'O sinal mais claro é desorganização sob pressão: turnos que viram caos quando aumenta volume, falhas de procedimento que ninguém pega, acidentes ou quase-acidentes recorrentes. Geralmente, em operação industrial, um encarregado para cada 8–15 colaboradores é o ponto de equilíbrio.',
   },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Qual a diferença entre encarregado e supervisor?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Encarregado é hierarquia operacional imediata: lidera a execução do turno, está com a equipe no chão de fábrica, na obra ou no ponto de operação. Supervisor coordena encarregados, gerencia mais de uma equipe ou turno e tem responsabilidade de planejamento. Em algumas empresas pequenas, os papéis se misturam — mas na CLT e nos planos de cargo as funções são distintas.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'O encarregado precisa de exame admissional e periódico?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim. Toda contratação CLT exige ASO admissional. O periódico é exigido pelo PCMSO da empresa, que define a periodicidade dos exames conforme risco do cargo. Pular o periódico do encarregado é falha grave — porque é justamente a função que toma decisão de risco no campo.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qual o salário médio de um encarregado?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Varia muito por setor e região. Em construção civil em São Paulo, costuma estar entre R$ 3.500 e R$ 6.500. Na indústria, entre R$ 4.000 e R$ 8.000. Em logística e operação fabril, faixa similar. Empresas que pagam abaixo da média perdem o encarregado para a concorrência em meses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'O encarregado pode ser responsabilizado por acidente da equipe?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pode, e é comum. A responsabilidade do encarregado por SST é solidária com a empresa. Se houver acidente e ficar provado que o encarregado tinha conhecimento do risco e não agiu, ele responde junto. Por isso é crítico que o encarregado tenha treinamento formal nas NRs aplicáveis e que a empresa documente o repasse das instruções.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Como saber se preciso de mais encarregados na operação?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'O sinal mais claro é desorganização sob pressão: turnos que viram caos quando aumenta volume, falhas de procedimento que ninguém pega, acidentes ou quase-acidentes recorrentes. Geralmente, em operação industrial, um encarregado para cada 8 a 15 colaboradores é o ponto de equilíbrio.',
+      },
+    },
+  ],
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://sermst.com.br/rh/funcao-encarregado#article',
+  headline: 'O que faz um encarregado? Função, responsabilidades e o ponto cego que pega gestores',
+  description: 'Entenda o que faz um encarregado, quais responsabilidades ele assume, a diferença para supervisor e os cuidados de SST que a empresa precisa formalizar.',
+  url: 'https://sermst.com.br/rh/funcao-encarregado',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://sermst.com.br/rh/funcao-encarregado',
+  },
+  inLanguage: 'pt-BR',
+  datePublished: '2025-01-01T00:00:00-03:00',
+  dateModified: '2026-07-07T00:00:00-03:00',
+  image: ['https://sermst.com.br/images/site/corporate-team.jpg'],
+  author: {
+    '@type': 'Person',
+    '@id': 'https://sermst.com.br/equipe/felipe-sannino#person',
+    name: 'Felipe Sannino',
+    jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+    url: 'https://sermst.com.br/equipe/felipe-sannino',
+  },
+  publisher: {
+    '@id': 'https://sermst.com.br/#organization',
+  },
+};
+
 export default function FunçãoEncarregadoPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <main className="min-h-screen bg-white">
       {/* HERO */}
       <section className="relative bg-brand-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
@@ -197,6 +274,9 @@ export default function FunçãoEncarregadoPage() {
               <p>
                 Sem essas três peças, qualquer acidente vira passivo na empresa. Com as três, a empresa tem defesa técnica e o encarregado tem proteção jurídica.
               </p>
+              <p>
+                O ponto de partida mais prático é saber qual grau de risco se aplica à atividade da empresa — isso define quais exames, laudos e estruturas de SST são obrigatórios para o cargo. <a href="/rh/calculadora-cnae-grau-de-risco" className="text-accent-pink font-bold hover:underline">A calculadora de CNAE e grau de risco</a> faz esse mapeamento automaticamente a partir do CNPJ ou CNAE e já indica CIPA, SESMT e referência de RAT.
+              </p>
 
               <h2>Perguntas frequentes sobre a função de encarregado</h2>
             </FadeIn>
@@ -284,6 +364,40 @@ export default function FunçãoEncarregadoPage() {
         </div>
       </section>
 
+      {/* RECIPROCIDADE — para encarregados */}
+      <section className="py-14 border-t border-slate-100">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <FadeIn direction="up">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-8 bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+              <div className="flex-1">
+                <span className="inline-block text-accent-pink font-black text-xs uppercase tracking-[0.2em] mb-3">
+                  Para encarregados
+                </span>
+                <h2 className="text-2xl font-black text-brand-900 mb-3 leading-tight">
+                  Seu gestor sabe que o cargo tem responsabilidade direta de SST?
+                </h2>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Em caso de acidente, o encarregado responde junto com a empresa — mas só quando não existe documentação de treinamento e instrução de segurança. Encaminhar esse guia para o RH ou para o gestor é a forma mais direta de garantir que essa proteção esteja em dia para você.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <a
+                  href="https://wa.me/?text=Vi%20esse%20guia%20sobre%20responsabilidades%20de%20SST%20do%20encarregado%20e%20achei%20que%20faz%20sentido%20voc%C3%AA%20ver%3A%20https%3A%2F%2Fsermst.com.br%2Frh%2Ffuncao-encarregado%20%E2%80%94%20fala%20sobre%20treinamento%20obrigat%C3%B3rio%2C%20exames%20e%20o%20que%20protege%20o%20cargo%20em%20caso%20de%20acidente."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1fbb5a] text-white font-bold px-7 py-4 rounded-xl transition-colors text-sm whitespace-nowrap"
+                >
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current shrink-0" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  Enviar para o gestor
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section className="bg-slate-50 border-t border-slate-200 py-20">
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8 text-center">
@@ -312,5 +426,6 @@ export default function FunçãoEncarregadoPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

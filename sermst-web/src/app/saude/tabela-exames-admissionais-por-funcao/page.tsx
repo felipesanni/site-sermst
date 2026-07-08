@@ -252,6 +252,7 @@ export default function TabelaExamesFuncaoPage() {
         sidebarTitle="Precisa montar o protocolo de exames da sua empresa?"
         sidebarHook="A SERMST elabora o PCMSO e define os exames corretos para cada função — sem exames desnecessários e sem lacunas que viram multa."
         sidebarCtaLabel="Montar meu PCMSO"
+        sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
         related={[
           { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },

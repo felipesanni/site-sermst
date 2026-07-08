@@ -180,7 +180,7 @@ export default function EspirometriaOcupacionalPage() {
       sidebarTitle="Sua empresa precisa de espirometria?"
       sidebarHook="A SERMST realiza espirometria ocupacional com laboratório próprio, integração ao PCMSO e ASO. Para orçamento corporativo ou dúvida sobre o protocolo da sua empresa, fale com a equipe."
       sidebarCtaLabel="Solicitar orçamento"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'Exames complementares e laboratoriais', href: '/servicos/exames-complementares-laboratoriais' },
         { label: 'PCMSO: programa de controle médico de saúde ocupacional', href: '/saude/pcmso-programa-controle-medico' },

@@ -111,8 +111,8 @@ export function BlockbusterArticle({
   const cta = finalCta ?? {
     title: 'A SERMST faz auditoria SST gratuita',
     desc: 'Em 15 minutos a equipe entende o porte e a operação da empresa antes de indicar exame, laudo ou gestão. Sem compromisso, sem venda forçada.',
-    label: 'Solicitar diagnóstico gratuito',
-    href: '/contato',
+    label: 'Ver planos de SST por assinatura',
+    href: '/assinaturas',
   };
 
   const sectionAnchors = sections.map((section, index) => ({

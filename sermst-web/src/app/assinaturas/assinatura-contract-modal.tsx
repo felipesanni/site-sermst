@@ -1032,8 +1032,19 @@ export function AssinaturaContractModal({
               A SERMST recebeu o plano escolhido com porte, CNPJ, endereço principal e filiais
               informadas. Vamos seguir com a ativação comercial do contrato.
             </p>
-            <div className="mt-8 flex justify-center">
-              <button type="button" onClick={onClose} className="btn-primary-safe">
+            <p className="mt-3 text-sm font-semibold text-slate-500">
+              Retorno em até <strong className="text-brand-900">24h úteis</strong> pelo canal informado.
+            </p>
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <a
+                href="https://wa.me/5511915146447?text=Ol%C3%A1!%20Acabei%20de%20enviar%20minha%20contrata%C3%A7%C3%A3o%20de%20plano%20SST%20pela%20p%C3%A1gina%20de%20assinaturas%20e%20gostaria%20de%20confirmar%20o%20recebimento."
+                target="_blank"
+                rel="noopener"
+                className="btn-whatsapp btn-whatsapp-solid inline-flex"
+              >
+                Confirmar pelo WhatsApp
+              </a>
+              <button type="button" onClick={onClose} className="text-sm font-semibold text-slate-500 underline underline-offset-4 hover:text-brand-900 transition-colors">
                 Fechar
               </button>
             </div>

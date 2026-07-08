@@ -169,7 +169,7 @@ export default function AvaliacaoPsicossocialOcupacionalPage() {
       sidebarTitle="Sua empresa precisa dessa avaliação?"
       sidebarHook="Se sua empresa tem trabalhadores em altura ou precisa adequar o PCMSO à NR-01 atualizada, a SERMST pode ajudar com a avaliação e a documentação necessária."
       sidebarCtaLabel="Falar com a equipe"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/pcmso-nr07-programa/sao-paulo"
       related={[
         { label: 'Treinamento NR-35: trabalho em altura', href: '/treinamentos/nr-35-trabalho-em-altura' },
         { label: 'NR-35: regulamentação de trabalho em altura', href: '/normas/nr-35-trabalho-em-altura' },

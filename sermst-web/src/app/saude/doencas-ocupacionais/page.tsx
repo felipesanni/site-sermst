@@ -232,12 +232,13 @@ export default function DoencasOcupacionaisPage() {
       sidebarTitle="Quer reduzir risco de doença ocupacional?"
       sidebarHook="A SERMST integra PCMSO, PGR, exames e leitura técnica para prevenir afastamentos, CAT mal conduzida e passivo trabalhista."
       sidebarCtaLabel="Revisar PCMSO e PGR"
+      sidebarCtaHref="/servicos/pcmso-nr07-programa/sao-paulo"
       related={[
         { label: 'PCMSO NR-07', href: '/servicos/pcmso-nr07-programa' },
         { label: 'PGR NR-01', href: '/servicos/pgr-nr01-gerenciamento-riscos' },
+        { label: 'Calculadora CNAE: grau de risco e obrigações SST', href: '/rh/calculadora-cnae-grau-de-risco' },
         { label: 'CAT: acidente de trabalho', href: '/rh/cat-acidente-de-trabalho' },
         { label: 'Perícia trabalhista', href: '/servicos/pericia-trabalhista-assistente-tecnico' },
-        { label: 'Médico do trabalho', href: '/saude/medico-do-trabalho' },
       ]}
     />
   );

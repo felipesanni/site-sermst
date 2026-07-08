@@ -227,7 +227,7 @@ export default function NR37Page() {
       sidebarTitle="Sua operação offshore está em conformidade com a NR-37?"
       sidebarHook="A SERMST apoia empresas com trabalhadores embarcados: PCMSO offshore, ASO pré-embarque, treinamentos, PGR e gestão integrada de SST para o setor de petróleo e gás."
       sidebarCtaLabel="Falar sobre compliance offshore"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo"
       related={[
         { label: 'NR-35: trabalho em altura', href: '/normas/nr-35-trabalho-em-altura' },
         { label: 'NR-33: espaço confinado', href: '/normas/nr-33-espaco-confinado' },

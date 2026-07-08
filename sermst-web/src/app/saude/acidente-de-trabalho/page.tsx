@@ -211,7 +211,7 @@ export default function AcidenteDeTrabalhoPage() {
       sidebarTitle="Sua empresa está preparada para um acidente?"
       sidebarHook="PGR atualizado, PCMSO adequado, treinamentos registrados e CAT no prazo são a base da defesa técnica da empresa. A SERMST apoia desde a prevenção até a investigação após o evento."
       sidebarCtaLabel="Falar com a SERMST"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/gestao-esocial-s2220-s2240"
       related={[
         { label: 'CAT: quando emitir e quais os riscos para a empresa', href: '/rh/cat-acidente-de-trabalho' },
         { label: 'Doenças ocupacionais', href: '/saude/doencas-ocupacionais' },

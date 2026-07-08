@@ -212,6 +212,7 @@ export default function ASOPage() {
       sidebarTitle="Seus ASOs estão em dia e coerentes com o eSocial?"
       sidebarHook="A SERMST emite ASO com lógica ocupacional, apoia o controle de vencimentos e ajuda a reduzir inconsistências entre documento, PCMSO e S-2220."
       sidebarCtaLabel="Organizar meus ASOs"
+      sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'ASO no dicionário: definição rápida', href: '/dicionario/o-que-e-aso' },
         { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },

@@ -25,12 +25,35 @@ export const metadata = {
   },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quais eventos do eSocial SST o RH precisa enviar?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Os principais eventos SST no eSocial são: S-2210 (comunicação de acidente de trabalho), S-2220 (monitoramento de saúde ocupacional — ASO), S-2221 (exame toxicológico) e S-2240 (condições ambientais do trabalho — LTCAT). O S-2220 deve ser enviado até o dia 15 do mês seguinte ao exame.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quando o RH deve emitir a CAT?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A CAT deve ser emitida até o primeiro dia útil seguinte ao acidente de trabalho, acidente de trajeto (quando aplicável) ou ao diagnóstico de doença ocupacional. Em caso de óbito, a comunicação deve ser imediata.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Empresa pequena é obrigada a ter PGR e PCMSO?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Em geral, sim. A NR-01 exige PGR de todas as empresas com empregados CLT. O PCMSO (NR-07) também é obrigatório, com possibilidade de dispensa apenas para MEI, ME e EPP de grau de risco 1 ou 2 que não identifiquem exposições ocupacionais relevantes e cumpram as obrigações digitais da NR-01.' },
+    },
+  ],
+};
+
 export default function RHIndexPage() {
   const dores = Object.entries(rhDoresSEO).map(([slug, data]) => ({ slug, ...data }));
 
   return (
     <main className="min-h-screen bg-slate-50">
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'RH e Departamento Pessoal' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <header className="bg-brand-900 py-28 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/images/site/cubes.png')]" />
         <div className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 relative z-10">
@@ -251,6 +274,39 @@ export default function RHIndexPage() {
         </FadeIn>
       </section>
 
+      {/* ── Gestão e legislação trabalhista ── */}
+      <section className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 pb-12">
+        <FadeIn direction="up">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Gestão e legislação trabalhista
+            </span>
+            <h2 className="mb-5 text-2xl font-black text-brand-900">
+              Funções, demissão e prevenção de passivos trabalhistas
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                { href: '/rh/funcao-encarregado', label: 'Função do encarregado de SST' },
+                { href: '/rh/carta-demissao', label: 'Carta de demissão: quando e como usar' },
+                { href: '/rh/quando-demitir-funcionario', label: 'Quando demitir um funcionário' },
+                { href: '/rh/o-que-um-gerente-faz', label: 'O que um gerente faz: papel e responsabilidades' },
+                { href: '/rh/treinamento-gerentes', label: 'Treinamento para gerentes: o que o RH controla' },
+                { href: '/rh/evitar-processos-trabalhistas', label: 'Como evitar processos trabalhistas' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
+                >
+                  {item.label}
+                  <ArrowRight className="mt-4 h-4 w-4" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
       <section className="pb-24 max-w-[1280px] w-full mx-auto px-6 lg:px-8">
         <div className="max-w-5xl">
           <h2 className="text-3xl font-black text-brand-900 mb-12 flex items-center gap-4">
@@ -284,6 +340,29 @@ export default function RHIndexPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="max-w-[1280px] w-full mx-auto px-6 lg:px-8 pb-16">
+        <FadeIn direction="up">
+          <div className="flex flex-wrap gap-4">
+            <Link href="/saude" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+              Hub de Saúde Ocupacional
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+            <Link href="/normas" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+              Hub de Normas Regulamentadoras
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+            <Link href="/dicionario" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+              Dicionário de SST
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+            <Link href="/assinaturas" className="rounded-2xl border border-brand-900 bg-brand-900 px-6 py-4 font-bold text-white transition-all hover:opacity-90">
+              Planos de SST por assinatura
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+          </div>
+        </FadeIn>
       </section>
     </main>
   );

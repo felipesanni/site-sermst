@@ -54,6 +54,47 @@ const serviceSchema = {
   description:
     'Planos mensais para organizar documentos obrigatórios, exames clínicos ocupacionais, vencimentos, mensageria do eSocial e rotina de SST para empresas de diferentes portes.',
   url: 'https://sermst.com.br/assinaturas',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Plano Base',
+      price: '149',
+      priceCurrency: 'BRL',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '149',
+        priceCurrency: 'BRL',
+        unitText: 'mês',
+      },
+      description: 'PGR, PCMSO, LTCAT, exames clínicos ocupacionais, portal do cliente, gestão de vencimentos e mensageria do eSocial.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Plano Essencial',
+      price: '229',
+      priceCurrency: 'BRL',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '229',
+        priceCurrency: 'BRL',
+        unitText: 'mês',
+      },
+      description: 'Tudo do Plano Base mais PPP, CAT, CIPA, consultoria em SST, apoio em auditorias e avaliação de fatores psicossociais.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Plano Gestão Total',
+      price: '329',
+      priceCurrency: 'BRL',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '329',
+        priceCurrency: 'BRL',
+        unitText: 'mês',
+      },
+      description: 'Tudo do Plano Essencial mais consultas clínicas, palestra com psicóloga e treinamentos online para a equipe.',
+    },
+  ],
 };
 
 const contractFaqs = [
@@ -72,6 +113,22 @@ const contractFaqs = [
   {
     title: 'Como incluir matriz e filiais no mesmo pedido?',
     text: 'No formulário de contratação é possível confirmar o endereço principal e adicionar outras unidades que devem entrar no atendimento, com CEP, endereço, cidade e estado de cada local.',
+  },
+  {
+    title: 'Existe prazo mínimo de contrato?',
+    text: 'O plano funciona em ciclo mensal ou anual. Não há fidelidade obrigatória de longo prazo além do ciclo contratado. A periodicidade e as condições de renovação são confirmadas no contrato antes do início do plano.',
+  },
+  {
+    title: 'Como funciona o cancelamento da assinatura?',
+    text: 'O cancelamento deve ser solicitado com antecedência compatível com o ciclo do plano. Não há multa por cancelamento após o cumprimento do ciclo contratado. Os documentos e registros permanecem disponíveis conforme acordado no contrato.',
+  },
+  {
+    title: 'Existe reajuste anual e por qual índice?',
+    text: 'O contrato prevê reajuste anual com base em índice de correção definido no momento da contratação. O índice e o mês de referência do reajuste são informados antes da assinatura do contrato.',
+  },
+  {
+    title: 'Qual o prazo de resposta da SERMST em dúvidas e urgências?',
+    text: 'A SERMST tem canal de atendimento direto para clientes do plano. Em urgências operacionais — como acidente de trabalho ou fiscalização — o suporte é prioritário. O tempo de resposta padrão para dúvidas rotineiras é definido no contrato de assinatura.',
   },
 ];
 
@@ -322,9 +379,17 @@ export default function AssinaturasPage() {
               pedido para a SERMST iniciar o plano.
             </p>
           </div>
-          <Link href="#planos" className="btn-light-safe shrink-0 px-8 py-4">
-            Voltar para a calculadora
-          </Link>
+          <div className="flex flex-col gap-3 sm:flex-row shrink-0">
+            <Link href="#planos" className="btn-light-safe px-8 py-4">
+              Ver os planos
+            </Link>
+            <Link
+              href="/contato"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/40 px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-white/10"
+            >
+              Falar com a equipe
+            </Link>
+          </div>
         </div>
       </section>
 

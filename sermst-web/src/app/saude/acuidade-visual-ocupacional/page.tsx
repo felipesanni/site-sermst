@@ -171,7 +171,7 @@ export default function AcuidadeVisualOcupacionalPage() {
       sidebarTitle="Precisa incluir acuidade visual no PCMSO?"
       sidebarHook="A SERMST realiza teste de acuidade visual integrado ao ASO para funções com requisito visual no PCMSO. Para orçamento corporativo ou dúvida sobre o protocolo da sua empresa, fale com a equipe."
       sidebarCtaLabel="Solicitar orçamento"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'Exames complementares e laboratoriais', href: '/servicos/exames-complementares-laboratoriais' },
         { label: 'Tabela de exames admissionais por função e cargo', href: '/saude/tabela-exames-admissionais-por-funcao' },

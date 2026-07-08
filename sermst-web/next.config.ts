@@ -325,6 +325,8 @@ const nextConfig: NextConfig = {
       { source: "/normas/o-que-e-nr-15", destination: "/normas/nr-15-insalubridade",  permanent: true },
       // NR-07 não tem página dedicada — aponta para PCMSO (conteúdo equivalente)
       { source: "/normas/o-que-e-nr-07", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
+      // Canibalização: importancia-do-exame-periodico compete com exame-periodico-ocupacional
+      { source: "/saude/importancia-do-exame-periodico", destination: "/saude/exame-periodico-ocupacional", permanent: true },
 
       // -- Catch-all para sub-paths de WP (ex: /attachment/) nao cobertos por regras especificas --
       { source: "/saude-ocupacional/:path*", destination: "/saude", permanent: true },

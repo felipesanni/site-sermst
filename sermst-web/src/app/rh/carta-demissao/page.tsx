@@ -144,6 +144,7 @@ export default function CartaDemissãoPage() {
       sidebarTitle="Sua empresa demite com SST em dia?"
       sidebarHook="Toda dispensa exige exame demissional registrado no eSocial. Sem ele, o passivo de saúde ocupacional fica aberto por anos. A SERMST faz auditoria do seu processo de rescisão."
       sidebarCtaLabel="Auditar processo de rescisão"
+      sidebarCtaHref="/assinaturas"
       related={[
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },

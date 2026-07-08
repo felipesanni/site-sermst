@@ -130,6 +130,13 @@ export default async function NormaPage({ params }: Props) {
           { label: 'Serviço de PGR NR-01', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
           { label: 'Exame admissional', href: '/servicos/exame-admissional-expresso/sao-paulo' },
         ]
+      : ['nr-05-cipa', 'nr-15-insalubridade', 'nr-16-periculosidade'].includes(slug)
+      ? [
+          { label: 'Calculadora CNAE: grau de risco e obrigações SST', href: '/rh/calculadora-cnae-grau-de-risco' },
+          { label: 'PCMSO (NR-07)', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
+          { label: 'Serviço de PGR NR-01', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
+          { label: 'Serviço de LTCAT previdenciário', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
+        ]
       : [
           { label: 'PCMSO (NR-07)', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
           { label: 'Serviço de PGR NR-01', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },

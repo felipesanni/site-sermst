@@ -10,7 +10,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Normas Regulamentadoras (NRs) | Guia para empresas | SERMST',
   description:
-    'Hub das Normas Regulamentadoras de SST com guias sobre NR-05 CIPA, NR-01, NR-07, NR-10, NR-15, NR-16, NR-17, NR-18, NR-35 e PPP eletrônico em linguagem útil para gestores e RH.',
+    'Normas Regulamentadoras de SST: guia das NRs com obrigações, prazos e conformidade. NR-01, NR-05, NR-07, NR-15, NR-17, NR-35 e mais para empresas e RH.',
   alternates: { canonical: 'https://sermst.com.br/normas' },
   openGraph: {
     title: 'Normas Regulamentadoras (NRs) | Guia para empresas | SERMST',
@@ -61,6 +61,28 @@ const staticNormaPages = [
   },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quantas Normas Regulamentadoras existem no Brasil?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Existem 38 Normas Regulamentadoras (NRs) ativas no Brasil, aprovadas pelo Ministério do Trabalho e Emprego. Cada NR regula aspectos específicos de saúde e segurança no trabalho. O descumprimento das NRs aplicáveis pode gerar autuações, interdições e passivo trabalhista.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qual NR trata do PGR e do gerenciamento de riscos?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A NR-01 trata do Programa de Gerenciamento de Riscos (PGR) e do Gerenciamento de Riscos Ocupacionais (GRO). Desde maio de 2026, inclui expressamente os fatores de risco psicossociais. É a norma-base da segurança do trabalho e se aplica a todas as empresas com empregados CLT.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qual a diferença entre NR-07 e PCMSO?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A NR-07 é a norma que estabelece as regras de monitoramento da saúde ocupacional. O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é o programa que coloca essas regras em prática, definindo exames, cronogramas e responsáveis. A NR-07 define a obrigação; o PCMSO é a execução.' },
+    },
+  ],
+};
+
 export default function NormasIndexPage() {
   const todos = [
     ...staticNormaPages,
@@ -75,6 +97,7 @@ export default function NormasIndexPage() {
   return (
     <main className="min-h-screen bg-slate-50">
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Normas Regulamentadoras' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <header className="relative overflow-hidden bg-brand-900 py-24 text-white">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -89,7 +112,7 @@ export default function NormasIndexPage() {
                 Normas Regulamentadoras
               </span>
             </div>
-            <h1 className="h1-standard mb-8 max-w-3xl">Guia das NRs explicadas para gestores</h1>
+            <h1 className="h1-standard mb-8 max-w-3xl">Normas Regulamentadoras (NRs): guia para gestores e empresas</h1>
             <p className="max-w-3xl border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
               As Normas Regulamentadoras definem o que sua empresa precisa fazer para operar com segurança e cumprir o
               eSocial. Aqui cada NR aparece com obrigações, prazos, riscos e o que costuma cair em fiscalização,
@@ -199,6 +222,23 @@ export default function NormasIndexPage() {
               </Link>
             </FadeIn>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-6 pb-12 lg:px-8">
+        <div className="flex flex-wrap gap-4">
+          <Link href="/rh" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+            Hub de RH e Departamento Pessoal
+            <ArrowRight className="ml-2 inline h-4 w-4" />
+          </Link>
+          <Link href="/saude" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+            Hub de Saúde Ocupacional
+            <ArrowRight className="ml-2 inline h-4 w-4" />
+          </Link>
+          <Link href="/dicionario" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+            Dicionário de SST
+            <ArrowRight className="ml-2 inline h-4 w-4" />
+          </Link>
         </div>
       </section>
 

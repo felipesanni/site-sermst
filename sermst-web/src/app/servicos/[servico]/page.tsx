@@ -535,6 +535,9 @@ export default async function ServicoPage({
                   Falar com a SERMST
                   <ArrowRight className="h-4 w-4" />
                 </Link>
+                <Link href="/assinaturas" className="btn-outline-safe">
+                  Ver planos por assinatura
+                </Link>
                 <Link href="/servicos" className="btn-outline-safe">
                   Ver outros serviços
                 </Link>

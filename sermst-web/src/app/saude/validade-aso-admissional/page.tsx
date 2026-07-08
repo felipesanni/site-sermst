@@ -167,6 +167,7 @@ export default function ValidadeAsoPage() {
         sidebarTitle="PCMSO e exames em dia?"
         sidebarHook="A SERMST organiza o cronograma de exames ocupacionais da sua empresa, integra com o eSocial e garante que nenhum colaborador fique com ASO vencido."
         sidebarCtaLabel="Organizar meu PCMSO"
+        sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
         related={[
           { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },

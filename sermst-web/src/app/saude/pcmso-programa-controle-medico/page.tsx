@@ -225,6 +225,7 @@ export default function PCMSOPage() {
       sidebarTitle="Seu PCMSO reflete a operação atual?"
       sidebarHook="A SERMST revisa e atualiza o PCMSO da sua empresa, alinhando o programa ao PGR vigente e aos eventos de SST do eSocial. Sem enrolação e sem modelo genérico."
       sidebarCtaLabel="Revisar meu PCMSO"
+      sidebarCtaHref="/servicos/pcmso-nr07-programa/sao-paulo"
       related={[
         { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
         { label: 'O que é PCMSO? Significado e aplicação prática', href: '/dicionario/o-que-e-pcmso' },

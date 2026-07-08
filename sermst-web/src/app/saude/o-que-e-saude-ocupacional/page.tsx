@@ -129,6 +129,7 @@ export default function SaúdeOcupacionalPage() {
       sidebarTitle="Sua empresa tem saúde ocupacional ou só PCMSO de papel?"
       sidebarHook="A diferença aparece no primeiro afastamento longo, na primeira fiscalização ou na primeira ação trabalhista. A SERMST faz auditoria gratuita do que sua empresa tem hoje."
       sidebarCtaLabel="Auditar saúde ocupacional"
+      sidebarCtaHref="/assinaturas"
       related={[
         { label: 'Empresa de segurança do trabalho em São Paulo', href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo' },
         { label: 'PCMSO (NR-07): programa', href: '/servicos/pcmso-nr07-programa/sao-paulo' },

@@ -156,6 +156,7 @@ export default function QuandoDemitirPage() {
       sidebarTitle="Sua empresa demite com SST e DP em ordem?"
       sidebarHook="Cada demissão precisa de exame demissional, eventos no eSocial e documentação prévia coerente. Quando um desses pontos falha, o passivo já começa a nascer."
       sidebarCtaLabel="Auditar processo de demissão"
+      sidebarCtaHref="/assinaturas"
       related={[
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },

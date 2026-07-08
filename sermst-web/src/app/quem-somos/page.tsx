@@ -205,6 +205,10 @@ export default function QuemSomosPage() {
                 <Link href="/contato" className="btn-primary-safe flex w-full">
                   Falar com a SERMST
                 </Link>
+                <Link href="/assinaturas" className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl border border-brand-900/30 px-6 py-3 text-sm font-bold text-brand-900 transition-colors hover:border-brand-900 hover:bg-slate-50">
+                  Ver planos de SST por assinatura
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </FadeIn>
           </div>

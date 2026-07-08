@@ -478,6 +478,12 @@ function ResultCard({
                 <p className="mt-1 text-sm leading-relaxed text-slate-700">
                   A equipe comercial recebeu seu contato junto com o enquadramento calculado. O retorno já vem com proposta adequada ao seu caso.
                 </p>
+                        <a
+                  href="/assinaturas"
+                  className="btn-primary-safe mt-4 inline-flex"
+                >
+                  Ver planos de SST por assinatura →
+                </a>
               </div>
             </div>
           </div>
@@ -941,9 +947,17 @@ export function CnaeCalculator() {
                   </div>
                 )}
                 {cnpjStatus === 'error' && (
-                  <p className="mt-3 text-center text-sm text-red-600">
+                  <div className="mt-3 rounded-xl border border-red-200 bg-red-50 p-4 text-center">
+                    <p className="text-sm text-red-600">
                       Não foi possível consultar este CNPJ. Verifique o número e tente novamente.
-                  </p>
+                    </p>
+                    <a
+                      href="/contato?origem=calculadora-cnae"
+                      className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-brand-900 underline underline-offset-4 hover:text-accent-pink"
+                    >
+                      Falar com a SERMST para enquadramento manual
+                    </a>
+                  </div>
                 )}
                 {cnpjStatus === 'not_found' && (
                   <div className="mt-4 rounded-2xl border border-orange-200 bg-orange-50 p-5 text-center">
@@ -955,17 +969,24 @@ export function CnaeCalculator() {
                       {cnpjCnaeDesc && ` - ${cnpjCnaeDesc}`}
                     </p>
                     <p className="mt-2 text-xs text-slate-500">
-                      Este CNAE ainda não está na nossa base detalhada. 
-                      <a
-                        href="https://wa.me/5511915146447?text=Quero consultar o grau de risco do CNAE da minha empresa"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-bold text-brand-900 underline"
-                      >
-                        Fale com a SERMST
-                      </a>{' '}
-                      para uma análise completa.
+                      Este CNAE ainda não está na nossa base detalhada. Solicite uma análise completa:
                     </p>
+                    <div className="mt-3 flex flex-col items-center gap-2">
+                      <a
+                        href="https://wa.me/5511915146447?text=Ol%C3%A1!%20Consultei%20meu%20CNPJ%20na%20calculadora%20da%20SERMST%20e%20meu%20CNAE%20n%C3%A3o%20foi%20encontrado.%20Preciso%20de%20an%C3%A1lise%20de%20enquadramento."
+                        target="_blank"
+                        rel="noopener"
+                        className="btn-whatsapp btn-whatsapp-solid inline-flex text-sm"
+                      >
+                        Solicitar análise pelo WhatsApp
+                      </a>
+                      <a
+                        href="/contato?origem=calculadora-cnae-not-found"
+                        className="text-xs font-bold text-brand-900 underline underline-offset-4 hover:text-accent-pink transition-colors"
+                      >
+                        ou enviar por formulário
+                      </a>
+                    </div>
                   </div>
                 )}
                 {cnpjStatus === 'idle' && !cnpj && (

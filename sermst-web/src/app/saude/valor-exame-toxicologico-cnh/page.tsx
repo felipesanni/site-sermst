@@ -32,7 +32,7 @@ export default function ValorExameToxicologicoCnhPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-05-28',
-        dateModified: '2026-05-28',
+        dateModified: '2026-07-07',
       }}
       h1="Valor do exame toxicológico CNH: quanto custa e o que realmente importa comparar"
       intro="Quem chega até aqui normalmente quer uma resposta objetiva: qual é o valor do exame toxicológico e se esse atendimento serve para CNH C, D e E. Também é comum surgir a dúvida sobre empresa, pessoa física e como saber se o exame está enquadrado da forma certa. O preço importa, mas ele só ajuda de verdade quando vem acompanhado desse contexto."
@@ -140,8 +140,8 @@ export default function ValorExameToxicologicoCnhPage() {
       sidebarCtaHref="/servicos/exame-toxicologico-clt/sao-paulo"
       related={[
         { label: 'Página principal: exame toxicológico para empresas e CNH', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
+        { label: 'O que é exame toxicológico: como funciona e quem precisa', href: '/saude/o-que-e-exame-toxicologico' },
         { label: 'Onde fazer exame toxicológico em São Paulo', href: '/saude/onde-fazer-exame-toxicologico-sao-paulo' },
-        { label: 'Clínica de exame admissional em São Paulo', href: '/saude/clinica-exame-admissional-sao-paulo' },
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
       ]}
       finalCta={{

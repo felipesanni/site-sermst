@@ -217,6 +217,7 @@ export default function Lei15377Page() {
       sidebarTitle="Sua empresa está em conformidade com a Lei 15.377/2026?"
       sidebarHook="A lei já está em vigor desde abril de 2026 e não há prazo de adaptação. Empresas que não comunicaram o direito à ausência ou não promovem ações de conscientização estão expostas a autuações e reclamações trabalhistas. A SERMST apoia sua equipe de RH e DP na implementação."
       sidebarCtaLabel="Falar com especialista"
+      sidebarCtaHref="/assinaturas"
       related={[
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },

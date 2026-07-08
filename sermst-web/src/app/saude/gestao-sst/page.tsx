@@ -151,6 +151,7 @@ export default function GestãoSSTPage() {
       sidebarTitle="Sua gestão de SST aguenta fiscalização?"
       sidebarHook="A SERMST faz simulação de auditoria SST gratuita: cobre os pontos críticos e mostra exatamente onde sua empresa está exposta. Sem compromisso comercial."
       sidebarCtaLabel="Simular auditoria SST"
+      sidebarCtaHref="/assinaturas"
       related={[
         { label: 'Empresa de segurança do trabalho em São Paulo', href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo' },
         { label: 'O que é saúde ocupacional', href: '/saude/o-que-e-saude-ocupacional' },

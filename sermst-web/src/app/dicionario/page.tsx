@@ -46,12 +46,35 @@ const termosEmAlta = [
   },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'O que significa SST?',
+      acceptedAnswer: { '@type': 'Answer', text: 'SST significa Saúde e Segurança do Trabalho. É o conjunto de normas, programas e práticas que visam proteger a integridade física e mental dos trabalhadores no ambiente de trabalho. No Brasil, é regulamentada pelas Normas Regulamentadoras (NRs) do Ministério do Trabalho e Emprego.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'O que é PGR em SST?',
+      acceptedAnswer: { '@type': 'Answer', text: 'PGR é o Programa de Gerenciamento de Riscos, previsto na NR-01. Ele identifica, avalia e controla os riscos ocupacionais da empresa. Desde maio de 2026, inclui expressamente os fatores de risco psicossociais. É obrigatório para todas as empresas com empregados CLT.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'O que é eSocial SST?',
+      acceptedAnswer: { '@type': 'Answer', text: 'eSocial SST é o conjunto de eventos do sistema eSocial relacionados à Saúde e Segurança do Trabalho. Os principais são S-2210 (CAT), S-2220 (ASO e monitoramento de saúde), S-2221 (exame toxicológico) e S-2240 (condições ambientais do trabalho, base do LTCAT). Empresas com empregados CLT são obrigadas a enviar esses eventos.' },
+    },
+  ],
+};
+
 export default function DicionarioIndexPage() {
   const termos = Object.entries(dicionarioSEO).map(([slug, data]) => ({ slug, ...data }));
 
   return (
     <main className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Dicionário SST' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <header className="border-b border-slate-200 bg-slate-50 pb-24 pt-32">
         <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
@@ -109,6 +132,14 @@ export default function DicionarioIndexPage() {
               </p>
               <Link href="/contato" className="btn-primary-safe">
                 Solicitar orientação
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/rh/calculadora-cnae-grau-de-risco" className="mt-4 flex items-center gap-2 text-sm font-bold text-white/70 transition-colors hover:text-white">
+                Calculadora CNAE e grau de risco
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/assinaturas" className="mt-2 flex items-center gap-2 text-sm font-bold text-accent-pink transition-colors hover:text-white">
+                Planos de SST por assinatura
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

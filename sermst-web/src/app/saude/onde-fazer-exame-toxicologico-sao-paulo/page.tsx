@@ -32,7 +32,7 @@ export default function OndeFazerExameToxicologicoPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-05-28',
-        dateModified: '2026-06-09',
+        dateModified: '2026-07-07',
       }}
       h1="Onde fazer exame toxicológico em São Paulo: centro, acesso e validade do atendimento"
       intro="Quem busca onde fazer exame toxicológico em São Paulo geralmente precisa resolver isso sem perda de tempo. Pode ser renovação da CNH C, D ou E, admissão de motorista, rotina da empresa ou simplesmente a dúvida sobre onde encontrar atendimento confiável na região central. Nessa hora, o que pesa não é só o endereço: é saber se a clínica atende empresa e pessoa física, se o laudo serve para a finalidade certa e se o acesso é simples."
@@ -142,9 +142,9 @@ export default function OndeFazerExameToxicologicoPage() {
       sidebarCtaHref="/servicos/exame-toxicologico-clt/sao-paulo"
       related={[
         { label: 'Página principal: exame toxicológico para CNH C, D e E', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
+        { label: 'O que é exame toxicológico: como funciona e quem precisa', href: '/saude/o-que-e-exame-toxicologico' },
         { label: 'Valor do exame toxicológico CNH', href: '/saude/valor-exame-toxicologico-cnh' },
         { label: 'ASO: quando emitir e como protege a empresa', href: '/saude/aso-atestado-saude-ocupacional' },
-        { label: 'Clínica de exame admissional em São Paulo', href: '/saude/clinica-exame-admissional-sao-paulo' },
       ]}
       finalCta={{
         title: 'Se o local já faz sentido, agora vale olhar o atendimento completo.',

@@ -21,6 +21,50 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://sermst.com.br/#organization',
+  name: 'SERMST',
+  legalName: 'SERMST - Gestão Ocupacional e Medicina do Trabalho',
+  url: 'https://sermst.com.br',
+  foundingDate: '1983',
+  description: 'Medicina do trabalho, segurança do trabalho e gestão de SST para empresas em São Paulo e Grande SP desde 1983.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Largo do Paissandu, 72, 3º Andar, Conjunto 301',
+    addressLocality: 'São Paulo',
+    addressRegion: 'SP',
+    postalCode: '01034-901',
+    addressCountry: 'BR',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+55-11-3229-7567',
+    contactType: 'customer service',
+    availableLanguage: 'Portuguese',
+  },
+  sameAs: [
+    'https://www.instagram.com/sermstocupacional/',
+    'https://www.facebook.com/sermstocupacional',
+    'https://www.linkedin.com/company/sermst-gest%C3%A3o-ocupacional',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://sermst.com.br/#website',
+  url: 'https://sermst.com.br',
+  name: 'SERMST',
+  publisher: { '@id': 'https://sermst.com.br/#organization' },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: 'https://sermst.com.br/dicionario?q={search_term_string}' },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -586,6 +630,14 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
     </div>
   );

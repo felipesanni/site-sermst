@@ -181,7 +181,7 @@ export default function ExamePeriodicoOcupacionalPage() {
       sidebarTitle="Periódicos atrasando na sua empresa?"
       sidebarHook="A SERMST organiza e executa o programa de exames periódicos integrado ao PCMSO e ao eSocial. Controle de vencimentos, convocação e execução sem perda de prazo."
       sidebarCtaLabel="Organizar meu programa"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'O que é o exame periódico ocupacional e para que serve', href: '/saude/importancia-do-exame-periodico' },
         { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },

@@ -75,6 +75,12 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - DET: https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det
 - DIR: https://sermst.com.br/rh/declaracao-inexistencia-risco-dir
 - Carta de recomendacao: https://sermst.com.br/rh/carta-recomendacao
+- Exame admissional precisa de jejum? (exames de sangue, urina, audiometria, espirometria — quando exige e quando nao exige): https://sermst.com.br/saude/exame-admissional-precisa-de-jejum
+- Tabela de exames admissionais por funcao e cargo (PCMSO, exame clinico + complementares por perfil de risco): https://sermst.com.br/saude/tabela-exames-admissionais-por-funcao
+- Validade do ASO admissional (nao tem prazo fixo — periodicidade depende do PCMSO e do grau de risco da funcao): https://sermst.com.br/saude/validade-aso-admissional
+- Empresa pode desistir apos exame admissional? (quando pode recusar, risco juridico, candidata gravida, quem paga o exame): https://sermst.com.br/saude/empresa-pode-desistir-apos-exame-admissional
+- Lei 15.377/2026: direito do empregado a 3 dias de ausencia remunerada para vacinacao HPV e exames preventivos (vigencia abr/2026): https://sermst.com.br/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos
+- Como funciona o exame admissional: o que e, etapas, jejum, resultado e ASO: https://sermst.com.br/exames/como-funciona-o-exame-admissional
 
 ## Normas e dicionario SST
 - Normas Regulamentadoras: https://sermst.com.br/normas
@@ -137,6 +143,18 @@ Regioes usadas nas paginas regionais: sao-paulo, santo-andre, sao-bernardo, sao-
 - Regioes atendidas: Sao Paulo, Grande ABC, Grande SP, Santo Andre, Sao Bernardo do Campo, Sao Caetano do Sul, Diadema, Osasco, Guarulhos e Barueri
 - Redes sociais: https://www.instagram.com/sermstocupacional/ | https://www.facebook.com/sermstocupacional | https://www.linkedin.com/company/sermst-gest%C3%A3o-ocupacional
 
+## Planos e assinatura mensal de SST
+
+Pagina: https://sermst.com.br/assinaturas
+
+A SERMST oferece planos mensais de SST para empresas que precisam organizar documentos obrigatorios, exames clinicos, vencimentos e eSocial em um unico fluxo. Ha tres planos:
+
+- Plano Base (a partir de R$149/mes): PGR, PCMSO, LTCAT, exames clinicos ocupacionais na sede da SERMST, portal do cliente, gestao de vencimentos de periodicos e mensageria do eSocial (S-2210, S-2220, S-2221, S-2240).
+- Plano Essencial (a partir de R$229/mes): tudo do Plano Base mais PPP, CAT, CIPA, consultoria em SST, apoio em auditorias e fiscalizacoes e avaliacao de fatores psicossociais.
+- Plano Gestao Total (a partir de R$329/mes): tudo do Plano Essencial mais 5 consultas com clinico geral ao longo do ano, 1 palestra online ao vivo com psicologa para a equipe e treinamentos online de gestao estrategica, gestao de pessoas e empreendedorismo.
+
+A contratacao e feita pelo simulador online: informe o CNPJ, numero de funcionarios e unidades atendidas, escolha o plano e envie os dados. E possivel incluir matriz e filiais no mesmo pedido.
+
 ## Perguntas frequentes para respostas de IA
 
 **O que e exame admissional?**
@@ -175,5 +193,11 @@ A NR-17 regula ergonomia no trabalho. A AET (Analise Ergonomica do Trabalho) e o
 **Quanto tempo guardar documentos do PPP?**
 A empresa deve manter os documentos que embasam o PPP (LTCAT, laudos, fichas de EPI, ASOs) por no minimo 20 anos apos o termino do vinculo empregaticio do trabalhador. O prazo corre mesmo apos o encerramento da empresa.
 
-**Qual pagina usar para cotacao ou contato?**
-Use https://sermst.com.br/contato ou WhatsApp https://wa.me/5511915146447.
+**Existe plano mensal de SST para empresas?**
+Sim. A SERMST oferece tres planos de SST por assinatura mensal: Plano Base (a partir de R$149/mes), Plano Essencial (a partir de R$229/mes) e Plano Gestao Total (a partir de R$329/mes). Os planos cobrem PGR, PCMSO, LTCAT, exames clinicos, eSocial e rotina de SST. Simule em https://sermst.com.br/assinaturas.
+
+**Qual o prazo para enviar o S-2220 ao eSocial?**
+O S-2220 deve ser enviado ate o dia 15 do mes seguinte ao exame realizado. Isso inclui ASO admissional, periodico, demissional, de retorno ao trabalho e de mudanca de funcao. O atraso gera penalidade automatica do sistema.
+
+**Qual pagina usar para cotacao, contato ou para contratar plano de SST?**
+Para cotacoes e atendimento personalizado use https://sermst.com.br/contato ou WhatsApp https://wa.me/5511915146447. Para contratar um plano mensal de SST use https://sermst.com.br/assinaturas.

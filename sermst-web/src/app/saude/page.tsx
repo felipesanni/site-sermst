@@ -25,12 +25,35 @@ export const metadata = {
   },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'O que é PCMSO e quando é obrigatório?',
+      acceptedAnswer: { '@type': 'Answer', text: 'O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é o programa previsto na NR-07 que organiza o monitoramento da saúde dos trabalhadores. É obrigatório para empresas com empregados CLT, com exceção de alguns MEI, ME e EPP de grau de risco 1 ou 2 que não identifiquem exposições ocupacionais relevantes.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quando o exame periódico ocupacional é obrigatório?',
+      acceptedAnswer: { '@type': 'Answer', text: 'O exame periódico é obrigatório durante o vínculo empregatício para monitorar a saúde do trabalhador conforme os riscos do PCMSO. A periodicidade depende do grau de risco e das condições de trabalho: anual para grau de risco 3 e 4, e bienal para grau 1 e 2 em condições normais.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'O que é ASO e quem pode emitir?',
+      acceptedAnswer: { '@type': 'Answer', text: 'O ASO (Atestado de Saúde Ocupacional) é o documento emitido pelo médico do trabalho ao final de cada exame ocupacional — admissional, periódico, retorno ao trabalho, mudança de risco ou demissional. Registra se o trabalhador está apto ou inapto para a função. Somente médico do trabalho ou coordenador do PCMSO pode emitir o ASO.' },
+    },
+  ],
+};
+
 export default function SaudeIndexPage() {
   const posts = Object.entries(saudeSEO).map(([slug, data]) => ({ slug, ...data }));
 
   return (
     <main className="min-h-screen bg-slate-50">
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Saúde Ocupacional' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <header className="relative overflow-hidden bg-brand-900 py-28 text-white">
         <div className="absolute inset-0 opacity-20">
@@ -293,6 +316,7 @@ export default function SaudeIndexPage() {
                 { href: '/saude/doencas-ocupacionais', label: 'Doenças ocupacionais: tipos e prevenção' },
                 { href: '/saude/medico-do-trabalho', label: 'Médico do trabalho: papel e obrigações' },
                 { href: '/rh/declaracao-inexistencia-risco-dir', label: 'DIR e dispensa de elaborar PCMSO' },
+                { href: '/rh/calculadora-cnae-grau-de-risco', label: 'Calculadora CNAE e grau de risco' },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -339,6 +363,80 @@ export default function SaudeIndexPage() {
             </FadeIn>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-6 pb-12 lg:px-8">
+        <FadeIn direction="up">
+          <div className="mb-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Exames complementares ocupacionais
+            </span>
+            <h2 className="mb-5 text-2xl font-black text-brand-900">
+              Exames além do clínico: espirometria, ECG, visão e psicossocial
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { href: '/saude/espirometria-ocupacional', label: 'Espirometria ocupacional' },
+                { href: '/saude/eletrocardiograma-ocupacional', label: 'Eletrocardiograma ocupacional' },
+                { href: '/saude/acuidade-visual-ocupacional', label: 'Acuidade visual ocupacional' },
+                { href: '/saude/avaliacao-psicossocial-ocupacional', label: 'Avaliação psicossocial ocupacional' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
+                >
+                  {item.label}
+                  <ArrowRight className="mt-4 h-4 w-4" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Admissão, afastamento e rescisão
+            </span>
+            <h2 className="mb-5 text-2xl font-black text-brand-900">
+              Exames e situações especiais do vínculo empregatício
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                { href: '/saude/acidente-de-trabalho', label: 'Acidente de trabalho: tipos e nexo causal' },
+                { href: '/saude/exame-retorno-ao-trabalho', label: 'Exame de retorno ao trabalho' },
+                { href: '/saude/empresa-pode-desistir-apos-exame-admissional', label: 'Empresa pode desistir após exame admissional?' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
+                >
+                  {item.label}
+                  <ArrowRight className="mt-4 h-4 w-4" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-4">
+            <Link href="/rh" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+              Hub de RH e Departamento Pessoal
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+            <Link href="/normas" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+              Hub de Normas Regulamentadoras
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+            <Link href="/dicionario" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
+              Dicionário de SST
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+            <Link href="/assinaturas" className="rounded-2xl border border-brand-900 bg-brand-900 px-6 py-4 font-bold text-white transition-all hover:opacity-90">
+              Planos de SST por assinatura
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </Link>
+          </div>
+        </FadeIn>
       </section>
     </main>
   );

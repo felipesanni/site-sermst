@@ -139,6 +139,23 @@ const organizationSchema = {
   priceRange: '$$',
 }
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://sermst.com.br/#website',
+  url: 'https://sermst.com.br',
+  name: 'SERMST',
+  publisher: { '@id': 'https://sermst.com.br/#organization' },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://sermst.com.br/dicionario?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+}
+
 const strategicLinks = [
   { name: 'Exame Admissional Expresso', link: '/servicos/exame-admissional-expresso' },
   { name: 'Empresa de Segurança do Trabalho', link: '/servicos/empresa-seguranca-do-trabalho' },
@@ -151,6 +168,7 @@ const strategicLinks = [
   { name: 'Exames Complementares', link: '/servicos/exames-complementares-laboratoriais' },
   { name: 'Perícia Trabalhista', link: '/servicos/pericia-trabalhista-assistente-tecnico' },
   { name: 'Treinamentos de NRs', link: '/servicos/treinamentos-nrs-cipa-brigada' },
+  { name: 'Planos de SST por Assinatura', link: '/assinaturas' },
 ]
 
 const servedRegions = [
@@ -175,6 +193,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       {/* ── ChunkLoadError auto-reload ──────────────────────────────────────
            Quando um deploy novo substitui os hashes dos chunks JS, o browser
@@ -355,6 +377,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                 <Link href="/rh" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">RH e eSocial</Link>
                 <Link href="/saude" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Saúde Ocupacional</Link>
                 <Link href="/normas" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Normas (NR)</Link>
+                <Link href="/assinaturas" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Planos</Link>
                 <Link href="/contato" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Contato</Link>
               </nav>
 
@@ -461,6 +484,10 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                     </Link>
                     <Link href="/dicionario" className="flex items-center justify-between border-b border-white/10 pb-4">
                       Dicionário SST
+                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+                    </Link>
+                    <Link href="/assinaturas" className="flex items-center justify-between border-b border-white/10 pb-4">
+                      Planos de SST
                       <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
                     </Link>
                     <Link href="/contato" className="flex items-center justify-between border-b border-white/10 pb-4">

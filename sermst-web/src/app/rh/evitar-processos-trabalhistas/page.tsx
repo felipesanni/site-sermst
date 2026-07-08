@@ -129,6 +129,7 @@ export default function EvitarProcessosPage() {
       sidebarTitle="Sua documentação aguenta uma ação?"
       sidebarHook="Cerca de 40% das ações têm componente SST. Sem PGR, PCMSO, ASOs e treinamentos documentados, a defesa cai. A SERMST faz auditoria completa do paper trail."
       sidebarCtaLabel="Auditar minha documentação SST"
+      sidebarCtaHref="/assinaturas"
       related={[
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
