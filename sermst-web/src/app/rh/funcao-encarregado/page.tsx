@@ -275,7 +275,7 @@ export default function FunçãoEncarregadoPage() {
                 Sem essas três peças, qualquer acidente vira passivo na empresa. Com as três, a empresa tem defesa técnica e o encarregado tem proteção jurídica.
               </p>
               <p>
-                O ponto de partida mais prático é saber qual grau de risco se aplica à atividade da empresa — isso define quais exames, laudos e estruturas de SST são obrigatórios para o cargo. <a href="/rh/calculadora-cnae-grau-de-risco" className="text-accent-pink font-bold hover:underline">A calculadora de CNAE e grau de risco</a> faz esse mapeamento automaticamente a partir do CNPJ ou CNAE e já indica CIPA, SESMT e referência de RAT.
+                O ponto de partida mais prático é saber qual grau de risco se aplica à atividade da empresa — isso define quais exames, laudos e estruturas de SST são obrigatórios para o cargo. <Link href="/rh/calculadora-cnae-grau-de-risco" className="text-accent-pink font-bold hover:underline">A calculadora de CNAE e grau de risco</Link> faz esse mapeamento automaticamente a partir do CNPJ ou CNAE e já indica CIPA, SESMT e referência de RAT.
               </p>
 
               <h2>Perguntas frequentes sobre a função de encarregado</h2>
