@@ -122,6 +122,7 @@ const nextConfig: NextConfig = {
       { source: "/sao-paulo/onde-realizar-exame-admissional-na-liberdade-sao-paulo", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/sao-paulo/exame-admissional-na-vila-mariana", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/sermst", destination: "/quem-somos", permanent: true },
+      { source: "/sobre", destination: "/quem-somos", permanent: true },
       { source: "/missao-visao-e-valores", destination: "/quem-somos", permanent: true },
       { source: "/saude-ocupacional", destination: "/saude", permanent: true },
       { source: "/seguranca-do-trabalho", destination: "/servicos", permanent: true },
@@ -229,6 +230,7 @@ const nextConfig: NextConfig = {
       { source: "/author/:slug*", destination: "/", permanent: true },
       { source: "/staff/:slug*", destination: "/quem-somos", permanent: true },
       { source: "/home/attachment/:slug*", destination: "/", permanent: true },
+      { source: "/servicos/attachment/:path*", destination: "/servicos", permanent: true },
       // -- Posts de campanha (Janeiro Branco, Outubro Rosa, etc.) sem equivalente B2B --
       { source: "/blog/campanha-janeiro-branco-a-vida-pede-equilibrio", destination: "/", permanent: true },
       { source: "/blog/dezembro-vermelho", destination: "/", permanent: true },
@@ -261,6 +263,7 @@ const nextConfig: NextConfig = {
       { source: "/lp", destination: "/contato", permanent: true },
       { source: "/contato/", destination: "/contato", permanent: true },
       { source: "/lp-aso1", destination: "/contato", permanent: true },
+      { source: "/lp-aso1/:path*", destination: "/contato", permanent: true },
       { source: "/lp-aso-form", destination: "/contato", permanent: true },
       { source: "/lp-obra", destination: "/contato", permanent: true },
       { source: "/servicos/medicina-do-trabalho", destination: "/solucoes", permanent: true },

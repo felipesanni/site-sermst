@@ -1190,22 +1190,30 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
   },
   "o-que-e-ppp": {
     respostaCurta:
-      "PPP significa Perfil Profissiográfico Previdenciário. É o documento que consolida o histórico laboral do trabalhador, suas atividades e as informações sobre exposição a agentes nocivos para fins previdenciários.",
+      "PPP é o Perfil Profissiográfico Previdenciário. O documento reúne histórico laboral, atividades exercidas e informações sobre exposição a agentes nocivos, servindo de base para desligamento, revisão previdenciária e análise de aposentadoria especial.",
     ondeAparece:
-      "O PPP aparece em pedidos previdenciários, desligamentos, auditorias, revisões do histórico de exposição e análises de aposentadoria especial. No fluxo atual, suas informações se conectam aos dados ambientais enviados ao eSocial, especialmente pelo evento S-2240.",
+      "O documento PPP aparece quando a empresa precisa entregar o histórico ocupacional do trabalhador em desligamentos, revisões previdenciárias, auditorias e análises de aposentadoria especial. No fluxo atual, ele também precisa conversar com os dados ambientais enviados ao eSocial, especialmente pelo S-2240.",
     naoConfunda:
-      "PPP não é um laudo técnico. Ele consolida informações que precisam ter base consistente em documentos como o LTCAT e nos registros da empresa. Também não é sinônimo de S-2240: o evento transmite parte da base ambiental, mas o PPP é o documento final que precisa fechar a mesma história.",
+      "PPP não é laudo técnico nem sinônimo de eSocial. Ele consolida informações que precisam estar sustentadas por documentos como LTCAT e registros internos da empresa. O S-2240 transmite parte da base ambiental, mas o PPP é o documento final que precisa contar a mesma história sem contradição.",
     aprofundamento: {
       href: "/normas/ppp-eletronico",
-      title: "Precisa entender PPP eletrônico, S-2240 e responsabilidades?",
+      title: "Precisa entender PPP eletrônico, S-2240, obrigatoriedade e responsabilidades?",
       description:
-        "Veja como o PPP funciona, quais informações entram no documento e por que LTCAT, PGR e eSocial precisam estar alinhados.",
+        "Veja como o PPP funciona na prática, quem precisa emitir, quando entregar o documento e por que LTCAT, PGR e eSocial precisam estar alinhados.",
       label: "Ler guia completo de PPP",
     },
     faq: [
       {
         q: "O que significa PPP?",
         a: "PPP significa Perfil Profissiográfico Previdenciário.",
+      },
+      {
+        q: "PPP é obrigatório?",
+        a: "O PPP é exigido quando a empresa precisa manter e fornecer o histórico previdenciário e ocupacional do trabalhador conforme a legislação aplicável, especialmente em contextos de desligamento, exposição ocupacional e análise previdenciária.",
+      },
+      {
+        q: "Quem deve emitir o PPP?",
+        a: "A emissão do PPP é responsabilidade da empresa, com base nas informações ocupacionais e previdenciárias que ela mantém e nos documentos técnicos que sustentam esse histórico.",
       },
       {
         q: "PPP e LTCAT são a mesma coisa?",
@@ -1218,6 +1226,10 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
       {
         q: "PPP entra em aposentadoria especial?",
         a: "Sim. O PPP é uma das peças centrais nas análises de aposentadoria especial porque consolida histórico laboral, agentes nocivos e dados que precisam estar sustentados por LTCAT e demais registros.",
+      },
+      {
+        q: "PPP é a mesma coisa que documento de aposentadoria?",
+        a: "Não. O PPP é um documento previdenciário importante para esse tipo de análise, mas ele não substitui sozinho a avaliação completa do caso nem elimina a necessidade de coerência com LTCAT, eSocial e demais registros.",
       },
     ],
   },

@@ -125,13 +125,13 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
                       </p>
                     </Link>
 
-                    <Link href="/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo" className="rounded-2xl bg-brand-900 p-7 text-white no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
+                    <Link href="/rh/multa-esocial-s2220" className="rounded-2xl bg-brand-900 p-7 text-white no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
                       <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-                        Intenção comercial
+                        Próximo passo
                       </span>
-                      <h2 className="mt-0 text-2xl font-black text-white">Precisa revisar a base do PPP, S-2240 e aposentadoria especial?</h2>
+                      <h2 className="mt-0 text-2xl font-black text-white">Como o S-2240 se conecta ao PPP e onde as empresas mais erram</h2>
                       <p className="mb-0 text-base leading-relaxed text-slate-300">
-                        Quando o problema já é coerência documental, o LTCAT costuma ser a peça mais crítica para corrigir a história toda.
+                        Depois de entender o que é PPP, o próximo ponto costuma ser a coerência entre documento, base ambiental e envio ao eSocial.
                       </p>
                     </Link>
                   </div>
@@ -154,10 +154,10 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
               </div>
               <hr className="my-8 border-white/10" />
               <Link
-                href="/contato"
+                href={detail.aprofundamento.href}
                 className="btn-primary-safe flex w-full text-center"
               >
-                Falar com a SERMST
+                {detail.aprofundamento.label}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>
