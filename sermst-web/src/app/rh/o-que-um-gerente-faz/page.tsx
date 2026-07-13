@@ -21,44 +21,44 @@ export default function OQueUmGerenteFazPage() {
   return (
     <BlockbusterArticle
       coverImage={{ src: "/images/site/b2b-partnership.jpg", alt: "Gerente conduzindo reunião de equipe em ambiente corporativo" }}
-      hubLabel="Hub de RH e Departamento Pessoal"
-      hubLabelShort="← Hub de RH e DP"
+      hubLabel="RH e Departamento Pessoal"
+      hubLabelShort="← RH e DP"
       hubHref="/rh"
       pageUrl="https://sermst.com.br/rh/o-que-um-gerente-faz"
       author={{
         name: 'Felipe Sannino',
-        jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+        jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-02',
+        dateModified: '2026-07-13',
       }}
 
       h1="O que faz um gerente? Funções, responsabilidades e impacto na empresa"
-      intro="Guia para gestores e RH que estão estruturando o cargo: o que um gerente entrega na prática, como esse papel difere de outras lideranças e por que SST passa a ser responsabilidade direta dele."
+      intro="Este guia ajuda o RH a estruturar o cargo de gerente, diferenciar níveis de liderança e definir o papel do gestor na rotina de segurança e saúde da equipe."
       sections={[
         {
           title: 'O que faz um gerente na prática',
           body: (
             <>
               <p>
-                Gerente é o cargo que transforma estratégia da diretoria em execução real da equipe. É quem reúne planejamento, gente e indicador num único ponto de responsabilidade. Diferente do supervisor (que coordena turno e operação imediata) e do diretor (que define rota e investimento), o gerente é a peça que faz a engrenagem girar no nível tático.
+                O gerente costuma conectar as decisões da diretoria à rotina da equipe. Planeja recursos, acompanha indicadores, distribui responsabilidades e resolve problemas que atravessam mais de uma função.
               </p>
               <p>
-                Em empresa familiar, o gerente costuma ser o cargo mais subestimado e mais decisivo: subestimado porque a diretoria assume que &quot;todo mundo é gente da casa&quot;, decisivo porque é ele que define se o plano da diretoria vira resultado mensurável ou se vira reclamação no fim do mês.
+                Em empresas familiares, essa função às vezes surge sem descrição clara. O profissional recebe o título, mas continua sem autonomia, orçamento ou critérios de decisão. Definir as atribuições antes da promoção evita boa parte desse conflito.
               </p>
             </>
           ),
         },
         {
-          title: 'As 6 entregas reais de um gerente',
+          title: 'Seis entregas comuns de um gerente',
           body: (
             <ol>
-              <li><strong>Resultado da área:</strong> indicador batido, meta cumprida, prazo entregue. Sem isso, qualquer outra coisa é teatro.</li>
-              <li><strong>Desenvolvimento da equipe:</strong> identificar quem precisa de treinamento, quem está pronto para promoção, quem precisa sair. Time bom não nasce sozinho.</li>
+              <li><strong>Resultado da área:</strong> acompanhar indicadores, prazos e metas compatíveis com a operação.</li>
+              <li><strong>Desenvolvimento da equipe:</strong> identificar necessidades de orientação, treinamento, movimentação e contratação.</li>
               <li><strong>Gestão de processo:</strong> garantir que o procedimento existe, está claro, é seguido e melhora com o tempo.</li>
-              <li><strong>Saúde e segurança da operação:</strong> responsabilidade direta pelo SST da equipe — PCMSO em dia, EPI sendo usado, treinamento NR formalizado.</li>
-              <li><strong>Reporte e visibilidade:</strong> levar à diretoria os indicadores que importam, antes de virarem crise.</li>
-              <li><strong>Decisão sob incerteza:</strong> quando o procedimento não cobre, o gerente decide. Sem trava, sem empurrar para cima.</li>
+              <li><strong>Saúde e segurança da operação:</strong> cumprir e fazer cumprir os procedimentos que cabem à área, comunicar riscos e interromper situações que não possam ser controladas.</li>
+              <li><strong>Reporte e visibilidade:</strong> levar à diretoria problemas e indicadores relevantes em tempo de decisão.</li>
+              <li><strong>Decisão e escalonamento:</strong> decidir dentro da própria autonomia e encaminhar o que exige validação superior ou técnica.</li>
             </ol>
           ),
         },
@@ -67,15 +67,15 @@ export default function OQueUmGerenteFazPage() {
           body: (
             <>
               <p>
-                Os cargos se confundem porque cada empresa nomeia diferente. Mas no padrão de mercado:
+                A legislação não cria uma divisão universal entre esses títulos. Na prática, muitas empresas usam a seguinte organização:
               </p>
               <ul>
-                <li><strong>Coordenador:</strong> coordena pessoas que executam atividades operacionais. Responsabilidade técnica forte, gestão de gente menor.</li>
-                <li><strong>Supervisor:</strong> supervisiona turnos, equipes e encarregados. Está no campo, com a operação rolando.</li>
-                <li><strong>Gerente:</strong> responde por resultado consolidado da área (vendas, produção, RH, financeiro etc.). Tem orçamento, define meta, distribui recurso.</li>
+                <li><strong>Coordenador:</strong> integra atividades, projetos ou especialistas e acompanha a execução.</li>
+                <li><strong>Supervisor:</strong> acompanha mais de perto turnos, equipes ou frentes operacionais.</li>
+                <li><strong>Gerente:</strong> responde por resultados consolidados, recursos e decisões de uma área.</li>
               </ul>
               <p>
-                Confusão mais comum: chamar de gerente quem na prática é supervisor. Resultado: o cargo paga melhor mas a pessoa não tem autonomia de gerente — fica frustrada e a empresa paga adicional sem ganhar entrega.
+                O mais importante é fazer descrição, autonomia e remuneração corresponderem ao trabalho real. O título sozinho não define atribuições nem afasta o risco de desvio ou acúmulo de função.
               </p>
             </>
           ),
@@ -84,32 +84,32 @@ export default function OQueUmGerenteFazPage() {
           title: 'Perfil que costuma funcionar',
           body: (
             <ul>
-              <li>Capacidade de tomar decisão com informação incompleta — o cargo é decisão, não execução</li>
-              <li>Comunicação direta para cima e para baixo — fala com diretor e fala com operador no mesmo dia</li>
-              <li>Visão de processo, não só de tarefa — enxerga onde o gargalo nasce</li>
-              <li>Postura de exemplo — chega no horário, segue procedimento, usa EPI, cobra o mesmo</li>
-              <li>Tolerância a conflito — vai precisar dar feedback duro e ouvir feedback duro</li>
+              <li>Capacidade de decidir com as informações disponíveis e reconhecer quando precisa de apoio</li>
+              <li>Comunicação clara com diretoria, pares e equipe</li>
+              <li>Visão do processo, não apenas da tarefa isolada</li>
+              <li>Coerência entre o que orienta e o que pratica</li>
+              <li>Capacidade de lidar com divergências e dar feedback objetivo</li>
               <li>Conhecimento técnico suficiente da área para não ser enganado pela equipe</li>
             </ul>
           ),
         },
         {
-          title: 'O ponto cego de SST que pega gestores promovidos',
+          title: 'O papel do gerente na rotina de SST',
           body: (
             <>
               <p>
-                Aqui está a parte que ninguém te conta no upgrade para gerente: <strong>você passa a ser solidariamente responsável por acidente da equipe.</strong>
+                A promoção não cria automaticamente responsabilidade solidária por qualquer acidente. Ela amplia, porém, o dever de agir dentro das atribuições e da autonomia que a empresa concedeu ao gerente.
               </p>
               <p>
-                Se houver acidente grave e a investigação concluir que o gerente conhecia o risco e não agiu — não exigiu EPI, não corrigiu procedimento, não promoveu treinamento — ele responde junto com a empresa. Em casos extremos, pode até ser responsabilizado criminalmente.
+                Em uma apuração, podem ser avaliados o conhecimento do risco, a possibilidade de intervenção, as ordens dadas e a participação causal de cada pessoa. A eventual responsabilidade civil ou penal depende desses elementos e não decorre apenas do cargo.
               </p>
               <p>
-                Para a empresa, o impacto é direto: se a documentação de SST não comprovar que o gerente foi treinado e que repassou as instruções para a equipe, a defesa em ação trabalhista cai. Por isso, três coisas precisam estar feitas para todo gerente:
+                Para que o gerente desempenhe esse papel, a empresa precisa definir responsabilidades, fornecer treinamento e manter canais de comunicação com o SESMT ou com o responsável técnico. Três pontos ajudam:
               </p>
               <ol>
                 <li><strong>Treinamento documentado nas NRs aplicáveis</strong> à área que comanda (NR-10, NR-12, NR-18, NR-35 etc.).</li>
-                <li><strong>PCMSO em dia</strong> — o cargo de gerente também tem riscos específicos que o programa precisa refletir.</li>
-                <li><strong>Procedimentos por escrito</strong> sobré o que ele tem que cobrar da equipe, com evidência de leitura e ciência.</li>
+                <li><strong>PCMSO coerente com os riscos:</strong> a função gerencial também deve ser avaliada conforme as exposições reais.</li>
+                <li><strong>Procedimentos por escrito:</strong> com limites de autonomia, formas de comunicar desvios e critérios de interrupção.</li>
               </ol>
             </>
           ),
@@ -118,27 +118,27 @@ export default function OQueUmGerenteFazPage() {
       faq={[
         {
           q: 'Qual o salário médio de um gerente?',
-          a: 'Varia muito por área e porte. Em empresa média (50-300 funcionários) em São Paulo, gerente operacional fica entre R$ 8 mil e R$ 18 mil. Gerente de área crítica (financeiro, comercial, industrial) pode passar de R$ 25 mil. O que dita não é o título, é o tamanho do orçamento sob responsabilidade e o impacto da decisão dele no resultado.',
+          a: 'Varia por setor, região, porte, equipe, orçamento e autonomia. Pesquisas salariais da categoria e a convenção coletiva aplicável são referências mais seguras do que uma faixa única para todos os cargos chamados de gerente.',
         },
         {
           q: 'O gerente precisa de exame admissional e periódico?',
-          a: 'Sim. Toda contratação CLT exige ASO admissional. O periódico depende do PCMSO — geralmente bienal para função administrativa, anual para função operacional ou de risco. Pular o exame de gerente é comum porque parece &quot;menos exposto&quot;, mas o cargo tem risco específico (estresse, decisão sob pressão) que deve ser monitorado.',
+          a: 'Sim. O admissional é realizado antes de o empregado assumir as atividades. Os exames seguintes obedecem à NR-07 e ao PCMSO, com periodicidade definida pelo enquadramento e pelos riscos, não apenas pelo título de gerente.',
         },
         {
           q: 'O gerente pode responder por acidente da equipe?',
-          a: 'Pode, e responde com frequência. A responsabilidade é solidária: se houver omissão comprovada (gerente sabia do risco e não agiu), ele responde civilmente e, em casos graves, criminalmente. Por isso documentar treinamento, repasse de instruções e fiscalização não é burocracia — é proteção pessoal.',
+          a: 'A conduta do gerente pode ser apurada quando ele tinha atribuição, autonomia, conhecimento do risco e participação no fato. A responsabilidade não é automaticamente solidária. Treinamento, descrição de cargo e procedimentos ajudam a esclarecer o que cabia ao gestor e à empresa.',
         },
         {
           q: 'Como saber se um gerente está pronto para o cargo?',
-          a: 'Três sinais: ele já toma decisão sob pressão sem travar, já dá feedback duro sem perder o time, e enxerga o sistema (não só a tarefa). Se a pessoa só tem desempenho técnico de operador, vai ser um operador caro com crachá de gerente.',
+          a: 'Alguns sinais são capacidade de priorizar, comunicar decisões, desenvolver pessoas e enxergar o processo além da própria tarefa. O desempenho técnico é importante, mas não substitui as competências de liderança.',
         },
         {
           q: 'Qual a diferença entre gerente e diretor?',
-          a: 'Gerente é responsável pela execução de uma área. Diretor define a rota da empresa, decide investimento e responde pelo conjunto das áreas. Em empresa pequena os papéis se misturam — o sócio-diretor faz gerência operacional. Em empresa que vai crescer, separar os papéis é o que destrava escala.',
+          a: 'Em muitas estruturas, o gerente responde pela execução e pelos recursos de uma área, enquanto o diretor decide prioridades e investimentos mais amplos. Em empresas menores os papéis podem se acumular, por isso a descrição real das atribuições é mais útil do que o título.',
         },
       ]}
       sidebarTitle="Você tem gerentes na operação?"
-      sidebarHook="Gerente sem treinamento de SST documentado é exposição direta para a empresa em fiscalização ou acidente. A SERMST audita PCMSO, PGR e treinamentos de toda a estrutura — sem custo inicial."
+      sidebarHook="O gerente precisa saber quais riscos comunicar, quais procedimentos cobrar e quando interromper uma atividade. A SERMST verifica como esse papel aparece no PGR, no PCMSO e nos treinamentos."
       sidebarCtaLabel="Auditar SST da liderança"
       related={[
         { label: 'Função encarregado: responsabilidades', href: '/rh/funcao-encarregado' },

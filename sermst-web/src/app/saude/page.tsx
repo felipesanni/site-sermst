@@ -9,14 +9,14 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 export const dynamic = 'force-static';
 
 export const metadata = {
-  title: 'Hub de Saúde SST | Medicina do Trabalho | SERMST',
+  title: 'Saúde Ocupacional e Medicina do Trabalho | SERMST',
   description:
     'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO, ASO e produtividade.',
   alternates: {
     canonical: 'https://sermst.com.br/saude',
   },
   openGraph: {
-    title: 'Hub de Saúde SST | Medicina do Trabalho | SERMST',
+    title: 'Saúde Ocupacional e Medicina do Trabalho | SERMST',
     description:
       'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO, ASO e produtividade.',
     url: 'https://sermst.com.br/saude',
@@ -32,23 +32,25 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'O que é PCMSO e quando é obrigatório?',
-      acceptedAnswer: { '@type': 'Answer', text: 'O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é o programa previsto na NR-07 que organiza o monitoramento da saúde dos trabalhadores. É obrigatório para empresas com empregados CLT, com exceção de alguns MEI, ME e EPP de grau de risco 1 ou 2 que não identifiquem exposições ocupacionais relevantes.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'O PCMSO é o programa previsto na NR-07 que organiza o monitoramento da saúde ocupacional. A norma prevê dispensa de elaboração para MEI, ME e EPP de grau de risco 1 ou 2 que atendam às condições da NR-01 e da NR-07, sem dispensar exames ocupacionais nem ASO.' },
     },
     {
       '@type': 'Question',
       name: 'Quando o exame periódico ocupacional é obrigatório?',
-      acceptedAnswer: { '@type': 'Answer', text: 'O exame periódico é obrigatório durante o vínculo empregatício para monitorar a saúde do trabalhador conforme os riscos do PCMSO. A periodicidade depende do grau de risco e das condições de trabalho: anual para grau de risco 3 e 4, e bienal para grau 1 e 2 em condições normais.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'O exame periódico monitora a saúde durante o vínculo. Pela NR-07, deve ocorrer anualmente ou em intervalo menor para trabalhadores expostos a riscos identificados e classificados no PGR e para pessoas com condições crônicas que aumentem a suscetibilidade. Para os demais, a regra geral é bienal.' },
     },
     {
       '@type': 'Question',
       name: 'O que é ASO e quem pode emitir?',
-      acceptedAnswer: { '@type': 'Answer', text: 'O ASO (Atestado de Saúde Ocupacional) é o documento emitido pelo médico do trabalho ao final de cada exame ocupacional — admissional, periódico, retorno ao trabalho, mudança de risco ou demissional. Registra se o trabalhador está apto ou inapto para a função. Somente médico do trabalho ou coordenador do PCMSO pode emitir o ASO.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'O ASO (Atestado de Saúde Ocupacional) é emitido pelo médico que realiza o exame clínico ocupacional e registra se o trabalhador está apto ou inapto para a função. Quando houver médico responsável pelo PCMSO, seus dados também devem constar no documento.' },
     },
   ],
 };
 
 export default function SaudeIndexPage() {
-  const posts = Object.entries(saudeSEO).map(([slug, data]) => ({ slug, ...data }));
+  const posts = Object.entries(saudeSEO)
+    .filter(([slug]) => slug !== 'importancia-do-exame-periodico')
+    .map(([slug, data]) => ({ slug, ...data }));
 
   return (
     <main className="min-h-screen bg-slate-50">
@@ -85,7 +87,7 @@ export default function SaudeIndexPage() {
             </h1>
             <p className="max-w-4xl border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed text-slate-300 md:pl-10 md:text-2xl">
               Conteúdo para empresas que querem entender melhor exames ocupacionais, vigilância médica, prevenção e o
-              impacto da saúde do trabalhador na produtividade, no eSocial e no compliance.
+              impacto da saúde do trabalhador na operação, no eSocial e no cumprimento da NR-07.
             </p>
           </FadeIn>
         </div>
@@ -108,8 +110,8 @@ export default function SaudeIndexPage() {
                   ou dificuldade para manter a rotina ocupacional organizada.
                 </p>
                 <p>
-                  Este hub transforma esses temas em leitura clara para RH, lideranças e gestores. Ele mostra como a
-                  vigilância médica e os exames ocupacionais se conectam a prevenção, produtividade e conformidade. Para
+                  Esta seção reúne explicações para RH, lideranças e gestores. Ela mostra como a
+                  vigilância médica e os exames ocupacionais se conectam à prevenção, à operação e aos registros. Para
                   navegar por conteúdos mais amplos de SST, o{' '}
                   <Link href="/blog" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
                     blog da SERMST
@@ -117,12 +119,11 @@ export default function SaudeIndexPage() {
                   reúne temas complementares de normas, RH e gestão ocupacional.
                 </p>
                 <p>
-                  No cluster médico, a porta de entrada mais estratégica hoje é{' '}
+                  O{' '}
                   <Link href="/saude/pcmso-programa-controle-medico" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
                     PCMSO
                   </Link>
-                  , porque ele conversa com ASO, exames ocupacionais, PGR, eSocial e contratação de serviço. Por isso,
-                  este hub também funciona como ponte entre a busca informacional e a necessidade operacional.
+                  {' '}organiza o planejamento médico e se relaciona com ASO, exames ocupacionais, PGR e eSocial.
                 </p>
               </div>
             </div>
@@ -150,15 +151,14 @@ export default function SaudeIndexPage() {
         <FadeIn direction="up" delay={0.03}>
           <div className="mb-14 rounded-[2rem] border border-brand-900 bg-white p-8 shadow-sm lg:p-10">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-              Núcleo do cluster
+              Conteúdos essenciais
             </span>
             <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
-              PCMSO, NR-07, ASO e serviço: quatro páginas que precisam contar a mesma história
+              PCMSO, NR-07, ASO e elaboração do programa
             </h2>
             <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
-              Quem busca por PCMSO pode estar querendo entender o significado da sigla, a obrigação da NR-07, quando
-              existe dispensa, como o ASO entra no fluxo ou já querendo contratar a elaboração do programa. Por isso,
-              este hub concentra as pontes mais importantes do cluster.
+              Consulte o significado da sigla, as exigências da NR-07, as hipóteses de dispensa, a relação com o ASO
+              e o serviço de elaboração do programa.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {[
@@ -183,7 +183,7 @@ export default function SaudeIndexPage() {
         <FadeIn direction="up">
           <div className="mb-14 rounded-[2rem] border border-accent-pink/20 bg-accent-pink/5 p-8 lg:p-10">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-              Leitura recomendada para RH
+              Para organizar a admissão
             </span>
             <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
               Como escolher clínica de exame admissional em São Paulo
@@ -224,7 +224,7 @@ export default function SaudeIndexPage() {
                 href="/servicos/pcmso-nr07-programa/sao-paulo"
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-3 font-bold text-brand-900 transition-colors hover:border-accent-pink hover:text-accent-pink"
               >
-                Ver a página comercial
+                Ver elaboração e gestão de PCMSO
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -239,8 +239,7 @@ export default function SaudeIndexPage() {
               </span>
               <h2 className="text-3xl font-black text-brand-900 md:text-4xl">NR-07: a regra por trás do PCMSO</h2>
               <p className="mt-4 text-lg font-medium leading-relaxed text-slate-700">
-                Quando a dúvida é normativa, a melhor entrada não é a página comercial. A página de NR-07 ajuda a
-                entender exigência legal, dispensa, ASO, exames e coerência com eSocial.
+                O guia da NR-07 ajuda a entender exigência legal, dispensa, ASO, exames ocupacionais e a relação com o eSocial.
               </p>
               <Link href="/normas/o-que-e-nr-07" className="btn-primary-safe mt-6 inline-flex">
                 Ler o guia da NR-07
@@ -254,8 +253,8 @@ export default function SaudeIndexPage() {
               </span>
               <h2 className="text-3xl font-black text-brand-900 md:text-4xl">O que significa PCMSO?</h2>
               <p className="mt-4 text-lg font-medium leading-relaxed text-slate-700">
-                Quando a busca é mais curta e conceitual, o verbete do dicionário ajuda o Google a entender a intenção
-                de significado, sem misturar definição curta com página longa de guia ou contratação.
+                O verbete do dicionário apresenta a definição de PCMSO em poucos parágrafos e indica os guias para quem
+                precisa consultar a regra ou organizar o programa na empresa.
               </p>
               <Link href="/dicionario/o-que-e-pcmso" className="btn-primary-safe mt-6 inline-flex">
                 Ler definição rápida
@@ -278,7 +277,7 @@ export default function SaudeIndexPage() {
               mostra por que o exame periódico não é mera formalidade e como ele se conecta ao ASO, à NR-07 e à previsibilidade do RH.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <Link href="/saude/importancia-do-exame-periodico" className="btn-primary-safe inline-flex">
+              <Link href="/saude/exame-periodico-ocupacional" className="btn-primary-safe inline-flex">
                 Ler guia do exame periódico
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -302,8 +301,8 @@ export default function SaudeIndexPage() {
               Caminhos rápidos para quem saiu da dúvida e entrou na operação
             </h2>
             <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
-              Reunimos as páginas que mais se conectam com PCMSO, ASO, NR-07 e exames complementares para facilitar o
-              rastreamento e a decisão de quem chegou pelo hub de saúde ocupacional.
+              Reunimos os conteúdos sobre PCMSO, ASO, NR-07 e exames complementares para facilitar a consulta e mostrar
+              como cada tema se relaciona com a rotina ocupacional.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {[
@@ -311,7 +310,7 @@ export default function SaudeIndexPage() {
                 { href: '/servicos/pcmso-nr07-programa/sao-paulo', label: 'Contratar PCMSO em São Paulo' },
                 { href: '/normas/o-que-e-nr-07', label: 'NR-07: o que a norma exige' },
                 { href: '/saude/aso-atestado-saude-ocupacional', label: 'ASO: o que é e quando emitir' },
-                { href: '/saude/importancia-do-exame-periodico', label: 'Exame periódico ocupacional' },
+                { href: '/saude/exame-periodico-ocupacional', label: 'Exame periódico ocupacional' },
                 { href: '/saude/onde-fazer-audiometria-ocupacional-sao-paulo', label: 'Onde fazer audiometria ocupacional em SP' },
                 { href: '/saude/doencas-ocupacionais', label: 'Doenças ocupacionais: tipos e prevenção' },
                 { href: '/saude/medico-do-trabalho', label: 'Médico do trabalho: papel e obrigações' },
@@ -353,7 +352,7 @@ export default function SaudeIndexPage() {
                 </h3>
                 <p className="mb-6 flex-grow line-clamp-3 text-slate-600">{post.hook}</p>
                 <p className="mb-6 text-sm font-semibold text-slate-500">
-                  Conteúdo para transformar tema médico em decisão mais segura para RH e operação.
+                  Conteúdo para entender o tema médico e organizar a rotina do RH e da operação.
                 </p>
                 <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-500 transition-all group-hover:gap-4">
                   Ler artigo completo
@@ -420,11 +419,11 @@ export default function SaudeIndexPage() {
 
           <div className="flex flex-wrap gap-4">
             <Link href="/rh" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
-              Hub de RH e Departamento Pessoal
+              RH e Departamento Pessoal
               <ArrowRight className="ml-2 inline h-4 w-4" />
             </Link>
             <Link href="/normas" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
-              Hub de Normas Regulamentadoras
+              Normas Regulamentadoras
               <ArrowRight className="ml-2 inline h-4 w-4" />
             </Link>
             <Link href="/dicionario" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">

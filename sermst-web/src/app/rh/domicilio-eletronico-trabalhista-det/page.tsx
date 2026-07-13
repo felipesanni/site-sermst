@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     'Entenda o que é o DET (Domicílio Eletrônico Trabalhista), quem precisa acompanhar e os riscos de perder notificações do MTE e da SIT.',
   keywords: [
     'DET',
-    'Domicilio Eletronico Trabalhista',
+    'Domicílio Eletrônico Trabalhista',
     'MTE',
-    'Secretaria de Inspecao do Trabalho',
-    'notificacao trabalhista',
-    'prazo fiscalizacao trabalhista',
-    'comunicacao oficial empregador governo',
+    'Secretaria de Inspeção do Trabalho',
+    'notificação trabalhista',
+    'prazo fiscalização trabalhista',
+    'comunicação oficial empregador governo',
   ],
   alternates: {
     canonical: 'https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'DET: o que é e como evitar perda de prazo | SERMST',
     description:
-      'Guia pratico sobre DET para empresas: comunicacoes da Inspecao do Trabalho, prazos, fiscalizacao, acesso e rotina de acompanhamento pelo RH.',
+      'Guia prático sobre o DET: comunicações da Inspeção do Trabalho, ciência automática, cadastro de contatos e rotina de acompanhamento.',
     url: 'https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det',
     type: 'article',
     locale: 'pt_BR',
@@ -31,34 +31,34 @@ export default function DomicilioEletronicoTrabalhistaPage() {
   return (
     <BlockbusterArticle
       hubLabel="RH e Departamento Pessoal"
-      hubLabelShort="← Hub RH"
+      hubLabelShort="← RH"
       hubHref="/rh"
-      badgeText="Fiscalizacao e prazos digitais"
+      badgeText="Fiscalização e prazos digitais"
       pageUrl="https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det"
       coverImage={{
         src: '/images/articles/exame-periodico.jpg',
-        alt: 'Equipe administrativa acompanhando rotinas de eSocial e fiscalizacao trabalhista',
+        alt: 'Equipe administrativa acompanhando notificações e fiscalização trabalhista',
       }}
       author={{
         name: 'Luiz Cesar Sannino',
-        jobTitle: 'Higienista Ocupacional · Tecnico em Seguranca do Trabalho · CREA/SP 5061899709',
+        jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-05-20',
-        dateModified: '2026-05-20',
+        dateModified: '2026-07-13',
       }}
       readingTime="6 min"
-      h1="DET: o que e o Domicilio Eletronico Trabalhista e por que sua empresa nao pode ignorar"
-      intro="O DET e o canal oficial de comunicacao eletronica entre o governo e o empregador para atos da Inspecao do Trabalho. Quando a empresa deixa de acompanhar esse ambiente, o risco nao e so perder um aviso: e perder prazo de resposta, defesa, envio documental e controle sobre uma fiscalizacao."
+      h1="DET: o que é o Domicílio Eletrônico Trabalhista e como acompanhar"
+      intro="O DET é o canal oficial de comunicação eletrônica entre a Inspeção do Trabalho e os empregadores. Por ele chegam atos administrativos, intimações, notificações, decisões e avisos. A falta de consulta não impede a ciência automática da comunicação após o prazo previsto."
       sections={[
         {
-          title: 'O que e o DET na pratica',
+          title: 'O que é o DET na prática',
           body: (
             <>
               <p>
-                O <strong>Domicilio Eletronico Trabalhista (DET)</strong> e a plataforma digital usada pelo Ministerio do Trabalho e Emprego, por meio da Secretaria de Inspecao do Trabalho, para comunicar atos administrativos, intimacoes, avisos gerais e demandas documentais ao empregador.
+                O <strong>Domicílio Eletrônico Trabalhista (DET)</strong> é a plataforma digital usada pelo Ministério do Trabalho e Emprego para comunicar atos administrativos, ações fiscais, intimações, notificações, decisões e avisos ao empregador.
               </p>
               <p>
-                Em termos operacionais, isso significa que a empresa nao pode mais tratar fiscalizacao trabalhista como algo que so aparece por carta, telefone ou visita. O canal digital precisa entrar no fluxo real de acompanhamento do RH, do DP e da direcao.
+                As comunicações têm valor legal e dispensam o envio pelos Correios ou por outro meio. Por isso, a caixa postal do DET precisa fazer parte da rotina do responsável pela empresa.
               </p>
             </>
           ),
@@ -67,34 +67,34 @@ export default function DomicilioEletronicoTrabalhistaPage() {
           title: 'Para que o DET serve',
           body: (
             <ul>
-              <li><strong>Receber intimacoes e avisos da Inspecao do Trabalho.</strong> O empregador pode ser cientificado de atos administrativos e acoes fiscais diretamente pela plataforma.</li>
-              <li><strong>Enviar documentacao eletronica.</strong> O DET tambem serve para entregar documentos exigidos em fiscalizacao e apresentar defesa ou recurso em processos administrativos.</li>
-              <li><strong>Concentrar historico e acompanhamento.</strong> Em vez de tratar cada demanda de forma dispersa, a empresa passa a ter um ponto central de relacionamento institucional com a fiscalizacao trabalhista.</li>
+              <li><strong>Receber intimações e avisos da Inspeção do Trabalho.</strong> O empregador pode ser cientificado de atos administrativos e ações fiscais diretamente pela plataforma.</li>
+              <li><strong>Enviar documentação eletrônica.</strong> O DET também serve para entregar documentos exigidos em fiscalização e apresentar defesa ou recurso em processos administrativos.</li>
+              <li><strong>Consultar o histórico.</strong> O sistema concentra comunicações e funcionalidades do Livro de Inspeção do Trabalho Eletrônico.</li>
             </ul>
           ),
         },
         {
-          title: 'DET, MTE e SIT: como esse trio aparece nas buscas',
+          title: 'Quem precisa acessar o DET',
           body: (
             <>
               <p>
-                Muitas empresas chegam a esse tema pesquisando por <strong>DET MTE</strong>, <strong>DET SIT</strong>, <strong>como acessar o DET</strong>, <strong>notificacao no DET</strong> ou <strong>prazo no Domicilio Eletronico Trabalhista</strong>. Todas essas buscas apontam para o mesmo problema de fundo: o empregador precisa entender como o canal oficial do governo impacta sua rotina real.
+                O uso do DET alcança os empregadores previstos no cronograma de implantação. Isso inclui pessoas jurídicas, mesmo sem empregados, e pessoas físicas que empregam ao menos um trabalhador, inclusive empregadores domésticos e MEI.
               </p>
               <p>
-                Quando o DET nao entra na agenda de acompanhamento, o risco deixa de ser teorico. Ele passa a ser prazo perdido, documento fora de hora, dificuldade de resposta e exposição desnecessaria em fiscalizacao.
+                O cadastro inicial já existe para pessoas físicas e jurídicas com conta Gov.br. No primeiro acesso, o responsável deve atualizar e-mail, telefone e palavra-chave de segurança e definir quem consultará a caixa postal.
               </p>
             </>
           ),
         },
         {
-          title: 'Por que o DET importa para empresas com RH e SST desorganizados',
+          title: 'Quando a comunicação é considerada recebida',
           body: (
             <>
               <p>
-                Na teoria, o DET e um canal digital. Na pratica, ele e um <strong>ponto de risco de prazo</strong>. Empresas que nao definem responsável, rotina de leitura e procedimento de resposta podem descobrir tarde demais que ja havia uma solicitacao aberta, uma cobranca de documento ou uma janela curta para manifestacao.
+                A ciência ocorre na data da consulta ao conteúdo ou, quando a consulta acontece em sábado, domingo, feriado nacional ou ponto facultativo e há prazo para um ato, no primeiro dia útil seguinte.
               </p>
               <p>
-                Isso conversa diretamente com SST, eSocial, ASO, PGR, PCMSO e laudos. Se a fiscalizacao pedir prova documental e a empresa nao souber onde está cada peca, o problema deixa de ser so acesso ao DET e vira exposição operacional.
+                Se a mensagem não for consultada, a ciência é automática no primeiro dia útil após 15 dias contados do envio. Não há multa apenas por deixar de atualizar os contatos, mas uma notificação ignorada pode levar a autuação se o empregador não responder no prazo.
               </p>
             </>
           ),
@@ -103,9 +103,9 @@ export default function DomicilioEletronicoTrabalhistaPage() {
           title: 'Quem deve acompanhar o DET dentro da empresa',
           body: (
             <ol>
-              <li><strong>RH ou DP</strong>, quando a rotina da empresa concentra obrigacoes trabalhistas e eSocial nessas areas.</li>
-              <li><strong>Compliance ou juridico trabalhista</strong>, quando ha maior volume de notificacoes e risco de defesa administrativa.</li>
-              <li><strong>Operacao de SST</strong>, quando a empresa ja sofre com documentos espalhados, eventos atrasados e inconsistencia tecnica.</li>
+              <li><strong>RH ou DP</strong>, quando a empresa concentra obrigações trabalhistas e eSocial nessas áreas.</li>
+              <li><strong>Jurídico trabalhista</strong>, quando a mensagem exige defesa, recurso ou análise de prazo processual.</li>
+              <li><strong>Responsável pela SST</strong>, quando são solicitados ASOs, PGR, PCMSO, laudos ou eventos do eSocial.</li>
             </ol>
           ),
         },
@@ -114,10 +114,10 @@ export default function DomicilioEletronicoTrabalhistaPage() {
           body: (
             <>
               <p>
-                O maior erro e cadastrar o acesso e considerar o assunto encerrado. O DET precisa de processo: responsável definido, frequencia de verificacao, trilha de encaminhamento interno e base documental pronta para responder rapido.
+                O acesso inicial não encerra o trabalho. A empresa precisa definir responsável, frequência de verificação, substituto em férias ou afastamentos e um caminho de encaminhamento para cada tipo de mensagem.
               </p>
               <p>
-                Quando a empresa depende de memoria, mensagens soltas ou tentativa de descobrir quem cuida disso, o DET vira mais um gargalo em vez de protecao.
+                Os alertas por e-mail ajudam, mas não substituem a consulta periódica à caixa postal. A palavra-chave cadastrada também permite conferir se o alerta recebido é autêntico.
               </p>
             </>
           ),
@@ -127,36 +127,36 @@ export default function DomicilioEletronicoTrabalhistaPage() {
           body: (
             <>
               <p>
-                A SERMST nao substitui o acesso institucional do empregador ao DET, mas ajuda a empresa a organizar o que normalmente e cobrado ou verificado em rotina trabalhista: ASOs, coerência de PCMSO, PGR, laudos, eventos SST do eSocial e trilha documental para auditoria.
+                A SERMST não substitui o acesso institucional do empregador nem a atuação jurídica no DET. Ela pode organizar os documentos de SST solicitados, como ASOs, PCMSO, PGR, laudos e eventos do eSocial.
               </p>
               <p>
-                Se o problema nao e so entrar no portal, mas <strong>ter lastro tecnico para responder bem</strong>, ai a conversa deixa de ser tecnologica e passa a ser de compliance real.
+                Quando a notificação envolve saúde e segurança do trabalho, a resposta depende de localizar documentos atualizados e coerentes com a operação.
               </p>
             </>
           ),
         },
       ]}
       faq={[
-        { q: 'O que significa DET?', a: 'DET significa Domicilio Eletronico Trabalhista, plataforma oficial usada para comunicacao entre o empregador e a Inspecao do Trabalho.' },
-        { q: 'DET e a mesma coisa que eSocial?', a: 'Nao. O DET e o canal oficial de comunicacao, notificacao e tramitacao com a Inspecao do Trabalho. O eSocial continua sendo o ambiente de envio dos eventos trabalhistas, previdenciarios e de SST.' },
-        { q: 'Quem precisa acompanhar o DET?', a: 'Empregadores que tenham relacao trabalhista e precisem manter rotina de comunicacao institucional com a fiscalizacao devem acompanhar o DET e definir um responsável interno pelo monitoramento.' },
-        { q: 'O que pode chegar no DET?', a: 'O empregador pode receber avisos, intimacoes, solicitacoes documentais, comunicacoes da Inspecao do Trabalho e outras demandas formais ligadas a fiscalizacao trabalhista.' },
-        { q: 'Perder prazo no DET pode gerar problema?', a: 'Sim. O risco principal e perder tempo de resposta, entrega documental, manifestacao ou defesa em uma demanda ligada a fiscalizacao trabalhista.' },
-        { q: 'O DET tem relacao com SST?', a: 'Tem relacao indireta e operacional. Quando a empresa precisa apresentar documentos ou sustentar rotinas de saude e seguranca, o DET pode ser a via de comunicacao formal, enquanto SST fornece a base tecnica da resposta.' },
+        { q: 'O que significa DET?', a: 'DET significa Domicílio Eletrônico Trabalhista, plataforma oficial usada para comunicação entre o empregador e a Inspeção do Trabalho.' },
+        { q: 'DET é a mesma coisa que eSocial?', a: 'Não. O DET é o canal de comunicação e tramitação com a Inspeção do Trabalho. O eSocial é usado para enviar eventos trabalhistas, previdenciários e de SST.' },
+        { q: 'Quem precisa acompanhar o DET?', a: 'Pessoas jurídicas, mesmo sem empregados, e pessoas físicas que empregam ao menos um trabalhador devem observar as regras do DET. Isso inclui MEI e empregadores domésticos.' },
+        { q: 'O que pode chegar no DET?', a: 'Atos administrativos, ações fiscais, intimações, notificações, decisões, avisos e solicitações de documentos podem ser enviados pela plataforma.' },
+        { q: 'Se eu não abrir a mensagem, o prazo começa?', a: 'A ciência pode ocorrer automaticamente no primeiro dia útil após 15 dias contados do envio, mesmo sem consulta ao conteúdo. Por isso, a caixa postal deve ser verificada periodicamente.' },
+        { q: 'O DET tem relação com SST?', a: 'Sim, quando uma ação fiscal solicita ASOs, PGR, PCMSO, laudos ou informações do eSocial. O DET é o canal da comunicação; os documentos de SST fornecem a base técnica da resposta.' },
       ]}
-      sidebarTitle="Sua empresa ja definiu quem acompanha o DET?"
-      sidebarHook="Se o DET cair no vazio entre RH, DP, juridico e SST, qualquer notificacao vira risco de prazo. A SERMST ajuda a organizar a base documental e o fluxo de resposta."
+      sidebarTitle="Sua empresa já definiu quem acompanha o DET?"
+      sidebarHook="Defina responsável, substituto, frequência de consulta e encaminhamento para RH, jurídico e SST. A SERMST pode apoiar a organização dos documentos técnicos."
       sidebarCtaLabel="Falar sobre eSocial e SST"
       sidebarCtaHref="/servicos/gestao-esocial-s2220-s2240"
       related={[
-        { label: 'Gestao completa de eSocial SST', href: '/servicos/gestao-esocial-s2220-s2240' },
-        { label: 'DIR: quando a empresa pode declarar inexistencia de risco', href: '/rh/declaracao-inexistencia-risco-dir' },
+        { label: 'Gestão completa de eSocial SST', href: '/servicos/gestao-esocial-s2220-s2240' },
+        { label: 'DIR: quando a empresa pode declarar inexistência de risco', href: '/rh/declaracao-inexistencia-risco-dir' },
         { label: 'Como evitar multas do eSocial S-2220 e S-2240', href: '/rh/multa-esocial-s2220' },
         { label: 'Calculadora de risco por CNPJ', href: '/rh/calculadora-cnae-grau-de-risco' },
       ]}
       finalCta={{
-        title: 'DET sem processo vira risco silencioso',
-        desc: 'Se a empresa precisa organizar eSocial, SST e documentacao para responder melhor a fiscalizacoes e notificacoes, a SERMST ajuda a montar um fluxo mais seguro.',
+        title: 'Organize os documentos antes de receber uma solicitação',
+        desc: 'A SERMST pode revisar a documentação de SST e o eSocial para facilitar a localização e a conferência dos registros solicitados.',
         label: 'Quero revisar meu fluxo de SST',
         href: '/contato',
       }}

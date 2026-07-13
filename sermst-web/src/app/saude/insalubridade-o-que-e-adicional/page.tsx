@@ -4,12 +4,12 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Insalubridade: quem tem direito e como calcular | SERMST',
   description:
-    'Entenda o que e insalubridade, quem tem direito ao adicional, como funcionam os 10%, 20% e 40%, qual e a base de calculo e quando o laudo tecnico faz diferenca.',
+    'Entenda o que é insalubridade, quem pode ter direito ao adicional, como funcionam os graus de 10%, 20% e 40% e quando a avaliação técnica é necessária.',
   alternates: { canonical: 'https://sermst.com.br/saude/insalubridade-o-que-e-adicional' },
   openGraph: {
     title: 'Insalubridade: quem tem direito e como calcular | SERMST',
     description:
-      'Guia pratico sobre insalubridade, adicional, calculo, diferenca para periculosidade, laudo tecnico e a relacao disso com NR-15, LTCAT e eSocial.',
+      'Guia prático sobre insalubridade, adicional, cálculo, diferença para periculosidade, avaliação técnica e relação com NR-15, LTCAT e eSocial.',
     url: 'https://sermst.com.br/saude/insalubridade-o-que-e-adicional',
     type: 'article',
     locale: 'pt_BR',
@@ -19,40 +19,40 @@ export const metadata: Metadata = {
 export default function InsalubridadePage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saude Ocupacional"
-      hubLabelShort="← Hub Saude"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/insalubridade-o-que-e-adicional"
       coverImage={{
         src: '/images/site/safety-equipment.jpg',
-        alt: 'Ambiente ocupacional com exposicao a agentes insalubres e controle tecnico de SST',
+        alt: 'Ambiente ocupacional com exposição a agentes insalubres e controle técnico de SST',
       }}
       author={{
         name: 'Luiz Cesar Sannino',
-        jobTitle: 'Higienista Ocupacional · Tecnico em Seguranca do Trabalho · CREA/SP 5061899709',
+        jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-05-25',
-        dateModified: '2026-05-25',
+        dateModified: '2026-07-13',
       }}
       readingTime="9 min"
-      h1="Insalubridade: o que e, quem tem direito, adicional e calculo"
-      intro="Insalubridade e a exposicao do trabalhador a agentes nocivos acima dos limites legais. Quando isso fica tecnicamente comprovado, pode haver adicional de 10%, 20% ou 40%. Se a sua duvida e a regra da norma, vale olhar a NR-15. Aqui, o foco e outro: explicar o conceito, o direito, o calculo e o que isso muda na pratica para a empresa."
+      h1="Insalubridade: o que é, quem tem direito e como funciona o adicional"
+      intro="A insalubridade depende do enquadramento da atividade ou da exposição nos anexos da NR-15. Alguns agentes exigem medição e comparação com limites de tolerância; outros são avaliados de forma qualitativa. Quando há caracterização técnica, o adicional pode corresponder a 10%, 20% ou 40%, conforme o grau previsto."
       sections={[
         {
-          title: 'O que e insalubridade',
+          title: 'O que é insalubridade',
           body: (
             <>
               <p>
-                Insalubridade e a condicao de trabalho em que o colaborador fica exposto a <strong>agentes fisicos, quimicos ou biologicos</strong> em nivel capaz de prejudicar a saude, acima dos limites de tolerancia definidos pela legislacao.
+                Para fins trabalhistas, insalubridade é a exposição a agentes nocivos enquadrada nos anexos da <strong>NR-15</strong>. A norma abrange agentes físicos, químicos e biológicos e adota critérios quantitativos ou qualitativos, conforme o anexo aplicável.
               </p>
               <p>
-                Na pratica, nao basta a atividade parecer pesada, suja ou desconfortavel. O direito ao adicional depende de <strong>caracterizacao tecnica</strong>, normalmente com laudo, medicao e enquadramento correto da exposicao.
+                Não basta a atividade parecer pesada, suja ou desconfortável. A caracterização depende da situação real de trabalho, do critério previsto no anexo e da avaliação por profissional habilitado.
               </p>
               <ul>
-                <li><strong>O que e:</strong> exposicao nociva acima do limite legal.</li>
-                <li><strong>Quem tem direito:</strong> quem trabalha em condicao tecnicamente caracterizada como insalubre.</li>
+                <li><strong>O que é:</strong> atividade ou exposição enquadrada nos critérios da NR-15.</li>
+                <li><strong>Quem pode ter direito:</strong> quem trabalha em condição tecnicamente caracterizada como insalubre.</li>
                 <li><strong>Quanto paga:</strong> 10%, 20% ou 40%, conforme o grau.</li>
-                <li><strong>O que comprova:</strong> laudo tecnico, contexto operacional e documentacao coerente.</li>
+                <li><strong>O que fundamenta:</strong> avaliação técnica, condições observadas e documentação coerente.</li>
               </ul>
             </>
           ),
@@ -62,62 +62,62 @@ export default function InsalubridadePage() {
           body: (
             <>
               <p>
-                Tem direito ao adicional o trabalhador que atua exposto a agente insalubre <strong>acima do limite legal</strong>, desde que essa condicao tenha sido caracterizada tecnicamente.
+                O direito ao adicional depende da caracterização da atividade ou da exposição conforme a NR-15. Em alguns anexos há limite de tolerância; em outros, a avaliação é qualitativa.
               </p>
               <ul>
-                <li><strong>Nem todo cargo tem direito automaticamente:</strong> o que importa e a exposicao real, nao o nome da funcao.</li>
-                <li><strong>Nem toda exposicao gera adicional:</strong> se o risco for neutralizado de forma valida, o direito pode deixar de existir.</li>
-                <li><strong>O adicional depende do grau:</strong> minimo, medio ou maximo.</li>
+                <li><strong>Nem todo cargo tem direito automaticamente:</strong> importam a atividade e a exposição real, não apenas o nome da função.</li>
+                <li><strong>Nem toda exposição gera adicional:</strong> a situação precisa se enquadrar nos critérios da norma.</li>
+                <li><strong>Eliminação ou neutralização:</strong> quando tecnicamente demonstrada conforme a norma, pode cessar o pagamento.</li>
               </ul>
             </>
           ),
         },
         {
-          title: 'Insalubridade 10 20 40: quais sao os percentuais',
+          title: 'Insalubridade de 10%, 20% e 40%: quais são os graus',
           body: (
             <>
-              <p>Na pratica, a insalubridade pode ser enquadrada em tres faixas:</p>
+              <p>A NR-15 prevê três graus de adicional:</p>
               <ul>
-                <li><strong>10%:</strong> grau minimo.</li>
-                <li><strong>20%:</strong> grau medio.</li>
-                <li><strong>40%:</strong> grau maximo.</li>
+                <li><strong>10%:</strong> grau mínimo.</li>
+                <li><strong>20%:</strong> grau médio.</li>
+                <li><strong>40%:</strong> grau máximo.</li>
               </ul>
               <p>
-                O percentual incide, em regra, sobre o <strong>salario minimo</strong>, salvo convencao coletiva com base diferente. E o grau nao sai de conversa de corredor nem de costume de folha. Ele vem da avaliacao tecnica da atividade.
+                O grau vem do enquadramento técnico da atividade ou exposição. A base usada no cálculo exige cuidado próprio, pois há controvérsia jurídica e podem existir normas coletivas aplicáveis.
               </p>
             </>
           ),
         },
         {
-          title: 'Insalubridade sobre salario minimo ou salario base?',
+          title: 'Insalubridade sobre salário mínimo ou salário-base?',
           body: (
             <>
               <p>
-                Essa e uma das duvidas mais comuns sobre o tema. Em regra, o adicional de insalubridade e calculado sobre o <strong>salario minimo</strong>, e nao sobre o salario base do trabalhador.
+                A base de cálculo não deve ser tratada como uma resposta automática. A CLT e a NR-15 mencionam o salário mínimo, mas o tema foi afetado pela Súmula Vinculante 4 do STF e continua sujeito ao enquadramento jurídico do caso.
               </p>
               <p>
-                A excecao aparece quando existe <strong>norma coletiva</strong> da categoria definindo outra base de calculo. Por isso, nao faz sentido copiar pratica de mercado nem repetir parametro antigo da folha sem checar a convencao coletiva atual.
+                Na prática, o salário mínimo ainda é usado em muitos casos enquanto não houver base válida diversa, e instrumentos coletivos podem trazer previsão específica. O RH deve conferir a norma coletiva e a orientação jurídica antes de alterar a folha.
               </p>
               <ul>
-                <li><strong>Regra geral:</strong> calculo sobre salario minimo.</li>
-                <li><strong>Possivel excecao:</strong> convencao ou acordo coletivo.</li>
-                <li><strong>Risco comum:</strong> pagar sobre base errada e acumular passivo ou custo desnecessario.</li>
+                <li><strong>Texto legal:</strong> salário mínimo.</li>
+                <li><strong>Ponto jurídico:</strong> efeitos da Súmula Vinculante 4 e decisões aplicáveis.</li>
+                <li><strong>Norma coletiva:</strong> verificar se há base específica para a categoria.</li>
               </ul>
             </>
           ),
         },
         {
-          title: 'Como funciona o calculo da insalubridade',
+          title: 'Como funciona o cálculo da insalubridade',
           body: (
             <>
-              <p>O calculo parte do percentual aplicavel ao grau identificado:</p>
+              <p>O cálculo parte do percentual aplicável ao grau identificado e da base válida para o caso:</p>
               <ul>
-                <li><strong>10%</strong> sobre o salario minimo para grau minimo.</li>
-                <li><strong>20%</strong> sobre o salario minimo para grau medio.</li>
-                <li><strong>40%</strong> sobre o salario minimo para grau maximo.</li>
+                <li><strong>10%</strong> para grau mínimo.</li>
+                <li><strong>20%</strong> para grau médio.</li>
+                <li><strong>40%</strong> para grau máximo.</li>
               </ul>
               <p>
-                Os erros mais comuns sao conhecidos: usar base errada, pagar percentual sem laudo ou cortar o adicional sem prova de neutralizacao. Mais cedo ou mais tarde, isso costuma aparecer em passivo trabalhista ou pericia judicial.
+                Antes de calcular, confirme o enquadramento técnico, o grau, a base aplicável e a norma coletiva. A retirada do adicional também exige demonstração da eliminação ou neutralização da condição insalubre.
               </p>
             </>
           ),
@@ -127,42 +127,42 @@ export default function InsalubridadePage() {
           body: (
             <>
               <p>
-                O adicional de 40% corresponde ao <strong>grau maximo</strong> de insalubridade. Ele nao depende do nome do cargo, mas da exposicao real do trabalhador e do enquadramento tecnico da atividade.
+                O adicional de 40% corresponde ao <strong>grau máximo</strong> de insalubridade. Ele não depende do nome do cargo, mas da atividade ou exposição real e do enquadramento técnico na NR-15.
               </p>
               <p>
-                Em outras palavras: a empresa so consegue dizer com seguranca se alguem tem ou nao tem direito a 40% depois de avaliar ambiente, agente nocivo, intensidade da exposicao e possibilidade real de neutralizacao.
+                A conclusão exige a análise do ambiente, do agente, do critério previsto no anexo e das medidas de controle existentes.
               </p>
               <p>
-                E exatamente por isso que buscas como &quot;quem tem direito a 40 de insalubridade&quot; tantas vezes acabam em disputa trabalhista. Quando a decisao e tomada sem laudo, a margem para erro fica enorme.
-              </p>
-            </>
-          ),
-        },
-        {
-          title: 'Insalubridade e periculosidade sao a mesma coisa?',
-          body: (
-            <>
-              <p>
-                Nao. <strong>Insalubridade</strong> trata de exposicao nociva a saude ao longo do tempo. <strong>Periculosidade</strong> trata de risco acentuado de acidente grave, como inflamaveis, explosivos ou energia eletrica em certas condicoes.
-              </p>
-              <p>
-                Um trabalhador pode estar em ambiente insalubre e perigoso ao mesmo tempo. Ainda assim, a regra geral e que ele <strong>nao recebe os dois adicionais cumulativamente</strong>; prevalece o mais favoravel.
+                Não é correto aplicar 40% apenas porque uma função semelhante recebe o adicional em outra empresa. O processo e as condições de trabalho precisam ser avaliados.
               </p>
             </>
           ),
         },
         {
-          title: 'Quando a empresa precisa de laudo tecnico',
+          title: 'Insalubridade e periculosidade são a mesma coisa?',
           body: (
             <>
               <p>
-                O laudo passa a ser indispensavel quando a empresa quer decidir com seguranca se deve pagar, manter, revisar ou retirar adicional de insalubridade. Sem ele, a decisao fica fragil em fiscalizacao e quase indefensavel em processo.
+                Não. <strong>Insalubridade</strong> trata das atividades ou exposições nocivas enquadradas na NR-15. <strong>Periculosidade</strong> trata das atividades e operações perigosas previstas na NR-16, como determinadas situações com inflamáveis, explosivos ou energia elétrica.
+              </p>
+              <p>
+                Um trabalhador pode estar em ambiente insalubre e perigoso ao mesmo tempo. Pela regra geral da CLT, ele opta pelo adicional mais favorável, sem recebimento cumulativo.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quando a empresa precisa de avaliação técnica',
+          body: (
+            <>
+              <p>
+                A caracterização e a classificação da insalubridade exigem perícia por médico do trabalho ou engenheiro de segurança do trabalho, conforme a CLT. A avaliação deve registrar as condições observadas e o critério da NR-15 usado na conclusão.
               </p>
               <ol>
-                <li><strong>Para caracterizar a exposicao</strong> e definir se ha insalubridade.</li>
+                <li><strong>Para caracterizar a atividade ou exposição</strong> e definir se há insalubridade.</li>
                 <li><strong>Para apontar o grau correto</strong> de 10%, 20% ou 40%.</li>
-                <li><strong>Para documentar neutralizacao</strong> quando EPC ou EPI reduzem o risco abaixo do limite.</li>
-                <li><strong>Para alinhar PGR, PCMSO, LTCAT e eSocial</strong> quando ha reflexo previdenciario e ocupacional.</li>
+                <li><strong>Para documentar eliminação ou neutralização</strong> quando medidas de controle alteram a condição avaliada.</li>
+                <li><strong>Para manter coerência entre PGR, PCMSO, LTCAT e eSocial</strong>, respeitando a finalidade de cada documento.</li>
               </ol>
             </>
           ),
@@ -172,10 +172,10 @@ export default function InsalubridadePage() {
           body: (
             <>
               <p>
-                A <strong>NR-15</strong> e a norma regulamentadora que organiza as atividades e operacoes insalubres para fins trabalhistas. E ela que define criterios tecnicos, anexos, agentes e a logica de enquadramento do adicional.
+                A <strong>NR-15</strong> define as atividades e operações insalubres para fins trabalhistas. Seus anexos apresentam agentes, atividades, limites de tolerância e critérios de avaliação.
               </p>
               <p>
-                Quem pesquisa &quot;insalubridade&quot; geralmente quer a resposta ampla: conceito, direito, calculo e laudo. Ja quem pesquisa &quot;NR-15 insalubridade&quot; costuma estar atras do texto normativo, dos anexos e do enquadramento tecnico. As duas intencoes se encostam, mas nao sao a mesma coisa.
+                Para consultar os critérios de cada agente, acesse o guia específico da NR-15 e, quando necessário, o texto oficial do anexo aplicável.
               </p>
             </>
           ),
@@ -185,10 +185,10 @@ export default function InsalubridadePage() {
           body: (
             <>
               <p>
-                A <strong>NR-15</strong> organiza o enquadramento trabalhista da insalubridade. O <strong>LTCAT</strong> entra na documentacao previdenciaria e na analise de agentes nocivos para PPP e aposentadoria especial. O <strong>eSocial</strong> recebe o reflexo dessas informacoes, especialmente no S-2240 e no encadeamento com os exames do PCMSO.
+                A <strong>NR-15</strong> orienta o enquadramento trabalhista da insalubridade. O <strong>LTCAT</strong> tem finalidade previdenciária e fundamenta informações do PPP e do S-2240 sobre agentes nocivos. Os critérios trabalhistas e previdenciários não são idênticos.
               </p>
               <p>
-                Quando esses documentos contam historias diferentes, a empresa perde consistencia tecnica. E e justamente essa inconsistência que costuma aparecer em pericia, auditoria e acao trabalhista.
+                PGR, PCMSO, laudo de insalubridade, LTCAT e eSocial devem descrever a mesma operação, ainda que cada documento use critérios próprios para sua finalidade.
               </p>
             </>
           ),
@@ -197,50 +197,50 @@ export default function InsalubridadePage() {
       faq={[
         {
           q: 'Quem tem direito a 40% de insalubridade?',
-          a: 'Tem direito quem trabalha em condicao enquadrada como grau maximo por avaliacao tecnica. Nao e o cargo que define sozinho, mas a exposicao real e o enquadramento legal da atividade.',
+          a: 'Pode ter direito quem trabalha em atividade ou condição enquadrada como grau máximo pela NR-15, após avaliação técnica. O nome do cargo, sozinho, não define o adicional.',
         },
         {
-          q: 'Insalubridade e calculada sobre salario base?',
-          a: 'Em regra, nao. O adicional costuma ser calculado sobre o salario minimo, salvo previsao diferente em convencao coletiva ou acordo aplicavel a categoria.',
+          q: 'Insalubridade é calculada sobre salário-base?',
+          a: 'A CLT e a NR-15 mencionam o salário mínimo, mas a base de cálculo foi afetada pela Súmula Vinculante 4 do STF. Confirme a norma coletiva e a orientação jurídica aplicável antes de alterar a folha.',
         },
         {
           q: 'Como calcular insalubridade de 20% ou 40%?',
-          a: 'Primeiro se define o grau tecnico da exposicao. Depois se aplica o percentual correspondente sobre a base correta, que em regra e o salario minimo. Sem definir grau e base, o calculo fica errado.',
+          a: 'Primeiro são definidos o enquadramento e o grau. Depois, aplica-se o percentual sobre a base válida para o caso, considerando a legislação, a jurisprudência e a norma coletiva aplicável.',
         },
         {
           q: 'A empresa pode parar de pagar insalubridade quando entrega EPI?',
-          a: 'Nao automaticamente. Ela precisa comprovar tecnicamente que o risco foi neutralizado ou eliminado, atualizar laudos e manter evidencia de entrega, adequacao e fiscalizacao do uso do EPI.',
+          a: 'Não automaticamente. É preciso demonstrar tecnicamente a eliminação ou neutralização da condição insalubre e manter registros de seleção, entrega, orientação, manutenção e uso do EPI, quando aplicável.',
         },
         {
           q: 'Toda atividade insalubre gera aposentadoria especial?',
-          a: 'Nao. O criterio trabalhista da NR-15 e o criterio previdenciario do LTCAT/PPP nao sao identicos. Ha casos com adicional de insalubridade sem enquadramento para aposentadoria especial.',
+          a: 'Não. Os critérios trabalhistas da NR-15 e os critérios previdenciários usados no LTCAT e no PPP não são idênticos. Pode haver adicional sem enquadramento previdenciário para aposentadoria especial.',
         },
         {
-          q: 'Insalubridade e LTCAT sao a mesma coisa?',
-          a: 'Nao. Insalubridade e o enquadramento trabalhista da exposicao nociva. O LTCAT entra na leitura previdenciaria e ajuda a sustentar PPP, S-2240 e analise de aposentadoria especial.',
+          q: 'Insalubridade e LTCAT são a mesma coisa?',
+          a: 'Não. A insalubridade é um enquadramento trabalhista. O LTCAT tem finalidade previdenciária e fundamenta informações do PPP e do S-2240 sobre agentes nocivos.',
         },
         {
-          q: 'Qual a diferenca entre pagina de insalubridade e pagina da NR-15?',
-          a: 'Esta pagina responde a duvida ampla sobre conceito, direito, calculo e aplicacao pratica. A pagina de NR-15 foca a norma regulamentadora e seus criterios tecnicos de enquadramento.',
+          q: 'Qual é a diferença entre esta página e o guia da NR-15?',
+          a: 'Esta página explica o conceito, o adicional e o cálculo. O guia da NR-15 detalha os critérios técnicos e os anexos usados no enquadramento.',
         },
       ]}
-      sidebarTitle="Sua empresa sabe se paga insalubridade certo?"
-      sidebarHook="A SERMST analisa a exposicao real, revisa laudos e alinha NR-15, PGR, PCMSO, LTCAT e eSocial para a empresa decidir com base tecnica, nao no improviso."
+      sidebarTitle="O adicional está baseado em avaliação técnica?"
+      sidebarHook="A SERMST avalia as condições de trabalho, revisa laudos e confere a coerência entre NR-15, PGR, PCMSO, LTCAT e eSocial."
       sidebarCtaLabel="Revisar insalubridade da empresa"
       related={[
-        { label: 'NR-15: regra tecnica da insalubridade', href: '/normas/nr-15-insalubridade' },
+        { label: 'NR-15: regra técnica da insalubridade', href: '/normas/nr-15-insalubridade' },
         { label: 'NR-16: periculosidade', href: '/normas/nr-16-periculosidade' },
         { label: 'O que significa LTCAT', href: '/dicionario/o-que-e-ltcat' },
-        { label: 'Servico de LTCAT previdenciario', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
-        { label: 'PPP eletronico (S-2240)', href: '/normas/ppp-eletronico' },
-        { label: 'Guia da NR-01 e atualizacao do PGR', href: '/normas/nr-01-pgr-atualizada' },
-        { label: 'Pericia trabalhista e assistente tecnico', href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo' },
+        { label: 'Serviço de LTCAT previdenciário', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
+        { label: 'PPP eletrônico (S-2240)', href: '/normas/ppp-eletronico' },
+        { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
+        { label: 'Perícia trabalhista e assistente técnico', href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo' },
         { label: 'Medicina do trabalho: guia para empresas', href: '/saude/medicina-do-trabalho-guia' },
       ]}
       finalCta={{
-        title: 'Insalubridade mal decidida vira custo ou processo',
-        desc: 'A SERMST revisa enquadramento, laudo, PGR, PCMSO e reflexos no eSocial para sua empresa decidir com base tecnica, nao por palpite, habito de folha ou orientacao solta.',
-        label: 'Solicitar analise tecnica',
+        title: 'Revise o enquadramento antes de alterar o adicional',
+        desc: 'A SERMST confere a atividade, a exposição, os critérios da NR-15 e a coerência com os demais documentos de SST.',
+        label: 'Solicitar análise técnica',
         href: '/contato',
       }}
     />

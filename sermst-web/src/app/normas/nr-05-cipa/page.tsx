@@ -39,14 +39,14 @@ export default function NR05Page() {
       showTableOfContents
       readingTime="14 min"
       h1="CIPA: o que é, quem precisa, como funciona e como constituir"
-      intro="A CIPA, Comissão Interna de Prevenção de Acidentes e de Assédio, é a estrutura prevista pela NR-05 para envolver empresa e trabalhadores na prevenção de acidentes, doenças ocupacionais e violência no trabalho. Na prática, a empresa precisa responder quatro perguntas: se deve constituir CIPA ou nomear designado, qual treinamento a NR-05 exige, como manter eleição e atas em ordem e quando a busca por “treinamento de CIPA” já virou uma demanda operacional real."
+      intro="A CIPA, Comissão Interna de Prevenção de Acidentes e de Assédio, é a estrutura prevista pela NR-05 para envolver empresa e trabalhadores na prevenção de acidentes, doenças ocupacionais e violência no trabalho. Na prática, a empresa precisa verificar se deve constituir a comissão ou nomear representante, qual treinamento se aplica e como manter eleição, atas e certificados organizados."
       quickAnswer={
         <p>
           A <strong>CIPA</strong> é uma comissão paritária formada por representantes do empregador e dos empregados
           para identificar riscos, propor medidas preventivas, acompanhar a segurança e saúde no trabalho e atuar na
           prevenção ao assédio. A obrigatoriedade depende do <strong>CNAE, do grau de risco e do número de empregados no estabelecimento</strong>.
-          Em regra, atividades de grau de risco 1 ou 2 constituem CIPA a partir de 50 empregados; grau de risco 3 ou 4, a partir de 20.
-          Abaixo disso, a empresa normalmente precisa nomear <strong>designado da NR-05</strong> e treiná-lo conforme o risco da operação.
+          O dimensionamento é feito pelo <strong>Quadro I da NR-05</strong>, que cruza o grupo da atividade econômica com o número de empregados do estabelecimento.
+          Quando o estabelecimento não se enquadra no Quadro I e não é atendido por SESMT, a organização nomeia um representante da NR-05, observadas as exceções da norma.
         </p>
       }
       sections={[
@@ -64,8 +64,7 @@ export default function NR05Page() {
               <p>
                 Se o gargalo hoje é descobrir o grau de risco correto, comece pela{' '}
                 <Link href="/rh/calculadora-cnae-grau-de-risco">calculadora de CNAE e grau de risco</Link>.
-                Se o problema já é operacional, com turma para capacitar e certificado para organizar, o próximo passo
-                costuma ser a página de{' '}
+                Para organizar uma turma e os respectivos certificados, consulte a página de{' '}
                 <Link href="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo">treinamentos de NRs, CIPA e brigada</Link>.
               </p>
             </>
@@ -168,14 +167,14 @@ export default function NR05Page() {
                 <li><strong>Grau de risco 4:</strong> 20 horas.</li>
               </ul>
               <p>
-                O designado também deve receber capacitação compatível com o grau de risco do estabelecimento. Quando a busca do usuário já é por{' '}
-                <strong>treinamento de CIPA</strong>, normalmente a necessidade deixou de ser teórica: a empresa já precisa cumprir prazo,
-                formar membros ou comprovar capacitação em fiscalização.
+                O representante nomeado também deve receber capacitação compatível com o grau de risco do estabelecimento.
+                Quando a empresa precisa formar membros, cumprir um prazo ou apresentar certificados à fiscalização, deve
+                definir a turma e o conteúdo conforme o seu enquadramento.
               </p>
               <p>
-                Nessa fase, faz sentido avançar para a página de{' '}
-                <Link href="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo">treinamentos de NRs, CIPA e brigada</Link>,
-                que responde a intenção transacional e organiza turma, certificado e reciclagem.
+                O serviço de{' '}
+                <Link href="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo">treinamentos de NRs, CIPA e brigada</Link>
+                {' '}apresenta as opções para organizar turma, certificados e reciclagens.
               </p>
               <p>O conteúdo mínimo costuma abranger:</p>
               <ol>
@@ -192,21 +191,20 @@ export default function NR05Page() {
           ),
         },
         {
-          title: 'Quando a busca é por treinamento de CIPA',
+          title: 'Quando organizar o treinamento de CIPA',
           body: (
             <>
               <p>
-                Quem pesquisa apenas <strong>“o que é CIPA”</strong> costuma estar em fase de entendimento. Quem pesquisa
-                <strong> “treinamento de CIPA”</strong>, <strong>“curso de CIPA”</strong> ou <strong>“NR-05 treinamento”</strong>
-                normalmente já está em fase de execução.
+                Depois de definir o dimensionamento e o processo eleitoral, a empresa precisa planejar o treinamento dos
+                representantes conforme a NR-05. O conteúdo, a carga horária, os certificados e as reciclagens devem ser
+                compatíveis com o grau de risco e com a realidade do estabelecimento.
               </p>
               <p>
-                Essa diferença importa para SEO e para conversão. A página de NR-05 precisa responder a dúvida normativa.
-                Já a página comercial precisa resolver agenda, escopo, certificados e reciclagens. Por isso as duas páginas
-                se complementam, em vez de competirem.
+                Também vale alinhar datas, participantes e registros antes do início do mandato. Esse cuidado evita
+                correções de última hora e deixa claro para o RH o que já foi concluído e o que ainda está pendente.
               </p>
               <p>
-                Se a sua necessidade já é operacional, avance para a página principal de{' '}
+                Para consultar carga horária, formato e organização das turmas, veja o serviço de{' '}
                 <Link href="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo">treinamentos corporativos de NRs, CIPA e brigada</Link>.
               </p>
             </>

@@ -5,7 +5,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Tabela de Exames Admissionais por Função e Cargo | SERMST',
   description:
-    'Quais exames admissionais são obrigatórios para cada função? Veja a tabela completa, como o PCMSO define os exames e quando complementares são exigidos.',
+    'Veja como o PCMSO define os exames admissionais de cada função e em quais situações avaliações complementares podem ser indicadas.',
   alternates: { canonical: 'https://sermst.com.br/saude/tabela-exames-admissionais-por-funcao' },
   openGraph: {
     title: 'Tabela de Exames Admissionais por Função',
@@ -26,7 +26,7 @@ const faqSchema = {
       name: 'Quais exames são obrigatórios no exame admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O único exame obrigatório para todos os cargos é o exame clínico (consulta com médico do trabalho). Os exames complementares — sangue, audiometria, espirometria, raio-X e outros — são obrigatórios apenas quando o PCMSO da empresa os prevê para aquela função, com base nos riscos identificados.',
+        text: 'O exame admissional inclui avaliação clínica. Exames complementares são definidos no PCMSO conforme os riscos ocupacionais, os critérios da NR-07 e a avaliação médica. Não existe uma lista nacional fixa por nome de cargo.',
       },
     },
     {
@@ -34,7 +34,7 @@ const faqSchema = {
       name: 'Quem define quais exames fazer no admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O médico do trabalho coordenador do PCMSO da empresa define os exames complementares exigidos para cada função, com base nos riscos do cargo identificados no PGR. Sem PCMSO, a empresa não tem protocolo técnico para orientar o exame admissional.',
+        text: 'O médico responsável pelo PCMSO planeja os exames a partir dos riscos identificados no PGR e dos critérios da NR-07. Empresas dispensadas de elaborar PCMSO ainda precisam cumprir as regras aplicáveis aos exames ocupacionais.',
       },
     },
     {
@@ -42,7 +42,7 @@ const faqSchema = {
       name: 'Motorista precisa de quais exames no admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Motoristas profissionais (CLT) geralmente precisam de exame clínico, acuidade visual, audiometria, hemograma, glicemia e exame toxicológico de longa janela de detecção (obrigatório por lei para motoristas de carga e passageiros). O PCMSO pode incluir outros conforme o risco da rota e da carga.',
+        text: 'O motorista empregado realiza o exame clínico ocupacional e os complementares definidos pelo PCMSO. Para as categorias profissionais abrangidas pela legislação, o exame toxicológico é uma obrigação separada e não integra o PCMSO nem o ASO.',
       },
     },
     {
@@ -50,7 +50,7 @@ const faqSchema = {
       name: 'Cargo administrativo precisa de exame complementar no admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Geralmente não. Funções administrativas sem exposição a agentes físicos, químicos ou biológicos costumam ter apenas o exame clínico no admissional. O PCMSO pode incluir exame de acuidade visual para quem usa computador por longos períodos, conforme NR-17.',
+        text: 'A necessidade depende dos riscos reais e do PCMSO. Trabalho em escritório, por si só, não cria uma lista automática de exames complementares. A avaliação clínica continua obrigatória.',
       },
     },
   ],
@@ -59,59 +59,59 @@ const faqSchema = {
 const tabelaExames = [
   {
     funcao: 'Administrativo / Escritório',
-    risco: 'Baixo (Grau 1–2)',
-    examesObrigatorios: 'Exame clínico',
-    examesComuns: 'Acuidade visual (NR-17 — uso intenso de monitor)',
-    observacao: 'Sem exposição a agentes nocivos — exame clínico geralmente suficiente.',
+    risco: 'Postura, organização e visão',
+    examesObrigatorios: 'Avaliação clínica ocupacional',
+    examesComuns: 'Somente quando houver indicação no PCMSO',
+    observacao: 'O uso de computador não torna a acuidade visual automaticamente obrigatória.',
   },
   {
     funcao: 'Motorista de Carga / Transporte',
-    risco: 'Médio-Alto (Grau 3)',
-    examesObrigatorios: 'Exame clínico + Toxicológico (lei CLT)',
-    examesComuns: 'Audiometria, acuidade visual, hemograma, glicemia, eletrocardiograma',
-    observacao: 'Exame toxicológico de longa janela é obrigatório por lei para motoristas profissionais CLT.',
+    risco: 'Trânsito, jornada, ruído e carga',
+    examesObrigatorios: 'Avaliação clínica ocupacional',
+    examesComuns: 'Conforme PCMSO; toxicológico em fluxo separado quando exigido',
+    observacao: 'O toxicológico trabalhista não integra o PCMSO nem o ASO.',
   },
   {
     funcao: 'Operador de Produção / Linha Industrial',
-    risco: 'Alto (Grau 3–4)',
-    examesObrigatorios: 'Exame clínico + Audiometria (exposição a ruído)',
-    examesComuns: 'Hemograma, espirometria, acuidade visual, função hepática e renal',
+    risco: 'Ruído, químicos e máquinas',
+    examesObrigatorios: 'Avaliação clínica ocupacional',
+    examesComuns: 'Audiometria e outros, se os critérios técnicos se aplicarem',
     observacao: 'Depende dos agentes físicos e químicos do ambiente. PCMSO define quais exames conforme o cargo.',
   },
   {
     funcao: 'Construção Civil',
-    risco: 'Alto (Grau 3–4)',
-    examesObrigatorios: 'Exame clínico + Audiometria',
-    examesComuns: 'Espirometria, raio-X de tórax (exposição a poeira), hemograma, acuidade visual',
-    observacao: 'NR-18 impõe requisitos específicos. Trabalho em altura exige avaliação de aptidão para NR-35.',
+    risco: 'Ruído, poeira, altura e máquinas',
+    examesObrigatorios: 'Avaliação clínica ocupacional',
+    examesComuns: 'Definidos pela exposição e pelos anexos da NR-07',
+    observacao: 'Atividades em altura exigem avaliação de saúde compatível com os riscos e registro da aptidão no ASO.',
   },
   {
     funcao: 'Saúde (hospitalar, laboratório, clínica)',
-    risco: 'Alto (Grau 3)',
-    examesObrigatorios: 'Exame clínico + Sorologias (HBsAg, Anti-HCV, Anti-HIV)',
-    examesComuns: 'Hemograma, carteira de vacinação atualizada, PPD (tuberculose)',
-    observacao: 'Risco biológico determina sorologias e vacinação como parte do admissional.',
+    risco: 'Agentes biológicos e perfurocortantes',
+    examesObrigatorios: 'Avaliação clínica ocupacional',
+    examesComuns: 'Conforme exposição, PCMSO e critérios médicos',
+    observacao: 'Vacinação e vigilância da saúde devem seguir a NR-32 e o PCMSO; sorologias não são automáticas para todo cargo.',
   },
   {
     funcao: 'Serviços de Limpeza / Zeladoria',
-    risco: 'Médio (Grau 2–3)',
-    examesObrigatorios: 'Exame clínico',
-    examesComuns: 'Hemograma, função renal, acuidade visual',
+    risco: 'Produtos químicos, esforço e biológicos',
+    examesObrigatorios: 'Avaliação clínica ocupacional',
+    examesComuns: 'Somente quando indicados pelos riscos e pelo PCMSO',
     observacao: 'Contato com produtos químicos de limpeza pode exigir avaliação adicional conforme o PCMSO.',
   },
   {
     funcao: 'Trabalho em Altura',
-    risco: 'Alto (Grau 3–4)',
-    examesObrigatorios: 'Exame clínico + Aptidão específica para NR-35',
-    examesComuns: 'Eletrocardiograma, glicemia, acuidade visual, avaliação vestibular',
-    observacao: 'NR-35 exige que o trabalhador seja declarado apto especificamente para trabalho em altura.',
+    risco: 'Condições que podem causar mal súbito ou queda',
+    examesObrigatorios: 'Avaliação clínica e aptidão registrada no ASO',
+    examesComuns: 'Definidos pelo PCMSO e pelo julgamento médico',
+    observacao: 'A NR-35 não cria uma bateria universal de exames complementares.',
   },
   {
     funcao: 'Espaço Confinado',
-    risco: 'Crítico (Grau 4)',
-    examesObrigatorios: 'Exame clínico + Aptidão para NR-33',
-    examesComuns: 'Espirometria, eletrocardiograma, hemograma, glicemia',
-    observacao: 'NR-33 exige avaliação de aptidão específica. Cargo com riscos severos exige protocolo robusto.',
+    risco: 'Atmosfera, resgate e exigência física',
+    examesObrigatorios: 'Avaliação clínica e aptidão registrada no ASO',
+    examesComuns: 'Definidos pelo PCMSO e pelo julgamento médico',
+    observacao: 'A avaliação deve considerar os riscos específicos do espaço confinado.',
   },
 ];
 
@@ -121,7 +121,7 @@ export default function TabelaExamesFuncaoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlockbusterArticle
         coverImage={{ src: '/images/site/sermst-estrutura-medicina-ocupacional.png', alt: 'Tabela de exames admissionais por função e cargo' }}
-        hubLabel="Hub de Saúde Ocupacional"
+        hubLabel="Saúde Ocupacional"
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/tabela-exames-admissionais-por-funcao"
@@ -134,14 +134,12 @@ export default function TabelaExamesFuncaoPage() {
           dateModified: '2026-06-01',
         }}
         h1="Tabela de exames admissionais por função e cargo"
-        intro="Os exames admissionais variam conforme os riscos do cargo — não são iguais para todas as funções. O exame clínico é obrigatório para todos. Os exames complementares (audiometria, sangue, espirometria, toxicológico etc.) dependem do que o PCMSO da empresa prevê para cada cargo. Veja os protocolos mais comuns por tipo de função."
+        intro="Os exames admissionais variam conforme os riscos da função e o planejamento do PCMSO. A avaliação clínica faz parte do admissional; exames complementares só entram quando há fundamento técnico ou exigência legal específica."
         quickAnswer={
           <p>
-            Em linguagem simples: <strong>todo colaborador precisa do exame clínico admissional</strong>.
-            Já exames como <strong>audiometria, espirometria, toxicológico, hemograma ou sorologias</strong>
-            {' '}só entram quando o <strong>PCMSO da empresa</strong> determina isso para aquela função,
-            com base nos riscos reais do cargo. A tabela abaixo é um atalho para entender os cenários mais
-            comuns antes de fechar o protocolo.
+            Não existe uma tabela legal que associe cada cargo a uma bateria fixa de exames. O ponto de
+            partida é a <strong>avaliação clínica ocupacional</strong>. Audiometria, espirometria, exames
+            laboratoriais e outras avaliações dependem dos riscos, dos critérios da NR-07 e do PCMSO.
           </p>
         }
         showTableOfContents
@@ -154,7 +152,7 @@ export default function TabelaExamesFuncaoPage() {
                   Não existe uma lista nacional única de &quot;exames obrigatórios por cargo&quot;. O que existe é o <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong>, elaborado pelo médico responsável, que define quais exames complementares cada função da empresa precisa realizar com base nos riscos identificados no PGR.
                 </p>
                 <p>
-                  A tabela abaixo é uma referência dos exames mais praticados por tipo de função — não substitui o PCMSO da sua empresa. Cargos com exposição a agentes específicos (ruído, produtos químicos, vibração, risco biológico) podem ter exigências adicionais.
+                  A tabela abaixo mostra o raciocínio técnico mais comum, não uma prescrição. Funções com o mesmo nome podem ter exposições completamente diferentes em duas empresas.
                 </p>
               </>
             ),
@@ -165,7 +163,7 @@ export default function TabelaExamesFuncaoPage() {
               <>
                 <div className="not-prose mb-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
                   Se estiver no celular, comece olhando a coluna de <strong>função</strong> e depois a
-                  de <strong>exames obrigatórios</strong>. Os complementares comuns aparecem completos no
+                  de <strong>avaliação básica</strong>. Os possíveis complementares aparecem completos no
                   desktop para facilitar a comparação.
                 </div>
                 <div className="not-prose overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
@@ -173,9 +171,9 @@ export default function TabelaExamesFuncaoPage() {
                     <thead>
                       <tr className="bg-slate-900 text-white">
                         <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Função</th>
-                        <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider whitespace-nowrap">Grau de Risco</th>
-                        <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Exames Obrigatórios</th>
-                        <th className="hidden px-4 py-3 text-left text-xs font-black uppercase tracking-wider lg:table-cell">Complementares Comuns</th>
+                        <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider whitespace-nowrap">Riscos a considerar</th>
+                        <th className="px-4 py-3 text-left text-xs font-black uppercase tracking-wider">Avaliação básica</th>
+                        <th className="hidden px-4 py-3 text-left text-xs font-black uppercase tracking-wider lg:table-cell">Possíveis complementares</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -201,11 +199,11 @@ export default function TabelaExamesFuncaoPage() {
             body: (
               <>
                 <ul>
-                  <li><strong>Toxicológico de longa janela</strong> — obrigatório por lei (art. 168 CLT) para motoristas profissionais de carga e passageiros. Não é opcional e não pode ser substituído por outro exame.</li>
-                  <li><strong>Audiometria ocupacional</strong> — obrigatória quando o cargo tem exposição habitual a ruído acima do nível de ação (85 dB). Exigida pela NR-07 e serve de baseline para comparação nos exames periódicos.</li>
-                  <li><strong>Espirometria</strong> — exigida quando há exposição a poeiras, fumaças ou gases que afetam a função pulmonar (construção civil, fundições, indústria química).</li>
-                  <li><strong>Sorologias</strong> — obrigatórias para profissionais de saúde com risco biológico (HBsAg, Anti-HCV, Anti-HIV, vacinação contra Hepatite B).</li>
-                  <li><strong>Aptidão específica NR-35</strong> — trabalho em altura exige declaração de aptidão específica, além do exame clínico padrão.</li>
+                  <li><strong>Toxicológico de larga janela:</strong> exigido para motoristas profissionais nas hipóteses legais. O fluxo é separado do PCMSO e do ASO.</li>
+                  <li><strong>Audiometria ocupacional:</strong> aplica-se a empregados expostos a níveis de pressão sonora acima dos níveis de ação definidos no PGR, conforme os critérios do Anexo II da NR-07.</li>
+                  <li><strong>Espirometria:</strong> pode ser indicada conforme o agente respiratório, o nível de exposição e o planejamento médico. Não é automática para todo trabalhador exposto a poeira.</li>
+                  <li><strong>Exames laboratoriais:</strong> precisam de finalidade ocupacional definida. Risco biológico não autoriza uma lista indiscriminada de sorologias.</li>
+                  <li><strong>NR-35 e NR-33:</strong> a avaliação de saúde deve considerar os riscos da atividade, e a aptidão precisa constar no ASO. As normas não impõem uma bateria universal de exames.</li>
                 </ul>
                 <p>
                   Quando a função está ligada a obra, canteiro e exposição típica da construção civil, o exame admissional precisa conversar com a lógica da{' '}
@@ -221,11 +219,11 @@ export default function TabelaExamesFuncaoPage() {
             body: (
               <>
                 <p>
-                  Empresa sem PCMSO não tem protocolo técnico para orientar o exame admissional. O RH improvisa — pede exames genéricos que não se aplicam ao cargo, ou não pede nenhum exame complementar quando deveria. Os dois erros têm custo:
+                  Quando o PCMSO é obrigatório, ele organiza os critérios médicos de cada função. Sem esse planejamento, o RH pode pedir exames sem relação com o risco ou deixar de realizar avaliações indicadas. Há exceções de dispensa de elaboração do programa para algumas organizações, mas os exames ocupacionais aplicáveis continuam sendo exigidos.
                 </p>
                 <ul>
                   <li>Exames desnecessários encarecem o processo sem proteger a empresa.</li>
-                  <li>Exames ausentes que deveriam ser feitos configuram não conformidade com a NR-07 e geram passivo em eventual autuação ou ação trabalhista.</li>
+                  <li>A ausência de uma avaliação prevista na NR-07 ou no PCMSO pode gerar não conformidade e dificultar o acompanhamento da saúde ocupacional.</li>
                 </ul>
               </>
             ),
@@ -234,23 +232,23 @@ export default function TabelaExamesFuncaoPage() {
         faq={[
           {
             q: 'Quais exames são obrigatórios no admissional?',
-            a: 'O exame clínico é obrigatório para todos os cargos. Os exames complementares dependem do PCMSO da empresa para cada função.',
+            a: 'O admissional inclui avaliação clínica. Os exames complementares dependem dos riscos ocupacionais, dos critérios da NR-07 e do PCMSO aplicável à função.',
           },
           {
             q: 'Quem define os exames do admissional?',
-            a: 'O médico do trabalho coordenador do PCMSO, com base nos riscos do cargo identificados no PGR.',
+            a: 'O médico responsável pelo PCMSO, com base nos riscos identificados no PGR e nos critérios da NR-07.',
           },
           {
             q: 'Motorista precisa de toxicológico no admissional?',
-            a: 'Sim. O exame toxicológico de longa janela é obrigatório por lei para motoristas profissionais CLT de carga e passageiros.',
+            a: 'Para os motoristas profissionais abrangidos pela legislação, sim. O toxicológico é uma obrigação separada e não integra o PCMSO nem o ASO.',
           },
           {
             q: 'Cargo administrativo precisa de exame complementar?',
-            a: 'Geralmente não. Funções sem exposição a agentes nocivos costumam ter apenas o exame clínico. O PCMSO pode incluir acuidade visual para uso intenso de monitor.',
+            a: 'Depende dos riscos reais e do PCMSO. O uso de computador, isoladamente, não torna um exame complementar específico obrigatório.',
           },
         ]}
         sidebarTitle="Precisa montar o protocolo de exames da sua empresa?"
-        sidebarHook="A SERMST elabora o PCMSO e define os exames corretos para cada função — sem exames desnecessários e sem lacunas que viram multa."
+        sidebarHook="A SERMST elabora o PCMSO a partir dos riscos da operação e organiza um protocolo de exames adequado a cada função."
         sidebarCtaLabel="Montar meu PCMSO"
         sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
         related={[

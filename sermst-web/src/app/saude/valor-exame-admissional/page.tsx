@@ -25,7 +25,7 @@ const faqSchema = {
       name: 'Quanto custa um exame admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O exame admissional começa em R$ 70,00 para empresas com convênio corporativo com a SERMST. Para empresas avulsas (sem contrato), o valor pode chegar a R$ 150,00. Esse valor cobre o exame clínico com o médico do trabalho e a emissão do ASO. Exames complementares — como audiometria, hemograma, espirometria ou toxicológico — têm custo adicional conforme o que o PCMSO da empresa exige para cada função.',
+        text: 'O exame admissional começa em R$ 70,00 para empresas com convênio corporativo com a SERMST. Para empresas avulsas, sem contrato, o valor pode chegar a R$ 150,00. Esse valor cobre o exame clínico com o médico do trabalho e a emissão do ASO. Exames complementares, como audiometria, hemograma, espirometria ou toxicológico, têm custo adicional conforme o que o PCMSO exige para cada função.',
       },
     },
     {
@@ -41,12 +41,12 @@ const faqSchema = {
       name: 'Como reduzir o custo dos exames admissionais na empresa?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A principal forma de reduzir custo é ter um PCMSO bem calibrado — que exige apenas os exames realmente necessários para cada cargo, sem exames desnecessários. Empresas com contrato corporativo também acessam tarifas mais baixas do que o atendimento avulso.',
+        text: 'A principal forma de evitar gastos desnecessários é ter um PCMSO coerente com os riscos de cada cargo. Empresas com contrato corporativo também podem ter tarifas menores do que no atendimento avulso.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Quem paga o exame admissional — empresa ou candidato?',
+      name: 'Quem paga o exame admissional: empresa ou candidato?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'A empresa. O custo do exame admissional é obrigatoriamente do empregador, conforme a NR-07. O candidato não pode ser cobrado pelo exame em nenhuma hipótese.',
@@ -61,7 +61,7 @@ export default function ValorExameAdmissionalPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlockbusterArticle
         coverImage={{ src: '/images/site/sermst-estrutura-medicina-ocupacional.png', alt: 'Valor e preço do exame admissional para empresas' }}
-        hubLabel="Hub de Saúde Ocupacional"
+        hubLabel="Saúde Ocupacional"
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/valor-exame-admissional"
@@ -85,10 +85,10 @@ export default function ValorExameAdmissionalPage() {
                 </p>
                 <ul>
                   <li>
-                    <strong>Exame clínico + ASO</strong> — a consulta com o médico do trabalho, que inclui anamnese, avaliação física e emissão do Atestado de Saúde Ocupacional. É o componente base, presente em toda admissão.
+                    <strong>Exame clínico e ASO:</strong> consulta com o médico do trabalho, que inclui anamnese, avaliação clínica e emissão do Atestado de Saúde Ocupacional. É o componente básico de toda admissão.
                   </li>
                   <li>
-                    <strong>Exames complementares</strong> — laboratoriais, audiometria, espirometria, acuidade visual, toxicológico e outros. São cobrados à parte e variam conforme o que o PCMSO da empresa determina para cada cargo.
+                    <strong>Exames complementares:</strong> laboratoriais, audiometria, espirometria, acuidade visual, toxicológico e outros. São cobrados à parte e variam conforme o que o PCMSO determina para cada cargo.
                   </li>
                 </ul>
                 <p>
@@ -102,7 +102,7 @@ export default function ValorExameAdmissionalPage() {
             body: (
               <>
                 <p>
-                  O exame clínico com emissão de ASO na SERMST começa em <strong>R$ 70,00 para empresas conveniadas</strong> — aquelas com contrato corporativo ativo. Para empresas sem contrato, o atendimento avulso pode chegar a <strong>R$ 150,00</strong>.
+                  O exame clínico com emissão de ASO na SERMST começa em <strong>R$ 70,00 para empresas conveniadas</strong>, aquelas com contrato corporativo ativo. Para empresas sem contrato, o atendimento avulso pode chegar a <strong>R$ 150,00</strong>.
                 </p>
                 <p>
                   Esses valores não incluem os exames complementares, que são orçados conforme o perfil de risco da função e o PCMSO vigente da empresa. O orçamento completo por cargo é fornecido no contato comercial.
@@ -118,13 +118,13 @@ export default function ValorExameAdmissionalPage() {
                   Os complementares mais frequentes no exame admissional variam conforme a função e os riscos identificados no PCMSO:
                 </p>
                 <ul>
-                  <li><strong>Audiometria ocupacional</strong> — para cargos com exposição a ruído</li>
-                  <li><strong>Hemograma completo</strong> — solicitado em diversas funções com exposição a agentes físicos ou químicos</li>
-                  <li><strong>Espirometria</strong> — para funções com exposição a poeiras ou gases</li>
-                  <li><strong>Acuidade visual</strong> — motoristas, operadores de máquina e funções com uso intenso de monitor</li>
-                  <li><strong>Exame toxicológico</strong> — obrigatório por lei para motoristas profissionais CLT</li>
-                  <li><strong>Sorologias</strong> — profissionais de saúde com risco biológico</li>
-                  <li><strong>Eletrocardiograma</strong> — funções com atividade física intensa ou trabalho em altura</li>
+                  <li><strong>Audiometria ocupacional:</strong> indicada quando há exposição ocupacional a níveis de pressão sonora elevados.</li>
+                  <li><strong>Hemograma completo:</strong> pode ser indicado conforme os riscos e o acompanhamento definido no PCMSO.</li>
+                  <li><strong>Espirometria:</strong> pode integrar o controle de trabalhadores expostos a determinados agentes respiratórios.</li>
+                  <li><strong>Acuidade visual:</strong> solicitada quando a avaliação visual é pertinente às atividades e aos riscos da função.</li>
+                  <li><strong>Exame toxicológico:</strong> aplicável aos motoristas profissionais nas situações previstas em lei.</li>
+                  <li><strong>Sorologias:</strong> podem ser indicadas em atividades com risco biológico, conforme avaliação médica.</li>
+                  <li><strong>Eletrocardiograma:</strong> pode ser solicitado conforme a avaliação clínica e os riscos ocupacionais.</li>
                 </ul>
                 <p>
                   Solicite o orçamento por função para ter o custo real por admissão antes de fechar contrato.
@@ -136,7 +136,7 @@ export default function ValorExameAdmissionalPage() {
             title: 'Quem paga o exame admissional',
             body: (
               <p>
-                O custo do exame admissional é sempre da empresa — não do candidato. A NR-07 é clara: o empregador é responsável por todos os exames ocupacionais, incluindo o admissional. Cobrar o candidato pelo exame é infração trabalhista.
+                O custo do exame admissional é da empresa, não do candidato. A NR-07 atribui ao empregador a responsabilidade pelo PCMSO e pelos exames ocupacionais previstos no programa.
               </p>
             ),
           },
@@ -149,7 +149,7 @@ export default function ValorExameAdmissionalPage() {
                 </p>
                 <ul>
                   <li>
-                    <strong>PCMSO calibrado por função.</strong> Um PCMSO bem elaborado exige apenas os exames realmente necessários para cada cargo. Empresas sem PCMSO ou com PCMSO genérico costumam fazer exames desnecessários — pagando mais sem proteger melhor.
+                    <strong>PCMSO coerente com cada função.</strong> O programa deve indicar os exames necessários a partir dos riscos ocupacionais. Um documento genérico pode deixar controles importantes de fora ou incluir exames sem justificativa técnica.
                   </li>
                   <li>
                     <strong>Contrato corporativo.</strong> Empresas com convênio acessam tarifas menores do que o atendimento avulso, além de fluxo de atendimento prioritário e integração direta com o eSocial.
@@ -170,7 +170,7 @@ export default function ValorExameAdmissionalPage() {
           },
           {
             q: 'Quem paga o exame admissional?',
-            a: 'A empresa. O candidato não pode ser cobrado pelo exame admissional em nenhuma hipótese — é obrigação do empregador por força da NR-07.',
+            a: 'A empresa. A NR-07 atribui ao empregador o custeio dos procedimentos relacionados ao PCMSO, sem ônus para o empregado.',
           },
           {
             q: 'Como solicitar orçamento para minha empresa?',

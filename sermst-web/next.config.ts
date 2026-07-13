@@ -103,18 +103,31 @@ const nextConfig: NextConfig = {
         destination: 'https://sermst.com.br/:path*',
         permanent: true,
       },
+      // Consolida o antigo cluster Empresario nas novas URLs informacionais.
+      { source: '/empresario/cnpj-ativo-significa-empresa-regularizada', destination: '/empresario/cnpj-ativo-o-que-significa', permanent: true },
+      { source: '/empresario/nota-fiscal-mei-nao-significa-empresa-regularizada', destination: '/empresario/nota-fiscal-mei', permanent: true },
+      { source: '/empresario/simples-nacional-nao-elimina-obrigacoes-da-empresa', destination: '/empresario/simples-nacional', permanent: true },
+      { source: '/empresario/alvara-de-funcionamento-nao-basta', destination: '/empresario/alvara-de-funcionamento', permanent: true },
+      { source: '/empresario/folha-de-pagamento-nao-e-a-unica-obrigacao', destination: '/empresario/folha-de-pagamento', permanent: true },
+      { source: '/empresario/vigilancia-sanitaria-e-documentos-da-empresa', destination: '/empresario/vigilancia-sanitaria', permanent: true },
+      { source: '/empresario/empresa-pequena-com-funcionario-quais-obrigacoes', destination: '/empresario/mei-pode-ter-funcionario', permanent: true },
+      { source: '/empresario/primeiro-funcionario-o-que-muda-na-pratica', destination: '/empresario/mei-pode-ter-funcionario', permanent: true },
+      { source: '/empresario/documentos-obrigatorios-empresa-com-funcionarios', destination: '/empresario/direitos-trabalhistas', permanent: true },
+      { source: '/empresario/contador-cuida-de-tudo', destination: '/empresario/o-que-faz-um-contador', permanent: true },
+      { source: '/empresario/fiscalizacao-empresa-o-que-podem-cobrar', destination: '/empresario/direitos-trabalhistas', permanent: true },
+      { source: '/empresario/empresa-regularizada-com-funcionarios', destination: '/empresario/cnpj-ativo-o-que-significa', permanent: true },
       // Variantes com slash final vistas no GSC durante a migracao.
       // Mantemos redirects explicitos para acelerar a consolidacao dos sinais.
       { source: "/exames/como-funciona-o-exame-admissional/", destination: "/exames/como-funciona-o-exame-admissional", permanent: true },
       { source: "/exames/funcao-encarregado-responsabilidades-e-perfil-ideal/", destination: "/rh/funcao-encarregado", permanent: true },
       { source: "/exames/o-que-um-gerente-faz-funcoes-responsabilidades/", destination: "/rh/o-que-um-gerente-faz", permanent: true },
-      { source: "/exames/como-funciona-exame-demissional/", destination: "/saude/exame-demissional-guia", permanent: true },
+      { source: "/exames/como-funciona-exame-demissional/", destination: "/saude/exame-demissional", permanent: true },
       { source: "/medicina-do-trabalho/exame-admissional-perto-de-mim/", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/medicina-do-trabalho/funcao-do-encarregado-responsabilidades-competencias-e-impacto-no-ambiente-de-trabalho/", destination: "/rh/funcao-encarregado", permanent: true },
       { source: "/medicina-do-trabalho/lista-cnae-brasil-o-guia-completo-para-empresas-e-empreendedores/", destination: "/rh/lista-cnae-brasil", permanent: true },
       { source: "/medicina-do-trabalho/nr-1-atualizada/", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/medicina-do-trabalho/o-que-um-gerente-faz-funcoes-habilidades-e-impacto-nas-empresas/", destination: "/rh/o-que-um-gerente-faz", permanent: true },
-      { source: "/medicina-do-trabalho/como-funciona-o-exame-demissional-guia-completo-e-estrategico/", destination: "/saude/exame-demissional-guia", permanent: true },
+      { source: "/medicina-do-trabalho/como-funciona-o-exame-demissional-guia-completo-e-estrategico/", destination: "/saude/exame-demissional", permanent: true },
       { source: "/sao-paulo/pinheiros/clinica-para-exame-admissional-em-pinheiros/", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/sao-paulo/exame-admissional-na-vila-mariana/", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/seguranca-do-trabalho/nr-18-guia-completo/", destination: "/normas/nr-18-construcao-civil", permanent: true },
@@ -158,7 +171,7 @@ const nextConfig: NextConfig = {
       { source: "/medicina-do-trabalho/exame-pcmso-tudo-o-que-voce-precisa-saber-sobre-o-controle-de-saude-ocupacional", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
       { source: "/medicina-do-trabalho/aso-tudo-o-que-voce-precisa-saber-sobre-o-atestado-de-saude-ocupacional", destination: "/saude/aso-atestado-saude-ocupacional", permanent: true },
       { source: "/medicina-do-trabalho/tudo-sobre-o-aso-admissional-garantindo-a-saude-e-seguranca-no-trabalho", destination: "/saude/aso-atestado-saude-ocupacional", permanent: true },
-      { source: "/medicina-do-trabalho/como-funciona-o-exame-demissional-guia-completo-e-estrategico", destination: "/saude/exame-demissional-guia", permanent: true },
+      { source: "/medicina-do-trabalho/como-funciona-o-exame-demissional-guia-completo-e-estrategico", destination: "/saude/exame-demissional", permanent: true },
       { source: "/medicina-do-trabalho/funcao-do-encarregado-responsabilidades-competencias-e-impacto-no-ambiente-de-trabalho", destination: "/rh/funcao-encarregado", permanent: true },
       { source: "/medicina-do-trabalho/lista-cnae-brasil-o-guia-completo-para-empresas-e-empreendedores", destination: "/rh/lista-cnae-brasil", permanent: true },
       { source: "/medicina-do-trabalho/o-que-um-gerente-faz-funcoes-habilidades-e-impacto-nas-empresas", destination: "/rh/o-que-um-gerente-faz", permanent: true },
@@ -172,7 +185,7 @@ const nextConfig: NextConfig = {
       { source: "/uncategorized/nr-1-atualizada", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/exames/funcao-encarregado-responsabilidades-e-perfil-ideal", destination: "/rh/funcao-encarregado", permanent: true },
       { source: "/exames/o-que-um-gerente-faz-funcoes-responsabilidades", destination: "/rh/o-que-um-gerente-faz", permanent: true },
-      { source: "/exames/como-funciona-exame-demissional", destination: "/saude/exame-demissional-guia", permanent: true },
+      { source: "/exames/como-funciona-exame-demissional", destination: "/saude/exame-demissional", permanent: true },
       { source: "/exames/como-fazer-uma-carta-de-demissao", destination: "/rh/carta-demissao", permanent: true },
       { source: "/exames/quando-demitir-um-funcionario-guia-completo-para-gestores", destination: "/rh/quando-demitir-funcionario", permanent: true },
       { source: "/exames/como-evitar-processos-trabalhistas-guia-completo-para-empresas-e-rh", destination: "/rh/evitar-processos-trabalhistas", permanent: true },
@@ -315,8 +328,8 @@ const nextConfig: NextConfig = {
       { source: "/treinamentos/nr-10-segurança-eletrica",       destination: "/treinamentos/nr-10-seguranca-eletrica",          permanent: true },
       { source: "/treinamentos/nr-18-seguran%C3%A7a-construcao-civil", destination: "/treinamentos/nr-18-seguranca-construcao-civil", permanent: true },
       { source: "/treinamentos/nr-18-segurança-construcao-civil",      destination: "/treinamentos/nr-18-seguranca-construcao-civil", permanent: true },
-      { source: "/saude/import%C3%A2ncia-do-exame-periodico", destination: "/saude/importancia-do-exame-periodico", permanent: true },
-      { source: "/saude/importância-do-exame-periodico", destination: "/saude/importancia-do-exame-periodico", permanent: true },
+      { source: "/saude/import%C3%A2ncia-do-exame-periodico", destination: "/saude/exame-periodico-ocupacional", permanent: true },
+      { source: "/saude/importância-do-exame-periodico", destination: "/saude/exame-periodico-ocupacional", permanent: true },
 
       // -- Slugs legados de normas com página canônica equivalente --
       { source: "/normas/nr-04-sesmt",   destination: "/normas/sesmt", permanent: true },
@@ -326,10 +339,10 @@ const nextConfig: NextConfig = {
       { source: "/normas/nr37",          destination: "/normas/nr-37", permanent: true },
       { source: "/normas/o-que-e-nr-01", destination: "/normas/nr-01-pgr-atualizada", permanent: true },
       { source: "/normas/o-que-e-nr-15", destination: "/normas/nr-15-insalubridade",  permanent: true },
-      // NR-07 não tem página dedicada — aponta para PCMSO (conteúdo equivalente)
-      { source: "/normas/o-que-e-nr-07", destination: "/saude/pcmso-programa-controle-medico", permanent: true },
       // Canibalização: importancia-do-exame-periodico compete com exame-periodico-ocupacional
       { source: "/saude/importancia-do-exame-periodico", destination: "/saude/exame-periodico-ocupacional", permanent: true },
+      // Consolida as duas páginas demissionais na URL informacional mais antiga.
+      { source: "/saude/exame-demissional-guia", destination: "/saude/exame-demissional", permanent: true },
 
       // -- Catch-all para sub-paths de WP (ex: /attachment/) nao cobertos por regras especificas --
       { source: "/saude-ocupacional/:path*", destination: "/saude", permanent: true },

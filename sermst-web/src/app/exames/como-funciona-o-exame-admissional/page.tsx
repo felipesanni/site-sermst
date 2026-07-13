@@ -159,7 +159,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlockbusterArticle
         coverImage={{ src: '/images/site/sermst-estrutura-medicina-ocupacional.png', alt: 'Exame admissional ocupacional para contratação de colaborador' }}
-        hubLabel="Hub de Saúde Ocupacional"
+        hubLabel="Saúde Ocupacional"
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         badgeText="Guia admissional"
@@ -175,7 +175,6 @@ export default function ComoFuncionaExameAdmissionalPage() {
         h1="Exame admissional: o que é, como funciona e quais exames podem ser solicitados"
         intro="O exame admissional é o exame ocupacional feito antes do início das atividades. Ele verifica se o trabalhador está apto para a função conforme os riscos do cargo e o PCMSO da empresa, define se haverá complementares e termina com a emissão do ASO admissional."
         disableFaqSchema
-        includeFallbackFaqs={false}
         maxFaqItems={9}
         sections={[
         {
@@ -213,7 +212,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
                 O exame admissional é um dos exames ocupacionais previstos na NR-07. Ele deve acontecer antes que o trabalhador comece suas atividades na empresa e serve para avaliar se existe aptidão clínica para a função pretendida.
               </p>
               <p>
-                Na prática, ele protege os dois lados: a empresa documenta a condição de saúde ocupacional no momento da contratação, e o trabalhador entra na função com avaliação médica compatível com os riscos do cargo.
+                A avaliação registra a conclusão de aptidão para a função antes do início das atividades e orienta o acompanhamento previsto no PCMSO.
               </p>
               <p>
                 O resultado do exame é registrado no <strong>ASO admissional</strong>, o Atestado de Saúde Ocupacional. Esse documento informa se o colaborador está apto ou inapto para exercer aquela função.
@@ -231,7 +230,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
               <li><strong>A empresa encaminha o candidato.</strong> O RH informa função, dados da empresa e, idealmente, os riscos do cargo previstos no PCMSO.</li>
               <li><strong>A clínica confere o protocolo.</strong> O atendimento verifica se será necessário apenas exame clínico ou também exames complementares.</li>
               <li><strong>O candidato passa pela avaliação clínica.</strong> O médico examinador faz anamnese ocupacional, histórico de saúde e avaliação física compatível com a função.</li>
-              <li><strong>Exames complementares são realizados quando aplicável.</strong> Audiometria, acuidade visual, espirometria, exames laboratoriais ou toxicológico dependem do risco ocupacional e do PCMSO.</li>
+              <li><strong>Exames complementares são realizados quando aplicável.</strong> Audiometria, acuidade visual, espirometria e exames laboratoriais dependem dos riscos e do PCMSO. O exame toxicológico trabalhista, quando exigido para motoristas profissionais, é independente do PCMSO e não integra o ASO.</li>
                 <li><strong>O ASO é emitido.</strong> Com as informações clínicas e complementares, o médico registra a conclusão de apto ou inapto para a função.</li>
                 <li><strong>O RH arquiva e organiza o evento ocupacional.</strong> O ASO e os dados do atendimento sustentam o monitoramento de saúde ocupacional, incluindo o evento S-2220 quando aplicável.</li>
               </ol>
@@ -389,7 +388,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
                 Em empresas com volume de contratação, o atraso normalmente não vem do exame em si, mas da falta de fluxo: guia incompleta, PCMSO desatualizado, candidato sem orientação de preparo ou complementares solicitados de última hora.
               </p>
               <p>
-                Se a sua empresa precisa contratar sem travar o RH, a página de <Link href="/servicos/exame-admissional-expresso/sao-paulo">exame admissional expresso em São Paulo</Link> explica o fluxo comercial da SERMST.
+                Se a sua empresa precisa contratar sem travar o RH, consulte o serviço de <Link href="/servicos/exame-admissional-expresso/sao-paulo">exame admissional expresso em São Paulo</Link> para conferir documentos, atendimento e agendamento.
               </p>
             </>
           ),
@@ -473,8 +472,8 @@ export default function ComoFuncionaExameAdmissionalPage() {
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
       ]}
       finalCta={{
-        title: 'Quer transformar a dúvida em contratação sem retrabalho?',
-        desc: 'Se a sua empresa precisa admitir com segurança, a SERMST organiza o fluxo admissional, orienta o RH e evita que ASO, exames complementares e PCMSO virem gargalo.',
+        title: 'Precisa organizar o exame admissional?',
+        desc: 'A SERMST orienta a guia, realiza os exames previstos no PCMSO e emite o ASO após a conclusão médica.',
         label: 'Falar sobre exame admissional',
         href: '/servicos/exame-admissional-expresso/sao-paulo',
       }}

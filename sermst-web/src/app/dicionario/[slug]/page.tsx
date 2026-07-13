@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { dicionarioDetails, dicionarioSEO } from '@/lib/data/seo-content';
 import Link from 'next/link';
@@ -45,7 +45,7 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
     url: `https://sermst.com.br/dicionario/${slug}`,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
-      name: 'Dicionário SST — SERMST',
+      name: 'Dicionário SST: SERMST',
       url: 'https://sermst.com.br/dicionario',
     },
   };
@@ -117,11 +117,11 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
                   <div className="my-12 grid gap-6 md:grid-cols-2">
                     <Link href="/dicionario/o-que-e-ltcat" className="rounded-2xl border border-slate-200 bg-white p-7 no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
                       <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-                        Ponte técnica
+                        Relação entre os documentos
                       </span>
                       <h2 className="mt-0 text-2xl font-black text-brand-900">O que significa LTCAT e por que ele sustenta o PPP</h2>
                       <p className="mb-0 text-base leading-relaxed text-slate-700">
-                        Se a dúvida ainda está na diferença entre documento final e base técnica, este é o melhor próximo passo.
+                        Entenda a diferença entre o documento entregue ao trabalhador e o laudo que sustenta as informações de exposição.
                       </p>
                     </Link>
 

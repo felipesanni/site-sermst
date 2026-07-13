@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ObrigadoAssinaturasPage() {
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* GTM dataLayer push de conversão — dispara quando a URL é carregada */}
+      {/* GTM dataLayer push de conversão: dispara quando a URL é carregada */}
       <Script
         id="conversion-obrigado"
         strategy="afterInteractive"
@@ -67,7 +67,7 @@ export default function ObrigadoAssinaturasPage() {
                 {
                   step: '2',
                   title: 'Diagnóstico inicial',
-                  desc: 'Antes de começar, a equipe técnica faz um levantamento rápido do que a empresa já tem — PGR, PCMSO, eSocial — para calibrar o plano.',
+                  desc: 'Antes de começar, a equipe técnica faz um levantamento rápido do que a empresa já tem: PGR, PCMSO, eSocial: para calibrar o plano.',
                 },
                 {
                   step: '3',

@@ -124,11 +124,11 @@ export default function DicionarioIndexPage() {
                 Próximo passo
               </span>
               <h2 className="mb-5 text-2xl font-black">
-                Se o termo já está ligado a uma dor do negócio, vale falar com a SERMST
+                Precisa aplicar o conceito na rotina da empresa?
               </h2>
               <p className="mb-8 leading-relaxed text-slate-300">
-                O glossário ajuda a entender. Quando a empresa precisa agir, o ideal é transformar definição em processo,
-                documento e solução antes que a dúvida vire atraso, retrabalho ou exposição jurídica.
+                O glossário explica o termo. Para elaborar documentos, organizar exames ou revisar a rotina de SST,
+                fale com a equipe e informe a situação da empresa.
               </p>
               <Link href="/contato" className="btn-primary-safe">
                 Solicitar orientação

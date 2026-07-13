@@ -3,16 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
 import { ArrowRight, BookOpen, Briefcase, GraduationCap, ShieldCheck } from 'lucide-react';
+import { companyFacts } from '@/lib/company-facts';
 
 export const metadata: Metadata = {
-  title: 'Luiz César Sannino | Higienista Ocupacional SST — SERMST',
+  title: 'Luiz César Sannino | Higienista Ocupacional | SERMST',
   description:
     'Luiz César Sannino, Higienista Ocupacional e Técnico em Segurança do Trabalho (CREA/SP 5061899709), soma mais de 40 anos de experiência em SST.',
   alternates: { canonical: 'https://sermst.com.br/equipe/luiz-cesar-sannino' },
   openGraph: {
-    title: 'Luiz César Sannino | Higienista Ocupacional SST — SERMST',
+    title: 'Luiz César Sannino | Higienista Ocupacional | SERMST',
     description:
-      'Higienista Ocupacional e Técnico em Segurança do Trabalho (CREA/SP 5061899709). Mais de 40 anos formando a SERMST — autor dos principais guias técnicos sobre normas regulamentadoras e saúde ocupacional.',
+      'Higienista Ocupacional e Técnico em Segurança do Trabalho, CREA/SP 5061899709. Fundador da SERMST e autor de guias sobre normas e saúde ocupacional.',
     url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
     type: 'profile',
     locale: 'pt_BR',
@@ -67,12 +68,12 @@ const articles = [
   },
   {
     href: '/normas/nr-15-insalubridade',
-    title: 'NR-15: Insalubridade — guia para gestores e RH',
+    title: 'NR-15: insalubridade para gestores e RH',
     hub: 'Normas Regulamentadoras',
   },
   {
     href: '/normas/nr-17-ergonomia',
-    title: 'NR-17: Ergonomia — o que sua empresa precisa fazer para evitar LER/DORT',
+    title: 'NR-17: ergonomia e avaliação das situações de trabalho',
     hub: 'Normas Regulamentadoras',
   },
   {
@@ -82,7 +83,7 @@ const articles = [
   },
   {
     href: '/normas/nr-35-trabalho-em-altura',
-    title: 'NR-35: Trabalho em Altura — o que sua empresa precisa saber',
+    title: 'NR-35: trabalho em altura e requisitos da empresa',
     hub: 'Normas Regulamentadoras',
   },
   {
@@ -137,9 +138,9 @@ const profilePageSchema = {
   '@type': 'ProfilePage',
   '@id': 'https://sermst.com.br/equipe/luiz-cesar-sannino#profilepage',
   url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
-  name: 'Luiz César Sannino — Higienista Ocupacional e TST | SERMST',
+  name: 'Luiz César Sannino | Higienista Ocupacional e TST | SERMST',
   dateCreated: '2025-01-01T00:00:00-03:00',
-  dateModified: '2026-07-02T00:00:00-03:00',
+  dateModified: '2026-07-13T00:00:00-03:00',
   inLanguage: 'pt-BR',
   mainEntity: personSchema,
 };
@@ -171,7 +172,7 @@ export default function LuizCesarSanninoPage() {
               <div className="h-20 w-20 rounded-full overflow-hidden border-2 border-accent-pink/40 shrink-0 relative">
                 <Image
                   src="/images/equipe/luiz-cesar-sannino.jpg"
-                  alt="Luiz César Sannino — Higienista Ocupacional e Técnico em Segurança do Trabalho, CREA/SP 5061899709"
+                  alt="Luiz César Sannino, higienista ocupacional e técnico em segurança do trabalho"
                   fill
                   sizes="80px"
                   className="object-cover object-top"
@@ -211,7 +212,7 @@ export default function LuizCesarSanninoPage() {
                 Sobre
               </span>
               <h2 className="mb-8 text-3xl font-black text-brand-900 leading-tight">
-                Mais de 40 anos construindo a SST que protege empresas de verdade.
+                Experiência técnica em higiene ocupacional e segurança do trabalho.
               </h2>
             </FadeIn>
 
@@ -221,15 +222,14 @@ export default function LuizCesarSanninoPage() {
                   Luiz César Sannino é Higienista Ocupacional e Técnico em Segurança do Trabalho
                   com registro CREA/SP 5061899709. Com mais de 40 anos de atuação na área, é o
                   fundador da SERMST e responsável pela formação técnica e operacional que sustenta
-                  o atendimento a mais de 3.000 empresas em todo o Brasil.
+                  o atendimento a {companyFacts.companiesServed.phrase} em todo o Brasil.
                 </p>
               </FadeIn>
               <FadeIn direction="up" delay={0.2}>
                 <p>
-                  Sua especialidade é transformar a complexidade das normas regulamentadoras em
-                  processos práticos — audiometria, espirometria, EEG, ECG e todos os exames
-                  complementares realizados no laboratório próprio da SERMST seguem os protocolos
-                  técnicos que ele desenvolveu ao longo de décadas de campo.
+                  Sua atuação reúne avaliação de riscos, orientação técnica e organização de
+                  processos. Também acompanha a estrutura de exames complementares realizados
+                  pela SERMST, como audiometria, espirometria, EEG e ECG.
                 </p>
               </FadeIn>
               <FadeIn direction="up" delay={0.3}>
@@ -237,7 +237,7 @@ export default function LuizCesarSanninoPage() {
                   É autor dos principais guias técnicos do blog da SERMST sobre saúde ocupacional,
                   normas regulamentadoras, EPI e programas obrigatórios como PCMSO e PGR.
                   Todo conteúdo é revisado com base na legislação vigente e na realidade das
-                  operações brasileiras — sem jargão acadêmico, com foco no que o gestor precisa
+                  operações brasileiras, com linguagem clara e foco no que o gestor precisa
                   saber para agir.
                 </p>
               </FadeIn>

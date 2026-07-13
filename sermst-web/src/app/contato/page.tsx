@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { LeadForm } from '@/components/forms/lead-form';
 import { FadeIn } from '@/components/ui/fade-in';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
+import { companyFacts } from '@/lib/company-facts';
 
 export const metadata: Metadata = {
   title: 'Contato SERMST | Orçamento Medicina do Trabalho',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contato SERMST | Orçamento Medicina do Trabalho',
     description:
-      'Solicite orçamento para exames ocupacionais, PGR, PCMSO, laudos e gestão eSocial. Atendimento rápido, sem burocracia — fale com a SERMST agora.',
+      'Solicite orçamento para exames ocupacionais, PGR, PCMSO, laudos e gestão eSocial. Fale com a equipe da SERMST para definir o escopo do atendimento.',
     url: 'https://sermst.com.br/contato',
     type: 'website',
     locale: 'pt_BR',
@@ -40,17 +41,17 @@ const contactPaths = [
   {
     title: 'eSocial SST',
     description:
-      'Para empresas que precisam organizar S-2220, S-2240, fluxos de envio e rotina de compliance com menos retrabalho.',
+      'Para empresas que precisam organizar S-2220, S-2240 e os fluxos de envio com menos retrabalho.',
     cta: 'https://wa.me/5511915146447?text=Olá!%20Vim%20da%20página%20de%20contato%20da%20SERMST%20e%20preciso%20regularizar%20o%20eSocial%20SST%20da%20minha%20empresa.',
     label: 'Regularizar eSocial',
   },
 ];
 
 const differentiators = [
-  'Mais de 40 anos de experiência em Medicina e Segurança do Trabalho.',
+  `Uma trajetória de ${companyFacts.history.phrase} em saúde e segurança do trabalho.`,
+  `${companyFacts.livesServed.phrase} e ${companyFacts.companiesServed.phrase}.`,
   'Estrutura própria para acelerar ASO, exames complementares e fluxos ocupacionais.',
   'Atendimento para São Paulo, Grande ABC, Osasco, Guarulhos, Barueri e região.',
-  'Foco em reduzir risco trabalhista, atraso de contratação e falhas de eSocial.',
 ];
 
 const contactPageSchema = {

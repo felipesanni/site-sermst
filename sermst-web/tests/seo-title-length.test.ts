@@ -6,7 +6,7 @@ import { metadata as nr37Metadata } from '@/app/normas/nr-37/page';
 import { metadata as nr18Metadata } from '@/app/normas/nr-18-construcao-civil/page';
 import { metadata as sesmtMetadata } from '@/app/normas/sesmt/page';
 import { metadata as acidenteDeTrabalhoMetadata } from '@/app/saude/acidente-de-trabalho/page';
-import { metadata as examePeriodicoMetadata } from '@/app/saude/importancia-do-exame-periodico/page';
+import { metadata as examePeriodicoMetadata } from '@/app/saude/exame-periodico-ocupacional/page';
 import { metadata as ondeFazerAudiometriaMetadata } from '@/app/saude/onde-fazer-audiometria-ocupacional-sao-paulo/page';
 import { generateMetadata as generateLocalServiceMetadata } from '@/app/servicos/[servico]/[regiao]/page';
 import { generateMetadata as generateServiceMetadata } from '@/app/servicos/[servico]/page';
@@ -22,7 +22,7 @@ describe('SEO title length', () => {
   it('mantem curtos os titles apontados pela auditoria Ubersuggest', () => {
     const auditedPages = [
       { metadata: nr01Metadata, title: 'NR-01: PGR e riscos psicossociais | SERMST' },
-      { metadata: nr18Metadata, title: 'NR-18 construção civil: resumo e PGR | SERMST' },
+      { metadata: nr18Metadata, title: 'NR-18: o que exige na construção civil | SERMST' },
       { metadata: nr37Metadata, title: 'NR-37: plataformas de petróleo e gás | SERMST' },
       { metadata: sesmtMetadata, title: 'NR-4 e SESMT: quando é obrigatório | SERMST' },
       { metadata: acidenteDeTrabalhoMetadata, title: 'Acidente de trabalho: tipos e riscos | SERMST' },
@@ -43,7 +43,7 @@ describe('SEO title length', () => {
     const title = getTitleText(examePeriodicoMetadata.title);
     const ogTitle = getTitleText(examePeriodicoMetadata.openGraph?.title);
 
-    expect(title).toBe('O que é o Exame Periódico Ocupacional | SERMST');
+    expect(title).toBe('Exame periódico: periodicidade na NR-07 | SERMST');
     expect(title.length).toBeLessThanOrEqual(60);
     expect(ogTitle.length).toBeLessThanOrEqual(60);
   });

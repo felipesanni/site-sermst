@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Valor do exame toxicológico CNH | SERMST',
     description:
-      'Guia para quem pesquisa quanto custa exame toxicológico CNH, com foco em preço, finalidade do exame e diferença entre empresa e pessoa física.',
+      'Entenda quanto custa o exame toxicológico para CNH, quais fatores influenciam o preço e como muda o atendimento para empresa e pessoa física.',
     url: 'https://sermst.com.br/saude/valor-exame-toxicologico-cnh',
     type: 'article',
     locale: 'pt_BR',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 export default function ValorExameToxicologicoCnhPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       badgeText="Preço e atendimento"
       pageUrl="https://sermst.com.br/saude/valor-exame-toxicologico-cnh"
@@ -80,7 +80,7 @@ export default function ValorExameToxicologicoCnhPage() {
               <li><strong>Público atendido.</strong> Nem toda estrutura atende bem os dois cenários.</li>
               <li><strong>Validade do laudo.</strong> O preço só faz sentido se o exame atender a exigência correta.</li>
               <li><strong>Clareza do fluxo.</strong> Quem explica melhor documentos, categorias e atendimento reduz retrabalho.</li>
-              <li><strong>Confiabilidade.</strong> Preço e finalidade claros na mesma página geram mais segurança. Quem encontra essas informações juntas tende a avançar para o contato com menos hesitação.</li>
+              <li><strong>Confiabilidade.</strong> Confirme o preço, a finalidade, os documentos exigidos e a validade do laudo antes de agendar.</li>
             </ul>
           ),
         },
@@ -89,7 +89,7 @@ export default function ValorExameToxicologicoCnhPage() {
           body: (
             <>
               <p>
-                A mesma busca por preço pode vir de públicos bem diferentes. O motorista quer resolver a exigência ligada à habilitação. O RH quer organizar admissão, demissão ou rotina de motoristas sem travar a operação.
+                A dúvida sobre preço pode envolver situações diferentes. O motorista precisa cumprir uma exigência ligada à habilitação, enquanto o RH organiza admissão, acompanhamento periódico ou desligamento de motoristas.
               </p>
               <p>
                 Por isso, o valor sozinho não fecha a decisão. O ideal é ver se a clínica atende <strong>empresa e pessoa física</strong>, se cobre <strong>CNH C, D e E</strong> e como o atendimento acontece na prática.
@@ -98,14 +98,14 @@ export default function ValorExameToxicologicoCnhPage() {
           ),
         },
         {
-          title: 'Onde ver o valor com o atendimento explicado por completo',
+          title: 'Como confirmar o valor antes de agendar',
           body: (
             <>
               <p>
-                Quem chegou aqui com dúvida sobre valor normalmente já está perto de decidir. O próximo passo é ver a página que reúne preço de referência, público atendido e explicação do fluxo em um só lugar.
+                Além do preço de referência, confirme a finalidade do exame, os documentos necessários, o endereço da coleta e o prazo estimado para o resultado.
               </p>
               <p>
-                Se a sua busca já é por contratação ou agendamento, o melhor caminho é acessar:{' '}
+                Para consultar os detalhes e solicitar o agendamento, acesse:{' '}
                 <Link href="/servicos/exame-toxicologico-clt/sao-paulo"><strong>exame toxicológico para empresas, motoristas e CNH C, D e E</strong></Link>.
               </p>
             </>
@@ -119,11 +119,11 @@ export default function ValorExameToxicologicoCnhPage() {
         },
         {
           q: 'O valor de R$ 200,00 serve para empresa e pessoa física?',
-          a: 'Sim. A SERMST atende empresa e pessoa física para o exame toxicológico. O valor de R$ 200,00 é a referência informada, e a página principal do serviço explica para quem o atendimento é indicado e em quais situações o exame se aplica.',
+          a: 'Sim. A SERMST atende empresas e pessoas físicas. O valor de R$ 200,00 é a referência informada; confirme a finalidade, os documentos e as condições no agendamento.',
         },
         {
           q: 'Posso já agendar o exame toxicológico pela SERMST?',
-          a: 'Sim. A página principal do exame toxicológico da SERMST concentra todas as informações para dar início ao atendimento — seja para empresa, seja para pessoa física com CNH C, D ou E.',
+          a: 'Sim. Entre em contato com a SERMST para informar a finalidade do exame, confirmar os documentos e solicitar o agendamento.',
         },
         {
           q: 'O valor do exame toxicológico é o único critério importante?',
@@ -131,23 +131,23 @@ export default function ValorExameToxicologicoCnhPage() {
         },
         {
           q: 'Onde vejo o atendimento completo do exame toxicológico?',
-          a: 'O atendimento completo está na página principal do serviço da SERMST, com detalhes sobre empresa, pessoa física, CNH C, D e E e o valor de referência informado.',
+          a: 'Consulte o serviço de exame toxicológico da SERMST para verificar o atendimento a empresas, pessoas físicas e condutores com CNH C, D ou E.',
         },
       ]}
-      sidebarTitle="Quer ver o valor com o contexto certo?"
-      sidebarHook="Se você já está comparando preço, a página principal do serviço mostra o valor de referência e explica o atendimento para empresa, pessoa física e CNH C, D e E."
-      sidebarCtaLabel="Ver a página principal"
+      sidebarTitle="Precisa confirmar valor e agendamento?"
+      sidebarHook="Consulte a finalidade do exame, o público atendido, o preço de referência e as orientações para a coleta."
+      sidebarCtaLabel="Ver detalhes do atendimento"
       sidebarCtaHref="/servicos/exame-toxicologico-clt/sao-paulo"
       related={[
-        { label: 'Página principal: exame toxicológico para empresas e CNH', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
+        { label: 'Exame toxicológico para empresas e CNH', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
         { label: 'O que é exame toxicológico: como funciona e quem precisa', href: '/saude/o-que-e-exame-toxicologico' },
         { label: 'Onde fazer exame toxicológico em São Paulo', href: '/saude/onde-fazer-exame-toxicologico-sao-paulo' },
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
       ]}
       finalCta={{
-        title: 'Se o valor já faz sentido, o próximo passo é confirmar o atendimento.',
-        desc: 'Na página principal do exame toxicológico da SERMST, você encontra o valor de referência, o público atendido e o enquadramento certo para empresa, pessoa física e CNH C, D e E.',
-        label: 'Abrir a página principal do exame',
+        title: 'Confirme as condições antes de agendar.',
+        desc: 'Veja a finalidade do exame, quem pode ser atendido, o valor de referência e as orientações para a coleta.',
+        label: 'Ver detalhes do exame',
         href: '/servicos/exame-toxicologico-clt/sao-paulo',
       }}
     />

@@ -32,7 +32,7 @@ export default function DeclaracaoInexistenciaRiscoPage() {
   return (
     <BlockbusterArticle
       hubLabel="RH e Departamento Pessoal"
-      hubLabelShort="← Hub RH"
+      hubLabelShort="← RH"
       hubHref="/rh"
       badgeText="NR-01 e simplificação"
       pageUrl="https://sermst.com.br/rh/declaracao-inexistencia-risco-dir"
@@ -49,7 +49,7 @@ export default function DeclaracaoInexistenciaRiscoPage() {
       }}
       readingTime="6 min"
       h1="DIR: quando a empresa pode usar a Declaração de Inexistência de Riscos"
-      intro="A DIR parece simples, mas é justamente aí que muitas empresas erram. Não basta exercer atividade administrativa ou ter grau de risco menor: a declaração só faz sentido quando a organização realmente se enquadra nos critérios legais e não identifica determinadas exposições ocupacionais no estabelecimento. No cluster de PCMSO, essa página é importante porque ela separa dispensa legítima de interpretação perigosa."
+      intro="A DIR parece simples, mas é justamente aí que muitas empresas erram. Não basta exercer atividade administrativa ou ter grau de risco menor: a declaração só faz sentido quando a organização realmente se enquadra nos critérios legais e não identifica determinadas exposições ocupacionais no estabelecimento."
       sections={[
         {
           title: 'O que é a DIR',
@@ -68,18 +68,17 @@ export default function DeclaracaoInexistenciaRiscoPage() {
           ),
         },
         {
-          title: 'Quando a busca por DIR aparece no cluster de PCMSO',
+          title: 'Por que a DIR costuma aparecer junto com o PCMSO',
           body: (
             <>
               <p>
-                Muitas empresas chegam até a DIR porque estavam pesquisando <strong>PCMSO</strong>, <strong>NR-07</strong>,
-                dispensa de programa ou simplificação para grau de risco 1 e 2. Ou seja: a intenção nem sempre é “DIR” em si,
-                mas sim descobrir se a empresa pode deixar de elaborar algum documento.
+                A DIR costuma ser analisada quando uma empresa de menor porte verifica se pode ter dispensa de elaborar
+                o <strong>PGR</strong> ou o <strong>PCMSO</strong>. A declaração, porém, não cria uma dispensa automática.
               </p>
               <p>
-                Por isso, essa página precisa conversar diretamente com{' '}
-                <Link href="/saude/pcmso-programa-controle-medico">PCMSO</Link> e com{' '}
-                <Link href="/normas/o-que-e-nr-07">NR-07</Link>, sem prometer uma dispensa automática que as normas não sustentam.
+                A conclusão depende das condições da NR-01 e da NR-07, do porte, do grau de risco e das exposições
+                existentes. Consulte também os guias de <Link href="/saude/pcmso-programa-controle-medico">PCMSO</Link>{' '}
+                e <Link href="/normas/o-que-e-nr-07">NR-07</Link>.
               </p>
             </>
           ),
@@ -164,18 +163,16 @@ export default function DeclaracaoInexistenciaRiscoPage() {
           ),
         },
         {
-          title: 'Quando vale voltar para PCMSO ou avançar para a página comercial',
+          title: 'O que fazer quando a dispensa não se aplica',
           body: (
             <>
               <p>
-                Se a empresa conclui que a simplificação não se sustenta, o próximo destino natural é o guia de{' '}
-                <Link href="/saude/pcmso-programa-controle-medico">PCMSO</Link> para entender a obrigação completa, ou
-                diretamente a página de <Link href="/servicos/pcmso-nr07-programa/sao-paulo">elaboração e gestão do programa</Link>
-                quando a necessidade já é operacional.
+                Se a empresa não atende aos critérios de dispensa, deve organizar os programas e exames aplicáveis.
+                O guia de <Link href="/saude/pcmso-programa-controle-medico">PCMSO</Link> explica a obrigação, e a página de{' '}
+                <Link href="/servicos/pcmso-nr07-programa/sao-paulo">elaboração e gestão do programa</Link> apresenta o escopo do atendimento.
               </p>
               <p>
-                Se a dúvida ainda é legal e documental, a página de <Link href="/normas/o-que-e-nr-07">NR-07</Link>
-                continua sendo a melhor base normativa.
+                Para conferir a base normativa, consulte também a página de <Link href="/normas/o-que-e-nr-07">NR-07</Link>.
               </p>
             </>
           ),

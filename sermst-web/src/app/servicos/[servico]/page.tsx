@@ -48,7 +48,7 @@ export async function generateMetadata({
       : data.seoTitle ?? data.h1;
   const description =
     servico === 'exame-admissional-expresso'
-      ? 'Clínica de exame admissional em São Paulo com ASO, exames ocupacionais, apoio ao eSocial e fluxo pensado para empresas que precisam contratar sem atraso.'
+      ? 'Agende exame admissional para sua empresa em São Paulo: ASO no mesmo dia, laboratório próprio e apoio ao PCMSO e eSocial, sem atrasar a contratação.'
       : servico === 'exame-toxicologico-clt'
         ? 'Exame toxicológico por R$ 200, validade nacional, para empresas e pessoa física. Suporte para admissão, demissão e renovação de CNH C, D e E.'
       : servico === 'audiometria-ocupacional-clinica'
@@ -248,18 +248,18 @@ export default async function ServicoPage({
           </div>
 
           {servico === 'treinamentos-nrs-cipa-brigada' && (
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-3">
               <FadeIn direction="right">
                 <Link
                   href="/normas/nr-05-cipa"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Base normativa</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
                     NR-05: quando a empresa precisa constituir CIPA ou nomear designado
                   </h2>
                   <p className="mb-6 leading-relaxed text-slate-700">
-                    Se a dúvida ainda é sobre obrigatoriedade, grau de risco, eleição ou carga horária, a página da NR-05 ajuda a separar entendimento normativo de contratação do treinamento.
+                    Consulte os critérios de obrigatoriedade, grau de risco, processo eleitoral e carga horária antes de organizar o treinamento.
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Entender a NR-05
@@ -273,7 +273,7 @@ export default async function ServicoPage({
                   href="/rh/calculadora-cnae-grau-de-risco"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Dimensionamento</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
                     CNAE e grau de risco: como definir a carga horária correta do treinamento
                   </h2>
@@ -282,6 +282,25 @@ export default async function ServicoPage({
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Validar o enquadramento
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
+
+              <FadeIn direction="up" delay={0.16}>
+                <Link
+                  href="/normas/nr-18-construcao-civil"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Construção civil</span>
+                  <h2 className="mb-4 text-2xl font-black text-brand-900">
+                    NR-18: quais treinamentos e controles a obra precisa manter
+                  </h2>
+                  <p className="mb-6 leading-relaxed text-slate-700">
+                    Veja como o treinamento básico da NR-18 se relaciona com NR-35, NR-10, PGR, documentação e riscos presentes em cada fase do canteiro.
+                  </p>
+                  <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Entender a NR-18
                     <ArrowRight className="h-4 w-4" />
                   </span>
                 </Link>
@@ -296,12 +315,12 @@ export default async function ServicoPage({
                   href="/normas/o-que-e-nr-07"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Base normativa</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
                     NR-07: o que a norma exige antes da contratação do serviço
                   </h2>
                   <p className="mb-6 leading-relaxed text-slate-700">
-                    Quando a empresa ainda está validando obrigação, exames ocupacionais, ASO e relação com o eSocial, a página da NR-07 ajuda a consolidar a base normativa antes da decisão comercial.
+                    Consulte as exigências da NR-07, os exames ocupacionais, o ASO e a relação com o eSocial antes de definir o escopo do PCMSO.
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Entender a NR-07
@@ -315,12 +334,12 @@ export default async function ServicoPage({
                   href="/rh/declaracao-inexistencia-risco-dir"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Critérios de dispensa</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
                     DIR: quando pode existir dispensa de elaborar PCMSO
                   </h2>
                   <p className="mb-6 leading-relaxed text-slate-700">
-                    Muitas empresas chegam à página comercial sem saber se realmente precisam elaborar o programa. A DIR ajuda a separar simplificação legítima de risco de enquadramento errado.
+                    A DIR ajuda a verificar se a empresa atende aos critérios de simplificação ou se precisa elaborar o programa. A decisão exige análise do porte, do grau de risco e das exposições existentes.
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Validar a dispensa
@@ -338,12 +357,12 @@ export default async function ServicoPage({
                   href="/dicionario/o-que-e-ltcat"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Definição do laudo</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
-                    O que significa LTCAT e quando a busca ainda é conceitual
+                    O que significa LTCAT e qual é a finalidade do laudo
                   </h2>
                   <p className="mb-6 leading-relaxed text-slate-700">
-                    Parte das buscas ainda está tentando entender sigla, obrigatoriedade, assinatura e diferença para PPP. A definição curta ajuda a separar intenção informacional de contratação.
+                    Veja o significado da sigla, quando o laudo é necessário, quem pode assiná-lo e como ele se diferencia do PPP.
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Ver significado do LTCAT
@@ -357,12 +376,12 @@ export default async function ServicoPage({
                   href="/normas/ppp-eletronico"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Relação com o PPP</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
                     PPP eletrônico, S-2240 e aposentadoria especial: onde o LTCAT entra
                   </h2>
                   <p className="mb-6 leading-relaxed text-slate-700">
-                    Quem chega buscando LTCAT geralmente quer entender como o laudo sustenta PPP, eSocial e discussão previdenciária. Essa ponte ajuda o Google a ler o cluster completo.
+                    O LTCAT fornece base técnica para informações sobre exposição a agentes nocivos usadas no PPP e no S-2240, conforme o caso.
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Entender PPP e S-2240
@@ -380,7 +399,7 @@ export default async function ServicoPage({
                   href="/rh/domicilio-eletronico-trabalhista-det"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Comunicações trabalhistas</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
                     DET: canal oficial de comunicacao com a fiscalizacao trabalhista
                   </h2>
@@ -399,12 +418,12 @@ export default async function ServicoPage({
                   href="/rh/declaracao-inexistencia-risco-dir"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Leitura complementar</span>
+                  <span className="kicker">Critérios de simplificação</span>
                   <h2 className="mb-4 text-2xl font-black text-brand-900">
-                    DIR: como validar se sua empresa realmente pode usar simplificacao
+                    DIR: como verificar se a empresa pode usar a simplificação
                   </h2>
                   <p className="mb-6 text-slate-700 leading-relaxed">
-                    Para empresas tentando simplificar SST, a DIR so e segura quando o enquadramento esta correto e conversa com a realidade do estabelecimento.
+                    A declaração só deve ser usada quando os requisitos da NR-01 forem atendidos e as informações corresponderem à realidade do estabelecimento.
                   </p>
                   <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
                     Entender a DIR
@@ -421,7 +440,7 @@ export default async function ServicoPage({
         <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
           <FadeIn direction="up">
             <h2 className="mb-12 text-center text-3xl font-black text-accent-pink">
-              Autoridade comprovada em {data.h1.split(' ')[0]}
+              Experiência técnica em {data.h1.split(' ')[0]}
             </h2>
 
             <div className="mb-16 grid gap-8 md:grid-cols-2">
@@ -438,7 +457,7 @@ export default async function ServicoPage({
 
               <div className="rounded-xl border border-brand-500/30 bg-brand-800/50 p-8">
                 <p className="mb-4 text-sm font-bold uppercase tracking-widest text-slate-400">
-                  Opiniao do especialista
+                  Orientação técnica
                 </p>
                 <blockquote className="mb-4 text-lg italic text-slate-300">
                   &quot;{data.geoOpt.expertQuote.text}&quot;

@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Gestão de SST: Como Organizar na Empresa | SERMST',
   description:
-    'Gestão de SST não é documento, é sistema. Conecta exame, laudo, treinamento e eSocial em fluxo único. Veja como estruturar e os erros que viram passivo.',
+    'Veja como organizar PGR, PCMSO, exames, treinamentos e eSocial em uma rotina de gestão de saúde e segurança do trabalho.',
   alternates: { canonical: 'https://sermst.com.br/saude/gestao-sst' },
   openGraph: {
     title: 'Gestão de SST: como estruturar saúde e segurança na empresa | SERMST',
@@ -19,31 +19,31 @@ export const metadata: Metadata = {
 export default function GestãoSSTPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/gestao-sst"
       coverImage={{ src: "/images/articles/gestao-sst.jpg", alt: "Equipe discutindo gestão de saúde e segurança do trabalho" }}
       author={{
         name: 'Felipe Sannino',
-        jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+        jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
         dateModified: '2026-05-01',
       }}
 
-      h1="Gestão de SST: o sistema que sustenta operação e defende o CNPJ"
-      intro="Gestão de Saúde e Segurança do Trabalho não é um documento — é um sistema. Conecta exame, laudo, treinamento e eSocial em fluxo único que sustenta operação e defende a empresa em fiscalização e ação trabalhista."
+      h1="Gestão de SST: como organizar a rotina da empresa"
+      intro="Gestão de Saúde e Segurança do Trabalho não cabe em uma pasta de documentos. Ela conecta a identificação dos riscos, as medidas de controle, os exames, os treinamentos e os registros enviados ao eSocial."
       sections={[
         {
           title: 'O que é gestão de SST de verdade',
           body: (
             <>
               <p>
-                Gestão de SST é o conjunto de processos que <strong>integra todos os elementos de Saúde e Segurança do Trabalho</strong> num fluxo coerente: identificação de risco → controle → treinamento → exame → registro → análise → melhoria. Cada peça alimenta a próxima.
+                Gestão de SST integra os processos de saúde e segurança em uma sequência coerente: identificar os riscos, definir controles, treinar, acompanhar a saúde, registrar ocorrências e revisar o que precisa melhorar.
               </p>
               <p>
-                A maior parte das empresas trata SST como pasta de arquivo: PGR num lugar, PCMSO em outro, ASOs guardados, treinamentos sem cronograma, eSocial reativo. Resultado: documento existe, mas não reflete a operação real. Em fiscalização ou ação, isso desmonta.
+                Um problema comum é deixar PGR, PCMSO, ASOs, treinamentos e eSocial em rotinas separadas. Os documentos existem, mas usam cargos, riscos ou datas diferentes. A gestão começa quando essas informações passam a conversar entre si.
               </p>
             </>
           ),
@@ -53,15 +53,15 @@ export default function GestãoSSTPage() {
           body: (
             <>
               <ol>
-                <li><strong>Identificar.</strong> Mapear todos os riscos da operação — físicos, químicos, biológicos, ergonômicos, de acidente, psicossociais. Por área, por função, por turno.</li>
-                <li><strong>Avaliar.</strong> Para cada risco, qual a probabilidade × severidade. Define prioridade.</li>
-                <li><strong>Controlar.</strong> Definir medida de controle — eliminação (a melhor), substituição, controle de engenharia (EPC), controle administrativo, EPI (último recurso).</li>
+                <li><strong>Identificar.</strong> Mapear os perigos e riscos ocupacionais por ambiente, atividade e grupo de trabalhadores.</li>
+                <li><strong>Avaliar.</strong> Estimar o nível de risco com os critérios definidos no PGR e estabelecer prioridades.</li>
+                <li><strong>Controlar.</strong> Priorizar eliminação, substituição e proteção coletiva antes de depender do EPI.</li>
                 <li><strong>Documentar.</strong> PGR (riscos e controles), PCMSO (vigilância médica), ordens de serviço (instruções específicas), procedimentos de trabalho.</li>
-                <li><strong>Treinar.</strong> Formal, com carga horária mínima, certificado, registro nominal. Nas NRs aplicáveis e nos procedimentos da empresa.</li>
-                <li><strong>Monitorar e melhorar.</strong> Indicadores (taxa de afastamento, índice de quase-acidentes, conformidade documental). Análise crítica periódica. Ajustes.</li>
+                <li><strong>Treinar.</strong> Atender às NRs aplicáveis e aos procedimentos da empresa, com conteúdo, instrutor, carga horária e registros adequados.</li>
+                <li><strong>Monitorar e melhorar.</strong> Acompanhar ocorrências, afastamentos, prazos e eficácia das medidas para ajustar o sistema.</li>
               </ol>
               <p>
-                Sair de qualquer etapa quebra o sistema. PGR sem treinamento é teatro; treinamento sem registro é evidência inexistente; documento sem revisão é documento desatualizado.
+                Uma etapa depende da outra. Um PGR bem escrito perde utilidade se as medidas não chegam à operação; um treinamento sem registro dificulta a comprovação; um documento antigo pode deixar de representar o trabalho real.
               </p>
             </>
           ),
@@ -71,13 +71,13 @@ export default function GestãoSSTPage() {
           body: (
             <>
               <ul>
-                <li><strong>PGR (NR-01)</strong> — inventário e plano de ação dos riscos ocupacionais. Documento-mãe.</li>
-                <li><strong>PCMSO (NR-07)</strong> — programa de vigilância médica. Define quais exames cada cargo faz, com qual periodicidade.</li>
-                <li><strong>LTCAT</strong> — laudo técnico das condições ambientais do trabalho, base para PPP e aposentadoria especial.</li>
-                <li><strong>Ordens de Serviço</strong> — instruções específicas por função sobre os riscos, EPIs, procedimentos. Assinadas pelo trabalhador.</li>
+                <li><strong>PGR (NR-01):</strong> reúne inventário de riscos e plano de ação.</li>
+                <li><strong>PCMSO (NR-07):</strong> planeja o acompanhamento médico a partir dos riscos ocupacionais.</li>
+                <li><strong>LTCAT:</strong> sustenta informações previdenciárias relacionadas à exposição a agentes nocivos.</li>
+                <li><strong>Ordens de serviço e procedimentos:</strong> comunicam riscos, controles e orientações aplicáveis às atividades.</li>
               </ul>
               <p>
-                Esses 4 precisam contar a mesma história. Quando contam histórias diferentes, qualquer perícia explora a divergência.
+                Esses documentos têm finalidades diferentes, mas os dados básicos sobre funções, ambientes, riscos e controles precisam ser coerentes.
               </p>
             </>
           ),
@@ -87,10 +87,10 @@ export default function GestãoSSTPage() {
           body: (
             <>
               <p>
-                Os eventos de SST do eSocial (S-2210 acidente, S-2220 monitoramento de saúde, S-2240 condições ambientais) são <strong>resultado direto</strong> da gestão. Quando a gestão é sólida, os eventos saem no prazo, com base técnica consistente, sem retrabalho.
+                Os eventos de SST do eSocial, como S-2210, S-2220 e S-2240, refletem dados produzidos ao longo da gestão. Quando o cadastro, os exames e as avaliações ambientais estão organizados, o envio tende a exigir menos correções.
               </p>
               <p>
-                Quando a gestão é frágil, aparecem os sintomas: evento atrasado (risco de autuação), evento com erro (rejeição e retrabalho), evento sem suporte documental (autuação posterior). O eSocial não causa o problema — ele expõe o que já existia.
+                Atrasos, rejeições e divergências entre o evento e o documento de origem costumam indicar falhas no processo anterior ao envio. Corrigir apenas o arquivo transmitido não resolve a causa.
               </p>
             </>
           ),
@@ -107,7 +107,7 @@ export default function GestãoSSTPage() {
                 <li><strong>Quando alguém pergunta &quot;o que muda no SST porque temos uma máquina nova&quot;, ninguém sabe responder.</strong></li>
               </ol>
               <p>
-                Cada um desses é vermelho. Dois ou mais juntos é exposição grande — não é pergunta &quot;se&quot; vai aparecer problema, é &quot;quando&quot;.
+                Um sinal isolado já merece atenção. Quando vários aparecem ao mesmo tempo, vale fazer uma revisão estruturada dos documentos e da rotina operacional.
               </p>
             </>
           ),
@@ -116,12 +116,12 @@ export default function GestãoSSTPage() {
           title: 'Como começar a estruturar gestão de SST',
           body: (
             <ol>
-              <li><strong>Auditar o que existe hoje.</strong> Documento por documento — está atualizado, reflete a operação, foi assinado por profissional habilitado, tem evidência de comunicação.</li>
+              <li><strong>Revisar o que existe hoje.</strong> Confira se cada documento está atualizado, representa a operação e tem a responsabilidade técnica aplicável.</li>
               <li><strong>Definir um responsável interno.</strong> Pode ser RH, DP, gerente de operação, ou cargo dedicado em empresa maior. Sem dono, o sistema não funciona.</li>
-              <li><strong>Conectar com consultoria técnica.</strong> Para a parte técnica (PGR, PCMSO, LTCAT, treinamentos), a empresa raramente tem capacidade interna. Consultoria especializada é mais barato e mais robusto.</li>
+              <li><strong>Definir o apoio técnico.</strong> A empresa pode usar equipe própria, profissionais externos ou uma combinação dos dois, conforme o porte e o dimensionamento legal.</li>
               <li><strong>Definir cronograma.</strong> Quais documentos precisam ser revisados quando. Quais exames fazem aniversário em qual mês. Quais treinamentos vencem.</li>
               <li><strong>Criar painel de indicadores.</strong> Conformidade documental, taxa de exame em dia, treinamentos atualizados, eventos eSocial no prazo. Olhar mensal.</li>
-              <li><strong>Análise crítica anual</strong>. Diretoria e responsáveis revisam o sistema, ajustam.</li>
+              <li><strong>Fazer análise crítica periódica.</strong> A direção e os responsáveis revisam os resultados e ajustam prioridades.</li>
             </ol>
           ),
         },
@@ -129,11 +129,11 @@ export default function GestãoSSTPage() {
       faq={[
         {
           q: 'Quem é o responsável pela gestão de SST na empresa?',
-          a: 'A responsabilidade legal final é da empresa (na figura do empregador). Operacionalmente, depende do porte: empresa pequena pode ter um gestor interno + consultoria externa; empresa média tem um responsável de RH/DP/SESMT; empresa grande tem SESMT próprio. O importante é ter dono identificável.',
+          a: 'O empregador continua responsável pelo cumprimento das obrigações. A coordenação operacional pode ficar com RH, gestão, SESMT ou outro responsável interno, com apoio técnico externo quando necessário.',
         },
         {
           q: 'Posso terceirizar toda a gestão de SST?',
-          a: 'A execução técnica (PGR, PCMSO, exames, treinamentos) pode e geralmente deve ser terceirizada para clínica especializada. Mas a coordenação interna — comunicação com a equipe, fiscalização do uso de EPI, registro de ocorrência — precisa ter alguém na empresa. Terceirização não tira a responsabilidade do empregador.',
+          a: 'Parte da execução técnica pode ser contratada externamente, desde que sejam respeitadas as atribuições profissionais e o dimensionamento aplicável. A empresa ainda precisa coordenar a rotina interna e continua responsável pelo cumprimento das obrigações.',
         },
         {
           q: 'Quanto custa montar gestão de SST do zero?',
@@ -141,15 +141,15 @@ export default function GestãoSSTPage() {
         },
         {
           q: 'Qual a diferença entre gestão de SST e SESMT?',
-          a: 'SESMT é o &quot;Serviço Especializado em Engenharia de Segurança e Medicina do Trabalho&quot; — equipe técnica obrigatória para empresas com determinado porte e grau de risco. Gestão de SST é o sistema mais amplo de processos. Empresa pode ter gestão de SST sem SESMT obrigatório (terceiriza a execução técnica).',
+          a: 'SESMT é o &quot;Serviço Especializado em Engenharia de Segurança e Medicina do Trabalho&quot;: equipe técnica obrigatória para empresas com determinado porte e grau de risco. Gestão de SST é o sistema mais amplo de processos. Empresa pode ter gestão de SST sem SESMT obrigatório (terceiriza a execução técnica).',
         },
         {
           q: 'Como saber se minha gestão de SST aguenta uma fiscalização?',
-          a: 'Teste prático: peça a um consultor externo para fazer simulação de auditoria do MTE. Em meio dia ele cobre os pontos críticos (PGR, PCMSO, treinamentos, ASOs, EPI, eSocial). Se passar sem ressalva grave, está sólido. Se aparecer 3+ ressalvas graves, é hora de estruturar.',
+          a: 'Uma auditoria pode comparar documentos, prazos e evidências com a operação real. O resultado deve apontar não conformidades, responsáveis e prioridades, sem prometer que uma fiscalização futura terá o mesmo entendimento.',
         },
       ]}
       sidebarTitle="Sua gestão de SST aguenta fiscalização?"
-      sidebarHook="A SERMST faz simulação de auditoria SST gratuita: cobre os pontos críticos e mostra exatamente onde sua empresa está exposta. Sem compromisso comercial."
+      sidebarHook="A SERMST revisa PGR, PCMSO, treinamentos, ASOs, EPI e eSocial para identificar inconsistências e organizar um plano de ação."
       sidebarCtaLabel="Simular auditoria SST"
       sidebarCtaHref="/assinaturas"
       related={[

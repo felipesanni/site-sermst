@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function AcuidadeVisualOcupacionalPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       badgeText="Exame Complementar"
@@ -34,7 +34,7 @@ export default function AcuidadeVisualOcupacionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-06',
+        dateModified: '2026-07-13',
       }}
       readingTime="7 min"
       h1="Acuidade visual ocupacional: quem precisa, o que mede e onde fazer em São Paulo"
@@ -126,10 +126,10 @@ export default function AcuidadeVisualOcupacionalPage() {
                 O teste de acuidade visual é um dado que o médico do trabalho usa para fundamentar a conclusão do ASO. Para funções com requisitos visuais definidos no PCMSO, o resultado faz parte dos critérios de aptidão.
               </p>
               <p>
-                Quando o trabalhador usa óculos ou lentes de contato, o teste é realizado com a correção em uso. O ASO pode incluir restrição que condiciona a aptidão ao uso contínuo da correção óptica durante o trabalho.
+                Quando o trabalhador usa óculos ou lentes de contato, o teste é realizado com a correção em uso. Essa informação integra a avaliação médica e a orientação ao trabalhador antes da conclusão de aptidão para a função.
               </p>
               <p>
-                Trabalhadores com resultado abaixo do mínimo necessário para a função podem receber ASO com restrição de atividades visuais críticas enquanto aguardam avaliação oftalmológica e adequação da correção. Em casos de incompatibilidade sem solução, o médico pode emitir ASO com inaptidão para a função específica.
+                Se o resultado não permite concluir a aptidão com segurança, o médico pode solicitar avaliação oftalmológica e adiar a conclusão. Persistindo incompatibilidade com a atividade, o ASO registra a inaptidão para a função.
               </p>
             </>
           ),
@@ -141,7 +141,7 @@ export default function AcuidadeVisualOcupacionalPage() {
               <li><strong>Integração ao ASO e ao PCMSO.</strong> O resultado precisa ser interpretado pelo médico do trabalho no contexto da função, não apenas registrado isoladamente.</li>
               <li><strong>Equipamento adequado.</strong> A tabela de Snellen ou optotipos calibrados são o padrão mínimo. Clínicas com tecnologia de acuidade digital entregam resultados mais precisos e reproduzíveis.</li>
               <li><strong>Capacidade de incluir Ishihara quando necessário.</strong> Para funções que exigem discriminação de cores, o teste de percepção cromática precisa estar disponível.</li>
-              <li><strong>Agilidade comercial.</strong> Para empresas com alta rotatividade, o tempo entre a realização do exame e a entrega do laudo precisa ser compatível com o fluxo de admissão.</li>
+              <li><strong>Prazo de atendimento.</strong> Para empresas com alta rotatividade, o tempo entre a realização do exame e a entrega do laudo precisa ser compatível com o fluxo de admissão.</li>
             </ol>
           ),
         },

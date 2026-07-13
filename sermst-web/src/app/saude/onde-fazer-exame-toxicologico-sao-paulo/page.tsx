@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 export default function OndeFazerExameToxicologicoPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       badgeText="Guia local"
       pageUrl="https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo"
@@ -97,17 +97,17 @@ export default function OndeFazerExameToxicologicoPage() {
           ),
         },
         {
-          title: 'Quando a SERMST passa a ser o próximo passo natural',
+          title: 'Atendimento da SERMST em São Paulo',
           body: (
             <>
               <p>
                 A SERMST atende <strong>empresa e pessoa física</strong> em São Paulo para exame toxicológico, com apoio tanto para rotinas ocupacionais quanto para demandas ligadas à <strong>CNH C, D e E</strong>.
               </p>
               <p>
-                Para quem já quer avançar de verdade, a página principal do serviço reúne o que falta para decidir: valor de referência, público atendido e o contexto certo para usar o exame sem ruído.
+                Antes de agendar, confirme a finalidade do exame, os documentos exigidos, o preço e o prazo estimado para o resultado.
               </p>
               <p>
-                Se a sua busca já saiu do “onde fazer” e entrou no “quero resolver isso agora”, a página mais importante é esta:{' '}
+                Os detalhes do atendimento estão na página de{' '}
                 <Link href="/servicos/exame-toxicologico-clt/sao-paulo"><strong>exame toxicológico para empresas, motoristas e CNH C, D e E</strong></Link>.
               </p>
             </>
@@ -133,23 +133,23 @@ export default function OndeFazerExameToxicologicoPage() {
         },
         {
           q: 'Posso contratar o exame toxicológico diretamente pela SERMST?',
-          a: 'Sim. A SERMST atende tanto empresa quanto pessoa física para exame toxicológico em São Paulo. Para avançar, você pode acessar a página principal do serviço ou falar diretamente com a equipe.',
+          a: 'Sim. A SERMST atende empresas e pessoas físicas em São Paulo. Fale com a equipe para informar a finalidade do exame, confirmar os documentos e solicitar o agendamento.',
         },
       ]}
-      sidebarTitle="Quer resolver o exame sem perder tempo?"
-      sidebarHook="Se você já sabe que precisa de atendimento no centro de São Paulo, com validade nacional e suporte para empresa ou pessoa física, a página principal do serviço mostra o caminho completo."
-      sidebarCtaLabel="Ir para a página principal"
+      sidebarTitle="Precisa agendar o exame?"
+      sidebarHook="Consulte os documentos, a finalidade, o valor de referência e as orientações para a coleta no centro de São Paulo."
+      sidebarCtaLabel="Ver detalhes do atendimento"
       sidebarCtaHref="/servicos/exame-toxicologico-clt/sao-paulo"
       related={[
-        { label: 'Página principal: exame toxicológico para CNH C, D e E', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
+        { label: 'Exame toxicológico para CNH C, D e E', href: '/servicos/exame-toxicologico-clt/sao-paulo' },
         { label: 'O que é exame toxicológico: como funciona e quem precisa', href: '/saude/o-que-e-exame-toxicologico' },
         { label: 'Valor do exame toxicológico CNH', href: '/saude/valor-exame-toxicologico-cnh' },
-        { label: 'ASO: quando emitir e como protege a empresa', href: '/saude/aso-atestado-saude-ocupacional' },
+        { label: 'ASO: quando emitir e o que o documento registra', href: '/saude/aso-atestado-saude-ocupacional' },
       ]}
       finalCta={{
-        title: 'Se o local já faz sentido, agora vale olhar o atendimento completo.',
-        desc: 'Na página principal do serviço, você encontra atendimento para empresa e pessoa física, valor de referência, CNH C, D e E e o contexto completo do exame toxicológico no centro de São Paulo.',
-        label: 'Ver a página principal do exame',
+        title: 'Consulte as informações antes de agendar.',
+        desc: 'Veja quem pode ser atendido, a finalidade do exame, o valor de referência e as orientações para a coleta no centro de São Paulo.',
+        label: 'Ver detalhes do exame',
         href: '/servicos/exame-toxicologico-clt/sao-paulo',
       }}
     />

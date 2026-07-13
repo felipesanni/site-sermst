@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function PCMSOPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para Saúde"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/pcmso-programa-controle-medico"
@@ -36,7 +36,7 @@ export default function PCMSOPage() {
         dateModified: '2026-07-07',
       }}
       h1="PCMSO: o que é, quem precisa e qual a validade do programa"
-      intro="PCMSO significa Programa de Controle Médico de Saúde Ocupacional. A NR-07 traz a regra; o PCMSO transforma essa regra em planejamento médico, protocolo de exames e acompanhamento coerente com os riscos de cada função. Na prática, ele organiza como a empresa monitora a saúde dos empregados, em que periodicidade os exames acontecem e como isso se conecta ao ASO, ao PGR e ao eSocial."
+      intro="PCMSO significa Programa de Controle Médico de Saúde Ocupacional. Previsto na NR-07, ele organiza o planejamento médico, os exames ocupacionais e o acompanhamento da saúde conforme os riscos de cada função. O programa deve permanecer alinhado ao PGR, aos ASOs e às informações enviadas ao eSocial."
       sections={[
         {
           title: 'O que é o PCMSO',
@@ -53,28 +53,27 @@ export default function PCMSOPage() {
                 risco ergonômico relevante não pode usar o mesmo desenho médico de um escritório sem essas exposições.
               </p>
               <p>
-                Se a sua busca é apenas entender a sigla, vale começar no{' '}
-                <Link href="/dicionario/o-que-e-pcmso">dicionário sobre o que é PCMSO</Link>. Se a dúvida é sobre a
-                obrigação normativa, a página de <Link href="/normas/o-que-e-nr-07">NR-07</Link> explica a base legal.
-                Aqui, o foco é mostrar como o programa funciona na prática da empresa.
+                Para uma definição resumida, consulte o{' '}
+                <Link href="/dicionario/o-que-e-pcmso">dicionário sobre o que é PCMSO</Link>. A página de{' '}
+                <Link href="/normas/o-que-e-nr-07">NR-07</Link> apresenta a base normativa. Neste guia, você encontra
+                a aplicação do programa na rotina da empresa.
               </p>
             </>
           ),
         },
         {
-          title: 'Quando a busca é por significado, obrigação ou contratação',
+          title: 'As três dúvidas mais comuns sobre o PCMSO',
           body: (
             <>
-              <p>Na SERP, “PCMSO” costuma carregar três intenções diferentes:</p>
+              <p>As dúvidas sobre PCMSO geralmente aparecem em três momentos:</p>
               <ul>
-                <li><strong>Significado:</strong> a pessoa quer saber o que a sigla quer dizer.</li>
-                <li><strong>Entendimento técnico:</strong> a empresa quer saber quem precisa, validade, dispensa, assinatura e como o programa funciona.</li>
-                <li><strong>Contratação:</strong> a empresa já precisa revisar, elaborar ou operacionalizar o programa.</li>
+                <li><strong>Conceito:</strong> o que a sigla significa e qual é a finalidade do programa.</li>
+                <li><strong>Obrigação:</strong> quem precisa elaborar, quando há dispensa, quem responde pelo programa e quando revisar.</li>
+                <li><strong>Execução:</strong> como definir exames, controlar prazos e manter o PCMSO alinhado ao PGR e ao eSocial.</li>
               </ul>
               <p>
-                Este guia cobre principalmente a segunda intenção e prepara a transição para a terceira. Por isso ele precisa
-                conversar com a definição curta do dicionário, com a página normativa da NR-07 e com a página comercial
-                do serviço, sem repetir exatamente a mesma promessa em todas elas.
+                Separar essas perguntas evita duas confusões frequentes: tratar o programa como uma lista pronta de exames
+                ou presumir que uma dispensa se aplica sem verificar as condições da NR-01 e da NR-07.
               </p>
             </>
           ),
@@ -180,17 +179,16 @@ export default function PCMSOPage() {
           ),
         },
         {
-          title: 'Quando faz sentido avançar para a página comercial',
+          title: 'Quando buscar apoio para elaborar ou revisar o PCMSO',
           body: (
             <>
               <p>
-                Quando a empresa já sabe que precisa revisar o programa, definir grade de exames, organizar vencimentos,
-                alinhar S-2220 ou corrigir incoerência com o PGR, a busca deixa de ser apenas informacional.
+                Vale buscar apoio quando a empresa precisa revisar o programa, definir a grade de exames, organizar
+                vencimentos, alinhar o S-2220 ou corrigir incoerências com o PGR.
               </p>
               <p>
-                Nessa hora, o destino correto passa a ser a página de{' '}
-                <Link href="/servicos/pcmso-nr07-programa/sao-paulo">elaboração e gestão de PCMSO</Link>, porque a intenção
-                já está mais próxima de contratação do que de estudo.
+                A página de <Link href="/servicos/pcmso-nr07-programa/sao-paulo">elaboração e gestão de PCMSO</Link>{' '}
+                explica o escopo do atendimento e como solicitar uma proposta.
               </p>
             </>
           ),
@@ -215,7 +213,7 @@ export default function PCMSOPage() {
         },
         {
           q: 'PCMSO e PPRA são a mesma coisa?',
-          a: 'Não. O PPRA foi substituído pelo PGR com a revisão da NR-01. O PGR identifica e controla riscos; o PCMSO transforma esses riscos em protocolo de vigilância médica.',
+          a: 'Não. O PPRA deixou de ser o programa geral com a entrada do GRO e do PGR. O PGR organiza o gerenciamento dos riscos, e o PCMSO define o acompanhamento médico coerente com eles.',
         },
         {
           q: 'Para que serve o PCMSO?',
@@ -231,7 +229,7 @@ export default function PCMSOPage() {
         { label: 'O que é PCMSO? Significado e aplicação prática', href: '/dicionario/o-que-e-pcmso' },
         { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'DIR: quando pode haver dispensa de elaborar PCMSO', href: '/rh/declaracao-inexistencia-risco-dir' },
-        { label: 'Importância do exame periódico ocupacional', href: '/saude/importancia-do-exame-periodico' },
+        { label: 'Exame periódico ocupacional: periodicidade e rotina', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Contratar elaboração e gestão de PCMSO', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
       ]}

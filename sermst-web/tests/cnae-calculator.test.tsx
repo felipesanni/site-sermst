@@ -2,7 +2,8 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { CnaeCalculator } from '@/components/sections/cnae-calculator';
-import { cnaeData } from '@/lib/data/cnae-data';
+import { cnaeData, grauRiscoInfo } from '@/lib/data/cnae-data';
+import { calculateNr05 } from '@/lib/nr05';
 
 const sampleEntry = cnaeData[0];
 
@@ -50,5 +51,17 @@ describe('CnaeCalculator', () => {
         screen.getByText(/Não foi possível consultar este CNPJ/i),
       ).toBeInTheDocument();
     });
+  });
+
+  it('mantem os limites iniciais de SESMT alinhados ao Quadro II da NR-04', () => {
+    expect(grauRiscoInfo[1].sesmt).toContain('501 empregados');
+    expect(grauRiscoInfo[2].sesmt).toContain('501 empregados');
+    expect(grauRiscoInfo[3].sesmt).toContain('101 empregados');
+    expect(grauRiscoInfo[4].sesmt).toContain('50 empregados');
+  });
+
+  it('nao presume atendimento por SESMT quando o Quadro I nao dimensiona CIPA', () => {
+    expect(calculateNr05(1, 80)?.kind).toBe('representante');
+    expect(calculateNr05(4, 19)?.kind).toBe('representante');
   });
 });

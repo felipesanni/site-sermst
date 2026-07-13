@@ -1,6 +1,6 @@
 type BreadcrumbItem = {
   name: string;
-  item?: string; // URL — omitir no último item (página atual)
+  item?: string; // URL; omitir no último item (página atual)
 };
 
 /**

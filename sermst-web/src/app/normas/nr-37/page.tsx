@@ -24,20 +24,20 @@ export default function NR37Page() {
       hubHref="/normas"
       pageUrl="https://sermst.com.br/normas/nr-37"
       badgeText="NR-37"
-      coverImage={{ src: '/images/site/corporate-team.jpg', alt: 'Trabalhadores em plataforma offshore — NR-37 segurança e saúde' }}
+      coverImage={{ src: '/images/site/corporate-team.jpg', alt: 'Trabalhadores em plataforma offshore seguindo medidas de segurança da NR-37' }}
       author={{
         name: 'Luiz Cesar Sannino',
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-02',
-        dateModified: '2026-07-02',
+        dateModified: '2026-07-13',
       }}
       readingTime="10 min"
-      h1="NR-37: segurança e saúde em plataformas de petróleo e gás — o que a norma exige"
-      intro="A NR-37 regula as condições de segurança e saúde no trabalho a bordo de plataformas de petróleo e gás natural — tanto fixas quanto móveis — operadas no Brasil. É a norma que define jornada de embarque, condições de alojamento e alimentação, SESMT offshore, treinamentos obrigatórios, gestão de emergências e obrigações específicas para o ambiente de plataforma."
+      h1="NR-37: segurança e saúde em plataformas de petróleo e gás"
+      intro="A NR-37 estabelece requisitos de segurança, saúde e condições de vivência a bordo de plataformas de petróleo em operação nas Águas Jurisdicionais Brasileiras. Ela trata de PGR, atenção à saúde, SESMT, CIPLAT, capacitação, emergências e estrutura de alojamento e alimentação."
       quickAnswer={
         <p>
-          A <strong>NR-37</strong> (Norma Regulamentadora nº 37) estabelece os requisitos de segurança e saúde para trabalhadores em <strong>plataformas de petróleo e gás natural offshore</strong>. Exige <strong>SESMT</strong> dimensionado para o regime de plataforma, a comissão interna denominada <strong>CIPLAT</strong>, treinamentos específicos de segurança a bordo (treinamento básico de 6h e avançado de 8h), condições adequadas de alojamento e alimentação, e planos de emergência testados regularmente. O regime de escala praticado (mais comum: 14 dias embarcado × 14 em terra) é definido pela CLT e acordos coletivos do setor, não diretamente pela NR-37.
+          A <strong>NR-37</strong> estabelece requisitos para plataformas de petróleo em operação nas águas brasileiras. A operadora e as prestadoras têm obrigações próprias. A norma prevê SESMT em terra e, conforme o efetivo, a bordo; CIPLAT por plataforma; briefing a cada embarque; treinamento básico de 6 horas; treinamento avançado de 8 horas para quem entra na área operacional nas atividades indicadas; e reciclagem de 4 horas a cada cinco anos ou nas outras hipóteses previstas.
         </p>
       }
       showTableOfContents
@@ -47,26 +47,26 @@ export default function NR37Page() {
           body: (
             <>
               <p>
-                A NR-37 se aplica a todas as plataformas de petróleo e gás natural — fixas, semi-submersíveis, autoelevatórias (jack-up), FPSO e demais instalações flutuantes — que operem no Brasil, incluindo as situadas em águas jurisdicionais brasileiras.
+                A NR-37 se aplica ao trabalho em plataformas de petróleo nacionais e estrangeiras em operação nas Águas Jurisdicionais Brasileiras. O texto contém regras próprias para diferentes fases e condições da instalação.
               </p>
               <p>
-                São abrangidas pela norma as empresas operadoras (como Petrobras e outras concessionárias) e todas as contratadas e subcontratadas que trabalhem a bordo de plataformas. A responsabilidade primária pela gestão de SST offshore é da <strong>operadora</strong>, mas as contratadas têm obrigações próprias quanto a seus trabalhadores embarcados.
+                A operadora deve coordenar a gestão de segurança da instalação e fornecer às contratadas as informações necessárias. As prestadoras continuam responsáveis por seus empregados, por seus riscos e pelas medidas que lhes cabem.
               </p>
             </>
           ),
         },
         {
-          title: 'Jornada de embarque: como funciona o regime de plataforma',
+          title: 'Escala e jornada: o que a NR-37 regula',
           body: (
             <>
               <p>
-                O trabalho em plataforma opera em regime de escala, com períodos de embarque e desembarque alternados. O regime mais praticado no setor de petróleo e gás no Brasil é o <strong>14×14</strong> — 14 dias embarcado seguidos de 14 dias de folga em terra. Esse regime decorre da <strong>CLT e de convenções coletivas</strong> negociadas entre sindicatos e operadoras; a NR-37 não estipula dias de embarque específicos, mas estabelece os limites de saúde e segurança que qualquer regime deve respeitar.
+                O trabalho em plataforma costuma ser organizado em escalas de embarque e descanso. A definição da jornada e da escala depende da legislação trabalhista específica, do contrato e dos instrumentos coletivos aplicáveis. A NR-37 não cria uma escala geral de 14 por 14 dias.
               </p>
               <p>
-                Durante o período embarcado, a <strong>NR-37 limita a jornada diária a 12 horas</strong>, com intervalo mínimo de 12 horas entre turnos. Atividades em turno de 12 horas são permitidas desde que resguardadas as condições de segurança e bem-estar previstas na norma.
+                A NR-37 exige que o PGR considere os regimes de trabalho, o tempo de exposição, os turnos e os riscos psicossociais associados a jornadas prolongadas e ao trabalho noturno.
               </p>
               <p>
-                O tempo de deslocamento entre a base em terra e a plataforma (por helicóptero ou embarcação de apoio) é computado como jornada de trabalho quando supera os limites previstos em acordo coletivo ou na própria regulamentação do setor.
+                Questões sobre duração do turno, descanso e tempo de deslocamento devem ser verificadas na Lei 5.811/1972, na CLT, nas decisões aplicáveis e na norma coletiva da categoria. Não é correto atribuir uma regra única à NR-37.
               </p>
             </>
           ),
@@ -76,13 +76,13 @@ export default function NR37Page() {
           body: (
             <>
               <p>
-                A NR-37 exige que cada plataforma mantenha <strong>SESMT dimensionado de acordo com o número de trabalhadores embarcados</strong> e com os riscos da operação. O dimensionamento não segue exatamente o Quadro I da NR-04 — há regras específicas para o ambiente offshore, incluindo a obrigatoriedade de médico do trabalho embarcado quando o porte e os riscos da plataforma assim exigirem.
+                A NR-37 exige SESMT em terra e define quando a operadora deve constituir SESMT a bordo. A partir de 25 trabalhadores embarcados, o SESMT da operadora a bordo é composto por técnicos de segurança, na proporção indicada pela norma. As prestadoras também têm regras próprias de dimensionamento.
               </p>
               <p>
-                Além do SESMT, a NR-37 prevê a <strong>CIPLAT — Comissão Interna de Prevenção de Acidentes e de Assédio em Plataformas</strong>, equivalente offshore da CIPA (NR-05). A CIPLAT tem representantes indicados pelo empregador e eleitos pelos trabalhadores embarcados, e atua na identificação de riscos, proposição de melhorias e acompanhamento de ações de SST a bordo.
+                Além do SESMT, a NR-37 prevê a <strong>CIPLAT, Comissão Interna de Prevenção de Acidentes e de Assédio em Plataformas</strong>. Ela é constituída por plataforma e por turma de embarque, com representantes do empregador e dos empregados nas condições previstas no item 37.8.
               </p>
               <p>
-                O médico do trabalho embarcado é responsável pelo PCMSO adaptado ao regime de plataforma, pelos atendimentos de saúde a bordo e pela gestão de emergências médicas — inclusive articulação com evacuação médica (MEDEVAC) quando necessário.
+                Plataformas habitadas com 31 ou mais trabalhadores devem contar com profissional de saúde a bordo, conforme a faixa de efetivo. Esse profissional pode ser técnico de enfermagem, enfermeiro ou médico, de acordo com o dimensionamento. A norma também exige enfermaria e telemedicina nas condições do item 37.6.5.
               </p>
             </>
           ),
@@ -93,14 +93,14 @@ export default function NR37Page() {
             <>
               <p>A NR-37 estrutura a capacitação em plataformas em quatro modalidades principais, sob responsabilidade da operadora da instalação:</p>
               <ul>
-                <li><strong>Briefing de segurança da plataforma (por embarque):</strong> orientação geral a cada chegada a bordo — tipos de alarme, rotas de fuga, pontos de encontro, recursos de salvatagem. Sem emissão de certificado.</li>
+                <li><strong>Briefing de segurança a cada embarque:</strong> orientação sobre a plataforma, alarmes, rotas de fuga, pontos de encontro, recursos de salvatagem e regras de convivência. Há registro em lista de presença, sem emissão de certificado.</li>
                 <li><strong>Treinamento básico (mínimo 6 horas):</strong> realizado antes do primeiro embarque. Cobre inventário de riscos do PGR, procedimentos de acesso, substâncias inflamáveis, áreas classificadas, riscos psicossociais e produtos químicos perigosos a bordo.</li>
-                <li><strong>Treinamento avançado (mínimo 8 horas):</strong> análise preliminar de riscos, permissão de trabalho, prevenção e combate a incêndio, resposta a emergências com inflamáveis, segurança de processo. Inclui atividade prática a bordo de no mínimo 1 hora.</li>
-                <li><strong>Reciclagem (mínimo 4 horas a cada 5 anos)</strong> ou sempre que houver retorno de afastamento superior a 180 dias.</li>
-                <li><strong>DDS (Diálogo Diário de Segurança):</strong> antes de cada início de atividades operacionais, com registro em lista de presença ou permissão de trabalho.</li>
+                <li><strong>Treinamento avançado, mínimo de 8 horas:</strong> para quem entra na área operacional e realiza atividades específicas, pontuais ou eventuais ligadas à operação, manutenção, integridade ou emergência. Inclui atividade prática a bordo de pelo menos uma hora.</li>
+                <li><strong>Reciclagem, mínimo de 4 horas:</strong> a cada cinco anos, por indicação da atualização do PGR ou após retorno de afastamento superior a 180 dias.</li>
+                <li><strong>DDS:</strong> antes do início das atividades operacionais, considerando tarefas, riscos, medidas de proteção e alarmes.</li>
               </ul>
               <p>
-                Além das exigências da NR-37, operadoras e plataformas internacionais costumam requerer certificações adicionais reconhecidas no setor, como <strong>HUET</strong> (fuga de helicóptero submerso), <strong>BOSIET/FOET</strong> (sobrevivência offshore OPITO) e <strong>H2S awareness</strong>. Esses cursos não são impostos diretamente pela NR-37, mas são condição de embarque em muitas instalações.
+                Operadoras podem exigir certificações adicionais, como HUET, BOSIET ou treinamento sobre H2S, conforme a instalação e o contrato. Esses requisitos não devem ser apresentados como se fizessem parte, por si só, da NR-37.
               </p>
             </>
           ),
@@ -141,10 +141,10 @@ export default function NR37Page() {
           body: (
             <>
               <p>
-                O PCMSO para trabalhadores offshore deve contemplar os riscos específicos do ambiente de plataforma — exposição a agentes químicos, físicos e ergonômicos presentes em operações de petróleo e gás — além de avaliar a aptidão do trabalhador para o regime especial de embarque.
+                A operadora e cada prestadora permanente a bordo devem elaborar PCMSO por plataforma, articulado aos riscos identificados. Plataformas desabitadas são dispensadas de um PCMSO próprio, mas seus riscos precisam constar no programa ao qual os trabalhadores estão vinculados.
               </p>
               <p>
-                O ASO (Atestado de Saúde Ocupacional) deve ser emitido antes do embarque e periodicamente durante a vigência do contrato. Trabalhador com ASO vencido não deve ser autorizado a embarcar. A aptidão para o trabalho offshore pode incluir avaliações específicas não exigidas em terra, como teste de esforço, avaliação psicológica e comprovação de vacinação.
+                O ASO segue a NR-07 e o PCMSO. A primeira via deve estar disponível na enfermaria, em meio físico ou eletrônico. Avaliações adicionais precisam ter fundamento nos riscos e na atividade; a NR-37 não estabelece uma lista universal de teste de esforço, avaliação psicológica ou vacinação para todo trabalhador embarcado.
               </p>
             </>
           ),
@@ -165,8 +165,8 @@ export default function NR37Page() {
           title: 'Principais obrigações do empregador na NR-37',
           body: (
             <ol>
-              <li>Manter SESMT dimensionado para o regime offshore e com médico do trabalho quando exigido.</li>
-              <li>Garantir que todos os trabalhadores tenham treinamentos válidos antes do embarque.</li>
+              <li>Constituir e dimensionar SESMT em terra e a bordo nas situações previstas.</li>
+              <li>Permitir as atividades somente a trabalhadores capacitados para sua função.</li>
               <li>Emitir e manter ASO atualizado para cada trabalhador embarcado.</li>
               <li>Elaborar e testar regularmente o Plano de Resposta a Emergências.</li>
               <li>Assegurar condições de alojamento, alimentação e bem-estar conforme os padrões da norma.</li>
@@ -183,7 +183,7 @@ export default function NR37Page() {
               <li><strong>ASO vencido</strong> ou sem avaliação das condições específicas para o trabalho offshore.</li>
               <li><strong>Simulados de emergência não realizados</strong> ou sem registro.</li>
               <li><strong>Alojamentos em desconformidade</strong> com os padrões de habitabilidade da NR-37.</li>
-              <li><strong>SESMT sem médico do trabalho</strong> quando a norma exige presença a bordo.</li>
+              <li><strong>SESMT ou equipe de saúde dimensionados de forma incorreta</strong> para o efetivo e as condições da plataforma.</li>
               <li><strong>PGR genérico</strong>, sem contemplar os riscos específicos da operação offshore.</li>
             </ol>
           ),
@@ -192,41 +192,41 @@ export default function NR37Page() {
       faq={[
         {
           q: 'O que é a NR-37?',
-          a: 'A NR-37 é a Norma Regulamentadora que estabelece os requisitos de segurança e saúde no trabalho em plataformas de petróleo e gás natural offshore — fixas e flutuantes — operadas no Brasil. Define jornada de embarque, SESMT, treinamentos obrigatórios, condições de alojamento, alimentação e gestão de emergências.',
+          a: 'A NR-37 estabelece requisitos de segurança, saúde e condições de vivência no trabalho em plataformas de petróleo em operação nas Águas Jurisdicionais Brasileiras. Trata de PGR, SESMT, CIPLAT, atenção à saúde, capacitação, acesso, alojamento e emergências.',
         },
         {
           q: 'A quem se aplica a NR-37?',
-          a: 'A todas as plataformas de petróleo e gás natural que operam no Brasil, incluindo as situadas em águas jurisdicionais brasileiras. Abrange operadoras e todas as empresas contratadas e subcontratadas com trabalhadores embarcados a bordo.',
+          a: 'Ao trabalho em plataformas de petróleo nacionais e estrangeiras em operação nas Águas Jurisdicionais Brasileiras, observadas as disposições específicas e as responsabilidades da operadora e das prestadoras.',
         },
         {
           q: 'Qual é a jornada de trabalho em plataforma offshore?',
-          a: 'O regime de escala mais praticado no setor é o 14×14 (14 dias embarcado e 14 dias em terra), mas esse regime é definido pela CLT e por acordos coletivos entre sindicatos e operadoras — não pela NR-37 diretamente. A NR-37 limita a jornada diária a 12 horas durante o embarque, com intervalo mínimo de 12 horas entre turnos.',
+          a: 'A escala depende da legislação trabalhista específica e dos instrumentos coletivos aplicáveis. A NR-37 não fixa uma escala geral de 14 por 14 nem deve ser usada como única fonte para definir a duração da jornada.',
         },
         {
           q: 'Quais treinamentos são obrigatórios pela NR-37?',
-          a: 'A NR-37 estrutura a capacitação em: briefing de segurança (a cada embarque), treinamento básico (mínimo 6 horas, antes do primeiro embarque), treinamento avançado (mínimo 8 horas, com 1 hora de atividade prática a bordo) e reciclagem (mínimo 4 horas a cada 5 anos ou após afastamento superior a 180 dias). Operadoras podem exigir adicionalmente certificações OPITO como HUET, BOSIET/FOET e H2S awareness — essas são requisitos dos operadores, não imposições diretas da NR-37.',
+          a: 'A norma prevê briefing a cada embarque, treinamento básico de 6 horas, treinamento avançado de 8 horas para os trabalhadores indicados no item 37.9.6.5, treinamento eventual, reciclagem de 4 horas e DDS. A aplicação depende da função e do acesso à área operacional.',
         },
         {
           q: 'O que é a CIPLAT?',
-          a: 'A CIPLAT — Comissão Interna de Prevenção de Acidentes e de Assédio em Plataformas — é o equivalente offshore da CIPA (NR-05), criado pela NR-37. É uma comissão paritária com representantes do empregador e dos trabalhadores embarcados, responsável por identificar riscos, propor melhorias e acompanhar as ações de SST a bordo da plataforma.',
+          a: 'A CIPLAT é a Comissão Interna de Prevenção de Acidentes e de Assédio em Plataformas. Sua constituição, representação e funcionamento seguem o item 37.8 da NR-37 e, no que não houver conflito, a NR-05.',
         },
         {
-          q: 'A NR-37 exige médico do trabalho a bordo?',
-          a: 'Sim, quando o porte da plataforma e os riscos da operação exigem. O SESMT offshore deve ser dimensionado conforme regras específicas da NR-37, que podem incluir médico do trabalho embarcado permanente em instalações de maior porte.',
+          q: 'A NR-37 exige profissional de saúde a bordo?',
+          a: 'Plataformas habitadas com 31 ou mais trabalhadores devem ter profissional de saúde a bordo. A categoria profissional e a quantidade variam com o efetivo, podendo incluir técnico de enfermagem, enfermeiro ou médico nas combinações previstas pela norma.',
         },
         {
           q: 'O que é MEDEVAC offshore?',
-          a: 'MEDEVAC é a evacuação médica de emergência de trabalhador da plataforma para terra. Deve ser prevista no Plano de Resposta a Emergências da instalação, com procedimentos definidos para acionamento de helicóptero ou embarcação de resgate médico.',
+          a: 'É a remoção aeromédica do trabalhador para atendimento em terra. A NR-37 usa o termo EVAM e estabelece requisitos de acionamento, prontidão da aeronave e atuação do médico regulador.',
         },
         {
           q: 'Qual a relação entre NR-37 e NR-35 (trabalho em altura)?',
-          a: 'As atividades em altura nas plataformas offshore — manutenção de estruturas, guindastes, passadiços — estão sujeitas às exigências da NR-35, que se aplica em conjunto com a NR-37. O trabalhador precisa de treinamento válido de NR-35 além dos treinamentos específicos offshore.',
+          a: 'Quando a atividade se enquadra no campo de aplicação da NR-35, seus requisitos se somam aos da NR-37. A capacitação e as medidas de prevenção devem corresponder à tarefa efetivamente executada.',
         },
       ]}
       maxFaqItems={9}
       sidebarTitle="Sua operação offshore está em conformidade com a NR-37?"
-      sidebarHook="A SERMST apoia empresas com trabalhadores embarcados: PCMSO offshore, ASO pré-embarque, treinamentos, PGR e gestão integrada de SST para o setor de petróleo e gás."
-      sidebarCtaLabel="Falar sobre compliance offshore"
+      sidebarHook="A SERMST apoia empresas na organização de PCMSO por plataforma, exames ocupacionais, treinamentos e documentos de SST para trabalhadores embarcados."
+      sidebarCtaLabel="Falar sobre SST offshore"
       sidebarCtaHref="/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo"
       related={[
         { label: 'NR-35: trabalho em altura', href: '/normas/nr-35-trabalho-em-altura' },

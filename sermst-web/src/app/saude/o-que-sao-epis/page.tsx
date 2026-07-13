@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default function EPIsPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/o-que-sao-epis"
       coverImage={{ src: "/images/articles/epis-seguranca.jpg", alt: "Equipamentos de proteção individual EPI dispostos em ambiente de trabalho" }}
@@ -29,36 +29,36 @@ export default function EPIsPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-13',
       }}
 
-      h1="O que são EPIs: o equipamento que protege o trabalhador e o CNPJ da empresa"
-      intro="EPI (Equipamento de Proteção Individual) é exigência legal — fornecimento gratuito, treinamento de uso, fiscalização do uso e troca periódica. Falhar em qualquer parte é responsabilidade direta da empresa. Veja como documentar e fiscalizar."
+      h1="O que são EPIs e como cumprir a NR-06"
+      intro="A gestão de EPI começa na seleção do equipamento adequado ao risco e continua com fornecimento gratuito, orientação, registro, acompanhamento do uso, higienização e substituição. A ficha de entrega é importante, mas não resolve o processo sozinha."
       sections={[
         {
           title: 'O que é EPI (em uma frase)',
           body: (
             <>
               <p>
-                EPI é todo equipamento de uso individual que protege o trabalhador contra riscos ocupacionais. Capacete, óculos, luva, máscara, protetor auricular, bota com bico de aço, cinto paraquedista. A NR-06 é a norma que regulamenta — define quando é obrigatório, como fornecer, treinar, fiscalizar e substituir.
+                EPI é o dispositivo ou produto de uso individual concebido e fabricado para proteger contra riscos ocupacionais. Capacete, óculos, luva, respirador, protetor auditivo, calçado de segurança e cinturão contra quedas são exemplos, desde que tenham o Certificado de Aprovação exigido.
               </p>
               <p>
-                Diferente do EPC (Equipamento de Proteção Coletiva — guarda-corpo, exaustor, isolamento de máquina), o EPI protege uma pessoa por vez. Por isso a NR-06 manda priorizar o EPC sempre que possível e usar EPI como complemento ou quando o EPC for inviável.
+                O EPI protege o usuário. Medidas de proteção coletiva, como guarda-corpo, exaustão e enclausuramento de máquina, alcançam o ambiente ou um grupo de pessoas e devem ser priorizadas conforme a hierarquia de prevenção.
               </p>
             </>
           ),
         },
         {
-          title: 'O que a empresa é obrigada a fazer (não negociável)',
+          title: 'Obrigações da organização',
           body: (
             <ol>
-              <li><strong>Fornecer gratuitamente</strong> o EPI adequado ao risco da atividade. Cobrar do trabalhador é multa direta.</li>
-              <li><strong>Verificar o CA (Certificado de Aprovação)</strong> do EPI — sem CA válido, não vale como EPI.</li>
-              <li><strong>Treinar o trabalhador</strong> no uso correto, conservação e limitações do equipamento.</li>
-              <li><strong>Fiscalizar o uso</strong> efetivo durante a jornada — não basta entregar.</li>
+              <li><strong>Fornecer gratuitamente</strong> o EPI adequado ao risco e em perfeito estado de conservação e funcionamento.</li>
+              <li><strong>Adquirir equipamento com CA</strong> válido na data da compra e observar as condições de uso e armazenamento do fabricante.</li>
+              <li><strong>Orientar e treinar quando aplicável</strong> sobre risco protegido, ajuste, limitações, manutenção, substituição e descarte.</li>
+              <li><strong>Exigir o uso</strong> e verificar se o equipamento continua adequado à atividade.</li>
               <li><strong>Substituir imediatamente</strong> EPI danificado, vencido ou inadequado.</li>
-              <li><strong>Manter ficha de entrega</strong> assinada pelo trabalhador a cada substituição — peça-chave de defesa em ação trabalhista.</li>
-              <li><strong>Higienizar e armazenar</strong> EPI de uso compartilhado (raros casos — preferência sempre é uso individual).</li>
+              <li><strong>Registrar o fornecimento</strong> em livro, ficha ou sistema eletrônico, inclusive nas substituições.</li>
+              <li><strong>Responsabilizar-se pela higienização e manutenção periódica</strong> quando esses procedimentos forem aplicáveis.</li>
             </ol>
           ),
         },
@@ -88,17 +88,17 @@ export default function EPIsPage() {
                 <li><strong>Membros superiores</strong>: luva (impermeável, antibacteriana, anticortes, isolante elétrica)</li>
                 <li><strong>Membros inferiores</strong>: calçado de segurança com biqueira, perneira, bota PVC</li>
                 <li><strong>Corpo inteiro</strong>: vestimenta para trabalho a quente, traje encapsulado, vestimenta antichama</li>
-                <li><strong>Proteção contra quedas</strong>: cinto paraquedista, talabarte, trava-quedas, ponto de ancoragem</li>
+                <li><strong>Proteção contra quedas</strong>: cinturão de segurança, talabarte e trava-quedas; a ancoragem integra o sistema de proteção, mas não é EPI por si só.</li>
               </ul>
             </>
           ),
         },
         {
-          title: 'O ponto mais cobrado em fiscalização: ficha de entrega',
+          title: 'Ficha de entrega: o que registrar',
           body: (
             <>
               <p>
-                A ficha de entrega de EPI é o documento mais cobrado em fiscalização do MTE e mais usado em defesa de ação trabalhista. Sem ela, a empresa não consegue provar que forneceu o equipamento — e isso vira responsabilidade direta em qualquer acidente.
+                O registro de fornecimento ajuda a demonstrar qual equipamento foi entregue, quando e para qual trabalhador. Ele pode ser físico ou eletrônico. A ausência do registro fragiliza a comprovação, mas a ficha, sozinha, também não prova seleção adequada, treinamento ou uso efetivo.
               </p>
               <p>
                 A ficha precisa conter:
@@ -112,9 +112,7 @@ export default function EPIsPage() {
                 <li>Assinatura do responsável pela entrega</li>
                 <li>Espaço para registro de devolução, substituição, perda</li>
               </ul>
-              <p>
-                Ficha pode ser em papel ou eletrônica. O importante é existir, estar atualizada e ser localizável.
-              </p>
+              <p>A assinatura pode ser substituída por registro eletrônico que permita identificar o trabalhador e preservar a rastreabilidade.</p>
             </>
           ),
         },
@@ -125,11 +123,11 @@ export default function EPIsPage() {
               <ol>
                 <li><strong>Documentar a recusa.</strong> Registro escrito com data, hora, testemunhas.</li>
                 <li><strong>Aplicar advertência formal</strong>. Carta de advertência por descumprimento de procedimento de segurança.</li>
-                <li><strong>Repetir o treinamento</strong>. Se for ignorância, treinamento resolve. Se for resistência, vira indisciplina.</li>
-                <li><strong>Em caso de reincidência</strong>, escalar para suspensão. Em caso de risco grave, justa causa por descumprimento de obrigação contratual e norma de segurança.</li>
+                <li><strong>Verificar a causa</strong>. Desconforto, tamanho errado, incompatibilidade entre EPIs ou falta de entendimento exigem correção técnica.</li>
+                <li><strong>Aplicar as medidas disciplinares cabíveis</strong> de forma proporcional e coerente com o regulamento e a orientação trabalhista da empresa.</li>
               </ol>
               <p>
-                Sem evidência da fiscalização e da reação da empresa, em qualquer acidente posterior a defesa cai — mesmo se o trabalhador estava se recusando a usar o EPI.
+                A recusa não elimina a obrigação da empresa de corrigir o problema e impedir a continuidade de uma atividade insegura. Registre a orientação, a causa identificada e a providência adotada.
               </p>
             </>
           ),
@@ -138,19 +136,19 @@ export default function EPIsPage() {
       faq={[
         {
           q: 'O EPI tem validade?',
-          a: 'O CA (Certificado de Aprovação) tem prazo dé válidade — 5 anos, renovável. Quando o CA está vencido ou cancelado, o EPI perdé válidade legal mesmo se ainda estiver em condição física boa. Empresa precisa monitorar a base do MTE e substituir quando necessário.',
+          a: 'O CA tem prazo próprio para comercialização. Um EPI adquirido com CA válido pode continuar em uso dentro de sua vida útil, desde que mantenha as condições de proteção e sejam observadas as orientações do fabricante. Cancelamento, alteração do produto ou perda de desempenho exigem análise específica.',
         },
         {
           q: 'Quem escolhe o EPI adequado?',
-          a: 'A escolha técnica do EPI é responsabilidade do SESMT (próprio ou terceirizado) com base no PGR. Não é decisão administrativa nem do trabalhador. EPI errado para o risco é tão grave quanto a falta dele.',
+          a: 'A organização seleciona o EPI com base na atividade, nos perigos, na eficácia necessária e na compatibilidade entre equipamentos. O SESMT participa quando existe, e a seleção deve considerar a escuta dos usuários e da CIPA ou representante nomeado.',
         },
         {
           q: 'EPI pode ser cobrado do trabalhador?',
-          a: 'Não, em hipótese alguma na operação normal. A única situação em que se desconta é em caso de dolo (perda intencional ou dano deliberado) e mesmo assim com formalização prévia em regulamento interno. Cobrar EPI do salário sem isso é descumprimento direto da NR-06.',
+          a: 'O fornecimento é gratuito. Eventual desconto por dano depende dos limites do art. 462 da CLT, das provas e das condições ajustadas; não deve ser tratado como cobrança automática por perda ou desgaste normal.',
         },
         {
-          q: 'Trabalhador terceirizado — quem fornece o EPI?',
-          a: 'A empresa contratada (empregadora direta) é responsável primária. Mas a contratante (tomadora do serviço) tem responsabilidade solidária por SST do terceirizado dentro de suas instalações. Boa prática é exigir contratualmente que a contratada apresente fichas de entrega.',
+          q: 'Quem fornece o EPI ao trabalhador terceirizado?',
+          a: 'A empregadora direta deve fornecer o EPI. A contratante também tem deveres de coordenação e informação sobre os riscos existentes em suas instalações. Contrato, integração, fiscalização e troca de documentos devem definir como as medidas serão verificadas, sem presumir responsabilidade idêntica em todo caso.',
         },
         {
           q: 'EPI vence ou estraga, quando substituir?',
@@ -158,7 +156,7 @@ export default function EPIsPage() {
         },
       ]}
       sidebarTitle="Sua empresa documenta a entrega de EPI?"
-      sidebarHook="Sem ficha de entrega assinada, a empresa não tem como provar que cumpriu a NR-06. Em fiscalização ou em acidente, é o primeiro documento pedido. A SERMST audita e organiza o processo."
+      sidebarHook="A ficha de entrega precisa estar ligada ao PGR, à seleção técnica e à orientação do trabalhador. A SERMST revisa o processo completo e aponta registros ou controles ausentes."
       sidebarCtaLabel="Auditar gestão de EPI"
       related={[
         { label: 'NR-35: Trabalho em altura', href: '/normas/nr-35-trabalho-em-altura' },

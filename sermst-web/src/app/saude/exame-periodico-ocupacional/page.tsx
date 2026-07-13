@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame Periódico Ocupacional em São Paulo | SERMST',
+  title: 'Exame periódico: periodicidade na NR-07 | SERMST',
   description:
-    'Exame periódico ocupacional: periodicidade por grau de risco, quais exames complementares incluir e como organizar o programa da empresa. SERMST em SP.',
+    'Entenda a periodicidade do exame ocupacional na NR-07, quem deve ser convocado, quando o prazo pode ser menor e quais exames o PCMSO pode prever.',
   robots: 'index, follow',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-periodico-ocupacional' },
   openGraph: {
-    title: 'Exame Periódico Ocupacional em São Paulo | SERMST',
+    title: 'Exame periódico: periodicidade na NR-07 | SERMST',
     description:
-      'Guia sobre exame periódico ocupacional: quando fazer, quem convoca, quais exames incluir e o que acontece quando o programa atrasa.',
+      'Veja quando o exame periódico é anual, bienal ou realizado em prazo menor por decisão médica, conforme a NR-07 e os riscos ocupacionais.',
     url: 'https://sermst.com.br/saude/exame-periodico-ocupacional',
     type: 'article',
     locale: 'pt_BR',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function ExamePeriodicoOcupacionalPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       badgeText="Saúde Ocupacional"
@@ -34,14 +34,14 @@ export default function ExamePeriodicoOcupacionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-06',
+        dateModified: '2026-07-13',
       }}
       readingTime="8 min"
-      h1="Exame periódico ocupacional: periodicidade, quem convoca e o que inclui"
-      intro="O exame periódico ocupacional é a avaliação médica que acompanha o trabalhador ao longo do vínculo empregatício. Diferente do admissional, que documenta a entrada, o periódico monitora se as condições de trabalho estão afetando a saúde do trabalhador e se ele continua apto para a função. Quando atrasa ou vira formalidade, o risco acumulado aparece em afastamento, nexo causal estabelecido e passivo trabalhista."
+      h1="Exame periódico ocupacional: periodicidade, convocação e exames"
+      intro="O exame periódico acompanha a saúde do trabalhador durante o vínculo. A periodicidade não é mais definida por idade nem apenas pelo grau de risco da empresa: a NR-07 vigente considera a exposição a riscos ocupacionais identificados e classificados no PGR, condições crônicas que aumentem a suscetibilidade e o critério do médico responsável pelo PCMSO."
       quickAnswer={
         <p>
-          O <strong>exame periódico ocupacional</strong> é obrigatório para todos os trabalhadores com vínculo empregatício, com periodicidade definida pelo grau de risco da empresa e pela faixa etária do trabalhador. A SERMST organiza e executa o programa de periódicos em São Paulo integrado ao PCMSO da empresa.
+          Pela NR-07, o exame periódico deve ocorrer <strong>anualmente ou em intervalo menor</strong> para trabalhadores expostos a riscos ocupacionais identificados e classificados no PGR e para pessoas com doenças crônicas que aumentem a suscetibilidade. Para os demais trabalhadores, a regra geral é <strong>a cada dois anos</strong>. O médico responsável pelo PCMSO pode reduzir o intervalo.
         </p>
       }
       showTableOfContents
@@ -54,10 +54,10 @@ export default function ExamePeriodicoOcupacionalPage() {
                 O exame periódico ocupacional é a avaliação médica prevista na NR-07 para trabalhadores já admitidos. Seu objetivo é monitorar a saúde do trabalhador ao longo do tempo e verificar se a exposição ocupacional está causando alguma alteração, comparando o resultado atual com o admissional e com os periódicos anteriores.
               </p>
               <p>
-                O exame sempre resulta em um ASO, que registra se o trabalhador está apto, apto com restrições ou inapto para a função. Ao contrário do que muitas empresas praticam, o periódico não é apenas uma consulta clínica genérica: ele deve seguir o protocolo do PCMSO, que define quais exames complementares são necessários para cada função com base nos riscos identificados.
+                O exame resulta em um ASO, que registra a definição de apto ou inapto para a função. Ao contrário do que muitas empresas praticam, o periódico não é apenas uma consulta clínica genérica: ele deve seguir o PCMSO, que define os procedimentos médicos e os exames complementares aplicáveis com base nos riscos identificados.
               </p>
               <p>
-                Uma empresa que realiza o exame periódico apenas como exame clínico, sem os complementares previstos no PCMSO, está em descumprimento da norma e produz um ASO com validade técnica e jurídica comprometida.
+                Se o PCMSO prevê exames complementares para determinado risco e eles não são realizados, o monitoramento fica incompleto e a empresa perde coerência entre PGR, programa médico e ASO.
               </p>
             </>
           ),
@@ -67,18 +67,17 @@ export default function ExamePeriodicoOcupacionalPage() {
           body: (
             <>
               <p>
-                A NR-07 define os prazos mínimos para o exame periódico com base no grau de risco da empresa (Quadro II do Anexo II):
+                A NR-07 atual organiza a periodicidade clínica em dois grupos principais:
               </p>
               <ul>
-                <li><strong>Grau de Risco 1 e 2:</strong> periodicidade bienal (a cada 2 anos) para trabalhadores entre 18 e 45 anos.</li>
-                <li><strong>Grau de Risco 1 e 2, trabalhadores acima de 45 anos:</strong> periodicidade anual.</li>
-                <li><strong>Grau de Risco 3 e 4:</strong> periodicidade anual para todos os trabalhadores.</li>
+                <li><strong>Anual ou em intervalo menor:</strong> trabalhadores expostos a riscos ocupacionais identificados e classificados no PGR e pessoas com doenças crônicas que aumentem a suscetibilidade a esses riscos.</li>
+                <li><strong>Bienal:</strong> os demais trabalhadores.</li>
               </ul>
               <p>
-                Esses são os prazos máximos. O médico coordenador do PCMSO pode definir periodicidade menor para funções com exposição a agentes de maior risco — e nesse caso o prazo mais curto prevalece.
+                O médico responsável pelo PCMSO pode reduzir o intervalo com base nos riscos, no estado de saúde do trabalhador e nos critérios previstos nos anexos da própria norma.
               </p>
               <p>
-                O grau de risco da empresa é determinado pelo CNAE principal. Empresas que não sabem seu grau de risco correm o risco de usar a periodicidade errada no PCMSO, o que gera descumprimento mesmo que os exames estejam sendo realizados.
+                Portanto, copiar uma tabela antiga por idade ou aplicar o mesmo vencimento a toda a empresa pode gerar convocação errada. A referência operacional deve ser o PCMSO atualizado e coerente com o PGR.
               </p>
             </>
           ),
@@ -93,11 +92,10 @@ export default function ExamePeriodicoOcupacionalPage() {
               <ul>
                 <li><strong>Audiometria ocupacional:</strong> para funções com exposição a ruído acima dos limites de tolerância da NR-15.</li>
                 <li><strong>Espirometria:</strong> para funções com exposição a poeiras, fumos metálicos e agentes respiratórios.</li>
-                <li><strong>Eletrocardiograma (ECG):</strong> para trabalhadores acima de 40 anos e funções com risco cardiovascular ou elétrico.</li>
+                <li><strong>Eletrocardiograma (ECG):</strong> quando houver indicação médica ou previsão técnica no PCMSO para a função avaliada.</li>
                 <li><strong>Hemograma e bioquímica:</strong> para funções com exposição a agentes hematotóxicos, hepatotóxicos ou nefrotóxicos.</li>
                 <li><strong>Acuidade visual:</strong> para motoristas, operadores de empilhadeira e funções com requisito visual de segurança.</li>
-                <li><strong>Avaliação psicossocial:</strong> para trabalho em altura (NR-35) e funções com alto risco psicossocial previsto no PGR.</li>
-                <li><strong>Exame toxicológico:</strong> para motoristas profissionais com CNH C, D ou E, conforme a Lei 13.103/2015.</li>
+                <li><strong>Avaliação dos fatores psicossociais:</strong> quando as atividades e os riscos ocupacionais exigirem essa análise no exame de aptidão.</li>
               </ul>
               <p>
                 O conjunto de exames varia por função. Um protocolo único para toda a empresa costuma gerar exames desnecessários em algumas funções e ausência de exames obrigatórios em outras.
@@ -114,8 +112,8 @@ export default function ExamePeriodicoOcupacionalPage() {
               </p>
               <ul>
                 <li><strong>Autuação em fiscalização do MTE:</strong> o auditor verifica se os ASOs periódicos estão dentro do prazo. Trabalhador sem periódico em dia é infração direta à NR-07.</li>
-                <li><strong>Fragilidade no nexo causal:</strong> se um trabalhador desenvolver doença ocupacional e o periódico estiver atrasado ou ausente, a empresa perde a principal ferramenta de defesa — o monitoramento contínuo documentado.</li>
-                <li><strong>Divergência no eSocial:</strong> o evento S-2220 (monitoramento da saúde do trabalhador) precisa estar atualizado. ASO vencido sem lançamento gera inconsistência no eSocial SST.</li>
+                <li><strong>Fragilidade na análise do nexo:</strong> se surgir uma suspeita de doença ocupacional, a falta de monitoramento contínuo reduz a qualidade do histórico clínico usado na avaliação.</li>
+                <li><strong>Divergência no eSocial:</strong> o evento S-2220 precisa refletir os exames ocupacionais efetivamente realizados e a documentação mantida pela empresa.</li>
                 <li><strong>Dificuldade em afastamentos e retorno:</strong> sem o histórico de periódicos em dia, o médico do trabalho não tem linha de base para avaliar alterações identificadas no retorno ao trabalho.</li>
               </ul>
             </>
@@ -126,7 +124,7 @@ export default function ExamePeriodicoOcupacionalPage() {
           body: (
             <>
               <p>
-                Empresas com mais de 20 trabalhadores costumam ter vencimentos distribuídos ao longo do ano. Sem um sistema de controle, o RH perde a visão de quem está próximo do vencimento e começa a convocar de forma reativa — geralmente depois que o prazo já estourou.
+                Empresas com mais de 20 trabalhadores costumam ter vencimentos distribuídos ao longo do ano. Sem controle, o RH perde a visão de quem está perto do prazo e começa a convocar tarde, quando o exame já deveria ter sido feito.
               </p>
               <p>
                 Um programa bem estruturado inclui: calendário de vencimentos por trabalhador, protocolo de convocação com antecedência mínima, integração entre o PCMSO e o sistema de RH, e lançamento no eSocial dentro do prazo. Quando o PCMSO, a convocação e o registro no eSocial não estão alinhados, o RH trabalha mais e a empresa fica mais exposta.
@@ -147,12 +145,28 @@ export default function ExamePeriodicoOcupacionalPage() {
               <ul>
                 <li><strong>Exame admissional:</strong> realizado antes do início das atividades. Documenta a condição de saúde do trabalhador na entrada e serve como linha de base para comparação futura.</li>
                 <li><strong>Exame periódico:</strong> realizado durante o vínculo, nos intervalos definidos pelo PCMSO. Monitora se a exposição ocupacional está causando alterações ao longo do tempo.</li>
-                <li><strong>Exame de retorno ao trabalho:</strong> realizado no primeiro dia útil após afastamento de 30 dias ou mais por doença ou acidente. Avalia se o trabalhador está apto para reassumir as atividades.</li>
+                <li><strong>Exame de retorno ao trabalho:</strong> realizado antes de o trabalhador reassumir a função após afastamento igual ou superior a 30 dias por doença ou acidente, ocupacional ou não.</li>
               </ul>
               <p>
                 A confusão mais comum é tratar o retorno ao trabalho como periódico antecipado. São obrigações independentes: o retorno ao trabalho não substitui o periódico e vice-versa.
               </p>
             </>
+          ),
+        },
+        {
+          title: 'Fonte oficial e revisão da regra',
+          body: (
+            <p>
+              As periodicidades desta página foram revisadas com base no item 7.5.8 da{' '}
+              <a
+                href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-07-atualizada-2022.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NR-07 publicada pelo Ministério do Trabalho e Emprego
+              </a>
+              . O PCMSO e os anexos aplicáveis devem ser consultados para definir o protocolo de cada função.
+            </p>
           ),
         },
       ]}
@@ -163,11 +177,11 @@ export default function ExamePeriodicoOcupacionalPage() {
         },
         {
           q: 'Qual a periodicidade do exame periódico ocupacional?',
-          a: 'Para grau de risco 1 e 2: bienal (a cada 2 anos) para trabalhadores até 45 anos; anual para maiores de 45. Para grau de risco 3 e 4: anual para todos. O PCMSO pode definir prazos menores conforme os riscos da função.',
+          a: 'A regra geral é anual ou em intervalo menor para trabalhadores expostos a riscos identificados e classificados no PGR e para pessoas com doenças crônicas que aumentem a suscetibilidade. Para os demais, o exame clínico é bienal. O médico responsável pelo PCMSO pode reduzir o intervalo.',
         },
         {
           q: 'Quem deve ser convocado para o exame periódico?',
-          a: 'Todos os trabalhadores com vínculo empregatício ativo, conforme o vencimento de cada um. Trabalhadores em afastamento têm o prazo suspenso e fazem o exame de retorno ao trabalho antes de reassumir as atividades.',
+          a: 'Os trabalhadores abrangidos pelo monitoramento ocupacional devem ser convocados conforme o vencimento definido no PCMSO. Quem retorna de afastamento igual ou superior a 30 dias precisa passar pelo exame de retorno antes de reassumir a função.',
         },
         {
           q: 'O exame periódico é a mesma coisa que o ASO?',
@@ -183,7 +197,7 @@ export default function ExamePeriodicoOcupacionalPage() {
       sidebarCtaLabel="Organizar meu programa"
       sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
-        { label: 'O que é o exame periódico ocupacional e para que serve', href: '/saude/importancia-do-exame-periodico' },
+        { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
         { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'Como funciona o exame admissional', href: '/exames/como-funciona-o-exame-admissional' },
         { label: 'Exame demissional: o que é e quando fazer', href: '/saude/exame-demissional' },

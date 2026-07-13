@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Carta de recomendação: modelo e cuidados | SERMST',
   description:
-    'A carta de recomendação é uma escolha de gestão. Honestidade controlada é o equilíbrio. Veja como redigir, modelos por contexto e o erro de inflar avaliação.',
+    'Veja como escrever uma carta de recomendação profissional, quais informações incluir e quais cuidados tomar ao compartilhar referências.',
   alternates: { canonical: 'https://sermst.com.br/rh/carta-recomendacao' },
   robots: 'index, follow',
   openGraph: {
@@ -21,35 +21,35 @@ export default function CartaRecomendacaoPage() {
   return (
     <BlockbusterArticle
       coverImage={{ src: "/images/site/b2b-partnership.jpg", alt: "Profissional recebendo carta de recomendação em contexto corporativo" }}
-      hubLabel="Hub de RH e Departamento Pessoal"
-      hubLabelShort="← Hub de RH e DP"
+      hubLabel="RH e Departamento Pessoal"
+      hubLabelShort="← RH e DP"
       hubHref="/rh"
       pageUrl="https://sermst.com.br/rh/carta-recomendacao"
       author={{
         name: 'Felipe Sannino',
-        jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+        jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
         dateModified: '2026-05-01',
       }}
 
-      h1="Como fazer uma carta de recomendação: o que escrever é o que evitar"
-      intro="A carta de recomendação é uma escolha de gestão — quem você indica diz mais sobre você do que sobre o profissional. Honestidade controlada é o equilíbrio. Veja como redigir, modelos por contexto e cuidados jurídicos."
+      h1="Como fazer uma carta de recomendação: o que escrever e o que evitar"
+      intro="Uma boa carta de recomendação explica de onde vem a referência, apresenta fatos do trabalho realizado e deixa claro para quais responsabilidades a pessoa está sendo indicada. Não precisa exagerar nem parecer um texto pronto."
       sections={[
         {
-          title: 'O que é (é o que não é) carta de recomendação',
+          title: 'O que é, e o que não é, uma carta de recomendação',
           body: (
             <>
               <p>
-                Carta de recomendação é um documento em que um gestor, ex-empregador ou contato profissional descreve a experiência de trabalho com um profissional e endossa sua candidatura para nova oportunidade. <strong>Não é obrigatória</strong>; é cortesia profissional.
+                A carta de recomendação é um relato assinado por alguém que trabalhou com o profissional e pode descrever sua atuação. <strong>Ela não é uma obrigação geral do empregador</strong> e deve ser escrita apenas quando houver informações reais para compartilhar.
               </p>
               <p>
                 Diferente de:
               </p>
               <ul>
-                <li><strong>Atestado de trabalho</strong> — documento formal exigido pelo trabalhador, comprova vínculo, função e período. Empresa é obrigada a emitir.</li>
-                <li><strong>PPP</strong> — documento previdenciário com agentes nocivos. Obrigatório.</li>
-                <li><strong>Referência informal</strong> — quando outro empregador liga e pergunta. Sem documento.</li>
+                <li><strong>Documentos do vínculo:</strong> registros da CTPS e documentos rescisórios comprovam a relação de emprego e não equivalem a uma recomendação.</li>
+                <li><strong>PPP:</strong> documento previdenciário obrigatório nas situações previstas em lei, com finalidade própria.</li>
+                <li><strong>Referência por telefone ou mensagem:</strong> também envolve dados pessoais e deve se limitar a informações autorizadas e verificáveis.</li>
               </ul>
             </>
           ),
@@ -59,12 +59,12 @@ export default function CartaRecomendacaoPage() {
           body: (
             <>
               <ol>
-                <li><strong>Quando a saída foi positiva.</strong> Empresa cresceu, função reduziu, mudança natural — é momento de reconhecer o que o profissional entregou.</li>
-                <li><strong>Quando há reciprocidade futura.</strong> Profissional bom volta como cliente, parceiro, fornecedor. Carta gera goodwill.</li>
-                <li><strong>Quando você foi pedido pelo profissional</strong> e tem coisa boa para falar.</li>
+                <li><strong>Quando você acompanhou o trabalho de perto.</strong> Isso permite citar responsabilidades e resultados concretos.</li>
+                <li><strong>Quando há fatos positivos para registrar.</strong> A carta deve refletir uma experiência profissional real.</li>
+                <li><strong>Quando o profissional pediu a referência</strong> e autorizou o compartilhamento das informações necessárias.</li>
               </ol>
               <p>
-                Não escrever quando: a saída foi conflituosa; você tem reservas técnicas ou de comportamento; a recomendação seria desonesta. Em caso de dúvida, é melhor se recusar educadamente do que escrever algo morno e contraditório.
+                Se você não acompanhou o trabalho ou não se sente confortável em recomendar, pode recusar com educação. Uma carta vaga ou exagerada não ajuda quem recebe nem quem está sendo indicado.
               </p>
             </>
           ),
@@ -75,10 +75,10 @@ export default function CartaRecomendacaoPage() {
             <ol>
               <li><strong>Cabeçalho</strong>: dados de quem escreve, dados de quem está sendo recomendado, data.</li>
               <li><strong>Contexto</strong>: período de trabalho, função, em qual empresa, sob qual estrutura. &quot;Trabalhei com X de 2022 a 2025 como Gerente de Operações na empresa Y, onde eu era diretor.&quot;</li>
-              <li><strong>Contribuição mensurável</strong>: o que o profissional entregou, com fato. &quot;Liderou a implementação do sistema novo de produção que reduziu retrabalho em 30%.&quot;</li>
-              <li><strong>Qualidades comportamentais reais</strong>: 2-3, com exemplo. Não vale lista de adjetivos vazios.</li>
+              <li><strong>Contribuição concreta:</strong> o que a pessoa entregou e qual foi sua participação. Use números somente quando puder confirmá-los.</li>
+              <li><strong>Forma de trabalhar:</strong> escolha duas ou três características que você observou e dê contexto.</li>
               <li><strong>Recomendação clara</strong>: para qual tipo de função você indica e por quê.</li>
-              <li><strong>Disponibilidade para contato</strong>: e-mail e telefone para a empresa contratanté válidar.</li>
+              <li><strong>Disponibilidade para contato:</strong> informe um canal profissional se estiver disposto a responder perguntas.</li>
               <li><strong>Assinatura</strong>: nome, cargo, empresa, contato.</li>
             </ol>
           ),
@@ -87,10 +87,10 @@ export default function CartaRecomendacaoPage() {
           title: 'Os erros que tiram força da carta',
           body: (
             <ul>
-              <li><strong>Adjetivo vazio.</strong> &quot;Profissional dedicado, comprometido e proativo.&quot; Diz nada. Substitua por fato: &quot;Permaneceu até as 22h em três sextas seguidas para entregar o projeto X.&quot;</li>
+              <li><strong>Adjetivo vazio.</strong> &quot;Profissional dedicado, comprometido e proativo&quot; diz pouco. Explique qual comportamento levou a essa avaliação, sem transformar horas extras em prova de desempenho.</li>
               <li><strong>Inflação.</strong> Recomendar para qualquer cargo, prometendo o que o profissional não entrega. Vira problema quando o contratante percebe.</li>
               <li><strong>Contradição interna.</strong> Texto positivo mas com qualificadores que esvaziam (&quot;apesar de algumas dificuldades&quot;, &quot;quando focado&quot;, &quot;com supervisão&quot;).</li>
-              <li><strong>Generalismo.</strong> Carta que serviria para qualquer um — sem fato, sem contexto, sem nome de projeto.</li>
+              <li><strong>Texto genérico.</strong> Uma carta sem fatos, contexto ou responsabilidades poderia servir para qualquer pessoa.</li>
               <li><strong>Sem disponibilidade para validação.</strong> Recomendação séria oferece contato; quem não oferece levanta dúvida.</li>
             </ul>
           ),
@@ -100,15 +100,15 @@ export default function CartaRecomendacaoPage() {
           body: (
             <>
               <p>
-                Empresa pode ter risco jurídico ao recomendar:
+                Ao compartilhar uma recomendação, alguns cuidados evitam problemas desnecessários:
               </p>
               <ul>
-                <li><strong>Recomendação enganosa.</strong> Se o profissional comete falha grave na nova empresa e a recomendação é peça de prova de que a empresa anterior &quot;sabia&quot;, pode haver responsabilização.</li>
-                <li><strong>Recusa que vira difamação.</strong> Falar mal de profissional em referência informal pode virar ação por dano moral. Limite-se a fatos verificáveis ou recuse-se a comentar.</li>
-                <li><strong>Conflito com termo de rescisão.</strong> Se houve acordo formal de saída com cláusula de neutralidade, recomendar (positiva ou negativamente) pode violar contrato.</li>
+                <li><strong>Dados pessoais:</strong> compartilhe apenas informações pertinentes e compatíveis com a autorização dada pelo profissional.</li>
+                <li><strong>Comentários ofensivos ou discriminatórios:</strong> não inclua informações sobre saúde, religião, família ou outros aspectos sem relação com o trabalho.</li>
+                <li><strong>Fatos não confirmados:</strong> evite acusações, rumores e avaliações que não possam ser explicadas de forma objetiva.</li>
               </ul>
               <p>
-                A regra simples: <strong>fale apenas o que você consegue provar com fato</strong>. Não exagere, não diminua. Em dúvida, recuse-se com cortesia.
+                A regra prática é simples: <strong>fale do trabalho que você realmente acompanhou</strong>, use informações pertinentes e não prometa desempenho futuro.
               </p>
             </>
           ),
@@ -117,33 +117,33 @@ export default function CartaRecomendacaoPage() {
       faq={[
         {
           q: 'Empresa é obrigada a dar carta de recomendação?',
-          a: 'Não. Não há obrigação legal. Empresa é obrigada a dar atestado de trabalho (que é diferente — apenas comprova vínculo) e PPP. Recomendação é cortesia profissional.',
+          a: 'Não existe obrigação legal geral de fornecer carta de recomendação. Ela não se confunde com os registros do vínculo, os documentos rescisórios ou o PPP, quando este for aplicável.',
         },
         {
           q: 'Posso falar mal de ex-funcionário em referência?',
-          a: 'É arriscado. Limite-se a fatos verificáveis (atribuídos a documentos, não a opinião). Falar de comportamento subjetivo pode virar ação por dano moral. Em geral, é mais seguro recusar comentário do que opinar negativamente.',
+          a: 'Referências negativas podem expor dados pessoais, reproduzir acusações não comprovadas ou gerar alegações de dano. Limite-se a fatos profissionais pertinentes e autorizados; se não puder responder com segurança, recuse o comentário.',
         },
         {
           q: 'Recomendação por LinkedIn vale o mesmo?',
-          a: 'Tem peso parecido em mercado, mas formal continua sendo carta assinada. Em processos seletivos sérios, RH costuma pedir contato direto para validação por telefone — recomendação assinada com contato é melhor.',
+          a: 'Pode ajudar, mas tem formato e contexto diferentes de uma carta assinada. Em qualquer canal, a recomendação deve identificar a relação profissional e trazer informações específicas.',
         },
         {
           q: 'Posso pedir carta para múltiplas pessoas?',
-          a: 'Pode. Profissional em transição costuma juntar 2-3 cartas de gestores, pares ou subordinados — cada um traz uma perspectiva. Importante variar contexto: chefe direto + colega de outra área + cliente ou parceiro externo.',
+          a: 'Pode. Referências de gestores, colegas, clientes ou parceiros mostram perspectivas diferentes, desde que cada pessoa tenha acompanhado o trabalho descrito.',
         },
         {
           q: 'O que fazer se o ex-empregador se recusa?',
-          a: 'Aceitar com naturalidade. Não tem obrigação. Buscar referências em outras pessoas que trabalharam com o profissional (gerente direto que saiu, colega que migrou, cliente externo). Múltiplas referências fracas valém mais que insistir em uma negativa.',
+          a: 'A carta não é obrigatória. O profissional pode procurar outras pessoas que tenham acompanhado seu trabalho, como um antigo gestor, colega, cliente ou parceiro.',
         },
       ]}
       sidebarTitle="Sua empresa documenta saídas de funcionários?"
-      sidebarHook="Carta de recomendação é a parte visível do desligamento. A parte invisível — exame demissional, S-2299, paper trail — é o que protege a empresa em ação posterior."
+      sidebarHook="Além da comunicação com o profissional, o desligamento exige exame demissional, registros no eSocial e documentos coerentes com o encerramento do vínculo."
       sidebarCtaLabel="Auditar processo de desligamento"
       related={[
         { label: 'Como fazer carta de demissão', href: '/rh/carta-demissao' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
-        { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
+        { label: 'Exame demissional: o que é e quando fazer', href: '/saude/exame-demissional' },
       ]}
     />
   );

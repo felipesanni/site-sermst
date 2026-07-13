@@ -53,13 +53,13 @@ export default function ListaCNAEPage() {
   return (
     <BlockbusterArticle
       coverImage={{ src: "/images/site/sermst-estrutura-medicina-ocupacional.png", alt: "Classificação de atividade econômica CNAE aplicada à gestão de riscos SST" }}
-      hubLabel="Hub de RH e Departamento Pessoal"
-      hubLabelShort="← Hub de RH e DP"
+      hubLabel="RH e Departamento Pessoal"
+      hubLabelShort="← RH e DP"
       hubHref="/rh"
       pageUrl="https://sermst.com.br/rh/lista-cnae-brasil"
       author={{
         name: 'Felipe Sannino',
-        jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+        jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
         dateModified: '2026-06-01',
@@ -101,11 +101,11 @@ export default function ListaCNAEPage() {
           title: 'Por que o CNAE importa muito mais do que parece',
           body: (
             <ul>
-              <li><strong>Define o regime tributário possível.</strong> Algumas atividades não podem ser Simples Nacional. Outras estão sujeitas a Lucro Presumido limitado. Errar pode pagar imposto a mais por anos.</li>
+              <li><strong>Influencia o enquadramento tributário.</strong> A atividade declarada participa da análise do regime e das obrigações fiscais, mas não deve ser avaliada isoladamente.</li>
               <li><strong>Ajuda a identificar o grau de risco da NR-04</strong> (1, 2, 3 ou 4), usado no dimensionamento de SESMT e CIPA.</li>
               <li><strong>Ajuda a mapear NRs relevantes</strong> para a atividade econômica, sem substituir a avaliação dos riscos reais de cada estabelecimento.</li>
-              <li><strong>Define a CNAE-Subclasse usada no eSocial</strong> — campos S-1000 da empresa, S-2200 do trabalhador.</li>
-              <li><strong>Define as obrigações sindicais</strong> e o sindicato de enquadramento — categoria sindical errada gera passivo trabalhista.</li>
+              <li><strong>Alimenta cadastros e eventos do eSocial:</strong> a informação deve ser coerente com o CNPJ e com a atividade do estabelecimento.</li>
+              <li><strong>Ajuda na análise sindical:</strong> a atividade preponderante é relevante, mas o enquadramento também depende da atividade real e das regras da categoria.</li>
               <li><strong>Ajuda a revisar RAT/GILRAT e FAP.</strong> A conferência tributária deve considerar a atividade preponderante e o histórico da empresa.</li>
             </ul>
           ),
@@ -136,10 +136,10 @@ export default function ListaCNAEPage() {
           body: (
             <ol>
               <li><strong>Mudou o que a empresa faz.</strong> Começou a oferecer serviço novo, mudou o produto principal, abriu filial com atividade diferente.</li>
-              <li><strong>Cresceu de porte.</strong> Saiu do MEI, do Simples, mudou de regime — hora de revisar CNAE para evitar erro de enquadramento.</li>
-              <li><strong>Recebeu autuação ou questionamento.</strong> Receita ou MTE indica que a atividade real não bate com o CNAE — sinal claro de revisão urgente.</li>
-              <li><strong>Vai abrir filial.</strong> Cada CNPJ tem seu CNAE — não é herança automática da matriz.</li>
-              <li><strong>Há mais de 5 anos sem revisar.</strong> CNAE é tabela viva, sai versão nova periodicamente. Empresa antiga pode estar com classificação que não existe mais.</li>
+              <li><strong>Mudou de porte ou de regime.</strong> Aproveite a revisão cadastral para conferir se as atividades continuam corretas.</li>
+              <li><strong>Recebeu autuação ou questionamento.</strong> Divergência entre cadastro e operação merece análise imediata.</li>
+              <li><strong>Vai abrir filial.</strong> O cadastro precisa representar as atividades que serão exercidas naquele estabelecimento.</li>
+              <li><strong>O cadastro ficou anos sem revisão.</strong> Confira se as atividades declaradas ainda correspondem ao negócio.</li>
             </ol>
           ),
         },
@@ -149,9 +149,9 @@ export default function ListaCNAEPage() {
             <ol>
               <li><strong>Descreva a atividade real em uma frase.</strong> &quot;Fábrica de embalagem plástica&quot;, &quot;Consultoria em SST&quot;, &quot;Loja de roupa feminina&quot;.</li>
               <li><strong>Procure no site da Receita</strong> ou IBGE pela palavra-chave principal. Geralmente caem 5-10 candidatos.</li>
-              <li><strong>Leia a descrição completa de cada candidato</strong> — não só o título. As descrições têm exemplos do que está incluído e do que não está.</li>
-              <li><strong>Verifique o grau de risco</strong> de cada candidato — pode mudar substancialmente o custo da operação.</li>
-              <li><strong>Confirme com contador</strong>. CNAE tem implicação tributária — a escolha errada pode te tirar do Simples ou aumentar imposto sem você perceber.</li>
+              <li><strong>Leia a descrição completa de cada candidato:</strong> o título sozinho pode esconder inclusões e exclusões importantes.</li>
+              <li><strong>Verifique o grau de risco:</strong> ele participa do dimensionamento de obrigações de SST.</li>
+              <li><strong>Confirme com o contador:</strong> o CNAE tem repercussões cadastrais e tributárias.</li>
               <li><strong>Confirme com consultor de SST</strong>. O enquadramento ajuda a dimensionar SESMT e CIPA, mas PGR, PCMSO e treinamentos também precisam refletir os riscos reais da operação.</li>
             </ol>
           ),
@@ -172,11 +172,11 @@ export default function ListaCNAEPage() {
         },
         {
           q: 'Como mudar o CNAE da empresa?',
-          a: 'Para empresa LTDA ou EIRELI, é alteração contratual via Junta Comercial. Para MEI, alteração no Portal do Empreendedor. A mudança reflete automaticamente em CNPJ, alvará e demais cadastros. Em geral, contador faz junto com a próxima alteração contratual.',
+          a: 'O procedimento depende da natureza jurídica e dos órgãos envolvidos. Sociedades costumam precisar de alteração do ato constitutivo e registro na Junta Comercial; o MEI usa o Portal do Empreendedor. EIRELIs foram transformadas em sociedades limitadas por força da Lei 14.195/2021. Confirme os reflexos em CNPJ, licenças e cadastros com o contador.',
         },
         {
           q: 'Trocar CNAE muda imposto pago no passado?',
-          a: 'Não retroativamente. A mudança de CNAE vale a partir da data da alteração. Mas se a Receita auditar e concluir que o CNAE estava errado durante anos, pode haver enquadramento retroativo com cobrança de diferença e multa.',
+          a: 'A alteração cadastral tem uma data própria, mas ela não apaga eventual divergência anterior entre a atividade declarada e a atividade exercida. Os efeitos tributários precisam ser avaliados pelo contador no caso concreto.',
         },
         {
           q: 'CNAE define o sindicato?',

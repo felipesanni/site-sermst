@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function EspirometriaOcupacionalPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       badgeText="Exame Complementar"
@@ -34,7 +34,7 @@ export default function EspirometriaOcupacionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-06',
+        dateModified: '2026-07-13',
       }}
       readingTime="7 min"
       h1="Espirometria ocupacional: quando a empresa precisa, o que mede e onde fazer em São Paulo"
@@ -131,7 +131,7 @@ export default function EspirometriaOcupacionalPage() {
           body: (
             <>
               <p>
-                O resultado da espirometria é um dado que o médico do trabalho usa ao emitir o ASO. Quando o exame faz parte do protocolo do PCMSO para aquela função, o médico o avalia junto com os demais dados clínicos antes de emitir a conclusão de apto ou com restrições.
+                O resultado da espirometria é um dado que o médico usa na avaliação ocupacional. Quando o exame faz parte do PCMSO, ele é analisado com os demais dados clínicos antes da conclusão de apto ou inapto para a função.
               </p>
               <p>
                 A validade do monitoramento respiratório ao longo do tempo depende de o exame ser feito de forma padronizada em todos os momentos do vínculo. Resultados obtidos com técnica inconsistente ou em equipamentos sem calibração adequada não são comparáveis entre si e perdem o valor diagnóstico.

@@ -3,7 +3,7 @@
 /**
  * Route-level error boundary (Next.js App Router).
  *
- * Detecta ChunkLoadError — causado por chunks JS obsoletos após um novo deploy —
+ * Detecta ChunkLoadError: causado por chunks JS obsoletos após um novo deploy :
  * e recarrega a página automaticamente (equivalente a um F5).
  * A flag sessionStorage evita loop infinito caso o reload não resolva.
  */
@@ -35,7 +35,7 @@ export default function Error({
           return;
         }
       } catch {
-        // sessionStorage indisponível — tenta reload mesmo assim (uma vez)
+        // sessionStorage indisponível: tenta reload mesmo assim (uma vez)
         window.location.reload();
       }
     }

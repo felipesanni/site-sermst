@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function CatAcidenteTrabalhoPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub RH e DP"
+      hubLabel="RH e DP"
       hubLabelShort="Voltar para RH"
       hubHref="/rh"
       pageUrl="https://sermst.com.br/rh/cat-acidente-de-trabalho"
@@ -34,7 +34,7 @@ export default function CatAcidenteTrabalhoPage() {
       }}
       readingTime="10 min"
       h1="CAT: acidente de trabalho, quando emitir e quais os riscos para a empresa"
-      intro="A CAT é a Comunicação de Acidente de Trabalho. Ela deve ser emitida quando ocorre acidente de trabalho, acidente de trajeto quando aplicável, suspeita ou confirmação de doença ocupacional. O problema para a empresa quase nunca é a CAT em si: é emitir tarde, omitir informação ou não investigar o caso."
+      intro="A CAT é a Comunicação de Acidente de Trabalho. Ela deve ser emitida nos acidentes de trabalho e de trajeto e nos casos de doença profissional ou do trabalho, observadas as informações disponíveis. Veja os prazos, o envio e as providências que precisam acompanhar o registro."
       quickAnswer={
         <p>
           A empresa deve emitir CAT até o primeiro dia útil seguinte ao acidente. Em caso de morte, a comunicação deve ser imediata. Se a empresa não emitir, trabalhador, dependentes, sindicato, médico ou autoridade pública podem registrar.

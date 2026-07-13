@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function ExameRetornoAoTrabalhoPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       badgeText="Saúde Ocupacional"
@@ -34,16 +34,16 @@ export default function ExameRetornoAoTrabalhoPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-06',
+        dateModified: '2026-07-13',
       }}
       readingTime="7 min"
       h1="Exame de retorno ao trabalho: quando é obrigatório, o que avalia e como fazer"
-      intro="O exame de retorno ao trabalho é a avaliação médica exigida pela NR-07 antes que o trabalhador reassuma suas atividades após afastamento prolongado. Ele não é formalidade: é a oportunidade de identificar se o trabalhador está de fato apto para retomar a função, se precisa de restrições temporárias e se há risco de reincidência que a empresa precisa documentar e gerenciar."
+      intro="O exame de retorno ao trabalho é a avaliação médica exigida pela NR-07 antes que o trabalhador reassuma suas atividades após afastamento igual ou superior a 30 dias por doença ou acidente. A avaliação define a aptidão e verifica se o retorno precisa ser gradativo."
       quickAnswer={
         <p>
           O <strong>exame de retorno ao trabalho</strong> é obrigatório após afastamento de{' '}
-          <strong>30 dias ou mais</strong> por doença, acidente ou parto. O ASO precisa ser emitido{' '}
-          <strong>no primeiro dia útil de retorno</strong>, antes de o trabalhador reassumir as atividades.
+          <strong>30 dias ou mais</strong> por doença ou acidente, de natureza ocupacional ou não. O exame clínico e o ASO devem ser concluídos{' '}
+          <strong>antes de o trabalhador reassumir suas funções</strong>.
           A SERMST realiza o exame em São Paulo com integração ao PCMSO e lançamento no eSocial.
         </p>
       }
@@ -60,7 +60,7 @@ export default function ExameRetornoAoTrabalhoPage() {
                 A avaliação considera tanto o estado clínico atual do trabalhador quanto as exigências da função. Um trabalhador que se afastou por hérnia de disco, por exemplo, pode estar clinicamente recuperado mas ainda com restrições de carga que tornam o retorno à função original incompatível sem adaptações.
               </p>
               <p>
-                Diferente do exame periódico, o retorno ao trabalho não tem periodicidade — ele é disparado por um evento específico: o afastamento. E diferente do admissional, ele pressupõe um histórico clínico anterior que o médico do trabalho deve considerar ao emitir o ASO.
+                Diferente do exame periódico, o retorno ao trabalho não tem periodicidade: ele é disparado por um evento específico: o afastamento. E diferente do admissional, ele pressupõe um histórico clínico anterior que o médico do trabalho deve considerar ao emitir o ASO.
               </p>
             </>
           ),
@@ -75,13 +75,12 @@ export default function ExameRetornoAoTrabalhoPage() {
               <ul>
                 <li><strong>Doença ou lesão não relacionada ao trabalho:</strong> afastamento por INSS (auxílio-doença previdenciário, B-31) com duração igual ou superior a 30 dias.</li>
                 <li><strong>Acidente de trabalho ou doença ocupacional:</strong> afastamento por INSS (auxílio-doença acidentário, B-91) com duração igual ou superior a 30 dias.</li>
-                <li><strong>Licença-maternidade:</strong> após o afastamento pelo parto, o retorno ao trabalho exige o exame antes de reassumir as atividades.</li>
               </ul>
               <p>
                 O prazo de 30 dias é contado a partir do início do afastamento, não da alta médica. Um trabalhador que ficou afastado por 45 dias e recebeu alta precisa fazer o exame de retorno antes de voltar a trabalhar, mesmo que a alta previdenciária já tenha sido emitida.
               </p>
               <p>
-                O médico do trabalho pode, a seu critério, exigir o exame de retorno também em afastamentos de menos de 30 dias quando julgar que o estado de saúde do trabalhador ou o risco da função justificam a avaliação.
+                Em afastamentos menores, a organização ainda pode encaminhar o trabalhador para avaliação clínica quando houver indicação médica ou preocupação com a compatibilidade entre o estado de saúde e a função. Isso não muda o limite que torna o exame de retorno obrigatório na NR-07.
               </p>
             </>
           ),
@@ -96,8 +95,8 @@ export default function ExameRetornoAoTrabalhoPage() {
               <ul>
                 <li><strong>Condição clínica atual:</strong> se o trabalhador está recuperado do quadro que gerou o afastamento e se há sequelas relevantes para a função.</li>
                 <li><strong>Compatibilidade com a função:</strong> se as exigências físicas, cognitivas e emocionais da função são compatíveis com o estado atual do trabalhador.</li>
-                <li><strong>Necessidade de restrições:</strong> se o retorno pode ser feito integralmente ou se há atividades específicas que precisam ser temporariamente limitadas.</li>
-                <li><strong>Risco de reincidência:</strong> especialmente importante em afastamentos por lesões musculoesqueléticas, distúrbios psicossociais e doenças cardiovasculares — condições com alta taxa de recorrência se o ambiente de trabalho não for adaptado.</li>
+                <li><strong>Retorno gradativo:</strong> se a retomada pode ocorrer integralmente ou se precisa de um plano progressivo, como prevê o item 7.5.9.1 da NR-07.</li>
+                <li><strong>Risco de reincidência:</strong> especialmente importante em afastamentos por lesões musculoesqueléticas, distúrbios psicossociais e doenças cardiovasculares: condições com alta taxa de recorrência se o ambiente de trabalho não for adaptado.</li>
                 <li><strong>Necessidade de exames complementares:</strong> em retornos após afastamentos longos ou por condições específicas, o médico pode solicitar exames atualizados antes de emitir o ASO de apto.</li>
               </ul>
             </>
@@ -108,13 +107,13 @@ export default function ExameRetornoAoTrabalhoPage() {
           body: (
             <>
               <p>
-                O exame de retorno ao trabalho precisa ser registrado no eSocial por meio do evento S-2220 (monitoramento da saúde do trabalhador). O lançamento deve ser feito antes ou no dia do retorno às atividades — nunca retroativo de forma habitual.
+                Quando o exame gera ASO, as informações são enviadas ao eSocial pelo evento S-2220 dentro do prazo aplicável. O envio deve reproduzir o exame efetivamente realizado; ele não substitui a avaliação clínica que precisa acontecer antes da reassunção da função.
               </p>
               <p>
-                Empresas que permitem que o trabalhador retome as atividades antes do ASO de retorno ficam em dupla exposição: descumprem a NR-07 e têm a inconsistência registrada no eSocial SST, que é auditável pelo Ministério do Trabalho e Emprego e pelo INSS.
+                Se o trabalhador reassume antes da avaliação, a empresa deixa de cumprir a sequência prevista na NR-07 e cria divergência entre a rotina real, o ASO e o histórico informado no eSocial.
               </p>
               <p>
-                Quando o afastamento foi por acidente de trabalho ou doença ocupacional (B-91), a empresa precisa verificar também se a CAT foi corretamente emitida e se o PPRA e o LTCAT foram revisados caso as condições de trabalho tenham relação com o afastamento.
+                Quando o afastamento decorreu de acidente de trabalho ou doença ocupacional, a empresa também precisa conferir a CAT e reavaliar o PGR e as medidas de prevenção relacionadas ao caso. O LTCAT entra na análise quando houver reflexo previdenciário ligado à exposição.
               </p>
             </>
           ),
@@ -127,13 +126,13 @@ export default function ExameRetornoAoTrabalhoPage() {
                 O exame de retorno ao trabalho e a readaptação funcional são dois momentos distintos e não devem ser confundidos.
               </p>
               <p>
-                O retorno ao trabalho é a avaliação médica que autoriza o trabalhador a reassumir suas atividades após o afastamento. Ele resulta em um ASO e pode ter três desfechos: apto para a função original, apto com restrições temporárias, ou inapto temporário (quando o trabalhador ainda não tem condições de retornar).
+                O retorno ao trabalho avalia se o trabalhador pode reassumir suas atividades após o afastamento. O ASO registra a conclusão de <strong>apto</strong> ou <strong>inapto</strong> para a função. A avaliação médica também deve definir se existe necessidade de retorno gradativo.
               </p>
               <p>
                 A readaptação funcional é um processo mais amplo, geralmente conduzido pelo INSS no contexto da reabilitação profissional, para trabalhadores que não podem mais exercer a função original de forma permanente. Quando o INSS encaminha um trabalhador para reabilitação, a empresa recebe comunicação formal e precisa cooperar com a recolocação em função compatível.
               </p>
               <p>
-                Na prática, o médico do trabalho pode emitir ASO de apto com restrições permanentes — o que na prática sinaliza necessidade de mudança de função — sem que isso seja formalmente uma readaptação via INSS. O RH precisa estar atento às restrições registradas no ASO e agir em conformidade para evitar que o trabalhador continue exercendo atividades incompatíveis.
+                Recomendações de adaptação, limitações temporárias e encaminhamentos precisam ser tratados no plano de retorno e na documentação médica adequada. Não devem ser apresentados como uma terceira categoria padronizada de conclusão do ASO.
               </p>
             </>
           ),
@@ -149,7 +148,7 @@ export default function ExameRetornoAoTrabalhoPage() {
                 Do ponto de vista prático, o trabalhador não deve ser impedido de entrar na empresa, mas não deve reassumir as funções antes da avaliação médica. O RH deve ter um protocolo claro para esse cenário, especialmente em casos de retorno após afastamentos longos ou por condições graves.
               </p>
               <p>
-                A ausência do exame de retorno também impede o lançamento correto no eSocial e pode gerar divergência com os dados do INSS — o que atrai atenção em auditorias e processos de gestão de afastamentos.
+                A ausência do exame de retorno também impede o lançamento correto no eSocial e pode gerar divergência com os dados do INSS: o que atrai atenção em auditorias e processos de gestão de afastamentos.
               </p>
             </>
           ),
@@ -158,11 +157,11 @@ export default function ExameRetornoAoTrabalhoPage() {
       faq={[
         {
           q: 'O exame de retorno ao trabalho é obrigatório?',
-          a: 'Sim. A NR-07 exige o exame de retorno ao trabalho após afastamento de 30 dias ou mais por doença, acidente ou parto. O ASO deve ser emitido no primeiro dia útil de retorno, antes de o trabalhador reassumir as atividades.',
+          a: 'Sim, após afastamento igual ou superior a 30 dias por doença ou acidente, de natureza ocupacional ou não. O exame clínico deve acontecer antes de o trabalhador reassumir suas funções.',
         },
         {
           q: 'Qual o prazo para fazer o exame de retorno ao trabalho?',
-          a: 'O exame deve ser realizado no primeiro dia útil de retorno às atividades. O trabalhador não pode reassumir a função antes de ter o ASO de retorno emitido pelo médico do trabalho.',
+          a: 'A NR-07 não fixa um dia civil específico. Ela exige que o exame clínico seja realizado antes de o trabalhador reassumir suas funções após o afastamento abrangido pela regra.',
         },
         {
           q: 'O exame de retorno ao trabalho substitui o periódico?',

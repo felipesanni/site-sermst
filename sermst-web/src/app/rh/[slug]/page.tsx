@@ -95,21 +95,21 @@ export default async function RHDoresPage({
         <div className="max-w-4xl">
           <FadeIn direction="up">
             <div className="prose prose-lg prose-slate max-w-none prose-a:text-accent-pink prose-h2:font-black prose-h2:text-brand-900">
-              <h2>A dor que trava a operação</h2>
+              <h2>O problema na rotina</h2>
               <p className="rounded-r-lg border-l-4 border-accent-pink bg-slate-50 p-4 pl-6 text-xl font-medium italic text-slate-700">
                 {data.content.dor}
               </p>
 
               <h2 className="mt-12 flex items-center gap-2">
                 <ShieldCheck className="h-8 w-8 text-green-500" />
-                A resposta prática para o RH
+                Como organizar essa situação
               </h2>
               <p>{data.content.solucao}</p>
               <p>
                 Em empresas que dependem de admissão rápida, documentação coerente e rotina previsível de SST, o RH não precisa só entender a norma. Precisa traduzir a exigência em processo. Por isso a ligação entre medicina do trabalho, eSocial, PGR, PCMSO e fluxo de ASO precisa estar clara e operável.
               </p>
               <p>
-                Quando isso fica resolvido, três coisas mudam: o tempo entre admissão pedida e admissão concluída cai, o risco de evento eSocial fora do prazo desaparece, e a empresa passa a ter evidência técnica para defesa em fiscalização ou ação trabalhista.
+                Um fluxo bem definido reduz o tempo gasto com correções, ajuda a controlar os prazos do eSocial e mantém os registros técnicos disponíveis para fiscalizações, auditorias e análises trabalhistas.
               </p>
 
               <div className="my-10 rounded-2xl bg-brand-900 p-8 text-white shadow-xl">

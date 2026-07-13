@@ -184,11 +184,7 @@ function getNr05Summary(cnaeEntry: CnaeEntry | null, employees: number) {
   }
 
   if (nr05?.kind === 'representante') {
-    return `NR-05 ${reference}: tendência de representante da organização.`;
-  }
-
-  if (nr05?.kind === 'sesmt') {
-    return `NR-05 ${reference}: atribuições tendem a ser cobertas pelo SESMT.`;
+    return `NR-05 ${reference}: referência inicial de representante da organização; confirme se o estabelecimento é atendido por SESMT.`;
   }
 
   return reference ? `NR-05 ${reference}.` : '';

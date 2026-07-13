@@ -19,7 +19,7 @@ function getServiceSearchLabel(servico: string, fallback: string) {
     return 'Audiometria Ocupacional';
   }
   if (servico === 'ltcat-laudo-tecnico-previdenciario') {
-    return 'LTCAT — Laudo Técnico Ambiental';
+    return 'LTCAT: Laudo Técnico Ambiental';
   }
   if (servico === 'treinamentos-nrs-cipa-brigada') {
     return 'Treinamentos de NRs, CIPA e brigada';
@@ -30,7 +30,11 @@ function getServiceSearchLabel(servico: string, fallback: string) {
 
 function getLocalServiceDescription(servico: string, serviceName: string, local: (typeof localidades)[number]) {
   if (servico === 'exame-admissional-expresso') {
-    return `Precisa de clínica de exame admissional em ${local.nome}? A SERMST atende empresas que buscam ASO, exames ocupacionais, laboratório próprio e apoio ao eSocial.`;
+    if (local.slug === 'sao-paulo') {
+      return 'Agende exame admissional em São Paulo Centro para sua empresa. ASO no mesmo dia, laboratório próprio e apoio ao PCMSO e eSocial no Largo do Paissandu.';
+    }
+
+    return `Agende exame admissional em ${local.nome} para sua empresa, com ASO, exames ocupacionais, laboratório próprio e apoio ao PCMSO e eSocial.`;
   }
 
   if (servico === 'exame-toxicologico-clt') {
@@ -64,7 +68,7 @@ function getLocalServiceDescription(servico: string, serviceName: string, local:
   }
 
   if (servico === 'pgr-nr01-gerenciamento-riscos') {
-    const setor = local.setoresPredominantes?.[0]?.split('—')[0].trim() ?? 'indústria e serviços';
+    const setor = local.setoresPredominantes?.[0]?.split(':')[0].trim() ?? 'indústria e serviços';
     return `PGR em ${local.nome}: levantamento de riscos e elaboração do programa conforme NR-01 para empresas de ${setor.toLowerCase()}. Revisão no prazo, base técnica sólida e defesa em fiscalização.`;
   }
 
@@ -73,7 +77,7 @@ function getLocalServiceDescription(servico: string, serviceName: string, local:
   }
 
   if (servico === 'pericia-trabalhista-assistente-tecnico') {
-    return `Perícia trabalhista em ${local.nome}: assistência técnica especializada em ações de insalubridade, periculosidade, acidente de trabalho e descumprimento de NRs — suporte técnico para empresa e advogado.`;
+    return `Perícia trabalhista em ${local.nome}: assistência técnica especializada em ações de insalubridade, periculosidade, acidente de trabalho e descumprimento de NRs: suporte técnico para empresa e advogado.`;
   }
 
   return `${serviceName} em ${local.nome} para empresas que precisam de documentação técnica, orientação especializada e mais segurança na gestão de SST. Fale com a SERMST.`;
@@ -266,11 +270,11 @@ export default async function LocalSEOPage({
               <div className="mb-8 flex flex-wrap gap-2">
                 {data.isClinico ? (
                   <span className="rounded-full bg-accent-pink px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white shadow-lg">
-                    ASO no mesmo dia
+                    Atendimento ocupacional
                   </span>
                 ) : (
                   <span className="rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white backdrop-blur-md">
-                    Compliance e autoridade
+                    Responsabilidade técnica
                   </span>
                 )}
                 <span className="rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white backdrop-blur-md">
@@ -310,10 +314,10 @@ export default async function LocalSEOPage({
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-20 px-6 md:grid-cols-2">
           <FadeIn direction="right">
             <span className="mb-4 block text-xs font-black uppercase tracking-widest text-accent-pink">
-              Autoridade legal e técnica
+              Quando o serviço é necessário
             </span>
             <h2 className="mb-8 text-3xl font-black leading-tight text-brand-900 md:text-4xl">
-              {data.isClinico ? `Agilidade no ASO e compliance em ${local.nome}` : `Elaboração técnica e segurança jurídica em ${local.nome}`}
+              {data.isClinico ? `Atendimento integrado ao PCMSO em ${local.nome}` : `Escopo técnico e documentos em ${local.nome}`}
             </h2>
             <p className="mb-10 text-xl font-medium leading-relaxed text-slate-600">
               {data.quandoRequerido}
@@ -321,10 +325,10 @@ export default async function LocalSEOPage({
             <div className="rounded-2xl border-l-4 border-brand-900 bg-slate-50 p-6">
               <div className="mb-3 flex items-center gap-3 text-brand-900">
                 <ShieldCheck className="h-6 w-6" />
-                <span className="text-sm font-black uppercase">Leitura de especialista</span>
+                <span className="text-sm font-black uppercase">Contexto da operação</span>
               </div>
               <p className="font-medium italic text-slate-700">
-                {local.contextoEmpresarial} Unimos medicina ocupacional, engenharia de segurança e leitura regulatória para sustentar a rotina de SST com mais coerência.
+                {local.contextoEmpresarial} O atendimento considera a atividade, os riscos, o porte e os documentos que a empresa já possui.
               </p>
             </div>
           </FadeIn>
@@ -333,7 +337,7 @@ export default async function LocalSEOPage({
             <div className="rounded-[3rem] bg-brand-900 p-10 text-white shadow-2xl">
               <h3 className="mb-10 flex items-center gap-4 text-2xl font-black">
                 <Zap className="h-8 w-8 text-accent-pink" />
-                Diferenciais de autoridade
+                Como funciona o atendimento
               </h3>
               <ul className="space-y-6">
                 {data.content.beneficios.map((ben, i) => (
@@ -388,7 +392,7 @@ export default async function LocalSEOPage({
                     {seoCopy.bridgeSentence}
                   </p>
                   <p className="mt-5 text-base leading-relaxed text-slate-200 md:text-lg">
-                    Em 15 minutos a equipe entende o porte, a operação e o momento da empresa antes de indicar exame, laudo ou gestão SST. Sem proposta genérica, sem venda forçada — só o que realmente se aplica ao seu cenário.
+                    Em 15 minutos a equipe entende o porte, a operação e o momento da empresa antes de indicar exame, laudo ou gestão SST. Sem proposta genérica, sem venda forçada: só o que realmente se aplica ao seu cenário.
                   </p>
                   <div className="mt-8 border-t border-white/10 pt-8">
                     <a
@@ -409,7 +413,7 @@ export default async function LocalSEOPage({
       {isToxicologicoPage && (
         <section className="bg-slate-50 py-20">
           <div className="mx-auto w-full max-w-[1280px] px-6">
-            <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
+            <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">
               <FadeIn direction="right">
                 <div className="surface-panel h-full">
                   <span className="kicker">Para empresas</span>
@@ -440,7 +444,7 @@ export default async function LocalSEOPage({
                       A página também atende motorista pessoa física que precisa realizar o exame toxicológico ligado à renovação da CNH nas categorias C, D e E.
                     </p>
                     <p>
-                      Para esse público, normalmente importa saber três coisas: onde fazer o exame toxicológico em {local.nome}, qual é o valor e se o atendimento transmite segurança. Aqui, o valor de referência informado é de R$ 200,00.
+                      Antes de agendar, confirme o endereço da coleta em {local.nome}, a finalidade do exame, os documentos exigidos e o prazo estimado. O valor de referência informado é de R$ 200,00.
                     </p>
                   </div>
                 </div>
@@ -454,12 +458,12 @@ export default async function LocalSEOPage({
         <section className="bg-white py-20">
           <div className="mx-auto w-full max-w-[1280px] px-6">
             <div className="mx-auto max-w-5xl rounded-[2rem] border border-slate-200 bg-slate-50 p-8 lg:p-10">
-              <span className="kicker">Navegação estratégica</span>
+              <span className="kicker">Veja também</span>
               <h2 className="mb-6 text-3xl font-black text-brand-900 md:text-4xl">
-                Páginas relacionadas para quem está organizando admissão, SST e documentação
+                Outros serviços ligados à admissão e à documentação
               </h2>
               <p className="mb-8 max-w-3xl text-lg leading-relaxed text-slate-700">
-                Quem chega aqui muitas vezes também precisa resolver ASO, exames complementares ou alinhar o fluxo ocupacional com a admissão do motorista. Esses links ajudam a aprofundar a decisão sem sair do contexto certo.
+                A admissão do motorista também pode exigir ASO, exames complementares e organização do fluxo ocupacional. Consulte os serviços relacionados abaixo.
               </p>
               <div className="grid gap-6 md:grid-cols-3">
                 <Link
@@ -516,7 +520,7 @@ export default async function LocalSEOPage({
       )}
 
 
-      {/* Bloco de conteúdo único por cidade — diferencia cada URL das demais (anti-doorway) */}
+      {/* Bloco de conteúdo único por cidade: diferencia cada URL das demais (anti-doorway) */}
       {(local.perfilEconomico || local.setoresPredominantes || local.bairrosAtendidos || local.diferencialLocal) && (
         <section className="bg-slate-50 py-20">
           <div className="mx-auto w-full max-w-[1280px] px-6">
@@ -535,7 +539,7 @@ export default async function LocalSEOPage({
                   <div className="surface-panel h-full">
                     <span className="kicker">Perfil produtivo</span>
                     <h3 className="mb-5 text-2xl font-black text-brand-900">
-                      {local.nome} — economia e exposição a riscos SST
+                      {local.nome}: economia e exposição a riscos SST
                     </h3>
                     <p className="mb-6 text-lg leading-relaxed text-slate-700">{local.perfilEconomico}</p>
                     {local.setoresPredominantes && (
@@ -649,7 +653,7 @@ export default async function LocalSEOPage({
             <FadeIn direction="left" delay={0.2}>
               <div className="flex h-full flex-col justify-center rounded-[2.5rem] bg-brand-900 p-10 text-white shadow-2xl">
                 <Zap className="mb-6 h-12 w-12 text-accent-pink" />
-                <h3 className="mb-6 text-3xl font-black uppercase tracking-tighter">Transparência comercial</h3>
+                <h3 className="mb-6 text-3xl font-black uppercase tracking-tighter">Valores e escopo</h3>
                 <p className="mb-8 border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed opacity-90">
                   {data.expectativaCusto || 'Orçamentos personalizados para o CNPJ de sua empresa.'}
                 </p>
@@ -671,12 +675,12 @@ export default async function LocalSEOPage({
                   href="/normas/nr-05-cipa"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Ponte normativa</span>
+                  <span className="kicker">Base normativa</span>
                   <h2 className="mb-5 text-3xl font-black text-brand-900 md:text-4xl">
                     NR-05, CIPA e designado: quando o treinamento deixa de ser opcional
                   </h2>
                   <p className="leading-relaxed text-slate-700">
-                    Se a empresa ainda está tentando entender obrigatoriedade, eleição, designado e carga horária por grau de risco, a página da NR-05 organiza esse entendimento antes da contratação.
+                    Consulte os critérios de obrigatoriedade, processo eleitoral, representante nomeado e carga horária por grau de risco antes de organizar a turma.
                   </p>
                   <span className="mt-6 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Ler guia da NR-05
@@ -705,6 +709,25 @@ export default async function LocalSEOPage({
                   </span>
                 </Link>
               </FadeIn>
+
+              <FadeIn direction="up" delay={0.16}>
+                <Link
+                  href="/normas/nr-18-construcao-civil"
+                  className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="kicker">Construção civil</span>
+                  <h2 className="mb-5 text-3xl font-black text-brand-900 md:text-4xl">
+                    NR-18: treinamento e prevenção em cada fase da obra
+                  </h2>
+                  <p className="leading-relaxed text-slate-700">
+                    Entenda quando a capacitação básica da NR-18 precisa ser combinada com NR-35, NR-10 e outros controles previstos no PGR do canteiro.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                    Ler guia da NR-18
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -719,12 +742,12 @@ export default async function LocalSEOPage({
                   href="/normas/o-que-e-nr-07"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Ponte normativa</span>
+                  <span className="kicker">Base normativa</span>
                   <h2 className="mb-5 text-3xl font-black text-brand-900 md:text-4xl">
                     NR-07, ASO e exames: a base legal por trás do PCMSO
                   </h2>
                   <p className="leading-relaxed text-slate-700">
-                    Se a empresa ainda está consolidando entendimento sobre obrigação, monitoramento da saúde e coerência com eSocial, a melhor leitura complementar é a página da NR-07.
+                    Consulte as exigências da NR-07 sobre PCMSO, acompanhamento da saúde, exames ocupacionais e registros relacionados ao eSocial.
                   </p>
                   <span className="mt-6 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
                     Ler guia da NR-07
@@ -739,13 +762,13 @@ export default async function LocalSEOPage({
                   className="group h-full rounded-[2rem] bg-brand-900 p-8 text-white transition-all hover:-translate-y-1 hover:shadow-xl lg:p-10"
                 >
                   <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-                    Intenção de significado
+                    Definição rápida
                   </span>
                   <h2 className="mb-5 text-3xl font-black md:text-4xl">
-                    O que significa PCMSO e quando essa busca ainda não é comercial
+                    O que significa PCMSO
                   </h2>
                   <p className="leading-relaxed text-slate-200">
-                    A definição curta ajuda a separar a busca conceitual da empresa que já quer revisar ou contratar o programa. Isso reduz ambiguidade e fortalece o cluster.
+                    Entenda a finalidade do programa, quem precisa elaborá-lo e como ele se relaciona com o PGR, os exames ocupacionais e o eSocial.
                   </p>
                   <span className="mt-6 inline-flex items-center gap-2 font-bold text-white transition-colors group-hover:text-accent-pink">
                     Ver definição rápida
@@ -767,7 +790,7 @@ export default async function LocalSEOPage({
                   href="/normas/ppp-eletronico"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <span className="kicker">Ponte previdenciária</span>
+                  <span className="kicker">Relação com o PPP</span>
                   <h2 className="mb-5 text-3xl font-black text-brand-900 md:text-4xl">
                     PPP eletrônico, S-2240 e aposentadoria especial: a camada que o LTCAT sustenta
                   </h2>
@@ -879,7 +902,7 @@ export default async function LocalSEOPage({
           <div className="absolute -mr-48 -mt-48 right-0 top-0 h-96 w-96 rounded-full bg-accent-pink/20 blur-[100px]"></div>
           <div className="relative z-10">
             <h2 className="mb-8 text-4xl font-black leading-tight md:text-6xl">
-              Escolha uma referência em SST <br /> para sua empresa em {local.nome}.
+              Organize o atendimento de SST <br /> da sua empresa em {local.nome}.
             </h2>
             <div className="flex flex-col justify-center gap-6 md:flex-row">
               <a href={`https://wa.me/5511915146447?text=${encodeURIComponent(waMessage)}`} className="btn-primary-safe-lg px-16 py-6 text-2xl font-black shadow-2xl hover:scale-105 active:scale-95">
@@ -888,7 +911,7 @@ export default async function LocalSEOPage({
             </div>
             {!local.isHub && (
               <p className="mt-12 flex items-center justify-center gap-2 text-sm font-medium text-slate-400">
-                <Navigation className="h-4 w-4" /> Atendimento centralizado para a Grande SP a {local.distanciaMedia} de você.
+                <Navigation className="h-4 w-4" /> Atendimento centralizado para empresas da Grande São Paulo.
               </p>
             )}
           </div>

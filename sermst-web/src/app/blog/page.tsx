@@ -20,22 +20,22 @@ export const metadata: Metadata = {
   },
 };
 
-const hubs = [
+const contentAreas = [
   {
     href: '/empresario',
-    label: 'Hub Empresario',
+    label: 'Conteúdo para empresários',
     description:
-      'Conteudo para empresarios que ja operam, contratam e precisam entender regularizacao, documentos, rotina de equipe e riscos que acabam levando a RH, eSocial e SST.',
+      'Guias para empresários que já operam, contratam e precisam entender regularização, documentos, rotina de equipe, RH, eSocial e SST.',
   },
   {
     href: '/saude',
-    label: 'Hub Saúde Ocupacional',
+    label: 'Saúde Ocupacional',
     description:
       'Guias técnicos sobre medicina do trabalho, PCMSO, ASO, exames admissionais, exame demissional, EPIs e gestão de SST. Conteúdo voltado para médicos do trabalho, gestores de RH e responsáveis pelo DP.',
   },
   {
     href: '/rh',
-    label: 'Hub RH e Departamento Pessoal',
+    label: 'RH e Departamento Pessoal',
     description:
       'Calculadora CNAE × Grau de Risco, guias sobre carta de demissão, responsabilidades do gerente em SST, como evitar processos trabalhistas, e tudo o que o DP precisa saber sobre obrigações de SST e eSocial.',
   },
@@ -43,7 +43,7 @@ const hubs = [
     href: '/normas',
     label: 'Normas Regulamentadoras',
     description:
-      'Explicações objetivas das principais NRs — NR-01 (PGR), NR-07 (PCMSO), NR-10, NR-15, NR-16, NR-17, NR-18 e NR-35 — com foco no que a empresa precisa documentar e quais as penalidades pelo descumprimento.',
+      'Explicações objetivas das principais NRs: NR-01 (PGR), NR-07 (PCMSO), NR-10, NR-15, NR-16, NR-17, NR-18 e NR-35: com foco no que a empresa precisa documentar e quais as penalidades pelo descumprimento.',
   },
   {
     href: '/dicionario',
@@ -66,54 +66,54 @@ export default function BlogPage() {
             de empresas que precisam entender obrigações legais sem depender de jargão jurídico.
           </p>
           <p className="max-w-2xl text-slate-600 leading-relaxed mb-12">
-            O conteúdo está organizado em cinco hubs temáticos — cada um com guias práticos, calculadoras e
+            O conteúdo está organizado em cinco áreas temáticas, cada uma com guias práticos, calculadoras e
             referências legais atualizadas. Escolha o tema que mais se aplica à sua necessidade.
           </p>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.1}>
           <div className="mb-12 rounded-[2rem] border border-brand-900/10 bg-white p-8 shadow-sm">
-            <h2 className="mb-4 text-2xl font-black text-brand-900">Como usar este hub de conteúdo</h2>
+            <h2 className="mb-4 text-2xl font-black text-brand-900">Como encontrar o conteúdo certo</h2>
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
                 Este espaço funciona como uma porta de entrada para empresas que precisam entender saúde e segurança do
-                trabalho com clareza prática. Em vez de reunir textos genéricos, a SERMST organiza o conteúdo por intenção
-                real de busca: universo do empresário, saúde ocupacional, rotina de RH e departamento pessoal, normas
+                trabalho com clareza prática. A SERMST organiza o conteúdo por assunto: universo do empresário, saúde
+                ocupacional, rotina de RH e departamento pessoal, normas
                 regulamentadoras e conceitos técnicos que aparecem em laudos, eventos do eSocial e fiscalizações.
               </p>
               <p>
-                Se a sua dúvida começa antes mesmo de SST aparecer no radar, o hub de Empresário é a melhor porta de
-                entrada. Ele fala com quem já tem empresa em operação e precisa entender regularização, primeiro
+                Se a sua dúvida começa antes mesmo de SST aparecer no radar, comece pela área de Empresário. Ela atende
+                quem já tem empresa em operação e precisa entender regularização, primeiro
                 funcionário, documentos e riscos invisíveis.
               </p>
               <p>
-                Se a sua dúvida está ligada a exames, ASO, PCMSO, PGR, EPIs ou obrigações clínicas, o hub de Saúde
-                Ocupacional é o melhor caminho. Se o problema envolve carta de demissão, função de encarregado, treinamento
-                de gerentes, DET, DIR, eSocial SST ou estrutura documental da empresa, o hub de RH e DP concentra os
+                Se a sua dúvida está ligada a exames, ASO, PCMSO, PGR, EPIs ou obrigações clínicas, consulte Saúde
+                Ocupacional. Se o problema envolve carta de demissão, função de encarregado, treinamento
+                de gerentes, DET, DIR, eSocial SST ou estrutura documental da empresa, a área de RH e DP reúne os
                 materiais mais úteis para decisão.
               </p>
               <p>
-                A ideia é simples: ajudar o gestor a entender o risco, o documento exigido, a obrigação aplicável e o que
-                costuma gerar multa ou passivo quando a operação segue sem critério técnico. Assim, cada página do site deixa
-                de ser só conteúdo informativo e passa a funcionar como apoio real para tomada de decisão em SST.
+                Os materiais ajudam o gestor a entender o risco, o documento exigido, a obrigação aplicável e as falhas que
+                costumam gerar multa ou passivo. Com essas informações, fica mais fácil decidir o que precisa ser corrigido
+                na rotina de SST.
               </p>
             </div>
           </div>
         </FadeIn>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {hubs.map((hub, i) => (
-            <FadeIn key={hub.href} delay={i * 0.1}>
+          {contentAreas.map((area, i) => (
+            <FadeIn key={area.href} delay={i * 0.1}>
               <Link
-                href={hub.href}
+                href={area.href}
                 className="group flex flex-col bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 hover:border-accent-pink/30 transition-all duration-300"
               >
                 <h2 className="text-xl font-black text-brand-900 mb-3 group-hover:text-accent-pink transition-colors">
-                  {hub.label}
+                  {area.label}
                 </h2>
-                <p className="text-slate-600 leading-relaxed text-sm flex-grow">{hub.description}</p>
+                <p className="text-slate-600 leading-relaxed text-sm flex-grow">{area.description}</p>
                 <span className="mt-6 text-xs font-black uppercase tracking-widest text-accent-pink">
-                  Acessar hub →
+                  Ver conteúdos →
                 </span>
               </Link>
             </FadeIn>

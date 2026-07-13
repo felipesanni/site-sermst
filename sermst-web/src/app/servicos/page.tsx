@@ -9,14 +9,14 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 export const metadata = {
   title: 'Exames Admissionais e Laudos SST em São Paulo | SERMST',
   description:
-    'Central de serviços da SERMST em Medicina e Segurança do Trabalho: exames admissionais, periódicos e gestão de PGR, PCMSO, LTCAT e eSocial.',
+    'Exames ocupacionais, PGR, PCMSO, LTCAT e eSocial para empresas em São Paulo. Veja os serviços e fale com a equipe técnica da SERMST.',
   alternates: {
     canonical: 'https://sermst.com.br/servicos',
   },
   openGraph: {
     title: 'Exames Admissionais e Laudos SST em São Paulo | SERMST',
     description:
-      'Central de serviços da SERMST em Medicina e Segurança do Trabalho: exames admissionais, periódicos e gestão de PGR, PCMSO, LTCAT e eSocial.',
+      'Exames ocupacionais, PGR, PCMSO, LTCAT e eSocial para empresas em São Paulo. Veja os serviços e fale com a equipe técnica da SERMST.',
     url: 'https://sermst.com.br/servicos',
     type: 'website' as const,
     locale: 'pt_BR',
@@ -110,13 +110,13 @@ export default function ServicosIndexPage() {
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
               <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.18em] text-accent-pink">
-                Busca de alta concorrência
+                Atendimento para empresas e condutores
               </span>
               <h2 className="text-2xl font-black text-brand-900">
                 Exame toxicológico para empresas, motoristas e CNH C, D e E
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Página dedicada para quem quer entender atendimento, valor e aplicação do exame toxicológico em situações como admissão, demissão ou renovação da habilitação.
+                Consulte quando o exame se aplica, quem pode ser atendido, o valor de referência e as orientações para admissão, desligamento ou renovação da habilitação.
               </p>
             </div>
             <Link href="/servicos/exame-toxicologico-clt/sao-paulo" className="btn-primary-safe w-full lg:w-auto">
@@ -167,26 +167,25 @@ export default function ServicosIndexPage() {
 
         <div className="mb-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
           <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-            Atalhos para os servicos mais conectados
+            Serviços relacionados
           </span>
           <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
-            Exames, laudos e assistencia tecnica em uma mesma trilha
+            Serviços que costumam ser avaliados em conjunto
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-700">
-            Estes links ajudam a conectar paginas comerciais que costumam ser avaliadas em conjunto
-            quando a empresa esta regularizando SST, exames ocupacionais, eSocial ou passivo
-            trabalhista.
+            Consulte exames, programas, laudos e assistência técnica de acordo com a necessidade da
+            empresa. O escopo de cada serviço informa o que está incluído e quais dados precisam ser enviados.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               { href: '/servicos/exame-admissional-expresso/sao-paulo', label: 'Exame admissional expresso' },
-              { href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo', label: 'Empresa de seguranca do trabalho' },
+              { href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo', label: 'Empresa de segurança do trabalho' },
               { href: '/servicos/audiometria-ocupacional-clinica/sao-paulo', label: 'Audiometria ocupacional' },
-              { href: '/servicos/exame-toxicologico-clt/sao-paulo', label: 'Exame toxicologico' },
+              { href: '/servicos/exame-toxicologico-clt/sao-paulo', label: 'Exame toxicológico' },
               { href: '/servicos/exames-complementares-laboratoriais/sao-paulo', label: 'Exames complementares' },
-              { href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo', label: 'LTCAT previdenciario' },
+              { href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo', label: 'LTCAT previdenciário' },
               { href: '/servicos/pcmso-nr07-programa/sao-paulo', label: 'PCMSO NR-07' },
-              { href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo', label: 'Pericia trabalhista' },
+              { href: '/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo', label: 'Perícia trabalhista' },
               { href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo', label: 'PGR NR-01' },
             ].map((item) => (
               <Link

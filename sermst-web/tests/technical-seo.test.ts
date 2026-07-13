@@ -3,12 +3,23 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import sitemap from '@/app/sitemap';
 import robots from '@/app/robots';
-import { localidades, servicosSEO } from '@/lib/data/seo-content';
+import { empresarioSEO, localidades, servicosSEO } from '@/lib/data/seo-content';
 import { buildLocalServiceCopy } from '@/lib/seo-copy';
+import { buildFrequentFaqs } from '@/lib/faq';
 
 const BASE_URL = 'https://sermst.com.br';
 
 describe('technical SEO discovery files', () => {
+  it('permite indexacao, snippets completos e previews grandes ao Googlebot', () => {
+    const layout = readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8');
+
+    expect(layout).toContain('googleBot: {');
+    expect(layout).toContain("'max-video-preview': -1");
+    expect(layout).toContain("'max-image-preview': 'large'");
+    expect(layout).toContain("'max-snippet': -1");
+    expect(layout).toContain('noimageindex: false');
+  });
+
   it('inclui todas as paginas regionais canonicas no sitemap', () => {
     const urls = new Set(sitemap().map((item) => item.url));
 
@@ -63,7 +74,27 @@ describe('technical SEO discovery files', () => {
           disallow: expect.arrayContaining(['/api/', '/cdn-cgi/']),
         }),
         expect.objectContaining({
+          userAgent: 'Claude-SearchBot',
+          allow: '/',
+          disallow: expect.arrayContaining(['/api/', '/cdn-cgi/']),
+        }),
+        expect.objectContaining({
+          userAgent: 'Claude-User',
+          allow: '/',
+          disallow: expect.arrayContaining(['/api/', '/cdn-cgi/']),
+        }),
+        expect.objectContaining({
           userAgent: 'OAI-SearchBot',
+          allow: '/',
+          disallow: expect.arrayContaining(['/api/', '/cdn-cgi/']),
+        }),
+        expect.objectContaining({
+          userAgent: 'Bingbot',
+          allow: '/',
+          disallow: expect.arrayContaining(['/api/', '/cdn-cgi/']),
+        }),
+        expect.objectContaining({
+          userAgent: 'Applebot',
           allow: '/',
           disallow: expect.arrayContaining(['/api/', '/cdn-cgi/']),
         }),
@@ -90,12 +121,20 @@ describe('technical SEO discovery files', () => {
     expect(llms).toContain(`${BASE_URL}/sitemap.xml`);
     expect(llms).toContain(`${BASE_URL}/robots.txt`);
     expect(llms).toContain(`${BASE_URL}/servicos/{servico}/{regiao}`);
-    expect(llms).toContain('Ultima atualizacao: 2026-07-08');
+    expect(llms).toContain('Ultima atualizacao: 2026-07-13 (rev. 11)');
     expect(llms).toContain('Orientacoes para mecanismos de IA');
+    expect(llms).toContain('As regras de acesso estao no robots.txt');
     expect(llms).toContain(`${BASE_URL}/servicos/empresa-seguranca-do-trabalho`);
     expect(llms).toContain(`${BASE_URL}/servicos/empresa-seguranca-do-trabalho/sao-paulo`);
     expect(llms).toContain(`${BASE_URL}/rh/calculadora-cnae-grau-de-risco`);
-    expect(llms).toContain(`${BASE_URL}/saude/importancia-do-exame-periodico`);
+    expect(llms).toContain(`${BASE_URL}/saude/gestao-sst`);
+    expect(llms).toContain(`${BASE_URL}/assinaturas`);
+    for (const slug of Object.keys(empresarioSEO)) {
+      expect(llms).toContain(`${BASE_URL}/empresario/${slug}`);
+    }
+    expect(llms).toContain(`${BASE_URL}/saude/exame-periodico-ocupacional`);
+    expect(llms).toContain(`${BASE_URL}/saude/exame-demissional`);
+    expect(llms).not.toContain(`${BASE_URL}/saude/importancia-do-exame-periodico`);
     expect(llms).toContain(`${BASE_URL}/saude/onde-fazer-audiometria-ocupacional-sao-paulo`);
     expect(llms).toContain(`${BASE_URL}/saude/doencas-ocupacionais`);
     expect(llms).toContain(`${BASE_URL}/saude/medico-do-trabalho`);
@@ -105,6 +144,27 @@ describe('technical SEO discovery files', () => {
     expect(llms).toContain('/servicos/pericia-trabalhista-assistente-tecnico/sao-paulo');
     expect(llms).toContain('santo-andre');
     expect(llms).toContain('barueri');
+  });
+
+  it('prepara o IndexNow sem misturar a chave publica com a API privada do Bing', () => {
+    const packageJson = JSON.parse(
+      readFileSync(join(process.cwd(), 'package.json'), 'utf8'),
+    ) as { scripts: Record<string, string> };
+    const indexNowScript = readFileSync(
+      join(process.cwd(), 'scripts', 'submit-indexnow.mjs'),
+      'utf8',
+    );
+    const publicKey = readFileSync(
+      join(process.cwd(), 'public', '8ebc0f4a388a422381f889c6be5d83c2.txt'),
+      'utf8',
+    ).trim();
+
+    expect(publicKey).toBe('8ebc0f4a388a422381f889c6be5d83c2');
+    expect(packageJson.scripts['indexnow:submit']).toBe('node scripts/submit-indexnow.mjs');
+    expect(indexNowScript).toContain('https://api.indexnow.org/indexnow');
+    expect(indexNowScript).toContain('A chave do IndexNow ainda não está publicada');
+    expect(indexNowScript).toContain('entry.lastModified >= since');
+    expect(indexNowScript).not.toContain('BING_WEBMASTER_API_KEY');
   });
 
   it('mantem links internos para paginas prioritarias apontadas pela auditoria sem poluir o footer', () => {
@@ -126,7 +186,7 @@ describe('technical SEO discovery files', () => {
       '/servicos/pcmso-nr07-programa',
       '/servicos/pericia-trabalhista-assistente-tecnico',
       '/servicos/pgr-nr01-gerenciamento-riscos',
-      '/saude/importancia-do-exame-periodico',
+      '/saude/exame-periodico-ocupacional',
       '/saude/onde-fazer-audiometria-ocupacional-sao-paulo',
       '/rh/cat-acidente-de-trabalho',
       '/saude/doencas-ocupacionais',
@@ -148,6 +208,20 @@ describe('technical SEO discovery files', () => {
     }
   });
 
+  it('mantem as acoes principais legiveis para agentes e tecnologias assistivas', () => {
+    const mobileNavigation = readFileSync(
+      join(process.cwd(), 'src', 'components', 'ui', 'mobile-navigation.tsx'),
+      'utf8',
+    );
+    const layout = readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8');
+
+    expect(mobileNavigation).toContain('aria-expanded={isOpen}');
+    expect(mobileNavigation).toContain('aria-controls="mobile-navigation-panel"');
+    expect(mobileNavigation).toContain('role="dialog"');
+    expect(mobileNavigation).toContain('<button');
+    expect(layout).not.toContain('id="mobile-menu-open"');
+  });
+
   it('mantem paginas informacionais priorizadas pelo benchmark no sitemap', () => {
     const urls = new Set(sitemap().map((item) => item.url));
     const benchmarkDrivenPages = [
@@ -164,6 +238,44 @@ describe('technical SEO discovery files', () => {
     }
   });
 
+  it('publica apenas URLs canonicas no sitemap e lastmod somente nas paginas revisadas', () => {
+    const entries = sitemap();
+    const urls = entries.map((entry) => entry.url);
+
+    expect(new Set(urls).size).toBe(urls.length);
+    expect(urls).toContain(`${BASE_URL}/normas/o-que-e-nr-07`);
+    expect(urls).toContain(`${BASE_URL}/saude/exame-demissional`);
+    expect(urls).toContain(`${BASE_URL}/saude/exame-periodico-ocupacional`);
+    expect(urls).not.toContain(`${BASE_URL}/saude/exame-demissional-guia`);
+    expect(urls).not.toContain(`${BASE_URL}/saude/importancia-do-exame-periodico`);
+
+    const nr07 = entries.find((entry) => entry.url === `${BASE_URL}/normas/o-que-e-nr-07`);
+    const demissional = entries.find((entry) => entry.url === `${BASE_URL}/saude/exame-demissional`);
+    const empresarioHub = entries.find((entry) => entry.url === `${BASE_URL}/empresario`);
+    const unchanged = entries.find((entry) => entry.url === `${BASE_URL}/quem-somos`);
+
+    expect(nr07?.lastModified).toBe('2026-07-13');
+    expect(demissional?.lastModified).toBe('2026-07-13');
+    expect(empresarioHub?.lastModified).toBe('2026-07-13');
+    for (const slug of Object.keys(empresarioSEO)) {
+      const article = entries.find(
+        (entry) => entry.url === `${BASE_URL}/empresario/${slug}`,
+      );
+      expect(article?.lastModified).toBe('2026-07-13');
+    }
+    expect(unchanged?.lastModified).toBeUndefined();
+  });
+
+  it('nao completa FAQs editoriais com perguntas genericas por padrao', () => {
+    const editorialFaq = [{ q: 'Qual é o prazo correto?', a: 'O prazo depende da regra aplicável.' }];
+    const result = buildFrequentFaqs(editorialFaq, {
+      context: 'article',
+      topic: 'Exame ocupacional',
+    });
+
+    expect(result).toEqual(editorialFaq);
+  });
+
   it('mantem copy local unica nas paginas geo prioritarias de Sao Bernardo', () => {
     const saoBernardo = localidades.find((localidade) => localidade.slug === 'sao-bernardo');
 
@@ -178,7 +290,7 @@ describe('technical SEO discovery files', () => {
       saoBernardo!,
     ).localParagraphs.join(' ');
 
-    expect(admissionalCopy).toContain('rotina mais industrial');
-    expect(audiometriaCopy).toContain('rotina fabril');
+    expect(admissionalCopy).toContain('montadoras, autopeças, metalurgia');
+    expect(audiometriaCopy).toContain('PCMSO de indústrias');
   });
 });

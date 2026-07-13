@@ -164,7 +164,7 @@ export default function DDSPage() {
           title: 'Como a SERMST ajuda a estruturar DDS',
           body: (
             <p>
-              A SERMST ajuda a empresa a transformar DDS em ferramenta de prevenção conectada ao PGR, aos treinamentos obrigatórios, aos acidentes anteriores e aos riscos reais da operação. Assim, o DDS deixa de ser uma lista assinada e passa a ser parte da cultura documentada de SST.
+              A SERMST pode organizar temas de DDS a partir do PGR, dos treinamentos aplicáveis, dos acidentes anteriores e dos riscos observados na operação. Os registros devem indicar data, tema, participantes e orientação transmitida.
             </p>
           ),
         },

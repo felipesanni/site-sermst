@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default function MedicinaDoTrabalhoPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/medicina-do-trabalho-guia"
       coverImage={{
@@ -36,17 +36,17 @@ export default function MedicinaDoTrabalhoPage() {
       }}
 
       h1="Medicina do Trabalho: o que é e o que toda empresa precisa saber"
-      intro="Medicina do trabalho não é só exame admissional. É a especialidade que conecta saúde do trabalhador, segurança jurídica da empresa e conformidade com o eSocial — e que, quando bem estruturada, reduz afastamento, processo e custo escondido."
+      intro="Medicina do trabalho não se resume ao exame admissional. A especialidade acompanha a relação entre saúde e trabalho, orienta o PCMSO e ajuda a empresa a organizar exames, registros e medidas preventivas."
       sections={[
         {
           title: 'O que é medicina do trabalho',
           body: (
             <>
               <p>
-                Medicina do trabalho é a especialidade médica focada na <strong>relação entre saúde humana e ambiente de trabalho</strong>. O médico do trabalho não trata doenças no sentido clínico convencional — ele identifica, avalia e controla os riscos que o trabalho pode causar à saúde do trabalhador, e define as medidas de prevenção e vigilância necessárias.
+                Medicina do trabalho é a especialidade médica dedicada à <strong>relação entre saúde e trabalho</strong>. O profissional avalia como os riscos ocupacionais podem afetar cada função, acompanha a saúde dos trabalhadores e orienta medidas de prevenção e vigilância.
               </p>
               <p>
-                Na prática, isso se traduz em: elaborar e coordenar o PCMSO, realizar e assinar os ASOs, participar da análise de acidentes de trabalho, emitir CAT, acompanhar afastamentos e retornos, e contribuir com a identificação de riscos à saúde no PGR.
+                Na prática, o médico responsável pode elaborar o PCMSO, realizar exames clínicos ocupacionais, emitir ASOs, acompanhar afastamentos e retornos e participar da análise de acidentes. A emissão da CAT cabe à empresa, embora o médico também possa registrá-la quando necessário.
               </p>
             </>
           ),
@@ -66,17 +66,17 @@ export default function MedicinaDoTrabalhoPage() {
                 <li>Enviar os eventos de SST correspondentes ao eSocial (S-2220, principalmente)</li>
               </ul>
               <p>
-                O não cumprimento dessas obrigações gera autuação do MTE, multas e — o que importa mais no longo prazo — elimina a defesa da empresa em ações trabalhistas por doença ocupacional.
+                O descumprimento pode gerar autuação, multa e inconsistências em discussões previdenciárias ou trabalhistas. Ter documentos, por si só, não resolve: eles precisam refletir o que acontece na operação.
               </p>
             </>
           ),
         },
         {
-          title: 'Medicina do trabalho x medicina clínica: a diferença que define responsabilidade',
+          title: 'Medicina do trabalho e medicina clínica: focos diferentes',
           body: (
             <>
               <p>
-                O médico clínico trata o paciente. O <strong>médico do trabalho avalia a aptidão</strong> do trabalhador para exercer uma função específica, considerando os riscos daquela atividade e o estado de saúde atual da pessoa.
+                Na assistência clínica, o foco principal é diagnosticar e tratar o paciente. Na medicina do trabalho, um dos focos é <strong>avaliar a aptidão</strong> para uma função específica, considerando o estado de saúde e os riscos ocupacionais. Isso não impede que o médico do trabalho também faça orientação clínica dentro de sua atuação profissional.
               </p>
               <p>
                 Isso tem implicação direta para a empresa: o ASO precisa registrar os dados do médico responsável pelo PCMSO, quando houver, e a assinatura do médico que realizou o exame clínico. Para o PCMSO, a organização deve indicar médico do trabalho responsável; se não houver esse profissional na localidade, a NR-07 admite médico de outra especialidade.
@@ -89,10 +89,10 @@ export default function MedicinaDoTrabalhoPage() {
           body: (
             <>
               <p>
-                O afastamento por doença ocupacional ou acidente de trabalho é um dos maiores custos escondidos da empresa: FGTS continua, estabilidade de 12 meses após retorno do acidente, impacto no FAP (Fator Acidentário de Prevenção) que eleva o RAT e o custo da folha.
+                Afastamentos relacionados ao trabalho podem trazer efeitos previdenciários, trabalhistas e operacionais. Conforme o caso, há recolhimento de FGTS durante o benefício acidentário, garantia provisória de emprego e possível repercussão nos indicadores usados no FAP.
               </p>
               <p>
-                O médico do trabalho bem integrado à operação identifica <strong>tendências antes de virar problema</strong>: trabalhadores com queixas recorrentes, funções com alta incidência de afastamento, riscos que o PGR mapeia mas que a operação não está controlando. Essa análise preventiva é o que separa uma empresa que gasta com SST de uma que investe.
+                Quando está integrado à operação, o médico consegue identificar <strong>tendências que merecem investigação</strong>: queixas recorrentes, funções com mais alterações nos exames ou riscos previstos no PGR que ainda não foram controlados. Esses sinais ajudam a priorizar medidas preventivas.
               </p>
             </>
           ),
@@ -102,15 +102,10 @@ export default function MedicinaDoTrabalhoPage() {
           body: (
             <>
               <p>
-                O SESMT (Serviço Especializado em Engenharia de Segurança e Medicina do Trabalho) é a equipe interna de saúde e segurança. A <strong>NR-04</strong> define a obrigatoriedade com base no número de empregados e no grau de risco do CNAE:
+                O SESMT (Serviço Especializado em Segurança e Medicina do Trabalho) reúne profissionais de SST. A <strong>NR-04</strong> define seu dimensionamento conforme o número de trabalhadores e o grau de risco da atividade principal do estabelecimento.
               </p>
-              <ul>
-                <li><strong>Grau de risco 1 e 2:</strong> obrigação começa em 50 a 100 funcionários, dependendo do grau.</li>
-                <li><strong>Grau de risco 3 e 4:</strong> obrigação começa em 50 funcionários.</li>
-                <li><strong>Empresas abaixo do limiar:</strong> podem terceirizar integralmente os serviços de medicina e segurança do trabalho.</li>
-              </ul>
               <p>
-                Empresas abaixo do limiar de SESMT obrigatório — que é a maioria das empresas brasileiras — devem contratar os serviços de uma clínica ou consultoria especializada, como a SERMST.
+                Os limites variam bastante entre os graus de risco e devem ser conferidos no Anexo II da norma. Uma empresa sem SESMT próprio continua responsável por cumprir as obrigações de SST e pode contratar profissionais ou serviços externos para executar parte desse trabalho.
               </p>
             </>
           ),
@@ -119,13 +114,13 @@ export default function MedicinaDoTrabalhoPage() {
           title: 'Como estruturar medicina do trabalho na prática',
           body: (
             <ol>
-              <li><strong>Indicar médico responsável pelo PCMSO</strong> — a organização deve indicar médico do trabalho; se não houver esse profissional na localidade, a NR-07 admite médico de outra especialidade.</li>
-              <li><strong>Fazer o PGR</strong> — identificação de riscos por cargo, base do PCMSO.</li>
-              <li><strong>Elaborar o PCMSO</strong> — com o médico, baseado nos riscos mapeados. Definir exames e periodicidade por cargo.</li>
-              <li><strong>Executar os exames</strong> — admissionais antes de contratar, periódicos no prazo, demissionais antes de encerrar o vínculo.</li>
-              <li><strong>Emitir e arquivar ASOs</strong> — com disponibilização comprovável ao trabalhador e envio das informações aplicáveis ao S-2220.</li>
-              <li><strong>Monitorar vencimentos</strong> — sistema de alerta para periódicos próximos do vencimento. Manter tabela atualizada por cargo.</li>
-              <li><strong>Relatório analítico anual do PCMSO</strong> — análise dos exames realizados no ano, tendências e propostas de melhoria.</li>
+              <li><strong>Indicar o médico responsável pelo PCMSO:</strong> quando o programa for exigido, a organização deve indicar médico do trabalho; se não houver esse profissional na localidade, a NR-07 admite médico de outra especialidade.</li>
+              <li><strong>Usar o PGR como base:</strong> os riscos ocupacionais identificados orientam o planejamento médico.</li>
+              <li><strong>Elaborar o PCMSO:</strong> definir os exames e a periodicidade adequada a cada função.</li>
+              <li><strong>Executar os exames no momento correto:</strong> o admissional ocorre antes de o empregado assumir as atividades. O demissional deve respeitar o prazo da NR-07 após o término do contrato.</li>
+              <li><strong>Emitir e manter os ASOs:</strong> disponibilizar o documento ao trabalhador e enviar ao eSocial as informações aplicáveis.</li>
+              <li><strong>Monitorar os prazos:</strong> acompanhar exames periódicos e mudanças que exijam revisão do programa.</li>
+              <li><strong>Preparar o relatório analítico:</strong> avaliar os resultados do programa a cada ano, ressalvadas as dispensas previstas na própria NR-07.</li>
             </ol>
           ),
         },
@@ -149,7 +144,7 @@ export default function MedicinaDoTrabalhoPage() {
         },
         {
           q: 'Qual a diferença entre medicina do trabalho e saúde ocupacional?',
-          a: 'Medicina do trabalho é a especialidade médica — foco nos exames, ASOs, PCMSO e avaliação de aptidão. Saúde ocupacional é o conceito mais amplo, que inclui ergonomia, higiene ocupacional, segurança do trabalho, psicologia organizacional. A medicina do trabalho é uma das peças da saúde ocupacional.',
+          a: 'Medicina do trabalho é a especialidade médica voltada à relação entre saúde e trabalho, incluindo PCMSO, exames ocupacionais e avaliação de aptidão. Saúde ocupacional é um campo mais amplo, que também envolve ergonomia, higiene ocupacional e segurança do trabalho.',
         },
       ]}
       sidebarTitle="Sua medicina do trabalho está cobrindo o que a lei exige?"

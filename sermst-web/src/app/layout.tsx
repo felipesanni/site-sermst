@@ -6,9 +6,10 @@ import { Suspense } from 'react'
 import './globals.css'
 import Script from 'next/script'
 import { RouteAnalyticsTracker } from '@/components/analytics/route-analytics-tracker'
-import { MobileMenuClose } from '@/components/ui/mobile-menu-close'
-import { WhatsAppHeaderTextLink, WhatsAppMobileLink, WhatsAppFloatingButton } from '@/components/ui/whatsapp-link'
+import { MobileNavigation } from '@/components/ui/mobile-navigation'
+import { WhatsAppHeaderTextLink, WhatsAppFloatingButton } from '@/components/ui/whatsapp-link'
 import { ScrollToTop } from '@/components/ui/scroll-to-top'
+import { institutionalDescription } from '@/lib/company-facts'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'optional' })
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading', display: 'optional' })
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://sermst.com.br'),
   title: 'SERMST | Gestão Ocupacional e Medicina do Trabalho',
   description:
-    'Há mais de 40 anos cuidando da saúde e segurança do trabalho do seu negócio. Prevenção de multas do eSocial, PCMSO, PGR e laudos técnicos.',
+    'Medicina do trabalho e gestão de SST para empresas, com mais de 55 anos de história. Exames ocupacionais, eSocial, PCMSO, PGR e laudos.',
   keywords: [
     'Medicina do Trabalho',
     'Segurança do Trabalho',
@@ -30,13 +31,24 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'SERMST' }],
   publisher: 'SERMST',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://sermst.com.br',
   },
   openGraph: {
     title: 'SERMST | Gestão Ocupacional',
-    description: 'Tecnologia e blindagem jurídica para seu negócio através da Medicina Corporativa.',
+    description: 'Medicina ocupacional e gestão de SST para empresas, com atendimento em São Paulo e apoio em todo o Brasil.',
     url: 'https://sermst.com.br',
     siteName: 'SERMST',
     images: [
@@ -82,12 +94,21 @@ const organizationSchema = {
     '@type': 'ImageObject',
     url: 'https://sermst.com.br/images/site/og-cover.jpg',
   },
-  description:
-    'Há mais de 40 anos prestando serviços de Medicina e Segurança do Trabalho para empresas de São Paulo e Grande ABC. PCMSO, PGR, LTCAT, ASO Expresso e Gestão eSocial.',
-  foundingDate: '1983',
+  description: institutionalDescription,
   telephone: '+55-11-91514-6447',
   email: 'comercial@sermst.com.br',
   medicalSpecialty: 'OccupationalMedicine',
+  knowsAbout: [
+    'Saúde ocupacional',
+    'Segurança do trabalho',
+    'Medicina do trabalho',
+    'PGR',
+    'PCMSO',
+    'LTCAT',
+    'eSocial SST',
+    'Exames ocupacionais',
+    'Treinamentos de Normas Regulamentadoras',
+  ],
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Largo do Paissandu, 72, 3º Andar, Conjunto 301',
@@ -127,6 +148,7 @@ const organizationSchema = {
     'https://www.instagram.com/sermstocupacional/',
     'https://www.facebook.com/sermstocupacional',
     'https://www.linkedin.com/company/sermst-gest%C3%A3o-ocupacional',
+    'https://www.youtube.com/@sermstocupacional',
   ],
   openingHoursSpecification: [
     {
@@ -159,9 +181,9 @@ const websiteSchema = {
 const strategicLinks = [
   { name: 'Exame Admissional Expresso', link: '/servicos/exame-admissional-expresso' },
   { name: 'Empresa de Segurança do Trabalho', link: '/servicos/empresa-seguranca-do-trabalho' },
-  { name: 'Servico de PGR NR-01', link: '/servicos/pgr-nr01-gerenciamento-riscos' },
+  { name: 'Serviço de PGR NR-01', link: '/servicos/pgr-nr01-gerenciamento-riscos' },
   { name: 'PCMSO e Saúde Ocupacional', link: '/servicos/pcmso-nr07-programa' },
-  { name: 'Servico de LTCAT previdenciario', link: '/servicos/ltcat-laudo-tecnico-previdenciario' },
+  { name: 'Serviço de LTCAT previdenciário', link: '/servicos/ltcat-laudo-tecnico-previdenciario' },
   { name: 'Gestão eSocial S-2220/S-2240', link: '/servicos/gestao-esocial-s2220-s2240' },
   { name: 'Audiometria Ocupacional', link: '/servicos/audiometria-ocupacional-clinica' },
   { name: 'Exame Toxicológico para CNH C, D e E', link: '/servicos/exame-toxicologico-clt' },
@@ -188,15 +210,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${outfit.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${outfit.variable} overflow-x-hidden`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c'),
+          }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema).replace(/</g, '\\u003c'),
+          }}
         />
       {/* ── ChunkLoadError auto-reload ──────────────────────────────────────
            Quando um deploy novo substitui os hashes dos chunks JS, o browser
@@ -295,7 +321,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
         }}
       />
       </head>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col overflow-x-hidden">
         <Suspense fallback={null}>
           <RouteAnalyticsTracker />
         </Suspense>
@@ -397,111 +423,10 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
               </div>
             </div>
 
-            <div className="md:hidden">
-              <div className="flex min-h-[74px] w-full items-center justify-between gap-3 bg-white py-3">
-                <input type="checkbox" id="mobile-menu-open" className="peer hidden" />
-                <Link href="/" className="flex items-center">
-                  <Image
-                    src="/images/site/logo-sermst-mobile.png"
-                    alt="SERMST Gestão Ocupacional"
-                    width={172}
-                    height={48}
-                    className="h-11 w-auto object-contain"
-                    priority
-                  />
-                </Link>
-
-                <div className="flex items-center gap-3">
-                  <a
-                    href="tel:+551132297567"
-                    aria-label="Ligar para SERMST"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-900 hover:bg-slate-50 active:scale-95"
-                  >
-                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                  </a>
-                  <label htmlFor="mobile-menu-open" className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-brand-900 text-white shadow-[0_10px_22px_-12px_rgba(11,19,60,0.8)] transition-all duration-200 peer-checked:opacity-0 hover:-translate-y-0.5 hover:bg-brand-800 active:scale-95">
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-                  </label>
-                </div>
-
-                <div className="fixed inset-0 z-50 flex translate-x-full flex-col overflow-y-auto bg-[#0B133C]/95 px-6 pb-20 pt-6 backdrop-blur-xl transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] peer-checked:translate-x-0">
-                  <div className="mb-10 flex items-center justify-between">
-                    <Image src="/images/site/logo-branco.png" alt="SERMST" width={130} height={40} className="h-10 w-auto" />
-                    <label htmlFor="mobile-menu-open" className="cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20">
-                      <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </label>
-                  </div>
-
-                  <div className="mb-10 grid grid-cols-2 gap-3">
-                    <a
-                      href="tel:+551132297567"
-                      className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold text-white"
-                    >
-                      <svg className="h-4 w-4 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                      Ligar
-                    </a>
-                    <WhatsAppMobileLink />
-                  </div>
-
-                  <Link
-                    href="/rh/calculadora-cnae-grau-de-risco"
-                    className="mb-8 flex items-start justify-between gap-4 rounded-3xl border border-accent-pink/25 bg-gradient-to-br from-accent-pink/18 via-accent-pink/10 to-white/5 px-5 py-5 text-white shadow-[0_20px_50px_-30px_rgba(248,67,101,0.75)]"
-                  >
-                    <div className="space-y-1">
-                      <p className="text-xs font-black uppercase tracking-[0.28em] text-accent-pink">Diagnóstico guiado</p>
-                      <p className="text-lg font-black leading-tight">Abrir Calculadora de Risco</p>
-                      <p className="text-sm leading-relaxed text-slate-300">
-                        Consulte CNPJ ou CNAE, veja grau de risco, RAT, SESMT e NR-05/CIPA antes de falar com o comercial.
-                      </p>
-                    </div>
-                    <svg className="mt-1 h-5 w-5 shrink-0 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                  </Link>
-
-                  <nav className="flex flex-col gap-6 text-xl font-medium text-white">
-                    <Link href="/" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      <span style={{ color: '#F84365' }}>Início</span>
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/quem-somos" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      Quem Somos (+40 anos)
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/servicos" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      Exames e Laudos
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/rh" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      RH e eSocial
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/saude" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      Saúde Ocupacional
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/normas" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      Normas Regulamentadoras
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/dicionario" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      Dicionário SST
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/assinaturas" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      Planos de SST
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                    <Link href="/contato" className="flex items-center justify-between border-b border-white/10 pb-4">
-                      Contato
-                      <svg className="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-                    </Link>
-                  </nav>
-                </div>
-              </div>
-            </div>
+            <MobileNavigation />
           </div>
         </header>
 
-        <MobileMenuClose />
         <main className="flex-1">{children}</main>
 
         <WhatsAppFloatingButton />
@@ -514,7 +439,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
               <div className="flex flex-col gap-8">
                 <Image src="/images/site/logo-branco.png" alt="SERMST" width={160} height={48} className="h-12 w-auto self-start object-contain" />
                 <p className="text-lg font-medium leading-relaxed text-slate-300">
-                  Há mais de 40 anos, a <span className="font-bold text-white">SERMST</span> é o pilar de segurança e saúde ocupacional para empresas que buscam <span className="font-black italic text-accent-pink underline decoration-accent-pink/30 underline-offset-4">menor exposição a multas, passivos trabalhistas e falhas operacionais em SST.</span>
+                  Há mais de 55 anos, a <span className="font-bold text-white">SERMST</span> acompanha empresas com medicina ocupacional e segurança do trabalho. A equipe ajuda a manter <span className="font-black italic text-accent-pink underline decoration-accent-pink/30 underline-offset-4">exames, laudos, treinamentos e prazos de SST organizados.</span>
                 </p>
               </div>
 
@@ -587,19 +512,19 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                   <li>
                     <Link href="/empresario" className="group flex items-center gap-3 text-sm text-slate-400 transition-colors hover:text-white">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent-pink/40 transition-colors group-hover:bg-accent-pink"></span>
-                      <span className="font-medium">Hub Empresário</span>
+                      <span className="font-medium">Conteúdo para empresários</span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/saude" className="group flex items-center gap-3 text-sm text-slate-400 transition-colors hover:text-white">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent-pink/40 transition-colors group-hover:bg-accent-pink"></span>
-                      <span className="font-medium">Hub Saúde Ocupacional</span>
+                      <span className="font-medium">Saúde Ocupacional</span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/rh" className="group flex items-center gap-3 text-sm text-slate-400 transition-colors hover:text-white">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent-pink/40 transition-colors group-hover:bg-accent-pink"></span>
-                      <span className="font-medium">Hub RH e DP</span>
+                      <span className="font-medium">RH e DP</span>
                     </Link>
                   </li>
                   <li>

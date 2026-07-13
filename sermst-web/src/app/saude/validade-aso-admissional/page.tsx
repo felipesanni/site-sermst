@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Validade do ASO admissional | SERMST',
   description:
-    'O ASO admissional não tem validade como certidão — vale para o momento da contratação. Veja quando refazer exames e a periodicidade correta do PCMSO.',
+    'O ASO admissional registra a aptidão no momento da contratação. Veja quando refazer exames e como a NR-07 define a periodicidade do acompanhamento.',
   alternates: { canonical: 'https://sermst.com.br/saude/validade-aso-admissional' },
   openGraph: {
     title: 'Validade do ASO admissional | SERMST',
@@ -41,7 +41,7 @@ const faqSchema = {
       name: 'Quando o colaborador precisa fazer novo exame após admitido?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O exame periódico é realizado conforme o cronograma do PCMSO da empresa, que varia conforme o grau de risco da atividade (NR-04) e os riscos do cargo. Para grau de risco 1, o periódico é geralmente bienal para trabalhadores até 45 anos. Para graus 3 e 4, é anual.',
+        text: 'O exame periódico segue o PCMSO. Pela NR-07, ocorre anualmente ou em intervalo menor para trabalhadores expostos a riscos identificados e classificados no PGR e para pessoas com doenças crônicas que aumentem a suscetibilidade. Para os demais, a regra geral é bienal.',
       },
     },
     {
@@ -49,7 +49,7 @@ const faqSchema = {
       name: 'O que acontece se o ASO periódico vencer sem ser renovado?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O colaborador fica em situação irregular no eSocial (evento S-2220 desatualizado), expondo a empresa a multa por descumprimento da NR-07. O Ministério do Trabalho pode autuar por cada trabalhador com exame vencido.',
+        text: 'O atraso deixa o monitoramento em desacordo com o cronograma do PCMSO, cria lacuna no histórico clínico ocupacional e pode gerar inconsistência entre a documentação mantida pela empresa e os eventos S-2220 enviados ao eSocial.',
       },
     },
   ],
@@ -61,7 +61,7 @@ export default function ValidadeAsoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlockbusterArticle
         coverImage={{ src: '/images/site/sermst-estrutura-medicina-ocupacional.png', alt: 'ASO admissional e validade do atestado de saúde ocupacional' }}
-        hubLabel="Hub de Saúde Ocupacional"
+        hubLabel="Saúde Ocupacional"
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/validade-aso-admissional"
@@ -71,10 +71,10 @@ export default function ValidadeAsoPage() {
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
           url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
           datePublished: '2026-06-01',
-          dateModified: '2026-06-01',
+          dateModified: '2026-07-13',
         }}
         h1="Validade do ASO admissional: por quanto tempo é válido?"
-        intro="O ASO admissional não tem 'validade' no sentido de prazo de expiração. Ele atesta a aptidão do trabalhador no momento da contratação. Depois da admissão, entra em cena o exame periódico — com periodicidade definida pelo PCMSO conforme o grau de risco da função."
+        intro="O ASO admissional não tem 'validade' como uma certidão. Ele registra a aptidão no momento da contratação. Depois da admissão, o trabalhador entra no cronograma do PCMSO. A periodicidade considera os riscos ocupacionais, as condições de saúde e o critério médico, não uma tabela antiga baseada apenas em idade ou grau de risco."
         sections={[
           {
             title: 'O ASO admissional não tem prazo de vencimento',
@@ -93,11 +93,11 @@ export default function ValidadeAsoPage() {
             title: 'Tipos de ASO e quando cada um é exigido',
             body: (
               <ul>
-                <li><strong>ASO Admissional</strong> — antes do início das atividades, obrigatório pela NR-07.</li>
-                <li><strong>ASO Periódico</strong> — durante o vínculo, conforme cronograma do PCMSO. Periodicidade varia pelo grau de risco e pela idade do trabalhador.</li>
-                <li><strong>ASO de Retorno ao Trabalho</strong> — após afastamento por acidente, doença ou parto.</li>
-                <li><strong>ASO de Mudança de Função</strong> — quando o colaborador muda de cargo com risco diferente.</li>
-                <li><strong>ASO demissional</strong> — exame clínico em até 10 dias contados do término do contrato, observadas as hipóteses de dispensa previstas na NR-07.</li>
+                <li><strong>ASO admissional:</strong> emitido antes de o empregado assumir as atividades.</li>
+                <li><strong>ASO periódico:</strong> emitido durante o vínculo, conforme o cronograma definido no PCMSO e na NR-07.</li>
+                <li><strong>ASO de retorno ao trabalho:</strong> emitido antes de reassumir a função após afastamento igual ou superior a 30 dias por doença ou acidente.</li>
+                <li><strong>ASO de mudança de riscos ocupacionais:</strong> emitido antes da mudança, quando o trabalhador passa a enfrentar riscos diferentes.</li>
+                <li><strong>ASO demissional:</strong> exame clínico realizado em até 10 dias contados do término do contrato, observadas as hipóteses de dispensa previstas na NR-07.</li>
               </ul>
             ),
           },
@@ -106,15 +106,14 @@ export default function ValidadeAsoPage() {
             body: (
               <>
                 <p>
-                  A periodicidade do exame periódico (NR-07 item 7.4.3.2) não é definida pelo grau de risco da empresa — é definida pela <strong>combinação de dois critérios: tipo de exposição e idade do trabalhador</strong>.
+                  O item 7.5.8 da NR-07 atual divide a periodicidade do exame clínico em dois grupos principais. Idade e grau de risco, isoladamente, não formam a tabela usada pela regra vigente.
                 </p>
                 <ul>
-                  <li><strong>Trabalhadores expostos a agentes nocivos específicos</strong> (ruído, produtos químicos, radiação, agentes listados no Anexo da NR-07): periodicidade anual ou semestral, conforme o agente — independentemente da idade.</li>
-                  <li><strong>Trabalhadores sem exposição a agente nocivo específico, mas com risco de agravamento de doença:</strong> anual ou com intervalo menor, a critério do médico coordenador do PCMSO.</li>
-                  <li><strong>Demais trabalhadores (sem exposição específica e sem condição de saúde especial):</strong> bienal (a cada 2 anos) para a faixa de 18 a 45 anos; anual para menores de 18 e maiores de 45 anos.</li>
+                  <li><strong>Anual ou em intervalo menor:</strong> trabalhadores expostos a riscos ocupacionais identificados e classificados no PGR e pessoas com doenças crônicas que aumentem a suscetibilidade a esses riscos.</li>
+                  <li><strong>Bienal:</strong> os demais trabalhadores.</li>
                 </ul>
                 <p>
-                  Na prática, empresas de GR3 e GR4 costumam ter trabalhadores expostos a agentes específicos (ruído, químicos, poeiras), o que torna o exame anual — mas pela natureza da exposição, não pelo grau de risco em si. O médico coordenador do PCMSO é quem define a periodicidade de cada função, e pode ser mais restritivo do que a NR-07 exige, nunca menos.
+                  O médico responsável pelo PCMSO pode reduzir o intervalo conforme os riscos, o estado de saúde e os critérios dos anexos da norma. A definição precisa aparecer no programa e orientar o cronograma real da empresa.
                 </p>
               </>
             ),
@@ -124,7 +123,7 @@ export default function ValidadeAsoPage() {
             body: (
               <>
                 <p>
-                  Não. Cada admissão exige um ASO admissional novo. O exame é vinculado à função, aos riscos do cargo e ao PCMSO da empresa contratante — que podem ser completamente diferentes do emprego anterior.
+                  Não. Cada admissão exige um ASO admissional novo. O exame é vinculado à função, aos riscos do cargo e ao PCMSO da empresa contratante, que podem ser completamente diferentes do emprego anterior.
                 </p>
                 <p>
                   Um candidato que apresenta ASO de outro emprego não está dispensado do exame admissional. A empresa que aceitar isso sem exame próprio está em não conformidade com a NR-07 e exposta a autuação.
@@ -137,12 +136,28 @@ export default function ValidadeAsoPage() {
             body: (
               <>
                 <p>
-                  O exame periódico vencido é uma das infrações mais comuns autuadas pelo Ministério do Trabalho. Cada colaborador sem ASO dentro do prazo é uma infração separada — para empresa com 20 funcionários e dois anos sem exame periódico, o passivo pode chegar a dezenas de milhares de reais em multa.
+                  Quando o exame periódico não acontece no intervalo definido, a empresa fica com uma lacuna no monitoramento previsto pelo PCMSO. Isso enfraquece a comparação clínica ao longo do vínculo e pode ser apontado em fiscalização.
                 </p>
                 <p>
-                  Além da multa administrativa, o eSocial fica desatualizado: o evento S-2220 (monitoramento da saúde do trabalhador) precisa ser disparado após cada ASO emitido. ASO vencido = S-2220 em atraso = inconsistência no eSocial.
+                  O S-2220 deve refletir os exames ocupacionais realizados. Se o periódico não foi feito, o problema não se resolve com um envio meramente documental: primeiro é preciso regularizar o acompanhamento médico e depois manter o evento coerente com o ASO efetivamente emitido.
                 </p>
               </>
+            ),
+          },
+          {
+            title: 'Fonte oficial da periodicidade',
+            body: (
+              <p>
+                A regra foi revisada com base no item 7.5.8 da{' '}
+                <a
+                  href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-07-atualizada-2022.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  NR-07 publicada pelo Ministério do Trabalho e Emprego
+                </a>
+                .
+              </p>
             ),
           },
         ]}
@@ -157,15 +172,15 @@ export default function ValidadeAsoPage() {
           },
           {
             q: 'Com que frequência deve ser feito o exame periódico?',
-            a: 'A NR-07 usa dois critérios: tipo de exposição e idade. Trabalhadores expostos a agentes nocivos específicos (ruído, químicos, radiação): anual ou semestral. Trabalhadores sem exposição específica: bienal para a faixa de 18 a 45 anos; anual para menores de 18 e maiores de 45 anos. O médico coordenador do PCMSO pode definir periodicidade mais curta quando necessário.',
+            a: 'A regra geral é anual ou em intervalo menor para trabalhadores expostos a riscos identificados e classificados no PGR e para pessoas com doenças crônicas que aumentem a suscetibilidade. Para os demais, é bienal. O médico responsável pelo PCMSO pode reduzir o intervalo.',
           },
           {
             q: 'O que acontece se o exame periódico vencer?',
-            a: 'A empresa fica em não conformidade com a NR-07, exposta a autuação do Ministério do Trabalho e com o eSocial desatualizado (evento S-2220 em atraso).',
+            a: 'A empresa fica com uma lacuna no monitoramento previsto pelo PCMSO, perde continuidade no histórico clínico ocupacional e pode ter inconsistência entre ASO, cronograma e eSocial.',
           },
         ]}
         sidebarTitle="PCMSO e exames em dia?"
-        sidebarHook="A SERMST organiza o cronograma de exames ocupacionais da sua empresa, integra com o eSocial e garante que nenhum colaborador fique com ASO vencido."
+        sidebarHook="A SERMST organiza o cronograma de exames ocupacionais, integra as informações com o eSocial e ajuda o RH a acompanhar os vencimentos."
         sidebarCtaLabel="Organizar meu PCMSO"
         sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
         related={[

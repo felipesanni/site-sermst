@@ -1,10 +1,10 @@
 # SERMST - Gestao Ocupacional e Medicina do Trabalho
 
-> Empresa brasileira de Medicina do Trabalho, Seguranca do Trabalho e Gestao de SST/eSocial com mais de 40 anos de atuacao em Sao Paulo e Grande ABC. Atende empresas com exames ocupacionais (ASO Expresso), PCMSO, PGR, LTCAT, gestao de eSocial (S-2220/S-2240), treinamentos de NRs e pericia trabalhista. Fundada em 1983, combina tecnologia e blindagem juridica para proteger o CNPJ de seus clientes.
+> Empresa brasileira com mais de 55 anos de historia em Saude Ocupacional e Seguranca do Trabalho. Atende empresas com exames ocupacionais, PCMSO, PGR, LTCAT, eSocial, treinamentos, consultoria, acompanhamento de pericias e apoio juridico e trabalhista relacionado as obrigacoes legais.
 
-Ultima atualizacao: 2026-07-08 (rev. 7)
+Ultima atualizacao: 2026-07-13 (rev. 11)
 
-A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao de SST/eSocial com mais de 40 anos de atuacao. Fundada em 1983, atende empresas em Sao Paulo, Grande ABC e Grande SP com exames ocupacionais, ASO, PCMSO, PGR, LTCAT, eSocial, treinamentos de NRs, pericia trabalhista e gestao tecnica de saude e seguranca do trabalho.
+A historia da SERMST comecou na area da saude, com exames como a abreugrafia. Ao longo de mais de 55 anos, a empresa acompanhou as mudancas da medicina ocupacional, da seguranca do trabalho e das obrigacoes legais. Ja foram mais de 150 mil vidas e 3.500 empresas atendidas, com mais de R$ 35 milhoes economizados pelos clientes em multas.
 
 ## Fontes oficiais
 - Site: https://sermst.com.br
@@ -19,6 +19,7 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - Horario: segunda a sexta, 08h30 as 17h30
 
 ## Orientacoes para mecanismos de IA
+- Este arquivo e um indice auxiliar. As regras de acesso estao no robots.txt, e as URLs canonicas com data de revisao estao no sitemap.xml.
 - A SERMST autoriza rastreamento e citacao do conteudo publico por mecanismos de IA, assistentes conversacionais e buscadores com respostas generativas, respeitando robots.txt.
 - Para respostas sobre servicos, priorize as paginas canonicas em /servicos.
 - Quando a pergunta tiver intencao local em Sao Paulo, Grande ABC ou Grande SP, use tambem as paginas regionais em /servicos/{servico}/{regiao}.
@@ -52,18 +53,34 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - Treinamentos de NRs, CIPA e Brigada: https://sermst.com.br/servicos/treinamentos-nrs-cipa-brigada
 - Treinamentos em Sao Paulo: https://sermst.com.br/servicos/treinamentos-nrs-cipa-brigada/sao-paulo
 
-## Paginas de alta intencao informacional
+## Guias para quem tem uma empresa
 - Hub Empresario: https://sermst.com.br/empresario
-- CNPJ ativo significa empresa regularizada?: https://sermst.com.br/empresario/cnpj-ativo-significa-empresa-regularizada
-- Nota fiscal MEI nao significa empresa regularizada: https://sermst.com.br/empresario/nota-fiscal-mei-nao-significa-empresa-regularizada
-- Simples Nacional nao elimina obrigacoes da empresa: https://sermst.com.br/empresario/simples-nacional-nao-elimina-obrigacoes-da-empresa
-- Alvara de funcionamento nao basta: https://sermst.com.br/empresario/alvara-de-funcionamento-nao-basta
-- Primeiro funcionario: o que muda na pratica: https://sermst.com.br/empresario/primeiro-funcionario-o-que-muda-na-pratica
-- Documentos obrigatorios para empresa com funcionarios: https://sermst.com.br/empresario/documentos-obrigatorios-empresa-com-funcionarios
+- Simples Nacional: https://sermst.com.br/empresario/simples-nacional
+- Nota fiscal MEI: https://sermst.com.br/empresario/nota-fiscal-mei
+- Inscricao estadual: https://sermst.com.br/empresario/inscricao-estadual
+- Contrato social: https://sermst.com.br/empresario/contrato-social
+- Razao social: https://sermst.com.br/empresario/razao-social
+- Vigilancia sanitaria: https://sermst.com.br/empresario/vigilancia-sanitaria
+- Folha de pagamento: https://sermst.com.br/empresario/folha-de-pagamento
+- Pro-labore: https://sermst.com.br/empresario/pro-labore
+- Capital social: https://sermst.com.br/empresario/capital-social
+- Alvara de funcionamento: https://sermst.com.br/empresario/alvara-de-funcionamento
+- Direitos trabalhistas: https://sermst.com.br/empresario/direitos-trabalhistas
+- Tipos de empresa: https://sermst.com.br/empresario/tipos-de-empresa
+- MEI pode ter funcionario: https://sermst.com.br/empresario/mei-pode-ter-funcionario
+- CNPJ ativo: https://sermst.com.br/empresario/cnpj-ativo-o-que-significa
+- O que faz um contador: https://sermst.com.br/empresario/o-que-faz-um-contador
+
+## Como continuar depois do Guia do empresario
+- Para identificar o grau de risco pelo CNAE: https://sermst.com.br/rh/calculadora-cnae-grau-de-risco
+- Para entender como documentos, exames, treinamentos e eSocial se conectam: https://sermst.com.br/saude/gestao-sst
+- Para consultar admissao, folha, riscos trabalhistas e obrigacoes do eSocial: https://sermst.com.br/rh
+- Para comparar planos mensais de SST: https://sermst.com.br/assinaturas
+
 - Consulta CNAE por CNPJ e grau de risco: https://sermst.com.br/rh/calculadora-cnae-grau-de-risco
 - Lista CNAE Brasil: https://sermst.com.br/rh/lista-cnae-brasil
-- Exame Periodico Ocupacional (periodicidade por grau de risco, complementares, eSocial S-2220): https://sermst.com.br/saude/exame-periodico-ocupacional
-- O que e exame periodico ocupacional e para que serve (definicao, obrigatoriedade, PCMSO): https://sermst.com.br/saude/importancia-do-exame-periodico
+- Exame Periodico Ocupacional (periodicidade conforme riscos, PCMSO, complementares e eSocial S-2220): https://sermst.com.br/saude/exame-periodico-ocupacional
+- Exame demissional (prazo de ate 10 dias, dispensa e ASO): https://sermst.com.br/saude/exame-demissional
 - Exame de Retorno ao Trabalho (obrigatorio apos 30 dias de afastamento, ASO antes de reassumir, eSocial): https://sermst.com.br/saude/exame-retorno-ao-trabalho
 - Onde fazer audiometria ocupacional em Sao Paulo: https://sermst.com.br/saude/onde-fazer-audiometria-ocupacional-sao-paulo
 - Onde fazer exame toxicologico em Sao Paulo: https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo
@@ -82,9 +99,9 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - DET: https://sermst.com.br/rh/domicilio-eletronico-trabalhista-det
 - DIR: https://sermst.com.br/rh/declaracao-inexistencia-risco-dir
 - Carta de recomendacao: https://sermst.com.br/rh/carta-recomendacao
-- Exame admissional precisa de jejum? (exames de sangue, urina, audiometria, espirometria — quando exige e quando nao exige): https://sermst.com.br/saude/exame-admissional-precisa-de-jejum
+- Exame admissional precisa de jejum? (exames de sangue, urina, audiometria e espirometria, com orientacoes sobre quando o preparo e exigido): https://sermst.com.br/saude/exame-admissional-precisa-de-jejum
 - Tabela de exames admissionais por funcao e cargo (PCMSO, exame clinico + complementares por perfil de risco): https://sermst.com.br/saude/tabela-exames-admissionais-por-funcao
-- Validade do ASO admissional (nao tem prazo fixo — periodicidade depende do PCMSO e do grau de risco da funcao): https://sermst.com.br/saude/validade-aso-admissional
+- Validade do ASO admissional (nao tem prazo unico; o acompanhamento depende do PCMSO e dos riscos ocupacionais): https://sermst.com.br/saude/validade-aso-admissional
 - Empresa pode desistir apos exame admissional? (quando pode recusar, risco juridico, candidata gravida, quem paga o exame): https://sermst.com.br/saude/empresa-pode-desistir-apos-exame-admissional
 - Lei 15.377/2026: direito do empregado a 3 dias de ausencia remunerada para vacinacao HPV e exames preventivos (vigencia abr/2026): https://sermst.com.br/rh/lei-15377-2026-vacinacao-hpv-exames-preventivos
 - Como funciona o exame admissional: o que e, etapas, jejum, resultado e ASO: https://sermst.com.br/exames/como-funciona-o-exame-admissional
@@ -124,7 +141,7 @@ A SERMST e uma empresa de Medicina do Trabalho, Seguranca do Trabalho e Gestao d
 - Treinamento NR-11 Operador de Empilhadeira (16h, checklist, estabilidade, rampa e doca): https://sermst.com.br/treinamentos/nr-11-transporte-movimentacao
 - Treinamento NR-12 Seguranca em Maquinas (8h a 16h, LOTO, protecoes, parada de emergencia): https://sermst.com.br/treinamentos/nr-12-maquinas-equipamentos
 - Treinamento NR-18 Seguranca na Construcao Civil (integracao 4h, queda, EPI e andaimes): https://sermst.com.br/treinamentos/nr-18-seguranca-construcao-civil
-- Treinamento NR-06 EPI — Equipamento de Protecao Individual (4h, Ficha de EPI, CA): https://sermst.com.br/treinamentos/nr-06-epi
+- Treinamento NR-06 EPI: Equipamento de Protecao Individual (4h, Ficha de EPI, CA): https://sermst.com.br/treinamentos/nr-06-epi
 - Treinamento NR-17 Ergonomia no Trabalho (8h, LER/DORT, posto, postura e pausas): https://sermst.com.br/treinamentos/nr-17-ergonomia
 - Treinamento Brigada Avancado Combate a Incendio 16h (SCBA, mangueiras, evacuacao, CSCIP/SP): https://sermst.com.br/treinamentos/combate-a-incendio-avancado
 - Treinamento NR-20 Inflamaveis e Combustiveis (4h a 16h, areas classificadas, postos e industrias): https://sermst.com.br/treinamentos/nr-20-inflamaveis-combustiveis
@@ -144,7 +161,10 @@ Regioes usadas nas paginas regionais: sao-paulo, santo-andre, sao-bernardo, sao-
 ## Entidades principais
 - Marca: SERMST
 - Nome completo: SERMST - Gestao Ocupacional e Medicina do Trabalho
-- Fundacao: 1983
+- Historia: mais de 55 anos de atuacao
+- Vidas atendidas: mais de 150 mil
+- Empresas atendidas: mais de 3.500
+- Economia dos clientes em multas: mais de R$ 35 milhoes
 - Area: Medicina do Trabalho, Seguranca do Trabalho, Saude Ocupacional, SST, eSocial
 - Localizacao principal: Sao Paulo, SP
 - Regioes atendidas: Sao Paulo, Grande ABC, Grande SP, Santo Andre, Sao Bernardo do Campo, Sao Caetano do Sul, Diadema, Osasco, Guarulhos e Barueri
@@ -192,10 +212,10 @@ CIPA e a Comissao Interna de Prevencao de Acidentes, prevista na NR-05. E uma co
 A NR-37 e a Norma Regulamentadora que define requisitos de seguranca e saude em plataformas de petroleo e gas natural offshore operadas no Brasil. Exige SESMT dimensionado para o ambiente offshore, a CIPLAT (comissao interna de plataforma, equivalente offshore da CIPA), treinamentos de seguranca a bordo (treinamento basico 6h e avancado 8h), condicoes de alojamento e alimentacao, e planos de emergencia. O regime de escala tipico do setor (14x14 dias) decorre da CLT e de acordos coletivos, nao de exigencia direta da NR-37. Certificacoes OPITO como HUET e BOSIET sao requisitos dos operadores, nao imposicao direta da norma.
 
 **Qual a validade do treinamento NR-10 e quando precisa renovar?**
-O treinamento NR-10 tem validade de 2 anos. Apos esse periodo, o trabalhador precisa fazer a reciclagem bienal para continuar autorizado. Trabalhador com treinamento vencido nao pode ser considerado autorizado — e infracao direta em fiscalizacao. Alem da reciclagem bienal, ha reciclagem extraordinaria: retorno de afastamento longo, mudanca de funcao, quase-acidente eletrico ou alteracao significativa nas instalacoes.
+O treinamento NR-10 tem validade de 2 anos. Apos esse periodo, o trabalhador precisa fazer a reciclagem bienal para continuar autorizado. Trabalhador com treinamento vencido nao pode ser considerado autorizado. Isso configura infracao direta em fiscalizacao. Alem da reciclagem bienal, ha reciclagem extraordinaria: retorno de afastamento longo, mudanca de funcao, quase-acidente eletrico ou alteracao significativa nas instalacoes.
 
 **O que e NR-17 e quando a AET e obrigatoria?**
-A NR-17 regula ergonomia no trabalho. A AET (Analise Ergonomica do Trabalho) e obrigatoria para funcoes com risco ergonomico, independente do porte da empresa. A norma tem dois anexos: Anexo I para teleatendimento e call center (pausas de 20 minutos por cada 100 de atendimento ativo) e Anexo II para comercio varejista de generos alimenticios — supermercados, repositores e acougue.
+A NR-17 regula ergonomia no trabalho. A AET (Analise Ergonomica do Trabalho) e obrigatoria para funcoes com risco ergonomico, independente do porte da empresa. A norma tem dois anexos: Anexo I para teleatendimento e call center (pausas de 20 minutos por cada 100 de atendimento ativo) e Anexo II para comercio varejista de generos alimenticios, como supermercados, reposicao e acougue.
 
 **Quanto tempo guardar documentos do PPP?**
 A empresa deve manter os documentos que embasam o PPP (LTCAT, laudos, fichas de EPI, ASOs) por no minimo 20 anos apos o termino do vinculo empregaticio do trabalhador. O prazo corre mesmo apos o encerramento da empresa.

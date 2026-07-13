@@ -47,8 +47,6 @@ export interface BlockbusterPageProps {
   };
   /** Desativa o FAQPage automático quando a página injeta schema próprio. */
   disableFaqSchema?: boolean;
-  /** Usa apenas as FAQs passadas pela página, sem perguntas genéricas de fallback. */
-  includeFallbackFaqs?: boolean;
   /** Permite páginas pillar exibirem mais perguntas visíveis. */
   maxFaqItems?: number;
   /** Canonical URL for this page (enables BreadcrumbList + Article schema) */
@@ -94,7 +92,6 @@ export function BlockbusterArticle({
   related,
   finalCta,
   disableFaqSchema = false,
-  includeFallbackFaqs = true,
   maxFaqItems,
   pageUrl,
   coverImage,
@@ -104,7 +101,6 @@ export function BlockbusterArticle({
   const frequentFaqs = buildFrequentFaqs(faq, {
     context: 'article',
     topic: h1,
-    includeFallbacks: includeFallbackFaqs,
     maxItems: maxFaqItems,
   });
 

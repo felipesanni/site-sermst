@@ -101,7 +101,7 @@ export default function NR06EpiPage() {
                 O trabalhador também tem deveres: usar o EPI conforme orientação recebida, conservar o equipamento, comunicar dano ou perda e seguir as instruções de segurança. Mas a empresa não pode transferir toda a responsabilidade para ele.
               </p>
               <p>
-                Para que essa cobrança seja defensável, precisa existir treinamento, registro, fiscalização e procedimento claro para troca, recusa ou mau uso.
+                Para cobrar o uso corretamente, a empresa precisa oferecer treinamento, manter registros, fiscalizar e definir um procedimento claro para troca, recusa ou mau uso.
               </p>
             </>
           ),
@@ -192,7 +192,7 @@ export default function NR06EpiPage() {
                 A escolha de EPI deve conversar com o PGR, porque o PGR identifica riscos e medidas de controle. Também pode impactar PCMSO, ASO, LTCAT e eSocial quando há exposição a agentes ocupacionais.
               </p>
               <p>
-                Se os documentos não conversam entre si, a empresa fica exposta: o PGR diz uma coisa, o PCMSO pede outra, a ficha de EPI registra um terceiro caminho e o trabalhador fica sem proteção tecnicamente defensável.
+                Se os documentos não conversam entre si, a empresa fica exposta: o PGR diz uma coisa, o PCMSO pede outra, a ficha de EPI registra um terceiro caminho e a proteção do trabalhador perde coerência técnica.
               </p>
             </>
           ),

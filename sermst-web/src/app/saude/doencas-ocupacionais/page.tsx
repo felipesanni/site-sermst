@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function DoencasOcupacionaisPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/doencas-ocupacionais"

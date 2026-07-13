@@ -2,19 +2,20 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
-import { ShieldCheck, Building2, FlaskConical, Users, ArrowRight, CheckCircle2, Clock } from 'lucide-react';
+import { ShieldCheck, Building2, Users, ArrowRight, CheckCircle2, Clock } from 'lucide-react';
 import { siteImages } from '@/lib/site-images';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
+import { companyFacts, institutionalDescription } from '@/lib/company-facts';
 
 export const metadata: Metadata = {
-  title: 'Quem somos | SERMST - 40 anos protegendo empresas familiares',
+  title: 'Quem somos | 55 anos de história | SERMST',
   description:
-    'Clínica de Medicina e Segurança do Trabalho com +40 anos. Mais de 3.000 empresas atendidas, +500 clínicas credenciadas em todo o Brasil e laboratório próprio.',
+    'Conheça a história da SERMST, que já atendeu mais de 150 mil vidas e mais de 3.500 empresas com saúde ocupacional e segurança do trabalho.',
   alternates: { canonical: 'https://sermst.com.br/quem-somos' },
   openGraph: {
-    title: 'Quem somos | SERMST - 40 anos protegendo empresas familiares',
+    title: 'Quem somos | 55 anos de história | SERMST',
     description:
-      'Mais de 40 anos protegendo empresas familiares contra passivo trabalhista, autuação e afastamento. SST que blinda patrimônio, não é só papelada.',
+      'Mais de 55 anos de história em saúde ocupacional, segurança do trabalho, treinamentos e apoio às empresas.',
     url: 'https://sermst.com.br/quem-somos',
     type: 'website',
     locale: 'pt_BR',
@@ -22,11 +23,10 @@ export const metadata: Metadata = {
 };
 
 const diferenciais = [
-  { icon: Clock, label: '+40 anos', desc: 'de experiência em Medicina e Segurança do Trabalho.' },
-  { icon: Building2, label: '+3.000 empresas', desc: 'atendidas em todo o Brasil ao longo da história.' },
-  { icon: ShieldCheck, label: '+500 clínicas', desc: 'credenciadas em rede nacional para apoio operacional.' },
-  { icon: FlaskConical, label: 'Laboratório próprio', desc: 'audiometria, ECG, EEG, espirometria e exames complementares.' },
-  { icon: Users, label: 'Equipe multidisciplinar', desc: 'médicos, engenheiros, técnicos em SST e gestão de riscos.' },
+  { icon: Clock, label: companyFacts.history.value, desc: companyFacts.history.label },
+  { icon: Users, label: companyFacts.livesServed.value, desc: companyFacts.livesServed.label },
+  { icon: Building2, label: companyFacts.companiesServed.value, desc: companyFacts.companiesServed.label },
+  { icon: ShieldCheck, label: companyFacts.avoidedFines.value, desc: companyFacts.avoidedFines.label },
 ];
 
 const aboutPageSchema = {
@@ -34,14 +34,14 @@ const aboutPageSchema = {
   '@type': 'AboutPage',
   '@id': 'https://sermst.com.br/quem-somos#aboutpage',
   url: 'https://sermst.com.br/quem-somos',
-  name: 'Quem somos | SERMST — 40 anos protegendo empresas familiares',
+  name: 'Quem somos | 55 anos de história | SERMST',
   inLanguage: 'pt-BR',
   about: {
     '@type': 'MedicalOrganization',
     '@id': 'https://sermst.com.br/#organization',
     name: 'SERMST',
     legalName: 'SERMST Gestão Ocupacional Ltda',
-    foundingDate: '1983',
+    description: institutionalDescription,
     url: 'https://sermst.com.br',
     address: {
       '@type': 'PostalAddress',
@@ -63,7 +63,7 @@ export default function QuemSomosPage() {
       <BreadcrumbJsonLd items={[{ name: 'Início', item: 'https://sermst.com.br' }, { name: 'Quem Somos' }]} />
       <section className="relative overflow-hidden bg-brand-900 text-white">
         <div className="absolute inset-0 z-0 opacity-15">
-          <Image src={siteImages.institutional.corporateHealthHero.src} alt="Clínica de medicina do trabalho SERMST — Largo do Paissandu, São Paulo" fill sizes="100vw" className="object-cover" priority />
+          <Image src={siteImages.institutional.corporateHealthHero.src} alt="Clínica de medicina do trabalho SERMST no Largo do Paissandu, em São Paulo" fill sizes="100vw" className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-900 via-brand-900/85 to-brand-900/40" />
         </div>
         <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -75,14 +75,14 @@ export default function QuemSomosPage() {
               Quem somos
             </span>
             <h1 className="h1-standard mb-8 max-w-4xl">
-              40 anos protegendo o
+              Medicina ocupacional para
               <br />
-              patrimônio de quem
+              empresas que precisam
               <br />
-              <span className="font-serif italic text-accent-pink">leva o negócio a sério.</span>
+              <span className="font-serif italic text-accent-pink">manter a SST em ordem.</span>
             </h1>
             <p className="max-w-3xl border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed text-slate-200 md:text-2xl">
-              Falamos de dono para dono. Sem rodeios, sem exageros. Com clareza, responsabilidade e compromisso com resultado.
+              Há mais de 55 anos, acompanhamos as mudanças da saúde e da segurança do trabalho no Brasil.
             </p>
           </FadeIn>
         </div>
@@ -93,31 +93,31 @@ export default function QuemSomosPage() {
           <FadeIn direction="up">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Por que existimos</span>
             <h2 className="mb-12 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              A maioria dos empresários ainda vê SST como burocracia.
+              SST não funciona bem quando vira apenas papelada.
               <br />
-              <span className="text-slate-500">Esse pensamento deixa a empresa vulnerável.</span>
+              <span className="text-slate-500">Os documentos precisam acompanhar a operação real.</span>
             </h2>
           </FadeIn>
 
           <div className="space-y-7 text-lg font-medium leading-relaxed text-slate-700 md:text-xl">
             <FadeIn direction="up" delay={0.1}>
               <p>
-                Fundada em 1983 no Largo do Paissandu, em São Paulo, a SERMST nasceu como uma consultoria especializada em Segurança e Saúde no Trabalho atendendo micro e pequenas empresas. Ao longo de mais de 40 anos de história, percebemos que isso, por si só, não era suficiente.
+                A história da SERMST começou na área da saúde, com exames como a abreugrafia. Conforme a medicina ocupacional evoluiu e novas exigências legais surgiram, o atendimento também mudou.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
               <p>
-                Para proteger de verdade o empresário, é preciso ir além do cumprimento da legislação. É preciso trabalhar a mentalidade de quem empreende, porque só assim é possível blindar o negócio contra riscos invisíveis, reduzir passivos, prevenir autuações e aumentar a produtividade dos colaboradores.
+                Hoje, a empresa reúne exames ocupacionais, programas e laudos técnicos, treinamentos, consultoria especializada e acompanhamento de perícias. O suporte jurídico e trabalhista relacionado às obrigações legais completa esse trabalho quando a situação exige uma leitura mais ampla.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
               <p className="my-10 border-l-4 border-accent-pink pl-6 text-2xl font-bold leading-snug text-brand-900 md:text-3xl">
-                Empresas que tratam SST apenas como papelada costumam perceber o problema tarde demais. Quem leva o negócio a sério entende que conformidade é sinônimo de controle — e controle é o que protege operação, patrimônio e continuidade.
+                A legislação mudou, os exames mudaram e a forma de registrar a SST também. O compromisso permaneceu: proteger trabalhadores, empresas e o patrimônio do empresário.
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.4}>
               <p>
-                Por trás dos laudos, exames e documentos, existe um conjunto de medidas que pode evitar prejuízos sérios, proteger a operação, reduzir afastamentos e preservar o negócio que levou anos para ser construído.
+                O trabalho não termina na entrega dos documentos. Exames, laudos, programas e informações do eSocial precisam refletir o que realmente acontece na operação da empresa.
               </p>
             </FadeIn>
           </div>
@@ -129,11 +129,11 @@ export default function QuemSomosPage() {
           <FadeIn direction="up">
             <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Em números</span>
             <h2 className="mb-14 max-w-3xl text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-              O que sustenta a confiança que <span className="text-accent-pink">empresários como você</span> depositam na SERMST
+              Uma trajetória medida em <span className="text-accent-pink">pessoas e empresas atendidas</span>
             </h2>
           </FadeIn>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {diferenciais.map((item, i) => (
               <FadeIn key={item.label} direction="up" delay={i * 0.08}>
                 <div className="card-clean h-full group">
@@ -155,18 +155,18 @@ export default function QuemSomosPage() {
             <FadeIn direction="right">
               <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Nosso compromisso</span>
               <h2 className="mb-8 text-3xl font-black leading-tight text-brand-900 md:text-5xl">
-                Não vendemos medo. Vendemos previsibilidade.
+                Menos improviso, mais acompanhamento.
               </h2>
               <div className="space-y-6 text-lg font-medium leading-relaxed text-slate-700">
                 <p>
-                  A SERMST não está aqui para te assustar com multa de eSocial e processo trabalhista. Está aqui para garantir que a sua empresa esteja sempre um passo a frente, com documentação correta, exames em dia, laudos que refletem a operação real e um fluxo de SST que não trava admissão.
+                  Nosso papel é organizar documentos, exames e informações para que o RH saiba o que precisa ser feito e em qual prazo. Isso inclui conferir se os laudos refletem a operação e se o fluxo de SST acompanha admissões, mudanças de risco e desligamentos.
                 </p>
                 <p>
                   Atendimento in company ou presencial, sem necessidade de agendamento. Equipe multidisciplinar com médicos, engenheiros e técnicos em SST. Laboratório próprio para exames complementares, com estrutura apresentada na página da{' '}
                   <Link href="/a-clinica" className="font-bold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
                     clínica SERMST
                   </Link>
-                  . Tudo conectado em um fluxo que reduz tempo, reduz custo e reduz risco.
+                  . A integração reduz retrabalho e facilita o acompanhamento pela empresa.
                 </p>
                 <p>
                   A condução técnica também tem rosto: conheça o perfil de{' '}
@@ -180,7 +180,7 @@ export default function QuemSomosPage() {
                   para entender melhor a experiência por trás da operação.
                 </p>
                 <p className="font-bold text-brand-900">
-                  Você cuida do crescimento do seu negócio. A SERMST cuida de blindar o que você já construiu.
+                  Com a rotina de SST acompanhada de perto, o empresário pode cuidar do crescimento do negócio sem deixar obrigações e prazos fora de controle.
                 </p>
               </div>
             </FadeIn>
@@ -190,11 +190,11 @@ export default function QuemSomosPage() {
                 <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Para quem é a SERMST</p>
                 <ul className="mb-8 space-y-4">
                   {[
-                    'Empresas familiares com patrimônio para proteger',
+                    'Empresas que precisam organizar a rotina de SST',
                     'Grupos com múltiplas empresas e CNPJs',
                     'RH e DP que precisam parar de retrabalhar ASO',
                     'Empresas insatisfeitas com a consultoria atual',
-                    'Operações com alta rotatividade de funcionários',
+                    'Operações com muitas admissões e desligamentos',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-slate-200">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent-pink" />
@@ -221,15 +221,15 @@ export default function QuemSomosPage() {
         <div className="relative z-10 mx-auto max-w-[1100px] px-6 text-center lg:px-8">
           <FadeIn direction="up">
             <h2 className="mb-8 text-4xl font-black leading-tight text-white md:text-6xl">
-              Sua empresa está
+              Quer entender o que
               <br />
-              <span className="text-accent-pink">realmente protegida?</span>
+              <span className="text-accent-pink">sua empresa precisa?</span>
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-xl font-medium leading-relaxed text-slate-300">
               Em 15 minutos a equipe comercial entende o porte, a operação e o momento da empresa antes de indicar exame, laudo ou gestão SST.
             </p>
             <Link href="/contato" className="btn-primary-safe-lg text-lg shadow-2xl">
-              Solicitar diagnóstico gratuito
+              Conversar com a equipe
               <ArrowRight className="h-5 w-5" />
             </Link>
           </FadeIn>

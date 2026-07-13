@@ -3,18 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Building2, CheckCircle2, Clock, FileCheck2, Navigation, ShieldCheck } from 'lucide-react';
 import { siteImages } from '@/lib/site-images';
+import { companyFacts, institutionalDescription } from '@/lib/company-facts';
 
 export const metadata: Metadata = {
   title: 'Clínica de Exame Admissional em São Paulo | SERMST',
   description:
-    'Clínica de exame admissional em São Paulo com ASO no mesmo dia, PCMSO e apoio ao eSocial. A SERMST atende empresas que precisam contratar sem travar o RH.',
+    'Exame admissional em São Paulo Centro para empresas, com ASO no mesmo dia, laboratório próprio e apoio a PCMSO e eSocial. Atendimento no Largo do Paissandu.',
   alternates: {
     canonical: 'https://sermst.com.br',
   },
   openGraph: {
     title: 'Clínica de Exame Admissional em São Paulo para Empresas | SERMST',
     description:
-      'Clinica de exames admissionais em Sao Paulo com ASO, exames ocupacionais, PCMSO e apoio ao eSocial para empresas que precisam contratar sem gargalo.',
+      'Exame admissional em São Paulo Centro para empresas, com ASO no mesmo dia, laboratório próprio e apoio a PCMSO e eSocial.',
     url: 'https://sermst.com.br',
     locale: 'pt_BR',
     type: 'website',
@@ -28,8 +29,7 @@ const organizationSchema = {
   name: 'SERMST',
   legalName: 'SERMST - Gestão Ocupacional e Medicina do Trabalho',
   url: 'https://sermst.com.br',
-  foundingDate: '1983',
-  description: 'Medicina do trabalho, segurança do trabalho e gestão de SST para empresas em São Paulo e Grande SP desde 1983.',
+  description: institutionalDescription,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Largo do Paissandu, 72, 3º Andar, Conjunto 301',
@@ -74,7 +74,7 @@ const faqSchema = {
       name: 'O que é medicina do trabalho?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Medicina do trabalho é a especialidade médica que cuida da saúde dos trabalhadores, prevenindo doenças ocupacionais, realizando exames admissionais, periódicos e demissionais, e garantindo conformidade com a NR-07 (PCMSO).',
+        text: 'Medicina do trabalho é a especialidade médica voltada à relação entre trabalho e saúde. Na empresa, participa do PCMSO e dos exames ocupacionais previstos na NR-07.',
       },
     },
     {
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'Quando o exame admissional deve ser realizado?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O exame admissional deve ser realizado antes do início das atividades do novo colaborador, conforme exige a NR-07. O ASO (Atestado de Saúde Ocupacional) emitido após o exame é obrigatório para a admissão e para o envio do evento S-2220 ao eSocial.',
+        text: 'O exame admissional deve ser realizado antes de o novo empregado assumir as atividades, conforme a NR-07. Após o exame clínico, o médico emite o ASO, e as informações de monitoramento são enviadas ao eSocial pelo evento S-2220 no prazo aplicável.',
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'O que é ASO e qual a sua validade?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O ASO (Atestado de Saúde Ocupacional) é o documento emitido pelo médico do trabalho que atesta se o colaborador está apto, apto com restrições ou inapto para a função. Cada tipo de ASO (admissional, periódico, demissional, retorno ao trabalho ou mudança de função) tem validade específica definida no PCMSO da empresa.',
+        text: 'O ASO (Atestado de Saúde Ocupacional) é emitido pelo médico que realiza o exame clínico e registra se o trabalhador está apto ou inapto para a função. Ele documenta um exame específico; os próximos exames seguem os prazos e critérios definidos na NR-07 e no PCMSO.',
       },
     },
     {
@@ -114,16 +114,16 @@ const faqSchema = {
       name: 'Quais são os riscos de não ter SST organizada?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Empresas sem SST organizada estão expostas a autuações fiscais, multas do eSocial por eventos atrasados ou inconsistentes, passivos trabalhistas em processos judiciais e afastamentos não gerenciados. Além disso, a falta de documentação adequada pode comprometer a defesa da empresa em fiscalizações do Ministério do Trabalho.',
+        text: 'Falhas na SST podem resultar em exames atrasados, documentos incoerentes, eventos incorretos no eSocial e medidas fiscais conforme a infração. Também dificultam o acompanhamento de afastamentos e a demonstração das medidas adotadas pela empresa.',
       },
     },
   ],
 };
 
 const regionalCards = [
-  { city: 'São Paulo', slug: 'sao-paulo', desc: 'Unidade central e hub de atendimento especializado.' },
+  { city: 'São Paulo', slug: 'sao-paulo', desc: 'Unidade central com atendimento especializado.' },
   { city: 'Santo André', slug: 'santo-andre', desc: 'Suporte completo para o polo industrial do ABC.' },
-  { city: 'São Bernardo', slug: 'sao-bernardo', desc: 'Ágilidade para operações industriais e fabris.' },
+  { city: 'São Bernardo', slug: 'sao-bernardo', desc: 'Atendimento para operações industriais e fabris.' },
   { city: 'São Caetano', slug: 'sao-caetano', desc: 'Saúde ocupacional para serviços e tecnologia.' },
   { city: 'Diadema', slug: 'diadema', desc: 'SST focada em operações químicas e metal mecânicas.' },
   { city: 'Osasco', slug: 'osasco', desc: 'Fluxo ágil para empresas de logística, varejo e tech.' },
@@ -134,27 +134,27 @@ const regionalCards = [
 const objections = [
   {
     obj: '"Minha consultoria atual já resolve isso."',
-    resp: 'Muita consultoria entrega papel, mas não organiza a operação. A SERMST audita o que a empresa já tem, identifica brechas técnicas e mostra onde o risco está escondido antes que ele vire autuação, afastamento ou processo.',
+    resp: 'A SERMST começa pelo que a empresa já possui. A revisão verifica se PGR, PCMSO, laudos, exames e informações do eSocial correspondem à operação e indica os pontos que precisam de ajuste.',
   },
   {
     obj: '"Nunca tive problema, então devo estar bem."',
-    resp: 'O empresário geralmente só percebe a falha quando ela explode. eSocial atrasado, documento inconsistente ou rotina sem evidência técnica costumam aparecer tarde, quando o custo já ficou muito maior.',
+    resp: 'A ausência de ocorrência não confirma que os processos estão corretos. Vale conferir prazos, documentos e riscos sempre que houver mudança de função, equipamento, layout ou prestador.',
   },
   {
     obj: '"SST é só burocracia."',
-    resp: 'Burocracia ruim custa dinheiro. SST bem feita protege patrimônio, reduz retrabalho, acelera admissão e sustenta a defesa da empresa quando há fiscalização ou disputa trabalhista.',
+    resp: 'Quando a rotina é clara, o RH reduz retrabalho, acompanha admissões e encontra os documentos com mais facilidade. A prevenção também deixa de depender apenas de providências tomadas depois do problema.',
   },
   {
     obj: '"Para o meu porte isso deve sair caro."',
-    resp: 'O custo depende do escopo real da operação, não do medo criado por vendedor. Na prática, estruturar PGR, PCMSO, exames e rotina documental costuma custar menos que uma única autuação séria ou um passivo mal conduzido.',
+    resp: 'O custo depende do número de empregados, das funções, dos riscos, das unidades e dos serviços necessários. O primeiro passo é definir esse escopo antes de indicar um plano.',
   },
 ];
 
 const stats = [
-  { value: '+32 Mi', label: 'economizados' },
-  { value: '+3.000', label: 'empresas' },
-  { value: '+40k', label: 'vidas' },
-  { value: '+500', label: 'clínicas' },
+  companyFacts.history,
+  companyFacts.livesServed,
+  companyFacts.companiesServed,
+  companyFacts.avoidedFines,
 ];
 
 const structureItems = [
@@ -190,20 +190,20 @@ export default function Home() {
                 <span className="text-xs text-white">+</span>
               </span>
               <span className="text-[10px] font-black uppercase tracking-widest text-white md:text-xs">
-                +40 anos protegendo empresas em São Paulo e Grande SP
+                Mais de 55 anos em saúde e segurança do trabalho
               </span>
             </div>
 
             <h1 className="hero-anim-h1 h1-standard mb-5 text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.75)]">
-              SST não é custo.
+              Medicina ocupacional e SST
               <br className="hidden sm:block" />
               <span className="block bg-gradient-to-r from-accent-pink via-[#ff7a93] to-white bg-clip-text text-transparent sm:inline">
-                {' '}É blindagem do seu patrimônio.
+                {' '}sem desorganizar o RH.
               </span>
             </h1>
 
             <p className="hero-anim-p mx-auto mb-8 max-w-2xl rounded-xl bg-brand-900/35 p-5 text-lg font-medium leading-relaxed text-slate-200 backdrop-blur-sm md:bg-transparent md:p-0 md:text-xl md:backdrop-blur-none lg:mx-0 lg:border-l-[3px] lg:border-accent-pink lg:pl-6">
-              Exames ocupacionais, PGR, PCMSO, LTCAT e gestão de eSocial para empresas que querem proteger o que levou anos para construir, sem travar admissão, sem retrabalho e sem medo de fiscalização.
+              Exames ocupacionais, PGR, PCMSO, LTCAT e apoio ao eSocial em um fluxo pensado para admissões, prazos e documentos da empresa.
             </p>
 
             <div className="hero-anim-cta flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
@@ -226,19 +226,19 @@ export default function Home() {
               <div className="relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-brand-500 to-brand-900 shadow-xl">
                 <ShieldCheck className="h-8 w-8 text-white" />
               </div>
-              <span className="relative mb-2 block text-2xl font-black tracking-tight text-white">Autoridade clínica</span>
+              <span className="relative mb-2 block text-2xl font-black tracking-tight text-white">Estrutura própria</span>
               <p className="relative mb-6 font-bold leading-relaxed text-white/95">
-                Referência em medicina e segurança do trabalho para empresas que precisam de velocidade, critério técnico e previsibilidade.
+                Atendimento clínico, exames complementares e gestão de SST conectados à rotina das empresas.
               </p>
               <div className="relative mb-6 h-px w-full bg-white/20" />
               <div className="relative flex w-full items-center justify-center gap-6 text-white">
                 <div className="text-center">
-                  <span className="block text-2xl font-black leading-none">+3.000</span>
+                  <span className="block text-2xl font-black leading-none">{companyFacts.companiesServed.value}</span>
                   <span className="mt-2 inline-block text-[10px] font-black uppercase tracking-[0.15em] text-white">Empresas</span>
                 </div>
                 <div className="h-8 w-px bg-white/20" />
                 <div className="text-center">
-                  <span className="block text-2xl font-black leading-none">+40</span>
+                  <span className="block text-2xl font-black leading-none">{companyFacts.history.value}</span>
                   <span className="mt-2 inline-block text-[10px] font-black uppercase tracking-[0.15em] text-white">Anos</span>
                 </div>
               </div>
@@ -258,7 +258,7 @@ export default function Home() {
               <span className="text-accent-pink outline-text-subtle">que geram resultado operacional</span>
             </h2>
             <p className="mt-4 text-sm font-medium leading-relaxed text-slate-700 lg:pr-10">
-              Cada serviço da SERMST foi estruturado para reduzir atraso de admissão, manter documentos obrigatórios atualizados e proteger a empresa contra multas do eSocial e passivos trabalhistas.
+              Cada serviço foi estruturado para reduzir atrasos em admissões, manter documentos atualizados e facilitar o acompanhamento das obrigações de SST.
             </p>
             <p className="mt-4 text-sm font-medium leading-relaxed text-slate-600 lg:pr-10">
               Para o RH que precisa de exame admissional com ASO no mesmo dia e integração com eSocial, a SERMST tem laboratório próprio e fluxo ocupacional que não trava contratação.
@@ -363,7 +363,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mb-8 text-lg font-medium leading-relaxed text-slate-600">
-              Ao escolher a SERMST, a empresa não contrata apenas exames. Ela organiza admissões, documentação obrigatória, prevenção de passivos e rotina de medicina do trabalho em um fluxo mais claro.
+              A empresa pode contratar exames e também organizar admissões, documentos e a rotina de medicina do trabalho em um fluxo mais claro.
             </p>
 
             <ul className="mb-12 space-y-6">
@@ -446,9 +446,9 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <h2 className="text-4xl font-black tracking-tight text-brand-900 md:text-5xl lg:text-6xl">
-              Mais de <span className="bg-gradient-to-r from-brand-500 to-accent-pink bg-clip-text text-transparent">40 anos</span> de
+              Mais de <span className="bg-gradient-to-r from-brand-500 to-accent-pink bg-clip-text text-transparent">55 anos</span> de
               <br />
-              experiência em SST
+              história em saúde e SST
             </h2>
           </div>
 
@@ -537,7 +537,7 @@ export default function Home() {
                 Falamos de dono para dono.
               </h2>
               <p className="text-lg font-medium leading-relaxed text-slate-200 md:text-xl">
-                Sem rodeios, sem exageros e sem vender medo. Se a SERMST não consegue ajudar, dizemos antes do contrato. Se a documentação atual da sua empresa estiver boa, dizemos isso também. Você precisa de um parceiro técnico, não de mais um vendedor.
+                A equipe avalia o que a empresa já tem antes de recomendar mudanças. Se os documentos estiverem adequados, isso também faz parte do retorno.
               </p>
             </div>
           </div>

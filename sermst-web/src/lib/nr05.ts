@@ -24,10 +24,6 @@ export type Nr05Result =
   | {
       kind: 'representante';
       observacao: string;
-    }
-  | {
-      kind: 'sesmt';
-      observacao: string;
     };
 
 const NR05_BRACKETS: Nr05Bracket[] = [
@@ -109,12 +105,6 @@ const NR05_TABLE: Record<GrauRisco, Nr05Bracket[]> = {
   ],
 };
 
-function getSesmtThreshold(grau: GrauRisco) {
-  if (grau === 1) return 501;
-  if (grau === 2) return 101;
-  return 51;
-}
-
 function formatFaixa(min: number, max: number) {
   return `${min} a ${max} empregados`;
 }
@@ -163,18 +153,10 @@ export function calculateNr05(grau: GrauRisco, employeeCount: number): Nr05Resul
     };
   }
 
-  if (employeeCount >= getSesmtThreshold(grau)) {
-    return {
-      kind: 'sesmt',
-      observacao:
-        'Nesta faixa não há dimensionamento de CIPA pelo Quadro I. Se o estabelecimento for atendido por SESMT, o SESMT desempenha as atribuições da NR-05.',
-    };
-  }
-
   return {
     kind: 'representante',
     observacao:
-      'Como o estabelecimento não se enquadra no Quadro I e não há atendimento obrigatório por SESMT nesta faixa, a NR-05 exige a nomeação de um representante da organização. MEI é dispensado dessa nomeação.',
+      'Quando o estabelecimento não se enquadra no Quadro I e não é atendido por SESMT, a NR-05 exige a nomeação de um representante da organização. O MEI é dispensado dessa nomeação.',
   };
 }
 

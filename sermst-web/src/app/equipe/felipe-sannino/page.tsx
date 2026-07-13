@@ -5,12 +5,12 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { ArrowRight, BookOpen, Briefcase, GraduationCap, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Felipe Sannino | Advogado Trabalhista e SST — SERMST',
+  title: 'Felipe Sannino | Advogado Trabalhista e SST | SERMST',
   description:
     'Felipe Sannino é advogado especializado em Direito do Trabalho e Segurança e Saúde no Trabalho (SST), OAB/SP 430.824. Consultor da SERMST há mais de 10 anos.',
   alternates: { canonical: 'https://sermst.com.br/equipe/felipe-sannino' },
   openGraph: {
-    title: 'Felipe Sannino | Advogado Trabalhista e SST — SERMST',
+    title: 'Felipe Sannino | Advogado Trabalhista e SST | SERMST',
     description:
       'Advogado especializado em Direito do Trabalho e SST (OAB/SP 430.824). Autor de conteúdos sobre conformidade, normas regulamentadoras e gestão de riscos trabalhistas.',
     url: 'https://sermst.com.br/equipe/felipe-sannino',
@@ -32,7 +32,7 @@ const articles = [
   },
   {
     href: '/normas/nr-16-periculosidade',
-    title: 'NR-16: Periculosidade — quando é devida e como blindar a empresa',
+    title: 'NR-16: quando o adicional de periculosidade é devido',
     hub: 'Normas Regulamentadoras',
   },
   {
@@ -81,7 +81,7 @@ const personSchema = {
   '@type': 'Person',
   '@id': 'https://sermst.com.br/equipe/felipe-sannino#person',
   name: 'Felipe Sannino',
-  jobTitle: 'Advogado — Direito do Trabalho e SST',
+  jobTitle: 'Advogado em Direito do Trabalho e SST',
   description:
     'Advogado especializado em Direito do Trabalho e Segurança e Saúde no Trabalho (SST). OAB/SP 430.824. Consultor da SERMST com mais de 10 anos de atuação na área.',
   url: 'https://sermst.com.br/equipe/felipe-sannino',
@@ -96,7 +96,7 @@ const personSchema = {
       credentialCategory: 'OAB/SP 430.824',
       recognizedBy: {
         '@type': 'Organization',
-        name: 'Ordem dos Advogados do Brasil — Seccional São Paulo',
+        name: 'Ordem dos Advogados do Brasil, Seccional São Paulo',
       },
     },
   ],
@@ -118,9 +118,9 @@ const profilePageSchema = {
   '@type': 'ProfilePage',
   '@id': 'https://sermst.com.br/equipe/felipe-sannino#profilepage',
   url: 'https://sermst.com.br/equipe/felipe-sannino',
-  name: 'Felipe Sannino — Advogado Trabalhista e SST | SERMST',
+  name: 'Felipe Sannino | Advogado Trabalhista e SST | SERMST',
   dateCreated: '2025-01-01T00:00:00-03:00',
-  dateModified: '2026-07-02T00:00:00-03:00',
+  dateModified: '2026-07-13T00:00:00-03:00',
   inLanguage: 'pt-BR',
   mainEntity: personSchema,
 };
@@ -152,7 +152,7 @@ export default function FelipeSanninoPage() {
               <div className="h-20 w-20 rounded-full overflow-hidden border-2 border-accent-pink/40 shrink-0 relative">
                 <Image
                   src="/images/equipe/felipe-sannino.png"
-                  alt="Felipe Sannino — Advogado Trabalhista e SST, OAB/SP 430.824"
+                  alt="Felipe Sannino, advogado trabalhista e de SST, OAB/SP 430.824"
                   fill
                   sizes="80px"
                   className="object-cover object-top"
@@ -163,7 +163,7 @@ export default function FelipeSanninoPage() {
                   Felipe Sannino
                 </h1>
                 <p className="mt-2 text-accent-pink font-bold text-lg">
-                  Advogado — Direito do Trabalho e SST
+                  Advogado em Direito do Trabalho e SST
                 </p>
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function FelipeSanninoPage() {
                 Sobre
               </span>
               <h2 className="mb-8 text-3xl font-black text-brand-900 leading-tight">
-                Conformidade trabalhista que protege o patrimônio, não só a documentação.
+                Direito do trabalho aplicado à rotina de SST.
               </h2>
             </FadeIn>
 
@@ -208,11 +208,9 @@ export default function FelipeSanninoPage() {
               </FadeIn>
               <FadeIn direction="up" delay={0.2}>
                 <p>
-                  Seu foco é proteger o CNPJ — não apenas garantir que a empresa esteja em
-                  conformidade no papel, mas que as práticas internas reduzam de fato o risco de
-                  autuação fiscal, processos trabalhistas e passivo acidentário. Assessora empresas
-                  de todos os portes, com atenção especial a negócios familiares com patrimônio a
-                  preservar.
+                  Seu trabalho conecta a leitura jurídica à rotina das empresas. A análise considera
+                  documentos, responsabilidades, prazos e a forma como as medidas de SST são
+                  aplicadas, sem prometer eliminação de risco ou resultado judicial.
                 </p>
               </FadeIn>
               <FadeIn direction="up" delay={0.3}>

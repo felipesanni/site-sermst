@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { FadeIn } from '@/components/ui/fade-in';
 import { BookOpen, ArrowRight, ShieldCheck } from 'lucide-react';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
+import { companyFacts } from '@/lib/company-facts';
 
 export const normasKnown: Record<string, { titulo: string; descricao: string; conteudo?: string }> = {
   'nr-33-espaco-confinado': {
@@ -67,23 +68,29 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
       'O PGRS é exigido para clínicas, laboratórios, hospitais e outras operações com resíduos de risco. Ele documenta geração, segregação, transporte e destinação de resíduos.',
   },
   'o-que-e-nr-07': {
-    titulo: 'NR-07: o que a norma exige sobre PCMSO, ASO e exames ocupacionais',
+    titulo: 'NR-07 atualizada: PCMSO, ASO e exames ocupacionais',
     descricao:
-      'A NR-07 organiza o monitoramento da saúde ocupacional. Como regra, exige PCMSO coerente com os riscos da empresa, emissão de ASO e exames admissionais, periódicos, de retorno, mudança de risco e demissionais.',
-    conteudo: `A NR-07 é a norma regulamentadora que trata do monitoramento da saúde dos trabalhadores. Em termos práticos, ela define a lógica legal por trás do PCMSO, dos exames ocupacionais e da emissão do ASO. Quando a empresa contrata, acompanha, muda o risco da função ou desliga um colaborador, é essa norma que orienta o fluxo médico ocupacional.
+      'Entenda a NR-07 vigente: PCMSO, ASO, exames ocupacionais, periodicidade, prazo demissional e hipóteses de dispensa para pequenos negócios.',
+    conteudo: `A NR-07 estabelece diretrizes para o Programa de Controle Médico de Saúde Ocupacional (PCMSO). O programa deve proteger e preservar a saúde dos empregados em relação aos riscos ocupacionais identificados e classificados no PGR. Por isso, não funciona como um documento isolado nem como uma lista genérica de exames.
 
-Em outras palavras: a NR-07 é a regra; o PCMSO é o programa que coloca essa regra em prática; e o ASO é a evidência documental de cada exame ocupacional. Quem pesquisa "NR-07" normalmente quer entender a exigência normativa, o que a empresa precisa cumprir e qual o risco de não cumprir. Quem pesquisa "PCMSO" geralmente quer saber como montar, revisar ou operacionalizar o programa.
+Em termos práticos, a NR-07 é a regra; o PCMSO organiza o monitoramento médico; e o ASO registra a conclusão do exame clínico ocupacional. A norma prevê exames admissional, periódico, de retorno ao trabalho, de mudança de riscos ocupacionais e demissional.
 
-A NR-07 se aplica às organizações com empregados CLT. Como regra, o empregador deve garantir a elaboração e a efetiva implantação do PCMSO. A própria norma prevê dispensa de elaboração para alguns MEI, ME e EPP de grau de risco 1 ou 2 que prestem as informações digitais previstas na NR-01 e não identifiquem as exposições ocupacionais previstas na regra. Mesmo nesses casos, exames ocupacionais e ASO continuam obrigatórios.
+No periódico, a regra vigente não separa trabalhadores apenas por idade e grau de risco. O exame clínico deve ser anual, ou ocorrer em prazo menor a critério médico, para quem está exposto a riscos ocupacionais identificados e classificados no PGR e para pessoas com doenças crônicas que aumentem a suscetibilidade. Para os demais trabalhadores, o intervalo geral é de dois anos.
 
-A norma também se conecta ao eSocial: os ASOs emitidos no monitoramento da saúde alimentam o evento S-2220, e inconsistências entre PGR, PCMSO e exames deixam a empresa exposta em fiscalização. Quando o risco informado, o exame realizado e o protocolo médico não contam a mesma história, o problema aparece rápido.
+No demissional, quando não houver dispensa, o exame clínico deve ser realizado em até 10 dias contados do término do contrato. A dispensa pode ocorrer se o exame clínico ocupacional mais recente tiver sido feito há menos de 135 dias, nas organizações de grau de risco 1 ou 2, ou há menos de 90 dias, nas de grau de risco 3 ou 4.
 
-Se a sua necessidade é entender como estruturar o programa, definir cronogramas, exames por cargo e integração com ASO e eSocial, o caminho correto é a página específica de PCMSO. Aqui, o objetivo é esclarecer a norma, responder o que a NR-07 exige e separar a intenção informacional da página transacional do serviço.`,
+MEI, ME e EPP enquadrados nos graus de risco 1 ou 2 podem ter dispensa de elaborar o PCMSO quando atendem às condições previstas na NR-01 e não identificam exposições ocupacionais a agentes físicos, químicos, biológicos nem riscos relacionados a fatores ergonômicos. Essa dispensa não elimina os exames médicos ocupacionais nem a emissão do ASO.
+
+A norma também se conecta ao eSocial. Os exames ocupacionais informados no S-2220 precisam ser coerentes com o PCMSO e com os riscos da função. Quando o demissional é dispensado pela NR-07, não há novo ASO demissional e a orientação oficial do eSocial é não enviar um S-2220 apenas para registrar a dispensa.`,
   },
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return Object.keys(normasKnown).map((slug) => ({ slug }));
+  // As demais normas possuem páginas estáticas próprias. Este segmento dinâmico
+  // existe apenas para a página dedicada da NR-07.
+  return [{ slug: 'o-que-e-nr-07' }];
 }
 
 type Props = {
@@ -96,15 +103,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const titulo = norma?.titulo ?? `${slug.replace(/-/g, ' ')} | Normas Regulamentadoras SST`;
   const descricaoPadrao =
     'Entenda as Normas Regulamentadoras de Saúde e Segurança do Trabalho. A SERMST oferece suporte técnico completo para conformidade com NRs e eSocial.';
+  const title =
+    slug === 'o-que-e-nr-07'
+      ? 'NR-07: PCMSO, ASO e exames ocupacionais | SERMST'
+      : `${titulo} | SERMST`;
 
   return {
-    title: `${titulo} | SERMST`,
+    title,
     description: norma?.descricao ?? descricaoPadrao,
     alternates: {
       canonical: `https://sermst.com.br/normas/${slug}`,
     },
     openGraph: {
-      title: `${titulo} | SERMST`,
+      title,
       description: norma?.descricao ?? descricaoPadrao,
       url: `https://sermst.com.br/normas/${slug}`,
       type: 'article',
@@ -186,6 +197,34 @@ export default async function NormaPage({ params }: Props) {
                   </div>
                 )}
 
+                {slug === 'o-que-e-nr-07' && (
+                  <div className="mb-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
+                    <h2 className="mb-4 text-xl font-black text-brand-900">Fontes oficiais da NR-07</h2>
+                    <ul className="space-y-3 text-slate-600">
+                      <li>
+                        <a
+                          href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-07-atualizada-2022.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink"
+                        >
+                          Texto oficial da NR-07: Ministério do Trabalho e Emprego
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.gov.br/esocial/pt-br/empresas/perguntas-frequentes/perguntas-frequentes-producao-empresas-e-ambiente-de-testes"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink"
+                        >
+                          Perguntas frequentes dos eventos de SST no eSocial
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+
                 <div className="mb-6 flex items-center gap-3">
                   <ShieldCheck className="h-8 w-8 text-accent-pink" />
                   <h2 className="text-2xl font-black text-brand-900">Conformidade e penalidades</h2>
@@ -195,8 +234,8 @@ export default async function NormaPage({ params }: Props) {
                   eSocial, especialmente em eventos como S-2220 e S-2240, além de ampliar o risco de passivos trabalhistas.
                 </p>
                 <p className="leading-relaxed text-slate-600">
-                  A SERMST conta com equipe especializada em Medicina e Segurança do Trabalho, com mais de 40 anos de
-                  experiência, para apoiar empresas na conformidade com as NRs aplicáveis.
+                  A SERMST reúne {companyFacts.history.phrase} e uma equipe especializada em Medicina e Segurança do
+                  Trabalho para ajudar empresas a cumprir as NRs aplicáveis.
                 </p>
 
                 <div className="mt-8 rounded-xl border border-accent-pink/20 bg-accent-pink/5 p-6">

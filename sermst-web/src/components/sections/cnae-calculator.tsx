@@ -214,10 +214,8 @@ function ResultCard({
       nr05?.kind === 'cipa'
         ? `CIPA obrigatória (${nr05.faixa}) com ${nr05.empregados.efetivos} efetivo(s) e ${nr05.empregados.suplentes} suplente(s) por lado.`
         : nr05?.kind === 'representante'
-          ? 'Sem CIPA dimensionada nesta faixa; caso tende a representante da NR-05.'
-          : nr05?.kind === 'sesmt'
-            ? 'Faixa sem CIPA dimensionada pelo Quadro I; atribuições tendem a ser cobertas pelo SESMT.'
-            : 'NR-05 ainda não calculada.';
+          ? 'Sem CIPA dimensionada nesta faixa; confirmar representante da NR-05 ou atendimento por SESMT.'
+          : 'NR-05 ainda não calculada.';
 
     payload.porte = getPorteFromEmployees(employees);
     payload.dor = 'calculadora-risco';
@@ -233,8 +231,8 @@ function ResultCard({
       Number.isFinite(employees) ? `Empregados no estabelecimento: ${employees}.` : '',
       nr05Summary,
       `Referência inicial de RAT: ${cfg.rat}. Validar pela atividade preponderante e pelo FAP da empresa.`,
-      `SESMT: ${info.sesmt}.`,
-      `Exame periodico: ${info.examesPeriodicos}.`,
+      `Referência inicial de SESMT pelo grau consultado: ${info.sesmt}. Confirmar a atividade preponderante.`,
+      `Exame periódico: ${info.examesPeriodicos}.`,
     ]
       .filter(Boolean)
       .join(' ');
@@ -308,8 +306,9 @@ function ResultCard({
           <p className="mt-1 text-xs text-slate-500">Confirme pela atividade preponderante e pelo FAP.</p>
         </div>
         <div className="rounded-2xl border border-white/60 bg-white/70 p-5">
-          <p className="mb-1 text-[11px] font-black uppercase tracking-wider text-slate-500">SESMT obrigatório</p>
+          <p className="mb-1 text-[11px] font-black uppercase tracking-wider text-slate-500">Referência inicial de SESMT</p>
           <p className="text-sm font-semibold leading-snug text-brand-900">{info.sesmt}</p>
+          <p className="mt-1 text-xs text-slate-500">Confirme a atividade preponderante e o Quadro II da NR-04.</p>
         </div>
         <div className="rounded-2xl border border-white/60 bg-white/70 p-5 sm:col-span-2">
           <p className="mb-1 text-[11px] font-black uppercase tracking-wider text-slate-500">Exame periódico</p>
@@ -359,7 +358,7 @@ function ResultCard({
             <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">NR-05 · Dimensionamento de CIPA</p>
             <h4 className="mt-1 text-lg font-black text-brand-900">Este estabelecimento precisa de CIPA?</h4>
             <p className="mt-1 text-sm leading-relaxed text-slate-600">
-              A NR-05 olha para o estabelecimento, não para o total do grupo. A calculadora cruza o grau de risco com a quantidade de empregados informada e mostra se há obrigação de CIPA completa, apenas representante da NR-05 ou cobertura pelo SESMT.
+              A NR-05 considera o estabelecimento, não o total do grupo. A calculadora cruza o grau consultado com a quantidade de empregados e apresenta uma referência de CIPA ou representante. Confirme a atividade preponderante e se o estabelecimento é atendido por SESMT antes de concluir.
             </p>
           </div>
         </div>
@@ -429,35 +428,21 @@ function ResultCard({
           </div>
         )}
 
-        {nr05?.kind === 'sesmt' && (
-          <div className="rounded-2xl border border-sky-200 bg-sky-50 p-4">
-            <div className="flex items-start gap-3">
-              <div className="rounded-2xl bg-sky-100 p-3 text-sky-700">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-[11px] font-black uppercase tracking-wider text-sky-700">Atribuições cobertas pelo SESMT</p>
-                <h5 className="mt-1 text-lg font-black text-brand-900">O Quadro I não dimensiona CIPA nesta faixa</h5>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">{nr05.observacao}</p>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
       <div className="mb-8 rounded-[2rem] border border-white/70 bg-white/75 p-6 shadow-sm">
         <div className="mb-5">
           <p className="text-[11px] font-black uppercase tracking-wider text-accent-pink">Próximo passo</p>
-          <h4 className="mt-1 text-lg font-black text-brand-900">A SERMST já tem o enquadramento. Falta só o seu contato.</h4>
+          <h4 className="mt-1 text-lg font-black text-brand-900">Quer confirmar o enquadramento com a nossa equipe?</h4>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Ao enviar, a SERMST recebe automaticamente o CNAE, o grau de risco, o enquadramento de CIPA e o número de empregados. A equipe já chega no contato com o contexto do seu caso — sem perguntar o que você já respondeu aqui.
+            Ao enviar, a SERMST recebe o CNAE, o grau de risco, o enquadramento de CIPA e o número de empregados informados aqui. Assim, a conversa começa com o contexto do seu caso.
           </p>
         </div>
 
         <div className="mb-5 grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">O que a equipe já recebe</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">CNAE, grau de risco, referência inicial de RAT, dimensionamento de SESMT, enquadramento de NR-05/CIPA e número de empregados.</p>
+            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">CNAE, grau de risco, referências iniciais de RAT, SESMT e NR-05/CIPA e número de empregados.</p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Por que funciona</p>
@@ -465,7 +450,7 @@ function ResultCard({
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Para quem é</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Para quem não sabe exatamente o que falta — exame, laudo, eSocial, PGR, PCMSO ou estrutura completa de SST.</p>
+            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Para quem precisa confirmar se faltam exames, laudos, eventos do eSocial, PGR, PCMSO ou outro requisito de SST.</p>
           </div>
         </div>
 
@@ -476,7 +461,7 @@ function ResultCard({
               <div>
                 <p className="font-black text-brand-900">Recebemos. Em breve você tem retorno.</p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                  A equipe comercial recebeu seu contato junto com o enquadramento calculado. O retorno já vem com proposta adequada ao seu caso.
+                  A equipe recebeu seu contato e os dados informados na calculadora. Eles serão usados para conferir o enquadramento antes do retorno.
                 </p>
                         <a
                   href="/assinaturas"
@@ -579,7 +564,7 @@ function ResultCard({
 
       <div className="mt-4 space-y-2 text-center">
         <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-          *Resultado baseado nos Quadros da NR-04, NR-05 e NR-07. Consulte profissional habilitado antes de tomar decisões operacionais ou fiscais com base neste resultado.
+          *Resultado inicial baseado no CNAE consultado e nos Quadros da NR-04 e NR-05. Confirme a atividade preponderante e os dados do estabelecimento antes de tomar decisões operacionais ou fiscais.
         </p>
         <p className="mx-auto max-w-2xl text-xs leading-relaxed text-slate-500">
           A faixa de RAT exibida é uma referência inicial. A validação tributária deve considerar a atividade econômica preponderante e o FAP da empresa, que pode reduzir ou majorar a alíquota conforme o histórico de acidentes.
@@ -603,7 +588,7 @@ function GrauPreview() {
               <span className={`mb-2 inline-block rounded-xl px-3 py-1 text-sm font-black ${c.badge}`}>
                 Grau {g}
               </span>
-              <p className="text-xs leading-snug text-slate-600">{i.label.split(' — ')[1]}</p>
+              <p className="text-xs leading-snug text-slate-600">{i.label.split(' - ')[1]}</p>
               <p className={`mt-2 text-lg font-black ${c.text}`}>RAT ref. {c.rat}</p>
             </div>
           );
@@ -699,7 +684,7 @@ export function CnaeCalculator() {
 
   function handleSelect(entry: CnaeEntry) {
     setSelected(entry);
-    setQuery(`${entry.codigo} — ${entry.descricao}`);
+    setQuery(`${entry.codigo}: ${entry.descricao}`);
     setOpen(false);
     if (typeof window !== 'undefined') {
       window.dataLayer = window.dataLayer || [];
@@ -966,7 +951,7 @@ export function CnaeCalculator() {
                     )}
                     <p className="text-sm text-slate-700">
                       CNAE principal: <strong>{cnpjCnaeStr}</strong>
-                      {cnpjCnaeDesc && ` - ${cnpjCnaeDesc}`}
+                      {cnpjCnaeDesc && `: ${cnpjCnaeDesc}`}
                     </p>
                     <p className="mt-2 text-xs text-slate-500">
                       Este CNAE ainda não está na nossa base detalhada. Solicite uma análise completa:
@@ -1010,7 +995,7 @@ export function CnaeCalculator() {
                     />
                   </label>
                   <p className="mt-3 text-sm leading-relaxed text-slate-500">
-                      Informe quantos empregados há neste estabelecimento. Com esse dado, a calculadora mostra se a empresa precisa de CIPA completa, apenas representante da NR-05 ou SESMT próprio.
+                      Informe quantos empregados há neste estabelecimento. A calculadora mostrará uma referência de CIPA ou representante da NR-05. A conclusão também depende da atividade preponderante e do atendimento por SESMT.
                   </p>
                 </div>
               </div>

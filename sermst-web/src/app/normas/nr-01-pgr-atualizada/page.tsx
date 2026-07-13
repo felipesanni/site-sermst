@@ -22,7 +22,7 @@ export default function NR01Page() {
     <BlockbusterArticle
       coverImage={{
         src: '/images/articles/normas-nr.jpg',
-        alt: 'Documentacao do Programa de Gerenciamento de Riscos PGR conforme NR-01 atualizada',
+        alt: 'Documentação do Programa de Gerenciamento de Riscos conforme a NR-01 atualizada',
       }}
       hubLabel="Normas Regulamentadoras"
       hubLabelShort="← Normas"
@@ -35,43 +35,42 @@ export default function NR01Page() {
         jobTitle: 'Advogado - Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-06',
+        dateModified: '2026-07-13',
       }}
       showTableOfContents
       h1="NR-01 atualizada: o que mudou no PGR, no GRO e nos riscos psicossociais"
-      intro="A NR-01 organiza as disposicoes gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, os fatores de risco psicossociais relacionados ao trabalho passaram a exigir leitura mais explicita dentro do PGR. Aqui o foco e explicar como inserir esses riscos no programa, quem deve participar, quando revisar e quais evidencias a empresa precisa guardar."
+      intro="A NR-01 organiza as disposições gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, o texto cita expressamente os fatores de risco psicossociais relacionados ao trabalho. Veja como tratá-los no gerenciamento, quem deve participar, quando revisar a avaliação e quais registros devem ser mantidos."
       quickAnswer={
         <p>
-          A <strong>NR-01</strong> organiza o <strong>GRO - Gerenciamento de Riscos Ocupacionais</strong> e o <strong>PGR - Programa de Gerenciamento de Riscos</strong>. Na pratica, a empresa precisa identificar riscos, montar inventario, definir plano de acao e revisar o programa quando a operacao muda. Desde <strong>26 de maio de 2026</strong>, os <strong>riscos psicossociais relacionados ao trabalho</strong> tambem precisam ser tratados dentro dessa logica, com evidencias e medidas de controle.
+          A <strong>NR-01</strong> organiza o <strong>GRO, Gerenciamento de Riscos Ocupacionais</strong>, e o <strong>PGR, Programa de Gerenciamento de Riscos</strong>. A empresa precisa identificar perigos, avaliar riscos, manter o inventário e o plano de ação e rever a avaliação quando a operação muda. Desde <strong>26 de maio de 2026</strong>, os <strong>fatores de risco psicossociais relacionados ao trabalho</strong> aparecem expressamente nessa obrigação.
         </p>
       }
       sections={[
         {
-          title: 'O que e a NR-01 atualizada e por que ela importa para qualquer empresa com empregado CLT',
+          title: 'O que é a NR-01 atualizada e por que ela importa',
           body: (
             <>
               <p>
-                A NR-01 estabelece as disposicoes gerais sobre Seguranca e Saude no Trabalho e
-                estrutura o <strong>GRO - Gerenciamento de Riscos Ocupacionais</strong>. Como
+                A NR-01 estabelece as disposições gerais sobre Segurança e Saúde no Trabalho e
+                estrutura o <strong>GRO, Gerenciamento de Riscos Ocupacionais</strong>. Como
                 regra, esse gerenciamento precisa ser materializado em um{' '}
-                <strong>PGR - Programa de Gerenciamento de Riscos</strong>, com inventario de
-                riscos e plano de acao coerentes com a operacao.
+                <strong>PGR, Programa de Gerenciamento de Riscos</strong>, com inventário de
+                riscos e plano de ação coerentes com a operação.
               </p>
               <p>
-                Na pratica, e a NR-01 que organiza a base da gestao de SST. E ela que conecta
-                risco real da operacao, documento tecnico, rotina de prevencao,{' '}
+                Na prática, é a NR-01 que organiza a base da gestão de SST. Ela conecta
+                risco real da operação, documento técnico, rotina de prevenção,{' '}
                 <Link
                   href="/saude/pcmso-programa-controle-medico"
                   className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
                 >
                   PCMSO
                 </Link>{' '}
-                e consistencia das informacoes ocupacionais enviadas ao eSocial.
+                e a consistência das informações ocupacionais enviadas ao eSocial.
               </p>
               <p>
-                Quando a empresa trata a NR-01 como formalidade, costuma cair no padrao mais caro
-                de todos: PGR generico, exame ocupacional desconectado do risco real, lideranca sem
-                evidencia de orientacao e documentacao que nao se sustenta em fiscalizacao.
+                Quando o PGR não reflete a operação, surgem divergências entre os riscos avaliados,
+                os exames definidos no PCMSO, os treinamentos e as informações enviadas ao eSocial.
               </p>
             </>
           ),
@@ -81,29 +80,27 @@ export default function NR01Page() {
           body: (
             <>
               <p>
-                A mudanca mais recente e a inclusao expressa dos{' '}
+                A mudança mais recente é a inclusão expressa dos{' '}
                 <strong>fatores de risco psicossociais relacionados ao trabalho</strong> no GRO. A
-                analise precisa considerar fatores que possam afetar a saude mental dos
+                análise precisa considerar aspectos da organização do trabalho que possam afetar a saúde dos
                 trabalhadores, como:
               </p>
               <ul>
                 <li>Carga mental excessiva</li>
-                <li>Pressao por produtividade fora do razoavel</li>
-                <li>Assedio moral e sexual</li>
-                <li>Conflitos cronicos nao resolvidos</li>
-                <li>Inseguranca quanto ao vinculo e mudancas agressivas de contratacao</li>
+                <li>Pressão por produtividade incompatível com os recursos disponíveis</li>
+                <li>Assédio moral e sexual</li>
+                <li>Conflitos crônicos não resolvidos</li>
+                <li>Insegurança quanto ao vínculo e mudanças mal conduzidas na organização do trabalho</li>
                 <li>Falta de autonomia ou de clareza no papel</li>
               </ul>
               <p>
-                Tudo isso passa a ser fator que precisa estar mapeado no inventario de riscos, com
-                plano de acao e acompanhamento.
+                Esses são exemplos. A avaliação deve partir das condições reais de trabalho e registrar os fatores identificados, a avaliação dos riscos e as medidas de prevenção aplicáveis.
               </p>
               <p>
-                Isso nao transforma o PGR em texto generico sobre bem-estar. O que a norma exige e
-                identificacao, avaliacao e medida de controle. Se a empresa sabe que existe pressao
-                excessiva, conflito recorrente, meta inalcançavel, ambiguidade de papel ou
-                lideranca desorganizada, precisa demonstrar como tratou esse risco dentro da
-                governanca de SST.
+                O PGR não deve virar um texto genérico sobre bem-estar. A norma exige identificação,
+                avaliação e medidas de prevenção. Sobrecarga, conflito recorrente, metas inviáveis,
+                ambiguidade de papel e falhas na organização do trabalho precisam ser avaliados no
+                contexto em que ocorrem.
               </p>
             </>
           ),
@@ -113,72 +110,71 @@ export default function NR01Page() {
           body: (
             <>
               <p>
-                Como regra, organizacoes com empregados precisam manter o gerenciamento de riscos
-                ocupacionais coerente com a operacao. A NR-01 preve tratamentos simplificados e
-                hipoteses especificas de dispensa de elaboracao do PGR: o MEI e dispensado de
-                elaborar o programa, e determinadas ME e EPP de grau de risco 1 ou 2 tambem podem
-                ser dispensadas quando prestam as informacoes digitais e nao identificam exposicoes
-                ocupacionais a agentes fisicos, quimicos e biologicos.
+                Como regra, organizações com empregados precisam manter o gerenciamento de riscos
+                ocupacionais coerente com a operação. A NR-01 prevê tratamento diferenciado e
+                hipóteses específicas de dispensa de elaboração do PGR: o MEI é dispensado de
+                elaborar o programa, e determinadas ME e EPP de grau de risco 1 ou 2 também podem
+                ser dispensadas quando prestam as informações digitais e não identificam exposições
+                ocupacionais a agentes físicos, químicos e biológicos.
               </p>
               <p>
-                Essas dispensas nao significam ausencia de responsabilidade em SST. Sobre os
-                fatores psicossociais especificamente, a nova redacao entrou em vigor em{' '}
+                Essas dispensas não significam ausência de responsabilidade em SST. Sobre os
+                fatores psicossociais especificamente, a nova redação entrou em vigor em{' '}
                 <strong>26 de maio de 2026</strong>. A empresa deve avaliar se o GRO e, quando
-                aplicavel, o PGR identificam fatores relacionados ao trabalho e se o plano de acao
+                aplicável, o PGR identificam fatores relacionados ao trabalho e se o plano de ação
                 precisa ser atualizado.
               </p>
               <p>
-                Se houver duvida sobre enquadramento, uma forma simples de evitar erro logo no
-                inicio e validar o CNAE e o grau de risco antes de revisar a documentacao. A{' '}
+                Se houver dúvida sobre enquadramento, uma forma simples de evitar erro logo no
+                início é validar o CNAE e o grau de risco antes de revisar a documentação. A{' '}
                 <Link
                   href="/rh/calculadora-cnae-grau-de-risco"
                   className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
                 >
                   calculadora de grau de risco por CNAE
                 </Link>{' '}
-                ajuda a filtrar esse cenario.
+                ajuda nessa conferência inicial, mas não substitui a avaliação das atividades reais.
               </p>
             </>
           ),
         },
         {
-          title: 'Riscos psicossociais no PGR: como inserir na pratica',
+          title: 'Riscos psicossociais no PGR: como inserir na prática',
           body: (
             <>
               <p>
                 Muitas empresas entenderam que a NR-01 mudou, mas ainda travam na pergunta mais
                 importante: <strong>como inserir riscos psicossociais no PGR</strong> sem criar um
-                documento generico. O caminho mais seguro e demonstrar que a empresa avaliou a
-                organizacao real do trabalho.
+                documento genérico. O caminho é demonstrar que a empresa avaliou a
+                organização real do trabalho.
               </p>
               <ol>
                 <li>
                   <strong>Identificar fatores ligados ao trabalho.</strong> Exemplo: sobrecarga,
-                  assedio, conflito recorrente, metas inviaveis, falta de clareza de papel,
-                  jornadas desorganizadas ou pressao excessiva.
+                  assédio, conflito recorrente, metas inviáveis, falta de clareza de papel,
+                  jornadas desorganizadas ou pressão excessiva.
                 </li>
                 <li>
-                  <strong>Registrar no inventario de riscos.</strong> O risco deve aparecer
-                  conectado a area, funcao, grupo exposto e situacao que pode gerar dano.
+                  <strong>Registrar no inventário de riscos.</strong> O risco deve aparecer
+                  conectado a área, função, grupo exposto e situação que pode gerar dano.
                 </li>
                 <li>
-                  <strong>Definir medidas de controle.</strong> Treinamento de lideranca, canal de
-                  denuncia, revisao de metas, fluxo de comunicacao, ajuste de processo e
-                  acompanhamento formal sao exemplos possiveis.
+                  <strong>Definir medidas de controle.</strong> Treinamento de liderança, canal de
+                  denúncia, revisão de metas, fluxo de comunicação, ajuste de processo e
+                  acompanhamento formal são exemplos possíveis.
                 </li>
                 <li>
-                  <strong>Criar plano de acao com dono e prazo.</strong> Um PGR fraco apenas cita o
-                  risco. Um PGR melhor mostra quem vai agir, ate quando e como sera verificado.
+                  <strong>Criar plano de ação com dono e prazo.</strong> Um PGR fraco apenas cita o
+                  risco. Um PGR útil mostra quem vai agir, até quando e como a medida será acompanhada.
                 </li>
                 <li>
-                  <strong>Guardar evidencias.</strong> Lista de presenca, ata, pesquisa interna,
-                  plano de melhoria, registros de tratativas e revisoes ajudam a provar que a
-                  empresa nao ficou so no papel.
+                  <strong>Guardar evidências.</strong> Lista de presença, ata, pesquisa interna,
+                  plano de melhoria e registros das providências ajudam a demonstrar o que foi feito.
                 </li>
               </ol>
               <p>
-                O ponto central e simples: risco psicossocial no PGR precisa ter causa relacionada
-                ao trabalho e uma resposta de gestao. Nao e diagnostico clinico individual nem
+                O ponto central é simples: o fator psicossocial precisa estar relacionado ao
+                trabalho e receber uma resposta de gestão. Não é diagnóstico clínico individual nem
                 promessa de eliminar todo estresse da empresa.
               </p>
             </>
@@ -189,21 +185,20 @@ export default function NR01Page() {
           body: (
             <>
               <p>
-                Outra duvida forte e se tecnico de seguranca do trabalho pode fazer ou assinar o
+                Uma dúvida frequente é se o técnico de segurança do trabalho pode elaborar ou assinar o
                 PGR. A resposta depende do escopo, da complexidade da empresa, dos riscos
-                identificados e das atribuicoes profissionais aplicaveis.
+                identificados e das atribuições profissionais aplicáveis.
               </p>
               <p>
-                Em cenarios simples, a participacao do tecnico pode ser suficiente para muitas
-                atividades de apoio e elaboracao. Em cenarios com exigencia tecnica especifica,
-                pode ser necessario profissional legalmente habilitado, como engenheiro de
-                seguranca ou medico do trabalho, conforme o caso.
+                A NR-01 não cria uma exigência geral de assinatura do PGR por uma única categoria.
+                A organização deve atribuir as responsabilidades a pessoas com conhecimento e
+                qualificação compatíveis, respeitando as atribuições profissionais e as exigências
+                específicas de outras normas e laudos.
               </p>
               <p>
-                O erro comum e escolher quem assina apenas pelo menor preco. Para a empresa, o que
-                importa em fiscalizacao e pericia e se o documento foi feito por profissional
-                competente, se descreve a operacao real e se as medidas propostas fazem sentido
-                para os riscos existentes.
+                Mais importante do que procurar uma assinatura genérica é verificar se a equipe
+                envolvida tem competência para avaliar os riscos existentes, se o documento descreve
+                a operação real e se as medidas propostas podem ser executadas.
               </p>
             </>
           ),
@@ -213,92 +208,87 @@ export default function NR01Page() {
           body: (
             <>
               <p>
-                A melhor forma de reagir a NR-01 atualizada nao e correr para refazer tudo do zero.
-                E fazer uma revisao estruturada do que ja existe e atacar as lacunas que realmente
-                expoem a empresa.
+                Não é necessário refazer tudo sem antes avaliar o que já existe. Comece por uma
+                revisão estruturada do inventário, do plano de ação e das mudanças ocorridas na operação.
               </p>
               <ol>
                 <li>
-                  <strong>Auditar o PGR atual.</strong> Verificar se o inventario de riscos
-                  considera fatores psicossociais relacionados ao trabalho e se o plano de acao
-                  precisa ser atualizado apos a vigencia de 26 de maio de 2026.
+                  <strong>Auditar o PGR atual.</strong> Verificar se o inventário de riscos
+                  considera fatores psicossociais relacionados ao trabalho e se o plano de ação
+                  precisa ser atualizado após a vigência de 26 de maio de 2026.
                 </li>
                 <li>
-                  <strong>Mapear os riscos psicossociais reais.</strong> Por area, por funcao, por
-                  turno. Pesquisa anonima com a equipe ajuda muito e a falta dela ja e evidencia
-                  fraca.
+                  <strong>Mapear os riscos psicossociais reais.</strong> Por área, por função, por
+                  turno e por grupo de trabalhadores expostos. A ferramenta de coleta deve ser escolhida
+                  conforme a realidade da organização e ter critérios documentados.
                 </li>
                 <li>
-                  <strong>Definir plano de acao.</strong> Para cada risco identificado, qual e a
-                  medida de controle, quem e o responsavel e qual o prazo.
+                  <strong>Definir plano de ação.</strong> Para cada risco identificado, qual e a
+                  medida de prevenção, quem é o responsável e qual é o prazo.
                 </li>
                 <li>
                   <strong>Atualizar PCMSO em paralelo.</strong> O PCMSO precisa refletir os mesmos
-                  riscos do PGR. Se um menciona risco psicossocial e outro nao, ha inconsistência
-                  tecnica.
+                  riscos do PGR. Se um menciona risco psicossocial e outro não, há inconsistência
+                  técnica.
                 </li>
                 <li>
-                  <strong>Documentar e treinar liderancas.</strong> Gerentes e supervisores
-                  precisam entender o que mudou e ter evidencia formal disso.
+                  <strong>Documentar e orientar as lideranças.</strong> Gerentes e supervisores
+                  precisam entender o que mudou e ter evidência formal disso.
                 </li>
                 <li>
-                  <strong>Cronograma de revisao.</strong> PGR nao e &quot;feito uma vez&quot;. A avaliacao
-                  de riscos deve ser revista no maximo a cada 2 anos, ou antes quando ocorrerem as
-                  situacoes previstas na NR-01.
+                  <strong>Cronograma de revisão.</strong> O PGR não é elaborado uma única vez. A avaliação
+                  de riscos deve ser revista no máximo a cada 2 anos, ou antes quando ocorrerem as
+                  situações previstas na NR-01.
                 </li>
               </ol>
             </>
           ),
         },
         {
-          title: 'Fiscalizacao da NR-01: o que costuma ser cobrado',
+          title: 'Fiscalização da NR-01: o que precisa estar demonstrado',
           body: (
             <>
               <p>
-                Em fiscalizacao, a empresa normalmente precisa demonstrar mais do que a existencia
-                de um arquivo chamado PGR. O auditor tende a olhar se existe inventario de riscos,
-                plano de acao, responsaveis, prazos, evidencias de medidas preventivas e coerencia
+                Em fiscalização, a empresa precisa demonstrar mais do que a existência
+                de um arquivo chamado PGR. Devem existir inventário de riscos,
+                plano de ação, responsáveis, prazos, evidências das medidas preventivas e coerência
                 entre PGR, PCMSO, treinamentos e rotina operacional.
               </p>
               <p>
-                Nos riscos psicossociais, a fragilidade aparece quando a empresa declara que nao
-                existe risco sem ter avaliado carga de trabalho, lideranca, comunicacao,
-                ocorrencias internas, afastamentos, denuncias ou mudancas organizacionais
-                relevantes. A melhor defesa e ter criterio simples, documentado e repetivel.
+                Nos riscos psicossociais, a fragilidade aparece quando a empresa declara que não
+                existe risco sem ter avaliado a organização do trabalho, a comunicação,
+                ocorrências internas, afastamentos, denúncias e mudanças organizacionais
+                relevantes. O método e os critérios adotados devem ser documentados.
               </p>
             </>
           ),
         },
         {
-          title: 'Decisao do STF sobre multas da NR-01: o que muda agora',
+          title: 'Decisão do STF sobre sanções da NR-01: situação em julho de 2026',
           body: (
             <>
               <p>
-                Em 26 de junho de 2026, o G1 noticiou que o ministro Andre Mendonca, do STF,
-                suspendeu por 90 dias a aplicacao de multas e outras sancoes da NR-01
-                relacionadas aos riscos psicossociais no trabalho. A medida foi apresentada como
-                provisoria e voltada a uma tentativa de conciliacao para esclarecer criterios de
-                aplicacao da norma.
+                Em decisão liminar divulgada em 25 de junho de 2026, o ministro André Mendonça, do STF,
+                suspendeu por 90 dias a aplicação de multas e outras sanções ligadas aos dispositivos
+                da NR-01 sobre fatores de risco psicossociais. A medida abriu uma etapa de conciliação
+                para discutir critérios de aplicação e ainda será submetida ao Plenário.
               </p>
               <p>
-                O ponto mais importante para a empresa e este:{' '}
-                <strong>a decisao nao suspende a obrigacao de prevenir riscos psicossociais</strong>.
-                Segundo a noticia, as empresas continuam obrigadas a identificar, avaliar e prevenir
-                esses riscos; o que fica suspenso temporariamente e a aplicacao de punicoes ligadas
-                a essas regras durante o periodo informado.
+                A liminar não retirou a vigência das diretrizes gerais. A empresa deve continuar
+                identificando, avaliando e prevenindo os riscos relacionados ao trabalho. O que ficou
+                temporariamente suspenso foi a aplicação das sanções alcançadas pela decisão.
               </p>
               <p>
-                Na pratica, a decisao reduz o risco imediato de multa nesse ponto especifico, mas
-                nao torna seguro deixar o PGR parado. O melhor caminho e usar esse periodo para
-                revisar inventario, metodologia, plano de acao, evidencias e alinhamento com PCMSO
-                e eSocial. Fonte: materia do{' '}
+                Como a situação processual pode mudar, a página deve ser revista após o referendo do
+                Plenário. Enquanto isso, a organização pode revisar inventário, método, plano de ação
+                e alinhamento com o PCMSO. Fonte:{' '}
                 <a
-                  href="https://g1.globo.com/trabalho-e-carreira/noticia/2026/06/26/stf-suspende-multas-da-nr-1-sobre-saude-mental-no-trabalho-por-90-dias.ghtml"
+                  href="https://noticias.stf.jus.br/postsnoticias/stf-suspende-sancoes-da-nr-1-e-abre-conciliacao-sobre-regras-de-riscos-psicossociais-no-trabalho/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
                 >
-                  G1 sobre a suspensao das multas da NR-01 por 90 dias
+                  notícia oficial do STF sobre a ADPF 1316
                 </a>
                 .
               </p>
@@ -306,20 +296,19 @@ export default function NR01Page() {
           ),
         },
         {
-          title: 'PGR, NR-01 e eSocial: qual e a ligacao',
+          title: 'PGR, NR-01 e eSocial: qual é a ligação',
           body: (
             <>
               <p>
-                A NR-01 tambem conversa com o eSocial porque os riscos ocupacionais informados pela
+                A NR-01 também conversa com o eSocial porque os riscos ocupacionais informados pela
                 empresa precisam ser coerentes com os documentos de SST. Quando o PGR, o PCMSO e o
-                evento S-2240 contam historias diferentes, a empresa cria uma trilha de
-                inconsistencia.
+                evento S-2240 contam histórias diferentes, surgem inconsistências nos registros.
               </p>
               <p>
-                Isso nao significa que todo detalhe do PGR vai automaticamente para o eSocial, mas
-                significa que a base tecnica precisa estar alinhada. Se o risco existe na operacao,
-                ele deve ser avaliado corretamente; se a empresa diz que nao existe, precisa ter
-                fundamento para sustentar essa conclusao.
+                Isso não significa que todo detalhe do PGR vai automaticamente para o eSocial, mas
+                significa que a base técnica precisa estar alinhada. Se o risco existe na operação,
+                ele deve ser avaliado corretamente; se a empresa diz que não existe, precisa ter
+                fundamento para sustentar essa conclusão.
               </p>
             </>
           ),
@@ -329,59 +318,53 @@ export default function NR01Page() {
           body: (
             <>
               <p>
-                Essa e uma das duvidas mais comuns sobre NR-01. O ponto central e o seguinte:{' '}
-                <strong>PGR nao tem validade fixa de cartorio</strong>. O que existe e a
-                obrigacao de revisar a avaliacao de riscos no maximo a cada 2 anos, ou antes disso
-                quando houver mudancas relevantes na operacao, acidente, doenca relacionada ao
-                trabalho, alteracao de processo, layout, equipe, jornada ou medidas de controle.
+                Essa é uma das dúvidas mais comuns sobre a NR-01. O PGR não tem uma data única de
+                vencimento. A norma exige a revisão da avaliação de riscos no máximo a cada 2 anos, ou antes disso
+                quando houver mudanças relevantes na operação, acidente, doença relacionada ao
+                trabalho, alteração de processo, layout, equipe, jornada ou medidas de controle.
               </p>
               <p>
-                Organizacoes certificadas em sistema de gestao de SST podem ter prazo de revisao de
-                ate 3 anos, mas isso nao autoriza deixar o documento parado enquanto a operacao
-                muda. Se a empresa terceirizou uma etapa, ampliou turno, mudou lideranca critica,
-                abriu frente operacional nova ou identificou adoecimento ligado a organizacao do
-                trabalho, o PGR precisa ser revisto na pratica.
+                Organizações certificadas em sistema de gestão de SST podem ter prazo de revisão de
+                até 3 anos, mas isso não autoriza deixar o documento parado enquanto a operação
+                muda. Se a empresa terceirizou uma etapa, ampliou turno, mudou liderança crítica,
+                abriu uma nova frente operacional ou identificou adoecimento ligado à organização do
+                trabalho, o PGR precisa ser revisto na prática.
               </p>
               <p>
-                Em outras palavras: o PGR deixa de ser defensavel muito antes de &quot;vencer&quot; quando
-                ele para de refletir a realidade da empresa.
+                Mesmo dentro do prazo máximo, a avaliação deve ser revista quando deixa de refletir
+                a realidade da empresa.
               </p>
             </>
           ),
         },
         {
-          title: 'Quanto custa ignorar a atualizacao da NR-01',
+          title: 'Consequências de manter o PGR desatualizado',
           body: (
             <>
-              <p>Empresa sem PGR atualizado responde em tres frentes ao mesmo tempo:</p>
+              <p>Um PGR desatualizado pode causar problemas em diferentes frentes:</p>
               <ul>
                 <li>
-                  <strong>Multa direta do MTE</strong> - pode chegar a R$ 6 mil por infracao,
-                  multiplicada por trabalhador exposto.
+                  <strong>Fiscalização.</strong> A autoridade pode adotar as medidas administrativas
+                  cabíveis conforme a obrigação descumprida e as circunstâncias do caso.
                 </li>
                 <li>
-                  <strong>Inconsistencia no eSocial</strong> quando o evento S-2240 nao reflete
+                  <strong>Inconsistência no eSocial.</strong> O evento S-2240 pode deixar de refletir
                   corretamente os riscos ocupacionais.
                 </li>
                 <li>
-                  <strong>Responsabilizacao em acao trabalhista</strong> quando a documentacao e as
-                  medidas de prevencao nao demonstram o cumprimento do dever de cuidado.
+                  <strong>Dificuldade de resposta.</strong> Em acidente, auditoria ou processo, a
+                  documentação pode não demonstrar quais riscos foram avaliados e quais medidas foram adotadas.
                 </li>
               </ul>
               <p>
-                Em qualquer dos tres, o custo do passivo e multiplo do que custaria atualizar o
-                documento.
-              </p>
-              <p>
-                Se o objetivo for sair do improviso e revisar o programa com criterio tecnico, o
-                caminho mais direto e comparar o guia com a pagina do{' '}
+                Para revisar o programa com critério técnico, consulte também a página do{' '}
                 <Link
                   href="/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo"
                   className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
                 >
-                  servico completo de PGR
+                  serviço de PGR
                 </Link>{' '}
-                e alinhar o que precisa ser corrigido na operacao real.
+                e confirme o que precisa ser atualizado na operação.
               </p>
             </>
           ),
@@ -390,72 +373,72 @@ export default function NR01Page() {
       faq={[
         {
           q: 'Como inserir riscos psicossociais no PGR?',
-          a: 'A empresa deve identificar fatores relacionados ao trabalho, registrar no inventario de riscos, avaliar prioridade, definir medidas de controle, indicar responsaveis e prazos no plano de acao e guardar evidencias das providencias adotadas.',
+          a: 'A empresa deve identificar fatores relacionados ao trabalho, registrá-los no inventário, avaliar os riscos, definir medidas de prevenção, indicar responsáveis e prazos no plano de ação e guardar evidências das providências adotadas.',
         },
         {
           q: 'Quando os riscos psicossociais da NR-01 entram em vigor?',
-          a: 'A exigencia explicita de considerar fatores de risco psicossociais relacionados ao trabalho dentro do GRO passou a valer em 26 de maio de 2026. Empresas com PGR antigo devem revisar se o documento trata esse ponto de forma coerente.',
+          a: 'A menção explícita aos fatores de risco psicossociais relacionados ao trabalho passou a valer em 26 de maio de 2026. A organização deve conferir se o GRO e o PGR tratam esse ponto de forma coerente.',
         },
         {
           q: 'O STF suspendeu a NR-01 sobre riscos psicossociais?',
-          a: 'Nao. Conforme noticia do G1 de 26 de junho de 2026, a decisao suspendeu por 90 dias multas e outras sancoes relacionadas aos riscos psicossociais, mas a obrigacao de identificar, avaliar e prevenir esses riscos continua valendo.',
+          a: 'Não. A liminar divulgada pelo STF em 25 de junho de 2026 suspendeu por 90 dias multas e outras sanções alcançadas pela decisão, mas manteve válidas as diretrizes gerais de prevenção. A medida ainda será submetida ao Plenário.',
         },
         {
           q: 'O que a empresa precisa fazer com a NR-01 atualizada?',
-          a: 'Precisa revisar o GRO e, quando aplicavel, o PGR para confirmar se o inventario de riscos, o plano de acao, a lideranca treinada e o PCMSO continuam coerentes com a operacao real, incluindo os fatores de risco psicossociais relacionados ao trabalho.',
+          a: 'É preciso revisar o GRO e, quando aplicável, o PGR para confirmar se o inventário, o plano de ação, as orientações às lideranças e o PCMSO continuam coerentes com a operação, incluindo os fatores de risco psicossociais relacionados ao trabalho.',
         },
         {
           q: 'Quem assina o PGR?',
-          a: 'O PGR e elaborado por profissional legalmente habilitado, conforme o escopo tecnico exigido para a atividade. A responsabilidade tecnica e do profissional; a responsabilidade do conteudo refletir a realidade e da empresa.',
+          a: 'A NR-01 não reserva todo PGR a uma única categoria profissional. A organização deve designar pessoas com conhecimento e qualificação compatíveis, respeitando as atribuições profissionais e as exigências específicas de outras normas e laudos.',
         },
         {
-          q: 'Tecnico de seguranca do trabalho pode assinar PGR?',
-          a: 'Depende do escopo e das atribuicoes profissionais aplicaveis. Em casos simples, o tecnico pode participar da elaboracao e apoiar o gerenciamento. Em atividades mais complexas ou com exigencia legal especifica, pode ser necessario profissional legalmente habilitado, como engenheiro de seguranca ou medico do trabalho.',
+          q: 'Técnico de segurança do trabalho pode elaborar o PGR?',
+          a: 'Pode participar da elaboração dentro de suas atribuições e qualificações. O escopo e os riscos podem exigir outros profissionais ou documentos com responsabilidade técnica específica.',
         },
         {
-          q: 'PGR e PPRA sao a mesma coisa?',
-          a: 'Nao. O PPRA foi extinto em 2022. O PGR e o substituto, mais amplo e integrado ao gerenciamento de riscos ocupacionais da NR-01. Trocar apenas o nome do documento nao resolve o problema.',
+          q: 'PGR e PPRA são a mesma coisa?',
+          a: 'Não. O PPRA deixou de ser o programa geral de prevenção com a entrada do GRO e do PGR. O PGR tem inventário de riscos e plano de ação e deve refletir o processo atual de gerenciamento da NR-01.',
         },
         {
-          q: 'PGR e obrigatorio para todas as empresas?',
-          a: 'Como regra, empresas com empregados precisam manter o gerenciamento de riscos ocupacionais coerente com a operacao. Existem hipoteses especificas de dispensa de elaboracao do PGR para MEI e para determinadas ME e EPP de grau de risco 1 ou 2, mas isso nao elimina a responsabilidade em SST.',
+          q: 'PGR é obrigatório para todas as empresas?',
+          a: 'Há hipóteses específicas de dispensa de elaboração do PGR para MEI e para determinadas ME e EPP de grau de risco 1 ou 2. A dispensa não elimina as demais responsabilidades de SST nem autoriza ignorar riscos presentes na atividade.',
         },
         {
           q: 'Como gerenciar risco psicossocial sem virar terapia coletiva?',
-          a: 'A NR-01 nao exige terapia. Exige identificacao, avaliacao e medidas de controle organizacional, como clareza de papel, distribuicao de carga, canal de denuncia, treinamento de lideranca e organizacao do trabalho.',
+          a: 'A NR-01 não exige terapia. Exige identificação, avaliação e medidas de controle organizacional, como clareza de papel, distribuição de carga, canal de denúncia, treinamento de liderança e organização do trabalho.',
         },
         {
           q: 'Quanto tempo leva para fazer um PGR completo?',
-          a: 'Empresa com ate 50 funcionarios costuma levar de 2 a 4 semanas. Empresa de medio porte pode levar de 6 a 10 semanas. O prazo depende da complexidade da operacao e da disponibilidade da lideranca para participar da revisao.',
+          a: 'O prazo depende do número de estabelecimentos, funções, grupos de trabalhadores, riscos e avaliações necessárias. A proposta deve informar as etapas e o cronograma após o levantamento inicial.',
         },
         {
           q: 'PGR feito uma vez vale por quanto tempo?',
-          a: 'A avaliacao de riscos deve ser revista no maximo a cada 2 anos e tambem quando ocorrerem mudancas relevantes na operacao, acidentes, doencas relacionadas ao trabalho ou outras situacoes previstas na NR-01. Organizacoes certificadas em sistema de gestao de SST podem ter prazo de ate 3 anos.',
+          a: 'A avaliação de riscos deve ser revista no máximo a cada 2 anos e também nas situações previstas na NR-01, como mudanças relevantes, acidentes e doenças relacionadas ao trabalho. Organizações certificadas em sistema de gestão de SST podem ter prazo de até 3 anos.',
         },
         {
-          q: 'Qual a diferenca entre GRO e PGR?',
-          a: 'O GRO e o sistema de gerenciamento de riscos ocupacionais previsto pela NR-01. O PGR e a forma documental mais comum de materializar esse gerenciamento, com inventario de riscos e plano de acao alinhados a operacao da empresa.',
+          q: 'Qual é a diferença entre GRO e PGR?',
+          a: 'O GRO é o processo de gerenciamento de riscos ocupacionais previsto na NR-01. O PGR materializa esse processo por meio do inventário de riscos e do plano de ação.',
         },
         {
           q: 'PGR entra no eSocial?',
-          a: 'O PGR nao e enviado inteiro ao eSocial, mas os riscos ocupacionais e as informacoes de SST precisam ser coerentes com a base tecnica da empresa. Divergencia entre PGR, PCMSO e S-2240 aumenta risco de inconsistencia.',
+          a: 'O PGR não é enviado inteiro ao eSocial, mas os riscos ocupacionais e as informações de SST precisam ser coerentes com a base técnica da empresa. Divergências entre PGR, PCMSO e S-2240 devem ser corrigidas.',
         },
       ]}
       maxFaqItems={12}
       sidebarTitle="PGR atualizado, com riscos psicossociais?"
-      sidebarHook="A SERMST faz auditoria gratuita do seu PGR atual. Se estiver desatualizado, mostramos exatamente o que precisa ser revisto, sem compromisso."
+      sidebarHook="A SERMST faz uma revisão inicial do PGR e aponta os itens que precisam ser confirmados ou atualizados."
       sidebarCtaLabel="Auditar meu PGR"
       sidebarCtaHref="/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo"
       finalCta={{
-        title: 'Sua empresa ja revisou a NR-01 do jeito certo?',
-        desc: 'Se o PGR foi feito antes da mudanca, esta generico ou nao conversa com PCMSO, eSocial e rotina da lideranca, a SERMST faz uma leitura tecnica do cenario antes de propor correcao.',
+        title: 'Sua empresa já revisou o PGR após a mudança da NR-01?',
+        desc: 'A SERMST pode conferir inventário, plano de ação, alinhamento com o PCMSO e tratamento dos fatores de risco psicossociais relacionados ao trabalho.',
         label: 'Solicitar auditoria do PGR',
         href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo',
       }}
       related={[
-        { label: 'Servico completo de PGR (NR-01)', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
+        { label: 'Serviço completo de PGR (NR-01)', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
         { label: 'Calculadora de grau de risco por CNAE', href: '/rh/calculadora-cnae-grau-de-risco' },
-        { label: 'O que e PGR? Significado e para que serve', href: '/dicionario/o-que-e-pgr' },
+        { label: 'O que é PGR? Significado e para que serve', href: '/dicionario/o-que-e-pgr' },
         { label: 'PCMSO NR-07: programa', href: '/saude/pcmso-programa-controle-medico' },
         { label: 'NR-15: Insalubridade', href: '/normas/nr-15-insalubridade' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },

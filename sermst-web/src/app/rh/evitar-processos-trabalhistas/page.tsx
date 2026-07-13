@@ -4,12 +4,12 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Como Evitar Processos Trabalhistas: Guia para RH | SERMST',
   description:
-    'Processo trabalhista raramente é surpresa. É consequência de pequenas falhas acumuladas. Veja os 5 pilares de prevenção é o que blinda a empresa em ação.',
+    'Veja como contratos, ponto, folha, SST e gestão de pessoas reduzem conflitos trabalhistas e melhoram a qualidade da documentação da empresa.',
   alternates: { canonical: 'https://sermst.com.br/rh/evitar-processos-trabalhistas' },
   openGraph: {
     title: 'Como evitar processos trabalhistas: documentação, SST e gestão de risco | SERMST',
     description:
-      'Principais causas de processos trabalhistas no Brasil e como a documentação SST correta — ASO, PCMSO, PGR — reduz significativamente o passivo da empresa.',
+      'Principais fontes de conflito trabalhista e como contratos, registros de jornada, folha e documentação de SST ajudam na prevenção.',
     url: 'https://sermst.com.br/rh/evitar-processos-trabalhistas',
     type: 'article',
     locale: 'pt_BR',
@@ -19,31 +19,31 @@ export const metadata: Metadata = {
 export default function EvitarProcessosPage() {
   return (
     <BlockbusterArticle
-      coverImage={{ src: "/images/site/medical-consult.jpg", alt: "Consultoria trabalhista para prevenção de processos e compliance com NRs" }}
-      hubLabel="Hub de RH e Departamento Pessoal"
-      hubLabelShort="← Hub de RH e DP"
+      coverImage={{ src: "/images/site/medical-consult.jpg", alt: "Reunião de consultoria trabalhista sobre prevenção de processos e cumprimento das NRs" }}
+      hubLabel="RH e Departamento Pessoal"
+      hubLabelShort="← RH e DP"
       hubHref="/rh"
       pageUrl="https://sermst.com.br/rh/evitar-processos-trabalhistas"
       author={{
         name: 'Felipe Sannino',
-        jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+        jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-13',
       }}
 
       h1="Como evitar processos trabalhistas: o guia prático para empresas e RH"
-      intro="Processo trabalhista raramente é surpresa. É consequência acumulada de pequenas falhas — registro de ponto inconsistente, EPI sem ficha, ASO atrasado, contrato genérico. Veja como prevenir é o que blinda a empresa quando a ação chega."
+      intro="Conflitos trabalhistas costumam revelar falhas que já existiam na rotina: ponto inconsistente, pagamento sem explicação, EPI sem registro, ASO fora do cronograma ou gestão mal documentada. Prevenir significa corrigir o processo antes que a divergência chegue a uma fiscalização ou ação judicial."
       sections={[
         {
-          title: 'Por que a maior parte das ações ganha do empregador',
+          title: 'Documento ajuda, mas precisa refletir a realidade',
           body: (
             <>
               <p>
-                A justiça do trabalho funciona com presunção de hipossuficiência do empregado. Significa que, em caso de dúvida sobré o que aconteceu, o juiz tende a acreditar no que o trabalhador alega. A defesa da empresa precisa ser <strong>baseada em prova documental robusta</strong> — não em &quot;a gente sempre fez assim&quot;.
+                Não existe uma regra geral de que o juiz deva acreditar no empregado em toda dúvida. A distribuição do ônus da prova segue a CLT e o CPC e pode variar conforme o fato discutido e a facilidade de cada parte em produzir a prova.
               </p>
               <p>
-                Empresas que perdem ação não perdem porque foram negligentes — perdem porque não têm como provar que cumpriram. A diferença entre vencer e perder é o estado da documentação.
+                A documentação continua sendo decisiva, desde que seja contemporânea, coerente e compatível com a prática. Um registro de ponto britânico, uma ficha de EPI sem relação com o risco ou um PGR que não reflete a operação pode ser questionado.
               </p>
             </>
           ),
@@ -53,10 +53,10 @@ export default function EvitarProcessosPage() {
           body: (
             <ol>
               <li><strong>Contrato e norma coletiva atualizados.</strong> Modelo de contrato revisado por advogado trabalhista, alinhado com convenção coletiva da categoria, atualizado anualmente.</li>
-              <li><strong>Registro de ponto sem brecha.</strong> Sistema confiável (eletrônico de preferência), horário fechado, hora extra paga e registrada, intervalo respeitado e documentado.</li>
+              <li><strong>Registro de ponto consistente.</strong> Sistema confiável, eletrônico de preferência, com horários, horas extras e intervalos registrados corretamente.</li>
               <li><strong>Folha pagamento sem inconsistência.</strong> Verbas corretas, descontos legais documentados, pagamentos no prazo, recibos arquivados.</li>
               <li><strong>SST documentada.</strong> PGR, PCMSO, ASOs em dia, treinamentos formais, EPI com ficha de entrega, eventos eSocial no prazo.</li>
-              <li><strong>Gestão de pessoas com paper trail.</strong> Feedback formalizado, advertências aplicadas com gradação, dispensas com motivação registrada, plano de melhoria documentado.</li>
+              <li><strong>Gestão de pessoas com registros claros.</strong> Feedback formalizado, advertências proporcionais, critérios de decisão consistentes e planos de melhoria documentados quando adotados.</li>
             </ol>
           ),
         },
@@ -64,13 +64,13 @@ export default function EvitarProcessosPage() {
           title: 'As 7 causas mais comuns de ação',
           body: (
             <ol>
-              <li><strong>Hora extra não paga ou paga errado.</strong> Top 1 em volume. Empresa que tolera &quot;dar uma esticada&quot; sem registrar paga depois com juros e multa.</li>
-              <li><strong>Intervalo intrajornada não respeitado.</strong> Almoço de 30 minutos quando deveria ser 1 hora gera adicional indenizatório.</li>
-              <li><strong>Equiparação salarial.</strong> Dois trabalhadores fazem o mesmo trabalho, recebem diferente. Quase sempre dá ganho de causa para quem ganha menos.</li>
-              <li><strong>Doença ocupacional não reconhecida pela empresa.</strong> LER/DORT, PAIR, depressão por assédio. Sem CAT emitida, vira processo direto.</li>
-              <li><strong>Justa causa mal aplicada.</strong> Empresa enquadra como justa causa sem documentação suficiente; juiz reverte para dispensa imotivada com indenização adicional.</li>
-              <li><strong>Acidente de trabalho com responsabilidade da empresa.</strong> Falha em fornecer EPI, em treinar, em fiscalizar. Indenização cível alta + danos morais.</li>
-              <li><strong>Discriminação ou assédio moral.</strong> Qualquer prova de tratamento diferenciado por gênero, raça, idade, gestação. Indenização forte e dano moral.</li>
+              <li><strong>Jornada sem registro confiável.</strong> Horas extras, intervalos e trabalho fora do expediente precisam estar coerentes com a rotina e a folha.</li>
+              <li><strong>Pagamento ou desconto sem base clara.</strong> Rubricas, comissões, prêmios e descontos exigem critério e documentação.</li>
+              <li><strong>Diferença salarial sem justificativa.</strong> A equiparação depende dos requisitos do art. 461 da CLT; a empresa precisa explicar planos, funções e critérios aplicados.</li>
+              <li><strong>Doença ou acidente mal conduzido.</strong> Atraso na CAT, falta de investigação e ausência de acompanhamento podem ampliar o conflito.</li>
+              <li><strong>Justa causa sem proporcionalidade ou prova.</strong> A medida é excepcional e costuma ser analisada com rigor.</li>
+              <li><strong>SST desconectada da operação.</strong> EPI, treinamentos e programas precisam corresponder aos riscos reais.</li>
+              <li><strong>Discriminação ou assédio.</strong> Falta de canal, investigação e resposta consistente aumenta o risco para trabalhadores e empresa.</li>
             </ol>
           ),
         },
@@ -79,13 +79,13 @@ export default function EvitarProcessosPage() {
           body: (
             <>
               <p>
-                Apróximadamente 30-40% das ações trabalhistas tem componente de saúde ou segurança — afastamento, doença ocupacional, acidente, condição insalubre, periculosa. Em todas essas, a defesa depende de SST documentada.
+                Saúde e segurança aparecem em ações sobre acidente, doença ocupacional, estabilidade, insalubridade e periculosidade. Nesses casos, a documentação técnica ajuda a reconstruir os riscos, as medidas de prevenção e o acompanhamento de saúde.
               </p>
               <p>
-                Sem PGR atualizado, a empresa não consegue provar que conhecia os riscos e tomou medidas de controle. Sem PCMSO em dia, não consegue provar que monitorava a saúde do trabalhador. Sem treinamento formalizado, não consegue provar que orientou. Sem ficha de EPI, não consegue provar que forneceu. Cada gap é uma porta para indenização.
+                PGR, PCMSO, ASO, treinamentos e registros de EPI cumprem funções diferentes. Eles precisam conversar entre si e com a atividade executada. A simples existência dos arquivos não substitui a aplicação das medidas no ambiente de trabalho.
               </p>
               <p>
-                Empresas que tratam SST como custo descobrem o ROI negativo no primeiro processo significativo. Quem trata como blindagem do CNPJ vê o investimento se pagar.
+                Uma rotina preventiva reduz improviso e facilita a resposta quando surge uma dúvida, uma fiscalização ou uma perícia. Esse é um benefício operacional, não uma garantia de resultado judicial.
               </p>
             </>
           ),
@@ -97,7 +97,7 @@ export default function EvitarProcessosPage() {
               <li><strong>Não entre em pânico, não procrastine.</strong> Há prazo apertado para defesa.</li>
               <li><strong>Acione advogado trabalhista imediatamente.</strong> Não responda direto sem assessoria.</li>
               <li><strong>Reúna toda a documentação relacionada</strong> ao período do trabalhador: contrato, recibos, ponto, ASOs, treinamentos, fichas de EPI, advertências, eSocial.</li>
-              <li><strong>Revise se a documentação é coerente</strong> — se há inconsistências, melhor identificar antes do contraditório.</li>
+              <li><strong>Revise se a documentação é coerente</strong>. Informe ao advogado qualquer inconsistência; não altere nem produza registro retroativo.</li>
               <li><strong>Avalie acordo</strong> em primeira audiência. Em muitos casos, acordo é mais inteligente que ir até sentença, mesmo se a empresa estiver com razão técnica.</li>
               <li><strong>Aprenda com o caso.</strong> Independente do resultado, faça análise crítica do que faltou em documentação para evitar repetição.</li>
             </ol>
@@ -107,27 +107,27 @@ export default function EvitarProcessosPage() {
       faq={[
         {
           q: 'Empresa pequena também pode ser processada?',
-          a: 'Pode, e é processada com frequência. A justiça do trabalho não diferencia porte para reconhecer direito. A diferença é que empresa pequena tem menos recurso para defesa e menos documentação organizada — então o impacto relativo é maior. Prevenção é ainda mais importante.',
+          a: 'Pode. O porte não afasta direitos trabalhistas. Para uma empresa pequena, o impacto financeiro e operacional de um conflito pode ser proporcionalmente maior, o que torna importante manter rotinas simples e registros consistentes.',
         },
         {
           q: 'Qual o prazo para o trabalhador entrar com ação?',
-          a: 'Em regra, 2 anos contados do término do contrato, com retroação de até 5 anos para cobrar verbas. Doença ocupacional pode ter prazo diferente — começa a correr a partir da ciência inequívoca da doença e do nexo com o trabalho.',
+          a: 'Em regra, a Constituição prevê ação até 2 anos após o fim do contrato, alcançando créditos dos 5 anos anteriores ao ajuizamento. Pedidos de indenização por acidente ou doença ocupacional podem envolver discussão própria sobre o momento em que houve ciência inequívoca do dano e de sua extensão.',
         },
         {
           q: 'Acordo extrajudicial vale como quitação?',
-          a: 'Vale parcialmente. A homologação em juízo (Termo de Quitação Anual ou Plano de Demissão Voluntária homologado) tem força de quitação ampla. Acordo só entre as partes pode ser questionado posteriormente — útil mas não definitivo.',
+          a: 'Depende do conteúdo e da forma. A homologação judicial não transforma automaticamente qualquer cláusula em quitação geral. Termo de quitação anual, PDV e acordo extrajudicial têm requisitos e efeitos diferentes; a redação deve ser analisada por advogado.',
         },
         {
           q: 'Prevenção de processo é só com advogado?',
-          a: 'Não. Advogado trabalhista cobre a parte jurídica (contrato, modelo de advertência, política de RH). Mas grande parte da prevenção é operacional: SST documentada (consultor de SST), DP organizado, gestão de pessoas com paper trail. É trabalho multidisciplinar.',
+          a: 'Não. O advogado cuida da parte jurídica, mas a prevenção também depende de DP, liderança, contabilidade e SST. Cada área precisa manter registros claros e compartilhar mudanças que afetem contrato, jornada, remuneração ou riscos.',
         },
         {
           q: 'Vale a pena ter assistente técnico próprio em ação?',
-          a: 'Vale, especialmente em ação por doença ocupacional ou acidente. O perito do juízo é independente e seu laudo costuma ter peso decisivo. Sem assistente técnico próprio, a empresa fica refém do que o perito do juízo concluir. Com assistente, há contraditório técnico.',
+          a: 'Pode ser útil em ações com perícia médica, de insalubridade, periculosidade ou acidente. O assistente analisa documentos, acompanha diligências e apresenta manifestação técnica. A conveniência depende do valor, da complexidade e da estratégia definida com o advogado.',
         },
       ]}
       sidebarTitle="Sua documentação aguenta uma ação?"
-      sidebarHook="Cerca de 40% das ações têm componente SST. Sem PGR, PCMSO, ASOs e treinamentos documentados, a defesa cai. A SERMST faz auditoria completa do paper trail."
+      sidebarHook="PGR, PCMSO, ASOs e treinamentos precisam refletir a operação. A SERMST revisa a consistência dos documentos e aponta o que deve ser corrigido na rotina."
       sidebarCtaLabel="Auditar minha documentação SST"
       sidebarCtaHref="/assinaturas"
       related={[

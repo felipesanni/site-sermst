@@ -4,11 +4,11 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'Quando demitir um funcionário: guia para gestores | SERMST',
   description:
-    'Demissão é decisão técnica, não emocional. Feita do jeito certo, protege time e resultado. Feita errada, vira processo e custo oculto.',
+    'Veja critérios de desempenho, documentação, comunicação e cuidados trabalhistas antes de decidir pelo desligamento de um funcionário.',
   alternates: { canonical: 'https://sermst.com.br/rh/quando-demitir-funcionario' },
   robots: 'index, follow',
   openGraph: {
-    title: 'Quando demitir um funcionário: critérios, riscos e compliance SST | SERMST',
+    title: 'Quando demitir um funcionário: critérios e cuidados de SST | SERMST',
     description:
       'Como tomar a decisão de demissão com mais segurança: documentação necessária, exame demissional, justa causa e redução de risco trabalhista.',
     url: 'https://sermst.com.br/rh/quando-demitir-funcionario',
@@ -21,8 +21,8 @@ export default function QuandoDemitirPage() {
   return (
     <BlockbusterArticle
       coverImage={{ src: '/images/site/corporate-team.jpg', alt: 'Gestão de equipe e análise de desempenho para decisão de desligamento' }}
-      hubLabel="Hub de RH e Departamento Pessoal"
-      hubLabelShort="← Hub de RH e DP"
+      hubLabel="RH e Departamento Pessoal"
+      hubLabelShort="← RH e DP"
       hubHref="/rh"
       pageUrl="https://sermst.com.br/rh/quando-demitir-funcionario"
       author={{
@@ -30,10 +30,10 @@ export default function QuandoDemitirPage() {
         jobTitle: 'Advogado - Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-13',
       }}
       h1="Quando demitir um funcionário: o guia que o gestor precisa"
-      intro="Demissão é decisão técnica, não emocional. Feita do jeito certo, protege o time e o resultado. Feita errada, vira processo trabalhista, queda de moral e custo oculto. Veja os sinais, as etapas e os cuidados."
+      intro="O desligamento exige análise do motivo, dos registros existentes, das verbas e de eventuais garantias provisórias de emprego. Veja critérios de gestão, etapas de comunicação e cuidados antes de formalizar a decisão."
       sections={[
         {
           title: 'A pergunta que importa antes da pergunta "quando demitir"',
@@ -75,7 +75,7 @@ export default function QuandoDemitirPage() {
               <ol>
                 <li><strong>Feedback formal documentado.</strong> Não basta &ldquo;eu falei&rdquo;. É importante ter registro escrito com data, problema apontado, expectativa e prazo.</li>
                 <li><strong>Plano de melhoria com prazo.</strong> Em geral, 30 a 90 dias são suficientes para medir evolução ou estagnação com critérios objetivos.</li>
-                <li><strong>Advertências formais quando aplicável.</strong> Em casos disciplinares, a gradação costuma fortalecer a segurança jurídica da decisão.</li>
+                <li><strong>Advertências formais quando aplicável.</strong> Em casos disciplinares, a gradação ajuda a demonstrar como a empresa tratou a situação antes da decisão.</li>
               </ol>
               <p>
                 Sem esse histórico, a empresa pode até dispensar sem justa causa, mas fica mais vulnerável a alegações
@@ -154,7 +154,7 @@ export default function QuandoDemitirPage() {
         },
       ]}
       sidebarTitle="Sua empresa demite com SST e DP em ordem?"
-      sidebarHook="Cada demissão precisa de exame demissional, eventos no eSocial e documentação prévia coerente. Quando um desses pontos falha, o passivo já começa a nascer."
+      sidebarHook="Cada demissão precisa de análise do exame clínico mais recente, demissional quando aplicável, eventos corretos no eSocial e documentação coerente."
       sidebarCtaLabel="Auditar processo de demissão"
       sidebarCtaHref="/assinaturas"
       related={[

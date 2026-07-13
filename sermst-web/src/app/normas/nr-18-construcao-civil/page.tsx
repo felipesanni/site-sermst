@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-18 construção civil: resumo e PGR | SERMST',
+  title: 'NR-18: o que exige na construção civil | SERMST',
   description:
-    'Resumo da NR-18 atualizada: PGR no lugar do PCMAT, validade, áreas de vivência, canteiro de obras, grau de infração e exigências da construção civil.',
+    'Entenda o que a NR-18 exige na construção civil: PGR no lugar do PCMAT, treinamento, canteiro de obras, áreas de vivência e fiscalização.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },
   openGraph: {
-    title: 'NR-18 construção civil: resumo e PGR | SERMST',
+    title: 'NR-18: o que exige na construção civil | SERMST',
     description:
       'Veja o que a NR-18 exige para canteiros, reformas e obras: PGR, PCMAT, treinamentos, áreas de vivência, validade e fiscalização.',
     url: 'https://sermst.com.br/normas/nr-18-construcao-civil',
@@ -35,10 +36,10 @@ export default function NR18Page() {
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-02',
+        dateModified: '2026-07-13',
       }}
       h1="NR-18: o que a Norma Regulamentadora 18 exige na construção civil"
-      intro="A NR-18, também chamada de Norma Regulamentadora 18, reúne os principais requisitos de SST para canteiros de obra: PGR, PCMSO, treinamentos, proteções coletivas, áreas de vivência, EPIs e sinalização. Com a revisão da norma, o PCMAT foi substituído pelo PGR. Neste guia, você entende o que a NR-18 exige hoje, o que mudou na versão atualizada, como o eSocial afeta a construção civil e o que precisa estar em ordem para a obra não virar passivo."
+      intro="A NR-18 reúne requisitos de SST para canteiros de obra, incluindo PGR, treinamentos, proteções coletivas, áreas de vivência, máquinas, EPIs e sinalização. Com a revisão da norma, o PCMAT deu lugar ao PGR. Veja como organizar os principais requisitos e manter os registros coerentes com a operação."
       quickAnswer={
         <p>
           A <strong>NR-18</strong> regula segurança e saúde na construção civil. O <strong>PCMAT foi substituído pelo PGR</strong> (NR-01), que deve contemplar todos os riscos do canteiro e ser atualizado conforme as fases da obra. Treinamento básico obrigatório: <strong>4 horas antes do início das atividades</strong>, com <strong>reciclagem de 4 horas a cada 2 anos</strong>. A obra precisa ter áreas de vivência adequadas (refeitório, alojamento, sanitários), proteções coletivas implantadas e dados de SST integrados ao <strong>eSocial (S-2220 e S-2240)</strong>.
@@ -138,7 +139,11 @@ export default function NR18Page() {
                 O <strong>PCMAT (Programa de Condições e Meio Ambiente de Trabalho na Indústria da Construção)</strong> foi, por muitos anos, o documento central de planejamento de SST na construção civil. Em obras com 20 ou mais trabalhadores, ele precisava ser elaborado antes do início das atividades, com memorial descritivo, layout do canteiro, cronograma preventivo e projetos de proteção coletiva.
               </p>
               <p>
-                Com a revisão da NR-18, o PCMAT deixou de ser o documento exigido para obras novas. No lugar dele, a gestão de riscos do canteiro passou a ser estruturada pelo <strong>PGR (Programa de Gerenciamento de Riscos)</strong>, previsto na NR-01 e detalhado pela própria NR-18.
+                Com a revisão da NR-18, o PCMAT deixou de ser o documento exigido para obras novas. No lugar dele, a gestão de riscos do canteiro passou a ser estruturada pelo{' '}
+                <Link href="/normas/nr-01-pgr-atualizada" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  PGR (Programa de Gerenciamento de Riscos)
+                </Link>
+                , previsto na NR-01 e detalhado pela própria NR-18.
               </p>
               <p>
                 Obras que já estavam em andamento durante a transição puderam manter o PCMAT até o encerramento daquela frente específica. Para canteiros iniciados depois da mudança, apresentar PCMAT como documento principal já não atende à lógica atual da norma.
@@ -154,7 +159,11 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                O PGR da construção civil precisa ser específico para o canteiro de obras. Não basta reaproveitar um modelo genérico da empresa e trocar o nome da obra. O documento precisa refletir a realidade do ambiente, da fase executiva e dos riscos efetivos daquela operação.
+                O PGR da construção civil precisa ser específico para o canteiro de obras. Não basta reaproveitar um modelo genérico da empresa e trocar o nome da obra. O documento precisa refletir a realidade do ambiente, da fase executiva e dos riscos efetivos daquela operação. Quando a empresa precisa estruturar esse trabalho, o ponto de partida é um{' '}
+                <Link href="/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  PGR elaborado para os riscos reais da obra
+                </Link>
+                .
               </p>
               <p>Em geral, o PGR do canteiro deve contemplar:</p>
               <ul>
@@ -179,7 +188,11 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                O <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong>, exigido pela NR-07, é obrigatório para empresas da construção civil com empregados CLT. Ele deve ser elaborado por médico do trabalho e precisa conversar com o PGR. Sem essa integração, o programa médico perde coerência.
+                O{' '}
+                <Link href="/servicos/pcmso-nr07-programa/sao-paulo" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  PCMSO (Programa de Controle Médico de Saúde Ocupacional)
+                </Link>
+                , exigido pela NR-07, é obrigatório para empresas da construção civil com empregados CLT. Ele deve ser elaborado por médico do trabalho e precisa conversar com o PGR. Sem essa integração, o programa médico perde coerência.
               </p>
               <p>
                 Na construção civil, é comum que o perfil de risco exija audiometria tonal, espirometria, radiografia de tórax, exames laboratoriais e avaliações ligadas a trabalho em altura, ruído, poeira mineral, solventes ou calor intenso. Quando esses riscos aparecem no canteiro e não aparecem no PCMSO, a inconsistência fica evidente.
@@ -220,14 +233,28 @@ export default function NR18Page() {
                 Além do treinamento geral da NR-18, várias atividades do canteiro exigem capacitações complementares. Entre as mais comuns estão:
               </p>
               <ul>
-                <li><strong>NR-35:</strong> para trabalho em altura acima de 2 metros, com reciclagem periódica conforme a própria norma</li>
-                <li><strong>NR-10:</strong> para atividades com eletricidade ou proximidade de instalações energizadas</li>
+                <li>
+                  <Link href="/normas/nr-35-trabalho-em-altura" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                    NR-35
+                  </Link>
+                  : para trabalho em altura acima de 2 metros, com reciclagem periódica conforme a própria norma
+                </li>
+                <li>
+                  <Link href="/normas/nr-10-eletricidade" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                    NR-10
+                  </Link>
+                  : para atividades com eletricidade ou proximidade de instalações energizadas
+                </li>
                 <li><strong>NR-12:</strong> para operação de máquinas e equipamentos com risco de acidente</li>
                 <li><strong>NR-33:</strong> para entrada em espaço confinado, quando aplicável</li>
                 <li><strong>Treinamentos específicos do canteiro:</strong> conforme risco, função, equipamento e fase da obra</li>
               </ul>
               <p>
-                Não basta dizer que houve treinamento. Em fiscalização, a empresa precisa comprovar lista de presença, conteúdo programático, carga horária, data, local, instrutor e certificado ou registro individual correspondente.
+                Não basta dizer que houve treinamento. Em fiscalização, a empresa precisa comprovar lista de presença, conteúdo programático, carga horária, data, local, instrutor e certificado ou registro individual correspondente. A contratação dos{' '}
+                <Link href="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  treinamentos obrigatórios da obra
+                </Link>{' '}
+                deve partir das atividades e dos riscos presentes no canteiro.
               </p>
             </>
           ),
@@ -280,7 +307,7 @@ export default function NR18Page() {
           body: (
             <>
               <p>
-                Quem pesquisa por <strong>grau de infração da NR-18</strong> normalmente quer saber o tamanho do risco em uma fiscalização. O valor da multa depende do item descumprido, do enquadramento normativo, do número de trabalhadores expostos e da gradação prevista na fiscalização trabalhista.
+                O <strong>grau de infração da NR-18</strong> varia conforme o item descumprido. O valor de eventual multa também depende do enquadramento normativo, do número de trabalhadores e dos critérios aplicados pela fiscalização trabalhista.
               </p>
               <p>
                 Na prática, em construção civil, o maior prejuízo nem sempre é a multa. Falhas com risco grave e iminente podem gerar embargo ou interdição, paralisando parte da obra e criando custo com atraso, retrabalho, contratante, cronograma e imagem.
@@ -324,7 +351,7 @@ export default function NR18Page() {
           ),
         },
         {
-          title: 'O que acontece em fiscalização e como a empresa se protege',
+          title: 'O que pode ser verificado em uma fiscalização',
           body: (
             <>
               <p>
@@ -402,7 +429,7 @@ export default function NR18Page() {
         },
         {
           q: 'Trabalhador sem ASO pode entrar no canteiro?',
-          a: 'Não é o cenário seguro. O ASO admissional deve existir antes do início das atividades para que a empresa não assuma um passivo logo no começo da obra.',
+          a: 'O exame clínico admissional deve ser realizado antes de o trabalhador assumir as atividades, e o ASO deve registrar a conclusão de aptidão para a função.',
         },
         {
           q: 'CIPA é obrigatória em empresa de construção civil?',

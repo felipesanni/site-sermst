@@ -180,7 +180,7 @@ function containsSpamPattern(value: string) {
 
 async function verifyTurnstile(token: string, ip: string) {
   const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) return; // Turnstile não configurado — passa direto
+  if (!secret) return; // Turnstile não configurado: passa direto
 
   try {
     const body = new URLSearchParams();
@@ -195,15 +195,15 @@ async function verifyTurnstile(token: string, ip: string) {
     });
 
     if (!response.ok) {
-      console.warn('[LEAD] Turnstile HTTP erro:', response.status, '— permitindo envio');
+      console.warn('[LEAD] Turnstile HTTP erro:', response.status, ': permitindo envio');
       return;
     }
     const result = (await response.json()) as { success?: boolean; 'error-codes'?: string[] };
     if (!result.success) {
-      console.warn('[LEAD] Turnstile recusou token:', result['error-codes'], '— permitindo envio');
+      console.warn('[LEAD] Turnstile recusou token:', result['error-codes'], ': permitindo envio');
     }
   } catch (error) {
-    console.error('[LEAD] Turnstile falha de rede — permitindo envio:', error);
+    console.error('[LEAD] Turnstile falha de rede: permitindo envio:', error);
   }
   // Em todos os casos, não bloqueia: honeypot + rate limit + filtro de texto já protegem
 }
@@ -510,7 +510,7 @@ function buildEmailHtml(lead: ReturnType<typeof buildLead>): string {
 <body style="margin:0;padding:0;background:#f1f5f9;font-family:system-ui,-apple-system,sans-serif">
   <table width="100%" cellpadding="0" cellspacing="0" style="max-width:620px;margin:32px auto">
     <tr><td style="background:#0f172a;padding:24px 32px;border-radius:12px 12px 0 0">
-      <p style="margin:0;color:#f8fafc;font-size:20px;font-weight:800">SERMST — Novo Lead</p>
+      <p style="margin:0;color:#f8fafc;font-size:20px;font-weight:800">SERMST: Novo Lead</p>
       <p style="margin:4px 0 0;color:#94a3b8;font-size:13px">Formulário do site · ${lead.receivedAt}</p>
     </td></tr>
 
@@ -768,7 +768,7 @@ export async function POST(req: Request) {
       await transporter.sendMail({
         from: smtpFrom,
         to: notifyTo,
-        subject: `=?UTF-8?B?${Buffer.from('Novo lead SERMST: ' + lead.empresa + ' — ' + lead.dor).toString('base64')}?=`,
+        subject: `=?UTF-8?B?${Buffer.from('Novo lead SERMST: ' + lead.empresa + ': ' + lead.dor).toString('base64')}?=`,
         text: buildEmailText(lead),
         html: buildEmailHtml(lead),
         encoding: 'base64',

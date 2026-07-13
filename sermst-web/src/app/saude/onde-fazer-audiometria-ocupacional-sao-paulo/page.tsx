@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 export default function OndeFazerAudiometriaOcupacionalSaoPauloPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       badgeText="Guia local"
       pageUrl="https://sermst.com.br/saude/onde-fazer-audiometria-ocupacional-sao-paulo"
@@ -34,7 +34,7 @@ export default function OndeFazerAudiometriaOcupacionalSaoPauloPage() {
         datePublished: '2026-06-09',
         dateModified: '2026-06-09',
       }}
-      h1="Onde fazer audiometria ocupacional em São Paulo: centro, acesso e quando avançar para o serviço"
+      h1="Onde fazer audiometria ocupacional em São Paulo: localização, atendimento e critérios ocupacionais"
       intro="Quem busca onde fazer audiometria ocupacional em São Paulo geralmente está tentando resolver uma etapa real do processo da empresa: admissão, periódico, demissional ou monitoramento previsto no PCMSO. Nessa hora, localização ajuda, mas não basta. O que faz diferença é encontrar uma clínica com estrutura adequada, agilidade de atendimento e leitura correta do contexto ocupacional."
       quickAnswer={
         <p>
@@ -92,22 +92,22 @@ export default function OndeFazerAudiometriaOcupacionalSaoPauloPage() {
               <li><strong>Integração ao ASO.</strong> O resultado precisa conversar com a rotina ocupacional da empresa.</li>
               <li><strong>Leitura do contexto do PCMSO.</strong> A clínica não pode tratar a audiometria como exame isolado sem olhar a finalidade ocupacional.</li>
               <li><strong>Acesso e logística.</strong> Região central facilita o deslocamento dos colaboradores.</li>
-              <li><strong>Agilidade comercial.</strong> Quando o RH precisa resolver rápido, atendimento lento vira gargalo operacional.</li>
+              <li><strong>Prazo de atendimento.</strong> O RH precisa saber quando o colaborador será atendido e quando o resultado estará disponível.</li>
             </ol>
           ),
         },
         {
-          title: 'Quando a SERMST vira o caminho mais direto',
+          title: 'Atendimento da SERMST em São Paulo Centro',
           body: (
             <>
               <p>
                 A SERMST atende empresas que precisam de <strong>audiometria ocupacional</strong> com estrutura para <strong>audiometria tonal</strong>, integração ao ASO e apoio ao PCMSO, tudo em São Paulo Centro.
               </p>
               <p>
-                Esta página ajuda na busca local. Quando a empresa já quer entender escopo, contexto ocupacional e contratação, a página principal do serviço passa a fazer mais sentido.
+                Antes de agendar, confirme a indicação no PCMSO, a unidade de atendimento, os documentos necessários e o prazo estimado para o resultado.
               </p>
               <p>
-                Se a sua busca já saiu do “onde fazer” e entrou no “quero resolver com uma clínica ocupacional”, avance para a página principal:{' '}
+                Para consultar o escopo e solicitar atendimento, acesse:{' '}
                 <Link href="/servicos/audiometria-ocupacional-clinica/sao-paulo"><strong>audiometria ocupacional em São Paulo Centro</strong></Link>.
               </p>
             </>
@@ -132,20 +132,20 @@ export default function OndeFazerAudiometriaOcupacionalSaoPauloPage() {
           a: 'Normalmente em admissões, periódicos e demissionais de funções expostas a ruído, conforme o que o PCMSO define para cada cargo.',
         },
       ]}
-      sidebarTitle="Quer avançar da busca para o atendimento?"
-      sidebarHook="Se a sua empresa já sabe que precisa de audiometria ocupacional ou audiometria tonal em São Paulo Centro, a página principal do serviço mostra o contexto técnico e como avançar com o atendimento."
-      sidebarCtaLabel="Ir para a página principal"
+      sidebarTitle="Precisa agendar a audiometria?"
+      sidebarHook="Consulte a indicação do exame, os documentos, a unidade e as orientações para o atendimento em São Paulo Centro."
+      sidebarCtaLabel="Ver detalhes do atendimento"
       sidebarCtaHref="/servicos/audiometria-ocupacional-clinica/sao-paulo"
       related={[
-        { label: 'Página principal: audiometria ocupacional em São Paulo Centro', href: '/servicos/audiometria-ocupacional-clinica/sao-paulo' },
+        { label: 'Audiometria ocupacional em São Paulo Centro', href: '/servicos/audiometria-ocupacional-clinica/sao-paulo' },
         { label: 'Tabela de exames admissionais por função e cargo', href: '/saude/tabela-exames-admissionais-por-funcao' },
         { label: 'Valor do exame admissional para empresas', href: '/saude/valor-exame-admissional' },
         { label: 'Clínica de exame admissional em São Paulo', href: '/saude/clinica-exame-admissional-sao-paulo' },
       ]}
       finalCta={{
-        title: 'Se a localização já funciona, agora vale ver o serviço completo.',
-        desc: 'A página principal do serviço reúne o contexto de audiometria ocupacional, audiometria tonal, ASO e PCMSO para empresas que querem resolver a demanda com mais segurança.',
-        label: 'Ver a página principal do serviço',
+        title: 'Organize a audiometria ocupacional da sua equipe.',
+        desc: 'Consulte como funciona o atendimento, a relação com o PCMSO e as orientações para a audiometria em São Paulo Centro.',
+        label: 'Ver detalhes do serviço',
         href: '/servicos/audiometria-ocupacional-clinica/sao-paulo',
       }}
     />

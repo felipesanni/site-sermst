@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-17: ergonomia, AET e LER/DORT | SERMST',
   description:
-    'A NR-17 trata da adaptação do trabalho às condições humanas. Sem AET atualizada, ações por LER/DORT viram responsabilidade direta da empresa. Veja como cumprir.',
+    'Entenda a NR-17, a avaliação ergonômica preliminar, quando a AET é necessária e as regras para checkout e teleatendimento.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-17-ergonomia' },
   openGraph: {
     title: 'NR-17 Ergonomia: AET, postura, prevenção de LER/DORT e obrigações | SERMST',
@@ -30,14 +30,14 @@ export default function NR17Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-13',
       }}
 
-      h1="NR-17: Ergonomia — o que sua empresa precisa fazer para evitar LER/DORT"
-      intro="A NR-17 trata da adaptação do trabalho às condições humanas: postura, mobiliário, ritmo, levantamento de peso, organização. Em ações trabalhistas por LER/DORT, a falta de Análise Ergonômica do Trabalho atualizada é responsabilidade direta da empresa."
+      h1="NR-17: o que a empresa precisa avaliar em ergonomia"
+      intro="A NR-17 trata da adaptação das condições de trabalho às características dos trabalhadores. Ela alcança postura, mobiliário, equipamentos, movimentação de cargas, ambiente e organização do trabalho. O primeiro passo é registrar a avaliação ergonômica preliminar; a AET é exigida nas situações definidas pela norma."
       quickAnswer={
         <p>
-          A <strong>NR-17</strong> regula ergonomia no trabalho — mobiliário, equipamentos, condições ambientais (iluminação, ruído, temperatura), organização do trabalho, pausas e movimentação de cargas. A <strong>AET — Análise Ergonômica do Trabalho</strong> é obrigatória para funções com risco ergonômico e é a principal defesa da empresa em ações por LER/DORT. A norma tem dois anexos com exigências específicas: <strong>Anexo I para teleatendimento e call center</strong> (pausas obrigatórias, mobiliário, headset) e <strong>Anexo II para comércio varejista de gêneros alimentícios</strong> (supermercados — caixas, repositores e açougues).
+          A <strong>NR-17</strong> exige uma avaliação ergonômica preliminar das situações de trabalho que demandam adaptação. A <strong>Análise Ergonômica do Trabalho (AET)</strong> deve ser feita quando é preciso aprofundar a avaliação, quando as medidas adotadas são insuficientes, por indicação do PCMSO ou quando a análise de acidente ou doença aponta relação com o trabalho. O <strong>Anexo I</strong> trata de operadores de checkout e o <strong>Anexo II</strong>, de teleatendimento e telemarketing.
         </p>
       }
       sections={[
@@ -49,31 +49,30 @@ export default function NR17Page() {
                 A NR-17 estabelece os parâmetros que permitem a adaptação das condições de trabalho às características do trabalhador, de modo a proporcionar conforto, segurança e desempenho eficiente. Cobre desde mobiliário e ferramenta até organização, pausas, ritmo, transporte de peso, ambiente físico (ruído, temperatura, iluminação), exigência cognitiva.
               </p>
               <p>
-                É uma das NRs mais subestimadas. Empresa que pensa &quot;ergonomia é cadeira boa&quot; está vulnerável — a norma é muito mais ampla.
+                Ergonomia não se resume à escolha da cadeira. A análise também precisa observar o trabalho real, o ritmo, as exigências cognitivas, os movimentos e as condições ambientais.
               </p>
             </>
           ),
         },
         {
-          title: 'Documento central: Análise Ergonômica do Trabalho (AET)',
+          title: 'Avaliação preliminar e Análise Ergonômica do Trabalho (AET)',
           body: (
             <>
               <p>
-                A AET é o documento que materializa a aplicação da NR-17 na empresa. Tem que ser feita por profissional habilitado (ergonomista, engenheiro de segurança com especialização ou fisioterapeuta com formação) e revisada periodicamente.
+                A avaliação ergonômica preliminar é o ponto de partida e deve ser registrada. A AET aprofunda a análise quando ocorre uma das situações previstas no item 17.3.2 da norma.
               </p>
               <p>
-                Conteúdo mínimo:
+                A AET deve contemplar:
               </p>
               <ul>
-                <li>Identificação dos postos e funções</li>
-                <li>Análise da demanda (riscos físicos, cognitivos, organizacionais)</li>
-                <li>Análise da atividade real (não apenas a prescrita)</li>
-                <li>Diagnóstico ergonômico</li>
-                <li>Recomendações com plano de ação e prazo</li>
-                <li>Acompanhamento da implementação</li>
+                <li>Análise da demanda e, quando necessário, reformulação do problema</li>
+                <li>Análise da organização, dos processos, das situações de trabalho e da atividade real</li>
+                <li>Descrição e justificativa dos métodos e ferramentas usados</li>
+                <li>Diagnóstico e recomendações para as situações avaliadas</li>
+                <li>Apresentação dos resultados e revisão das intervenções com participação dos trabalhadores</li>
               </ul>
               <p>
-                AET precisa estar atualizada — em geral revisão a cada 2 anos ou sempre que houver mudança significativa na operação. Documento antigo é evidência fraca em ação por LER/DORT.
+                A NR-17 não estabelece uma revisão geral a cada dois anos. O documento deve acompanhar mudanças e novas evidências que alterem a avaliação. Quando realizada, a AET deve permanecer disponível na organização por 20 anos.
               </p>
             </>
           ),
@@ -82,40 +81,40 @@ export default function NR17Page() {
           title: 'O que a NR-17 exige especificamente',
           body: (
             <ul>
-              <li><strong>Mobiliário</strong> — cadeira ajustável, apoio para pés se necessário, apoio para punho em digitação, monitor na altura correta.</li>
-              <li><strong>Equipamentos de tecnologia</strong> — teclado, mouse, software com ergonomia adequada.</li>
-              <li><strong>Levantamento e transporte de peso</strong> — limites e procedimentos. Mulheres têm limite específico.</li>
+              <li><strong>Mobiliário</strong>: dimensões, ajustes, espaço e apoio compatíveis com a tarefa.</li>
+              <li><strong>Equipamentos e ferramentas</strong>: seleção e posicionamento que reduzam posturas nocivas e esforço desnecessário.</li>
+              <li><strong>Levantamento e transporte de cargas</strong>: peso, frequência, distância, pega e postura precisam ser avaliados em conjunto.</li>
               <li><strong>Pausas para recuperação</strong> em atividades que exigem esforço repetitivo intenso.</li>
               <li><strong>Iluminação</strong> adequada à tarefa, sem ofuscamento nem reflexo.</li>
               <li><strong>Ruído</strong> em níveis compatíveis com a atividade cognitiva exigida.</li>
               <li><strong>Temperatura e umidade</strong> em faixas de conforto.</li>
-              <li><strong>Carga psíquica</strong> — exigência cognitiva, ritmo, monotonia, conflitos. Conecta com riscos psicossociais da NR-01.</li>
-              <li><strong>Treinamento dos trabalhadores</strong> sobre postura, técnica de levantamento, uso correto de mobiliário.</li>
+              <li><strong>Organização do trabalho</strong>: ritmo, exigência de tempo, conteúdo das tarefas e aspectos cognitivos.</li>
+              <li><strong>Orientação dos trabalhadores</strong> sobre os ajustes e as medidas de prevenção aplicáveis à atividade.</li>
             </ul>
           ),
         },
         {
-          title: 'LER/DORT: o passivo silencioso',
+          title: 'LER/DORT: prevenção e documentação precisam andar juntas',
           body: (
             <>
               <p>
-                LER (Lesão por Esforço Repetitivo) e DORT (Distúrbios Osteomusculares Relacionados ao Trabalho) são as principais doenças ocupacionais ligadas à NR-17. Aparecem ao longo de anos, e quando o trabalhador procura tratamento ou abre ação, costuma haver afastamento longo, indenização e responsabilização da empresa.
+                LER e DORT são termos usados para agravos musculoesqueléticos que podem ter relação com repetitividade, força, postura, ritmo e organização do trabalho. O nexo não é presumido apenas pelo diagnóstico; ele depende da análise clínica e das condições reais da atividade.
               </p>
               <p>
-                O quadro só fica grave porque é silencioso: trabalhador segue trabalhando com dor, supervisor não percebe, empresa não detecta no exame periódico. Quando explode, a documentação preventiva é o que separa responsabilização da empresa de mero infortúnio.
+                A prevenção melhora quando sinais de desconforto chegam cedo ao PCMSO e à gestão de riscos. A avaliação ergonômica, o plano de ação e o acompanhamento médico ajudam a identificar se as medidas adotadas precisam mudar.
               </p>
               <p>
-                Em ação por LER/DORT, o juiz pergunta:
+                Em uma fiscalização, perícia ou análise interna, costuma ser necessário demonstrar:
               </p>
               <ol>
-                <li>A empresa tinha AET atualizada?</li>
-                <li>O posto da pessoa estava na AET?</li>
-                <li>A empresa implementou as recomendações?</li>
-                <li>O trabalhador foi treinado em técnica e postura?</li>
-                <li>O exame periódico foi conduzido com atenção a sintomas musculoesqueléticos?</li>
+                <li>se a situação de trabalho passou por avaliação ergonômica preliminar;</li>
+                <li>se havia indicação de AET e, nesse caso, se ela foi realizada;</li>
+                <li>quais medidas foram planejadas e efetivamente implantadas;</li>
+                <li>como os trabalhadores participaram e foram orientados;</li>
+                <li>como o PCMSO acompanhou sinais relacionados ao trabalho.</li>
               </ol>
               <p>
-                Negativa em qualquer dessas é responsabilidade práticamente certa.
+                Um documento isolado não resolve o problema. O conjunto precisa refletir o que acontece no posto e as providências tomadas pela empresa.
               </p>
             </>
           ),
@@ -124,60 +123,64 @@ export default function NR17Page() {
           title: 'Por onde começar a estruturar ergonomia',
           body: (
             <ol>
-              <li><strong>Auditar AET atual</strong> — existe? Quando foi feita? Cobre as funções reais?</li>
-              <li><strong>Identificar postos críticos</strong> — operacionais com esforço repetitivo, administrativos com longa jornada em frente ao computador, transporte de peso.</li>
-              <li><strong>Fazer ou revisar AET</strong> com profissional habilitado.</li>
-              <li><strong>Implementar recomendações por fases</strong> — quick wins primeiro (cadeira, monitor, apoio), depois ajustes maiores (layout, fluxo, equipamento).</li>
-              <li><strong>Treinar trabalhadores</strong> em postura, técnica, alongamento (ginástica laboral é opcional mas comprovadamente ajuda).</li>
-              <li><strong>Conectar com PCMSO</strong> — exame periódico precisa avaliar sintomas musculoesqueléticos.</li>
-              <li><strong>Acompanhar indicador</strong> — taxa de afastamento por doença musculoesquelética. Tendência subindo é sinal de revisão.</li>
+              <li><strong>Mapear as situações de trabalho</strong> e ouvir quem executa as tarefas.</li>
+              <li><strong>Registrar a avaliação ergonômica preliminar</strong> e integrar os resultados ao inventário de riscos do PGR.</li>
+              <li><strong>Verificar se há indicação de AET</strong> conforme os critérios do item 17.3.2.</li>
+              <li><strong>Transformar as recomendações em plano de ação</strong>, com responsáveis e prazos.</li>
+              <li><strong>Orientar os trabalhadores</strong> sobre ajustes, técnicas e mudanças implantadas.</li>
+              <li><strong>Conectar a análise ao PCMSO</strong> para acompanhar queixas e possíveis agravos.</li>
+              <li><strong>Reavaliar após mudanças</strong> de processo, mobiliário, equipamento ou organização.</li>
             </ol>
           ),
         },
         {
-          title: 'Anexo I — Teleatendimento e call center: exigências específicas',
+          title: 'Anexo I: trabalho dos operadores de checkout',
           body: (
             <>
               <p>
-                O <strong>Anexo I da NR-17</strong> se aplica a <strong>teleatendimento, telemarketing, call center e centrais de atendimento</strong> — qualquer função que usa equipamento de escuta e fala com atendimento contínuo ao público. É um dos anexos mais detalhados e autuados do conjunto.
+                O <strong>Anexo I da NR-17</strong> se aplica ao trabalho dos operadores de checkout. Ele trata do posto, da manipulação de mercadorias, da organização do trabalho, dos aspectos psicossociais e da capacitação.
               </p>
               <p>Exigências principais:</p>
               <ul>
-                <li><strong>Pausas obrigatórias:</strong> 20 minutos de descanso para cada 100 minutos trabalhados em atendimento telefônico ativo, computados como tempo de serviço.</li>
-                <li><strong>Headset com limitação de volume:</strong> proteção auditiva integrada — o equipamento deve limitar pico de pressão sonora. Queixas de PAIR (Perda Auditiva Induzida por Ruído) são frequentes nessa função.</li>
-                <li><strong>Monitor de vídeo:</strong> posicionado à altura dos olhos, a distância mínima de 45 cm, com ajuste de brilho e ausência de reflexo.</li>
-                <li><strong>Mobiliário regulável:</strong> mesa com altura ajustável ou plano de trabalho com apoio para punho; cadeira com regulagem de altura, assento e apoio lombar.</li>
-                <li><strong>Iluminação:</strong> sem ofuscamento direto ou reflexo na tela — lux mínimos definidos por tipo de tarefa.</li>
-                <li><strong>Conteúdo de trabalho e organização:</strong> vedação à pressão por metas que gerem sobrecarga psíquica. Monitoramento eletrônico de desempenho deve ser acompanhado de feedback e não gerar constrangimento.</li>
-                <li><strong>Capacitação:</strong> treinamento antes do início das atividades (manuseio de equipamento, postura, saúde vocal) e periodic refresh.</li>
+                <li><strong>Posto de checkout:</strong> deve permitir alternância entre trabalho sentado e em pé, com cadeira de apoio e espaço compatível.</li>
+                <li><strong>Manipulação de mercadorias:</strong> o projeto deve reduzir movimentos repetitivos de braço e torções do corpo.</li>
+                <li><strong>Volume e peso:</strong> mecanismos auxiliares são necessários quando a carga dificulta a execução manual.</li>
+                <li><strong>Ritmo de trabalho:</strong> o número de checkouts e operadores deve ser compatível com o fluxo de clientes.</li>
+                <li><strong>Capacitação:</strong> treinamento inicial e periódico sobre posto, mercadorias, organização do trabalho, fatores psicossociais e prevenção.</li>
               </ul>
               <p>
-                Empresa de call center com AET desatualizada ou que não documenta as pausas está exposta a autuação dupla: do MTE (NR-17 Anexo I) e de ações trabalhistas por doença ocupacional.
+                O anexo não se estende automaticamente a todos os trabalhadores do supermercado. Repositores, açougueiros e outras funções continuam sujeitos à parte geral da NR-17 e à avaliação de suas situações de trabalho.
               </p>
             </>
           ),
         },
         {
-          title: 'Anexo II — Comércio varejista de gêneros alimentícios: supermercados e açougues',
+          title: 'Anexo II: teleatendimento e telemarketing',
           body: (
             <>
               <p>
-                O <strong>Anexo II da NR-17</strong> se aplica ao <strong>comércio varejista de gêneros alimentícios</strong> — supermercados, hipermercados, lojas de conveniência, açougues e similares. Foco nas funções de maior risco ergonômico: <strong>operadores de caixa, repositores de mercadoria e trabalhadores de açougue</strong>.
+                O <strong>Anexo II da NR-17</strong> se aplica às organizações que mantêm serviço de teleatendimento ou telemarketing. Ele estabelece regras próprias para mobiliário, equipamentos, ambiente, jornada, pausas, capacitação e acompanhamento de saúde.
               </p>
-              <p>Exigências principais por função:</p>
+              <p>Entre as exigências estão:</p>
               <ul>
                 <li>
-                  <strong>Operadores de checkout (caixa):</strong> assento regulável obrigatório — o trabalho deve poder ser realizado sentado ou em pé alternadamente; plano de trabalho em altura adequada; scanner de código de barras deve minimizar extensão e torção de punho; pausas periódicas computadas como tempo de serviço.
+                  <strong>Pausas de descanso:</strong> dois períodos contínuos de 10 minutos, fora do posto, depois dos primeiros e antes dos últimos 60 minutos de atividade.
                 </li>
                 <li>
-                  <strong>Repositores:</strong> limitação de peso por unidade de carga; uso de equipamento auxiliar para cargas acima do limite; estantes em alturas compatíveis; vedação a posturas forçadas repetitivas sem pausas.
+                  <strong>Intervalo para repouso e alimentação:</strong> 20 minutos, sem prejuízo das duas pausas de descanso.
                 </li>
                 <li>
-                  <strong>Trabalhadores de açougue:</strong> piso antiderrapante; facas com cabo ergonômico; equipamento de corte com proteção; carga máxima definida; controle de temperatura no ambiente frio (câmara frigorífica) e alternância de posturas.
+                  <strong>Registro:</strong> as pausas devem constar em registro impresso ou eletrônico e ficar acessíveis ao trabalhador.
+                </li>
+                <li>
+                  <strong>Equipamentos:</strong> headsets individuais, ajuste de volume, proteção contra choques acústicos e manutenção contínua.
+                </li>
+                <li>
+                  <strong>Capacitação:</strong> treinamento inicial de 4 horas e periódico a cada 6 meses, além de treinamento eventual quando surgirem novos fatores de risco.
                 </li>
               </ul>
               <p>
-                Supermercados são alvo frequente de fiscalização do MTE justamente porque o perfil de risco é alto — esforço repetitivo, postura estática prolongada, carga física — e a conformidade costuma ser baixa. AET específica por função é o passo inicial.
+                Para jornadas efetivas de teleatendimento de até 4 horas, o anexo prevê uma pausa contínua de 10 minutos. Situações desgastantes, com ameaça, abuso verbal ou agressão, também exigem pausa imediata para recuperação.
               </p>
             </>
           ),
@@ -186,35 +189,35 @@ export default function NR17Page() {
       faq={[
         {
           q: 'Empresa pequena precisa de AET?',
-          a: 'Sim. A NR-17 não tem isenção por porte. Empresa com 5 funcionários administrativos em frente ao computador 8 horas por dia já está sob exigência. Cumprimento é proporcional ao risco real, mas a obrigação existe.',
+          a: 'Nem sempre. ME, EPP de graus de risco 1 e 2 e MEI são dispensados da AET em regra, mas devem cumprir os demais requisitos da NR-17 e registrar a avaliação ergonômica preliminar quando aplicável. ME e EPP desses graus precisam realizar AET quando o PCMSO indicar ou quando a análise de acidente ou doença apontar causa ligada às condições de trabalho.',
         },
         {
           q: 'Quem pode fazer AET?',
-          a: 'Profissional habilitado em ergonomia: engenheiro de segurança do trabalho, médico do trabalho, fisioterapeuta, ergonomista certificado. A profundidade técnica varia — postos administrativos exigem menos do que postos industriais.',
+          a: 'A NR-17 não reserva a elaboração da AET a uma profissão específica. A organização deve escolher alguém com conhecimento técnico e experiência compatíveis com a complexidade da situação analisada, sem ignorar eventuais atribuições profissionais aplicáveis ao serviço contratado.',
         },
         {
           q: 'Pausa obrigatória em digitação?',
-          a: 'A NR-17 estabelece pausas em atividades que exigem solicitação intensiva — incluindo entrada de dados, atendimento telefônico contínuo. A norma não fixa minutos rígidos; depende da AET. Em regra, 10 minutos a cada 50-60 minutos de digitação intensa.',
+          a: 'A parte geral da NR-17 não cria uma regra universal de 10 minutos para toda atividade de digitação. As medidas de prevenção, incluindo pausas ou alternância de tarefas, devem resultar da avaliação da atividade e das normas específicas aplicáveis. Teleatendimento tem regras próprias no Anexo II.',
         },
         {
           q: 'Limite de peso para levantamento?',
-          a: 'A NR-17 não fixa um limite único — depende de altura, distância, frequência, postura. A NHO 11 da Fundacentro e a ISO 11228 são referências. Em regra, levantamentos acima de 23kg (homens) ou 11kg (mulheres) já exigem análise específica.',
+          a: 'A NR-17 não fixa um único número válido para todas as pessoas e situações. A análise deve considerar peso, frequência, distância, altura, pega, postura, deslocamento e características do trabalhador. Quando a carga comprometer a segurança ou a saúde, a empresa deve reduzir o esforço ou usar meios auxiliares.',
         },
         {
           q: 'Ginástica laboral é obrigatória?',
-          a: 'Não. A NR-17 não exige ginástica laboral. Mas é prática reconhecida como medida de prevenção. Quando faz parte da AET como recomendação implementada, melhora o paper trail de prevenção.',
+          a: 'Não. A NR-17 não torna a ginástica laboral obrigatória. Ela pode integrar um conjunto de medidas, mas não substitui a correção de mobiliário, processo, ritmo ou organização do trabalho.',
         },
         {
           q: 'Call center e teleatendimento precisam de regras específicas além da NR-17 geral?',
-          a: 'Sim. O Anexo I da NR-17 se aplica especificamente a teleatendimento, telemarketing e centrais de atendimento. Exige pausas de 20 minutos por cada 100 minutos de atendimento ativo (computadas como serviço), headset com limitação de volume, mobiliário regulável e vedação à pressão abusiva por metas. AET específica para essa atividade é obrigatória.',
+          a: 'Sim. O Anexo II trata de teleatendimento e telemarketing. Em uma jornada efetiva superior a 4 horas, prevê duas pausas contínuas de 10 minutos e intervalo de 20 minutos para repouso e alimentação, além de regras para mobiliário, headset, organização do trabalho e capacitação.',
         },
         {
           q: 'Supermercado precisa cumprir algum anexo específico da NR-17?',
-          a: 'Sim. O Anexo II da NR-17 trata do comércio varejista de gêneros alimentícios — supermercados, hipermercados, lojas de conveniência e açougues. Foca em operadores de caixa (assento regulável obrigatório, alternância sentado/em pé), repositores (limite de carga, equipamento auxiliar) e açougue (piso antiderrapante, ferramentas ergonômicas, controle de temperatura). O segmento é alvo frequente de fiscalização por descumprimento.',
+          a: 'O Anexo I se aplica especificamente aos operadores de checkout. As demais funções do supermercado, como reposição e açougue, são avaliadas pela parte geral da NR-17 e por outras normas que incidam sobre a atividade.',
         },
       ]}
-      sidebarTitle="Sua empresa tem AET atualizada?"
-      sidebarHook="LER/DORT é a doença ocupacional mais comum no Brasil. Sem AET vigente, a defesa em ação trabalhista cai. A SERMST faz AET completa e implementa recomendações."
+      sidebarTitle="A avaliação ergonômica está em dia?"
+      sidebarHook="A avaliação ergonômica precisa refletir o trabalho real. A SERMST pode registrar a análise preliminar, verificar se há indicação de AET e organizar as medidas no plano de ação."
       sidebarCtaLabel="Solicitar AET"
       related={[
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },

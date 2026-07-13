@@ -1,10 +1,43 @@
 import { MetadataRoute } from "next";
-import { servicosSEO, localidades, saudeSEO, rhDoresSEO, dicionarioSEO, empresarioSEO } from "@/lib/data/seo-content";
+import { servicosSEO, localidades, rhDoresSEO, dicionarioSEO, empresarioSEO } from "@/lib/data/seo-content";
 import { trainingsData } from "@/lib/data/treinamentos-data";
 import { siteImages } from "@/lib/site-images";
 import { normasKnown } from "./normas/[slug]/page";
 
 const BASE_URL = "https://sermst.com.br";
+const SEO_REVISION_DATE = "2026-07-13";
+
+function getAccurateLastModified(url: string): string | undefined {
+  const revisedPages = new Set([
+    BASE_URL,
+    `${BASE_URL}/servicos`,
+    `${BASE_URL}/normas`,
+    `${BASE_URL}/normas/o-que-e-nr-07`,
+    `${BASE_URL}/saude`,
+    `${BASE_URL}/saude/exame-demissional`,
+    `${BASE_URL}/saude/exame-periodico-ocupacional`,
+    `${BASE_URL}/saude/exame-retorno-ao-trabalho`,
+    `${BASE_URL}/saude/espirometria-ocupacional`,
+    `${BASE_URL}/saude/eletrocardiograma-ocupacional`,
+    `${BASE_URL}/saude/avaliacao-psicossocial-ocupacional`,
+    `${BASE_URL}/saude/acuidade-visual-ocupacional`,
+    `${BASE_URL}/saude/o-que-e-saude-ocupacional`,
+    `${BASE_URL}/saude/validade-aso-admissional`,
+    `${BASE_URL}/rh/carta-demissao`,
+    `${BASE_URL}/rh/quando-demitir-funcionario`,
+  ]);
+
+  if (
+    revisedPages.has(url) ||
+    url.startsWith(`${BASE_URL}/servicos/exame-admissional-expresso`) ||
+    url === `${BASE_URL}/empresario` ||
+    url.startsWith(`${BASE_URL}/empresario/`)
+  ) {
+    return SEO_REVISION_DATE;
+  }
+
+  return undefined;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // ── Páginas estáticas ─────────────────────────────────────────────────────
@@ -106,27 +139,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  // ── Hub de Saúde Ocupacional ─────────────────────────────────────────────
-  // Slugs already declared with higher priority in saúdeStaticPages — exclude from dynamic list
-  const saúdeStaticSlugs = new Set([
-    "pcmso-programa-controle-medico",
-    "medicina-do-trabalho-guia",
-    "aso-atestado-saude-ocupacional",
-    "gestao-sst",
-    "insalubridade-o-que-e-adicional",
-    "acidente-de-trabalho",
-    "o-que-e-exame-toxicologico",
-  ]);
-  const saudePages: MetadataRoute.Sitemap = Object.keys(saudeSEO)
-    .filter((slug) => !saúdeStaticSlugs.has(slug))
-    .map((slug) => ({
+  // ── Saúde Ocupacional ─────────────────────────────────────────────
+  // Artigos editoriais com páginas estáticas próprias. A URL antiga do exame
+  // periódico não entra aqui porque redireciona para exame-periodico-ocupacional.
+  const saudePages: MetadataRoute.Sitemap = [
+    "o-que-e-saude-ocupacional",
+    "exame-demissional",
+    "o-que-sao-epis",
+  ].map((slug) => ({
       url: `${BASE_URL}/saude/${slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.65,
-    }));
+  }));
 
   // ── Hub RH/DP ─────────────────────────────────────────────────────────────
-  // Slugs already declared with higher priority in rhStaticPages — exclude from dynamic list
+  // Slugs already declared with higher priority in rhStaticPages: exclude from dynamic list
   const rhStaticSlugs = new Set([
     "lista-cnae-brasil",
     "evitar-processos-trabalhistas",
@@ -196,7 +223,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`,                     changeFrequency: "weekly",  priority: 0.60 },
   ];
 
-  return [
+  const entries: MetadataRoute.Sitemap = [
     ...staticPages,
     ...servicoBasePages,
     ...geoPages,
@@ -210,4 +237,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...normasPages,
     ...equipePages,
   ];
+
+  // Evita URLs repetidas e publica lastmod apenas quando há uma revisão real
+  // de conteúdo ou snippet, sem simular atualização em todo o site.
+  const uniqueEntries = Array.from(new Map(entries.map((entry) => [entry.url, entry])).values());
+
+  return uniqueEntries.map((entry) => {
+    const lastModified = getAccurateLastModified(entry.url);
+    return lastModified ? { ...entry, lastModified } : entry;
+  });
 }

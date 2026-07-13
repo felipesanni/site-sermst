@@ -33,7 +33,7 @@ export const siteImages = {
   institutional: {
     corporateHealthHero: {
       src: '/images/site/sermst-saude-corporativa.jpg',
-      alt: 'Clínica de medicina do trabalho SERMST — equipe e estrutura para exames ocupacionais em São Paulo',
+      alt: 'Clínica de medicina do trabalho SERMST: equipe e estrutura para exames ocupacionais em São Paulo',
     },
     operationTeam: {
       src: '/images/site/sermst-operacao-atendimento.jpg',
@@ -79,7 +79,7 @@ export const articleImages: Record<string, SiteImage> = {
   },
   'insalubridade-o-que-e-adicional': {
     src: '/images/site/safety-equipment.jpg',
-    alt: 'Ambiente de trabalho com exposicao a agentes insalubres e avaliacao tecnica de SST',
+    alt: 'Ambiente de trabalho com exposição a agentes insalubres e avaliação técnica de SST',
   },
   // Normas
   'normas-regulamentadoras': {
@@ -90,7 +90,7 @@ export const articleImages: Record<string, SiteImage> = {
 
 export const imageSeoStandard = {
   naming: 'usar nomes em minusculo, com hifens, sem acentos e com contexto semantico',
-  alt: 'descrever a imagem com contexto real da pagina, sem keyword stuffing e sem repetir o titulo inteiro',
+  alt: 'descrever a imagem com contexto real da página, sem excesso de palavras-chave e sem repetir o título inteiro',
   decorative: 'usar alt vazio apenas quando a imagem for puramente decorativa',
   sizing: 'definir sizes em imagens com fill e priorizar formatos leves',
   sitemap: 'incluir imagens relevantes no sitemap das paginas principais',

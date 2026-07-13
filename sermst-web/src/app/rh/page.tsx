@@ -32,7 +32,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'Quais eventos do eSocial SST o RH precisa enviar?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Os principais eventos SST no eSocial são: S-2210 (comunicação de acidente de trabalho), S-2220 (monitoramento de saúde ocupacional — ASO), S-2221 (exame toxicológico) e S-2240 (condições ambientais do trabalho — LTCAT). O S-2220 deve ser enviado até o dia 15 do mês seguinte ao exame.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Os principais eventos SST no eSocial são: S-2210 (comunicação de acidente de trabalho), S-2220 (monitoramento de saúde ocupacional: ASO), S-2221 (exame toxicológico) e S-2240 (condições ambientais do trabalho: LTCAT). O S-2220 deve ser enviado até o dia 15 do mês seguinte ao exame.' },
     },
     {
       '@type': 'Question',
@@ -66,7 +66,7 @@ export default function RHIndexPage() {
               <span className="text-accent-pink">para RH e DP</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl font-medium border-l-4 border-accent-pink pl-6 md:pl-10 leading-relaxed">
-              Este hub existe para responder a dor operacional do RH: admissão travada, evento fora do prazo, documento incoerente, retrabalho com ASO e medo de autuação relacionada ao eSocial.
+              Conteúdo para ajudar o RH a organizar admissões, prazos do eSocial, documentos ocupacionais e o fluxo de ASOs com menos retrabalho.
             </p>
           </FadeIn>
         </div>
@@ -77,7 +77,7 @@ export default function RHIndexPage() {
           <FadeIn direction="right">
             <div className="bg-white border border-slate-200 rounded-[2rem] p-8 lg:p-10 shadow-sm">
               <span className="text-accent-pink font-black text-xs uppercase tracking-[0.2em] mb-4 block">
-                Leitura estratégica
+                Rotina de RH e SST
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-brand-900 mb-6">
                 O que o RH realmente precisa controlar em SST
@@ -87,14 +87,14 @@ export default function RHIndexPage() {
                   Quando uma empresa procura por eSocial SST, S-2220, S-2240, medicina do trabalho ou multa trabalhista, está quase sempre tentando resolver um problema prático do dia a dia. O RH quer contratar sem gargalo, o DP quer evitar erro de prazo, e a direção quer reduzir exposição a risco jurídico e fiscal.
                 </p>
                 <p>
-                  Por isso este hub é estruturado como conteúdo de decisão. Em vez de falar apenas em norma, conecta saúde ocupacional, documentação obrigatória, ASO, PGR, PCMSO e envio de eventos a uma linguagem útil para quem precisa operar o processo. Até rotinas menores, como uma{' '}
+                  Além das regras, esta seção conecta saúde ocupacional, documentação obrigatória, ASO, PGR, PCMSO e envio de eventos à rotina de quem executa o processo. Até tarefas como uma{' '}
                   <Link href="/rh/carta-recomendacao" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
                     carta de recomendação
                   </Link>
-                  , entram nessa lógica quando o RH precisa documentar bem o histórico do colaborador.
+                  {' '}exigem cuidado quando o RH precisa registrar corretamente o histórico do colaborador.
                 </p>
                 <p>
-                  O resultado é prático: você entende mais rápido se precisa de orientação, de regularização ou de proposta comercial — e a SERMST entrega o que cabe ao seu cenário, sem empurrar serviço genérico.
+                  Assim, o RH consegue identificar o que precisa apenas de orientação, o que exige correção documental e quando vale solicitar apoio técnico.
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function RHIndexPage() {
           <FadeIn direction="left" delay={0.1}>
             <div className="bg-white border border-slate-200 rounded-[2rem] p-8 lg:p-10 shadow-sm">
               <span className="text-accent-pink font-black text-xs uppercase tracking-[0.2em] mb-4 block">
-                Atalho comercial
+                Atendimento
               </span>
               <h2 className="text-2xl font-black text-brand-900 mb-6">
                 Se o problema já está na mesa, fale com a SERMST
@@ -165,12 +165,12 @@ export default function RHIndexPage() {
               href="/rh/domicilio-eletronico-trabalhista-det"
               className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
             >
-              <span className="kicker">Fiscalizacao digital</span>
+              <span className="kicker">Fiscalização digital</span>
               <h2 className="mb-4 text-2xl font-black text-brand-900">
-                DET: como funciona o Domicilio Eletronico Trabalhista
+                DET: como funciona o Domicílio Eletrônico Trabalhista
               </h2>
               <p className="mb-6 text-slate-700 leading-relaxed">
-                Entenda por que o DET virou parte real da rotina de compliance trabalhista e o que a empresa perde quando deixa notificacoes e prazos sem responsável.
+                Veja quem precisa acompanhar o DET, quando ocorre a ciência automática e como organizar notificações e prazos.
               </p>
               <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
                 Ler guia do DET
@@ -184,12 +184,12 @@ export default function RHIndexPage() {
               href="/rh/declaracao-inexistencia-risco-dir"
               className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
             >
-              <span className="kicker">NR-01 e simplificacao</span>
+              <span className="kicker">NR-01 e simplificação</span>
               <h2 className="mb-4 text-2xl font-black text-brand-900">
-                DIR: quando a empresa pode declarar inexistencia de risco
+                DIR: quando a empresa pode declarar inexistência de risco
               </h2>
               <p className="mb-6 text-slate-700 leading-relaxed">
-                Veja quando a DIR realmente faz sentido, por que grau 1 ou 2 nao basta sozinho e como evitar usar simplificacao sem enquadramento tecnico.
+                Veja os requisitos da declaração e por que o grau de risco 1 ou 2, sozinho, não autoriza a dispensa.
               </p>
               <span className="inline-flex items-center gap-2 font-bold text-brand-900 group-hover:text-accent-pink transition-colors">
                 Ler guia da DIR
@@ -258,7 +258,7 @@ export default function RHIndexPage() {
             </div>
             <div className="flex-1 text-center sm:text-left">
               <span className="mb-1 block text-[10px] font-black uppercase tracking-widest text-accent-pink">
-                Nova lei — em vigor desde abril de 2026
+                Nova lei: em vigor desde abril de 2026
               </span>
               <h2 className="text-xl font-black leading-snug text-brand-900 md:text-2xl">
                 Lei 15.377/2026: vacinação, HPV e exames preventivos na CLT
@@ -329,7 +329,7 @@ export default function RHIndexPage() {
                     </h3>
                     <p className="text-slate-600 line-clamp-3">{item.hook}</p>
                     <p className="mt-4 text-sm font-semibold text-slate-500">
-                      Leitura recomendada para RH, DP e gestão que precisam decidir com mais segurança.
+                      Informações práticas para RH, DP e gestores responsáveis por essa rotina.
                     </p>
                   </div>
                   <div className="bg-slate-100 p-3 rounded-full text-brand-900 opacity-0 group-hover:opacity-100 transition-all">
@@ -346,11 +346,11 @@ export default function RHIndexPage() {
         <FadeIn direction="up">
           <div className="flex flex-wrap gap-4">
             <Link href="/saude" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
-              Hub de Saúde Ocupacional
+              Saúde Ocupacional
               <ArrowRight className="ml-2 inline h-4 w-4" />
             </Link>
             <Link href="/normas" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
-              Hub de Normas Regulamentadoras
+              Normas Regulamentadoras
               <ArrowRight className="ml-2 inline h-4 w-4" />
             </Link>
             <Link href="/dicionario" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">

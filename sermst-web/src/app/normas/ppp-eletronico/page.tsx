@@ -27,17 +27,17 @@ export default function PPPPage() {
       badgeText="PPP eletrônico"
       author={{
         name: 'Felipe Sannino',
-        jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+        jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-13',
       }}
 
       h1="PPP eletrônico: o que é, como funciona e por que ele importa"
-      intro="O PPP eletrônico é o documento que descreve as condições ambientais do trabalho de cada colaborador para fins previdenciários. Obrigatório no eSocial via evento S-2240, é base para aposentadoria especial e responsabilidade direta da empresa."
+      intro="O PPP eletrônico reúne o histórico laboral e as informações declaradas pela empresa sobre exposição a agentes prejudiciais à saúde. Para períodos trabalhados desde 1º de janeiro de 2023, ele é emitido em meio eletrônico e pode ser consultado pelo segurado no Meu INSS."
       quickAnswer={
         <p>
-          O <strong>PPP eletrônico</strong> (Perfil Profissiográfico Previdenciário) é gerado pelo <strong>eSocial a partir do evento S-2240</strong> (condições ambientais de trabalho) e S-2220 (monitoramento de saúde). Documenta a exposição do trabalhador a agentes nocivos durante todo o vínculo e é a base legal para <strong>aposentadoria especial</strong>. A empresa deve emitir o PPP ao término de cada vínculo e <strong>manter os documentos de base por 20 anos</strong> para fins previdenciários — esse prazo corre mesmo após o fechamento da empresa.
+          O <strong>PPP eletrônico</strong> (Perfil Profissiográfico Previdenciário) é formado a partir dos eventos de SST enviados ao eSocial, com papel central do <strong>S-2240</strong>. Ele registra as condições de trabalho e a exposição a agentes prejudiciais à saúde. Desde 2023, o segurado acessa o documento pelo <strong>Meu INSS</strong>. A empresa continua responsável por manter as informações corretas e atualizadas.
         </p>
       }
       sections={[
@@ -49,7 +49,7 @@ export default function PPPPage() {
                 PPP significa <strong>Perfil Profissiográfico Previdenciário</strong>. É o documento que descreve, ao longo de toda a vida laboral do trabalhador, as atividades exercidas, os agentes nocivos a que esteve exposto, a intensidade dessa exposição e os equipamentos de proteção utilizados.
               </p>
               <p>
-                Até 2022, o PPP era em papel — entregue ao trabalhador no fim do contrato. Hoje é predominantemente eletrônico, transmitido pelo evento <strong>S-2240</strong> do eSocial. O documento físico continua obrigatório em alguns casos, mas a base de informação migrou para a estrutura eletrônica.
+                Para períodos trabalhados até 31 de dezembro de 2022, o PPP em papel continua sendo usado. A partir de 1º de janeiro de 2023, o PPP eletrônico substituiu o documento físico para comprovação perante o INSS.
               </p>
             </>
           ),
@@ -58,11 +58,10 @@ export default function PPPPage() {
           title: 'Para que serve',
           body: (
             <ul>
-              <li><strong>Aposentadoria especial</strong> — base para concessão de aposentadoria com tempo reduzido para quem trabalhou exposto a agentes nocivos.</li>
-              <li><strong>Aposentadoria por tempo de contribuição</strong> — comprova períodos especiais para somar.</li>
-              <li><strong>Auxílio-doença e auxílio-acidente</strong> — caracteriza a relação entre a doença e o trabalho.</li>
-              <li><strong>Defesa em ação trabalhista</strong> por doença ocupacional ou adicional retroativo.</li>
-              <li><strong>Cálculo do FAP</strong> da empresa — empresa com PPP consistente paga o que deve, nem mais nem menos.</li>
+              <li><strong>Aposentadoria especial</strong>: informa os períodos de exposição que serão analisados pelo INSS.</li>
+              <li><strong>Reconhecimento de tempo especial</strong>: apoia a análise previdenciária dos períodos trabalhados.</li>
+              <li><strong>Conferência do histórico ocupacional</strong>: permite ao segurado verificar o que a empresa declarou.</li>
+              <li><strong>Coerência documental</strong>: deve refletir LTCAT e demais registros ambientais que sustentam o S-2240.</li>
             </ul>
           ),
         },
@@ -70,13 +69,13 @@ export default function PPPPage() {
           title: 'Quais informações entram no PPP',
           body: (
             <ol>
-              <li><strong>Dados do trabalhador</strong> — CPF, NIT, nome, datas.</li>
-              <li><strong>Dados da empresa</strong> — CNPJ, razão social, CNAE, grau de risco.</li>
-              <li><strong>Função e descrição da atividade</strong> — o que o trabalhador realmente faz no posto.</li>
-              <li><strong>Agentes nocivos</strong> — químicos, físicos (ruído, calor, vibração, radiação), biológicos, ergonômicos.</li>
-              <li><strong>Intensidade da exposição</strong> — quantitativa quando aplicável (decibéis para ruído, ppm para químicos, etc.).</li>
-              <li><strong>Habitualidade e permanência</strong> — exposição habitual e permanente é o que vale para aposentadoria especial.</li>
-              <li><strong>EPI e EPC fornecidos</strong> — descrição, número de CA, eficácia.</li>
+              <li><strong>Dados do trabalhador</strong>: identificação e períodos do vínculo.</li>
+              <li><strong>Dados da empresa</strong>: identificação do estabelecimento responsável pelas informações.</li>
+              <li><strong>Função e descrição da atividade</strong>: o que o trabalhador executa em cada período.</li>
+              <li><strong>Agentes prejudiciais à saúde</strong>: fatores físicos, químicos ou biológicos previstos na tabela do eSocial.</li>
+              <li><strong>Intensidade ou concentração</strong>: quando a avaliação quantitativa for aplicável.</li>
+              <li><strong>Técnica utilizada</strong>: metodologia e critérios que sustentam a avaliação.</li>
+              <li><strong>EPI e EPC</strong>: dados solicitados pelo leiaute, incluindo CA e avaliação de eficácia quando aplicável.</li>
               <li><strong>Responsável técnico</strong> pelo registro ambiental (engenheiro/médico do trabalho).</li>
               <li><strong>Registro de monitorações biológicas</strong> em algumas exposições.</li>
             </ol>
@@ -87,54 +86,52 @@ export default function PPPPage() {
           body: (
             <>
               <p>
-                O PPP é o &quot;resultado&quot; — o documento que junta tudo. Os insumos vêm de outros documentos:
+                O PPP apresenta informações que precisam ter base técnica. Os principais documentos de origem são:
               </p>
               <ul>
                 <li><strong>LTCAT</strong> caracteriza tecnicamente a exposição a agentes nocivos.</li>
                 <li><strong>PGR</strong> identifica e avalia os riscos da operação.</li>
                 <li><strong>PCMSO</strong> define a vigilância médica e os exames específicos.</li>
-                <li><strong>AET (NR-17)</strong> caracteriza riscos ergonômicos.</li>
-                <li><strong>Laudos NR-15 e NR-16</strong> caracterizam insalubridade e periculosidade.</li>
+                <li><strong>Registros de EPI e EPC</strong> sustentam as informações sobre proteção adotada.</li>
+                <li><strong>Laudos e avaliações complementares</strong> ajudam a manter coerência entre os registros trabalhistas e previdenciários.</li>
               </ul>
               <p>
-                Quando esses documentos não conversam entre si, o PPP fica inconsistente. Em perícia previdenciária ou trabalhista, a inconsistência aparece — e desmonta defesa.
+                Quando os documentos usam funções, períodos ou exposições diferentes, o PPP fica inconsistente. A correção deve ocorrer na fonte e nos eventos do eSocial, com preservação do histórico.
               </p>
             </>
           ),
         },
         {
-          title: 'Os erros que viram passivo',
+          title: 'Erros que exigem correção no eSocial',
           body: (
             <ol>
-              <li><strong>S-2240 fora do prazo.</strong> Multa automática no eSocial.</li>
+              <li><strong>S-2240 fora do prazo.</strong> O eSocial recebe a informação, mas o atraso pode caracterizar descumprimento sujeito à fiscalização. Não existe uma multa automática gerada pelo sistema para cada envio tardio.</li>
               <li><strong>S-2240 com agente nocivo errado.</strong> Pode gerar concessão indevida de aposentadoria especial (custo extra para Previdência) ou negação de direito legítimo (gera ação contra a empresa).</li>
-              <li><strong>EPI eficaz declarado sem evidência.</strong> Empresa diz no S-2240 que EPI &quot;neutraliza&quot; o agente, mas não tem ficha de entrega nem fiscalização. Em perícia, declaração cai.</li>
-              <li><strong>Inconsistência entre PPP e LTCAT.</strong> Documentos contam histórias diferentes. Perito identifica imediatamente.</li>
-              <li><strong>Não emissão na rescisão.</strong> Ex-trabalhador procura o INSS, descobre que não há PPP. Ação contra a empresa para emitir + indenização por atraso.</li>
-              <li><strong>Não atualização durante o contrato.</strong> Mudança de função, mudança de operação, mudança de risco. PPP não atualizado é evidência de descumprimento.</li>
+              <li><strong>EPI eficaz declarado sem evidência.</strong> A informação precisa ser compatível com seleção, CA, entrega, treinamento, uso e manutenção da proteção.</li>
+              <li><strong>Inconsistência entre PPP e LTCAT.</strong> Divergências de período, função ou exposição precisam ser investigadas e corrigidas.</li>
+              <li><strong>Ausência de dados no Meu INSS.</strong> Para períodos desde 2023, o trabalhador depende dos eventos enviados pela empresa. Informações ausentes ou incorretas exigem retificação no eSocial.</li>
+              <li><strong>Falta de atualização durante o contrato.</strong> Alterações de função, ambiente ou exposição podem exigir um novo S-2240 a partir da data da mudança.</li>
             </ol>
           ),
         },
         {
-          title: 'Prazo de guarda: 20 anos após o término do vínculo',
+          title: 'Guarda do PPP e dos documentos de base',
           body: (
             <>
               <p>
-                A empresa é obrigada a <strong>manter os documentos que embasam o PPP por no mínimo 20 anos após o término do vínculo empregatício</strong> do trabalhador — conforme o art. 58-A da Lei 8.213/91 e regulamentações previdenciárias. Esse prazo abrange:
+                A regulamentação previdenciária prevê a guarda do PPP e do comprovante de entrega pelo prazo de <strong>20 anos</strong>. Os laudos, avaliações e registros que sustentam as informações também devem ser preservados conforme seus prazos legais e a necessidade de comprovar o histórico declarado.
               </p>
               <ul>
                 <li>LTCAT e laudos de agentes nocivos</li>
-                <li>Laudos NR-15 e NR-16</li>
                 <li>Fichas de entrega de EPI com assinatura e número de CA</li>
-                <li>ASOs dos exames periódicos do trabalhador</li>
-                <li>Registros de monitoração biológica e ambiental</li>
+                <li>Registros de avaliações ambientais</li>
                 <li>Os próprios eventos S-2240 transmitidos ao eSocial</li>
               </ul>
               <p>
-                O prazo de 20 anos existe porque o trabalhador pode pedir aposentadoria especial décadas depois de encerrado o contrato — e precisa provar a exposição referente a cada emprego. Se a empresa não tiver os documentos, a responsabilidade de reconstituição recai sobre ela.
+                O trabalhador pode precisar comprovar um período especial muitos anos depois do fim do contrato. Sem documentação contemporânea, a retificação ou reconstrução do histórico fica mais difícil para todas as partes.
               </p>
               <p>
-                <strong>Atenção ao encerramento de empresa:</strong> o prazo corre independentemente da continuidade da empresa. Se a empresa fechar, os sócios são responsáveis pela guarda — ou por garantir a entrega dos documentos ao trabalhador antes do encerramento.
+                Em reorganizações, aquisições ou encerramento de atividades, a empresa deve definir formalmente a custódia dos documentos e dos recibos, de acordo com a orientação contábil e jurídica aplicável.
               </p>
             </>
           ),
@@ -143,31 +140,31 @@ export default function PPPPage() {
       faq={[
         {
           q: 'PPP em papel ainda existe?',
-          a: 'Sim, em algumas situações. A migração para eletrônico via S-2240 é o padrão, mas o trabalhador pode pedir versão impressa para uso em pedido de aposentadoria. Empresa precisa estar preparada para emitir o PPP em PDF a partir das informações do eSocial.',
+          a: 'Sim, para períodos trabalhados até 31 de dezembro de 2022. Para períodos desde 1º de janeiro de 2023, o PPP eletrônico substitui o documento físico e o segurado baixa o PDF no Meu INSS.',
         },
         {
           q: 'Quem assina o PPP?',
-          a: 'Representante legal da empresa (administrador, sócio, ou procurador). Os dados ambientais são de responsabilidade técnica do profissional habilitado (engenheiro ou médico do trabalho) que faz o LTCAT. A empresa responde pela transmissão correta no eSocial.',
+          a: 'No PPP eletrônico, a identificação do responsável pela informação decorre da assinatura eletrônica dos eventos e do cadastro da empresa. Os registros ambientais continuam vinculados aos responsáveis técnicos informados no eSocial.',
         },
         {
           q: 'Trabalhador administrativo precisa de PPP?',
-          a: 'Sim. Todo trabalhador CLT tem direito ao PPP, independente de exposição a agente nocivo. Para administrativo sem exposição, o PPP indica isso — ausência de agente. O documento existe; o conteúdo varia.',
+          a: 'Sim. O PPP eletrônico é emitido para os segurados abrangidos, independentemente do ramo da empresa ou da existência de exposição. Para quem não está exposto, o S-2240 deve informar a ausência de fatores de risco conforme as regras do leiaute.',
         },
         {
           q: 'EPI &quot;neutraliza&quot; o agente para fins de aposentadoria especial?',
-          a: 'É controverso e juridicamente decidido caso a caso. STF estabeleceu que EPI eficaz pode descaracterizar exposição para aposentadoria especial em alguns agentes (especialmente ruído). Mas exige evidência robusta: CA do EPI, ficha de entrega, fiscalização do uso, treinamento. Sem isso, a alegação cai.',
+          a: 'Depende do agente e das evidências. No caso de ruído acima dos limites legais, o STF decidiu que a declaração de eficácia do EPI não descaracteriza, por si só, o tempo especial. Para outros agentes, a análise considera a proteção realmente adotada e a documentação disponível.',
         },
         {
-          q: 'PPP retroativo — empresa precisa fazer?',
-          a: 'Para trabalhadores que já saíram, sim, se solicitado. Empresa precisa reconstituir o PPP com base em documentos da época (LTCAT, registros, ASO). Pode ser trabalhoso para períodos antigos — por isso documentação contemporânea é o melhor caminho.',
+          q: 'A empresa precisa fazer PPP retroativo?',
+          a: 'A empresa deve fornecer ou corrigir as informações quando houver obrigação e solicitação válida. Períodos anteriores a 2023 usam o PPP em papel; períodos posteriores dependem da retificação dos eventos do eSocial. A reconstrução deve se apoiar em documentos da época, sem inventar exposição ou medição inexistente.',
         },
         {
           q: 'Por quanto tempo a empresa precisa guardar os documentos do PPP?',
-          a: 'A empresa deve manter os documentos que embasam o PPP por no mínimo 20 anos após o término do vínculo empregatício do trabalhador. Isso inclui LTCAT, laudos, fichas de entrega de EPI, ASOs e registros de monitoração. O prazo corre mesmo que a empresa encerre as atividades — os sócios são responsáveis pela guarda ou pela entrega dos documentos ao trabalhador antes do fechamento.',
+          a: 'A regulamentação previdenciária prevê a guarda do PPP e do comprovante de entrega por 20 anos. LTCAT, avaliações ambientais, registros de EPI e recibos também devem ser preservados conforme os prazos aplicáveis e a necessidade de comprovar as informações declaradas.',
         },
       ]}
       sidebarTitle="Seu PPP/S-2240 está consistente?"
-      sidebarHook="PPP errado é passivo dobrado: na Previdência (FAP, aposentadoria especial) e na Justiça do Trabalho. A SERMST audita a consistência entre LTCAT, PGR, PCMSO e PPP."
+      sidebarHook="O PPP precisa refletir o histórico real de função, ambiente e exposição. A SERMST audita a consistência entre LTCAT, PGR, registros de proteção e S-2240."
       sidebarCtaLabel="Auditar PPP/S-2240"
       related={[
         { label: 'O que significa LTCAT', href: '/dicionario/o-que-e-ltcat' },

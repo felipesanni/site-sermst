@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-10: Segurança em Eletricidade — Obrigações | SERMST',
+  title: 'NR-10: segurança em eletricidade e nova redação | SERMST',
   description:
     'A NR-10 define requisitos de segurança em instalações e serviços com eletricidade: treinamento, prontuário, supervisão e laudo exigidos em fiscalização.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-10-eletricidade' },
   openGraph: {
-    title: 'NR-10: segurança em instalações elétricas — obrigações e treinamentos | SERMST',
+    title: 'NR-10: obrigações, treinamentos e nova redação | SERMST',
     description:
       'Guia da NR-10: quem precisa de treinamento, o que a norma exige para instalações elétricas, habilitação de trabalhadores e documentação obrigatória.',
     url: 'https://sermst.com.br/normas/nr-10-eletricidade',
@@ -30,14 +30,14 @@ export default function NR10Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-13',
       }}
 
       h1="NR-10: Segurança em Instalações e Serviços em Eletricidade"
-      intro="A NR-10 trata de uma das atividades de maior risco fatal do país. Define os requisitos para projeto, instalação, manutenção e operação de sistemas elétricos. Treinamento e laudo são obrigatórios — falha aqui é responsabilidade civil e criminal direta."
+      intro="A NR-10 estabelece medidas de prevenção para instalações e serviços com eletricidade. A Portaria MTE 737/2026 aprovou uma nova redação, mas ela só entra em vigor em 1º de junho de 2027. Até lá, a empresa deve cumprir o texto atualmente vigente e preparar a transição."
       quickAnswer={
         <p>
-          A <strong>NR-10</strong> regula segurança em instalações e serviços em eletricidade. Trabalhadores que intervêm ou operam próximo a sistemas elétricos devem ter <strong>Curso Básico de Segurança de no mínimo 40 horas</strong>. Para quem atua em <strong>Sistemas Elétricos de Potência (SEP — alta tensão)</strong>, são necessárias mais 40 horas de curso complementar. A <strong>reciclagem é obrigatória a cada 2 anos</strong>. A empresa também deve manter o <strong>Prontuário das Instalações Elétricas (PIE)</strong> atualizado — sem ele, a fiscalização autua mesmo que os treinamentos estejam em dia.
+          A <strong>NR-10</strong> regula a segurança em instalações e serviços com eletricidade. No texto vigente, trabalhadores autorizados precisam do <strong>treinamento básico de 40 horas</strong> e, quando atuam no Sistema Elétrico de Potência ou em suas proximidades, do <strong>treinamento complementar de 40 horas</strong>. A reciclagem é bienal e também ocorre nas situações previstas pela norma. Estabelecimentos com carga instalada superior a 75 kW devem constituir e manter o <strong>Prontuário das Instalações Elétricas</strong>.
         </p>
       }
       sections={[
@@ -46,25 +46,24 @@ export default function NR10Page() {
           body: (
             <>
               <p>
-                A NR-10 estabelece os requisitos mínimos de <strong>segurança em instalações e serviços em eletricidade</strong>. Aplica-se a quem trabalha com geração, transmissão, distribuição, instalação, manutenção, operação ou consumo — incluindo trabalho próximo a sistemas elétricos energizados.
+                A NR-10 estabelece requisitos de <strong>segurança em instalações e serviços com eletricidade</strong>. O texto vigente abrange geração, transmissão, distribuição e consumo, incluindo projeto, construção, montagem, operação e manutenção das instalações elétricas e trabalhos realizados em suas proximidades.
               </p>
               <p>
-                Eletricidade é uma das principais causas de acidente fatal no trabalho no Brasil. Por isso a NR-10 é robusta, com treinamentos específicos, prontuário das instalações e supervisão técnica obrigatória.
+                A prevenção não depende apenas do curso. Ela envolve análise de risco, procedimentos, medidas coletivas, equipamentos adequados, autorização dos trabalhadores e documentação compatível com a instalação.
               </p>
             </>
           ),
         },
         {
-          title: 'Documentação obrigatória',
+          title: 'Documentos e controles que podem ser exigidos',
           body: (
             <ol>
-              <li><strong>Prontuário das Instalações Elétricas (PIE)</strong> — conjunto de documentos sobre o sistema elétrico: diagramas, especificações, procedimentos, registro de inspeções, laudos.</li>
-              <li><strong>Análise de Risco</strong> antes de qualquer intervenção em sistema energizado.</li>
-              <li><strong>Permissão de Trabalho (PT)</strong> para intervenções específicas, com responsável técnico assinando.</li>
-              <li><strong>Procedimentos de trabalho</strong> escritos para cada tipo de atividade, com sequência de bloqueio, etiquetagem e teste.</li>
-              <li><strong>Laudo SPDA</strong> (Sistema de Proteção contra Descargas Atmosféricas) atualizado conforme NBR 5419.</li>
-              <li><strong>Laudo de aterramento</strong> e medições periódicas.</li>
-              <li><strong>Registro de treinamentos</strong> de todos os trabalhadores que interagem com eletricidade.</li>
+              <li><strong>Prontuário das Instalações Elétricas:</strong> exigido, no texto vigente, para estabelecimentos com carga instalada superior a 75 kW e composto pelos documentos previstos na norma.</li>
+              <li><strong>Esquemas unifilares atualizados:</strong> com especificações do aterramento e dos dispositivos de proteção.</li>
+              <li><strong>Análise de risco e procedimentos:</strong> elaborados de acordo com as atividades, as instalações e as medidas de controle.</li>
+              <li><strong>Ordens de serviço ou permissões:</strong> usadas conforme a natureza e o risco do trabalho.</li>
+              <li><strong>Inspeções e documentação técnica:</strong> incluindo proteção contra descargas atmosféricas, aterramento e outros sistemas quando aplicáveis.</li>
+              <li><strong>Registros de capacitação e autorização:</strong> para identificar o que cada trabalhador está autorizado a executar.</li>
             </ol>
           ),
         },
@@ -76,13 +75,13 @@ export default function NR10Page() {
                 A NR-10 estabelece treinamentos diferenciados conforme função:
               </p>
               <ul>
-                <li><strong>Curso Básico (40h)</strong> — para trabalhadores autorizados que executam atividades em instalações elétricas. Conteúdo programático específico.</li>
-                <li><strong>Curso Complementar SEP (40h adicionais)</strong> — para quem trabalha em Sistemas Elétricos de Potência (alta tensão). Total mínimo de 80 horas com o básico.</li>
-                <li><strong>Reciclagem bienal (a cada 2 anos)</strong> — todo trabalhador autorizado precisa renovar o treinamento a cada 2 anos para manter a autorização válida. Carga horária mínima definida no programa de treinamento da empresa. Treinamento vencido equivale a trabalhador não autorizado.</li>
-                <li><strong>Reciclagem extraordinária</strong> — obrigatória após retorno de afastamento longo, mudança de função, evento de quase-acidente ou alteração significativa nas instalações elétricas.</li>
+                <li><strong>Treinamento básico, 40 horas:</strong> para trabalhadores autorizados que atuam em instalações elétricas, conforme o campo de aplicação da norma.</li>
+                <li><strong>Treinamento complementar SEP, 40 horas:</strong> para trabalhadores envolvidos com o Sistema Elétrico de Potência e suas proximidades.</li>
+                <li><strong>Reciclagem bienal:</strong> realizada a cada dois anos e também quando houver troca de função ou mudança de empresa, retorno após afastamento superior a três meses ou modificações significativas nas instalações ou métodos.</li>
+                <li><strong>Capacitação compatível com a tarefa:</strong> o certificado não substitui a autorização formal, a aptidão e os procedimentos da organização.</li>
               </ul>
               <p>
-                Treinamento de NR-10 é caro e crítico — não pode ser cópia barata, nem feito por instrutor sem habilitação. A consequência de um acidente fatal por treinamento inadequado vai muito além da multa.
+                A organização deve verificar conteúdo, responsável, instrutores e atividades práticas necessárias. Modalidades a distância ou semipresenciais também precisam atender às condições da NR-01 e não dispensam a parte prática quando ela for exigida.
               </p>
             </>
           ),
@@ -92,30 +91,28 @@ export default function NR10Page() {
           body: (
             <>
               <p>
-                A NR-10 estabelece 4 categorias com responsabilidades crescentes — entender qual se aplica ao seu trabalhador definé o que ele pode ou não fazer:
+                A NR-10 diferencia quatro situações. Entender o enquadramento ajuda a definir o que o trabalhador pode executar:
               </p>
               <ul>
-                <li><strong>Qualificado</strong> — comprovação de conclusão de curso específico reconhecido oficialmente.</li>
-                <li><strong>Habilitado</strong> — qualificado + registro no conselho profissional (CREA).</li>
-                <li><strong>Capacitado</strong> — recebeu treinamento sob orientação de qualificado/habilitado e atua sob responsabilidade de qualificado/habilitado.</li>
-                <li><strong>Autorizado</strong> — qualificado, habilitado ou capacitado mais autorização formal pela empresa para executar atividades específicas.</li>
+                <li><strong>Qualificado:</strong> comprova a conclusão de curso específico na área elétrica reconhecido pelo sistema oficial de ensino.</li>
+                <li><strong>Habilitado:</strong> é previamente qualificado e tem registro no conselho de classe competente.</li>
+                <li><strong>Capacitado:</strong> recebe capacitação sob orientação e responsabilidade de profissional habilitado e autorizado e trabalha sob essa responsabilidade.</li>
+                <li><strong>Autorizado:</strong> é o trabalhador qualificado, capacitado ou habilitado que recebe anuência formal da empresa.</li>
               </ul>
               <p>
-                Empresa que coloca um capacitado para fazer atividade que exige habilitado está expondo o trabalhador e a si mesma. Em fiscalização, é um dos primeiros pontos verificados.
+                A autorização deve ser compatível com a formação, a capacitação, a aptidão médica e as atividades efetivamente atribuídas.
               </p>
             </>
           ),
         },
         {
-          title: 'Penalidades e responsabilidade',
+          title: 'O que acontece quando há irregularidade',
           body: (
             <ul>
-              <li><strong>Multa do MTE</strong> — varia conforme infração, número de trabalhadores e gravidade. Acidente fatal por descumprimento gera multa máxima.</li>
-              <li><strong>Embargo da atividade</strong> — fiscal pode parar a operação na hora.</li>
-              <li><strong>Responsabilização criminal</strong> em caso de acidente fatal — homicídio culposo da empresa, do gestor responsável e do supervisor (art. 121, §3º, CP).</li>
-              <li><strong>Indenização cível</strong> — em fatalidade por choque elétrico, valores costumam ultrapassar R$ 500 mil para a família, fora pensão por morte, dano moral coletivo, etc.</li>
-              <li><strong>Aumento do FAP</strong> — empresa paga mais GIIL-RAT por anos depois do acidente.</li>
-              <li><strong>Periculosidade NR-16</strong> — eletricistas têm direito a 30% sobre salário; empresa que não paga gera passivo trabalhista.</li>
+              <li><strong>Fiscalização:</strong> a infração pode gerar auto e multa conforme o item descumprido e os critérios da NR-28.</li>
+              <li><strong>Interdição:</strong> situações de grave e iminente risco podem justificar a paralisação da atividade ou instalação.</li>
+              <li><strong>Acidentes:</strong> responsabilidades trabalhistas, civis, previdenciárias e penais dependem da conduta, do dano e do nexo apurados no caso concreto.</li>
+              <li><strong>Adicional de periculosidade:</strong> não decorre apenas do nome do cargo. O enquadramento depende das atividades e condições previstas na NR-16.</li>
             </ul>
           ),
         },
@@ -123,31 +120,31 @@ export default function NR10Page() {
       faq={[
         {
           q: 'Qual a validade do treinamento NR-10 e quando precisa de reciclagem?',
-          a: 'O treinamento NR-10 tem validade de 2 anos. Após esse período, o trabalhador precisa fazer a reciclagem bienal para continuar autorizado. Além do prazo regular, a reciclagem é obrigatória também em casos extraordinários: retorno de afastamento prolongado, mudança de função, envolvimento em quase-acidente elétrico ou alteração significativa nas instalações. Trabalhador com treinamento vencido não pode ser considerado autorizado — é infração direta.',
+          a: 'No texto vigente, a reciclagem é bienal. Ela também deve ocorrer nas situações específicas da norma, como troca de função ou mudança de empresa, retorno de afastamento superior a três meses e modificações significativas nas instalações ou nos métodos. A autorização formal da empresa precisa permanecer compatível com a capacitação e a aptidão do trabalhador.',
         },
         {
           q: 'NR-10 só vale para alta tensão?',
-          a: 'Não. A NR-10 vale para qualquer instalação elétrica — baixa, média ou alta tensão. O Curso Complementar SEP é específico para Sistemas Elétricos de Potência, mas o Curso Básico (40h) cobre baixa tensão e é exigência para qualquer trabalhador autorizado.',
+          a: 'Não. O texto vigente alcança instalações elétricas nas etapas de geração, transmissão, distribuição e consumo. O curso complementar é específico para o Sistema Elétrico de Potência e suas proximidades.',
         },
         {
           q: 'Quem pode dar treinamento NR-10?',
-          a: 'Profissional qualificado e habilitado em eletricidade, com formação técnica reconhecida. Empresas costumam contratar instrutor externo certificado. Treinamento online unicamente é controverso — a parte prática precisa ser presencial.',
+          a: 'A empresa deve observar a responsabilidade e a qualificação previstas na NR-10, além das regras gerais de capacitação da NR-01. O curso precisa ter instrutores com domínio do conteúdo e atividades práticas compatíveis com o programa.',
         },
         {
           q: 'PIE precisa estar no canteiro/local de trabalho?',
-          a: 'Sim. O Prontuário das Instalações Elétricas precisa ficar disponível no estabelecimento, acessível a quem trabalha com a instalação. Em fiscalização é um dos primeiros documentos pedidos.',
+          a: 'Quando o PIE é exigido, ele deve ser organizado e mantido atualizado pelo empregador ou por pessoa formalmente designada e permanecer à disposição das pessoas autorizadas e das autoridades competentes.',
         },
         {
           q: 'O que é &quot;sistema desenergizado&quot; conforme NR-10?',
           a: 'Não basta &quot;estar desligado&quot;. A NR-10 define 6 etapas para considerar desenergizado: seccionamento, impedimento de reenergização, constatação de ausência de tensão, instalação de aterramento, proteção dos elementos energizados e sinalização. Pular etapas é causa frequente de acidente fatal.',
         },
         {
-          q: 'Eletricista terceirizado sem treinamento — quem responde?',
-          a: 'A empresa contratada (empregadora direta) é responsável primária. Mas a contratante tem responsabilidade solidária se o trabalho ocorre em suas instalações ou serviço. Boa prática é exigir contratualmente apresentação dos certificados antes do início.',
+          q: 'Eletricista terceirizado sem treinamento: quem responde?',
+          a: 'Contratante e contratada têm deveres próprios de prevenção e precisam compartilhar informações sobre os riscos e as medidas de controle. Antes do serviço, a contratante deve verificar autorização, capacitação e documentos aplicáveis, sem presumir que o contrato transfere toda a responsabilidade.',
         },
       ]}
       sidebarTitle="Sua empresa cumpre NR-10?"
-      sidebarHook="Acidente elétrico fatal é uma das maiores fontes de responsabilização criminal de gestor. PIE atualizado, treinamentos em dia e laudo SPDA são obrigatórios. A SERMST audita."
+      sidebarHook="A revisão deve conferir instalações, riscos, procedimentos, autorizações, treinamentos e o PIE quando ele for exigido. A SERMST ajuda a organizar esse diagnóstico."
       sidebarCtaLabel="Auditar conformidade NR-10"
       related={[
         { label: 'Eletrocardiograma ocupacional e risco elétrico', href: '/saude/eletrocardiograma-ocupacional' },

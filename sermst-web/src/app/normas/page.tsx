@@ -145,19 +145,22 @@ export default function NormasIndexPage() {
             também precisa ser lida dentro do contexto real da operação.
           </p>
           <p className="mt-4 leading-relaxed text-slate-600">
-            Para muitas empresas, a porta de entrada nesse universo acontece por buscas como{' '}
+            As dúvidas mais comuns das empresas envolvem{' '}
             <Link href="/normas/nr-05-cipa" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
               CIPA e NR-05
             </Link>
             ,{' '}
             <Link href="/normas/o-que-e-nr-07" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
               NR-07 e PCMSO
+            </Link>,{' '}
+            <Link href="/normas/nr-18-construcao-civil" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+              NR-18 na construção civil
             </Link>{' '}
             ou{' '}
             <Link href="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
               treinamento de CIPA e outros treinamentos obrigatórios
             </Link>
-            . Por isso, este hub também funciona como ponte entre a leitura normativa e a demanda operacional.
+            . Os conteúdos abaixo explicam a regra e indicam os documentos, treinamentos e avaliações relacionados.
           </p>
         </div>
       </section>
@@ -176,6 +179,7 @@ export default function NormasIndexPage() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {[
                 { href: '/normas/nr-05-cipa', label: 'NR-05 CIPA' },
+                { href: '/normas/nr-18-construcao-civil', label: 'NR-18 construção civil' },
                 { href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo', label: 'Treinamento de CIPA e brigada' },
                 { href: '/rh/calculadora-cnae-grau-de-risco', label: 'Calculadora de grau de risco CNAE' },
                 { href: '/normas/nr-06-epi', label: 'NR-06 EPI' },
@@ -228,11 +232,11 @@ export default function NormasIndexPage() {
       <section className="mx-auto w-full max-w-[1280px] px-6 pb-12 lg:px-8">
         <div className="flex flex-wrap gap-4">
           <Link href="/rh" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
-            Hub de RH e Departamento Pessoal
+            RH e Departamento Pessoal
             <ArrowRight className="ml-2 inline h-4 w-4" />
           </Link>
           <Link href="/saude" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">
-            Hub de Saúde Ocupacional
+            Saúde Ocupacional
             <ArrowRight className="ml-2 inline h-4 w-4" />
           </Link>
           <Link href="/dicionario" className="rounded-2xl border border-slate-200 bg-white px-6 py-4 font-bold text-brand-900 transition-all hover:border-accent-pink/40 hover:text-accent-pink">

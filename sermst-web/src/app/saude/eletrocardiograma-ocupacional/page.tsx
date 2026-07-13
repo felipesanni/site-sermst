@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function EletrocardiogramaOcupacionalPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       badgeText="Exame Complementar"
@@ -34,7 +34,7 @@ export default function EletrocardiogramaOcupacionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-06',
+        dateModified: '2026-07-13',
       }}
       readingTime="7 min"
       h1="Eletrocardiograma ocupacional: quando é exigido, o que detecta e onde fazer em São Paulo"
@@ -127,7 +127,7 @@ export default function EletrocardiogramaOcupacionalPage() {
                 O laudo do ECG é um dado que o médico do trabalho avalia ao emitir o ASO. Resultados dentro dos parâmetros normais são incorporados ao documento sem impacto na conclusão de aptidão. Quando o ECG identifica alterações, o médico avalia a relevância clínica no contexto da função.
               </p>
               <p>
-                Alterações que não contraindicam a função são registradas no prontuário e acompanhadas nos periódicos seguintes. Alterações que indicam incompatibilidade com a função podem levar o médico a emitir ASO com restrição, condicionando a aptidão à avaliação cardiológica especializada, ou a emitir ASO de inapto temporário enquanto o trabalhador passa por investigação e tratamento.
+                Alterações sem incompatibilidade com a função são registradas no prontuário e acompanhadas. Se o achado impedir uma conclusão segura, o médico pode solicitar avaliação cardiológica antes de definir no ASO se o trabalhador está apto ou inapto para a função.
               </p>
               <p>
                 O histórico de ECGs ao longo do vínculo empregatício permite comparar resultados e identificar progressão de alterações ao longo do tempo, o que é especialmente relevante para funções com exposição a agentes cardiotóxicos.

@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default function OQueEExameToxicologicoPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/o-que-e-exame-toxicologico"
       badgeText="Exame"
@@ -34,10 +34,10 @@ export default function OQueEExameToxicologicoPage() {
       }}
       readingTime="9 min"
       h1="O que é exame toxicológico: como funciona, o que detecta e quem precisa fazer"
-      intro="O exame toxicológico é um teste laboratorial que identifica o uso de substâncias psicoativas — como maconha, cocaína, crack, anfetaminas e opiáceos — por meio da análise de cabelo ou pelo. Diferente do bafômetro ou do exame de sangue, ele tem uma janela de detecção longa: de 90 dias a até 180 dias, dependendo do comprimento da amostra coletada."
+      intro="O exame toxicológico de larga janela analisa amostras queratínicas, como cabelo ou pelo, para identificar o uso de determinadas substâncias psicoativas. Para as finalidades legais relacionadas a motoristas, a análise retrospectiva mínima é de 90 dias."
       quickAnswer={
         <p>
-          O <strong>exame toxicológico</strong> analisa cabelo ou pelo para detectar uso de drogas com janela de até 90–180 dias. É <strong>obrigatório para CNH C, D e E</strong> (renovação e primeira habilitação) e para <strong>motoristas profissionais</strong> na admissão e demissão. O resultado é emitido por laboratório credenciado pelo DENATRAN e tem validade específica por finalidade.
+          O <strong>exame toxicológico de larga janela</strong> usa cabelo ou pelo e deve cobrir, no mínimo, os 90 dias anteriores à coleta nas hipóteses previstas em lei. Ele é exigido para condutores das categorias C, D e E e para motoristas profissionais nas situações trabalhistas regulamentadas. A análise deve ser feita por laboratório credenciado.
         </p>
       }
       showTableOfContents
@@ -47,7 +47,7 @@ export default function OQueEExameToxicologicoPage() {
           body: (
             <>
               <p>
-                O exame analisa uma amostra de cabelo ou pelo — normalmente coletada da nuca — com comprimento mínimo de 3 cm. Cada centímetro de cabelo corresponde a aproximadamente um mês de histórico. Por isso, com uma amostra de 3 a 6 cm, é possível rastrear o uso de substâncias nos últimos 90 a 180 dias.
+                A coleta usa cabelo ou pelo corporal e segue critérios próprios de identificação, lacre e cadeia de custódia. A matriz e a quantidade necessárias são definidas pelo procedimento do laboratório para assegurar a janela mínima exigida.
               </p>
               <p>
                 A análise é feita em laboratório credenciado. O processo envolve triagem inicial e, quando positivo, confirmação por método mais preciso (cromatografia). O laudo emitido tem validade legal e deve especificar o período retrospectivo coberto pela amostra.
@@ -67,7 +67,7 @@ export default function OQueEExameToxicologicoPage() {
                 <li><strong>Opiáceos</strong> (morfina, codeína, heroína).</li>
               </ul>
               <p>
-                O exame <strong>não detecta álcool</strong> — o álcool é metabolizado rapidamente e não fica registrado na matriz capilar da mesma forma que outras substâncias. Para detecção de álcool, existem testes específicos (etilômetro, exame de sangue ou análise de EtG/EtS, que é diferente do toxicológico padrão).
+                O painel legal desse exame <strong>não é um teste de alcoolemia</strong>. Etilômetro, exame de sangue e outros marcadores de álcool têm finalidades e critérios diferentes.
               </p>
             </>
           ),
@@ -79,14 +79,14 @@ export default function OQueEExameToxicologicoPage() {
               <p>A legislação brasileira exige o exame toxicológico em dois contextos principais:</p>
               <ul>
                 <li>
-                  <strong>CNH C, D e E:</strong> obrigatório na obtenção e renovação da habilitação nas categorias C, D e E. A validade do exame para fins de habilitação é de 60 dias.
+                  <strong>CNH C, D e E:</strong> exigido nos procedimentos definidos pelo Código de Trânsito Brasileiro, inclusive obtenção e renovação. O prazo de aproveitamento do resultado deve ser conferido conforme a finalidade do exame.
                 </li>
                 <li>
-                  <strong>Motoristas profissionais (CLT):</strong> obrigatório na admissão e na demissão de motoristas de veículos automotores de carga com peso bruto total acima de 4,5 toneladas ou de passageiros. Previsto na Lei 13.103/2015.
+                  <strong>Motoristas profissionais empregados:</strong> exigido previamente à admissão, periodicamente e por ocasião do desligamento, nos termos da CLT e da regulamentação do Ministério do Trabalho e Emprego.
                 </li>
               </ul>
               <p>
-                Empresas de outros segmentos também podem exigir o exame como parte de sua política interna de SST, especialmente quando a atividade envolve operação de máquinas, trabalho em altura ou outros riscos que aumentam com o uso de substâncias psicoativas.
+                Fora das hipóteses legais, a adoção de testes toxicológicos exige cautela. A empresa deve avaliar necessidade, proporcionalidade, confidencialidade e riscos de discriminação e proteção de dados antes de criar uma política interna.
               </p>
             </>
           ),
@@ -96,10 +96,10 @@ export default function OQueEExameToxicologicoPage() {
           body: (
             <ul>
               <li>
-                <strong>Para CNH (DETRAN):</strong> exigido pelo Código de Trânsito Brasileiro para habilitação C, D e E. O exame é feito pelo candidato/habilitado por conta própria, em laboratório credenciado pelo DENATRAN. Validade de 60 dias para o processo de habilitação.
+                <strong>Para CNH:</strong> segue o Código de Trânsito Brasileiro e as regras da Senatran. O condutor realiza o exame em laboratório credenciado, e o prazo de validade ou aproveitamento depende do procedimento em que o resultado será usado.
               </li>
               <li>
-                <strong>Para admissão/demissão de motorista profissional (CLT):</strong> exigido pela Lei 13.103/2015. Deve ser custeado pelo empregador. Integra o exame ocupacional (ASO). O período retrospectivo mínimo exigido é de 90 dias.
+                <strong>Para motoristas profissionais empregados:</strong> o exame é custeado pelo empregador e tem janela retrospectiva mínima de 90 dias. Ele <strong>não integra o PCMSO, não consta no ASO e não define a aptidão ocupacional</strong>. O resultado é tratado de forma confidencial, com direito à contraprova quando positivo.
               </li>
             </ul>
           ),
@@ -109,9 +109,9 @@ export default function OQueEExameToxicologicoPage() {
           body: (
             <ol>
               <li>O examinando vai à clínica ou laboratório credenciado.</li>
-              <li>É coletada uma mecha de cabelo da nuca, com comprimento de pelo menos 3 cm. Quando não há cabelo suficiente, pode ser usado pelo corporal (axilar, por exemplo), com janela de detecção equivalente.</li>
+              <li>É coletada uma amostra de cabelo ou pelo conforme o protocolo do laboratório. Situações sem amostra disponível seguem as regras específicas da autoridade competente.</li>
               <li>A amostra é lacrada, identificada e enviada ao laboratório analítico.</li>
-              <li>O resultado é emitido em prazo que varia conforme o laboratório — geralmente de 5 a 15 dias úteis.</li>
+              <li>O prazo do resultado varia conforme o laboratório e a necessidade de análise confirmatória.</li>
               <li>O laudo com resultado negativo ou positivo (com confirmação) é entregue ao solicitante.</li>
             </ol>
           ),
@@ -120,7 +120,7 @@ export default function OQueEExameToxicologicoPage() {
           title: 'O exame toxicológico precisa de jejum?',
           body: (
             <p>
-              Não. O exame toxicológico de cabelo não exige jejum. A coleta é simples — uma mecha de cabelo da nuca — e não envolve coleta de sangue nem restrição alimentar. O examinando pode se alimentar normalmente antes do atendimento.
+               Não. A coleta de cabelo ou pelo não exige jejum nem restrição alimentar.
             </p>
           ),
         },
@@ -129,23 +129,23 @@ export default function OQueEExameToxicologicoPage() {
           body: (
             <>
               <p>
-                Um resultado positivo no exame toxicológico indica uso da substância detectada no período retrospectivo coberto pela amostra. Para fins de CNH, o resultado positivo impede a habilitação ou renovação. Para fins de admissão de motorista, pode inviabilizar a contratação, dependendo da política da empresa.
+                Um resultado positivo indica a presença de substância ou metabólito dentro da janela analisada. As consequências dependem da finalidade do exame e do procedimento aplicável. No âmbito trabalhista, a confidencialidade e o direito à contraprova devem ser respeitados.
               </p>
               <p>
-                É importante distinguir: o exame detecta <strong>uso</strong> da substância, não impairment (estado de prejuízo no momento do exame). Resultado positivo não confirma automaticamente que o trabalhador estava sob efeito no trabalho — mas tem implicações legais e trabalhistas que precisam ser avaliadas com cuidado.
+                O exame aponta <strong>uso dentro de um período retrospectivo</strong>; ele não demonstra, sozinho, que a pessoa estava sob efeito da substância durante o trabalho ou no momento da coleta.
               </p>
             </>
           ),
         },
         {
-          title: 'Exame toxicológico no contexto do PCMSO e SST',
+          title: 'Exame toxicológico e saúde ocupacional',
           body: (
             <>
               <p>
-                Para motoristas profissionais, o exame toxicológico integra o conjunto de exames ocupacionais previstos no PCMSO. O médico coordenador do PCMSO deve incluir o toxicológico nos protocolos de admissão e demissão de funções obrigadas por lei.
+                Para motoristas profissionais empregados, o toxicológico trabalhista é uma obrigação própria e separada do exame clínico ocupacional. A regulamentação determina que ele não seja incluído no PCMSO nem no ASO e que não seja usado para definir aptidão.
               </p>
               <p>
-                Empresas que operam frotas ou têm funções de risco envolvendo operação de veículos pesados, máquinas ou equipamentos também podem incluir o exame toxicológico em sua política de SST, mesmo quando não obrigatório, como medida preventiva documentada no PGR.
+                O RH precisa organizar os dois fluxos sem misturar os documentos: de um lado, o exame toxicológico e seu tratamento confidencial; de outro, o exame ocupacional, o ASO e as informações do eSocial.
               </p>
             </>
           ),
@@ -154,15 +154,15 @@ export default function OQueEExameToxicologicoPage() {
       faq={[
         {
           q: 'O que é o exame toxicológico?',
-          a: 'É um exame laboratorial que analisa cabelo ou pelo para detectar uso de substâncias psicoativas (maconha, cocaína, anfetaminas, opiáceos) em um período retrospectivo de 90 a 180 dias. Diferente do bafômetro ou exame de sangue, ele tem janela de detecção longa.',
+          a: 'É um exame laboratorial de larga janela que analisa cabelo ou pelo para identificar determinadas substâncias psicoativas. Nas hipóteses legais relacionadas a motoristas, a análise retrospectiva mínima é de 90 dias.',
         },
         {
           q: 'O exame toxicológico detecta álcool?',
-          a: 'Não no formato padrão. O álcool é metabolizado rapidamente e não fica registrado na matriz capilar da mesma forma. Para detectar uso de álcool, são usados testes específicos (etilômetro, EtG/EtS), que são diferentes do exame toxicológico padrão.',
+          a: 'O painel legal do toxicológico de larga janela para motoristas não é um teste de alcoolemia. A verificação de álcool usa outros métodos e critérios.',
         },
         {
           q: 'Quem é obrigado a fazer o exame toxicológico?',
-          a: 'Quem busca ou renova CNH C, D ou E, e motoristas profissionais (veículos acima de 4,5 toneladas ou de passageiros) na admissão e demissão, conforme a Lei 13.103/2015. Outras empresas podem exigir voluntariamente como parte da política de SST.',
+          a: 'Condutores das categorias C, D e E nas hipóteses previstas no Código de Trânsito e motoristas profissionais empregados nos momentos definidos pela CLT e pela regulamentação do MTE.',
         },
         {
           q: 'O exame toxicológico precisa de jejum?',
@@ -170,7 +170,7 @@ export default function OQueEExameToxicologicoPage() {
         },
         {
           q: 'Quanto tempo dura o exame toxicológico para CNH?',
-          a: 'O resultado tem validade de 60 dias para fins de habilitação no DETRAN. Para admissão de motorista profissional pela CLT, o exame cobre um período retrospectivo mínimo de 90 dias.',
+          a: 'O prazo de validade ou aproveitamento depende da finalidade. Para o exame trabalhista, a análise retrospectiva mínima é de 90 dias, e um exame realizado para fins de trânsito pode ser aproveitado nas condições e no prazo previstos pela regulamentação.',
         },
         {
           q: 'Quem paga o exame toxicológico na admissão de motorista?',
@@ -178,7 +178,7 @@ export default function OQueEExameToxicologicoPage() {
         },
         {
           q: 'Qual a diferença entre exame toxicológico e exame admissional?',
-          a: 'O exame admissional (ASO) é o conjunto de avaliações médicas que habilitam o trabalhador para a função. O exame toxicológico é um dos exames que pode — e em algumas funções deve — integrar esse conjunto. Para motoristas profissionais, o toxicológico faz parte do exame admissional por obrigação legal.',
+          a: 'O exame admissional avalia a aptidão para a função e gera o ASO. O toxicológico trabalhista do motorista profissional é uma obrigação separada: não integra o PCMSO, não aparece no ASO e não define aptidão ocupacional.',
         },
       ]}
       maxFaqItems={8}

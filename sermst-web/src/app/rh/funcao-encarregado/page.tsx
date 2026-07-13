@@ -3,16 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
 import { CheckCircle2, AlertTriangle, ShieldCheck, Users, ArrowRight, Target, FileWarning } from 'lucide-react';
+import { companyFacts } from '@/lib/company-facts';
 
 /**
- * Função Encarregado — página migrada do WordPress (/exames/função-encarregado-...)
+ * Função Encarregado: página migrada do WordPress (/exames/função-encarregado-...)
  *
  * No site antigo essa página gerou 346 cliques e 125.226 impressões em 16 meses
  * (CTR 0,3%, posição 4,8). É a página de maior impressão do domínio. O intent é
  * misto: ~70% candidato a vaga querendo entender o cargo, ~30% gestor/RH
  * pesquisando responsabilidades para definir cargo, plano de carreira ou termo
  * de descrição. O conteúdo cobre os dois, mas os CTAs e o bloco lateral são
- * orientados para CONVERTER o gestor — que é quem fecha contrato com a SERMST.
+ * orientados para atender o gestor, que é quem fecha contrato com a SERMST.
  */
 export const metadata: Metadata = {
   title: 'O que faz um encarregado? Função e responsabilidades | SERMST',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 const responsabilidades = [
   { t: 'Liderança operacional direta', d: 'Coordena a equipe na execução das atividades, distribui tarefas e cobra resultado dentro do plano do dia.' },
   { t: 'Treinamento e integração', d: 'Apoia a integração de novos colaboradores e o reforço de procedimentos com quem já está na operação.' },
-  { t: 'Cumprimento de procedimentos', d: 'Garante que a equipe siga os procedimentos operacionais e os requisitos técnicos definidos pela liderança.' },
+  { t: 'Cumprimento de procedimentos', d: 'Acompanha a aplicação dos procedimentos operacionais e corrige desvios dentro de sua alçada.' },
   { t: 'Segurança do trabalho na linha de frente', d: 'É o responsável imediato por exigir uso de EPI, observar comportamento de risco e reportar incidentes ao SESMT.' },
   { t: 'Reporte de produtividade e ocorrências', d: 'Consolida indicadores do turno (produção, falhas, paradas, acidentes) e leva à supervisão.' },
   { t: 'Mediação de conflitos da equipe', d: 'Resolve atritos do dia a dia operacional antes de escalar para RH ou supervisão.' },
@@ -40,7 +41,7 @@ const responsabilidades = [
 
 const perfilIdeal = [
   'Experiência comprovada na atividade que vai liderar (não dá para liderar o que não conhece)',
-  'Comunicação direta — fala simples, escrita clara, sem rodeio',
+  'Comunicação direta, com fala simples e escrita clara',
   'Postura de exemplo (chega no horário, usa EPI, segue procedimento)',
   'Tomada de decisão sob pressão sem travar o turno',
   'Conhecimento das NRs aplicáveis à atividade da equipe',
@@ -54,7 +55,7 @@ const errosComuns = [
   },
   {
     titulo: 'Não treinar o encarregado em SST',
-    desc: 'O encarregado é responsabilizado por acidente da equipe — civil e criminalmente, em alguns casos. Sem treinamento formal em NRs aplicáveis, a empresa fica exposta a passivo trabalhista que aparece anos depois.',
+    desc: 'A conduta do encarregado pode ser analisada em uma investigação de acidente, conforme suas atribuições, autonomia e participação no fato. Por isso, a empresa deve definir o papel e oferecer capacitação compatível.',
   },
   {
     titulo: 'Confundir com supervisor',
@@ -69,23 +70,23 @@ const errosComuns = [
 const faq = [
   {
     q: 'Qual a diferença entre encarregado e supervisor?',
-    a: 'Encarregado é hierarquia operacional imediata: lidera a execução do turno, está com a equipe no chão de fábrica, na obra ou no ponto de operação. Supervisor coordena encarregados, gerencia mais de uma equipe ou turno e tem responsabilidade de planejamento. Em algumas empresas pequenas, os papéis se misturam — mas na CLT e nos planos de cargo as funções são distintas.',
+    a: 'Em muitas empresas, o encarregado acompanha a execução diária da equipe, enquanto o supervisor coordena uma área, mais de um turno ou vários encarregados. A CLT não cria uma descrição universal para esses cargos; a diferença depende do organograma, da convenção coletiva e das tarefas realmente exercidas.',
   },
   {
     q: 'O encarregado precisa de exame admissional e periódico?',
-    a: 'Sim. Toda contratação CLT exige ASO admissional. O periódico é exigido pelo PCMSO da empresa, que define a periodicidade dos exames conforme risco do cargo. Pular o periódico do encarregado é falha grave — porque é justamente a função que toma decisão de risco no campo.',
+    a: 'Sim. O exame admissional deve ocorrer antes de o trabalhador assumir a função, e o PCMSO define a periodicidade dos exames seguintes conforme os riscos ocupacionais e os critérios da NR-07.',
   },
   {
     q: 'Qual o salário médio de um encarregado?',
-    a: 'Varia muito por setor e região. Em construção civil em São Paulo, costuma estar entre R$ 3.500 e R$ 6.500. Na indústria, entre R$ 4.000 e R$ 8.000. Em logística e operação fabril, faixa similar. Empresas que pagam abaixo da média perdem o encarregado para a concorrência em meses.',
+    a: 'Varia por setor, região, porte da operação, jornada e convenção coletiva. Antes de definir a faixa, consulte o piso da categoria e compare vagas equivalentes com responsabilidade e equipe semelhantes.',
   },
   {
     q: 'O encarregado pode ser responsabilizado por acidente da equipe?',
-    a: 'Pode, e é comum. A responsabilidade do encarregado por SST é solidária com a empresa. Se houver acidente e ficar provado que o encarregado tinha conhecimento do risco e não agiu, ele responde junto. Por isso é crítico que o encarregado tenha treinamento formal nas NRs aplicáveis e que a empresa documente o repasse das instruções.',
+    a: 'A conduta do encarregado pode ser apurada se ele tinha atribuição, autonomia, conhecimento do risco e participação causal no fato. Isso não torna sua responsabilidade automaticamente solidária com a empresa. Descrição de cargo, treinamento e procedimentos claros ajudam a definir o que cabia a cada pessoa.',
   },
   {
     q: 'Como saber se preciso de mais encarregados na operação?',
-    a: 'O sinal mais claro é desorganização sob pressão: turnos que viram caos quando aumenta volume, falhas de procedimento que ninguém pega, acidentes ou quase-acidentes recorrentes. Geralmente, em operação industrial, um encarregado para cada 8–15 colaboradores é o ponto de equilíbrio.',
+    a: 'Não há uma proporção universal. Observe amplitude de controle, distância entre frentes, complexidade, turnos, autonomia da equipe e frequência de desvios. Se uma pessoa não consegue acompanhar a execução e responder às ocorrências, o desenho da liderança precisa ser revisto.',
   },
 ];
 
@@ -98,7 +99,7 @@ const faqSchema = {
       name: 'Qual a diferença entre encarregado e supervisor?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Encarregado é hierarquia operacional imediata: lidera a execução do turno, está com a equipe no chão de fábrica, na obra ou no ponto de operação. Supervisor coordena encarregados, gerencia mais de uma equipe ou turno e tem responsabilidade de planejamento. Em algumas empresas pequenas, os papéis se misturam — mas na CLT e nos planos de cargo as funções são distintas.',
+        text: 'Em muitas empresas, o encarregado acompanha a execução diária da equipe, enquanto o supervisor coordena uma área, mais de um turno ou vários encarregados. A CLT não cria uma descrição universal para esses cargos; a diferença depende do organograma, da convenção coletiva e das tarefas realmente exercidas.',
       },
     },
     {
@@ -106,7 +107,7 @@ const faqSchema = {
       name: 'O encarregado precisa de exame admissional e periódico?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Toda contratação CLT exige ASO admissional. O periódico é exigido pelo PCMSO da empresa, que define a periodicidade dos exames conforme risco do cargo. Pular o periódico do encarregado é falha grave — porque é justamente a função que toma decisão de risco no campo.',
+        text: 'Sim. O exame admissional deve ocorrer antes de o trabalhador assumir a função, e o PCMSO define a periodicidade dos exames seguintes conforme os riscos ocupacionais e os critérios da NR-07.',
       },
     },
     {
@@ -114,7 +115,7 @@ const faqSchema = {
       name: 'Qual o salário médio de um encarregado?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Varia muito por setor e região. Em construção civil em São Paulo, costuma estar entre R$ 3.500 e R$ 6.500. Na indústria, entre R$ 4.000 e R$ 8.000. Em logística e operação fabril, faixa similar. Empresas que pagam abaixo da média perdem o encarregado para a concorrência em meses.',
+        text: 'Varia por setor, região, porte da operação, jornada e convenção coletiva. Antes de definir a faixa, consulte o piso da categoria e compare vagas equivalentes com responsabilidade e equipe semelhantes.',
       },
     },
     {
@@ -122,7 +123,7 @@ const faqSchema = {
       name: 'O encarregado pode ser responsabilizado por acidente da equipe?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Pode, e é comum. A responsabilidade do encarregado por SST é solidária com a empresa. Se houver acidente e ficar provado que o encarregado tinha conhecimento do risco e não agiu, ele responde junto. Por isso é crítico que o encarregado tenha treinamento formal nas NRs aplicáveis e que a empresa documente o repasse das instruções.',
+        text: 'A conduta do encarregado pode ser apurada se ele tinha atribuição, autonomia, conhecimento do risco e participação causal no fato. Isso não torna sua responsabilidade automaticamente solidária com a empresa. Descrição de cargo, treinamento e procedimentos claros ajudam a definir o que cabia a cada pessoa.',
       },
     },
     {
@@ -130,7 +131,7 @@ const faqSchema = {
       name: 'Como saber se preciso de mais encarregados na operação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O sinal mais claro é desorganização sob pressão: turnos que viram caos quando aumenta volume, falhas de procedimento que ninguém pega, acidentes ou quase-acidentes recorrentes. Geralmente, em operação industrial, um encarregado para cada 8 a 15 colaboradores é o ponto de equilíbrio.',
+        text: 'Não há uma proporção universal. Observe amplitude de controle, distância entre frentes, complexidade, turnos, autonomia da equipe e frequência de desvios. Se uma pessoa não consegue acompanhar a execução e responder às ocorrências, o desenho da liderança precisa ser revisto.',
       },
     },
   ],
@@ -150,7 +151,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://sermst.com.br/rh/funcao-encarregado#article',
-  headline: 'O que faz um encarregado? Função, responsabilidades e o ponto cego que pega gestores',
+  headline: 'O que faz um encarregado? Função, responsabilidades e cuidados de SST',
   description: 'Entenda o que faz um encarregado, quais responsabilidades ele assume, a diferença para supervisor e os cuidados de SST que a empresa precisa formalizar.',
   url: 'https://sermst.com.br/rh/funcao-encarregado',
   mainEntityOfPage: {
@@ -165,7 +166,7 @@ const articleSchema = {
     '@type': 'Person',
     '@id': 'https://sermst.com.br/equipe/felipe-sannino#person',
     name: 'Felipe Sannino',
-    jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+    jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
     url: 'https://sermst.com.br/equipe/felipe-sannino',
   },
   publisher: {
@@ -191,10 +192,10 @@ export default function FunçãoEncarregadoPage() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 py-24 relative z-10">
           <FadeIn direction="up">
             <Link href="/rh" className="inline-flex items-center gap-2 text-accent-pink font-bold text-xs uppercase tracking-[0.2em] mb-6 hover:text-white transition">
-              ← Hub de RH e Departamento Pessoal
+              ← RH e Departamento Pessoal
             </Link>
             <h1 className="h1-standard mb-8 max-w-4xl">
-              O que faz um encarregado? Função, responsabilidades e o ponto cego que pega gestores
+              O que faz um encarregado? Função, responsabilidades e cuidados de SST
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl leading-relaxed border-l-4 border-accent-pink pl-6 font-medium">
               Guia direto para gestores, RH e quem está estruturando o cargo: o que esse profissional faz na prática, quais responsabilidades assume, que perfil costuma funcionar e onde SST entra nessa decisão.
@@ -218,12 +219,12 @@ export default function FunçãoEncarregadoPage() {
               </p>
             </FadeIn>
 
-            {/* quickAnswer — resposta direta para featured snippet */}
+            {/* quickAnswer: resposta direta para featured snippet */}
             <FadeIn direction="up">
               <div className="not-prose my-8 rounded-2xl border-l-4 border-accent-pink bg-brand-900/5 p-6">
                 <p className="mb-1 text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Resposta direta</p>
                 <p className="text-base font-semibold leading-relaxed text-brand-900">
-                  Encarregado é o cargo de <strong>liderança operacional imediata</strong> responsável por coordenar a equipe no campo, garantir cumprimento de procedimentos e manter a segurança do trabalho no turno. É a primeira camada formal entre o operador e a supervisão — presente na execução, não só no planejamento.
+                  Encarregado é um cargo de <strong>liderança operacional</strong> que costuma coordenar a equipe no campo, acompanhar procedimentos e comunicar ocorrências do turno. A descrição exata depende da estrutura e das atividades de cada empresa.
                 </p>
               </div>
             </FadeIn>
@@ -251,7 +252,7 @@ export default function FunçãoEncarregadoPage() {
             <FadeIn direction="up">
               <h2>Perfil ideal do encarregado</h2>
               <p>
-                Não existe modelo único, mas existe um padrão que funciona na prática — independente do setor:
+                Não existe um modelo único. Alguns critérios ajudam a selecionar e desenvolver esse profissional:
               </p>
               <ul>
                 {perfilIdeal.map((p, i) => (
@@ -279,26 +280,26 @@ export default function FunçãoEncarregadoPage() {
             </div>
 
             <FadeIn direction="up">
-              <h2>O ponto cego de SST que pega gestores de surpresa</h2>
+              <h2>Onde SST entra nas atribuições do encarregado</h2>
               <p>
-                Aqui está a parte que ninguém te conta na hora de promover um encarregado: <strong>ele entra na linha de frente da responsabilidade civil e até criminal por acidente da equipe.</strong>
+                O encarregado costuma estar próximo da execução e pode ter atribuições como interromper uma tarefa insegura, cobrar o uso de proteção e comunicar desvios. Essas responsabilidades precisam estar descritas e acompanhadas de autoridade e treinamento compatíveis.
               </p>
               <p>
-                Se houver acidente grave e a investigação concluir que o encarregado conhecia o risco e não agiu — não exigiu EPI, não corrigiu o procedimento, não reportou condição insegura — ele responde junto com a empresa. Para a empresa, o impacto é direto: se a documentação de SST não comprovar que o encarregado foi treinado, a defesa cai.
+                Em caso de acidente, a investigação pode analisar o que o encarregado sabia, o que estava autorizado a fazer e quais providências tomou. A responsabilização pessoal não é automática e depende da conduta, do nexo causal e das circunstâncias. A empresa continua responsável por organizar o trabalho e oferecer meios de prevenção.
               </p>
               <p>
                 Isso significa três coisas concretas para quem está estruturando o cargo agora:
               </p>
               <ol>
                 <li><strong>Treinamento documentado:</strong> NR aplicável à atividade (NR-10 elétrica, NR-18 construção, NR-35 altura, NR-12 máquinas, etc.) com lista de presença, certificado e renovação periódica.</li>
-                <li><strong>PCMSO em dia:</strong> exame admissional, periódico e demissional do encarregado registrados no eSocial — o cargo dele tem risco específico que precisa estar refletido no programa.</li>
+                <li><strong>PCMSO coerente:</strong> exames ocupacionais definidos conforme os riscos da função e eventos enviados ao eSocial quando exigidos.</li>
                 <li><strong>Procedimentos claros e assinados:</strong> ele precisa receber por escrito as instruções de trabalho, e a empresa precisa guardar a evidência.</li>
               </ol>
               <p>
-                Sem essas três peças, qualquer acidente vira passivo na empresa. Com as três, a empresa tem defesa técnica e o encarregado tem proteção jurídica.
+                Esses registros não impedem acidentes nem garantem resultado judicial. Eles ajudam a demonstrar como a função foi organizada e quais medidas foram efetivamente adotadas.
               </p>
               <p>
-                O ponto de partida mais prático é saber qual grau de risco se aplica à atividade da empresa — isso define quais exames, laudos e estruturas de SST são obrigatórios para o cargo. <Link href="/rh/calculadora-cnae-grau-de-risco" className="text-accent-pink font-bold hover:underline">A calculadora de CNAE e grau de risco</Link> faz esse mapeamento automaticamente a partir do CNPJ ou CNAE e já indica CIPA, SESMT e referência de RAT.
+                O grau de risco da atividade é uma das informações usadas para dimensionar estruturas como CIPA e SESMT, mas os exames e treinamentos dependem também dos riscos reais da função. <Link href="/rh/calculadora-cnae-grau-de-risco" className="text-accent-pink font-bold hover:underline">A calculadora de CNAE e grau de risco</Link> ajuda no primeiro enquadramento.
               </p>
 
               <h2>Perguntas frequentes sobre a função de encarregado</h2>
@@ -321,7 +322,7 @@ export default function FunçãoEncarregadoPage() {
             </div>
           </article>
 
-          {/* SIDEBAR — CTA reorientado para gestor */}
+          {/* SIDEBAR: CTA reorientado para gestor */}
           <aside className="lg:sticky lg:top-24 lg:self-start space-y-6">
             <FadeIn direction="left">
               <div className="bg-brand-900 text-white rounded-2xl p-7 shadow-[0_20px_40px_-15px_rgba(11,19,60,0.4)]">
@@ -350,7 +351,7 @@ export default function FunçãoEncarregadoPage() {
                   <p className="font-black text-brand-900 leading-tight">Risco real de não ter SST documentado</p>
                 </div>
                 <ul className="space-y-3 text-sm text-slate-700 leading-relaxed">
-                  <li className="flex gap-2"><span className="text-accent-pink">•</span> Multa automática no eSocial por evento S-2220 fora do prazo</li>
+                  <li className="flex gap-2"><span className="text-accent-pink">•</span> Evento S-2220 atrasado ou inconsistente, sujeito à verificação fiscal</li>
                   <li className="flex gap-2"><span className="text-accent-pink">•</span> Adicional de insalubridade ou periculosidade pago indevidamente por anos</li>
                   <li className="flex gap-2"><span className="text-accent-pink">•</span> Defesa frágil em ação trabalhista ou perícia judicial</li>
                   <li className="flex gap-2"><span className="text-accent-pink">•</span> Responsabilidade pessoal do gestor em caso de acidente grave</li>
@@ -387,7 +388,7 @@ export default function FunçãoEncarregadoPage() {
         </div>
       </section>
 
-      {/* RECIPROCIDADE — para encarregados */}
+      {/* RECIPROCIDADE: para encarregados */}
       <section className="py-14 border-t border-slate-100">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <FadeIn direction="up">
@@ -397,15 +398,15 @@ export default function FunçãoEncarregadoPage() {
                   Para encarregados
                 </span>
                 <h2 className="text-2xl font-black text-brand-900 mb-3 leading-tight">
-                  Seu gestor sabe que o cargo tem responsabilidade direta de SST?
+                  As atribuições de SST do cargo estão claras?
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  Em caso de acidente, o encarregado responde junto com a empresa — mas só quando não existe documentação de treinamento e instrução de segurança. Encaminhar esse guia para o RH ou para o gestor é a forma mais direta de garantir que essa proteção esteja em dia para você.
+                  Em caso de acidente, a conduta do encarregado pode ser analisada conforme suas atribuições e sua participação no fato. Compartilhar este guia com o RH pode abrir uma conversa útil sobre descrição de cargo, treinamento e autoridade para interromper uma tarefa insegura.
                 </p>
               </div>
               <div className="shrink-0">
                 <a
-                  href="https://wa.me/?text=Vi%20esse%20guia%20sobre%20responsabilidades%20de%20SST%20do%20encarregado%20e%20achei%20que%20faz%20sentido%20voc%C3%AA%20ver%3A%20https%3A%2F%2Fsermst.com.br%2Frh%2Ffuncao-encarregado%20%E2%80%94%20fala%20sobre%20treinamento%20obrigat%C3%B3rio%2C%20exames%20e%20o%20que%20protege%20o%20cargo%20em%20caso%20de%20acidente."
+                  href="https://wa.me/?text=Vi%20este%20guia%20sobre%20as%20responsabilidades%20de%20SST%20do%20encarregado%20e%20acho%20que%20vale%20a%20leitura%3A%20https%3A%2F%2Fsermst.com.br%2Frh%2Ffuncao-encarregado.%20Ele%20explica%20como%20organizar%20treinamentos%2C%20exames%20e%20as%20rotinas%20da%20fun%C3%A7%C3%A3o."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1fbb5a] text-white font-bold px-7 py-4 rounded-xl transition-colors text-sm whitespace-nowrap"
@@ -427,23 +428,23 @@ export default function FunçãoEncarregadoPage() {
           <FadeIn direction="up">
             <Target className="w-12 h-12 text-accent-pink mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-black text-brand-900 mb-6 leading-tight">
-              Sua empresa tem encarregado?
+              Como o encarregado participa da SST?
               <br />
-              <span className="text-accent-pink italic font-serif">A SST dele está em dia?</span>
+              <span className="text-accent-pink italic font-serif">Revise documentos, exames e treinamentos.</span>
             </h2>
             <p className="text-xl text-slate-700 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
-              A SERMST faz auditoria gratuita do PCMSO, PGR e treinamentos da sua operação. Sai com diagnóstico claro do que está protegido e do que está exposto.
+              A SERMST pode fazer uma revisão inicial do PCMSO, do PGR e dos treinamentos relacionados à função e indicar os pontos que precisam de atenção.
             </p>
             <Link
               href="/contato"
               className="btn-primary-safe-lg"
             >
-              Solicitar diagnóstico SST gratuito
+              Solicitar revisão inicial
               <ArrowRight className="w-5 h-5" />
             </Link>
             <p className="text-xs text-slate-500 mt-6 uppercase tracking-widest">
               <Users className="w-3 h-3 inline mr-2" />
-              +3.000 empresas atendidas em 40 anos
+              {companyFacts.companiesServed.phrase} ao longo de mais de 55 anos
             </p>
           </FadeIn>
         </div>

@@ -4,7 +4,7 @@ import nextConfig from '../next.config';
 import HomePage from '@/app/page';
 import ContatoPage from '@/app/contato/page';
 import CalculadoraCnaePage from '@/app/rh/calculadora-cnae-grau-de-risco/page';
-import ExamePeriodicoPage from '@/app/saude/importancia-do-exame-periodico/page';
+import ExamePeriodicoPage from '@/app/saude/exame-periodico-ocupacional/page';
 
 describe('paginas principais', () => {
   it('renderiza a home com a proposta central do negocio', () => {
@@ -35,11 +35,11 @@ describe('paginas principais', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /O que é o exame periódico ocupacional e para que serve/i,
+        name: /Exame periódico ocupacional: periodicidade, convocação e exames/i,
       }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /Resposta direta/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /Neste artigo/i })).toBeInTheDocument();
+    expect(screen.getByText(/a cada dois anos/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Periodicidade: quem define e qual o prazo/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Perguntas frequentes/i })).toBeInTheDocument();
   });
 });
@@ -80,6 +80,30 @@ describe('redirects criticos', () => {
           destination: '/normas/nr-01-pgr-atualizada',
           permanent: true,
         }),
+      ]),
+    );
+  });
+
+  it('consolida periodico e demissional sem redirecionar a pagina dedicada da NR-07', async () => {
+    const redirects = (await nextConfig.redirects?.()) ?? [];
+
+    expect(redirects).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          source: '/saude/importancia-do-exame-periodico',
+          destination: '/saude/exame-periodico-ocupacional',
+          permanent: true,
+        }),
+        expect.objectContaining({
+          source: '/saude/exame-demissional-guia',
+          destination: '/saude/exame-demissional',
+          permanent: true,
+        }),
+      ]),
+    );
+    expect(redirects).not.toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ source: '/normas/o-que-e-nr-07' }),
       ]),
     );
   });

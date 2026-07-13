@@ -236,7 +236,7 @@ function getCompanyReading(employees: number, cnaeEntry: CnaeEntry | null) {
   }
 
   if (employees <= 75) {
-    return 'Operação recorrente: a dor costuma estar em admissões, periódicos, eSocial e controle de prazos pelo RH.';
+    return 'Operação recorrente: as principais demandas costumam envolver admissões, periódicos, eSocial e controle de prazos pelo RH.';
   }
 
   if (employees <= 300) {

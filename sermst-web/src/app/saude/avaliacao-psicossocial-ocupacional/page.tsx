@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function AvaliacaoPsicossocialOcupacionalPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       badgeText="Saúde Ocupacional"
@@ -34,7 +34,7 @@ export default function AvaliacaoPsicossocialOcupacionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-06',
+        dateModified: '2026-07-13',
       }}
       readingTime="8 min"
       h1="Avaliação psicossocial ocupacional: NR-35, trabalho em altura e gestão de riscos psicossociais"
@@ -119,7 +119,7 @@ export default function AvaliacaoPsicossocialOcupacionalPage() {
                 A avaliação psicossocial é conduzida pelo médico do trabalho durante a consulta do ASO ou em sessão específica integrada ao protocolo do PCMSO. O resultado não é um laudo psicológico separado: é parte da avaliação clínica que orienta a conclusão de apto ou inapto para a função.
               </p>
               <p>
-                Quando o médico identifica contraindicação psicossocial, pode emitir ASO com restrição específica para trabalho em altura, exigir avaliação psiquiátrica complementar ou recomendar remanejamento de função enquanto a condição é tratada. Essa documentação protege a empresa juridicamente em caso de questionamento posterior.
+                Quando o médico identifica uma possível contraindicação psicossocial, pode solicitar avaliação especializada e considerar a aptidão para a atividade crítica. O ASO registra apto ou inapto; encaminhamentos e recomendações seguem na documentação médica apropriada.
               </p>
               <p>
                 A periodicidade da avaliação segue o protocolo do PCMSO para a função. Para trabalhadores em altura, a reciclagem do treinamento NR-35 ocorre a cada dois anos, e a reavaliação médica de aptidão acompanha esse ciclo.

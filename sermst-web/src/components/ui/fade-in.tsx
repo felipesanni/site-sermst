@@ -20,7 +20,7 @@ const directionMap: Record<string, string> = {
 };
 
 /**
- * FadeIn — animação de entrada leve sem Framer Motion.
+ * FadeIn: animação de entrada leve sem Framer Motion.
  *
  * Estratégia de LCP:
  * - SSR / antes da hidratação → sem inline styles → elemento visível no HTML

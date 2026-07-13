@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'A Empresa Pode Desistir Após o Exame Admissional? | SERMST',
   description:
-    'A empresa pode recusar a admissão após o exame admissional, mas com limites legais. Veja quando é permitido, quando gera passivo e como se proteger.',
+    'A empresa pode desistir da contratação após o exame admissional, mas a decisão tem limites. Veja os cuidados com inaptidão, discriminação e expectativa de contratação.',
   alternates: { canonical: 'https://sermst.com.br/saude/empresa-pode-desistir-apos-exame-admissional' },
   openGraph: {
     title: 'A Empresa Pode Desistir Após o Exame Admissional?',
@@ -25,7 +25,7 @@ const faqSchema = {
       name: 'A empresa pode desistir de contratar após o exame admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim, desde que a desistência seja baseada no resultado do exame médico — especificamente na conclusão de inaptidão emitida pelo médico do trabalho coordenador do PCMSO. Desistir por outros motivos após o exame pode gerar ação por dano moral e responsabilização por discriminação.',
+        text: 'A empresa pode encerrar o processo por motivo legítimo e não discriminatório. Um ASO com conclusão de inaptidão para a função também pode fundamentar a não admissão. O risco aumenta quando a decisão usa diagnóstico, gravidez ou outro dado de saúde, ou quando a empresa já criou expectativa concreta de contratação e causa prejuízo ao candidato.',
       },
     },
     {
@@ -33,7 +33,7 @@ const faqSchema = {
       name: 'O que acontece se o candidato for considerado inapto no exame admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Se o médico do trabalho emite ASO com conclusão "inapto", a empresa pode não admitir o candidato com base técnica e legal. O candidato tem direito a recorrer do resultado por meio de exame de segunda opinião ou junta médica.',
+        text: 'Se o ASO concluir pela inaptidão para a função, a empresa pode suspender a admissão. O candidato pode pedir esclarecimentos sobre a conclusão e buscar nova avaliação médica, sem que o RH tenha acesso ao diagnóstico.',
       },
     },
     {
@@ -41,7 +41,7 @@ const faqSchema = {
       name: 'A empresa pode desistir por motivo de saúde que não apareceu no exame?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Não. Se o médico emitiu ASO de aptidão, a empresa não pode recusar a admissão com base em condição de saúde do candidato. Isso configura discriminação e pode gerar ação trabalhista com indenização por dano moral.',
+        text: 'A decisão não deve usar informação de saúde que não resulte em inaptidão para a função. Recusar alguém por diagnóstico, deficiência ou outra condição protegida pode caracterizar discriminação, conforme as circunstâncias do caso.',
       },
     },
     {
@@ -49,7 +49,7 @@ const faqSchema = {
       name: 'A empresa paga o exame admissional se desistir da contratação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. O exame admissional é custo obrigatório da empresa, independentemente de a admissão ser concluída. O candidato não pode ser cobrado pelo exame em nenhuma hipótese.',
+        text: 'Sim. O empregador deve custear o exame ocupacional previsto no processo admissional, sem repassar o valor ao candidato.',
       },
     },
   ],
@@ -61,33 +61,33 @@ export default function EmpresaPodeDesistirPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlockbusterArticle
         coverImage={{ src: '/images/site/b2b-partnership.jpg', alt: 'Empresa e candidato no processo admissional' }}
-        hubLabel="Hub de Saúde Ocupacional"
+        hubLabel="Saúde Ocupacional"
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/empresa-pode-desistir-apos-exame-admissional"
         disableFaqSchema
         author={{
           name: 'Felipe Sannino',
-          jobTitle: 'Advogado — Direito do Trabalho e SST · OAB/SP 430.824',
+          jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
           url: 'https://sermst.com.br/equipe/felipe-sannino',
           datePublished: '2026-06-01',
-          dateModified: '2026-06-01',
+          dateModified: '2026-07-13',
         }}
         h1="A empresa pode desistir após o exame admissional?"
-        intro="Sim — mas somente quando o médico do trabalho emite um ASO com conclusão de inaptidão. Fora desse cenário, a desistência baseada em resultado de exame, condição de saúde ou qualquer informação obtida no processo admissional pode configurar discriminação e gerar passivo trabalhista."
+        intro="A empresa pode encerrar o processo seletivo por motivo legítimo e não discriminatório, mesmo depois do exame. Um ASO com conclusão de inaptidão para a função também pode impedir a admissão. O cuidado principal é não usar diagnóstico, gravidez ou outro dado de saúde como critério indevido e não ignorar eventual responsabilidade pré-contratual."
         sections={[
           {
             title: 'Quando a empresa pode recusar a admissão',
             body: (
               <>
                 <p>
-                  A empresa pode não admitir um candidato após o exame admissional em uma única situação com base legal sólida: quando o <strong>médico que realizou o exame clínico emite ASO com conclusão &quot;inapto&quot;</strong>.
+                  A empresa pode não admitir o candidato quando o <strong>médico que realizou o exame clínico emite ASO com conclusão &quot;inapto&quot;</strong> para a função. Também pode encerrar o processo por uma razão empresarial legítima, como cancelamento da vaga ou escolha de outro perfil, desde que a decisão não seja discriminatória.
                 </p>
                 <p>
-                  A inaptidão precisa ser fundamentada tecnicamente — vinculada às exigências físicas ou de saúde da função e aos riscos identificados no PCMSO. O médico não pode declarar inaptidão por preferência ou por pedido da empresa sem base clínica.
+                  A conclusão médica deve estar vinculada aos riscos e às exigências da função descritos no PCMSO. O RH recebe apenas a conclusão de apto ou inapto; diagnóstico e detalhes clínicos permanecem protegidos pelo sigilo médico.
                 </p>
                 <p>
-                  Com o ASO de inaptidão em mãos, a empresa tem respaldo legal para encerrar o processo seletivo sem risco de ação trabalhista.
+                  O ASO de inaptidão oferece fundamento técnico para suspender a admissão, mas não elimina todo risco jurídico. O processo ainda precisa respeitar as regras contra discriminação e a boa-fé na fase pré-contratual.
                 </p>
               </>
             ),
@@ -107,7 +107,7 @@ export default function EmpresaPodeDesistirPage() {
                   <li>Qualquer informação de saúde obtida no processo admissional</li>
                 </ul>
                 <p>
-                  … a empresa está sujeita a <strong>ação por dano moral e discriminação</strong>. O candidato pode buscar reparação na Justiça do Trabalho, e a empresa dificilmente tem defesa sólida nesses casos.
+                  a empresa passa a correr risco de <strong>alegação de discriminação e pedido de reparação</strong>. A análise depende das provas, do motivo real da decisão e de como o processo seletivo foi conduzido.
                 </p>
               </>
             ),
@@ -116,7 +116,7 @@ export default function EmpresaPodeDesistirPage() {
             title: 'O caso específico da gravidez',
             body: (
               <p>
-                A jurisprudência trabalhista é clara: o exame de gravidez não pode ser exigido como condição para admissão, e a empresa que dispensa ou recusa candidata grávida com base no resultado de exame de sangue feito no admissional responde por discriminação. A Súmula 244 do TST e a Lei 9.029/1995 protegem a candidata nesse cenário.
+                A Lei 9.029/1995 proíbe exigir teste, exame, perícia, laudo ou declaração relativos a gravidez e esterilização para acesso ou manutenção da relação de trabalho. A empresa não deve pedir teste de gravidez no admissional nem usar uma informação obtida de outra forma para excluir a candidata.
               </p>
             ),
           },
@@ -125,10 +125,10 @@ export default function EmpresaPodeDesistirPage() {
             body: (
               <>
                 <p>
-                  Se houver dúvida genuína sobre a aptidão do candidato para uma função específica, o caminho correto é <strong>discutir tecnicamente com o médico do trabalho coordenador do PCMSO</strong>. Se a função realmente exige condição física que o candidato não atende, o médico pode fundamentar a inaptidão dentro dos critérios técnicos da NR-07.
+                  Se houver dúvida genuína sobre a aptidão para uma função específica, o RH deve fornecer ao serviço médico uma descrição correta da atividade e dos riscos. A avaliação e a conclusão cabem ao médico examinador, sem interferência da empresa.
                 </p>
                 <p>
-                  O que a empresa não pode fazer é pressionar o médico a declarar inaptidão sem base técnica — isso cria responsabilidade tanto para a empresa quanto para o médico.
+                  A empresa não deve pressionar o médico a alterar a conclusão nem pedir acesso a diagnóstico. Se o candidato questionar o resultado, o serviço médico pode orientar sobre esclarecimento e nova avaliação.
                 </p>
               </>
             ),
@@ -137,7 +137,7 @@ export default function EmpresaPodeDesistirPage() {
             title: 'Quem paga o exame se a empresa desistir?',
             body: (
               <p>
-                A empresa sempre. O exame admissional é custo obrigatório do empregador conforme a NR-07, independentemente de a contratação ser concluída. O candidato não pode ser cobrado pelo exame em nenhuma hipótese — fazer isso é infração trabalhista.
+                O empregador. A NR-07 determina que os procedimentos relacionados ao PCMSO sejam custeados pela organização, sem ônus para o empregado. No processo admissional, o valor não deve ser repassado ao candidato.
               </p>
             ),
           },
@@ -145,28 +145,28 @@ export default function EmpresaPodeDesistirPage() {
         faq={[
           {
             q: 'A empresa pode desistir de contratar após o exame admissional?',
-            a: 'Sim, desde que o médico do trabalho emita ASO com conclusão de inaptidão, com base técnica documentada. Fora desse cenário, a desistência com base em resultado de exame ou condição de saúde pode configurar discriminação.',
+            a: 'Sim. A empresa pode encerrar o processo por motivo legítimo e não discriminatório. Se houver ASO de inaptidão para a função, a conclusão médica também pode fundamentar a não admissão. Em qualquer caso, é preciso observar boa-fé e eventual responsabilidade pré-contratual.',
           },
           {
             q: 'O candidato pode ser dispensado por condição de saúde descoberta no exame?',
-            a: 'Apenas se o médico fundamentar inaptidão vinculada aos requisitos da função. Qualquer outra forma de uso de informação de saúde para recusar a admissão gera risco de ação trabalhista.',
+            a: 'O RH deve se orientar pela conclusão do ASO, sem acessar ou usar diagnóstico. Uma condição de saúde que não resulte em inaptidão para a função não deve virar critério de exclusão.',
           },
           {
             q: 'A empresa paga o exame se não contratar?',
-            a: 'Sim. O custo do exame admissional é sempre da empresa, independentemente de a admissão ser efetivada.',
+            a: 'Sim. O exame ocupacional solicitado no processo admissional deve ser custeado pelo empregador, sem cobrança do candidato.',
           },
           {
             q: 'O candidato inapto pode recorrer do resultado?',
-            a: 'Sim. O candidato tem direito a solicitar exame de segunda opinião ou constituição de junta médica para revisar a conclusão de inaptidão.',
+            a: 'O candidato pode pedir esclarecimentos ao serviço médico e buscar nova avaliação. A NR-07 não cria, para todo caso, um procedimento obrigatório de junta médica; a forma de revisão depende do contexto e das regras aplicáveis.',
           },
         ]}
         sidebarTitle="Dúvidas sobre o processo admissional?"
-        sidebarHook="A SERMST orienta o RH sobre os limites legais do exame admissional e garante que o PCMSO proteja a empresa tecnicamente e juridicamente."
+        sidebarHook="A SERMST orienta o RH sobre o fluxo do exame admissional, o sigilo médico e a aplicação correta do PCMSO."
         sidebarCtaLabel="Falar com especialista"
         related={[
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
           { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
-          { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
+          { label: 'Exame demissional: o que é e quando fazer', href: '/saude/exame-demissional' },
           { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         ]}
       />

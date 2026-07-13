@@ -64,7 +64,7 @@ export default async function TrainingPage({ params }: PageProps) {
         '@type': 'CourseInstance',
         courseMode: 'Onsite',
         courseWorkload: training.workload,
-        location: { '@type': 'Place', name: 'SERMST — São Paulo e in company' },
+        location: { '@type': 'Place', name: 'SERMST: São Paulo e in company' },
       },
       {
         '@type': 'CourseInstance',
@@ -163,7 +163,7 @@ export default async function TrainingPage({ params }: PageProps) {
                   <div className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3">
                     <Monitor className="w-5 h-5 text-accent-pink shrink-0" />
                     <div>
-                      <span className="block text-sm font-black text-white">EAD — Online</span>
+                      <span className="block text-sm font-black text-white">EAD: Online</span>
                       <span className="text-xs text-slate-400">Plataforma com certificado digital</span>
                     </div>
                   </div>

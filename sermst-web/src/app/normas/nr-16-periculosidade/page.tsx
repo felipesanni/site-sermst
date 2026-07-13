@@ -30,9 +30,9 @@ export default function NR16Page() {
         jobTitle: 'Advogado - Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-07-13',
       }}
-      h1="NR-16: periculosidade, quando é devida e como blindar a empresa"
+      h1="NR-16: quando há periculosidade e como documentar o enquadramento"
       intro="A NR-16 define quem pode ter direito ao adicional de periculosidade de 30%. Eletricidade, inflamáveis, explosivos, radiações e segurança patrimonial são exemplos clássicos. O enquadramento correto depende de análise técnica."
       quickAnswer={
         <p>
@@ -106,11 +106,11 @@ export default function NR16Page() {
           ),
         },
         {
-          title: 'Erros comuns que viram passivo',
+          title: 'Erros comuns no enquadramento',
           body: (
             <ol>
               <li><strong>Não pagar quando a atividade é claramente enquadrável.</strong></li>
-              <li><strong>Pagar sem laudo e sem critério.</strong> Isso fragiliza a defesa futura e cria precedente interno.</li>
+              <li><strong>Pagar sem laudo e sem critério.</strong> Isso dificulta explicar o enquadramento e manter coerência entre funções semelhantes.</li>
               <li><strong>Calcular sobre base incorreta.</strong></li>
               <li><strong>Desalinhamento entre laudo, folha, PGR, PPP e eSocial.</strong></li>
               <li><strong>Confundir insalubridade com periculosidade.</strong> As lógicas são diferentes e não podem ser tratadas como se fossem a mesma coisa.</li>
@@ -145,7 +145,7 @@ export default function NR16Page() {
         },
       ]}
       sidebarTitle="Sua empresa enquadra periculosidade do jeito certo?"
-      sidebarHook="Pagar adicional sem base técnica enfraquece a defesa. Não pagar quando devido gera passivo retroativo. O ponto de equilíbrio está na análise bem documentada."
+      sidebarHook="O laudo ajuda a verificar se o adicional é devido e a manter folha, PGR, PPP e eSocial coerentes com a operação."
       sidebarCtaLabel="Solicitar laudo NR-16"
       related={[
         { label: 'NR-15: Insalubridade', href: '/normas/nr-15-insalubridade' },

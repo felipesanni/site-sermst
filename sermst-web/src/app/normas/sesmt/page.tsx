@@ -4,7 +4,7 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-4 e SESMT: quando é obrigatório | SERMST',
   description:
-    'NR-4 define quando o SESMT é obrigatório. Entenda como dimensionar por CNAE, grau de risco e número de empregados — e o que acontece quando a empresa ignora.',
+    'A NR-4 define quando o SESMT é obrigatório. Entenda como dimensionar a equipe por CNAE, grau de risco e número de empregados.',
   alternates: { canonical: 'https://sermst.com.br/normas/sesmt' },
   openGraph: {
     title: 'NR-4 e SESMT: quando é obrigatório | SERMST',
@@ -30,14 +30,14 @@ export default function SesmtPage() {
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-02',
-        dateModified: '2026-07-02',
+        dateModified: '2026-07-13',
       }}
       readingTime="9 min"
       h1="NR-4 e SESMT: obrigatoriedade, dimensionamento e grau de risco"
-      intro="A NR-4 determina quando o SESMT — Serviço Especializado em Segurança e Medicina do Trabalho — é obrigatório. O enquadramento depende do grau de risco da atividade (CNAE) cruzado com o número de empregados do estabelecimento."
+      intro="A NR-4 determina quando o Serviço Especializado em Segurança e Medicina do Trabalho (SESMT) é obrigatório. O dimensionamento considera o número de empregados do estabelecimento e o maior grau de risco entre a atividade econômica principal e a atividade preponderante."
       quickAnswer={
         <p>
-          Para saber se a empresa precisa de SESMT, é necessário cruzar CNAE, grau de risco e quantidade de empregados. Empresas maiores ou de maior risco podem precisar de técnico de segurança, engenheiro, médico do trabalho, enfermeiro ou auxiliar de enfermagem do trabalho.
+          Para saber se o estabelecimento precisa de SESMT, é necessário conferir a atividade principal, identificar a atividade preponderante, adotar o maior grau de risco e cruzá-lo com o número de empregados. Conforme a faixa, a equipe pode incluir técnico de segurança, engenheiro, médico do trabalho, enfermeiro ou auxiliar de enfermagem do trabalho.
         </p>
       }
       showTableOfContents
@@ -55,7 +55,7 @@ export default function SesmtPage() {
           body: (
             <>
               <p>
-                A obrigatoriedade depende do grau de risco e do número de empregados. O grau de risco vem do CNAE da atividade principal, e o dimensionamento é feito conforme quadros da NR-04.
+                A obrigatoriedade depende do grau de risco e do número de empregados. Pela redação atual da NR-04, deve ser usado o maior grau de risco entre a atividade econômica principal e a atividade preponderante no estabelecimento. O resultado é então comparado com o Quadro II da norma.
               </p>
               <p>
                 Por isso, empresas com o mesmo número de funcionários podem ter obrigações diferentes se atuam em setores diferentes.
@@ -68,10 +68,10 @@ export default function SesmtPage() {
           body: (
             <>
               <p>
-                O erro mais perigoso é olhar apenas para o número total de empregados e concluir que a empresa precisa ou não precisa de SESMT. O dimensionamento depende do enquadramento correto do estabelecimento, grau de risco, atividade principal e regras da NR-04.
+                Um erro comum é olhar apenas para o número total de empregados e concluir que a empresa precisa ou não de SESMT. O dimensionamento depende do estabelecimento analisado, da atividade principal, da atividade preponderante e das regras da NR-04.
               </p>
               <p>
-                Uma conclusão sem memória de cálculo deixa a empresa vulnerável. Se houver fiscalização, crescimento, abertura de filial ou alteração de CNAE, o RH precisa conseguir explicar por que chegou àquele enquadramento.
+                Vale guardar a memória de cálculo e as informações usadas na análise. Isso facilita a revisão quando houver crescimento, abertura de filial, mudança de CNAE ou alteração relevante da operação.
               </p>
             </>
           ),
@@ -81,7 +81,7 @@ export default function SesmtPage() {
           body: (
             <>
               <p>
-                O CNAE da atividade principal indica o grau de risco usado como base para várias obrigações de SST. No SESMT, esse grau de risco precisa ser cruzado com o número de empregados para verificar se há necessidade de equipe especializada e qual composição se aplica.
+                O CNAE da atividade principal é um dos pontos de partida, mas não encerra a análise. Se a atividade preponderante no estabelecimento tiver grau de risco maior, é esse grau que deve orientar o dimensionamento do SESMT. Depois, a faixa é cruzada com o número de empregados.
               </p>
               <p>
                 Por isso, empresas com a mesma quantidade de empregados podem ter obrigações diferentes. Um escritório e uma operação industrial, por exemplo, não devem ser avaliados apenas pelo tamanho da folha.
@@ -114,6 +114,7 @@ export default function SesmtPage() {
           body: (
             <ul>
               <li>Cartão CNPJ e CNAE principal do estabelecimento.</li>
+              <li>Descrição das atividades efetivamente realizadas e número de empregados em cada uma.</li>
               <li>Quantidade de empregados por estabelecimento ou operação.</li>
               <li>Grau de risco conforme NR-04.</li>
               <li>Memória de cálculo do dimensionamento.</li>
@@ -153,7 +154,8 @@ export default function SesmtPage() {
           body: (
             <ol>
               <li>Identifique o CNAE principal do estabelecimento.</li>
-              <li>Confirme o grau de risco conforme NR-04.</li>
+              <li>Verifique qual atividade reúne o maior número de empregados.</li>
+              <li>Compare os graus de risco e use o maior deles.</li>
               <li>Some empregados do estabelecimento conforme regra aplicável.</li>
               <li>Cruze grau de risco e quantidade de empregados no quadro de dimensionamento.</li>
               <li>Registre a conclusão e revise quando houver crescimento ou mudança de atividade.</li>
@@ -164,7 +166,7 @@ export default function SesmtPage() {
           title: 'Erros comuns no dimensionamento do SESMT',
           body: (
             <ol>
-              <li>Usar CNAE secundário em vez da atividade principal aplicável.</li>
+              <li>Olhar apenas o CNAE principal e ignorar uma atividade preponderante de maior risco.</li>
               <li>Não atualizar o enquadramento quando a empresa cresce.</li>
               <li>Confundir CIPA, PGR e SESMT como se fossem a mesma obrigação.</li>
               <li>Ignorar estabelecimentos, filiais ou mudanças na operação.</li>
@@ -176,7 +178,7 @@ export default function SesmtPage() {
           title: 'Como a SERMST ajuda no enquadramento',
           body: (
             <p>
-              A SERMST apoia a empresa na leitura de CNAE, grau de risco, quantidade de empregados, CIPA, PGR, PCMSO e necessidade de equipe técnica. O objetivo é documentar a conclusão e deixar o RH com uma resposta defensável, não apenas uma opinião solta.
+              A SERMST apoia a empresa na leitura de CNAE, grau de risco, quantidade de empregados, CIPA, PGR, PCMSO e necessidade de equipe técnica. O objetivo é documentar a conclusão e deixar o RH com uma resposta bem fundamentada, não apenas uma opinião solta.
             </p>
           ),
         },
@@ -184,7 +186,7 @@ export default function SesmtPage() {
       faq={[
         {
           q: 'Toda empresa precisa ter SESMT?',
-          a: 'Não. A obrigatoriedade depende do grau de risco e do número de empregados conforme a NR-04.',
+          a: 'Não. A obrigatoriedade depende do número de empregados e do maior grau de risco entre a atividade principal e a atividade preponderante do estabelecimento, conforme a NR-04.',
         },
         {
           q: 'Empresa sem SESMT ainda precisa cumprir SST?',
@@ -192,7 +194,7 @@ export default function SesmtPage() {
         },
         {
           q: 'Como saber o grau de risco?',
-          a: 'O grau de risco é definido pelo CNAE da atividade. A calculadora da SERMST ajuda a consultar CNAE, grau de risco, NR-05 e SESMT.',
+          a: 'O Quadro I da NR-04 relaciona as atividades econômicas aos graus de risco. Para dimensionar o SESMT, deve ser considerado o maior grau entre a atividade principal e a atividade preponderante do estabelecimento.',
         },
         {
           q: 'SESMT substitui CIPA?',

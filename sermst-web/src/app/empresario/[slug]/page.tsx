@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowRight, BriefcaseBusiness, FileSearch, HelpCircle, ShieldCheck } from 'lucide-react';
+import { BookOpenCheck, BriefcaseBusiness, FileSearch, HelpCircle } from 'lucide-react';
 import { FadeIn } from '@/components/ui/fade-in';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
+import { EmpresarioNextStep } from '@/components/sections/empresario-next-step';
 import { buildFrequentFaqs } from '@/lib/faq';
 import { empresarioSEO } from '@/lib/data/seo-content';
+import { getEmpresarioJourney } from '@/lib/data/empresario-journey';
 
 export function generateStaticParams() {
   return Object.keys(empresarioSEO).map((slug) => ({ slug }));
@@ -19,7 +21,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = empresarioSEO[slug];
 
-  if (!data) return { title: 'Conteudo nao encontrado | SERMST' };
+  if (!data) return { title: 'Conteúdo não encontrado | SERMST' };
 
   return {
     title: data.seoTitle ?? data.h1,
@@ -50,22 +52,41 @@ export default async function EmpresarioArticlePage({
     context: 'empresario',
     topic: data.h1,
   });
+  const journey = getEmpresarioJourney(slug, data.section);
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': `${pageUrl}#article`,
     headline: data.h1,
     description: data.hook,
     url: pageUrl,
-    mainEntityOfPage: pageUrl,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': pageUrl,
+    },
+    isPartOf: {
+      '@type': 'CollectionPage',
+      '@id': 'https://sermst.com.br/empresario#collection',
+      name: 'Guia do empresário',
+    },
+    about: [
+      { '@type': 'Thing', name: data.section },
+      { '@type': 'Thing', name: 'Gestão empresarial' },
+    ],
+    citation: data.officialSources.map((source) => source.href),
     inLanguage: 'pt-BR',
+    isAccessibleForFree: true,
+    dateModified: data.lastReviewedAt,
     author: {
       '@type': 'Organization',
+      '@id': 'https://sermst.com.br/#organization',
       name: 'SERMST',
-      url: 'https://sermst.com.br',
+      url: 'https://sermst.com.br/quem-somos',
     },
     publisher: {
       '@type': 'Organization',
+      '@id': 'https://sermst.com.br/#organization',
       name: 'SERMST',
       url: 'https://sermst.com.br',
       logo: {
@@ -90,12 +111,22 @@ export default async function EmpresarioArticlePage({
 
   return (
     <article className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c'),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c'),
+        }}
+      />
       <BreadcrumbJsonLd
         items={[
-          { name: 'Inicio', item: 'https://sermst.com.br' },
-          { name: 'Empresario', item: 'https://sermst.com.br/empresario' },
+          { name: 'Início', item: 'https://sermst.com.br' },
+          { name: 'Empresário', item: 'https://sermst.com.br/empresario' },
           { name: data.h1 },
         ]}
       />
@@ -111,7 +142,7 @@ export default async function EmpresarioArticlePage({
                 className="mb-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent-pink hover:underline"
               >
                 <span aria-hidden="true">&larr;</span>
-                Voltar ao hub Empresario
+                Voltar para Empresário
               </Link>
               <span className="mb-5 flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-white/70">
                 <BriefcaseBusiness className="h-4 w-4 text-accent-pink" />
@@ -120,6 +151,13 @@ export default async function EmpresarioArticlePage({
               <h1 className="h1-standard mb-8 text-white">{data.h1}</h1>
               <p className="text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
                 {data.hook}
+              </p>
+              <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-semibold text-slate-400">
+                <Link href="/quem-somos" className="text-slate-300 underline decoration-white/25 underline-offset-4 hover:text-white">
+                  Conteúdo da equipe SERMST
+                </Link>
+                <span aria-hidden="true">•</span>
+                <time dateTime={data.lastReviewedAt}>Revisado em 13 de julho de 2026</time>
               </p>
             </FadeIn>
           </div>
@@ -143,14 +181,14 @@ export default async function EmpresarioArticlePage({
                   ) : null}
                 </div>
 
-                <h2>A dor que o empresario normalmente enxerga tarde</h2>
-                <p className="rounded-r-lg border-l-4 border-accent-pink bg-slate-50 p-5 pl-6 text-xl font-medium italic text-slate-700">
+                <h2>Por que esse assunto costuma gerar dúvida</h2>
+                <p className="rounded-r-lg border-l-4 border-accent-pink bg-slate-50 p-5 pl-6 text-xl font-medium text-slate-700">
                   {data.content.dor}
                 </p>
 
                 <h2 className="mt-12 flex items-center gap-3">
-                  <ShieldCheck className="h-7 w-7 text-green-500" />
-                  O que muda quando a empresa olha isso do jeito certo
+                  <BookOpenCheck className="h-7 w-7 text-green-500" />
+                  O ponto principal
                 </h2>
                 <p>{data.content.solucao}</p>
 
@@ -176,7 +214,7 @@ export default async function EmpresarioArticlePage({
 
                 <div className="my-12 rounded-2xl bg-brand-900 p-8 text-white shadow-xl">
                   <h3 className="mb-5 mt-0 text-2xl font-black text-white">
-                    O que esta leitura ajuda a proteger
+                    O que esta leitura ajuda a organizar
                   </h3>
                   <ul className="m-0 list-none space-y-3 p-0">
                     {data.content.beneficios.map((benefit) => (
@@ -188,18 +226,18 @@ export default async function EmpresarioArticlePage({
                   </ul>
                 </div>
 
-                <blockquote className="relative mt-16 rounded-xl border-[3px] border-slate-100 bg-white p-8 shadow-lg">
+                <div className="relative mt-16 rounded-xl border-[3px] border-slate-100 bg-white p-8 shadow-lg">
                   <span className="absolute -top-6 left-6 bg-white p-2">
                     <FileSearch className="h-8 w-8 text-brand-500" />
                   </span>
-                  <p className="mb-6 text-2xl font-medium italic leading-snug text-brand-900">
-                    &quot;{data.geoOpt.expertQuote.text}&quot;
+                  <span className="kicker">Na prática</span>
+                  <p className="mt-3 text-lg font-medium leading-relaxed text-brand-900">
+                    {data.geoOpt.expertQuote.text}
                   </p>
-                  <footer>
-                    <strong>{data.geoOpt.expertQuote.author}</strong>
-                    <span className="block text-sm text-slate-500">{data.geoOpt.expertQuote.role}</span>
-                  </footer>
-                </blockquote>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-500">
+                    Nota editorial da SERMST, que acompanha empresas em saúde e segurança do trabalho há mais de 55 anos.
+                  </p>
+                </div>
               </div>
             </FadeIn>
           </main>
@@ -207,9 +245,9 @@ export default async function EmpresarioArticlePage({
           <aside className="w-full space-y-8 lg:w-[380px]">
             <FadeIn direction="left" delay={0.1}>
               <div className="surface-panel">
-                <span className="kicker">Proximo passo recomendado</span>
+                <span className="kicker">Veja também</span>
                 <h2 className="mb-4 text-2xl font-black text-brand-900">
-                  Continue por onde a dor fica mais pratica
+                  Continue pelo assunto mais próximo da sua dúvida
                 </h2>
                 <div className="space-y-4">
                   {data.supportingLinks.map((link) => (
@@ -225,16 +263,24 @@ export default async function EmpresarioArticlePage({
                 </div>
               </div>
 
-              <div className="rounded-2xl bg-brand-900 p-8 text-white shadow-[0_20px_40px_-15px_rgba(11,19,60,0.4)]">
-                <h3 className="mb-4 text-2xl font-black">
-                  Quando a dor ja saiu da teoria, o proximo passo precisa ser objetivo
-                </h3>
-                <p className="mb-6 text-sm leading-relaxed text-slate-300">
-                  {data.cta.reason}
-                </p>
-                <Link href={data.cta.href} className="btn-light-safe flex w-full justify-center text-brand-500">
-                  {data.cta.label}
-                </Link>
+              <div className="surface-panel-muted">
+                <span className="kicker">Fontes oficiais</span>
+                <h2 className="mb-4 text-2xl font-black text-brand-900">
+                  Consulte a regra na origem
+                </h2>
+                <div className="space-y-3">
+                  {data.officialSources.map((source) => (
+                    <a
+                      key={source.href}
+                      href={source.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-xl border border-slate-200 bg-white p-4 text-sm font-bold leading-relaxed text-brand-900 transition-colors hover:border-accent-pink hover:text-accent-pink"
+                    >
+                      {source.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </FadeIn>
           </aside>
@@ -243,12 +289,12 @@ export default async function EmpresarioArticlePage({
 
       <section className="border-t border-slate-100 bg-slate-50 py-20">
         <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="mx-auto max-w-4xl">
             <FadeIn direction="up">
-              <div className="max-w-3xl">
+              <div>
                 <h3 className="mb-10 flex items-center gap-3 text-3xl font-black text-brand-900">
                   <HelpCircle className="h-8 w-8 text-accent-pink" />
-                  Perguntas que costumam aparecer nessa fase
+                  Perguntas frequentes
                 </h3>
                 <div className="space-y-8">
                   {frequentFaqs.map((faq) => (
@@ -258,49 +304,16 @@ export default async function EmpresarioArticlePage({
                     </div>
                   ))}
                 </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="up" delay={0.05}>
-              <div className="surface-panel-muted h-full">
-                <span className="kicker">Pontes para o meio de funil</span>
-                <h3 className="mb-4 text-3xl font-black text-brand-900">
-                  RH e saude ocupacional entram aqui
-                </h3>
-                <p className="mb-6 text-lg leading-relaxed text-slate-700">
-                  Quando o empresario entende que a empresa cresceu e passou a carregar novas
-                  obrigacoes, o assunto deixa de ser so regularizacao. A partir dai, vale
-                  aprofundar em RH, saude ocupacional e rotina operacional para entender o problema com mais clareza.
-                </p>
-                <div className="grid gap-4">
-                  <Link href="/rh" className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl">
-                    <span className="kicker">Hub operacional</span>
-                    <h4 className="mb-3 text-2xl font-black text-brand-900 group-hover:text-accent-pink">
-                      RH e Departamento Pessoal
-                    </h4>
-                    <p className="text-slate-700">
-                      Para traduzir a dor em admissao, eSocial, passivo, DET e rotina de documentos.
-                    </p>
-                  </Link>
-                  <Link href="/saude" className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl">
-                    <span className="kicker">Hub clinico</span>
-                    <h4 className="mb-3 text-2xl font-black text-brand-900 group-hover:text-accent-pink">
-                      Saude Ocupacional
-                    </h4>
-                    <p className="text-slate-700">
-                      Para aprofundar exame admissional, ASO, PCMSO, riscos e rotina ocupacional.
-                    </p>
-                  </Link>
-                </div>
-                <Link href="/empresario" className="btn-primary-safe mt-6 inline-flex">
-                  Voltar ao hub Empresario
-                  <ArrowRight className="h-4 w-4" />
+                <Link href="/empresario" className="btn-primary-safe mt-10 inline-flex">
+                  Ver todos os guias para empresários
                 </Link>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
+
+      <EmpresarioNextStep currentTitle={data.h1} journey={journey} />
     </article>
   );
 }

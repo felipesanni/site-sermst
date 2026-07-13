@@ -92,7 +92,7 @@ export default function SoluçõesPage() {
           <FadeIn direction="right">
             <div className="surface-panel">
               <span className="kicker">
-                Leitura Estratégica
+                Na prática
               </span>
               <h2 className="mb-6 text-3xl font-black text-brand-900 md:text-4xl">
                 O que uma empresa realmente compra quando contrata SST
@@ -102,7 +102,7 @@ export default function SoluçõesPage() {
                   A maior parte das empresas não compra apenas um exame, um laudo ou um evento de eSocial. O que elas compram é previsibilidade. Querem contratar sem travar admissão, cumprir exigências legais sem insegurança e manter a operação protegida contra multas, passivos trabalhistas e retrabalho documental.
                 </p>
                 <p>
-                  Por isso a SERMST organiza as soluções por dor concreta — não por catálogo. Exames ocupacionais para fluxo de RH, PGR e PCMSO para sustentação técnica, LTCAT para base previdenciária, eSocial SST para disciplina operacional, treinamentos para prevenção com prova documental.
+                  Por isso a SERMST organiza as soluções a partir do problema concreto da empresa. Exames ocupacionais apoiam o fluxo de RH; PGR e PCMSO estruturam a gestão técnica; LTCAT sustenta informações previdenciárias; eSocial SST e treinamentos completam a rotina de prevenção e registro.
                 </p>
                 <p>
                   O que sua empresa contrata é o resultado: documentação que sustenta auditoria, fluxo que destrava admissão, eSocial limpo, equipe protegida. Tudo conectado, sem precisar gerenciar quatro fornecedores diferentes.

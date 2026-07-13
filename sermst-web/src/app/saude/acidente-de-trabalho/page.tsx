@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 export default function AcidenteDeTrabalhoPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/acidente-de-trabalho"
       badgeText="SST"
-      coverImage={{ src: '/images/site/safety-equipment.jpg', alt: 'Ambiente de trabalho com riscos — prevenção de acidente de trabalho' }}
+      coverImage={{ src: '/images/site/safety-equipment.jpg', alt: 'Ambiente de trabalho com medidas de prevenção de acidentes' }}
       author={{
         name: 'Luiz Cesar Sannino',
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
@@ -34,10 +34,10 @@ export default function AcidenteDeTrabalhoPage() {
       }}
       readingTime="10 min"
       h1="Acidente de trabalho: o que é, tipos e o que muda para a empresa"
-      intro="Acidente de trabalho é todo evento que ocorre no exercício da atividade laboral e causa lesão corporal, perturbação funcional ou morte ao trabalhador. A definição parece simples, mas as consequências para a empresa dependem de como o caso é investigado, documentado e conduzido — do momento do evento até eventual processo previdenciário ou trabalhista."
+      intro="Acidente de trabalho é o evento ligado ao exercício do trabalho que provoca lesão, perturbação funcional ou morte. A legislação também inclui doenças ocupacionais e outras situações equiparadas. Veja o que a empresa precisa registrar e comunicar."
       quickAnswer={
         <p>
-          Acidente de trabalho é, legalmente, o evento que ocorre pelo exercício do trabalho e causa lesão corporal, perturbação funcional ou morte. Inclui acidente típico (durante a atividade), acidente de trajeto (no percurso casa–trabalho) e doenças ocupacionais (causadas ou agravadas pelo trabalho). A ocorrência deve ser comunicada ao INSS por meio da <strong>CAT — Comunicação de Acidente de Trabalho</strong> — até o primeiro dia útil seguinte ao evento.
+          Acidente de trabalho é, legalmente, o evento relacionado ao exercício do trabalho que causa lesão corporal, perturbação funcional ou morte. A Lei 8.213/91 também abrange doenças ocupacionais e situações equiparadas, como o acidente no percurso entre a residência e o trabalho. A empresa comunica a ocorrência por meio da <strong>CAT, Comunicação de Acidente de Trabalho</strong>, até o primeiro dia útil seguinte. Em caso de morte, a comunicação é imediata.
         </p>
       }
       showTableOfContents
@@ -47,10 +47,10 @@ export default function AcidenteDeTrabalhoPage() {
           body: (
             <>
               <p>
-                A Lei 8.213/91 define acidente de trabalho como o evento que ocorre pelo exercício do trabalho a serviço da empresa — ou pelo exercício do trabalho dos segurados especiais — e que provoca lesão corporal ou perturbação funcional que cause a morte, a perda ou redução da capacidade para o trabalho, permanente ou temporária.
+                A Lei 8.213/91 define acidente de trabalho como o evento que ocorre pelo exercício do trabalho a serviço da empresa e provoca lesão corporal ou perturbação funcional capaz de causar morte ou perda ou redução da capacidade para o trabalho, de forma permanente ou temporária.
               </p>
               <p>
-                O conceito é propositalmente amplo. Ele abrange não só o acidente físico imediato, mas também situações em que o trabalho <strong>concorre</strong> para o resultado — mesmo que não seja a causa exclusiva.
+                O trabalho não precisa ser a única causa do dano. A lei também reconhece situações em que ele contribui diretamente para o resultado, o que exige análise de nexo causal ou concausal.
               </p>
             </>
           ),
@@ -65,10 +65,10 @@ export default function AcidenteDeTrabalhoPage() {
                   <strong>Acidente típico:</strong> evento abrupto e imediato ligado ao exercício da atividade. Exemplos: queda, corte, esmagamento, choque elétrico, queimadura, colisão. É o tipo mais comum e o mais fácil de identificar.
                 </li>
                 <li>
-                  <strong>Acidente de trajeto:</strong> ocorre no percurso entre a residência e o local de trabalho, ou no retorno. A avaliação do nexo com o trabalho depende do caso concreto, especialmente após mudanças na legislação previdenciária.
+                  <strong>Acidente de trajeto:</strong> ocorre no percurso da residência para o local de trabalho ou no retorno. A Lei 8.213/91 mantém essa hipótese entre as situações equiparadas a acidente de trabalho.
                 </li>
                 <li>
-                  <strong>Doença ocupacional (acidente por equiparação):</strong> inclui doença profissional — causada pelo tipo de trabalho — e doença do trabalho — adquirida ou agravada pelas condições do ambiente laboral. São equiparadas ao acidente de trabalho para fins legais.
+                  <strong>Doença ocupacional:</strong> inclui a doença profissional, ligada à atividade exercida, e a doença do trabalho, relacionada às condições em que o trabalho é realizado. O nexo precisa ser avaliado no caso concreto.
                 </li>
               </ul>
             </>
@@ -79,10 +79,10 @@ export default function AcidenteDeTrabalhoPage() {
           body: (
             <>
               <p>
-                Nexo causal é a relação entre o trabalho e o dano sofrido pelo trabalhador. Sem nexo demonstrado, não há reconhecimento de acidente de trabalho. Com nexo estabelecido, surgem obrigações previdenciárias, trabalhistas e documentais.
+                Nexo causal é a relação entre o trabalho e o dano sofrido. Também pode haver concausa, quando o trabalho não é a causa única, mas contribui diretamente para a lesão ou doença.
               </p>
               <p>
-                O nexo pode ser técnico (laudo médico, perícia, histórico de exposição) ou previdenciário — via <strong>Nexo Técnico Epidemiológico (NTEP)</strong>, que vincula automaticamente certas doenças a determinados CNAEs. Quando o NTEP se aplica, a empresa precisa contestar ativamente para não assumir o nexo automaticamente.
+                Na análise previdenciária, o <strong>Nexo Técnico Epidemiológico Previdenciário (NTEP)</strong> considera a relação estatística entre a atividade econômica e determinados agravos. Ele pode fundamentar o reconhecimento do nexo pelo INSS, mas não encerra a análise: a empresa pode apresentar elementos técnicos para contestá-lo.
               </p>
             </>
           ),
@@ -91,8 +91,8 @@ export default function AcidenteDeTrabalhoPage() {
           title: 'Acidente típico vs. doença ocupacional: diferenças práticas',
           body: (
             <ul>
-              <li><strong>Acidente típico:</strong> evento datado, testemunhas, local identificável, sequência clara entre evento e lesão. CAT imediata. Investigação concentrada no fato.</li>
-              <li><strong>Doença ocupacional:</strong> surgimento gradual, diagnóstico tardio, nexo construído ao longo do tempo. Investigação envolve histórico de exposição, laudos, PCMSO, PGR e histórico funcional. CAT pode ser emitida a qualquer momento após confirmação ou suspeita de nexo.</li>
+              <li><strong>Acidente típico:</strong> costuma ter data, local e sequência dos fatos identificáveis. A investigação começa logo após a ocorrência.</li>
+              <li><strong>Doença ocupacional:</strong> pode surgir gradualmente. A apuração considera histórico de exposição, avaliações médicas, PGR, PCMSO e atividades exercidas.</li>
             </ul>
           ),
         },
@@ -102,7 +102,7 @@ export default function AcidenteDeTrabalhoPage() {
             <ol>
               <li><strong>Atendimento imediato ao trabalhador</strong> e acionamento de socorro quando necessário.</li>
               <li><strong>Registro da ocorrência</strong> com data, horário, local, atividade, testemunhas e condição do ambiente.</li>
-              <li><strong>Avaliação da obrigação de emitir CAT</strong> e cumprimento do prazo: primeiro dia útil seguinte (imediato em caso de morte).</li>
+               <li><strong>Emissão da CAT</strong> até o primeiro dia útil seguinte. Em caso de morte, a comunicação deve ser imediata.</li>
               <li><strong>Investigação de causa imediata e causa raiz</strong> do acidente.</li>
               <li><strong>Revisão de PGR, PCMSO, ASO, EPI e treinamentos</strong> ligados à função do trabalhador.</li>
               <li><strong>Adoção de medidas corretivas</strong> documentadas para evitar repetição.</li>
@@ -115,10 +115,10 @@ export default function AcidenteDeTrabalhoPage() {
           body: (
             <>
               <p>
-                O trabalhador que sofre acidente de trabalho e recebe auxílio-doença acidentário (B91) tem <strong>estabilidade de 12 meses</strong> após a alta previdenciária. Durante esse período, a demissão sem justa causa é vedada — e, se ocorrer, gera direito à reintegração ou indenização correspondente.
+                Como regra, o trabalhador que recebe benefício por incapacidade temporária de natureza acidentária tem <strong>garantia provisória de emprego por 12 meses</strong> após a cessação do benefício. Uma dispensa nesse período pode levar à reintegração ou à indenização substitutiva, conforme a situação analisada.
               </p>
               <p>
-                A estabilidade não depende da CAT em si, mas do reconhecimento do benefício acidentário pelo INSS. Por isso, a empresa que não emite CAT e não organiza a documentação pode se ver diante de um nexo estabelecido pelo próprio INSS — e da estabilidade decorrente — sem ter participado da construção técnica do caso.
+                A CAT, sozinha, não concede estabilidade. Também existe uma exceção importante reconhecida pela jurisprudência: uma doença profissional constatada depois da dispensa pode gerar a garantia quando houver relação causal com o trabalho, mesmo sem benefício acidentário prévio.
               </p>
             </>
           ),
@@ -128,7 +128,7 @@ export default function AcidenteDeTrabalhoPage() {
           body: (
             <>
               <p>
-                O acidente de trabalho tem reflexos no eSocial — especialmente nos eventos S-2210 (CAT) e S-2230 (afastamento). Registros inconsistentes entre a CAT, o atestado médico, o ASO e o histórico do PGR podem gerar contradições que aparecem depois em fiscalizações ou processos trabalhistas.
+                O acidente de trabalho tem reflexos no eSocial, especialmente nos eventos S-2210 (CAT) e S-2230 (afastamento). Os registros devem ser coerentes com os documentos médicos e com a investigação da ocorrência.
               </p>
               <p>
                 O RH e a área de SST precisam trabalhar com a mesma versão documentada dos fatos desde o início.
@@ -144,7 +144,7 @@ export default function AcidenteDeTrabalhoPage() {
                 O processo trabalhista relacionado a acidente costuma envolver: culpa da empresa por falta de EPI, ausência de treinamento, equipamento sem proteção, ambiente inseguro ou doença causada ou agravada pelo trabalho.
               </p>
               <p>
-                A defesa da empresa fica mais sólida quando ela demonstra <strong>prevenção anterior ao acidente</strong> — PGR atualizado, PCMSO adequado, treinamentos registrados, EPI fornecido com evidência — e <strong>resposta técnica posterior</strong> — investigação documentada, medidas corretivas, acompanhamento médico.
+                A análise do caso considera tanto a prevenção existente antes do acidente quanto a resposta adotada depois. PGR, treinamentos, controles coletivos, registros de EPI, investigação e medidas corretivas ajudam a demonstrar o que de fato foi feito.
               </p>
             </>
           ),
@@ -184,27 +184,27 @@ export default function AcidenteDeTrabalhoPage() {
         },
         {
           q: 'Doença ocupacional é considerada acidente de trabalho?',
-          a: 'Sim. A doença profissional e a doença do trabalho são equiparadas ao acidente de trabalho pela Lei 8.213/91. Isso implica as mesmas obrigações de comunicação, os mesmos efeitos previdenciários e a mesma estabilidade acidentária quando o INSS reconhece o benefício acidentário.',
+          a: 'Sim. A Lei 8.213/91 equipara a doença profissional e a doença do trabalho ao acidente de trabalho quando há relação com a atividade ou com as condições em que ela é exercida. Os efeitos dependem do nexo e das circunstâncias do caso.',
         },
         {
           q: 'Acidente de trajeto ainda é acidente de trabalho?',
-          a: 'Depende do caso. O acidente de trajeto — ocorrido no percurso entre residência e local de trabalho — pode ser equiparado ao acidente de trabalho, mas a avaliação do nexo com o trabalho depende do contexto e da legislação vigente aplicável à situação.',
+          a: 'Sim. A Lei 8.213/91 inclui o acidente ocorrido no percurso da residência para o trabalho ou no retorno entre as situações equiparadas a acidente de trabalho. Os fatos e o percurso precisam ser apurados.',
         },
         {
           q: 'Toda lesão no trabalho precisa de CAT?',
-          a: 'A emissão de CAT é obrigatória quando há acidente de trabalho, doença ocupacional confirmada ou suspeita, ou ocorrência que resulte em afastamento, lesão ou morte. Situações limítrofes devem ser avaliadas caso a caso, mas a omissão gera risco maior do que a comunicação.',
+          a: 'A empresa deve comunicar o acidente de trabalho à Previdência até o primeiro dia útil seguinte, mesmo quando não há afastamento. Em caso de morte, a comunicação é imediata. Suspeitas de doença ocupacional exigem avaliação técnica e não devem ser ignoradas.',
         },
         {
           q: 'Quanto tempo dura a estabilidade após acidente de trabalho?',
-          a: 'O trabalhador que recebe auxílio-doença acidentário (B91) tem estabilidade de 12 meses após a alta previdenciária. A estabilidade não depende da CAT em si, mas do reconhecimento do benefício acidentário pelo INSS.',
+          a: 'Como regra, são 12 meses após a cessação do benefício por incapacidade temporária de natureza acidentária. A jurisprudência também admite a garantia quando uma doença profissional relacionada ao contrato é constatada depois da dispensa.',
         },
         {
           q: 'Empresa que não emite CAT pode ser prejudicada?',
-          a: 'Sim. Quando a empresa não emite, o trabalhador, dependentes, sindicato, médico ou autoridade pública podem registrar a CAT — e a narrativa inicial do caso fica fora do controle da empresa. Além disso, a omissão pode gerar multa e fragilizar a defesa em eventual processo trabalhista.',
+          a: 'Sim. A omissão pode gerar multa, e a CAT ainda pode ser registrada pelo trabalhador, dependentes, sindicato, médico ou autoridade pública. A empresa também perde a oportunidade de comunicar e documentar a ocorrência no prazo correto.',
         },
         {
           q: 'Qual a diferença entre acidente típico e doença ocupacional?',
-          a: 'Acidente típico é o evento imediato e datado: queda, corte, choque, colisão. Doença ocupacional é o dano gradual causado ou agravado pelas condições ou organização do trabalho. Ambos são considerados acidentes de trabalho para fins legais, mas a investigação e a documentação de defesa têm dinâmicas diferentes.',
+          a: 'O acidente típico costuma ser um evento imediato e datado, como queda, corte ou colisão. A doença ocupacional pode se desenvolver ao longo do tempo e exige análise do histórico de exposição e das atividades exercidas.',
         },
       ]}
       maxFaqItems={8}

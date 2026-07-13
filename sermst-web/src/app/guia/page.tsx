@@ -290,7 +290,7 @@ export default function GuiaPage() {
                   <tr><th>Data de nascimento</th><td>{brDate(guia.nascimento)}</td></tr>
                   <tr><th>Tipo de exame</th><td>{guia.exame}</td></tr>
                   <tr><th>CNPJ</th><td>{fmtCNPJ(guia.cnpj)}</td></tr>
-                  <tr><th>Razão social</th><td>{guia.empresa || "—"}</td></tr>
+                  <tr><th>Razão social</th><td>{guia.empresa || "Não informada"}</td></tr>
                   <tr><th>Exames complementares</th><td>{guia.exames_complementares.length ? guia.exames_complementares.join(", ") : "Nenhum"}</td></tr>
                   <tr><th>Protocolo</th><td>{guia.protocolo}</td></tr>
                   <tr><th>Data de emissão</th><td>{new Date(guia.emissao_iso).toLocaleDateString("pt-BR")}</td></tr>

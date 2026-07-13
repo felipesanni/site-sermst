@@ -66,7 +66,7 @@ export const grauRiscoInfo = {
   2: {
     label: 'Grau 2 - Médio',
     cor: 'yellow',
-    sesmt: 'SESMT interno obrigatório a partir de 101 empregados',
+    sesmt: 'SESMT interno obrigatório a partir de 501 empregados',
     descricao:
       'Atividades com exposição moderada a riscos físicos, químicos, biológicos ou ergonômicos, exigindo controle ocupacional mais frequente.',
     examesPeriodicos:
@@ -75,17 +75,17 @@ export const grauRiscoInfo = {
   3: {
     label: 'Grau 3 - Alto',
     cor: 'orange',
-    sesmt: 'SESMT interno obrigatório a partir de 51 empregados',
+    sesmt: 'SESMT interno obrigatório a partir de 101 empregados',
     descricao:
       'Atividades com risco ocupacional relevante, geralmente ligadas a saúde, logística, construção, indústria e operações com maior exposição.',
     examesPeriodicos: 'A periodicidade dos exames deve seguir os riscos ocupacionais e o planejamento médico definido no PCMSO.',
   },
   4: {
-    label: 'Grau 4 - Crítico',
+    label: 'Grau 4 - Muito alto',
     cor: 'red',
-    sesmt: 'SESMT interno obrigatório a partir de 51 empregados, com composição mais exigente',
+    sesmt: 'SESMT interno obrigatório a partir de 50 empregados, com composição mais exigente',
     descricao:
-      'Atividades críticas com alta exposição ocupacional, exigindo estrutura robusta de prevenção, monitoramento e resposta técnica.',
+      'Atividades com grau de risco mais alto, que exigem controles compatíveis com os perigos e as exposições da operação.',
     examesPeriodicos:
       'A periodicidade dos exames deve seguir os riscos ocupacionais e o planejamento médico definido no PCMSO.',
   },

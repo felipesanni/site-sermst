@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 export default function ASOPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/aso-atestado-saude-ocupacional"
       coverImage={{
@@ -57,20 +57,18 @@ export default function ASOPage() {
           ),
         },
         {
-          title: 'Quando a busca é por significado, documento ou operação',
+          title: 'Como o ASO entra na rotina ocupacional',
           body: (
             <>
-              <p>Em SEO, “ASO” costuma carregar três intenções diferentes:</p>
+              <p>O ASO pode ser entendido em três níveis:</p>
               <ul>
-                <li><strong>Significado:</strong> o usuário quer saber o que a sigla quer dizer.</li>
-                <li><strong>Entendimento técnico:</strong> quer saber quando emitir, o que deve constar e como o documento funciona.</li>
-                <li><strong>Execução:</strong> a empresa já precisa emitir, controlar vencimento ou integrar o envio ao eSocial.</li>
+                <li><strong>Conceito:</strong> é o atestado emitido ao final do exame clínico ocupacional.</li>
+                <li><strong>Conteúdo:</strong> registra os dados exigidos pela NR-07 e a conclusão de aptidão para a função.</li>
+                <li><strong>Rotina:</strong> precisa ser emitido no momento correto, controlado pela empresa e informado ao eSocial quando aplicável.</li>
               </ul>
               <p>
-                Se a busca é só conceitual, a página mais curta é o{' '}
-                <Link href="/dicionario/o-que-e-aso">verbete do dicionário sobre ASO</Link>. Se a dúvida é normativa,
-                a base está na <Link href="/normas/o-que-e-nr-07">NR-07</Link>. Este guia cobre o meio do caminho:
-                entender o documento no contexto real da rotina ocupacional.
+                A definição resumida está no <Link href="/dicionario/o-que-e-aso">verbete do dicionário sobre ASO</Link>,
+                e a base normativa está no guia da <Link href="/normas/o-que-e-nr-07">NR-07</Link>.
               </p>
             </>
           ),
@@ -171,15 +169,15 @@ export default function ASOPage() {
           ),
         },
         {
-          title: 'Quando a busca já deixou de ser só leitura',
+          title: 'Quando a empresa precisa emitir e controlar ASOs',
           body: (
             <>
               <p>
-                Quando a empresa precisa emitir ASO admissional rápido, controlar vencimentos de periódicos, alinhar o
-                documento ao eSocial ou corrigir falhas do PCMSO, a intenção já não é só informacional.
+                A empresa pode precisar emitir um ASO admissional, controlar os vencimentos dos periódicos, alinhar os
+                registros ao eSocial ou corrigir falhas do PCMSO. Cada situação exige informações e prazos próprios.
               </p>
               <p>
-                Nessa hora, faz sentido avançar para páginas mais operacionais, como a de{' '}
+                Para organizar o atendimento, consulte o serviço de{' '}
                 <Link href="/servicos/exame-admissional-expresso/sao-paulo">exame admissional com ASO</Link> ou a de{' '}
                 <Link href="/servicos/pcmso-nr07-programa/sao-paulo">gestão de PCMSO</Link>, conforme o problema principal.
               </p>
@@ -217,9 +215,9 @@ export default function ASOPage() {
         { label: 'ASO no dicionário: definição rápida', href: '/dicionario/o-que-e-aso' },
         { label: 'NR-07: o que a norma exige', href: '/normas/o-que-e-nr-07' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
-        { label: 'Exame periódico ocupacional: prazo e rotina', href: '/saude/importancia-do-exame-periodico' },
+        { label: 'Exame periódico ocupacional: prazo e rotina', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
-        { label: 'Exame demissional: o que e quando fazer', href: '/saude/exame-demissional' },
+        { label: 'Exame demissional: o que é e quando fazer', href: '/saude/exame-demissional' },
       ]}
     />
   );

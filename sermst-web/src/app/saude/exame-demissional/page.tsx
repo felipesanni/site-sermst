@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame demissional: o que e quando fazer | SERMST',
+  title: 'Exame demissional: prazo de 10 dias e dispensa | SERMST',
   description:
-    'Entenda o que e o exame demissional, quando ele e obrigatorio, qual o prazo, quando pode haver dispensa e como o ASO demissional protege a empresa.',
+    'Veja o prazo do exame demissional, contado em até 10 dias após o término do contrato, e as regras de dispensa por exame clínico recente na NR-07.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional' },
   openGraph: {
-    title: 'Exame demissional: o que e quando fazer | SERMST',
+    title: 'Exame demissional: prazo de 10 dias e dispensa | SERMST',
     description:
-      'Veja quando o exame demissional e obrigatorio, qual o prazo, o que ele avalia e como o ASO demissional reduz risco trabalhista e falhas no eSocial.',
+      'Entenda o prazo de até 10 dias após o término do contrato, quando pode haver dispensa e como funciona o ASO demissional.',
     url: 'https://sermst.com.br/saude/exame-demissional',
     type: 'article',
     locale: 'pt_BR',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default function ExameDemissionalPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
-      hubLabelShort="← Hub Saúde"
+      hubLabel="Saúde Ocupacional"
+      hubLabelShort="← Saúde Ocupacional"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/exame-demissional"
       coverImage={{ src: "/images/articles/exame-demissional.jpg", alt: "Consulta médica ocupacional para exame demissional" }}
@@ -29,20 +29,20 @@ export default function ExameDemissionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-01',
+        dateModified: '2026-07-13',
       }}
-      h1="Exame demissional: o que é, quando fazer e como proteger a empresa"
-      intro="O exame demissional é a última oportunidade da empresa documentar o estado de saúde do trabalhador antes da rescisão. Sem ele, qualquer discussão futura sobre doença ocupacional fica mais exposta. Aqui o foco é explicar regras, prazo, dispensa e o papel do ASO demissional."
+      h1="Exame demissional: prazo, dispensa e o que diz a NR-07"
+      intro="O exame clínico demissional integra o monitoramento de saúde previsto na NR-07. A regra vigente não exige que ele aconteça antes da saída: quando não houver dispensa, deve ser realizado em até 10 dias contados do término do contrato. Aqui você encontra o prazo correto, as janelas de 90 e 135 dias e o reflexo no ASO e no eSocial."
       sections={[
         {
           title: 'O que é o exame demissional',
           body: (
             <>
               <p>
-                O exame demissional é a avaliação médica feita <strong>antes do término do contrato de trabalho</strong>, com objetivo de atestar o estado de saúde do trabalhador no momento da rescisão. Ele integra a lógica da NR-07 e fecha o ciclo ocupacional iniciado no admissional.
+                O exame clínico demissional é a avaliação médica realizada no encerramento do vínculo. Ele integra a lógica da NR-07 e fecha o ciclo de monitoramento iniciado no admissional, considerando os riscos ocupacionais e o histórico clínico do trabalhador.
               </p>
               <p>
-                A função do demissional é dupla: protege o trabalhador, que recebe registro da sua condição de saúde na saída, e protege a empresa, que cria evidência objetiva para defesa em eventual ação trabalhista posterior por doença ocupacional.
+                O demissional registra a avaliação de saúde ocupacional no encerramento do vínculo e permite comparar o resultado com o histórico dos exames realizados durante o contrato.
               </p>
             </>
           ),
@@ -70,16 +70,29 @@ export default function ExameDemissionalPage() {
           body: (
             <>
               <p>
-                O exame demissional deve ser feito <strong>até a data do efetivo desligamento</strong>. Na prática, o ideal é agendar antes do fechamento da rescisão para que o ASO demissional esteja pronto sem gerar atraso operacional.
+                Pela NR-07, o exame clínico demissional deve ser realizado <strong>em até 10 dias contados do término do contrato</strong>, desde que não exista uma hipótese válida de dispensa. A empresa pode antecipar o agendamento por organização interna, mas não deve apresentar a data do desligamento como limite legal.
               </p>
               <p>
-                Quando a empresa deixa o exame para o fim, costuma criar três problemas ao mesmo tempo:
+                Deixar o fluxo sem responsável até o último momento costuma criar três problemas ao mesmo tempo:
               </p>
               <ul>
-                <li>verbas rescisórias pressionadas por prazo;</li>
-                <li>evento trabalhista enviado com pressa ou com lacuna documental;</li>
+                <li>agenda clínica incompatível com o prazo normativo;</li>
+                <li>informação enviada com pressa ou com lacuna documental;</li>
                 <li>fragilidade na prova do estado de saúde do trabalhador na saída.</li>
               </ul>
+            </>
+          ),
+        },
+        {
+          title: 'Dispensa do exame e envio ao eSocial',
+          body: (
+            <>
+              <p>
+                A dispensa depende da data do <strong>exame clínico ocupacional mais recente</strong>: menos de 135 dias para organizações de grau de risco 1 ou 2 e menos de 90 dias para grau de risco 3 ou 4. Não basta conferir se existe um ASO antigo; é preciso validar a data e o enquadramento correto da empresa.
+              </p>
+              <p>
+                Quando o exame clínico demissional é dispensado nos termos da NR-07, não existe um novo ASO demissional. Por isso, conforme a orientação oficial do eSocial, também não é enviado um evento S-2220 de exame demissional apenas para registrar a dispensa.
+              </p>
             </>
           ),
         },
@@ -114,7 +127,7 @@ export default function ExameDemissionalPage() {
                 <li><strong>Indício de doença ocupacional:</strong> pode haver reflexo em CAT, estabilidade e análise jurídica mais cuidadosa.</li>
               </ol>
               <p>
-                Justamente por isso, pular o demissional costuma ser mais caro do que fazer o exame certo no prazo certo.
+                Um resultado alterado não deve ser tratado como mera etapa da rescisão. Ele pede registro clínico e avaliação do possível vínculo com as exposições ocupacionais.
               </p>
             </>
           ),
@@ -130,6 +143,31 @@ export default function ExameDemissionalPage() {
             </ul>
           ),
         },
+        {
+          title: 'Fontes oficiais consultadas',
+          body: (
+            <ul>
+              <li>
+                <a
+                  href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-07-atualizada-2022.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  NR-07: Programa de Controle Médico de Saúde Ocupacional (Ministério do Trabalho e Emprego)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.gov.br/esocial/pt-br/empresas/perguntas-frequentes/perguntas-frequentes-producao-empresas-e-ambiente-de-testes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Perguntas frequentes dos eventos de SST no eSocial
+                </a>
+              </li>
+            </ul>
+          ),
+        },
       ]}
       faq={[
         {
@@ -138,11 +176,11 @@ export default function ExameDemissionalPage() {
         },
         {
           q: 'Exame demissional pode ser feito depois da saída?',
-          a: 'O caminho correto é fazer até a data do desligamento. Fazer depois não resolve bem o vazio documental entre a saída e a realização do exame.',
+          a: 'Sim. A NR-07 permite a realização em até 10 dias contados do término do contrato, quando o exame não for dispensado. Antecipar pode facilitar a operação, mas não muda o prazo normativo.',
         },
         {
           q: 'Quando a empresa pode dispensar o demissional?',
-          a: 'Quando o exame clínico ocupacional mais recente estiver dentro da janela da NR-07 e ainda refletir os riscos reais da função exercida até a saída.',
+          a: 'Quando o exame clínico ocupacional mais recente tiver ocorrido há menos de 135 dias, para grau de risco 1 ou 2, ou há menos de 90 dias, para grau de risco 3 ou 4.',
         },
         {
           q: 'O que acontece se o trabalhador se recusar a fazer o exame?',
@@ -154,11 +192,11 @@ export default function ExameDemissionalPage() {
         },
       ]}
       sidebarTitle="Precisa agendar o exame demissional?"
-      sidebarHook="Depois de entender a regra, o próximo passo é não travar a rescisão. A página de agendamento concentra o formulário e o contato comercial para exame demissional."
+      sidebarHook="Informe a função, a data do desligamento e o último exame ocupacional para organizar o atendimento dentro do prazo aplicável."
       sidebarCtaLabel="Agendar exame demissional"
-      sidebarCtaHref="/saude/exame-demissional-guia"
+      sidebarCtaHref="/contato"
       related={[
-        { label: 'Agendar exame demissional', href: '/saude/exame-demissional-guia' },
+        { label: 'Agendar exame demissional', href: '/contato' },
         { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },

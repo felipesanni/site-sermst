@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function MedicoDoTrabalhoPage() {
   return (
     <BlockbusterArticle
-      hubLabel="Hub Saúde Ocupacional"
+      hubLabel="Saúde Ocupacional"
       hubLabelShort="Voltar para saúde"
       hubHref="/saude"
       pageUrl="https://sermst.com.br/saude/medico-do-trabalho"
@@ -33,8 +33,8 @@ export default function MedicoDoTrabalhoPage() {
         dateModified: '2026-07-02',
       }}
       readingTime="9 min"
-      h1="Médico do trabalho: o que faz, quando contratar e como protege a empresa"
-      intro="O médico do trabalho conecta saúde do trabalhador, PCMSO, ASO, exames ocupacionais e eSocial. Para a empresa, ele ajuda a transformar risco médico em processo documentado, defensável e coerente com a operação."
+      h1="Médico do trabalho: o que faz e quando a empresa precisa desse profissional"
+      intro="O médico do trabalho atua no PCMSO, nos exames ocupacionais, na emissão de ASOs e na análise dos dados de saúde relacionados aos riscos da empresa. Seu trabalho deve permanecer coerente com o PGR e com os registros enviados ao eSocial."
       quickAnswer={
         <p>
           O médico do trabalho avalia aptidão ocupacional, conduz exames clínicos, emite ASO, participa do PCMSO, orienta medidas de saúde ocupacional e ajuda a empresa a monitorar riscos que podem gerar afastamento, CAT ou passivo.
@@ -185,7 +185,7 @@ export default function MedicoDoTrabalhoPage() {
           a: 'Sim. O ASO é emitido ao final do exame ocupacional, com conclusão sobre aptidão ou inaptidão para a função.',
         },
         {
-          q: 'Toda empresa precisa de medico do trabalho?',
+          q: 'Toda empresa precisa de médico do trabalho?',
           a: 'Empresas com empregados precisam cumprir a rotina de saúde ocupacional prevista na NR-07, incluindo exames ocupacionais e ASO quando aplicável.',
         },
         {
@@ -202,7 +202,7 @@ export default function MedicoDoTrabalhoPage() {
         },
         {
           q: 'Qual a relação entre médico do trabalho e NR-07?',
-          a: 'A NR-07 estrutura o PCMSO e a rotina de exames ocupacionais. O médico atua para transformar essa exigência em acompanhamento de saúde coerente com os riscos.',
+          a: 'A NR-07 estrutura o PCMSO e a rotina de exames ocupacionais. O médico planeja e executa o acompanhamento de saúde conforme os riscos da organização.',
         },
         {
           q: 'A empresa precisa de médico do trabalho mesmo sem risco alto?',

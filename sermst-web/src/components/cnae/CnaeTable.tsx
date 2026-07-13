@@ -124,7 +124,7 @@ export function CnaeTable({ data }: CnaeTableProps) {
       <p className="text-xs text-slate-500">
         {isSearching
           ? `${filtered.length} resultado${filtered.length !== 1 ? 's' : ''} para "${query}"`
-          : `${data.length.toLocaleString('pt-BR')} subclasses — página ${page} de ${totalPages}`}
+          : `${data.length.toLocaleString('pt-BR')} subclasses, página ${page} de ${totalPages}`}
       </p>
 
       {isSearching && filtered.length > 0 && (

@@ -25,7 +25,7 @@ const faqSchema = {
       name: 'O exame admissional precisa de jejum?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Não. O exame clínico admissional (consulta com o médico do trabalho que resulta no ASO) não exige jejum. Jejum só é necessário quando o PCMSO da empresa determina exames complementares que pedem restrição alimentar, como glicemia em jejum ou lipidograma. Hemograma simples, audiometria, espirometria e a maior parte dos complementares não exigem jejum.',
+        text: 'O exame clínico admissional não exige jejum. A restrição alimentar só se aplica quando há exame complementar com preparo específico, como glicemia de jejum. O perfil lipídico geralmente pode ser colhido sem jejum, mas o médico ou o laboratório pode orientar preparo diferente em situações específicas.',
       },
     },
     {
@@ -33,7 +33,7 @@ const faqSchema = {
       name: 'Quanto tempo de jejum para exame admissional com coleta de sangue?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Para exames que exigem jejum, o padrão é de 8 a 12 horas sem ingestão de alimentos. Água é permitida durante o jejum. O tempo exato depende do exame solicitado. A clínica deve informar no momento do agendamento quais exames exigem jejum.',
+        text: 'O tempo depende do exame e da orientação do laboratório. A glicemia de jejum costuma exigir 8 horas. Não adote 12 horas como regra para toda coleta; confirme o preparo no agendamento.',
       },
     },
     {
@@ -41,7 +41,7 @@ const faqSchema = {
       name: 'O candidato pode tomar água no jejum para exame admissional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Água é permitida durante o jejum. Café, leite, sucos e chás com açúcar devem ser evitados quando há coleta de glicemia ou lipidograma.',
+        text: 'Em geral, água em quantidade moderada é permitida, mas o candidato deve seguir a orientação recebida para os exames solicitados. Café, leite, sucos e chás quebram o jejum.',
       },
     },
     {
@@ -49,7 +49,7 @@ const faqSchema = {
       name: 'O que acontece se o candidato não fizer jejum?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Se o exame exige jejum e o candidato não fez, a coleta de sangue pode precisar ser reagendada. Isso atrasa a emissão do ASO e, consequentemente, a admissão. Para evitar isso, informe o candidato com antecedência sobre quais exames serão realizados.',
+        text: 'Informe a clínica antes da coleta. Dependendo do exame, ela poderá realizar a coleta, registrar o tempo desde a última refeição ou reagendar somente o teste que exige jejum.',
       },
     },
   ],
@@ -61,7 +61,7 @@ export default function ExameAdmissionalJejumPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlockbusterArticle
         coverImage={{ src: '/images/site/sermst-estrutura-medicina-ocupacional.png', alt: 'Exame admissional com coleta de sangue e jejum' }}
-        hubLabel="Hub de Saúde Ocupacional"
+        hubLabel="Saúde Ocupacional"
         hubLabelShort="← Saúde Ocupacional"
         hubHref="/saude"
         pageUrl="https://sermst.com.br/saude/exame-admissional-precisa-de-jejum"
@@ -71,30 +71,30 @@ export default function ExameAdmissionalJejumPage() {
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
           url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
           datePublished: '2026-06-01',
-          dateModified: '2026-06-01',
+          dateModified: '2026-07-13',
         }}
         h1="Exame admissional precisa de jejum?"
-        intro="Não. O exame clínico admissional — a consulta com o médico do trabalho que gera o ASO — não exige jejum. O candidato pode se alimentar normalmente. Jejum só é necessário quando o PCMSO da empresa determina exames complementares específicos que pedem restrição alimentar, como glicemia em jejum ou lipidograma. A grande maioria dos complementares (hemograma, audiometria, espirometria) também não exige jejum."
+        intro="O exame clínico admissional não exige jejum. A necessidade aparece apenas quando há exame complementar com preparo específico, como glicemia de jejum. O perfil lipídico já não exige 12 horas de jejum como regra geral, e o preparo deve ser confirmado com a clínica para a lista exata de exames solicitados."
         sections={[
           {
             title: 'Resposta direta',
             body: (
               <>
                 <p>
-                  O <strong>exame clínico admissional</strong> — a consulta com o médico do trabalho que resulta no ASO — <strong>não exige jejum</strong>. O candidato pode se alimentar normalmente antes de ir à clínica.
+                  O <strong>exame clínico admissional</strong>, a consulta que resulta no ASO, <strong>não exige jejum</strong>. Se houver somente avaliação clínica, o candidato pode se alimentar normalmente.
                 </p>
                 <p>
-                  Jejum só é necessário quando o PCMSO da empresa prevê <strong>exames complementares específicos</strong> que dependem do estado metabólico em repouso. São poucos:
+                  Alguns exames complementares têm preparo próprio. Exemplos:
                 </p>
                 <ul>
-                  <li><strong>Glicemia em jejum</strong> — requer 8 horas sem comer (água permitida)</li>
-                  <li><strong>Lipidograma (colesterol total, HDL, LDL, triglicérides)</strong> — requer 12 horas sem comer (água permitida)</li>
+                  <li><strong>Glicemia de jejum</strong>: costuma exigir 8 horas sem alimentos.</li>
+                  <li><strong>Perfil lipídico</strong>: em geral pode ser colhido sem jejum, conforme o consenso das sociedades brasileiras; o médico pode pedir jejum em situações específicas.</li>
                 </ul>
                 <p>
-                  Os exames complementares mais comuns <strong>não exigem jejum</strong>: hemograma simples, função hepática e renal, audiometria, espirometria, acuidade visual e eletrocardiograma. O candidato chega normalmente alimentado para esses exames.
+                  Audiometria, espirometria, acuidade visual e eletrocardiograma não dependem de jejum alimentar. Para exames de sangue, confirme sempre o preparo do laboratório, pois a orientação varia conforme o método e a combinação de testes.
                 </p>
                 <p>
-                  A regra prática: quando houver dúvida, confirme com a clínica quais exames complementares serão realizados para aquele cargo. Se glicemia ou lipidograma estiverem na lista, oriente o candidato sobre o jejum com antecedência.
+                  A regra prática é simples: confira a lista do PCMSO e envie ao candidato a orientação fornecida pela clínica. Não use a mesma mensagem de jejum para todos os cargos.
                 </p>
               </>
             ),
@@ -107,7 +107,7 @@ export default function ExameAdmissionalJejumPage() {
                   É o <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong> da empresa, elaborado conforme a NR-07, que define quais exames complementares cada função precisa realizar. Funções com exposição a agentes químicos, físicos ou biológicos têm exames específicos; funções administrativas sem exposição a risco podem ter apenas o exame clínico.
                 </p>
                 <p>
-                  Sem PCMSO, a empresa não sabe quais exames pedir — e o candidato não sabe se precisa fazer jejum. Isso gera dois problemas: o candidato chega sem preparação e a admissão atrasa; ou a empresa faz exames desnecessários e paga mais do que precisa.
+                  Sem um PCMSO coerente com os riscos, o encaminhamento pode trazer exames insuficientes ou desnecessários. Isso também aumenta a chance de o candidato receber uma orientação de preparo errada.
                 </p>
               </>
             ),
@@ -118,8 +118,8 @@ export default function ExameAdmissionalJejumPage() {
               <ol>
                 <li><strong>Confirme com a clínica</strong> quais exames serão realizados para aquela função antes de comunicar o candidato.</li>
                 <li><strong>Informe por escrito</strong> (WhatsApp ou e-mail) se há necessidade de jejum, quanto tempo e o que é permitido beber.</li>
-                <li><strong>Inclua a informação na guia de encaminhamento</strong> — o documento que o candidato leva para a clínica deve indicar os exames previstos.</li>
-                <li><strong>Agende com antecedência</strong> exames que exigem jejum para o período da manhã — mais fácil para o candidato cumprir sem impactar o dia.</li>
+                <li><strong>Inclua a informação na guia de encaminhamento</strong>: o documento deve indicar os exames previstos.</li>
+                <li><strong>Facilite o preparo</strong>: quando houver jejum, ofereça um horário compatível e oriente pessoas com diabetes, gestantes, idosos ou outras condições a confirmar o preparo com a equipe de saúde.</li>
               </ol>
             ),
           },
@@ -128,10 +128,10 @@ export default function ExameAdmissionalJejumPage() {
             body: (
               <>
                 <p>
-                  O candidato que chega sem ter feito o jejum necessário não pode realizar o exame de sangue naquele momento. A coleta precisa ser reagendada. Isso atrasa a emissão do ASO — que é obrigatória antes do início das atividades — e pode travar a admissão por um ou dois dias.
+                  Se o candidato não seguiu o preparo, a clínica deve avaliar o exame solicitado antes de coletar. Em alguns casos, basta registrar a informação; em outros, o teste precisa ser reagendado. O candidato não deve prolongar o jejum por conta própria.
                 </p>
                 <p>
-                  Para empresas com alta rotatividade ou operações que dependem de contratação rápida, esse atraso tem custo real: o colaborador não começa, o RH retrabalha e a operação fica descoberta. A solução é simples: comunicação prévia e objetiva.
+                  Uma orientação específica evita retorno desnecessário e reduz retrabalho no RH. Ela também protege o candidato de jejuns longos sem indicação.
                 </p>
               </>
             ),
@@ -140,15 +140,15 @@ export default function ExameAdmissionalJejumPage() {
         faq={[
           {
             q: 'O exame admissional precisa de jejum?',
-            a: 'Não. O exame clínico admissional não exige jejum — o candidato pode se alimentar normalmente. Jejum só é necessário para exames complementares específicos como glicemia em jejum ou lipidograma, quando o PCMSO da empresa os exige para aquela função.',
+            a: 'O exame clínico admissional não exige jejum. A restrição só se aplica quando a lista inclui exame com preparo específico, como glicemia de jejum. O perfil lipídico geralmente pode ser colhido sem jejum, salvo orientação médica ou laboratorial diferente.',
           },
           {
             q: 'O candidato pode tomar água no jejum?',
-            a: 'Sim. Água é sempre permitida. Café, leite, suco e chá com açúcar devem ser evitados quando há coleta de glicemia ou lipídeos.',
+            a: 'Em geral, água em quantidade moderada é permitida. Siga a orientação da clínica, porque alguns procedimentos podem ter regras próprias. Café, leite, suco e chá quebram o jejum.',
           },
           {
             q: 'O que acontece se o candidato não fizer o jejum?',
-            a: 'A coleta de sangue precisa ser reagendada, atrasando o ASO e a admissão. Oriente o candidato com antecedência para evitar esse problema.',
+            a: 'Avise a clínica antes da coleta. Dependendo do exame, ela poderá coletar com o registro do preparo ou reagendar apenas o teste que realmente exige jejum.',
           },
           {
             q: 'Quais documentos o candidato deve levar no exame admissional?',
