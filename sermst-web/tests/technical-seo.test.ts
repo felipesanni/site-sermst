@@ -44,8 +44,9 @@ describe('technical SEO discovery files', () => {
     expect(layout).toContain('gtag/js?id=G-PZN2BZ7JFV');
     expect(layout).toContain("gtag('config', 'G-PZN2BZ7JFV');");
     expect(layout).not.toContain('send_page_view: false');
-    expect(tracker).toContain("window.gtag('event', 'page_view'");
-    expect(tracker).toContain('send_to: GA4_MEASUREMENT_ID');
+    expect(tracker).not.toContain("window.gtag('event', 'page_view'");
+    expect(tracker).not.toContain('send_to: GA4_MEASUREMENT_ID');
+    expect(tracker).toContain("event: 'virtual_page_view'");
     expect(tracker).toContain('hasSkippedInitialPageViewRef');
     expect(tracker).toContain('previousLocationRef.current === pageLocation');
   });

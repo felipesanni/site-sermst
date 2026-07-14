@@ -34,24 +34,14 @@ describe('RouteAnalyticsTracker', () => {
     expect(window.dataLayer).toEqual([])
   })
 
-  it('envia um page_view por navegacao interna e ignora rerenders da mesma URL', () => {
+  it('publica um evento tecnico por navegacao interna sem enviar page_view manual', () => {
     const view = render(<RouteAnalyticsTracker />)
 
     navigationState.pathname = '/servicos'
     view.rerender(<RouteAnalyticsTracker />)
     view.rerender(<RouteAnalyticsTracker />)
 
-    expect(window.gtag).toHaveBeenCalledTimes(1)
-    expect(window.gtag).toHaveBeenCalledWith(
-      'event',
-      'page_view',
-      expect.objectContaining({
-        send_to: 'G-PZN2BZ7JFV',
-        page_path: '/servicos',
-        page_location: 'http://localhost:3000/servicos',
-        page_referrer: 'http://localhost:3000/',
-      }),
-    )
+    expect(window.gtag).not.toHaveBeenCalled()
     expect(window.dataLayer).toEqual([
       expect.objectContaining({
         event: 'virtual_page_view',
@@ -60,17 +50,18 @@ describe('RouteAnalyticsTracker', () => {
     ])
   })
 
-  it('considera mudancas de query string como uma nova rota', () => {
+  it('publica novo evento tecnico quando a query string muda', () => {
     const view = render(<RouteAnalyticsTracker />)
 
     navigationState.queryString = 'origem=teste'
     view.rerender(<RouteAnalyticsTracker />)
 
-    expect(window.gtag).toHaveBeenCalledTimes(1)
-    expect(window.gtag).toHaveBeenCalledWith(
-      'event',
-      'page_view',
-      expect.objectContaining({ page_path: '/?origem=teste' }),
+    expect(window.gtag).not.toHaveBeenCalled()
+    expect(window.dataLayer).toContainEqual(
+      expect.objectContaining({
+        event: 'virtual_page_view',
+        page_path: '/?origem=teste',
+      }),
     )
   })
 })

@@ -3,8 +3,6 @@
 import { useEffect, useRef } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-const GA4_MEASUREMENT_ID = 'G-PZN2BZ7JFV'
-
 export function RouteAnalyticsTracker() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -21,8 +19,8 @@ export function RouteAnalyticsTracker() {
     const pageLocation = `${window.location.origin}${pagePath}`
     const pageReferrer = previousLocationRef.current || document.referrer || ''
 
-    // O gtag configurado no layout envia o page_view inicial automaticamente.
-    // Este componente cuida apenas das navegacoes internas do App Router.
+    // O Google tag envia o page_view inicial e detecta as mudancas de historico
+    // do App Router. Este componente publica apenas o evento tecnico no dataLayer.
     if (!hasSkippedInitialPageViewRef.current) {
       hasSkippedInitialPageViewRef.current = true
       previousLocationRef.current = pageLocation
@@ -42,16 +40,6 @@ export function RouteAnalyticsTracker() {
       page_location: pageLocation,
       page_referrer: pageReferrer,
     })
-
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'page_view', {
-        send_to: GA4_MEASUREMENT_ID,
-        page_title: document.title,
-        page_path: pagePath,
-        page_location: pageLocation,
-        page_referrer: pageReferrer,
-      })
-    }
 
     previousLocationRef.current = pageLocation
   }, [pathname, queryString])
