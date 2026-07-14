@@ -4,16 +4,11 @@ import Link from 'next/link';
 import {
   ArrowRight,
   BadgeCheck,
-  BellRing,
   CalendarCheck2,
   CheckCircle2,
-  CircleMinus,
-  ClipboardList,
   FileCheck2,
-  Layers3,
   ShieldCheck,
   Users,
-  WalletCards,
 } from 'lucide-react';
 import { AssinaturaPlans } from './assinatura-plans';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
@@ -173,38 +168,22 @@ const includedItems = [
   },
 ];
 
-const comparisonItems = [
+const subscriptionAdvantages = [
   {
-    icon: Layers3,
-    label: 'Organização',
-    avulsaTitle: 'Serviços separados',
-    avulsaText: 'Documentos, exames e envios são contratados em momentos diferentes.',
-    assinaturaTitle: 'Tudo no mesmo plano',
-    assinaturaText: 'Documentos, exames clínicos, vencimentos e eSocial ficam reunidos.',
+    title: 'Um único fluxo para contratar e acompanhar',
+    text: 'Plano, CNPJ, funcionários, unidades e dados da empresa seguem juntos, sem abrir uma nova cotação a cada necessidade.',
   },
   {
-    icon: ClipboardList,
-    label: 'Contratação',
-    avulsaTitle: 'Uma nova cotação a cada demanda',
-    avulsaText: 'Cada necessidade exige outra troca de informações e uma nova aprovação.',
-    assinaturaTitle: 'Um único fluxo de contratação',
-    assinaturaText: 'Plano, CNPJ, funcionários, unidades e pagamento entram no mesmo pedido.',
+    title: 'Documentos, exames e eSocial reunidos',
+    text: 'A empresa deixa de tratar cada obrigação isoladamente e passa a visualizar o escopo contratado em um só lugar.',
   },
   {
-    icon: BellRing,
-    label: 'Acompanhamento',
-    avulsaTitle: 'Controle baseado em lembretes',
-    avulsaText: 'A equipe precisa perceber vencimentos e pendências antes que virem urgência.',
-    assinaturaTitle: 'Rotina acompanhada',
-    assinaturaText: 'Os prazos entram em uma rotina recorrente, com mais clareza para a empresa.',
+    title: 'Prazos dentro de uma rotina recorrente',
+    text: 'Vencimentos e pendências deixam de depender apenas de lembretes soltos do RH ou de providências tomadas na urgência.',
   },
   {
-    icon: WalletCards,
-    label: 'Orçamento',
-    avulsaTitle: 'Custos espalhados pelo ano',
-    avulsaText: 'As despesas aparecem em blocos separados, conforme cada demanda surge.',
-    assinaturaTitle: 'Mensalidade previsível',
-    assinaturaText: 'A SST vira uma despesa organizada, com escopo definido e fácil de acompanhar.',
+    title: 'Mais previsibilidade para o orçamento',
+    text: 'Até 99 funcionários, a empresa vê a simulação do plano. A partir de 100, o comercial prepara uma proposta conforme a operação.',
   },
 ];
 
@@ -314,143 +293,58 @@ export default function AssinaturasPage() {
         aria-labelledby="comparativo-assinatura"
         className="border-y border-slate-200 bg-slate-50 px-6 py-20 lg:px-8 lg:py-24"
       >
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-center xl:gap-14">
+        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center xl:gap-16">
           <div className="max-w-xl">
-            <span className="kicker">Compra avulsa x assinatura</span>
+            <span className="kicker">Por que assinar</span>
             <h2
               id="comparativo-assinatura"
               className="mb-5 text-3xl font-black leading-tight text-brand-900 md:text-5xl"
             >
-              Por que contratar SST por assinatura
+              Menos contratações soltas. Mais continuidade.
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
-              A assinatura troca contratações soltas por uma rotina contínua. A empresa ganha
-              previsibilidade, sabe o que está incluído no plano e envia os dados necessários em um
-              único fluxo.
+              Na compra avulsa, cada documento, exame ou envio pode virar uma nova demanda. A
+              assinatura reúne o que foi contratado e coloca a SST dentro de uma rotina mais fácil
+              de acompanhar.
             </p>
 
             <div className="mt-8 border-l-2 border-accent-pink pl-5">
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-900">
-                O que muda na prática
-              </p>
-              <p className="mt-2 leading-relaxed text-slate-600">
-                Menos tempo abrindo cotações e mais clareza para acompanhar a SST ao longo do ano.
+              <p className="font-black leading-relaxed text-brand-900">
+                A empresa sabe o que está incluído, quem acompanha e qual é o próximo passo.
               </p>
             </div>
           </div>
 
           <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_60px_-32px_rgba(11,19,60,0.38)]">
-            <table className="w-full border-collapse">
-              <caption className="sr-only">
-                Comparação entre a contratação avulsa de SST e a assinatura SERMST
-              </caption>
-              <thead className="hidden lg:table-header-group">
-                <tr>
-                  <th
-                    scope="col"
-                    className="w-36 bg-slate-100 px-5 py-6 text-left text-xs font-black uppercase tracking-[0.14em] text-slate-500"
-                  >
-                    Compare
-                  </th>
-                  <th
-                    scope="col"
-                    className="bg-slate-200/70 px-6 py-6 text-left text-sm font-black uppercase tracking-[0.12em] text-brand-900"
-                  >
-                    Compra avulsa
-                  </th>
-                  <th scope="col" className="bg-brand-900 px-6 py-5 text-left text-white">
-                    <span className="mb-2 block text-sm font-black uppercase tracking-[0.12em]">
-                      Assinatura SERMST
-                    </span>
-                    <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-white/90">
-                      Mais previsibilidade
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonItems.map((item, index) => {
-                  const Icon = item.icon;
-                  return (
-                    <tr
-                      key={item.label}
-                      className="block border-t border-slate-200 first:border-t-0 lg:table-row lg:border-0"
-                    >
-                      <th
-                        scope="row"
-                        className="block bg-slate-100 px-5 py-4 text-left align-top lg:table-cell lg:w-36 lg:border-t lg:border-slate-200 lg:py-6"
-                      >
-                        <div className="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-4">
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-brand-900 shadow-sm">
-                            <Icon className="h-5 w-5" aria-hidden="true" />
-                          </span>
-                          <div>
-                            <span className="block text-[0.65rem] font-black uppercase tracking-[0.15em] text-slate-400">
-                              0{index + 1}
-                            </span>
-                            <span className="mt-1 block text-sm font-black text-brand-900">
-                              {item.label}
-                            </span>
-                          </div>
-                        </div>
-                      </th>
+            <div className="px-6 py-7 sm:px-8 sm:py-8">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-accent-pink">
+                O que muda no dia a dia
+              </p>
+              <ul className="mt-4 divide-y divide-slate-200">
+                {subscriptionAdvantages.map((item) => (
+                  <li key={item.title} className="flex gap-4 py-5 first:pt-3 last:pb-1">
+                    <CheckCircle2
+                      className="mt-0.5 h-6 w-6 shrink-0 text-accent-pink"
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <h3 className="font-black leading-snug text-brand-900">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                      <td className="block px-5 py-5 align-top lg:table-cell lg:border-l lg:border-t lg:border-slate-200 lg:px-6 lg:py-6">
-                        <span className="mb-3 inline-flex items-center gap-2 text-[0.68rem] font-black uppercase tracking-[0.14em] text-slate-500 lg:hidden">
-                          <CircleMinus className="h-4 w-4" aria-hidden="true" />
-                          Compra avulsa
-                        </span>
-                        <div className="flex gap-3">
-                          <CircleMinus
-                            className="mt-0.5 hidden h-5 w-5 shrink-0 text-slate-400 lg:block"
-                            aria-hidden="true"
-                          />
-                          <div>
-                            <p className="font-black leading-snug text-brand-900">
-                              {item.avulsaTitle}
-                            </p>
-                            <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                              {item.avulsaText}
-                            </p>
-                          </div>
-                        </div>
-                      </td>
-
-                      <td className="block border-t border-brand-500/10 bg-brand-500/[0.045] px-5 py-5 align-top lg:table-cell lg:border-l lg:border-t lg:border-brand-500/15 lg:px-6 lg:py-6">
-                        <span className="mb-3 inline-flex items-center gap-2 text-[0.68rem] font-black uppercase tracking-[0.14em] text-brand-500 lg:hidden">
-                          <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
-                          Assinatura SERMST
-                        </span>
-                        <div className="flex gap-3">
-                          <CheckCircle2
-                            className="mt-0.5 hidden h-5 w-5 shrink-0 text-accent-pink lg:block"
-                            aria-hidden="true"
-                          />
-                          <div>
-                            <p className="font-black leading-snug text-brand-900">
-                              {item.assinaturaTitle}
-                            </p>
-                            <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                              {item.assinaturaText}
-                            </p>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-
-            <div className="flex flex-col gap-5 bg-brand-900 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between lg:px-8">
+            <div className="flex flex-col gap-5 bg-brand-900 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-8">
               <div>
-                <p className="text-lg font-black">Pronto para organizar sua rotina de SST?</p>
+                <p className="text-lg font-black">Veja qual caminho atende sua empresa</p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-300">
-                  Simule o valor de acordo com o número de funcionários.
+                  Simulação direta até 99 funcionários. Proposta comercial a partir de 100.
                 </p>
               </div>
               <Link href="#planos" className="btn-primary-safe shrink-0">
-                Ver planos e valores
+                Ver os planos
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </Link>
             </div>

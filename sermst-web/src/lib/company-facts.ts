@@ -14,6 +14,11 @@ export const companyFacts = {
     label: 'empresas atendidas',
     phrase: 'mais de 3.500 empresas atendidas',
   },
+  accreditedClinics: {
+    value: '+900',
+    label: 'clínicas credenciadas',
+    phrase: 'mais de 900 clínicas credenciadas em todo o Brasil',
+  },
   avoidedFines: {
     value: '+R$ 35 mi',
     label: 'economizados em multas',

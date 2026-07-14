@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { type FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 import {
   AlertCircle,
   ArrowRight,
   BadgeCheck,
+  BriefcaseBusiness,
   Building2,
   CalendarClock,
   CheckCircle2,
@@ -12,7 +13,11 @@ import {
   ChevronUp,
   ClipboardCheck,
   Loader2,
+  Mail,
+  Phone,
+  Send,
   ShieldCheck,
+  UserRound,
   X,
 } from 'lucide-react';
 import { AssinaturaContractModal } from './assinatura-contract-modal';
@@ -78,6 +83,7 @@ type StoredAttribution = {
 };
 
 const employeeShortcuts = [1, 5, 10, 20, 50, 100, 300, 500, 1000];
+const COMMERCIAL_QUOTE_MIN_EMPLOYEES = 100;
 const ATTRIBUTION_KEY = 'sermst_attribution_v1';
 const FORM_STARTED_AT_KEY = 'sermst_form_started_at_v1';
 
@@ -277,6 +283,374 @@ function hasAttributionSignal(snapshot: AttributionSnapshot) {
   );
 }
 
+type CommercialSubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
+
+type CommercialQuoteModalProps = {
+  plan: Plan;
+  employees: number;
+  cnpj: string;
+  cnpjInfo: CnpjLookupResponse | null;
+  companyName: string;
+  cnaeEntry: CnaeEntry | null;
+  attribution: StoredAttribution | null;
+  conversionPage: string;
+  formStartedAt: string;
+  onClose: () => void;
+};
+
+function buildAttributionPayload(
+  attribution: StoredAttribution | null,
+  conversionPage: string,
+) {
+  const first = attribution?.first;
+  const last = attribution?.last;
+
+  return {
+    landing_page: first?.page || conversionPage,
+    conversion_page: conversionPage,
+    original_referrer: first?.referrer || '',
+    utm_source: last?.utm_source || '',
+    utm_medium: last?.utm_medium || '',
+    utm_campaign: last?.utm_campaign || '',
+    utm_content: last?.utm_content || '',
+    utm_term: last?.utm_term || '',
+    gclid: last?.gclid || '',
+    fbclid: last?.fbclid || '',
+    utm_id: last?.utm_id || '',
+    utm_source_first: first?.utm_source || '',
+    utm_medium_first: first?.utm_medium || '',
+    utm_campaign_first: first?.utm_campaign || '',
+    utm_content_first: first?.utm_content || '',
+    utm_term_first: first?.utm_term || '',
+    gclid_first: first?.gclid || '',
+    fbclid_first: first?.fbclid || '',
+    utm_id_first: first?.utm_id || '',
+    attribution_first_captured_at: first?.capturedAt || '',
+    attribution_last_captured_at: last?.capturedAt || '',
+  };
+}
+
+function formatCommercialAddress(address?: AddressPayload) {
+  if (!address) return '';
+
+  return [
+    address.logradouro,
+    address.numero,
+    address.complemento,
+    address.bairro,
+    address.cidade,
+    address.estado,
+    address.cep,
+  ]
+    .filter(Boolean)
+    .join(', ');
+}
+
+function AssinaturaCommercialModal({
+  plan,
+  employees,
+  cnpj,
+  cnpjInfo,
+  companyName,
+  cnaeEntry,
+  attribution,
+  conversionPage,
+  formStartedAt,
+  onClose,
+}: CommercialQuoteModalProps) {
+  const [submitStatus, setSubmitStatus] = useState<CommercialSubmitStatus>('idle');
+  const [submitError, setSubmitError] = useState('');
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') onClose();
+    }
+
+    window.addEventListener('keydown', handleEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [onClose]);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitStatus('submitting');
+    setSubmitError('');
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const responsibleName = String(formData.get('nome') || '').trim();
+    const company = String(formData.get('empresa') || '').trim();
+    const email = String(formData.get('email') || '').trim().toLowerCase();
+    const phone = String(formData.get('telefone') || '').trim();
+    const role = String(formData.get('cargo') || '').trim();
+    const informedCnpj = String(formData.get('cnpj') || '').trim();
+    const address = formatCommercialAddress(cnpjInfo?.endereco);
+    const riskLabel = cnaeEntry ? grauRiscoInfo[cnaeEntry.grauRisco]?.label || '' : '';
+
+    const message = [
+      'Solicitação de proposta corporativa de SST pela página de assinaturas.',
+      `Plano de interesse: ${plan.title}.`,
+      `Funcionários informados: ${employees}.`,
+      informedCnpj ? `CNPJ: ${informedCnpj}.` : '',
+      cnpjInfo?.cnaeFiscal
+        ? `CNAE: ${cnpjInfo.cnaeFiscal}${cnpjInfo.cnaeDescricao ? ` - ${cnpjInfo.cnaeDescricao}` : ''}.`
+        : '',
+      riskLabel ? `Grau de risco identificado: ${riskLabel}.` : '',
+      address ? `Endereço localizado: ${address}.` : '',
+      role ? `Cargo do contato: ${role}.` : '',
+      'O valor deve ser definido pelo comercial após análise do escopo, das unidades, das funções e do volume de exames.',
+    ]
+      .filter(Boolean)
+      .join('\n');
+
+    const payload = {
+      nome: responsibleName,
+      empresa: company,
+      email,
+      telefone: phone,
+      porte: `${employees} funcionários`,
+      dor: 'proposta-corporativa-sst',
+      mensagem: message,
+      website: String(formData.get('website') || ''),
+      form_started_at: formStartedAt || String(Date.now() - 5000),
+      lead_type: 'assinatura-corporativa',
+      cargo: role,
+      plano_assinatura: plan.title,
+      funcionarios: String(employees),
+      cnpj: digits(informedCnpj),
+      cnae: cnpjInfo?.cnaeFiscal || '',
+      grau_risco: cnaeEntry ? String(cnaeEntry.grauRisco) : '',
+      ...buildAttributionPayload(attribution, conversionPage),
+    };
+
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data?.error || 'Não foi possível enviar seus dados.');
+      }
+
+      setSubmitStatus('success');
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'subscription_commercial_lead_generated',
+        plan_id: plan.id,
+        plan_name: plan.title,
+        employees,
+        cnae_codigo: cnpjInfo?.cnaeFiscal || '',
+      });
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitError(
+        error instanceof Error ? error.message : 'Ocorreu um erro ao enviar seus dados.',
+      );
+    }
+  }
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-brand-950/75 p-0 backdrop-blur-sm sm:items-center sm:p-6">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="commercial-quote-title"
+        className="max-h-[96vh] w-full max-w-2xl overflow-y-auto rounded-t-[2rem] bg-white shadow-2xl sm:max-h-[90vh] sm:rounded-[2rem]"
+      >
+        <div className="sticky top-0 z-10 flex items-start justify-between gap-6 border-b border-slate-200 bg-white/95 px-6 py-5 backdrop-blur sm:px-8">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-accent-pink">
+              Atendimento comercial
+            </p>
+            <h3 id="commercial-quote-title" className="mt-2 text-2xl font-black text-brand-900 sm:text-3xl">
+              Proposta corporativa de SST
+            </h3>
+          </div>
+          <button
+            ref={closeButtonRef}
+            type="button"
+            onClick={onClose}
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-100 text-brand-900 transition hover:bg-slate-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-900"
+            aria-label="Fechar proposta corporativa"
+          >
+            <X className="h-5 w-5" aria-hidden="true" />
+          </button>
+        </div>
+
+        {submitStatus === 'success' ? (
+          <div className="px-6 py-12 text-center sm:px-10 sm:py-16">
+            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+              <CheckCircle2 className="h-9 w-9" aria-hidden="true" />
+            </span>
+            <h4 className="mt-6 text-3xl font-black text-brand-900">Solicitação recebida</h4>
+            <p className="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-slate-600">
+              Nosso comercial recebeu seus dados e entrará em contato o mais rápido possível para entender a operação e preparar a proposta.
+            </p>
+            <button type="button" onClick={onClose} className="btn-primary-safe mt-8">
+              Voltar aos planos
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="px-6 py-7 sm:px-8 sm:py-8">
+            <div className="rounded-2xl border border-brand-900/10 bg-slate-50 p-5">
+              <div className="flex flex-wrap gap-2">
+                <span className="rounded-full bg-brand-900 px-3 py-1.5 text-xs font-black text-white">
+                  {employees} funcionários
+                </span>
+                <span className="rounded-full bg-white px-3 py-1.5 text-xs font-black text-brand-900 shadow-sm">
+                  {plan.title}
+                </span>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                O valor será definido depois que a equipe avaliar unidades, funções, riscos e volume de atendimento. Preencha apenas os dados de contato.
+              </p>
+            </div>
+
+            <div className="mt-7 grid gap-5 sm:grid-cols-2">
+              <label className="block sm:col-span-2">
+                <span className="mb-2 block text-sm font-black text-brand-900">Empresa *</span>
+                <span className="relative block">
+                  <Building2 className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+                  <input
+                    name="empresa"
+                    type="text"
+                    required
+                    defaultValue={companyName}
+                    autoComplete="organization"
+                    className="w-full rounded-xl border border-slate-300 py-3.5 pl-12 pr-4 text-brand-900 outline-none transition focus:border-brand-900 focus:ring-2 focus:ring-brand-900/10"
+                  />
+                </span>
+              </label>
+
+              <label className="block">
+                <span className="mb-2 block text-sm font-black text-brand-900">Nome completo *</span>
+                <span className="relative block">
+                  <UserRound className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+                  <input
+                    name="nome"
+                    type="text"
+                    required
+                    autoComplete="name"
+                    className="w-full rounded-xl border border-slate-300 py-3.5 pl-12 pr-4 text-brand-900 outline-none transition focus:border-brand-900 focus:ring-2 focus:ring-brand-900/10"
+                  />
+                </span>
+              </label>
+
+              <label className="block">
+                <span className="mb-2 block text-sm font-black text-brand-900">Cargo *</span>
+                <span className="relative block">
+                  <BriefcaseBusiness className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+                  <input
+                    name="cargo"
+                    type="text"
+                    required
+                    autoComplete="organization-title"
+                    className="w-full rounded-xl border border-slate-300 py-3.5 pl-12 pr-4 text-brand-900 outline-none transition focus:border-brand-900 focus:ring-2 focus:ring-brand-900/10"
+                  />
+                </span>
+              </label>
+
+              <label className="block">
+                <span className="mb-2 block text-sm font-black text-brand-900">E-mail corporativo *</span>
+                <span className="relative block">
+                  <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    className="w-full rounded-xl border border-slate-300 py-3.5 pl-12 pr-4 text-brand-900 outline-none transition focus:border-brand-900 focus:ring-2 focus:ring-brand-900/10"
+                  />
+                </span>
+              </label>
+
+              <label className="block">
+                <span className="mb-2 block text-sm font-black text-brand-900">Telefone ou WhatsApp *</span>
+                <span className="relative block">
+                  <Phone className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+                  <input
+                    name="telefone"
+                    type="tel"
+                    required
+                    autoComplete="tel"
+                    className="w-full rounded-xl border border-slate-300 py-3.5 pl-12 pr-4 text-brand-900 outline-none transition focus:border-brand-900 focus:ring-2 focus:ring-brand-900/10"
+                  />
+                </span>
+              </label>
+
+              <label className="block sm:col-span-2">
+                <span className="mb-2 block text-sm font-black text-brand-900">CNPJ</span>
+                <input
+                  name="cnpj"
+                  type="text"
+                  inputMode="numeric"
+                  defaultValue={cnpj}
+                  placeholder="Opcional se ainda não tiver informado"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-brand-900 outline-none transition focus:border-brand-900 focus:ring-2 focus:ring-brand-900/10"
+                />
+              </label>
+            </div>
+
+            <input
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              className="sr-only"
+              aria-hidden="true"
+            />
+
+            <label className="mt-6 flex items-start gap-3 text-sm leading-relaxed text-slate-600">
+              <input
+                type="checkbox"
+                required
+                className="mt-1 h-4 w-4 shrink-0 accent-brand-900"
+              />
+              <span>Autorizo o contato da SERMST sobre esta solicitação de proposta.</span>
+            </label>
+
+            {submitStatus === 'error' ? (
+              <div role="alert" className="mt-5 flex gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                <AlertCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                <p>{submitError}</p>
+              </div>
+            ) : null}
+
+            <button
+              type="submit"
+              disabled={submitStatus === 'submitting'}
+              className="btn-primary-safe mt-7 w-full disabled:cursor-wait disabled:opacity-70"
+            >
+              {submitStatus === 'submitting' ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
+                  Enviando dados...
+                </>
+              ) : (
+                <>
+                  <Send className="h-5 w-5" aria-hidden="true" />
+                  Enviar para o comercial
+                </>
+              )}
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function AssinaturaPlans() {
   const [employees, setEmployees] = useState(10);
   const [cnpj, setCnpj] = useState('');
@@ -285,6 +659,7 @@ export function AssinaturaPlans() {
   const [cnpjInfo, setCnpjInfo] = useState<CnpjLookupResponse | null>(null);
   const [companyName, setCompanyName] = useState('');
   const [selectedPlanId, setSelectedPlanId] = useState<PlanId | null>(null);
+  const [commercialPlanId, setCommercialPlanId] = useState<PlanId | null>(null);
   const [attribution, setAttribution] = useState<StoredAttribution | null>(null);
   const [conversionPage, setConversionPage] = useState('');
   const [formStartedAt, setFormStartedAt] = useState('');
@@ -292,6 +667,7 @@ export function AssinaturaPlans() {
   const lastCnpj = useRef('');
 
   const normalizedEmployees = clampEmployees(employees);
+  const isCommercialQuote = normalizedEmployees >= COMMERCIAL_QUOTE_MIN_EMPLOYEES;
   const cnaeEntry = useMemo(
     () => (cnpjInfo?.cnaeFiscal ? findCnaeEntry(cnpjInfo.cnaeFiscal) : null),
     [cnpjInfo],
@@ -317,6 +693,9 @@ export function AssinaturaPlans() {
 
   const selectedPlan = selectedPlanId
     ? pricing.find((plan) => plan.id === selectedPlanId) ?? null
+    : null;
+  const commercialPlan = commercialPlanId
+    ? plans.find((plan) => plan.id === commercialPlanId) ?? null
     : null;
 
   useEffect(() => {
@@ -433,8 +812,8 @@ export function AssinaturaPlans() {
         </div>
 
         <div className="mb-10 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-8">
-          <div className="grid gap-8 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
-            <div className="space-y-6">
+          <div className="grid min-w-0 gap-8 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
+            <div className="min-w-0 space-y-6">
               <div>
                 <label
                   htmlFor="subscription-cnpj"
@@ -452,7 +831,7 @@ export function AssinaturaPlans() {
                     onChange={(event) => handleCnpjChange(event.target.value)}
                     placeholder="00.000.000/0001-00"
                     maxLength={18}
-                    className="w-full rounded-2xl border-2 border-slate-200 bg-white py-4 pl-12 pr-12 text-base font-semibold text-brand-900 placeholder-slate-400 shadow-sm transition-all focus:border-brand-900 focus:outline-none"
+                    className="min-w-0 w-full rounded-2xl border-2 border-slate-200 bg-white py-4 pl-12 pr-12 text-base font-semibold text-brand-900 placeholder-slate-400 shadow-sm transition-all focus:border-brand-900 focus:outline-none"
                   />
                   {cnpjStatus === 'loading' ? (
                     <Loader2 className="absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 animate-spin text-slate-400" />
@@ -539,13 +918,15 @@ export function AssinaturaPlans() {
                   </button>
                 </div>
 
-                <p className="mt-3 text-sm font-semibold text-slate-500">
-                  Simulação para {normalizedEmployees} funcionário{normalizedEmployees === 1 ? '' : 's'}.
+                <p className="mt-3 text-sm font-semibold text-slate-500" aria-live="polite">
+                  {isCommercialQuote
+                    ? `A partir de ${COMMERCIAL_QUOTE_MIN_EMPLOYEES} funcionários, o atendimento segue com proposta personalizada.`
+                    : `Simulação para ${normalizedEmployees} funcionário${normalizedEmployees === 1 ? '' : 's'}.`}
                 </p>
               </div>
             </div>
 
-            <div>
+            <div className="min-w-0">
               <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-slate-500">
                 Atalhos de porte
               </p>
@@ -582,8 +963,14 @@ export function AssinaturaPlans() {
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-slate-200 bg-white p-4">
                   <CalendarClock className="mb-3 h-5 w-5 text-accent-pink" />
-                  <p className="text-sm font-black text-brand-900">Mensal ou anual</p>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">Anual à vista mantém 5% de desconto na simulação.</p>
+                  <p className="text-sm font-black text-brand-900">
+                    {isCommercialQuote ? 'Proposta personalizada' : 'Mensal ou anual'}
+                  </p>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                    {isCommercialQuote
+                      ? 'A equipe comercial define escopo, implantação e condições conforme a operação.'
+                      : 'Anual à vista mantém 5% de desconto na simulação.'}
+                  </p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-4">
                   <ClipboardCheck className="mb-3 h-5 w-5 text-accent-pink" />
@@ -636,18 +1023,32 @@ export function AssinaturaPlans() {
 
               <p className="mb-6 leading-relaxed text-slate-600">{plan.description}</p>
 
-              <div className="mb-6 border-y border-slate-100 py-6">
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
-                  Simulação mensal
-                </p>
-                <p className="mt-2 text-4xl font-black text-brand-900">
-                  {formatter.format(plan.monthly)}
-                  <span className="ml-1 text-base font-bold text-slate-500">/mês</span>
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-500">
-                  Média de {formatter.format(plan.perEmployee)} por funcionário. Anual à vista:{' '}
-                  <strong className="text-brand-900">{formatter.format(plan.annualPix)}</strong>.
-                </p>
+              <div className="mb-6 border-y border-slate-100 py-6" aria-live="polite">
+                {isCommercialQuote ? (
+                  <>
+                    <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent-pink">
+                      Proposta corporativa
+                    </p>
+                    <p className="mt-2 text-4xl font-black text-brand-900">Sob consulta</p>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                      Para 100 ou mais funcionários, avaliamos unidades, funções, riscos, volume de exames e implantação antes de definir o valor.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
+                      Simulação mensal
+                    </p>
+                    <p className="mt-2 text-4xl font-black text-brand-900">
+                      {formatter.format(plan.monthly)}
+                      <span className="ml-1 text-base font-bold text-slate-500">/mês</span>
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                      Média de {formatter.format(plan.perEmployee)} por funcionário. Anual à vista:{' '}
+                      <strong className="text-brand-900">{formatter.format(plan.annualPix)}</strong>.
+                    </p>
+                  </>
+                )}
               </div>
 
               <p className="mb-6 rounded-2xl bg-slate-50 p-4 text-sm font-semibold leading-relaxed text-slate-700">
@@ -664,22 +1065,34 @@ export function AssinaturaPlans() {
               </ul>
 
               <div className="mt-auto">
-                <button
-                  type="button"
-                  onClick={() => setSelectedPlanId(plan.id)}
-                  className={plan.isRecommended ? 'btn-primary-safe w-full' : 'btn-outline-safe w-full'}
-                  aria-label={`Contratar o ${plan.title}`}
-                >
-                  Contratar agora
-                  <ArrowRight className="h-5 w-5" />
-                </button>
+                {isCommercialQuote ? (
+                  <button
+                    type="button"
+                    onClick={() => setCommercialPlanId(plan.id)}
+                    className={plan.isRecommended ? 'btn-primary-safe w-full' : 'btn-outline-safe w-full'}
+                    aria-label={`Solicitar proposta comercial para o ${plan.title}`}
+                  >
+                    Solicitar proposta
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPlanId(plan.id)}
+                    className={plan.isRecommended ? 'btn-primary-safe w-full' : 'btn-outline-safe w-full'}
+                    aria-label={`Contratar o ${plan.title}`}
+                  >
+                    Contratar agora
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+                )}
               </div>
             </article>
           ))}
         </div>
       </div>
 
-      {selectedPlan ? (
+      {selectedPlan && !isCommercialQuote ? (
         <AssinaturaContractModal
           key={`${selectedPlan.id}-${normalizedEmployees}`}
           plan={selectedPlan}
@@ -691,6 +1104,22 @@ export function AssinaturaPlans() {
           conversionPage={conversionPage}
           formStartedAt={formStartedAt}
           onClose={() => setSelectedPlanId(null)}
+        />
+      ) : null}
+
+      {commercialPlan ? (
+        <AssinaturaCommercialModal
+          key={`${commercialPlan.id}-${normalizedEmployees}-${cnpj}`}
+          plan={commercialPlan}
+          employees={normalizedEmployees}
+          cnpj={cnpj}
+          cnpjInfo={cnpjInfo}
+          companyName={companyName}
+          cnaeEntry={cnaeEntry}
+          attribution={attribution}
+          conversionPage={conversionPage}
+          formStartedAt={formStartedAt}
+          onClose={() => setCommercialPlanId(null)}
         />
       ) : null}
     </section>

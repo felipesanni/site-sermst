@@ -8,6 +8,9 @@ describe('institutional facts', () => {
     expect(companyFacts.history.phrase).toBe('mais de 55 anos de história');
     expect(companyFacts.livesServed.phrase).toBe('mais de 150 mil vidas atendidas');
     expect(companyFacts.companiesServed.phrase).toBe('mais de 3.500 empresas atendidas');
+    expect(companyFacts.accreditedClinics.phrase).toBe(
+      'mais de 900 clínicas credenciadas em todo o Brasil',
+    );
     expect(companyFacts.avoidedFines.phrase).toBe(
       'mais de R$ 35 milhões economizados pelos clientes em multas',
     );

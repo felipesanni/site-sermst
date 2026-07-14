@@ -789,10 +789,10 @@ export function CnaeCalculator() {
                 Consulta gratuita • resultado na hora
               </span>
               <p className="mb-3 text-3xl font-black leading-tight tracking-tighter text-brand-900 md:text-4xl">
-                Sua empresa está exposta a multas de SST?
+                Você sabe o que sua empresa precisa?
               </p>
               <p className="mx-auto max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
-                Digite o CNPJ e descubra, em poucos segundos, as principais obrigações de saúde e segurança do trabalho aplicáveis.
+                Descubra, em poucos segundos, as principais obrigações de saúde e segurança do trabalho aplicáveis.
               </p>
             </div>
 

@@ -48,7 +48,7 @@ describe('SEO title length', () => {
     expect(ogTitle.length).toBeLessThanOrEqual(60);
   });
 
-  it('mantem title da home e evita duplicidade com exame admissional em Sao Paulo', async () => {
+  it('mantem a home ampla e evita duplicidade com exame admissional em Sao Paulo', async () => {
     const homeTitle = getTitleText(homeMetadata.title);
     const exameAdmissionalMetadata = await generateLocalServiceMetadata({
       params: Promise.resolve({
@@ -58,7 +58,7 @@ describe('SEO title length', () => {
     });
     const exameAdmissionalTitle = getTitleText(exameAdmissionalMetadata.title);
 
-    expect(homeTitle).toBe('Clínica de Exame Admissional em São Paulo | SERMST');
+    expect(homeTitle).toBe('Exames Ocupacionais e SST para Empresas | SERMST');
     expect(exameAdmissionalTitle).toBe('Clínica de Exame Admissional em São Paulo');
     expect(homeTitle).not.toBe(exameAdmissionalTitle);
     expect(homeTitle.length).toBeLessThanOrEqual(60);

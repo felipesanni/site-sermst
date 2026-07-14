@@ -6,16 +6,16 @@ import { siteImages } from '@/lib/site-images';
 import { companyFacts, institutionalDescription } from '@/lib/company-facts';
 
 export const metadata: Metadata = {
-  title: 'Clínica de Exame Admissional em São Paulo | SERMST',
+  title: 'Exames Ocupacionais e SST para Empresas | SERMST',
   description:
-    'Exame admissional em São Paulo Centro para empresas, com ASO no mesmo dia, laboratório próprio e apoio a PCMSO e eSocial. Atendimento no Largo do Paissandu.',
+    'Exames admissionais, demissionais e periódicos, ASO, PCMSO, PGR, LTCAT e eSocial para empresas em São Paulo. Conheça as soluções da SERMST.',
   alternates: {
     canonical: 'https://sermst.com.br',
   },
   openGraph: {
-    title: 'Clínica de Exame Admissional em São Paulo para Empresas | SERMST',
+    title: 'Exames Ocupacionais e SST para Empresas | SERMST',
     description:
-      'Exame admissional em São Paulo Centro para empresas, com ASO no mesmo dia, laboratório próprio e apoio a PCMSO e eSocial.',
+      'Exames ocupacionais, programas, laudos e apoio ao eSocial para empresas em São Paulo.',
     url: 'https://sermst.com.br',
     locale: 'pt_BR',
     type: 'website',
@@ -65,60 +65,71 @@ const websiteSchema = {
   },
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'O que é medicina do trabalho?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Medicina do trabalho é a especialidade médica voltada à relação entre trabalho e saúde. Na empresa, participa do PCMSO e dos exames ocupacionais previstos na NR-07.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'O que é PCMSO e qual empresa é obrigada a ter?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'O PCMSO (Programa de Controle Médico de Saúde Ocupacional) é previsto na NR-07 e organiza o monitoramento da saúde dos empregados conforme os riscos ocupacionais. A própria NR-07 prevê dispensa de elaboração em cenários específicos para MEI, ME e EPP de grau de risco 1 ou 2, sem eliminar exames ocupacionais nem ASO.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'O que é PGR e quem precisa ter?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'O PGR (Programa de Gerenciamento de Riscos) substituiu o PPRA e materializa o gerenciamento de riscos ocupacionais previsto na NR-01. Como regra, ele identifica, avalia e controla os riscos da operação, sendo base para o PCMSO e para os eventos S-2240 do eSocial. A NR-01 prevê hipóteses específicas de dispensa de elaboração para pequenos negócios.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quando o exame admissional deve ser realizado?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'O exame admissional deve ser realizado antes de o novo empregado assumir as atividades, conforme a NR-07. Após o exame clínico, o médico emite o ASO, e as informações de monitoramento são enviadas ao eSocial pelo evento S-2220 no prazo aplicável.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'O que é ASO e qual a sua validade?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'O ASO (Atestado de Saúde Ocupacional) é emitido pelo médico que realiza o exame clínico e registra se o trabalhador está apto ou inapto para a função. Ele documenta um exame específico; os próximos exames seguem os prazos e critérios definidos na NR-07 e no PCMSO.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quais são os riscos de não ter SST organizada?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Falhas na SST podem resultar em exames atrasados, documentos incoerentes, eventos incorretos no eSocial e medidas fiscais conforme a infração. Também dificultam o acompanhamento de afastamentos e a demonstração das medidas adotadas pela empresa.',
-      },
-    },
-  ],
-};
+const examServices = [
+  {
+    title: 'Exame admissional',
+    description: 'Atendimento clínico, exames complementares e emissão do ASO para novas contratações.',
+    href: '/servicos/exame-admissional-expresso/sao-paulo',
+  },
+  {
+    title: 'Exame demissional',
+    description: 'Avaliação ocupacional para formalizar o encerramento do vínculo de trabalho.',
+    href: '/saude/exame-demissional',
+  },
+  {
+    title: 'Exame periódico',
+    description: 'Acompanhamento da saúde do trabalhador conforme os riscos e o PCMSO da empresa.',
+    href: '/saude/exame-periodico-ocupacional',
+  },
+  {
+    title: 'Retorno ao trabalho',
+    description: 'Avaliação antes da retomada das atividades após afastamentos previstos na NR-07.',
+    href: '/saude/exame-retorno-ao-trabalho',
+  },
+  {
+    title: 'ASO',
+    description: 'Entenda o atestado emitido nos exames ocupacionais e o que a empresa deve conferir.',
+    href: '/saude/aso-atestado-saude-ocupacional',
+  },
+  {
+    title: 'Exames complementares',
+    description: 'Audiometria, espirometria, análises clínicas e outros exames definidos pelo PCMSO.',
+    href: '/servicos/exames-complementares-laboratoriais/sao-paulo',
+  },
+];
+
+const sstServices = [
+  {
+    title: 'PCMSO e NR-07',
+    description: 'Planejamento médico ocupacional alinhado aos riscos e à rotina da empresa.',
+    href: '/servicos/pcmso-nr07-programa/sao-paulo',
+  },
+  {
+    title: 'PGR e NR-01',
+    description: 'Identificação dos riscos ocupacionais e plano de ação para cada operação.',
+    href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo',
+  },
+  {
+    title: 'LTCAT',
+    description: 'Laudo técnico para exposição a agentes nocivos e obrigações previdenciárias.',
+    href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo',
+  },
+  {
+    title: 'eSocial SST',
+    description: 'Apoio no envio e na conferência dos eventos S-2220 e S-2240.',
+    href: '/servicos/gestao-esocial-s2220-s2240/sao-paulo',
+  },
+  {
+    title: 'Treinamentos',
+    description: 'Capacitações obrigatórias de acordo com a função, o risco e a norma aplicável.',
+    href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo',
+  },
+  {
+    title: 'Planos de SST',
+    description: 'Exames, documentos e vencimentos reunidos em uma rotina mensal.',
+    href: '/assinaturas',
+  },
+];
 
 const regionalCards = [
   { city: 'São Paulo', slug: 'sao-paulo', desc: 'Unidade central com atendimento especializado.' },
@@ -154,7 +165,7 @@ const stats = [
   companyFacts.history,
   companyFacts.livesServed,
   companyFacts.companiesServed,
-  companyFacts.avoidedFines,
+  companyFacts.accreditedClinics,
 ];
 
 const structureItems = [
@@ -190,32 +201,32 @@ export default function Home() {
                 <span className="text-xs text-white">+</span>
               </span>
               <span className="text-[10px] font-black uppercase tracking-widest text-white md:text-xs">
-                Mais de 55 anos em saúde e segurança do trabalho
+                Mais de 55 anos em saúde ocupacional e SST
               </span>
             </div>
 
             <h1 className="hero-anim-h1 h1-standard mb-5 text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.75)]">
-              Medicina ocupacional e SST
+              Exames ocupacionais e SST
               <br className="hidden sm:block" />
               <span className="block bg-gradient-to-r from-accent-pink via-[#ff7a93] to-white bg-clip-text text-transparent sm:inline">
-                {' '}sem desorganizar o RH.
+                {' '}sem desorganizar o RH
               </span>
             </h1>
 
             <p className="hero-anim-p mx-auto mb-8 max-w-2xl rounded-xl bg-brand-900/35 p-5 text-lg font-medium leading-relaxed text-slate-200 backdrop-blur-sm md:bg-transparent md:p-0 md:text-xl md:backdrop-blur-none lg:mx-0 lg:border-l-[3px] lg:border-accent-pink lg:pl-6">
-              Exames ocupacionais, PGR, PCMSO, LTCAT e apoio ao eSocial em um fluxo pensado para admissões, prazos e documentos da empresa.
+              Exames admissionais, demissionais e periódicos, ASO, PCMSO, PGR, LTCAT e eSocial em um fluxo pensado para admissões, prazos e documentos da empresa.
             </p>
 
             <div className="hero-anim-cta flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-              <Link href="/contato" className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(227,27,69,0.34)_0%,rgba(47,22,66,0.86)_100%)] px-8 py-4 font-bold text-white shadow-[0_14px_32px_-16px_rgba(227,27,69,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[0_18px_40px_-16px_rgba(227,27,69,0.68)] sm:w-auto">
+              <Link href="#exames-ocupacionais" className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(227,27,69,0.34)_0%,rgba(47,22,66,0.86)_100%)] px-8 py-4 font-bold text-white shadow-[0_14px_32px_-16px_rgba(227,27,69,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[0_18px_40px_-16px_rgba(227,27,69,0.68)] sm:w-auto">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_58%)] opacity-90" />
                 <span className="relative z-10 flex items-center gap-2">
-                  Solicitar diagnóstico gratuito
+                  Ver exames ocupacionais
                   <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                 </span>
               </Link>
-              <Link href="/solucoes" className="inline-flex w-full items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 py-4 font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/15 sm:w-auto">
-                Ver soluções SST
+              <Link href="#solucoes-sst" className="inline-flex w-full items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 py-4 font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/15 sm:w-auto">
+                Ver soluções de SST
               </Link>
             </div>
           </div>
@@ -228,7 +239,7 @@ export default function Home() {
               </div>
               <span className="relative mb-2 block text-2xl font-black tracking-tight text-white">Estrutura própria</span>
               <p className="relative mb-6 font-bold leading-relaxed text-white/95">
-                Atendimento clínico, exames complementares e gestão de SST conectados à rotina das empresas.
+                Atendimento clínico, exames complementares e gestão de SST conectados à rotina da empresa.
               </p>
               <div className="relative mb-6 h-px w-full bg-white/20" />
               <div className="relative flex w-full items-center justify-center gap-6 text-white">
@@ -255,13 +266,13 @@ export default function Home() {
             <h2 className="mb-2 text-3xl font-black leading-tight text-brand-900">
               Soluções em medicina do trabalho
               <br />
-              <span className="text-accent-pink outline-text-subtle">que geram resultado operacional</span>
+              <span className="text-accent-pink outline-text-subtle">que apoiam a operação</span>
             </h2>
             <p className="mt-4 text-sm font-medium leading-relaxed text-slate-700 lg:pr-10">
-              Cada serviço foi estruturado para reduzir atrasos em admissões, manter documentos atualizados e facilitar o acompanhamento das obrigações de SST.
+              Exames ocupacionais, programas, laudos e apoio ao eSocial ficam conectados à rotina do RH, sem perder de vista os riscos de cada função.
             </p>
             <p className="mt-4 text-sm font-medium leading-relaxed text-slate-600 lg:pr-10">
-              Para o RH que precisa de exame admissional com ASO no mesmo dia e integração com eSocial, a SERMST tem laboratório próprio e fluxo ocupacional que não trava contratação.
+              A SERMST atende empresas em todo o Brasil, inclusive operações com várias localidades, e centraliza exames, documentos e vencimentos em uma rotina mais fácil de acompanhar.
             </p>
           </div>
 
@@ -288,9 +299,9 @@ export default function Home() {
               <br />
               em um só fluxo.
             </p>
-            <a href="https://wa.me/5511915146447?text=Quero%20entender%20as%20solucoes%20de%20SST%20da%20SERMST" className="btn-light-safe relative z-10 flex w-full text-sm lg:min-w-[240px]">
+            <Link href="/contato" className="btn-light-safe relative z-10 flex w-full text-sm lg:min-w-[240px]">
               Pedir orçamento
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -301,19 +312,85 @@ export default function Home() {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-3xl">
                 <span className="mb-3 inline-block rounded-full bg-brand-900/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-brand-900">
-                  Ferramenta qualificadora
+                  Diagnóstico inicial
                 </span>
                 <h2 className="text-2xl font-black text-brand-900 md:text-3xl">
-                  Descubra o risco da empresa antes de pedir proposta
+                  Saiba quais são as obrigações de SST da sua empresa
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                  A Calculadora de Risco cruza CNPJ ou CNAE com grau de risco, RAT, SESMT e NR-05 para mostrar se ha CIPA, representante da NR-05 ou apoio por SESMT. Depois, a própria ferramenta pode enviar esse enquadramento para a equipe comercial.
+                  Com alguns dados básicos, você descobre em segundos o grau de risco, o RAT, a necessidade de CIPA e as principais exigências legais da empresa. Um diagnóstico inicial das obrigações de SST, sem pegadinhas nem enrolação.
                 </p>
               </div>
               <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">
-                Abrir Calculadora de Risco
+                Analisar agora
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-16 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Encontre o caminho certo
+            </span>
+            <h2 className="text-4xl font-black leading-tight text-brand-900 md:text-5xl">
+              O que sua empresa precisa resolver agora?
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              Comece pelo exame ou pela obrigação de SST. Cada opção leva a uma página específica, com as informações e o próximo passo daquele serviço.
+            </p>
+          </div>
+
+          <div className="grid gap-8">
+            <article id="exames-ocupacionais" className="scroll-mt-28 rounded-[2rem] border border-slate-200 bg-slate-50 p-6 md:p-8">
+              <div className="mb-7 flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-900 text-white">
+                  <FileCheck2 className="h-6 w-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.18em] text-accent-pink">Medicina ocupacional</span>
+                  <h3 className="mt-1 text-2xl font-black text-brand-900">Exames para cada etapa do vínculo</h3>
+                </div>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {examServices.map((service) => (
+                  <Link key={service.href} href={service.href} className="group h-full rounded-2xl border border-slate-200 bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-accent-pink/30 hover:shadow-lg">
+                    <h4 className="flex items-center justify-between gap-3 font-black text-brand-900">
+                      {service.title}
+                      <ArrowRight className="h-4 w-4 shrink-0 text-accent-pink transition-transform group-hover:translate-x-1" />
+                    </h4>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{service.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </article>
+
+            <article id="solucoes-sst" className="scroll-mt-28 rounded-[2rem] border border-brand-900 bg-brand-900 p-6 text-white shadow-[0_24px_50px_-30px_rgba(11,19,60,0.8)] md:p-8">
+              <div className="mb-7 flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent-pink text-white">
+                  <ShieldCheck className="h-6 w-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.18em] text-accent-pink">Segurança do trabalho</span>
+                  <h3 className="mt-1 text-2xl font-black text-white">Programas, laudos e gestão</h3>
+                </div>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {sstServices.map((service) => (
+                  <Link key={service.href} href={service.href} className="group h-full rounded-2xl border border-white/10 bg-white/5 p-5 transition-all hover:-translate-y-0.5 hover:border-accent-pink/50 hover:bg-white/10">
+                    <h4 className="flex items-center justify-between gap-3 font-black text-white">
+                      {service.title}
+                      <ArrowRight className="h-4 w-4 shrink-0 text-accent-pink transition-transform group-hover:translate-x-1" />
+                    </h4>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-300">{service.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -388,7 +465,7 @@ export default function Home() {
             </ul>
 
             <Link href="/contato" className="btn-dark-safe group">
-              Falar com a equipe comercial
+              Falar com a equipe
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -453,7 +530,7 @@ export default function Home() {
           </div>
 
           <div className="relative mb-[-60px] flex flex-col items-end justify-center gap-6 px-4 md:flex-row md:px-10">
-            <div className="w-full md:w-[45%]">
+            <div className="relative z-20 w-full md:w-[45%]">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border-[6px] border-white bg-slate-100 shadow-2xl transition-transform duration-500 hover:-translate-y-1">
                 <Image
                   src={siteImages.home.clinicOperations.src}
@@ -550,23 +627,13 @@ export default function Home() {
             <div className="max-w-2xl">
               <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">Presença regional</span>
               <h2 className="text-4xl font-black leading-tight text-brand-900 md:text-5xl">
-                Medicina do trabalho em
+                Exames ocupacionais e SST em
                 <br />
                 <span className="font-serif italic text-accent-pink">toda a Grande São Paulo</span>
               </h2>
               <p className="mt-6 text-lg font-medium leading-relaxed text-slate-600">
-                Atendimento estratégico para as principais regiões industriais e corporativas da capital, do ABC e da Grande SP. Unidade de referência no centro de São Paulo, com fluxo expresso para admissão e gestão SST.
+                A unidade central atende empresas da capital, do ABC e da Grande São Paulo. Escolha a região para conferir como funciona o atendimento e falar com a equipe.
               </p>
-            <p className="mt-4 text-sm font-medium leading-relaxed text-slate-500">
-              Precisa de clínica de exame admissional em São Paulo ou na Grande SP? A SERMST tem unidade central no centro histórico e cobertura regional para atender o fluxo de admissões da sua empresa com mais previsibilidade.
-            </p>
-            <p className="mt-4 text-sm font-medium leading-relaxed text-slate-500">
-              Para operações com motoristas e para pessoa física que busca{' '}
-              <Link href="/servicos/exame-toxicologico-clt/sao-paulo" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
-                exame toxicológico para CNH C, D e E
-              </Link>
-              , a SERMST também oferece atendimento em São Paulo com validade nacional e orientação clara sobre empresa, admissão, demissão e renovação.
-            </p>
           </div>
 
             <Link href="/servicos" className="btn-dark-safe text-sm uppercase tracking-wider">
@@ -627,10 +694,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

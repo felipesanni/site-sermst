@@ -10,6 +10,43 @@ import { buildFrequentFaqs } from '@/lib/faq';
 const BASE_URL = 'https://sermst.com.br';
 
 describe('technical SEO discovery files', () => {
+  it('mantem a home ampla e encaminha intencoes especificas para paginas dedicadas', () => {
+    const home = readFileSync(join(process.cwd(), 'src', 'app', 'page.tsx'), 'utf8');
+
+    expect(home).toContain("title: 'Exames Ocupacionais e SST para Empresas | SERMST'");
+    expect(home).toContain('Exames ocupacionais e SST');
+    expect(home).toContain('/servicos/exame-admissional-expresso/sao-paulo');
+    expect(home).toContain('/saude/exame-demissional');
+    expect(home).toContain('/saude/exame-periodico-ocupacional');
+    expect(home).toContain('/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo');
+    expect(home).toContain('/servicos/gestao-esocial-s2220-s2240/sao-paulo');
+    expect(home).not.toContain('Onde fazer exame admissional em São Paulo?');
+    expect(home).not.toContain("'@type': 'FAQPage'");
+    expect(home).toContain('Largo do Paissandu, 72');
+  });
+
+  it('libera apenas os endpoints necessarios para Clarity e Google Ads na CSP', () => {
+    const nextConfig = readFileSync(join(process.cwd(), 'next.config.ts'), 'utf8');
+
+    expect(nextConfig).toContain('https://*.clarity.ms');
+    expect(nextConfig).toContain('https://c.bing.com');
+    expect(nextConfig).toContain('https://ad.doubleclick.net');
+    expect(nextConfig).toContain('https://pagead2.googlesyndication.com');
+  });
+
+  it('envia o page view inicial e as navegacoes internas sem duplicar a mesma URL', () => {
+    const tracker = readFileSync(
+      join(process.cwd(), 'src', 'components', 'analytics', 'route-analytics-tracker.tsx'),
+      'utf8',
+    );
+    const layout = readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8');
+
+    expect(layout).toContain("gtag('config', 'GT-M34VB4XR', { send_page_view: false });");
+    expect(tracker).toContain("window.gtag('event', 'page_view'");
+    expect(tracker).toContain('previousLocationRef.current === pageLocation');
+    expect(tracker).not.toContain('hasTrackedInitialPageRef');
+  });
+
   it('permite indexacao, snippets completos e previews grandes ao Googlebot', () => {
     const layout = readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8');
 

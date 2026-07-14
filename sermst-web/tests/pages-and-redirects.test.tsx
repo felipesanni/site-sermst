@@ -10,8 +10,9 @@ describe('paginas principais', () => {
   it('renderiza a home com a proposta central do negocio', () => {
     render(<HomePage />);
 
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/SST/i);
-    expect(screen.getByRole('link', { name: /Solicitar/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Exames ocupacionais e SST sem desorganizar o RH/i);
+    expect(screen.getByRole('link', { name: /Ver exames ocupacionais/i })).toHaveAttribute('href', '#exames-ocupacionais');
+    expect(screen.getByRole('link', { name: /Ver soluções de SST/i })).toHaveAttribute('href', '#solucoes-sst');
   });
 
   it('renderiza a pagina de contato com formulario e CTA da calculadora', () => {
@@ -27,7 +28,8 @@ describe('paginas principais', () => {
     render(<CalculadoraCnaePage />);
 
     expect(screen.getByText(/Sua empresa/i)).toBeInTheDocument();
-    expect(screen.getByText(/Digite o CNPJ e descubra/i)).toBeInTheDocument();
+    expect(screen.getByText(/Você sabe o que sua empresa precisa/i)).toBeInTheDocument();
+    expect(screen.getByText(/Descubra, em poucos segundos/i)).toBeInTheDocument();
   });
 
   it('renderiza a pagina de exame periodico com resposta direta e FAQ', () => {
