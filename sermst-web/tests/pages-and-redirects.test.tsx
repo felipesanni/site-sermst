@@ -27,9 +27,9 @@ describe('paginas principais', () => {
   it('renderiza a pagina da calculadora com a promessa da ferramenta', () => {
     render(<CalculadoraCnaePage />);
 
-    expect(screen.getByText(/Sua empresa/i)).toBeInTheDocument();
-    expect(screen.getByText(/Você sabe o que sua empresa precisa/i)).toBeInTheDocument();
-    expect(screen.getByText(/Descubra, em poucos segundos/i)).toBeInTheDocument();
+    expect(screen.getByText(/CNAE, Grau de Risco, FAT, RAT e CIPA/i)).toBeInTheDocument();
+    expect(screen.getByText(/Consulta gratuita/i)).toBeInTheDocument();
+    expect(screen.getByText(/CNPJ da empresa/i)).toBeInTheDocument();
   });
 
   it('renderiza a pagina de exame periodico com resposta direta e FAQ', () => {

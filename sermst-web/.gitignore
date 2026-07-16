@@ -63,4 +63,3 @@ README.local.md
 
 # scripts auxiliares fora do build de producao
 /scripts/generate-cnae-rat.mjs
-/scripts/submit-indexnow.mjs
