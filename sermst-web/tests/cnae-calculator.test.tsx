@@ -64,6 +64,7 @@ describe('CnaeCalculator', () => {
           employee_count: 100,
           consultant_profile: 'Contador(a)',
           source_mode: 'cnpj',
+          audience_segment: 'contador',
         }),
       ]);
     });
@@ -128,8 +129,97 @@ describe('CnaeCalculator', () => {
         source_mode: 'cnae',
         employee_count: 40,
         consultant_profile: 'Recursos Humanos / Departamento Pessoal',
+        audience_segment: 'rh_dp',
       }),
     ]);
+  });
+
+  it.each([
+    {
+      profile: 'Contador(a)',
+      employees: '12',
+      cta: 'Quero conhecer a parceria para contadores',
+      href: '/parcerias/contadores',
+    },
+    {
+      profile: 'Empresário(a) / Sócio(a)',
+      employees: '20',
+      cta: 'Ver planos de SST para minha empresa',
+      href: '/assinaturas',
+    },
+    {
+      profile: 'Gestor(a) / Gerente',
+      employees: '20',
+      cta: 'Comparar planos de SST para a operação',
+      href: '/assinaturas',
+    },
+    {
+      profile: 'Recursos Humanos / Departamento Pessoal',
+      employees: '30',
+      cta: 'Ver o guia prático para RH e DP',
+      href: '/rh',
+    },
+    {
+      profile: 'Profissional de SST',
+      employees: '30',
+      cta: 'Consultar a biblioteca técnica de SST',
+      href: '/normas',
+    },
+  ])('personaliza o proximo passo para $profile', async ({ profile, employees, cta, href }) => {
+    const user = userEvent.setup();
+    render(<CnaeCalculator />);
+
+    await user.click(screen.getByRole('button', { name: /Não tenho o CNPJ agora/i }));
+    await user.type(
+      screen.getByPlaceholderText(/4711301, restaurante, construcao civil/i),
+      sampleEntry.codigo,
+    );
+    await user.click(await screen.findByText(sampleEntry.descricao));
+    await user.type(screen.getByPlaceholderText('Ex: 28'), employees);
+    await user.selectOptions(screen.getByRole('combobox', { name: /Seu perfil/i }), profile);
+    await user.click(screen.getByRole('button', { name: /Buscar e ver resultado/i }));
+
+    expect(await screen.findByRole('link', { name: cta })).toHaveAttribute('href', href);
+  });
+
+  it.each([
+    {
+      profile: 'Gestor(a) / Gerente',
+      cta: 'Quero uma avaliação objetiva de SST',
+    },
+    {
+      profile: 'Empresário(a) / Sócio(a)',
+      cta: 'Quero uma avaliação gratuita da minha empresa',
+    },
+  ])('mantem a avaliacao gratuita acima de 20 funcionarios para $profile', async ({ profile, cta }) => {
+    const user = userEvent.setup();
+    render(<CnaeCalculator />);
+
+    await user.click(screen.getByRole('button', { name: /Não tenho o CNPJ agora/i }));
+    await user.type(
+      screen.getByPlaceholderText(/4711301, restaurante, construcao civil/i),
+      sampleEntry.codigo,
+    );
+    await user.click(await screen.findByText(sampleEntry.descricao));
+    await user.type(screen.getByPlaceholderText('Ex: 28'), '21');
+    await user.selectOptions(
+      screen.getByRole('combobox', { name: /Seu perfil/i }),
+      profile,
+    );
+    await user.click(screen.getByRole('button', { name: /Buscar e ver resultado/i }));
+
+    expect(
+      await screen.findByRole('button', { name: cta }),
+    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Seu nome')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('E-mail')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Telefone com DDD')).toBeInTheDocument();
+  });
+
+  it('remove a opcao de perfil generico', () => {
+    render(<CnaeCalculator />);
+
+    expect(screen.queryByRole('option', { name: 'Outro' })).not.toBeInTheDocument();
   });
 
   it('mantem os limites iniciais de SESMT alinhados ao Quadro II da NR-04', () => {

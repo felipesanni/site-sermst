@@ -182,6 +182,148 @@ interface ResultCardProps {
   sourceMode: Tab;
 }
 
+type NextStepCard = {
+  label: string;
+  text: string;
+};
+
+type NextStepConfig = {
+  segment: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  cards: [NextStepCard, NextStepCard, NextStepCard];
+  ctaLabel: string;
+  href?: string;
+  showLeadForm: boolean;
+};
+
+function getNextStepConfig(consultantProfile: string, employees: number): NextStepConfig {
+  const employeeLabel = `${employees} funcionário${employees === 1 ? '' : 's'}`;
+
+  if (consultantProfile === 'Contador(a)') {
+    return {
+      segment: 'contador',
+      eyebrow: 'Para quem cuida dos clientes',
+      title: 'Seu cliente precisa de SST. Seu escritório não precisa assumir essa operação.',
+      description:
+        'Indique a SERMST, preserve a confiança do cliente e deixe a parte técnica com quem trabalha todos os dias com saúde e segurança do trabalho.',
+      cards: [
+        { label: 'O cliente continua com você', text: 'Seu escritório indica a solução sem perder espaço na relação.' },
+        { label: 'A responsabilidade técnica é nossa', text: 'A SERMST conduz o diagnóstico, a proposta e a operação de SST.' },
+        { label: 'A indicação é reconhecida', text: 'Quando a parceria gera negócio, o escritório recebe pela indicação.' },
+      ],
+      ctaLabel: 'Quero conhecer a parceria para contadores',
+      href: '/parcerias/contadores',
+      showLeadForm: false,
+    };
+  }
+
+  if (consultantProfile === 'Recursos Humanos / Departamento Pessoal') {
+    return {
+      segment: 'rh_dp',
+      eyebrow: 'Para quem segura a rotina do RH',
+      title: 'Menos cobrança, retrabalho e prazo estourado na rotina de SST',
+      description:
+        'Encontre respostas práticas para admissões, exames, documentos e eventos do eSocial sem precisar juntar a informação em cinco lugares diferentes.',
+      cards: [
+        { label: 'Admissão sem gargalo', text: 'Saiba o que pedir antes do exame para não travar a contratação.' },
+        { label: 'eSocial sem surpresa', text: 'Entenda S-2210, S-2220 e S-2240 antes que o erro vire retrabalho.' },
+        { label: 'Documento na hora certa', text: 'Organize ASO, PGR, PCMSO e vencimentos com mais previsibilidade.' },
+      ],
+      ctaLabel: 'Ver o guia prático para RH e DP',
+      href: '/rh',
+      showLeadForm: false,
+    };
+  }
+
+  if (consultantProfile === 'Profissional de SST') {
+    return {
+      segment: 'profissional_sst',
+      eyebrow: 'Para quem trabalha com SST',
+      title: 'O CNAE é só o começo. O enquadramento precisa se sustentar tecnicamente.',
+      description:
+        'Acesse análises de NRs, critérios de dimensionamento e referências para revisar a conclusão antes de documentar ou orientar a empresa.',
+      cards: [
+        { label: 'Texto e critério', text: 'NR-01, NR-04, NR-05, NR-07 e outros temas com aplicação prática.' },
+        { label: 'Além da tabela', text: 'Atividade preponderante, exposição real e documentos entram na análise.' },
+        { label: 'Conclusão defensável', text: 'Referências para registrar o raciocínio técnico com mais consistência.' },
+      ],
+      ctaLabel: 'Consultar a biblioteca técnica de SST',
+      href: '/normas',
+      showLeadForm: false,
+    };
+  }
+
+  if (consultantProfile === 'Empresário(a) / Sócio(a)' && Number.isFinite(employees) && employees <= 20) {
+    return {
+      segment: 'empresario_ate_20',
+      eyebrow: `Para sua empresa com ${employeeLabel}`,
+      title: 'SST em dia sem você virar especialista no assunto',
+      description:
+        'Veja planos mensais que reúnem documentos, exames e eSocial. Você sabe o que está incluído, quanto custa e quem acompanha cada prazo.',
+      cards: [
+        { label: 'O básico fica certo', text: 'PGR, PCMSO, exames e eventos de SST entram na mesma rotina.' },
+        { label: 'Custo previsível', text: 'Compare o que cada plano inclui antes de assumir qualquer compromisso.' },
+        { label: 'Tem alguém acompanhando', text: 'Sua empresa não depende de lembrar sozinha cada exame e vencimento.' },
+      ],
+      ctaLabel: 'Ver planos de SST para minha empresa',
+      href: '/assinaturas',
+      showLeadForm: false,
+    };
+  }
+
+  if (consultantProfile === 'Gestor(a) / Gerente' && Number.isFinite(employees) && employees <= 20) {
+    return {
+      segment: 'gestor_ate_20',
+      eyebrow: `Para sua operação com ${employeeLabel}`,
+      title: 'Menos planilha e cobrança. Coloque exames, documentos e eSocial na mesma rotina.',
+      description:
+        'Compare planos de SST pensados para empresas menores e escolha uma estrutura que acompanhe a operação sem criar mais um gargalo para o gestor.',
+      cards: [
+        { label: 'Admissões no ritmo', text: 'Exames e documentos deixam de ser resolvidos sempre na última hora.' },
+        { label: 'Prazos visíveis', text: 'Vencimentos e obrigações recorrentes ficam mais fáceis de acompanhar.' },
+        { label: 'Menos cobrança manual', text: 'A rotina não depende de perseguir fornecedor para cada pendência.' },
+      ],
+      ctaLabel: 'Comparar planos de SST para a operação',
+      href: '/assinaturas',
+      showLeadForm: false,
+    };
+  }
+
+  if (consultantProfile === 'Gestor(a) / Gerente') {
+    return {
+      segment: 'gestor_acima_20',
+      eyebrow: 'Avaliação gratuita para gestores',
+      title: 'Leve para a diretoria um diagnóstico claro, com prioridades e próximos passos',
+      description:
+        `A equipe cruza o CNAE, o grau de risco e os ${employeeLabel} informados. Você entende o que precisa de ação agora e o que pode entrar no planejamento.`,
+      cards: [
+        { label: 'Chegue com contexto', text: 'A conversa já começa com porte, CNAE, RAT, SESMT e referência de CIPA.' },
+        { label: 'Saia com prioridades', text: 'Separe pendência urgente, ajuste de rotina e melhoria que pode ser planejada.' },
+        { label: 'Decida com fundamento', text: 'Tenha informação objetiva para discutir escopo, prazo e investimento.' },
+      ],
+      ctaLabel: 'Quero uma avaliação objetiva de SST',
+      showLeadForm: true,
+    };
+  }
+
+  return {
+    segment: 'empresario_acima_20',
+    eyebrow: 'Avaliação gratuita para sua empresa',
+    title: 'Antes de contratar, descubra o que sua empresa realmente precisa em SST',
+    description:
+      `Com ${employeeLabel}, o escopo merece uma conversa rápida. Um especialista confere o enquadramento e mostra onde vale agir primeiro.`,
+    cards: [
+      { label: 'Você já adiantou uma etapa', text: 'CNAE, grau de risco, RAT, SESMT e CIPA já entram no contexto.' },
+      { label: 'A equipe confere o restante', text: 'Atividade preponderante, operação e documentos existentes completam a leitura.' },
+      { label: 'Você decide com clareza', text: 'Entenda o que é prioridade antes de aprovar plano, laudo ou exame.' },
+    ],
+    ctaLabel: 'Quero uma avaliação gratuita da minha empresa',
+    showLeadForm: true,
+  };
+}
+
 function ResultCard({
   entry,
   razaoSocial,
@@ -199,9 +341,28 @@ function ResultCard({
   const ratLabel = entry.ratGilrat ? `${entry.ratGilrat}%` : 'Não disponível';
   const [status, setStatus] = useState<LeadStatus>('idle');
   const [error, setError] = useState('');
+  const nextStep = getNextStepConfig(consultantProfile, employees);
+
+  function trackNextStepClick() {
+    if (typeof window === 'undefined') return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'cnae_calculator_personalized_cta_click',
+      cnae_codigo: entry.codigo,
+      cnae_grau_risco: entry.grauRisco,
+      cnae_rat_gilrat: entry.ratGilrat || '',
+      employee_count: employees,
+      consultant_profile: consultantProfile,
+      source_mode: sourceMode,
+      destination: nextStep.href || 'lead_form',
+      audience_segment: nextStep.segment,
+    });
+  }
 
   async function handleLeadSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    trackNextStepClick();
     setStatus('submitting');
     setError('');
 
@@ -259,8 +420,10 @@ function ResultCard({
           cnae_codigo: entry.codigo,
           cnae_grau_risco: entry.grauRisco,
           cnae_rat_gilrat: entry.ratGilrat || '',
+          employee_count: employees,
           source_mode: sourceMode,
           consultant_profile: consultantProfile,
+          audience_segment: nextStep.segment,
         });
       }
     } catch (submitError) {
@@ -438,29 +601,31 @@ function ResultCard({
 
       <div className="mb-8 rounded-[2rem] border border-white/70 bg-white/75 p-6 shadow-sm">
         <div className="mb-5">
-          <p className="text-[11px] font-black uppercase tracking-wider text-accent-pink">Próximo passo</p>
-          <h4 className="mt-1 text-lg font-black text-brand-900">Quer confirmar o enquadramento com a nossa equipe?</h4>
+          <p className="text-[11px] font-black uppercase tracking-wider text-accent-pink">{nextStep.eyebrow}</p>
+          <h4 className="mt-1 text-lg font-black text-brand-900">{nextStep.title}</h4>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Ao enviar, a SERMST recebe o CNAE, o grau de risco, o enquadramento de CIPA e o número de empregados informados aqui. Assim, a conversa começa com o contexto do seu caso.
+            {nextStep.description}
           </p>
         </div>
 
         <div className="mb-5 grid gap-3 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">O que a equipe já recebe</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">CNAE, grau de risco, referências iniciais de RAT, SESMT e NR-05/CIPA e número de empregados.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Por que funciona</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Sem apresentação genérica. A equipe responde direto com o que se aplica ao seu porte, setor e grau de risco.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">Para quem é</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">Para quem precisa confirmar se faltam exames, laudos, eventos do eSocial, PGR, PCMSO ou outro requisito de SST.</p>
-          </div>
+          {nextStep.cards.map((card) => (
+            <div key={card.label} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] font-black uppercase tracking-wider text-slate-500">{card.label}</p>
+              <p className="mt-2 text-sm font-semibold leading-relaxed text-brand-900">{card.text}</p>
+            </div>
+          ))}
         </div>
 
-        {status === 'success' ? (
+        {!nextStep.showLeadForm && nextStep.href ? (
+          <a
+            href={nextStep.href}
+            onClick={trackNextStepClick}
+            className="btn-primary-safe-lg flex w-full text-center"
+          >
+            {nextStep.ctaLabel}
+          </a>
+        ) : status === 'success' ? (
           <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
             <div className="flex items-start gap-3">
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
@@ -469,12 +634,6 @@ function ResultCard({
                 <p className="mt-1 text-sm leading-relaxed text-slate-700">
                   A equipe recebeu seu contato e os dados informados na calculadora. Eles serão usados para conferir o enquadramento antes do retorno.
                 </p>
-                        <a
-                  href="/assinaturas"
-                  className="btn-primary-safe mt-4 inline-flex"
-                >
-                  Ver planos de SST por assinatura →
-                </a>
               </div>
             </div>
           </div>
@@ -560,7 +719,7 @@ function ResultCard({
                   Enviando diagnóstico...
                 </>
               ) : (
-                'Receber diagnóstico deste enquadramento'
+                nextStep.ctaLabel
               )}
             </button>
           </form>
@@ -614,7 +773,6 @@ const consultantProfiles = [
   'Gestor(a) / Gerente',
   'Recursos Humanos / Departamento Pessoal',
   'Profissional de SST',
-  'Outro',
 ] as const;
 
 export function CnaeCalculator() {
@@ -731,6 +889,7 @@ export function CnaeCalculator() {
       employee_count: employees,
       consultant_profile: consultantProfile,
       source_mode: 'cnae',
+      audience_segment: getNextStepConfig(consultantProfile, employees).segment,
     });
   }
 
@@ -844,6 +1003,7 @@ export function CnaeCalculator() {
     const resultKey = `${digits(cnpj)}:${cnpjEntry.codigo}`;
     if (lastTrackedCnpjResult.current === resultKey) return;
     lastTrackedCnpjResult.current = resultKey;
+    const resultEmployees = Number.parseInt(employeeCount, 10);
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
@@ -851,9 +1011,10 @@ export function CnaeCalculator() {
       cnae_codigo: cnpjEntry.codigo,
       cnae_grau_risco: cnpjEntry.grauRisco,
       cnae_rat_gilrat: cnpjEntry.ratGilrat || '',
-      employee_count: Number.parseInt(employeeCount, 10),
+      employee_count: resultEmployees,
       consultant_profile: consultantProfile,
       source_mode: 'cnpj',
+      audience_segment: getNextStepConfig(consultantProfile, resultEmployees).segment,
     });
   }, [cnpj, cnpjEntry, consultantProfile, employeeCount, hasResult, tab]);
 
