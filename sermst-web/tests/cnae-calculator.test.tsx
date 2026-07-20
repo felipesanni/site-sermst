@@ -59,6 +59,7 @@ describe('CnaeCalculator', () => {
       ).toEqual([
         expect.objectContaining({
           event: 'cnae_calculator_cnpj_result',
+          conversion_stage: 'microconversao',
           cnae_codigo: sampleEntry.codigo,
           cnae_grau_risco: sampleEntry.grauRisco,
           employee_count: 100,
@@ -125,6 +126,7 @@ describe('CnaeCalculator', () => {
     ).toEqual([
       expect.objectContaining({
         event: 'cnae_calculator_cnpj_result',
+        conversion_stage: 'microconversao',
         cnae_codigo: sampleEntry.codigo,
         source_mode: 'cnae',
         employee_count: 40,
@@ -179,7 +181,16 @@ describe('CnaeCalculator', () => {
     await user.selectOptions(screen.getByRole('combobox', { name: /Seu perfil/i }), profile);
     await user.click(screen.getByRole('button', { name: /Buscar e ver resultado/i }));
 
-    expect(await screen.findByRole('link', { name: cta })).toHaveAttribute('href', href);
+    const ctaLink = await screen.findByRole('link', { name: cta });
+    expect(ctaLink).toHaveAttribute('href', href);
+    ctaLink.addEventListener('click', (event) => event.preventDefault(), { once: true });
+    await user.click(ctaLink);
+    expect(window.dataLayer).toContainEqual(
+      expect.objectContaining({
+        event: 'cnae_calculator_personalized_cta_click',
+        conversion_stage: 'intencao',
+      }),
+    );
   });
 
   it.each([
@@ -214,6 +225,49 @@ describe('CnaeCalculator', () => {
     expect(screen.getByPlaceholderText('Seu nome')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('E-mail')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Telefone com DDD')).toBeInTheDocument();
+  });
+
+  it('envia lead no modo CNAE com uma identificacao de empresa valida', async () => {
+    const user = userEvent.setup();
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify({ ok: true }), { status: 200 }),
+    );
+
+    render(<CnaeCalculator />);
+
+    await user.click(screen.getByRole('button', { name: /N.o tenho o CNPJ agora/i }));
+    await user.type(
+      screen.getByPlaceholderText(/4711301, restaurante, construcao civil/i),
+      sampleEntry.codigo,
+    );
+    await user.click(await screen.findByText(sampleEntry.descricao));
+    await user.type(screen.getByPlaceholderText('Ex: 28'), '21');
+    await user.selectOptions(
+      screen.getByRole('combobox', { name: /Seu perfil/i }),
+      'Gestor(a) / Gerente',
+    );
+    await user.click(screen.getByRole('button', { name: /Buscar e ver resultado/i }));
+
+    await user.type(screen.getByPlaceholderText('Seu nome'), 'Teste CNAE');
+    await user.type(screen.getByPlaceholderText('E-mail'), 'teste@example.com');
+    await user.type(screen.getByPlaceholderText('Telefone com DDD'), '11999999999');
+    await user.click(screen.getByRole('button', { name: /avalia..o objetiva de SST/i }));
+
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledWith('/api/lead', expect.any(Object)));
+
+    const request = fetchMock.mock.calls.at(-1)?.[1] as RequestInit;
+    const payload = JSON.parse(String(request.body));
+    expect(payload.empresa).toContain(`consulta por CNAE ${sampleEntry.codigo}`);
+    expect(payload.empresa).not.toBe('');
+    expect(payload.mensagem).toContain('Modo de consulta: CNAE.');
+    await waitFor(() => {
+      expect(window.dataLayer).toContainEqual(
+        expect.objectContaining({
+          event: 'risk_calculator_lead_generated',
+          conversion_stage: 'conversao_comercial',
+        }),
+      );
+    });
   });
 
   it('remove a opcao de perfil generico', () => {

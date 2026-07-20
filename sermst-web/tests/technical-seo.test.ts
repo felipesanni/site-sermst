@@ -41,8 +41,10 @@ describe('technical SEO discovery files', () => {
     );
     const layout = readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8');
 
-    expect(layout).toContain('gtag/js?id=G-PZN2BZ7JFV');
-    expect(layout).toContain("gtag('config', 'G-PZN2BZ7JFV');");
+    expect(layout).not.toContain('gtag/js?id=G-PZN2BZ7JFV');
+    expect(layout).not.toContain("gtag('config', 'G-PZN2BZ7JFV');");
+    expect(layout).toContain('gtag/js?id=AW-11548872057');
+    expect(layout).toContain("gtag('config', 'AW-11548872057');");
     expect(layout).not.toContain('send_page_view: false');
     expect(tracker).not.toContain("window.gtag('event', 'page_view'");
     expect(tracker).not.toContain('send_to: GA4_MEASUREMENT_ID');
@@ -58,7 +60,7 @@ describe('technical SEO discovery files', () => {
     );
     const layout = readFileSync(join(process.cwd(), 'src', 'app', 'layout.tsx'), 'utf8');
 
-    expect(layout).toContain("gtag('config', 'G-PZN2BZ7JFV');");
+    expect(layout).not.toContain("gtag('config', 'G-PZN2BZ7JFV');");
     expect(layout).not.toContain('send_page_view: false');
     expect(layout).not.toContain("gtag('event', 'user_engagement'");
     expect(tracker).not.toContain("window.gtag('event', 'user_engagement'");
@@ -304,12 +306,16 @@ describe('technical SEO discovery files', () => {
     expect(urls).not.toContain(`${BASE_URL}/saude/importancia-do-exame-periodico`);
 
     const nr07 = entries.find((entry) => entry.url === `${BASE_URL}/normas/o-que-e-nr-07`);
+    const nr35 = entries.find((entry) => entry.url === `${BASE_URL}/normas/nr-35-trabalho-em-altura`);
     const demissional = entries.find((entry) => entry.url === `${BASE_URL}/saude/exame-demissional`);
+    const retorno = entries.find((entry) => entry.url === `${BASE_URL}/saude/exame-retorno-ao-trabalho`);
     const empresarioHub = entries.find((entry) => entry.url === `${BASE_URL}/empresario`);
     const unchanged = entries.find((entry) => entry.url === `${BASE_URL}/quem-somos`);
 
-    expect(nr07?.lastModified).toBe('2026-07-13');
-    expect(demissional?.lastModified).toBe('2026-07-13');
+    expect(nr07?.lastModified).toBe('2026-07-20');
+    expect(nr35?.lastModified).toBe('2026-07-20');
+    expect(demissional?.lastModified).toBe('2026-07-20');
+    expect(retorno?.lastModified).toBe('2026-07-20');
     expect(empresarioHub?.lastModified).toBe('2026-07-13');
     for (const slug of Object.keys(empresarioSEO)) {
       const article = entries.find(

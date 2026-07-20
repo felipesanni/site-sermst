@@ -137,7 +137,7 @@ export default function GestãoSSTPage() {
         },
         {
           q: 'Quanto custa montar gestão de SST do zero?',
-          a: 'Na prática, a gestão completa de SST costuma ser contratada em formato mensal. Para empresas com mais de 5 colaboradores, a referência informada é de R$ 14,00 a R$ 21,00 por colaborador. Já empresas com até 5 funcionários podem entrar em pacotes com valor fixo a partir de R$ 180,00 por mês. O valor final varia conforme grau de risco, volume de exames, necessidade de treinamentos e escopo técnico contratado.',
+          a: 'Na SERMST, os planos mensais começam em R$ 169,00. Além do valor mínimo, o cálculo acrescenta o preço por funcionário de cada faixa: de R$ 12,50 a R$ 18,00 no Plano Base, de R$ 13,50 a R$ 17,00 no Essencial e de R$ 17,50 a R$ 23,00 no Gestão Total. Empresas com 100 ou mais funcionários recebem proposta personalizada. O valor final varia conforme porte, grau de risco, volume de exames e escopo contratado.',
         },
         {
           q: 'Qual a diferença entre gestão de SST e SESMT?',

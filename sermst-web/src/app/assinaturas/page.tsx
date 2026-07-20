@@ -58,15 +58,15 @@ const serviceSchema = {
     {
       '@type': 'Offer',
       name: 'Plano Base',
-      price: '149',
+      price: '169',
       priceCurrency: 'BRL',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '149',
+        price: '169',
         priceCurrency: 'BRL',
         unitText: 'mês',
       },
-      description: 'PGR, PCMSO, LTCAT, exames clínicos ocupacionais, portal do cliente, gestão de vencimentos e mensageria do eSocial.',
+      description: 'PGR, avaliação de fatores psicossociais, PCMSO, LTCAT, exames clínicos ocupacionais, portal do cliente, gestão de vencimentos e mensageria do eSocial.',
     },
     {
       '@type': 'Offer',

@@ -11,6 +11,22 @@ describe('AssinaturaPlans contract flow', () => {
     window.history.replaceState({}, '', '/assinaturas?utm_source=google');
   });
 
+  it('calcula os valores mensais com as faixas definidas na tabela comercial', async () => {
+    const user = userEvent.setup();
+
+    render(<AssinaturaPlans />);
+
+    expect(screen.getByText(/R\$\s*331/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*372/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*506/)).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: '20' }));
+
+    expect(screen.getByText(/R\$\s*471/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*542/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*696/)).toBeInTheDocument();
+  });
+
   it('consulta CNPJ, permite trocar endereco por CEP e envia a simulacao', async () => {
     const user = userEvent.setup();
     const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input, init) => {

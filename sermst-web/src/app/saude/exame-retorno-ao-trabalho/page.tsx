@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame de Retorno ao Trabalho em São Paulo | SERMST',
+  title: 'Exame de retorno ao trabalho: quando fazer | SERMST',
   description:
-    'Exame de retorno ao trabalho obrigatório após afastamento de 30 dias ou mais. ASO antes de reassumir funções. Realizado em São Paulo pela SERMST.',
+    'Veja quando fazer o exame de retorno ao trabalho, a regra dos 30 dias, o prazo do ASO e o que avaliar antes de o empregado reassumir a função.',
   robots: 'index, follow',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-retorno-ao-trabalho' },
   openGraph: {
-    title: 'Exame de Retorno ao Trabalho em São Paulo | SERMST',
+    title: 'Exame de retorno ao trabalho: quando fazer | SERMST',
     description:
       'Guia sobre o exame de retorno ao trabalho: quando é obrigatório, o que o médico avalia, diferença para readaptação e como fazer o ASO antes do retorno.',
     url: 'https://sermst.com.br/saude/exame-retorno-ao-trabalho',
@@ -34,11 +34,11 @@ export default function ExameRetornoAoTrabalhoPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-13',
+        dateModified: '2026-07-20',
       }}
       readingTime="7 min"
       h1="Exame de retorno ao trabalho: quando é obrigatório, o que avalia e como fazer"
-      intro="O exame de retorno ao trabalho é a avaliação médica exigida pela NR-07 antes que o trabalhador reassuma suas atividades após afastamento igual ou superior a 30 dias por doença ou acidente. A avaliação define a aptidão e verifica se o retorno precisa ser gradativo."
+      intro="O exame de retorno ao trabalho deve ser feito antes de o trabalhador reassumir suas atividades após afastamento igual ou superior a 30 dias por doença ou acidente. A avaliação prevista na NR-07 verifica a aptidão e se a volta precisa ser gradativa."
       quickAnswer={
         <p>
           O <strong>exame de retorno ao trabalho</strong> é obrigatório após afastamento de{' '}
@@ -179,8 +179,9 @@ export default function ExameRetornoAoTrabalhoPage() {
       sidebarTitle="Trabalhador retornando de afastamento?"
       sidebarHook="A SERMST realiza o exame de retorno ao trabalho em São Paulo com ASO e lançamento no eSocial. Agendamento prioritário para retornos com data definida pelo INSS."
       sidebarCtaLabel="Agendar exame de retorno"
-      sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
+      sidebarCtaHref="/contato"
       related={[
+        { label: 'NR-07: PCMSO, ASO e exames ocupacionais', href: '/normas/o-que-e-nr-07' },
         { label: 'Exame periódico ocupacional', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Como funciona o exame admissional', href: '/exames/como-funciona-o-exame-admissional' },
         { label: 'Exame demissional: o que é e quando fazer', href: '/saude/exame-demissional' },

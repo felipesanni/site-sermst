@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-35: trabalho em altura, treinamento e validade | SERMST',
+  title: 'NR-35: validade de 2 anos e treinamento de 8h | SERMST',
   description:
-    'Entenda o que a NR-35 exige no trabalho em altura: quem precisa, treinamento de 8 horas, validade, reciclagem, APR, PT e penalidades.',
+    'Veja o que a NR-35 exige acima de 2 metros: treinamento inicial de 8 horas, reciclagem a cada 2 anos, análise de risco, PT e aptidão no ASO.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura' },
   openGraph: {
-    title: 'NR-35: trabalho em altura, treinamento e validade | SERMST',
+    title: 'NR-35: validade de 2 anos e treinamento de 8h | SERMST',
     description:
       'Veja o que a NR-35 exige: definição de trabalho em altura, treinamento obrigatório, análise de risco, permissão de trabalho e responsabilidades do empregador.',
     url: 'https://sermst.com.br/normas/nr-35-trabalho-em-altura',
@@ -31,16 +31,18 @@ export default function NR35Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-13',
+        dateModified: '2026-07-20',
       }}
 
-      h1="NR-35: trabalho em altura, treinamento e o que a empresa precisa cumprir"
-      intro="A NR-35 se aplica à atividade com diferença de nível acima de 2 metros do nível inferior e risco de queda. Além do treinamento, a empresa precisa planejar o trabalho, avaliar os riscos, autorizar o trabalhador e preparar a resposta a emergências."
+      readingTime="8 min"
+      h1="NR-35: trabalho em altura, validade do treinamento e exigências"
+      intro="A NR-35 se aplica à atividade com diferença de nível acima de 2 metros do nível inferior e risco de queda. O treinamento inicial tem carga mínima de 8 horas e o periódico ocorre a cada 2 anos, mas a conformidade também depende de análise de risco, autorização, aptidão e resposta a emergências."
       quickAnswer={
         <p>
           A <strong>NR-35</strong> abrange atividades com diferença de nível acima de <strong>2 metros</strong> e risco de queda. Exige treinamento inicial teórico e prático de no mínimo 8 horas, treinamento periódico de 8 horas a cada dois anos, aptidão consignada no ASO, Análise de Risco e autorização formal. A Permissão de Trabalho é exigida para atividades não rotineiras.
         </p>
       }
+      showTableOfContents
       sections={[
         {
           title: 'O que é considerado trabalho em altura na NR-35',
@@ -142,6 +144,10 @@ export default function NR35Page() {
         },
       ]}
       faq={[
+        {
+          q: 'A NR-35 vale por quanto tempo?',
+          a: 'O treinamento periódico da NR-35 deve ocorrer a cada dois anos e ter carga mínima de 8 horas. Também pode ser necessário treinamento eventual nas situações previstas pela NR-01. Aptidão no ASO, autorização e condições da tarefa precisam permanecer válidas durante todo o período.',
+        },
         {
           q: 'Quem pode dar treinamento NR-35?',
           a: 'Os instrutores devem ter proficiência comprovada no assunto, e o treinamento deve ocorrer sob responsabilidade de profissional qualificado ou legalmente habilitado em segurança do trabalho. A proficiência pode ser demonstrada por formação, experiência e outros registros compatíveis.',

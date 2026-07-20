@@ -70,7 +70,7 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
   'o-que-e-nr-07': {
     titulo: 'NR-07 atualizada: PCMSO, ASO e exames ocupacionais',
     descricao:
-      'Entenda a NR-07 vigente: PCMSO, ASO, exames ocupacionais, periodicidade, prazo demissional e hipóteses de dispensa para pequenos negócios.',
+      'Veja o que a NR-07 exige no PCMSO, quais exames ocupacionais devem ser feitos, quando emitir o ASO e como a norma se relaciona com o PGR e o eSocial.',
     conteudo: `A NR-07 estabelece diretrizes para o Programa de Controle Médico de Saúde Ocupacional (PCMSO). O programa deve proteger e preservar a saúde dos empregados em relação aos riscos ocupacionais identificados e classificados no PGR. Por isso, não funciona como um documento isolado nem como uma lista genérica de exames.
 
 Em termos práticos, a NR-07 é a regra; o PCMSO organiza o monitoramento médico; e o ASO registra a conclusão do exame clínico ocupacional. A norma prevê exames admissional, periódico, de retorno ao trabalho, de mudança de riscos ocupacionais e demissional.
@@ -105,7 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'Entenda as Normas Regulamentadoras de Saúde e Segurança do Trabalho. A SERMST oferece suporte técnico completo para conformidade com NRs e eSocial.';
   const title =
     slug === 'o-que-e-nr-07'
-      ? 'NR-07: PCMSO, ASO e exames ocupacionais | SERMST'
+      ? 'NR-07 atualizada: PCMSO, ASO e exames | SERMST'
       : `${titulo} | SERMST`;
 
   return {
@@ -130,6 +130,33 @@ export default async function NormaPage({ params }: Props) {
   if (!norma) notFound();
 
   const titulo = norma.titulo ?? slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+
+  const nr07ArticleSchema =
+    slug === 'o-que-e-nr-07'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          '@id': 'https://sermst.com.br/normas/o-que-e-nr-07#article',
+          headline: titulo,
+          description: norma.descricao,
+          url: 'https://sermst.com.br/normas/o-que-e-nr-07',
+          mainEntityOfPage: 'https://sermst.com.br/normas/o-que-e-nr-07',
+          inLanguage: 'pt-BR',
+          datePublished: '2026-07-13T00:00:00-03:00',
+          dateModified: '2026-07-20T00:00:00-03:00',
+          author: {
+            '@type': 'Person',
+            name: 'Luiz César Sannino',
+            url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
+          },
+          publisher: {
+            '@type': 'Organization',
+            '@id': 'https://sermst.com.br/#organization',
+            name: 'SERMST',
+            url: 'https://sermst.com.br',
+          },
+        }
+      : null;
 
   const servicosRelacionados =
     slug === 'o-que-e-nr-07'
@@ -164,6 +191,12 @@ export default async function NormaPage({ params }: Props) {
           { name: norma.titulo },
         ]}
       />
+      {nr07ArticleSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(nr07ArticleSchema) }}
+        />
+      )}
 
       <header className="border-b-4 border-accent-pink bg-brand-900 pb-20 pt-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
@@ -187,7 +220,7 @@ export default async function NormaPage({ params }: Props) {
           <div className="md:col-span-2">
             <FadeIn direction="right">
               <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
-                {norma.conteudo && (
+                {norma.conteudo && slug !== 'o-que-e-nr-07' && (
                   <div className="mb-8 border-b border-slate-100 pb-8">
                     {norma.conteudo.split('\n\n').map((para, i) => (
                       <p key={i} className="mb-4 leading-relaxed text-slate-600 last:mb-0">
@@ -198,9 +231,70 @@ export default async function NormaPage({ params }: Props) {
                 )}
 
                 {slug === 'o-que-e-nr-07' && (
-                  <div className="mb-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
-                    <h2 className="mb-4 text-xl font-black text-brand-900">Fontes oficiais da NR-07</h2>
-                    <ul className="space-y-3 text-slate-600">
+                  <div className="mb-10 space-y-10 border-b border-slate-100 pb-10">
+                    <div className="rounded-xl border border-accent-pink/20 bg-accent-pink/5 p-6">
+                      <p className="mb-2 text-xs font-black uppercase tracking-widest text-accent-pink">Resposta direta</p>
+                      <p className="leading-relaxed text-slate-700">
+                        A <strong>NR-07</strong> estabelece as diretrizes do PCMSO. O programa organiza o acompanhamento médico dos trabalhadores a partir dos riscos identificados no PGR e inclui os exames admissional, periódico, de retorno ao trabalho, de mudança de riscos e demissional.
+                      </p>
+                    </div>
+
+                    <section>
+                      <h2 className="mb-4 text-2xl font-black text-brand-900">O que é a NR-07 e qual a relação com o PCMSO</h2>
+                      <div className="space-y-4 leading-relaxed text-slate-600">
+                        <p>
+                          A NR-07 é a norma que orienta o Programa de Controle Médico de Saúde Ocupacional. O PCMSO transforma essas diretrizes em uma rotina compatível com os riscos, as funções e o histórico de saúde dos empregados.
+                        </p>
+                        <p>
+                          Na prática, a norma define a base do monitoramento; o PCMSO organiza o acompanhamento; e o ASO registra a conclusão de cada exame clínico ocupacional. Copiar um programa de outra empresa não resolve, porque os exames precisam conversar com os riscos identificados e classificados no PGR.
+                        </p>
+                      </div>
+                    </section>
+
+                    <section>
+                      <h2 className="mb-4 text-2xl font-black text-brand-900">Quais exames ocupacionais a NR-07 prevê</h2>
+                      <ul className="space-y-3 text-slate-600">
+                        <li><strong>Admissional:</strong> realizado antes de o empregado assumir as atividades.</li>
+                        <li><strong>Periódico:</strong> acompanha a saúde ao longo do vínculo, na periodicidade definida pela norma e pelo PCMSO.</li>
+                        <li><strong>Retorno ao trabalho:</strong> feito antes da volta após afastamento igual ou superior a 30 dias por doença ou acidente.</li>
+                        <li><strong>Mudança de riscos ocupacionais:</strong> realizado antes da mudança, quando a nova atividade altera a exposição.</li>
+                        <li><strong>Demissional:</strong> feito em até 10 dias contados do término do contrato, quando não houver dispensa válida.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h2 className="mb-4 text-2xl font-black text-brand-900">Periodicidade, grau de risco e dispensa do PCMSO</h2>
+                      <div className="space-y-4 leading-relaxed text-slate-600">
+                        <p>
+                          A periodicidade não depende apenas da idade ou do grau de risco da empresa. Trabalhadores expostos a riscos ocupacionais identificados no PGR e pessoas com condições crônicas que aumentem a suscetibilidade podem precisar de exame clínico anual ou em intervalo menor, conforme o critério médico. Para os demais trabalhadores, o intervalo geral é de dois anos.
+                        </p>
+                        <p>
+                          MEI, ME e EPP de grau de risco 1 ou 2 podem ser dispensados de elaborar o PCMSO quando cumprem as condições previstas na NR-01 e não identificam as exposições indicadas pela norma. Essa dispensa não elimina os exames ocupacionais nem a emissão do ASO.
+                        </p>
+                        <p>
+                          Para conferir o grau de risco a partir do CNAE, use a{' '}
+                          <Link href="/rh/calculadora-cnae-grau-de-risco" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4">
+                            calculadora de CNAE e grau de risco
+                          </Link>.
+                        </p>
+                      </div>
+                    </section>
+
+                    <section>
+                      <h2 className="mb-4 text-2xl font-black text-brand-900">NR-07, ASO e evento S-2220 do eSocial</h2>
+                      <div className="space-y-4 leading-relaxed text-slate-600">
+                        <p>
+                          O ASO registra a conclusão do exame clínico ocupacional. Os dados dos exames informados no S-2220 precisam ser coerentes com o PCMSO, com a função e com os riscos aos quais o trabalhador está exposto.
+                        </p>
+                        <p>
+                          Quando o exame demissional é dispensado nos termos da NR-07, não há novo ASO demissional. Nesse caso, a orientação oficial do eSocial é não enviar um S-2220 apenas para registrar a dispensa.
+                        </p>
+                      </div>
+                    </section>
+
+                    <section className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+                      <h2 className="mb-4 text-xl font-black text-brand-900">Fontes oficiais da NR-07</h2>
+                      <ul className="space-y-3 text-slate-600">
                       <li>
                         <a
                           href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-07-atualizada-2022.pdf"
@@ -221,7 +315,8 @@ export default async function NormaPage({ params }: Props) {
                           Perguntas frequentes dos eventos de SST no eSocial
                         </a>
                       </li>
-                    </ul>
+                      </ul>
+                    </section>
                   </div>
                 )}
 

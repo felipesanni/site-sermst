@@ -275,8 +275,7 @@ export default function RootLayout({
         }}
       />
       {/* ── Google Tag Manager ── */}
-      {/* O GTM recebe apenas eventos proprietarios e conversoes. A configuracao
-          base do GA4 e todos os page_views pertencem ao gtag direto. */}
+      {/* O GTM e a unica origem da configuracao base do GA4 e dos page_views. */}
       <Script
         id="gtm"
         strategy="afterInteractive"
@@ -288,10 +287,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-N7NL2D9B');`,
         }}
       />
-      {/* ── Meta Pixel (direto, não via GTM) ── */}
+      {/* Google Ads permanece direto; o GA4 e configurado somente pelo GTM. */}
       <Script
         id="google-tag-src"
-        src="https://www.googletagmanager.com/gtag/js?id=G-PZN2BZ7JFV"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-11548872057"
         strategy="afterInteractive"
       />
       <Script
@@ -302,12 +301,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = window.gtag || gtag;
-gtag('set', 'linker', { domains: ['sermst.com.br'] });
 gtag('js', new Date());
 gtag('set', 'developer_id.dZTNiMT', true);
-// O GA4 coleta user_engagement automaticamente enquanto a pagina esta em foco.
-// Nao envie esse evento manualmente: isso duplicaria o tempo de engajamento.
-gtag('config', 'G-PZN2BZ7JFV');
 gtag('config', 'AW-11548872057');
           `,
         }}

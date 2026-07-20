@@ -6,17 +6,26 @@ import { normasKnown } from "./normas/[slug]/page";
 
 const BASE_URL = "https://sermst.com.br";
 const SEO_REVISION_DATE = "2026-07-13";
+const PRIORITY_REVISION_DATE = "2026-07-20";
 
 function getAccurateLastModified(url: string): string | undefined {
+  const priorityRevisedPages = new Set([
+    `${BASE_URL}/normas/nr-35-trabalho-em-altura`,
+    `${BASE_URL}/normas/o-que-e-nr-07`,
+    `${BASE_URL}/saude/exame-demissional`,
+    `${BASE_URL}/saude/exame-retorno-ao-trabalho`,
+  ]);
+
+  if (priorityRevisedPages.has(url)) {
+    return PRIORITY_REVISION_DATE;
+  }
+
   const revisedPages = new Set([
     BASE_URL,
     `${BASE_URL}/servicos`,
     `${BASE_URL}/normas`,
-    `${BASE_URL}/normas/o-que-e-nr-07`,
     `${BASE_URL}/saude`,
-    `${BASE_URL}/saude/exame-demissional`,
     `${BASE_URL}/saude/exame-periodico-ocupacional`,
-    `${BASE_URL}/saude/exame-retorno-ao-trabalho`,
     `${BASE_URL}/saude/espirometria-ocupacional`,
     `${BASE_URL}/saude/eletrocardiograma-ocupacional`,
     `${BASE_URL}/saude/avaliacao-psicossocial-ocupacional`,

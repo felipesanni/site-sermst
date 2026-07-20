@@ -357,6 +357,7 @@ function ResultCard({
       source_mode: sourceMode,
       destination: nextStep.href || 'lead_form',
       audience_segment: nextStep.segment,
+      conversion_stage: 'intencao',
     });
   }
 
@@ -379,7 +380,10 @@ function ResultCard({
 
     payload.porte = getPorteFromEmployees(employees);
     payload.dor = 'calculadora-risco';
-    payload.empresa = payload.empresa || razaoSocial || '';
+    payload.empresa =
+      payload.empresa ||
+      razaoSocial ||
+      `Empresa não informada — consulta por CNAE ${entry.codigo}`;
     payload.mensagem = [
       `Lead originado pela Calculadora de Risco.`,
       `Modo de consulta: ${sourceMode === 'cnpj' ? 'CNPJ' : 'CNAE'}.`,
@@ -424,6 +428,7 @@ function ResultCard({
           source_mode: sourceMode,
           consultant_profile: consultantProfile,
           audience_segment: nextStep.segment,
+          conversion_stage: 'conversao_comercial',
         });
       }
     } catch (submitError) {
@@ -890,6 +895,7 @@ export function CnaeCalculator() {
       consultant_profile: consultantProfile,
       source_mode: 'cnae',
       audience_segment: getNextStepConfig(consultantProfile, employees).segment,
+      conversion_stage: 'microconversao',
     });
   }
 
@@ -1015,6 +1021,7 @@ export function CnaeCalculator() {
       consultant_profile: consultantProfile,
       source_mode: 'cnpj',
       audience_segment: getNextStepConfig(consultantProfile, resultEmployees).segment,
+      conversion_stage: 'microconversao',
     });
   }, [cnpj, cnpjEntry, consultantProfile, employeeCount, hasResult, tab]);
 

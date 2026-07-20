@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame demissional: prazo de 10 dias e dispensa | SERMST',
+  title: 'Exame demissional: o que é, prazo e quando fazer | SERMST',
   description:
-    'Veja o prazo do exame demissional, contado em até 10 dias após o término do contrato, e as regras de dispensa por exame clínico recente na NR-07.',
+    'Entenda o que é o exame demissional, quando fazer, se pode ocorrer após a rescisão, quem paga e quando a NR-07 permite a dispensa.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional' },
   openGraph: {
-    title: 'Exame demissional: prazo de 10 dias e dispensa | SERMST',
+    title: 'Exame demissional: o que é, prazo e quando fazer | SERMST',
     description:
-      'Entenda o prazo de até 10 dias após o término do contrato, quando pode haver dispensa e como funciona o ASO demissional.',
+      'Veja quando fazer o exame demissional, o prazo após o término do contrato, quem paga e como funciona o ASO demissional.',
     url: 'https://sermst.com.br/saude/exame-demissional',
     type: 'article',
     locale: 'pt_BR',
@@ -29,10 +29,17 @@ export default function ExameDemissionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-13',
+        dateModified: '2026-07-20',
       }}
-      h1="Exame demissional: prazo, dispensa e o que diz a NR-07"
-      intro="O exame clínico demissional integra o monitoramento de saúde previsto na NR-07. A regra vigente não exige que ele aconteça antes da saída: quando não houver dispensa, deve ser realizado em até 10 dias contados do término do contrato. Aqui você encontra o prazo correto, as janelas de 90 e 135 dias e o reflexo no ASO e no eSocial."
+      readingTime="7 min"
+      h1="Exame demissional: o que é, quando fazer e qual o prazo"
+      intro="O exame demissional registra a condição de saúde do trabalhador no encerramento do vínculo. Quando não houver dispensa, a NR-07 determina que o exame clínico seja realizado em até 10 dias contados do término do contrato. Abaixo você confere quando fazer, quem paga e o que acontece depois da avaliação."
+      quickAnswer={
+        <p>
+          O <strong>exame demissional</strong> é a avaliação médica ocupacional feita no encerramento do contrato. Quando não houver dispensa, deve ocorrer em até <strong>10 dias após o término do vínculo</strong>. O custo é da empresa e, depois do exame, o médico emite o ASO demissional.
+        </p>
+      }
+      showTableOfContents
       sections={[
         {
           title: 'O que é o exame demissional',
@@ -144,6 +151,19 @@ export default function ExameDemissionalPage() {
           ),
         },
         {
+          title: 'Depois do exame demissional, qual é o próximo passo',
+          body: (
+            <>
+              <p>
+                Ao terminar a avaliação, o médico emite o ASO com a conclusão correspondente. A empresa deve conferir o documento, disponibilizá-lo ao trabalhador e manter o registro junto ao prontuário e aos demais documentos do PCMSO.
+              </p>
+              <p>
+                Quando houve exame demissional, as informações aplicáveis seguem para o evento S-2220 do eSocial. Se a avaliação indicar alteração que exija investigação, o caso precisa ser analisado antes de a empresa tratar o desligamento como uma etapa documental encerrada.
+              </p>
+            </>
+          ),
+        },
+        {
           title: 'Fontes oficiais consultadas',
           body: (
             <ul>
@@ -189,6 +209,10 @@ export default function ExameDemissionalPage() {
         {
           q: 'Qual a diferença entre exame demissional e ASO demissional?',
           a: 'O exame demissional é o processo de avaliação ocupacional. O ASO demissional é o documento emitido ao final, com a conclusão médica correspondente.',
+        },
+        {
+          q: 'Depois do exame demissional, qual é o próximo passo?',
+          a: 'O médico emite o ASO, a empresa confere e guarda o documento, disponibiliza a via do trabalhador e envia as informações aplicáveis ao eSocial. Se houver alteração clínica relevante, o caso precisa de avaliação antes do encerramento do fluxo ocupacional.',
         },
       ]}
       sidebarTitle="Precisa agendar o exame demissional?"

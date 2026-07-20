@@ -86,18 +86,18 @@ const FORM_STARTED_AT_KEY = 'sermst_form_started_at_v1';
 
 const baseIncludedItems = [
   'PGR - Programa de Gerenciamento de Riscos',
-  'Avaliação dos fatores psicossociais',
+  'Avaliação de fatores psicossociais',
   'PCMSO - Programa de Controle Médico de Saúde Ocupacional',
   'LTCAT - Laudo Técnico das Condições Ambientais de Trabalho',
-  'Exames clínicos ocupacionais na sede da SERMST (exceto exames complementares)',
-  'Portal do Cliente - Software de Gestão',
-  'Gestão de vencimentos de periódicos',
-  'Mensageria do eSocial (S-2220, S-2221 e S-2240)',
+  'Exames clínicos ocupacionais na sede da SERMST (exceto complementares)',
+  'Portal do Cliente - software de gestão',
+  'Gestão de vencimentos de exames periódicos',
+  'Mensageria do eSocial: S-2220, S-2221 e S-2240',
 ];
 
 const essencialIncludedItems = [
   'PPP - Perfil Profissiográfico Previdenciário',
-  'CAT - Comunicado de Acidente de Trabalho',
+  'CAT - Comunicação de Acidente de Trabalho',
   'Mensageria do eSocial: S-2210 (CAT)',
   'Treinamento de CIPA',
   'Consultoria em SST',
@@ -157,15 +157,15 @@ const plans: Plan[] = [
     title: 'Plano Base',
     description:
       'Para empresas que precisam organizar a documentação obrigatória, exames clínicos e rotina digital de SST.',
-    minimum: 149,
+    minimum: 169,
     bestFor: 'Empresas pequenas, operação simples e baixa complexidade ocupacional.',
     bands: [
-      { from: 2, to: 10, monthlyPerEmployee: 16 },
-      { from: 11, to: 20, monthlyPerEmployee: 12 },
-      { from: 21, to: 50, monthlyPerEmployee: 12 },
-      { from: 51, to: 70, monthlyPerEmployee: 11.5 },
-      { from: 71, to: 80, monthlyPerEmployee: 11 },
-      { from: 81, to: 99, monthlyPerEmployee: 10.5 },
+      { from: 2, to: 10, monthlyPerEmployee: 18 },
+      { from: 11, to: 20, monthlyPerEmployee: 14 },
+      { from: 21, to: 50, monthlyPerEmployee: 14 },
+      { from: 51, to: 70, monthlyPerEmployee: 13.5 },
+      { from: 71, to: 80, monthlyPerEmployee: 13 },
+      { from: 81, to: 99, monthlyPerEmployee: 12.5 },
     ],
     features: baseIncludedItems,
     includedItems: baseIncludedItems,
