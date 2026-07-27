@@ -53,9 +53,9 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
       'A NR-18 define os requisitos de SST para canteiros de obra. O antigo PCMAT foi substituído pelo PGR, e a norma cobre treinamentos obrigatórios, proteções coletivas, PCMSO e integração com o eSocial.',
   },
   'nr-35-trabalho-em-altura': {
-    titulo: 'NR-35: Trabalho em Altura',
+    titulo: 'NR-35 atualizada em 2026: Trabalho em Altura',
     descricao:
-      'A NR-35 regulamenta atividades executadas acima de 2 metros com risco de queda. Exige treinamento inicial, reciclagens, análise de risco e supervisão adequada.',
+      'A Portaria MTE nº 1.259/2026 tornou presenciais os treinamentos da NR-35 e trouxe novas regras para análise de risco, proteção contra quedas e inspeção de escadas fixas.',
   },
   'ppp-eletronico': {
     titulo: 'PPP eletrônico: Perfil Profissiográfico Previdenciário',

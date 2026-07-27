@@ -16,15 +16,15 @@ describe('AssinaturaPlans contract flow', () => {
 
     render(<AssinaturaPlans />);
 
-    expect(screen.getByText(/R\$\s*331/)).toBeInTheDocument();
-    expect(screen.getByText(/R\$\s*372/)).toBeInTheDocument();
-    expect(screen.getByText(/R\$\s*506/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*222/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*316/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*374/)).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: '20' }));
 
-    expect(screen.getByText(/R\$\s*471/)).toBeInTheDocument();
-    expect(screen.getByText(/R\$\s*542/)).toBeInTheDocument();
-    expect(screen.getByText(/R\$\s*696/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*292/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*446/)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*524/)).toBeInTheDocument();
   });
 
   it('consulta CNPJ, permite trocar endereco por CEP e envia a simulacao', async () => {

@@ -58,11 +58,11 @@ const serviceSchema = {
     {
       '@type': 'Offer',
       name: 'Plano Base',
-      price: '169',
+      price: '159',
       priceCurrency: 'BRL',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '169',
+        price: '159',
         priceCurrency: 'BRL',
         unitText: 'mês',
       },
@@ -71,28 +71,28 @@ const serviceSchema = {
     {
       '@type': 'Offer',
       name: 'Plano Essencial',
-      price: '219',
+      price: '199',
       priceCurrency: 'BRL',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '219',
+        price: '199',
         priceCurrency: 'BRL',
         unitText: 'mês',
       },
-      description: 'Tudo do Plano Base mais PPP, CAT, mensageria S-2210, treinamento de CIPA, consultoria em SST e apoio em auditorias.',
+      description: 'Tudo do Plano Base mais laudos de insalubridade e periculosidade, PPP, CAT, treinamento de CIPA, consultoria em SST e apoio em auditorias.',
     },
     {
       '@type': 'Offer',
       name: 'Plano Gestão Total',
-      price: '299',
+      price: '239',
       priceCurrency: 'BRL',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '299',
+        price: '239',
         priceCurrency: 'BRL',
         unitText: 'mês',
       },
-      description: 'Tudo do Plano Essencial mais consultoria jurídica preventiva, palestra com psicóloga e treinamentos online para a equipe.',
+      description: 'Tudo do Plano Essencial mais consultoria jurídica preventiva, 6 consultas anuais com clínico geral, palestra com psicóloga e treinamentos online para a equipe.',
     },
   ],
 };
@@ -104,7 +104,7 @@ const contractFaqs = [
   },
   {
     title: 'O que muda entre Plano Base, Essencial e Gestão Total?',
-    text: 'O Plano Base cobre documentos, exames, portal, vencimentos, eSocial e avaliação de fatores psicossociais. O Essencial acrescenta PPP, CAT, mensageria S-2210, treinamento de CIPA, consultoria e apoio em auditorias. O Gestão Total adiciona consultoria jurídica, palestra com psicóloga e treinamentos online para a equipe.',
+    text: 'O Plano Base cobre documentos, exames, portal, vencimentos, eSocial e avaliação de fatores psicossociais. O Essencial acrescenta laudos de insalubridade e periculosidade, PPP, CAT, treinamento de CIPA, consultoria e apoio em auditorias. O Gestão Total adiciona consultoria jurídica, 6 consultas anuais com clínico geral, palestra com psicóloga e treinamentos online para a equipe.',
   },
   {
     title: 'Como o CNPJ ajuda na contratação?',

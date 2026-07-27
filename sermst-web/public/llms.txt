@@ -2,7 +2,7 @@
 
 > Empresa brasileira com mais de 55 anos de historia em Saude Ocupacional e Seguranca do Trabalho. Atende empresas com exames ocupacionais, PCMSO, PGR, LTCAT, eSocial, treinamentos, consultoria, acompanhamento de pericias e apoio juridico e trabalhista relacionado as obrigacoes legais.
 
-Ultima atualizacao: 2026-07-13 (rev. 11)
+Ultima atualizacao: 2026-07-27 (rev. 12)
 
 A historia da SERMST comecou na area da saude, com exames como a abreugrafia. Ao longo de mais de 55 anos, a empresa acompanhou as mudancas da medicina ocupacional, da seguranca do trabalho e das obrigacoes legais. Ja foram mais de 150 mil vidas e 3.500 empresas atendidas, com mais de R$ 35 milhoes economizados pelos clientes em multas.
 
@@ -119,7 +119,7 @@ A historia da SERMST comecou na area da saude, com exames como a abreugrafia. Ao
 - NR-17 Ergonomia (AET, LER/DORT, Anexo I teleatendimento, Anexo II supermercados): https://sermst.com.br/normas/nr-17-ergonomia
 - NR-18 Construcao Civil (PGR substituiu PCMAT, treinamento 4h + reciclagem bienal): https://sermst.com.br/normas/nr-18-construcao-civil
 - NR-33 Espaco Confinado (PET, 3 funcoes, 16h treinamento, reciclagem anual): https://sermst.com.br/normas/nr-33-espaco-confinado
-- NR-35 Trabalho em Altura (8h treinamento, reciclagem bienal, APR, PT): https://sermst.com.br/normas/nr-35-trabalho-em-altura
+- NR-35 atualizada 2026 (treinamento presencial, prazo ate 16/07/2027, escadas, AR, SPIQ e PT): https://sermst.com.br/normas/nr-35-trabalho-em-altura
 - NR-37 Plataformas de Petroleo e Gas offshore (CIPLAT, treinamento basico 6h/avancado 8h, 14x14 via CLT/CCT): https://sermst.com.br/normas/nr-37
 - PGRS Residuos de Servicos de Saude (clinicas, laboratorios, hospitais): https://sermst.com.br/normas/pgrs-residuos
 - DDS: https://sermst.com.br/normas/dds
@@ -134,7 +134,7 @@ A historia da SERMST comecou na area da saude, com exames como a abreugrafia. Ao
 
 ## Treinamentos
 - Treinamento NR-10 Seguranca em Eletricidade (40h basico, complementar SEP, reciclagem bienal): https://sermst.com.br/treinamentos/nr-10-seguranca-eletrica
-- Treinamento NR-35 Trabalho em Altura (8h, reciclagem bienal, AR, PT, cinto paraquedista): https://sermst.com.br/treinamentos/nr-35-trabalho-em-altura
+- Treinamento presencial NR-35 Trabalho em Altura (8h, reciclagem bienal, AR, PT e pratica): https://sermst.com.br/treinamentos/nr-35-trabalho-em-altura
 - Treinamento NR-33 Espaco Confinado (vigias 16h, supervisores 40h, PET, monitoramento de gases): https://sermst.com.br/treinamentos/nr-33-espaco-confinado
 - Treinamento CIPA NR-05 para membros eleitos, indicados e designados (Mapa de Riscos, SIPAT): https://sermst.com.br/treinamentos/nr-05-cipa-comissao-interna
 - Treinamento Brigada de Incendio IT-17 Sao Paulo (8h, AVCB, extintores, reciclagem anual): https://sermst.com.br/treinamentos/brigada-de-incendio-it17

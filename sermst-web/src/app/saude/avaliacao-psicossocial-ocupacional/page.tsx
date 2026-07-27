@@ -122,7 +122,7 @@ export default function AvaliacaoPsicossocialOcupacionalPage() {
                 Quando o médico identifica uma possível contraindicação psicossocial, pode solicitar avaliação especializada e considerar a aptidão para a atividade crítica. O ASO registra apto ou inapto; encaminhamentos e recomendações seguem na documentação médica apropriada.
               </p>
               <p>
-                A periodicidade da avaliação segue o protocolo do PCMSO para a função. Para trabalhadores em altura, a reciclagem do treinamento NR-35 ocorre a cada dois anos, e a reavaliação médica de aptidão acompanha esse ciclo.
+                A periodicidade da avaliação segue o protocolo do PCMSO e os riscos da função. O treinamento periódico da NR-35 ocorre a cada dois anos, mas esse ciclo não define sozinho a data do exame ocupacional. A aptidão deve ser reavaliada nos exames previstos pelo PCMSO e sempre que houver indicação clínica ou mudança relevante nas condições de trabalho.
               </p>
             </>
           ),
@@ -159,7 +159,7 @@ export default function AvaliacaoPsicossocialOcupacionalPage() {
         },
         {
           q: 'Com que frequência a avaliação psicossocial precisa ser repetida?',
-          a: 'Segue o ciclo do PCMSO para a função. Para trabalho em altura, acompanha a reciclagem da NR-35, que é bienal. Casos com histórico clínico relevante podem ter periodicidade menor a critério do médico do trabalho.',
+          a: 'Segue o protocolo do PCMSO e os riscos da função. A reciclagem bienal da NR-35 é um controle de capacitação e não determina, sozinha, a periodicidade do exame ocupacional. O médico responsável pode definir intervalos menores quando houver indicação clínica ou mudança relevante nas condições de trabalho.',
         },
         {
           q: 'Onde fazer avaliação psicossocial ocupacional em São Paulo?',

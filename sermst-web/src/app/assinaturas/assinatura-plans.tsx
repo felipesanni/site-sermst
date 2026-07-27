@@ -96,9 +96,10 @@ const baseIncludedItems = [
 ];
 
 const essencialIncludedItems = [
+  'LI - Laudo de Insalubridade',
+  'LP - Laudo de Periculosidade',
   'PPP - Perfil Profissiográfico Previdenciário',
   'CAT - Comunicação de Acidente de Trabalho',
-  'Mensageria do eSocial: S-2210 (CAT)',
   'Treinamento de CIPA',
   'Consultoria em SST',
   'Apoio para auditorias e fiscalizações',
@@ -106,6 +107,7 @@ const essencialIncludedItems = [
 
 const totalIncludedItems = [
   'Consultoria jurídica preventiva e consultiva',
+  '6 consultas anuais com clínico geral',
   '1 palestra online ao vivo com psicóloga para a equipe',
   '1 treinamento online sobre gestão estratégica',
   '1 treinamento online sobre gestão de pessoas',
@@ -118,17 +120,10 @@ const plans: Plan[] = [
     eyebrow: 'Gestão completa',
     title: 'Plano Gestão Total',
     description:
-      'Para empresas que querem somar SST, saúde, liderança e desenvolvimento da equipe em um plano anual.',
-    minimum: 299,
+      'Para empresas que querem somar SST, saúde, apoio jurídico, liderança e desenvolvimento da equipe.',
+    minimum: 239,
     bestFor: 'Operações com mais funcionários, múltiplas funções, fiscalização ou maior exposição trabalhista.',
-    bands: [
-      { from: 2, to: 10, monthlyPerEmployee: 23 },
-      { from: 11, to: 20, monthlyPerEmployee: 19 },
-      { from: 21, to: 50, monthlyPerEmployee: 19 },
-      { from: 51, to: 70, monthlyPerEmployee: 18.5 },
-      { from: 71, to: 80, monthlyPerEmployee: 18 },
-      { from: 81, to: 99, monthlyPerEmployee: 17.5 },
-    ],
+    bands: [{ from: 2, to: 99, monthlyPerEmployee: 15 }],
     features: ['Tudo do Plano Essencial', ...totalIncludedItems],
     includedItems: [...baseIncludedItems, ...essencialIncludedItems, ...totalIncludedItems],
   },
@@ -137,17 +132,10 @@ const plans: Plan[] = [
     eyebrow: 'Mais indicado',
     title: 'Plano Essencial',
     description:
-      'Para empresas que querem o Base completo com PPP, CAT, CIPA, consultoria e apoio em fiscalização.',
-    minimum: 219,
+      'Para empresas que querem o Base completo com laudos de insalubridade e periculosidade, PPP, CAT, CIPA e consultoria.',
+    minimum: 199,
     bestFor: 'Empresas em crescimento, RH sem tempo e contratos com admissões recorrentes.',
-    bands: [
-      { from: 2, to: 10, monthlyPerEmployee: 17 },
-      { from: 11, to: 20, monthlyPerEmployee: 17 },
-      { from: 21, to: 50, monthlyPerEmployee: 15 },
-      { from: 51, to: 70, monthlyPerEmployee: 14.5 },
-      { from: 71, to: 80, monthlyPerEmployee: 14 },
-      { from: 81, to: 99, monthlyPerEmployee: 13.5 },
-    ],
+    bands: [{ from: 2, to: 99, monthlyPerEmployee: 13 }],
     features: ['Tudo do Plano Base', ...essencialIncludedItems],
     includedItems: [...baseIncludedItems, ...essencialIncludedItems],
   },
@@ -157,16 +145,9 @@ const plans: Plan[] = [
     title: 'Plano Base',
     description:
       'Para empresas que precisam organizar a documentação obrigatória, exames clínicos e rotina digital de SST.',
-    minimum: 169,
+    minimum: 159,
     bestFor: 'Empresas pequenas, operação simples e baixa complexidade ocupacional.',
-    bands: [
-      { from: 2, to: 10, monthlyPerEmployee: 18 },
-      { from: 11, to: 20, monthlyPerEmployee: 14 },
-      { from: 21, to: 50, monthlyPerEmployee: 14 },
-      { from: 51, to: 70, monthlyPerEmployee: 13.5 },
-      { from: 71, to: 80, monthlyPerEmployee: 13 },
-      { from: 81, to: 99, monthlyPerEmployee: 12.5 },
-    ],
+    bands: [{ from: 2, to: 99, monthlyPerEmployee: 7 }],
     features: baseIncludedItems,
     includedItems: baseIncludedItems,
   },

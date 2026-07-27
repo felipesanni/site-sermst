@@ -1,12 +1,23 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { FadeIn } from '@/components/ui/fade-in';
 import { trainingsData, type Training } from '@/lib/data/treinamentos-data';
 import { notFound } from 'next/navigation';
-import { Clock, Users, BookOpen, CheckCircle, ArrowRight, Shield, Monitor, MapPin } from 'lucide-react';
+import {
+  Clock,
+  Users,
+  BookOpen,
+  CheckCircle,
+  ArrowRight,
+  Shield,
+  Monitor,
+  MapPin,
+  CalendarDays,
+} from 'lucide-react';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -38,6 +49,27 @@ export default async function TrainingPage({ params }: PageProps) {
   if (!training) notFound();
 
   const pageUrl = `https://sermst.com.br/treinamentos/${training.slug}`;
+  const whatsappMessage =
+    training.whatsappMessage ?? `Olá, gostaria de um orçamento para o treinamento ${training.title}`;
+  const whatsappHref = `https://wa.me/5511915146447?text=${encodeURIComponent(whatsappMessage)}`;
+  const courseInstances = [
+    {
+      '@type': 'CourseInstance',
+      courseMode: 'Onsite',
+      courseWorkload: training.workload,
+      location: { '@type': 'Place', name: 'SERMST: São Paulo e in company' },
+    },
+    ...(!training.presentialOnly
+      ? [
+          {
+            '@type': 'CourseInstance',
+            courseMode: 'Online',
+            courseWorkload: training.workload,
+            url: 'https://sermstgestao.formasegead.com/',
+          },
+        ]
+      : []),
+  ];
 
   const courseSchema = {
     '@context': 'https://schema.org',
@@ -56,24 +88,28 @@ export default async function TrainingPage({ params }: PageProps) {
     offers: {
       '@type': 'Offer',
       category: 'Treinamento corporativo de SST',
-      availability: 'https://schema.org/InStock',
-      url: 'https://sermst.com.br/contato',
+      availability: training.scheduleNote
+        ? 'https://schema.org/LimitedAvailability'
+        : 'https://schema.org/InStock',
+      url: pageUrl,
     },
-    hasCourseInstance: [
-      {
-        '@type': 'CourseInstance',
-        courseMode: 'Onsite',
-        courseWorkload: training.workload,
-        location: { '@type': 'Place', name: 'SERMST: São Paulo e in company' },
-      },
-      {
-        '@type': 'CourseInstance',
-        courseMode: 'Online',
-        courseWorkload: training.workload,
-        url: 'https://sermstgestao.formasegead.com/',
-      },
-    ],
+    hasCourseInstance: courseInstances,
   };
+
+  const faqSchema = training.faq?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: training.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.a,
+          },
+        })),
+      }
+    : null;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -89,6 +125,9 @@ export default async function TrainingPage({ params }: PageProps) {
     <main className="min-h-screen bg-slate-50 pt-32 pb-24">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
@@ -117,6 +156,29 @@ export default async function TrainingPage({ params }: PageProps) {
               </FadeIn>
             )}
 
+            {training.presentialOnly && (
+              <FadeIn delay={0.18} className="rounded-3xl border border-amber-200 bg-amber-50 p-7 md:p-8">
+                <p className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-amber-800">
+                  NR-35 atualizada em 2026
+                </p>
+                <h2 className="mb-3 text-2xl font-black text-brand-900">
+                  Capacitação obrigatoriamente presencial
+                </h2>
+                <p className="leading-relaxed text-slate-700">
+                  A Portaria MTE nº 1.259/2026 incluiu o item 35.4.5 e tornou presenciais os
+                  treinamentos previstos na NR-35. Veja quem precisa refazer ou complementar a
+                  capacitação e os prazos no{' '}
+                  <Link
+                    href="/normas/nr-35-trabalho-em-altura"
+                    className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4"
+                  >
+                    guia completo da NR-35 atualizada
+                  </Link>
+                  .
+                </p>
+              </FadeIn>
+            )}
+
             <FadeIn delay={0.2} className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-slate-100">
               <h2 className="text-3xl font-black text-brand-900 mb-8 flex items-center gap-4">
                 <BookOpen className="w-8 h-8 text-accent-pink" />
@@ -131,6 +193,34 @@ export default async function TrainingPage({ params }: PageProps) {
                 ))}
               </ul>
             </FadeIn>
+
+            {training.faq?.length ? (
+              <FadeIn delay={0.24} className="rounded-[2.5rem] border border-slate-200 bg-white p-8 md:p-12">
+                <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-accent-pink">
+                  Próximas turmas
+                </p>
+                <h2 className="mb-3 text-3xl font-black text-brand-900">
+                  Dúvidas sobre o treinamento presencial de NR-35
+                </h2>
+                <p className="mb-8 max-w-2xl leading-relaxed text-slate-600">
+                  Datas, vagas e formato da turma dependem da agenda e do número de participantes.
+                  Estas são as respostas que ajudam a empresa a consultar a opção certa.
+                </p>
+                <div className="space-y-3">
+                  {training.faq.map((item, index) => (
+                    <details key={item.q} className="group faq-accordion" open={index === 0}>
+                      <summary className="faq-summary">
+                        <span className="faq-question">{item.q}</span>
+                        <span className="faq-icon text-2xl leading-none">+</span>
+                      </summary>
+                      <div className="faq-answer">
+                        <p>{item.a}</p>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </FadeIn>
+            ) : null}
           </div>
 
           {/* Sidebar / Specs */}
@@ -157,30 +247,57 @@ export default async function TrainingPage({ params }: PageProps) {
                 </div>
               </div>
 
+              {training.scheduleNote && (
+                <div className="mt-8 rounded-2xl border border-accent-pink/30 bg-accent-pink/10 p-4">
+                  <div className="flex items-start gap-3">
+                    <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-accent-pink" />
+                    <div>
+                      <span className="block text-sm font-black text-white">Turmas presenciais semanais</span>
+                      <span className="mt-1 block text-xs leading-relaxed text-slate-300">
+                        {training.scheduleNote}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="mt-8 pt-8 border-t border-white/10">
                 <span className="block text-xs uppercase tracking-widest text-slate-400 font-black mb-4">Modalidades disponíveis</span>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3">
-                    <Monitor className="w-5 h-5 text-accent-pink shrink-0" />
-                    <div>
-                      <span className="block text-sm font-black text-white">EAD: Online</span>
-                      <span className="text-xs text-slate-400">Plataforma com certificado digital</span>
+                  {!training.presentialOnly && (
+                    <div className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3">
+                      <Monitor className="w-5 h-5 text-accent-pink shrink-0" />
+                      <div>
+                        <span className="block text-sm font-black text-white">EAD: Online</span>
+                        <span className="text-xs text-slate-400">Plataforma com certificado digital</span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                   <div className="flex items-center gap-3 rounded-xl bg-white/10 border border-white/10 px-4 py-3">
                     <MapPin className="w-5 h-5 text-accent-pink shrink-0" />
                     <div>
-                      <span className="block text-sm font-black text-white">Presencial com prática</span>
-                      <span className="text-xs text-slate-400">In company ou na clínica SERMST</span>
+                      <span className="block text-sm font-black text-white">
+                        {training.presentialOnly ? 'Exclusivamente presencial' : 'Presencial com prática'}
+                      </span>
+                      <span className="text-xs text-slate-400">
+                        {training.presentialOnly
+                          ? 'Exigência vigente da NR-35'
+                          : 'In company ou na clínica SERMST'}
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-white/10 uppercase">
-                <a href={`https://wa.me/5511915146447?text=Olá, gostaria de um orçamento para o treinamento ${training.title}`}
-                   className="btn-primary-safe flex w-full gap-3 group">
-                  Solicitar Orçamento <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              <div className="mt-8 border-t border-white/10 pt-8">
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary-safe flex w-full gap-3 group text-center"
+                >
+                  {training.ctaLabel ?? 'Solicitar orçamento'}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </a>
               </div>
             </FadeIn>

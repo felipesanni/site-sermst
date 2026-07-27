@@ -282,7 +282,7 @@ export function BlockbusterArticle({
               <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-300">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
                   <Clock className="h-3.5 w-3.5 text-accent-pink" />
-                  Ultima revisao: {formattedModifiedDate}
+                  Última revisão: {formattedModifiedDate}
                 </span>
                 {formattedPublishedDate && (
                   <span className="text-slate-500">

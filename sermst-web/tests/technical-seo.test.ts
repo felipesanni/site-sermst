@@ -177,7 +177,7 @@ describe('technical SEO discovery files', () => {
     expect(llms).toContain(`${BASE_URL}/sitemap.xml`);
     expect(llms).toContain(`${BASE_URL}/robots.txt`);
     expect(llms).toContain(`${BASE_URL}/servicos/{servico}/{regiao}`);
-    expect(llms).toContain('Ultima atualizacao: 2026-07-13 (rev. 11)');
+    expect(llms).toContain('Ultima atualizacao: 2026-07-27 (rev. 12)');
     expect(llms).toContain('Orientacoes para mecanismos de IA');
     expect(llms).toContain('As regras de acesso estao no robots.txt');
     expect(llms).toContain(`${BASE_URL}/servicos/empresa-seguranca-do-trabalho`);
@@ -307,13 +307,21 @@ describe('technical SEO discovery files', () => {
 
     const nr07 = entries.find((entry) => entry.url === `${BASE_URL}/normas/o-que-e-nr-07`);
     const nr35 = entries.find((entry) => entry.url === `${BASE_URL}/normas/nr-35-trabalho-em-altura`);
+    const treinamentoNr35 = entries.find(
+      (entry) => entry.url === `${BASE_URL}/treinamentos/nr-35-trabalho-em-altura`,
+    );
+    const psicossocialNr35 = entries.find(
+      (entry) => entry.url === `${BASE_URL}/saude/avaliacao-psicossocial-ocupacional`,
+    );
     const demissional = entries.find((entry) => entry.url === `${BASE_URL}/saude/exame-demissional`);
     const retorno = entries.find((entry) => entry.url === `${BASE_URL}/saude/exame-retorno-ao-trabalho`);
     const empresarioHub = entries.find((entry) => entry.url === `${BASE_URL}/empresario`);
     const unchanged = entries.find((entry) => entry.url === `${BASE_URL}/quem-somos`);
 
     expect(nr07?.lastModified).toBe('2026-07-20');
-    expect(nr35?.lastModified).toBe('2026-07-20');
+    expect(nr35?.lastModified).toBe('2026-07-27');
+    expect(treinamentoNr35?.lastModified).toBe('2026-07-27');
+    expect(psicossocialNr35?.lastModified).toBe('2026-07-27');
     expect(demissional?.lastModified).toBe('2026-07-20');
     expect(retorno?.lastModified).toBe('2026-07-20');
     expect(empresarioHub?.lastModified).toBe('2026-07-13');
@@ -324,6 +332,34 @@ describe('technical SEO discovery files', () => {
       expect(article?.lastModified).toBe('2026-07-13');
     }
     expect(unchanged?.lastModified).toBeUndefined();
+  });
+
+  it('mantem a oferta de NR-35 exclusivamente presencial apos a Portaria MTE 1.259/2026', () => {
+    const trainingData = readFileSync(
+      join(process.cwd(), 'src', 'lib', 'data', 'treinamentos-data.ts'),
+      'utf8',
+    );
+    const trainingPage = readFileSync(
+      join(process.cwd(), 'src', 'app', 'treinamentos', '[slug]', 'page.tsx'),
+      'utf8',
+    );
+    const nr35Page = readFileSync(
+      join(process.cwd(), 'src', 'app', 'normas', 'nr-35-trabalho-em-altura', 'page.tsx'),
+      'utf8',
+    );
+
+    expect(trainingData).toContain("slug: 'nr-35-trabalho-em-altura'");
+    expect(trainingData).toContain('presentialOnly: true');
+    expect(trainingData).toContain('Portaria MTE nº 1.259');
+    expect(trainingData).toContain("ctaLabel: 'Consultar turmas no WhatsApp'");
+    expect(trainingData).toContain('turmas presenciais de NR-35 todas as semanas');
+    expect(trainingPage).toContain('!training.presentialOnly');
+    expect(trainingPage).toContain('Exclusivamente presencial');
+    expect(trainingPage).toContain('encodeURIComponent(whatsappMessage)');
+    expect(trainingPage).toContain("'@type': 'FAQPage'");
+    expect(nr35Page).toContain('16 de julho de 2027');
+    expect(nr35Page).toContain('Portaria MTE nº 1.259/2026');
+    expect(nr35Page).toContain('Tem turma presencial de NR-35 esta semana?');
   });
 
   it('nao completa FAQs editoriais com perguntas genericas por padrao', () => {

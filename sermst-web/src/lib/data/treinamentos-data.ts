@@ -7,6 +7,11 @@ export interface Training {
   summary: string;
   syllabus: string[];
   description?: string;
+  presentialOnly?: boolean;
+  scheduleNote?: string;
+  ctaLabel?: string;
+  whatsappMessage?: string;
+  faq?: Array<{ q: string; a: string }>;
 }
 
 export const trainingsData: Training[] = [
@@ -33,14 +38,41 @@ export const trainingsData: Training[] = [
   },
   {
     slug: 'nr-35-trabalho-em-altura',
-    title: 'Treinamento NR-35: Trabalho em Altura',
+    title: 'Treinamento Presencial NR-35: Trabalho em Altura',
     category: 'Segurança',
     workload: '8h (Capacitação / Reciclagem)',
     targetAudience: 'Trabalhadores que executam atividades acima de 2 metros de altura.',
-    summary: 'Treinamento NR-35 teórico e prático para trabalho com risco de queda a partir de 2m. Formação inicial de 8h e treinamento periódico bienal.',
-    description: 'A NR-35 se aplica às atividades realizadas com diferença de nível igual ou superior a 2 metros quando há risco de queda. Isso inclui situações em telhados, estruturas metálicas, postes, andaimes e escadas fixas, desde que se enquadrem nessa condição.\n\nO treinamento inicial deve ter pelo menos 8 horas e combinar teoria e prática. O conteúdo inclui Análise de Risco (AR), condições impeditivas, sistemas de proteção coletiva, seleção e inspeção de EPI e condutas em emergências. O treinamento periódico também tem carga mínima de 8 horas e deve ocorrer a cada 2 anos. Há ainda treinamento eventual nas situações previstas pela NR-01.\n\nO certificado, a autorização do trabalhador, a análise de risco e os registros de inspeção precisam acompanhar o trabalho realizado. A falta desses controles aumenta a exposição a acidentes, autuações e paralisações quando houver situação de grave e iminente risco.',
+    summary: 'Treinamento presencial NR-35, teórico e prático, para trabalho acima de 2 metros com risco de queda. Formação inicial de 8h e treinamento periódico bienal.',
+    description: 'A NR-35 se aplica às atividades realizadas com diferença de nível acima de 2 metros quando há risco de queda. Isso inclui situações em telhados, estruturas metálicas, postes, andaimes e escadas fixas, desde que se enquadrem nessa condição.\n\nDesde 16 de julho de 2026, a Portaria MTE nº 1.259 determina que os treinamentos previstos na NR-35 sejam presenciais. O treinamento inicial deve ter pelo menos 8 horas e combinar teoria e prática. O conteúdo inclui Análise de Risco (AR), condições impeditivas, sistemas de proteção coletiva, seleção e inspeção de EPI e condutas em emergências. O treinamento periódico também tem carga mínima de 8 horas e ocorre a cada 2 anos. Há ainda treinamento eventual nas situações previstas pela NR-01.\n\nEmpresas que realizaram o treinamento inicial a distância têm um ano contado da publicação da Portaria para refazê-lo presencialmente. Quando parte da carga inicial já tiver sido presencial, a organização pode complementar essa carga. Certificado, autorização, análise de risco e registros de inspeção precisam acompanhar o trabalho realizado.',
+    presentialOnly: true,
+    scheduleNote: 'Novas turmas presenciais previstas toda semana. Datas e vagas são confirmadas pelo comercial.',
+    ctaLabel: 'Consultar turmas no WhatsApp',
+    whatsappMessage: 'Olá! Quero consultar as próximas turmas presenciais de NR-35. Empresa: _____. Quantidade de participantes: _____.',
+    faq: [
+      {
+        q: 'Tem turma de NR-35 esta semana?',
+        a: 'A SERMST programa turmas presenciais de NR-35 todas as semanas. Como datas e vagas podem mudar conforme a formação de cada grupo, confirme a próxima turma disponível diretamente com o comercial pelo WhatsApp.',
+      },
+      {
+        q: 'Onde fazer o curso presencial de NR-35 em São Paulo?',
+        a: 'A SERMST realiza treinamento presencial de NR-35 em São Paulo e também avalia atendimento in company. Fale com o comercial para confirmar local, data, horário e disponibilidade de vagas.',
+      },
+      {
+        q: 'A empresa pode contratar uma turma de NR-35 in company?',
+        a: 'Sim. A viabilidade depende do número de participantes, da estrutura disponível para a etapa prática e dos riscos da atividade. O comercial levanta essas informações antes de confirmar a proposta.',
+      },
+      {
+        q: 'Quanto custa o treinamento presencial de NR-35?',
+        a: 'O valor depende do número de participantes, do formato da turma, do local e das necessidades práticas da operação. Informe a empresa e a quantidade de trabalhadores no WhatsApp para receber a condição correta.',
+      },
+      {
+        q: 'O treinamento serve para formação inicial e reciclagem?',
+        a: 'A SERMST organiza turmas para formação inicial e treinamento periódico. Antes da inscrição, o comercial confirma qual modalidade atende cada trabalhador e se há necessidade de refazer ou complementar uma capacitação anterior.',
+      },
+    ],
     syllabus: [
       'Normas e regulamentos aplicáveis ao trabalho em altura',
+      'Atualização da Portaria MTE nº 1.259/2026 e exigência presencial',
       'Análise de Risco e condições impeditivas',
       'Riscos potenciais inerentes ao trabalho em altura',
       'Equipamentos de Proteção Individual (seleção, inspeção e conservação)',

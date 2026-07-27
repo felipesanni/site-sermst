@@ -7,10 +7,20 @@ import { normasKnown } from "./normas/[slug]/page";
 const BASE_URL = "https://sermst.com.br";
 const SEO_REVISION_DATE = "2026-07-13";
 const PRIORITY_REVISION_DATE = "2026-07-20";
+const NR35_REVISION_DATE = "2026-07-27";
 
 function getAccurateLastModified(url: string): string | undefined {
-  const priorityRevisedPages = new Set([
+  const nr35RevisedPages = new Set([
     `${BASE_URL}/normas/nr-35-trabalho-em-altura`,
+    `${BASE_URL}/treinamentos/nr-35-trabalho-em-altura`,
+    `${BASE_URL}/saude/avaliacao-psicossocial-ocupacional`,
+  ]);
+
+  if (nr35RevisedPages.has(url)) {
+    return NR35_REVISION_DATE;
+  }
+
+  const priorityRevisedPages = new Set([
     `${BASE_URL}/normas/o-que-e-nr-07`,
     `${BASE_URL}/saude/exame-demissional`,
     `${BASE_URL}/saude/exame-retorno-ao-trabalho`,
