@@ -352,6 +352,7 @@ describe('technical SEO discovery files', () => {
     expect(trainingData).toContain('presentialOnly: true');
     expect(trainingData).toContain('Portaria MTE nº 1.259');
     expect(trainingData).toContain("ctaLabel: 'Consultar turmas no WhatsApp'");
+    expect(trainingData).toContain("q: 'O treinamento NR-35 tem 8 ou 16 horas?'");
     expect(trainingData).toContain('turmas presenciais de NR-35 todas as semanas');
     expect(trainingPage).toContain('!training.presentialOnly');
     expect(trainingPage).toContain('Exclusivamente presencial');
@@ -360,6 +361,7 @@ describe('technical SEO discovery files', () => {
     expect(nr35Page).toContain('16 de julho de 2027');
     expect(nr35Page).toContain('Portaria MTE nº 1.259/2026');
     expect(nr35Page).toContain('Tem turma presencial de NR-35 esta semana?');
+    expect(nr35Page).toContain('O treinamento NR-35 tem 8 ou 16 horas?');
   });
 
   it('nao completa FAQs editoriais com perguntas genericas por padrao', () => {

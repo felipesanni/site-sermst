@@ -69,6 +69,10 @@ export const trainingsData: Training[] = [
         q: 'O treinamento serve para formação inicial e reciclagem?',
         a: 'A SERMST organiza turmas para formação inicial e treinamento periódico. Antes da inscrição, o comercial confirma qual modalidade atende cada trabalhador e se há necessidade de refazer ou complementar uma capacitação anterior.',
       },
+      {
+        q: 'O treinamento NR-35 tem 8 ou 16 horas?',
+        a: 'A NR-35 estabelece carga mínima de 8 horas para o treinamento inicial e para o periódico. Cursos de 16 horas são formações ampliadas, adotadas por algumas empresas ou contratantes conforme a atividade, mas não representam a carga mínima geral exigida pela norma.',
+      },
     ],
     syllabus: [
       'Normas e regulamentos aplicáveis ao trabalho em altura',

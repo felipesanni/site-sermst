@@ -372,6 +372,10 @@ export default function NR35Page() {
           a: 'O treinamento periódico continua ocorrendo a cada dois anos e deve ter pelo menos 8 horas. Esse ciclo não elimina o prazo específico para corrigir treinamentos iniciais feitos a distância.',
         },
         {
+          q: 'O treinamento NR-35 tem 8 ou 16 horas?',
+          a: 'A carga mínima prevista na NR-35 é de 8 horas para o treinamento inicial e também para o periódico. Algumas escolas, empresas ou contratos adotam cursos ampliados de 16 horas, mas essa duração não altera o mínimo geral definido pela norma.',
+        },
+        {
           q: 'Toda escada fixa vertical precisa receber SPIQ?',
           a: 'A escada usada exclusivamente como acesso deve passar por análise de risco específica. A necessidade do SPIQ depende da finalidade, da frequência de uso e das características construtivas. Quando necessário, o sistema deve ser definido por profissional qualificado ou legalmente habilitado em Segurança do Trabalho.',
         },
@@ -404,7 +408,7 @@ export default function NR35Page() {
           a: 'O valor varia conforme número de participantes, local, formato da turma e necessidades práticas. A empresa deve informar esses dados ao comercial para receber a condição correta.',
         },
       ]}
-      maxFaqItems={14}
+      maxFaqItems={15}
       sidebarTitle="Sua empresa precisa adequar a NR-35?"
       sidebarHook="A SERMST revisa certificados, organiza turmas presenciais e apoia a atualização das análises de risco, procedimentos e controles de escadas."
       sidebarCtaLabel="Solicitar adequação da NR-35"
