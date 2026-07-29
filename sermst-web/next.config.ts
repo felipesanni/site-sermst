@@ -213,6 +213,7 @@ const nextConfig: NextConfig = {
       { source: "/exames-laboratoriais/contraprova-toxicologicos", destination: "/servicos/exame-toxicologico-clt/sao-paulo", permanent: true },
       { source: "/servicos/exames-admissionais", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
       { source: "/servicos/exame-admissional", destination: "/servicos/exame-admissional-expresso/sao-paulo", permanent: true },
+      { source: "/servicos/exame-demissional", destination: "/servicos/exame-demissional/sao-paulo", permanent: true },
       // /blog existe no Next.js — não redirecionar a raiz, só posts antigos do WP
       { source: "/blog/cipa-como-implementar-na-minha-empresa-2", destination: "/normas/nr-05-cipa", permanent: true },
       { source: "/blog/seguranca-do-trabalho-o-que-e-cipa", destination: "/normas/nr-05-cipa", permanent: true },

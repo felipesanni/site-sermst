@@ -445,6 +445,70 @@ export const servicosSEO: Record<string, SEODocument> = {
       ],
     },
   },
+  "exame-demissional": {
+    h1: "Exame Demissional | Clínica de Medicina do Trabalho",
+    seoTitle: "Exame Demissional em São Paulo Centro | SERMST",
+    allowedLocalSlugs: ["sao-paulo"],
+    hook:
+      "Precisa agendar exame demissional em São Paulo? A SERMST atende empresas no Centro, emite o ASO demissional e organiza o exame conforme o PCMSO, os riscos da função e o prazo da NR-07.",
+    isClinico: true,
+    quandoRequerido:
+      "Quando não houver dispensa válida, o exame clínico demissional deve ser realizado em até 10 dias contados do término do contrato. A empresa deve conferir a data do último exame ocupacional, o grau de risco e as condições do desligamento antes de aplicar a dispensa.",
+    documentosNecessarios: [
+      "Documento oficial com foto do trabalhador",
+      "Guia de encaminhamento com função e dados da empresa",
+      "Informações do PCMSO e dos riscos ocupacionais da função",
+      "Data do término do contrato e do último exame ocupacional",
+    ],
+    expectativaCusto:
+      "O valor depende do exame clínico e dos exames complementares previstos no PCMSO para a função. A SERMST confirma o escopo antes do atendimento para que a empresa saiba o que será necessário.",
+    content: {
+      dor:
+        "Deixar o demissional para a última hora pode gerar atraso, encaminhamento incompleto e dúvida sobre a possibilidade de dispensa. Quando o exame não conversa com o PCMSO e com os riscos da função, o RH ainda fica exposto a retrabalho no ASO e no eSocial.",
+      solucao:
+        "A SERMST confere as informações do desligamento, realiza a avaliação ocupacional e emite o ASO demissional dentro de um fluxo voltado a empresas. O atendimento fica conectado ao PCMSO e aos exames complementares aplicáveis à função.",
+      beneficios: [
+        "Agendamento de exame demissional em São Paulo Centro",
+        "Emissão do ASO demissional após a avaliação médica",
+        "Conferência dos exames previstos para a função",
+        "Orientação sobre prazo e critérios de dispensa da NR-07",
+        "Fluxo organizado para RH, PCMSO e eSocial",
+      ],
+    },
+    geoOpt: {
+      expertQuote: {
+        text: "Antes de marcar o demissional, o RH precisa conferir o último exame ocupacional, o grau de risco e os riscos da função. Essa checagem evita tanto exame desnecessário quanto dispensa aplicada de forma errada.",
+        author: "Equipe Técnica SERMST",
+        role: "Medicina do Trabalho",
+      },
+      faq: [
+        {
+          q: "Onde fazer exame demissional em São Paulo?",
+          a: "A SERMST realiza exame demissional para empresas na unidade do Largo do Paissandu, 72, 3º andar, no Centro de São Paulo. O agendamento prévio ajuda a confirmar a guia e os exames necessários para a função.",
+        },
+        {
+          q: "Quanto custa o exame demissional?",
+          a: "O valor varia conforme o exame clínico e os exames complementares definidos no PCMSO para os riscos da função. Envie a função e a guia de encaminhamento para receber o orçamento correto.",
+        },
+        {
+          q: "Precisa agendar o exame demissional?",
+          a: "O agendamento é recomendado para conferir o prazo do desligamento, a documentação e os exames previstos no PCMSO antes da ida do trabalhador à clínica.",
+        },
+        {
+          q: "Quanto tempo demora o exame demissional?",
+          a: "O tempo de atendimento depende do exame clínico e de eventuais exames complementares. A equipe informa o fluxo previsto no agendamento, depois de conferir a função e o PCMSO.",
+        },
+        {
+          q: "Quem paga o exame demissional?",
+          a: "A empresa é responsável pelo custo do exame ocupacional. O valor não deve ser repassado ao trabalhador.",
+        },
+        {
+          q: "O exame demissional pode ser dispensado?",
+          a: "A NR-07 admite dispensa quando o exame clínico ocupacional mais recente ocorreu há menos de 135 dias, para grau de risco 1 ou 2, ou há menos de 90 dias, para grau de risco 3 ou 4. A situação concreta precisa ser conferida antes do desligamento.",
+        },
+      ],
+    },
+  },
   "pcmso-nr07-programa": {
     h1: "PCMSO (NR-07) | Gestão de Saúde Ocupacional Especializada",
     hook:

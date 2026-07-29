@@ -8,6 +8,7 @@ const BASE_URL = "https://sermst.com.br";
 const SEO_REVISION_DATE = "2026-07-13";
 const PRIORITY_REVISION_DATE = "2026-07-20";
 const NR35_REVISION_DATE = "2026-07-27";
+const CNPJ_TOOL_REVISION_DATE = "2026-07-27";
 
 function getAccurateLastModified(url: string): string | undefined {
   const nr35RevisedPages = new Set([
@@ -18,6 +19,10 @@ function getAccurateLastModified(url: string): string | undefined {
 
   if (nr35RevisedPages.has(url)) {
     return NR35_REVISION_DATE;
+  }
+
+  if (url === `${BASE_URL}/empresario/consulta-cnpj`) {
+    return CNPJ_TOOL_REVISION_DATE;
   }
 
   const priorityRevisedPages = new Set([
@@ -124,6 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/saude/eletrocardiograma-ocupacional`, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE_URL}/rh`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/empresario`, changeFrequency: "weekly", priority: 0.72 },
+    { url: `${BASE_URL}/empresario/consulta-cnpj`, changeFrequency: "monthly", priority: 0.86 },
     { url: `${BASE_URL}/normas`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/normas/nr-06-epi`, changeFrequency: "monthly", priority: 0.82 },
     { url: `${BASE_URL}/normas/nr-37`, changeFrequency: "monthly", priority: 0.72 },
@@ -133,11 +139,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // ── Páginas base de servicos ──────────────────────────────────────────────
-  const servicoBasePages: MetadataRoute.Sitemap = Object.keys(servicosSEO).map((servico) => ({
+  const servicoBasePages: MetadataRoute.Sitemap = Object.keys(servicosSEO)
+    .filter((servico) => servico !== "exame-demissional")
+    .map((servico) => ({
     url: `${BASE_URL}/servicos/${servico}`,
     changeFrequency: "monthly" as const,
     priority: 0.8,
-  }));
+    }));
 
   // ── Páginas geo-SEO ───────────────────────────────────────────────────────
   const geoPages: MetadataRoute.Sitemap = Object.entries(servicosSEO).flatMap(([servico, data]) => {

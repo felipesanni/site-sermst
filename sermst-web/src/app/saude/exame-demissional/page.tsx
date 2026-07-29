@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame demissional: o que é, prazo e quando fazer | SERMST',
+  title: 'Exame demissional: prazo, rescisão e quando fazer | SERMST',
   description:
-    'Entenda o que é o exame demissional, quando fazer, se pode ocorrer após a rescisão, quem paga e quando a NR-07 permite a dispensa.',
+    'Veja se o exame demissional deve ser feito antes ou depois da rescisão, o prazo de 10 dias, quem paga, quando há dispensa e o que acontece depois.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional' },
   openGraph: {
-    title: 'Exame demissional: o que é, prazo e quando fazer | SERMST',
+    title: 'Exame demissional: prazo, rescisão e quando fazer | SERMST',
     description:
-      'Veja quando fazer o exame demissional, o prazo após o término do contrato, quem paga e como funciona o ASO demissional.',
+      'Entenda o prazo de 10 dias, quando o exame pode ser dispensado, o que acontece depois da avaliação e como agendar em São Paulo.',
     url: 'https://sermst.com.br/saude/exame-demissional',
     type: 'article',
     locale: 'pt_BR',
@@ -29,14 +29,14 @@ export default function ExameDemissionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-20',
+        dateModified: '2026-07-27',
       }}
       readingTime="7 min"
-      h1="Exame demissional: o que é, quando fazer e qual o prazo"
-      intro="O exame demissional registra a condição de saúde do trabalhador no encerramento do vínculo. Quando não houver dispensa, a NR-07 determina que o exame clínico seja realizado em até 10 dias contados do término do contrato. Abaixo você confere quando fazer, quem paga e o que acontece depois da avaliação."
+      h1="Exame demissional: prazo, rescisão e quando fazer"
+      intro="O exame demissional registra a condição de saúde do trabalhador no encerramento do vínculo. Ele pode ser feito antes ou depois da formalização da saída, desde que a empresa respeite o prazo da NR-07 e confirme se há dispensa válida. Veja a regra, o que acontece depois da avaliação e como agendar."
       quickAnswer={
         <p>
-          O <strong>exame demissional</strong> é a avaliação médica ocupacional feita no encerramento do contrato. Quando não houver dispensa, deve ocorrer em até <strong>10 dias após o término do vínculo</strong>. O custo é da empresa e, depois do exame, o médico emite o ASO demissional.
+          O <strong>exame demissional</strong> pode ser realizado antes do desligamento ou em até <strong>10 dias contados do término do contrato</strong>, quando não houver dispensa válida. O custo é da empresa e, depois da avaliação, o médico emite o ASO demissional.
         </p>
       }
       showTableOfContents
@@ -73,11 +73,14 @@ export default function ExameDemissionalPage() {
           ),
         },
         {
-          title: 'Qual é o prazo do exame demissional',
+          title: 'Exame demissional antes ou depois da rescisão: qual é o prazo',
           body: (
             <>
               <p>
                 Pela NR-07, o exame clínico demissional deve ser realizado <strong>em até 10 dias contados do término do contrato</strong>, desde que não exista uma hipótese válida de dispensa. A empresa pode antecipar o agendamento por organização interna, mas não deve apresentar a data do desligamento como limite legal.
+              </p>
+              <p>
+                Portanto, o exame pode ocorrer antes ou depois da rescisão. O ponto decisivo é respeitar o prazo aplicável e não encerrar o fluxo sem conferir o resultado da avaliação. Quando a empresa antecipa o exame, também precisa verificar se o trabalhador continuará exposto aos mesmos riscos até o último dia de atividade.
               </p>
               <p>
                 Deixar o fluxo sem responsável até o último momento costuma criar três problemas ao mesmo tempo:
@@ -117,6 +120,19 @@ export default function ExameDemissionalPage() {
               </ul>
               <p>
                 Não existe bateria única para toda empresa. Cargo administrativo de baixo risco tende a ter fluxo mais simples. Função operacional com ruído, agentes químicos, esforço físico ou exposição específica pode exigir rotina mais robusta.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quanto tempo demora o exame demissional',
+          body: (
+            <>
+              <p>
+                A consulta clínica costuma ser a etapa mais rápida. O tempo total depende dos exames complementares previstos no PCMSO para os riscos da função, como audiometria, espirometria, avaliação laboratorial ou outros procedimentos ocupacionais.
+              </p>
+              <p>
+                Para evitar uma segunda ida à clínica, o RH deve encaminhar a função, a guia e as informações do PCMSO antes do atendimento. Assim, a equipe confirma o protocolo e informa o fluxo esperado para emissão do ASO.
               </p>
             </>
           ),
@@ -214,19 +230,38 @@ export default function ExameDemissionalPage() {
           q: 'Depois do exame demissional, qual é o próximo passo?',
           a: 'O médico emite o ASO, a empresa confere e guarda o documento, disponibiliza a via do trabalhador e envia as informações aplicáveis ao eSocial. Se houver alteração clínica relevante, o caso precisa de avaliação antes do encerramento do fluxo ocupacional.',
         },
+        {
+          q: 'O exame demissional é feito antes ou depois da rescisão?',
+          a: 'Pode ser feito antes ou depois. Quando não houver dispensa válida, a NR-07 determina a realização em até 10 dias contados do término do contrato. Se a empresa antecipar, deve considerar se o trabalhador continuará exposto aos riscos da função até o último dia.',
+        },
+        {
+          q: 'Quanto tempo demora o exame demissional?',
+          a: 'Depende do protocolo da função. A consulta clínica costuma ser rápida, mas exames complementares previstos no PCMSO podem ampliar o tempo de atendimento e de emissão do ASO.',
+        },
+        {
+          q: 'Quanto custa o exame demissional?',
+          a: 'O valor depende do exame clínico e dos exames complementares exigidos pelo PCMSO para os riscos da função. A clínica precisa conferir a função e a guia antes de informar o preço correto.',
+        },
       ]}
+      maxFaqItems={10}
       sidebarTitle="Precisa agendar o exame demissional?"
       sidebarHook="Informe a função, a data do desligamento e o último exame ocupacional para organizar o atendimento dentro do prazo aplicável."
       sidebarCtaLabel="Agendar exame demissional"
-      sidebarCtaHref="/contato"
+      sidebarCtaHref="/servicos/exame-demissional/sao-paulo"
       related={[
-        { label: 'Agendar exame demissional', href: '/contato' },
+        { label: 'Agendar exame demissional em São Paulo', href: '/servicos/exame-demissional/sao-paulo' },
         { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
       ]}
+      finalCta={{
+        title: 'Precisa fazer o exame demissional?',
+        desc: 'Envie a função, a data do desligamento e a guia. A equipe confere o protocolo antes de orientar o atendimento e o valor.',
+        label: 'Consultar atendimento em São Paulo',
+        href: '/servicos/exame-demissional/sao-paulo',
+      }}
     />
   );
 }

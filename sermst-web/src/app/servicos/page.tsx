@@ -179,6 +179,7 @@ export default function ServicosIndexPage() {
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               { href: '/servicos/exame-admissional-expresso/sao-paulo', label: 'Exame admissional expresso' },
+              { href: '/servicos/exame-demissional/sao-paulo', label: 'Exame demissional em São Paulo' },
               { href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo', label: 'Empresa de segurança do trabalho' },
               { href: '/servicos/audiometria-ocupacional-clinica/sao-paulo', label: 'Audiometria ocupacional' },
               { href: '/servicos/exame-toxicologico-clt/sao-paulo', label: 'Exame toxicológico' },

@@ -771,6 +771,7 @@ function GrauPreview() {
 // ── Componente principal ─────────────────────────────────────────────────────
 
 type Tab = 'cnae' | 'cnpj';
+const CNPJ_FUNNEL_STORAGE_KEY = 'sermst_cnpj_funnel_v1';
 
 const consultantProfiles = [
   'Empresário(a) / Sócio(a)',
@@ -806,6 +807,20 @@ export function CnaeCalculator() {
   const inFlight = useRef(false);
   const lastCnpj = useRef('');
   const lastTrackedCnpjResult = useRef('');
+
+  useEffect(() => {
+    try {
+      const storedRaw = window.sessionStorage.getItem(CNPJ_FUNNEL_STORAGE_KEY);
+      if (!storedRaw) return;
+
+      const stored = JSON.parse(storedRaw) as { cnpj?: string };
+      const rawCnpj = digits(stored.cnpj ?? '');
+      if (rawCnpj.length === 14) setCnpj(fmtCNPJ(rawCnpj));
+      window.sessionStorage.removeItem(CNPJ_FUNNEL_STORAGE_KEY);
+    } catch {
+      window.sessionStorage.removeItem(CNPJ_FUNNEL_STORAGE_KEY);
+    }
+  }, []);
 
   useEffect(() => {
     const current = buildSnapshot();

@@ -490,20 +490,20 @@ export default async function ServicoPage({
                     <Link
                       key={training.slug}
                       href={`/treinamentos/${training.slug}`}
-                      className="group flex h-full flex-col rounded-[2rem] border border-slate-100 bg-slate-50 p-8 transition-all duration-500 hover:border-brand-900 hover:bg-brand-900"
+                      className="training-card-safe group flex h-full flex-col rounded-[2rem] border border-slate-100 bg-slate-50 p-8 transition-all duration-500"
                     >
-                      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm transition-colors group-hover:bg-accent-pink">
-                        <CheckCircle2 className="h-6 w-6 text-accent-pink group-hover:text-white" />
+                      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm transition-colors group-hover:bg-accent-pink group-focus-visible:bg-accent-pink">
+                        <CheckCircle2 className="h-6 w-6 text-accent-pink group-hover:text-white group-focus-visible:text-white" />
                       </div>
-                      <h3 className="mb-3 text-xl font-black transition-colors group-hover:text-white">{training.title}</h3>
-                      <p className="flex-grow text-sm font-medium leading-relaxed text-slate-600 transition-colors group-hover:text-slate-300">
+                      <h3 className="mb-3 text-xl font-black transition-colors group-hover:text-white group-focus-visible:text-white">{training.title}</h3>
+                      <p className="flex-grow text-sm font-medium leading-relaxed text-slate-600 transition-colors group-hover:text-slate-300 group-focus-visible:text-slate-300">
                         {training.summary}
                       </p>
-                      <div className="mt-8 flex items-center justify-between border-t border-slate-200 pt-6 group-hover:border-white/10">
-                        <span className="text-xs font-black uppercase tracking-widest text-brand-500 group-hover:text-accent-pink">
+                      <div className="mt-8 flex items-center justify-between border-t border-slate-200 pt-6 group-hover:border-white/10 group-focus-visible:border-white/10">
+                        <span className="text-xs font-black uppercase tracking-widest text-brand-500 group-hover:text-accent-pink group-focus-visible:text-accent-pink">
                           Carga horaria: {training.workload.split(' ')[0]}
                         </span>
-                        <ArrowRight className="h-4 w-4 text-brand-500 transition-all group-hover:translate-x-2 group-hover:text-accent-pink" />
+                        <ArrowRight className="h-4 w-4 text-brand-500 transition-all group-hover:translate-x-2 group-hover:text-accent-pink group-focus-visible:translate-x-2 group-focus-visible:text-accent-pink" />
                       </div>
                     </Link>
                   ))}
@@ -512,7 +512,11 @@ export default async function ServicoPage({
             </section>
           )}
 
-          <FadeIn direction="up" delay={0.2}>
+          <FadeIn
+            direction="up"
+            delay={0.2}
+            className={servico === 'treinamentos-nrs-cipa-brigada' ? 'mt-12 md:mt-16' : undefined}
+          >
             <div className="rounded-2xl bg-white p-8 text-brand-900 shadow-xl md:p-12">
               <div className="mb-8 flex items-center justify-center gap-3">
                 <HelpCircle className="h-8 w-8 text-accent-pink" />

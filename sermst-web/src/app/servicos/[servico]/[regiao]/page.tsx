@@ -15,6 +15,9 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'exame-admissional-expresso') {
     return 'Clínica de Exame Admissional';
   }
+  if (servico === 'exame-demissional') {
+    return 'Clínica de Exame Demissional';
+  }
   if (servico === 'audiometria-ocupacional-clinica') {
     return 'Audiometria Ocupacional';
   }
@@ -35,6 +38,10 @@ function getLocalServiceDescription(servico: string, serviceName: string, local:
     }
 
     return `Agende exame admissional em ${local.nome} para sua empresa, com ASO, exames ocupacionais, laboratório próprio e apoio ao PCMSO e eSocial.`;
+  }
+
+  if (servico === 'exame-demissional') {
+    return 'Agende exame demissional em São Paulo Centro para sua empresa. Atendimento no Largo do Paissandu, emissão de ASO e orientação sobre prazo e dispensa conforme a NR-07.';
   }
 
   if (servico === 'exame-toxicologico-clt') {
@@ -123,6 +130,8 @@ export async function generateMetadata({
       ? `${mainTerm} no Centro de SP | SERMST`
     : servico === 'exame-admissional-expresso' && local.slug === 'sao-paulo'
       ? `${mainTerm} em ${local.nome}`
+    : servico === 'exame-demissional' && local.slug === 'sao-paulo'
+      ? 'Exame Demissional em São Paulo Centro | Agende'
     : servico === 'audiometria-ocupacional-clinica' && local.slug === 'sao-paulo'
       ? `${mainTerm} em São Paulo Centro | SERMST`
       : `${mainTerm} em ${local.nome} | SERMST`;

@@ -228,6 +228,27 @@ export default function EmpresarioPage() {
       <section className="mx-auto w-full max-w-[1280px] px-6 pb-16 lg:px-8">
         <FadeIn direction="up">
           <div className="rounded-[2rem] border border-brand-900 bg-white p-8 shadow-sm lg:p-10">
+            <Link
+              href="/empresario/consulta-cnpj"
+              className="group mb-10 grid gap-6 rounded-[1.75rem] bg-brand-900 p-7 text-white shadow-xl transition-transform hover:-translate-y-1 md:grid-cols-[1fr_auto] md:items-center md:p-9"
+            >
+              <div>
+                <span className="text-xs font-black uppercase tracking-[0.18em] text-accent-pink">
+                  Ferramenta gratuita
+                </span>
+                <h2 className="mt-3 text-2xl font-black text-white md:text-3xl">
+                  Consulte um CNPJ sem cadastro
+                </h2>
+                <p className="mt-3 max-w-2xl leading-relaxed text-slate-300">
+                  Confira situação cadastral, razão social, nome fantasia, abertura, endereço e
+                  CNAE principal da empresa.
+                </p>
+              </div>
+              <span className="btn-light-safe inline-flex">
+                Consultar CNPJ
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
             <span className="kicker">Dúvidas frequentes</span>
             <h2 className="mb-4 text-3xl font-black text-brand-900 md:text-4xl">
               Guias para começar

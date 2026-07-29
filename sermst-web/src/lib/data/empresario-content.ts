@@ -39,6 +39,7 @@ interface EmpresarioTopicInput {
   faq: FAQItem[];
   officialSources: EmpresarioGuideDocument['officialSources'];
   related: string[];
+  lastReviewedAt?: string;
 }
 
 const officialUrls = {
@@ -362,12 +363,12 @@ const empresarioTopics: Record<string, EmpresarioTopicInput> = {
 
   'razao-social': {
     section: 'Abertura e cadastro',
-    h1: 'Razão social: o que é e qual a diferença para nome fantasia',
-    seoTitle: 'Razão social: diferença para nome fantasia | SERMST',
+    h1: 'Razão social é o mesmo que nome empresarial? E o nome fantasia?',
+    seoTitle: 'Razão social é nome empresarial? Veja a diferença | SERMST',
     hook:
-      'Entenda por que razão social é chamada de nome empresarial nos registros, onde ela aparece e como se diferencia do nome usado na comunicação com o público.',
+      'Razão social e nome empresarial são, no uso comum, a identificação formal da empresa. Veja onde entra o nome fantasia e qual nome usar em contratos, CNPJ e cadastros.',
     summary:
-      'Razão social é a expressão usada no dia a dia para o nome empresarial registrado. Nome fantasia é a identificação comercial pela qual o negócio pode se apresentar ao público.',
+      'No uso comum, razão social e nome empresarial se referem ao nome formal registrado. Nome fantasia é a identificação comercial usada na comunicação com clientes e com o público.',
     dor:
       'O formulário pede razão social, a fachada mostra outro nome e a nota fiscal traz os dois. Sem entender a diferença, é fácil preencher contratos e cadastros com a informação errada.',
     solucao:
@@ -381,14 +382,14 @@ const empresarioTopics: Record<string, EmpresarioTopicInput> = {
       'O termo técnico usado nas regras de registro é nome empresarial. Sua composição e alteração seguem critérios próprios e não substituem o registro de marca.',
     articleSections: [
       {
-        title: 'O que é razão social',
+        title: 'Razão social e nome empresarial são a mesma coisa?',
         paragraphs: [
           'Razão social é o nome pelo qual muitas pessoas conhecem a identificação jurídica da empresa. Nos atos de registro, a expressão usada é nome empresarial. Ele aparece no CNPJ, no contrato social ou requerimento de empresário, em notas e em outros documentos formais.',
           'A composição depende do tipo jurídico. O nome empresarial pode assumir forma de firma ou denominação e precisa observar regras como veracidade e novidade no âmbito do registro competente.',
         ],
       },
       {
-        title: 'Razão social e nome fantasia',
+        title: 'Razão social e nome fantasia são a mesma coisa?',
         paragraphs: [
           'O nome fantasia é usado na apresentação comercial: fachada, site, redes sociais e materiais de divulgação. Ele pode ser mais curto e fácil de lembrar. Já o nome empresarial identifica formalmente a pessoa jurídica.',
           'Os dois podem ser parecidos ou completamente diferentes. Em um contrato, boleto ou cadastro de fornecedor, observe o rótulo do campo. Quando houver dúvida, compare com o comprovante oficial do CNPJ.',
@@ -429,6 +430,7 @@ const empresarioTopics: Record<string, EmpresarioTopicInput> = {
       { label: 'Redesim: registro e consulta de viabilidade', href: officialUrls.registrarEmpresa },
     ],
     related: ['contrato-social', 'cnpj-ativo-o-que-significa', 'capital-social'],
+    lastReviewedAt: '2026-07-27',
   },
 
   'capital-social': {
@@ -1159,11 +1161,23 @@ export const empresarioSEO: Record<string, EmpresarioGuideDocument> = Object.fro
       isClinico: false,
       section: topic.section,
       summary: topic.summary,
-      supportingLinks: topic.related.map((relatedSlug) => ({
-        href: `/empresario/${relatedSlug}`,
-        label: empresarioTopics[relatedSlug].h1,
-        description: empresarioTopics[relatedSlug].summary,
-      })),
+      supportingLinks: [
+        ...(slug === 'cnpj-ativo-o-que-significa'
+          ? [
+              {
+                href: '/empresario/consulta-cnpj',
+                label: 'Consultar CNPJ grátis',
+                description:
+                  'Confira situação cadastral, razão social, abertura, endereço e CNAE principal sem cadastro.',
+              },
+            ]
+          : []),
+        ...topic.related.map((relatedSlug) => ({
+          href: `/empresario/${relatedSlug}`,
+          label: empresarioTopics[relatedSlug].h1,
+          description: empresarioTopics[relatedSlug].summary,
+        })),
+      ],
       content: {
         dor: topic.dor,
         solucao: topic.solucao,
@@ -1181,7 +1195,7 @@ export const empresarioSEO: Record<string, EmpresarioGuideDocument> = Object.fro
       practicalChecklistTitle: topic.practicalChecklistTitle,
       practicalChecklist: topic.practicalChecklist,
       officialSources: topic.officialSources,
-      lastReviewedAt: '2026-07-13',
+      lastReviewedAt: topic.lastReviewedAt ?? '2026-07-13',
     },
   ]),
 ) as Record<string, EmpresarioGuideDocument>;

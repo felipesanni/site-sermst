@@ -101,6 +101,11 @@ describe('redirects criticos', () => {
           destination: '/saude/exame-demissional',
           permanent: true,
         }),
+        expect.objectContaining({
+          source: '/servicos/exame-demissional',
+          destination: '/servicos/exame-demissional/sao-paulo',
+          permanent: true,
+        }),
       ]),
     );
     expect(redirects).not.toEqual(

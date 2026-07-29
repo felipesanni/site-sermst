@@ -85,7 +85,11 @@ describe('technical SEO discovery files', () => {
       const data = servicosSEO[servico];
       const allowedLocalSlugs = data.allowedLocalSlugs ?? localidades.map((localidade) => localidade.slug);
 
-      expect(urls).toContain(`${BASE_URL}/servicos/${servico}`);
+      if (servico === 'exame-demissional') {
+        expect(urls).not.toContain(`${BASE_URL}/servicos/${servico}`);
+      } else {
+        expect(urls).toContain(`${BASE_URL}/servicos/${servico}`);
+      }
 
       for (const localidade of localidades) {
         const url = `${BASE_URL}/servicos/${servico}/${localidade.slug}`;
@@ -343,6 +347,10 @@ describe('technical SEO discovery files', () => {
       join(process.cwd(), 'src', 'app', 'treinamentos', '[slug]', 'page.tsx'),
       'utf8',
     );
+    const servicePage = readFileSync(
+      join(process.cwd(), 'src', 'app', 'servicos', '[servico]', 'page.tsx'),
+      'utf8',
+    );
     const nr35Page = readFileSync(
       join(process.cwd(), 'src', 'app', 'normas', 'nr-35-trabalho-em-altura', 'page.tsx'),
       'utf8',
@@ -358,6 +366,8 @@ describe('technical SEO discovery files', () => {
     expect(trainingPage).toContain('Exclusivamente presencial');
     expect(trainingPage).toContain('encodeURIComponent(whatsappMessage)');
     expect(trainingPage).toContain("'@type': 'FAQPage'");
+    expect(servicePage).toContain('training-card-safe');
+    expect(servicePage).toContain("'mt-12 md:mt-16'");
     expect(nr35Page).toContain('16 de julho de 2027');
     expect(nr35Page).toContain('Portaria MTE nº 1.259/2026');
     expect(nr35Page).toContain('Tem turma presencial de NR-35 esta semana?');

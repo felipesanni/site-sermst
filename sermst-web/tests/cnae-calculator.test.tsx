@@ -15,6 +15,24 @@ describe('CnaeCalculator', () => {
     window.history.replaceState({}, '', '/rh/calculadora-cnae-grau-de-risco');
   });
 
+  it('preenche o CNPJ trazido da consulta sem iniciar a busca automaticamente', async () => {
+    const fetchMock = vi.spyOn(globalThis, 'fetch');
+    window.sessionStorage.setItem(
+      'sermst_cnpj_funnel_v1',
+      JSON.stringify({
+        cnpj: '12345678000195',
+        cnae: sampleEntry.codigo,
+        empresa: 'Empresa de Origem',
+      }),
+    );
+
+    render(<CnaeCalculator />);
+
+    expect(await screen.findByDisplayValue('12.345.678/0001-95')).toBeInTheDocument();
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(window.sessionStorage.getItem('sermst_cnpj_funnel_v1')).toBeNull();
+  });
+
   it('consulta o CNPJ, encontra o CNAE e mostra o enquadramento de NR-05', async () => {
     const user = userEvent.setup();
     const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(

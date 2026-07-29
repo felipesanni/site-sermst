@@ -53,6 +53,10 @@ export default async function EmpresarioArticlePage({
     topic: data.h1,
   });
   const journey = getEmpresarioJourney(slug, data.section);
+  const reviewedAtLabel = new Intl.DateTimeFormat('pt-BR', {
+    dateStyle: 'long',
+    timeZone: 'UTC',
+  }).format(new Date(`${data.lastReviewedAt}T12:00:00Z`));
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -157,7 +161,7 @@ export default async function EmpresarioArticlePage({
                   Conteúdo da equipe SERMST
                 </Link>
                 <span aria-hidden="true">•</span>
-                <time dateTime={data.lastReviewedAt}>Revisado em 13 de julho de 2026</time>
+                <time dateTime={data.lastReviewedAt}>Revisado em {reviewedAtLabel}</time>
               </p>
             </FadeIn>
           </div>
