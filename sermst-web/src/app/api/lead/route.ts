@@ -288,8 +288,167 @@ function section(title: string, content: string, subtitle = '') {
   </td></tr>`;
 }
 
+const commercialPartnerStructureLabels: Record<string, string> = {
+  'atuacao-individual': 'Quer começar atuando sozinho(a)',
+  'montando-equipe': 'Quer montar uma equipe comercial',
+  'equipe-2-5': 'Já possui uma equipe de 2 a 5 pessoas',
+  'equipe-6-mais': 'Já possui uma equipe com 6 ou mais pessoas',
+};
+
+const commercialPartnerProfileLabels: Record<string, string> = {
+  'vendas-b2b': 'Experiência com vendas B2B',
+  'profissional-sst': 'Profissional de SST',
+  'contabilidade-rh-dp': 'Atuação com contabilidade, RH ou DP',
+  'consultoria-empresarial': 'Atuação com consultoria empresarial',
+  'empreendedor-comercial': 'Empreendedor(a) com perfil comercial',
+  'outro-perfil': 'Outro perfil',
+};
+
+function readableOption(
+  value: string,
+  labels: Record<string, string>,
+) {
+  const normalized = String(value ?? '').trim();
+  if (!normalized) return '(não informado)';
+  return labels[normalized] ?? normalized.replace(/-/g, ' ');
+}
+
+function formatReceivedAt(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+
+  return new Intl.DateTimeFormat('pt-BR', {
+    dateStyle: 'short',
+    timeStyle: 'short',
+    timeZone: 'America/Sao_Paulo',
+  }).format(date);
+}
+
+function buildCommercialPartnerEmailText(
+  lead: ReturnType<typeof buildLead>,
+): string {
+  const profile = readableOption(lead.dor, commercialPartnerProfileLabels);
+  const structure = readableOption(
+    lead.porte,
+    commercialPartnerStructureLabels,
+  );
+
+  return (
+    `NOVA CANDIDATURA AO PROGRAMA DE PARCEIROS\n` +
+    `${'='.repeat(56)}\n\n` +
+    `Candidato(a): ${lead.nome}\n` +
+    `Perfil: ${profile}\n` +
+    `Como pretende atuar: ${structure}\n` +
+    `Profissão, empresa ou operação atual: ${lead.empresa}\n\n` +
+    `CONTATO\n` +
+    `${'-'.repeat(56)}\n` +
+    `E-mail: ${lead.email}\n` +
+    `Telefone: ${lead.telefone}\n\n` +
+    `EXPERIÊNCIA E ACESSO A EMPRESAS\n` +
+    `${'-'.repeat(56)}\n` +
+    `${lead.mensagem || '(não informado)'}\n\n` +
+    `ORIGEM DA CANDIDATURA\n` +
+    `${'-'.repeat(56)}\n` +
+    `Página de conversão: ${lead.attribution.conversionPage || '(não informado)'}\n` +
+    `Primeira página: ${lead.attribution.landingPage || '(não informado)'}\n` +
+    `Origem / mídia: ${[lead.attribution.lastTouch.utm_source, lead.attribution.lastTouch.utm_medium].filter(Boolean).join(' / ') || '(não informado)'}\n` +
+    `Campanha: ${lead.attribution.lastTouch.utm_campaign || '(não informado)'}\n` +
+    `Conteúdo: ${lead.attribution.lastTouch.utm_content || '(não informado)'}\n` +
+    `Termo: ${lead.attribution.lastTouch.utm_term || '(não informado)'}\n\n` +
+    `Recebida em: ${formatReceivedAt(lead.receivedAt)}\n`
+  );
+}
+
+function buildCommercialPartnerEmailHtml(
+  lead: ReturnType<typeof buildLead>,
+): string {
+  const profile = readableOption(lead.dor, commercialPartnerProfileLabels);
+  const structure = readableOption(
+    lead.porte,
+    commercialPartnerStructureLabels,
+  );
+  const receivedAt = formatReceivedAt(lead.receivedAt);
+  const safeEmail = escapeHtml(lead.email);
+  const safePhone = escapeHtml(lead.telefone);
+  const phoneHref = escapeHtml(lead.telefone.replace(/\D/g, ''));
+  const message = lead.mensagem
+    ? escapeHtml(lead.mensagem).replace(/\r?\n/g, '<br>')
+    : "<span style='color:#94a3b8;font-style:italic'>Não informado.</span>";
+
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#eef2f7;font-family:Arial,Helvetica,sans-serif;color:#334155">
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr><td align="center" style="padding:28px 12px">
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:680px;border-collapse:collapse;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(15,23,42,.12)">
+        <tr><td style="background:#0b153f;padding:30px 32px">
+          <p style="display:inline-block;margin:0 0 12px;padding:6px 10px;border-radius:999px;background:#ffffff14;color:#dbeafe;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.14em">Programa de Parceiros</p>
+          <h1 style="margin:0;color:#ffffff;font-size:27px;line-height:1.2;font-weight:900">Nova candidatura recebida</h1>
+          <p style="margin:10px 0 0;color:#cbd5e1;font-size:15px;line-height:1.5">${htmlValue(lead.nome)} demonstrou interesse em desenvolver oportunidades de SST com a SERMST.</p>
+        </td></tr>
+
+        <tr><td style="background:#ffffff;padding:24px 32px">
+          <p style="margin:0 0 16px;color:#e11d48;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em">Resumo da candidatura</p>
+          <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse">
+            <tr>
+              <td style="width:50%;padding:14px;border:1px solid #e2e8f0;border-radius:12px 0 0 12px;background:#f8fafc;vertical-align:top">
+                <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">Perfil principal</p>
+                <p style="margin:0;color:#0f172a;font-size:16px;font-weight:900;line-height:1.4">${htmlValue(profile)}</p>
+              </td>
+              <td style="width:50%;padding:14px;border:1px solid #e2e8f0;border-left:0;border-radius:0 12px 12px 0;background:#f8fafc;vertical-align:top">
+                <p style="margin:0 0 5px;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em">Estrutura de atuação</p>
+                <p style="margin:0;color:#0f172a;font-size:16px;font-weight:900;line-height:1.4">${htmlValue(structure)}</p>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+
+        ${section('Dados do candidato', infoTable([
+          ['Nome', htmlValue(lead.nome)],
+          ['Profissão, empresa ou operação atual', htmlValue(lead.empresa)],
+          ['E-mail', mailto(lead.email)],
+          ['Telefone', tel(lead.telefone)],
+        ]))}
+
+        ${section(
+          'Experiência e acesso a empresas',
+          `<div style="padding:18px;border-left:4px solid #e11d48;border-radius:10px;background:#f8fafc;color:#334155;font-size:15px;line-height:1.65">${message}</div>`,
+          'Relato enviado pelo candidato no formulário.',
+        )}
+
+        ${section(
+          'Próximo passo',
+          `<div style="padding:18px;border:1px solid #bae6fd;border-radius:12px;background:#f0f9ff">
+            <p style="margin:0 0 14px;color:#0f172a;font-size:15px;font-weight:800;line-height:1.55">Revise o perfil e, se houver alinhamento, entre em contato para marcar uma conversa.</p>
+            <a href="mailto:${safeEmail}" style="display:inline-block;margin:0 8px 8px 0;padding:11px 16px;border-radius:10px;background:#e11d48;color:#ffffff;text-decoration:none;font-size:14px;font-weight:900">Responder por e-mail</a>
+            <a href="tel:${phoneHref}" style="display:inline-block;margin:0 0 8px;padding:11px 16px;border-radius:10px;background:#0b153f;color:#ffffff;text-decoration:none;font-size:14px;font-weight:900">Ligar para ${safePhone}</a>
+          </div>`,
+        )}
+
+        ${section('Origem da candidatura', infoTable([
+          ['Página de conversão', htmlValue(lead.attribution.conversionPage)],
+          ['Primeira página', htmlValue(lead.attribution.landingPage)],
+          ['Origem / mídia', htmlValue([lead.attribution.lastTouch.utm_source, lead.attribution.lastTouch.utm_medium].filter(Boolean).join(' / '))],
+          ['Campanha', htmlValue(lead.attribution.lastTouch.utm_campaign)],
+          ['Conteúdo', htmlValue(lead.attribution.lastTouch.utm_content)],
+          ['Termo', htmlValue(lead.attribution.lastTouch.utm_term)],
+        ]))}
+
+        <tr><td style="background:#0b153f;padding:18px 32px;border-radius:0 0 18px 18px">
+          <p style="margin:0;color:#cbd5e1;font-size:12px;line-height:1.5">Candidatura recebida em ${escapeHtml(receivedAt)} pelo site sermst.com.br.</p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body></html>`;
+}
+
 function buildEmailText(lead: ReturnType<typeof buildLead>): string {
   if (lead.subscription) return buildSubscriptionEmailText(lead);
+  if (lead.leadType === 'parceiro-comercial') {
+    return buildCommercialPartnerEmailText(lead);
+  }
 
   return (
     `Novo lead recebido pelo formulário do site SERMST\n` +
@@ -500,6 +659,9 @@ function buildSubscriptionEmailHtml(lead: ReturnType<typeof buildLead>): string 
 
 function buildEmailHtml(lead: ReturnType<typeof buildLead>): string {
   if (lead.subscription) return buildSubscriptionEmailHtml(lead);
+  if (lead.leadType === 'parceiro-comercial') {
+    return buildCommercialPartnerEmailHtml(lead);
+  }
 
   const row = (label: string, value: string) =>
     `<tr><td style="padding:6px 12px;font-weight:600;color:#1e293b;white-space:nowrap;width:160px">${label}</td>` +
@@ -768,17 +930,17 @@ export async function POST(req: Request) {
         auth: { user: smtpUser, pass: smtpPass },
       });
 
+      const emailSubject =
+        lead.leadType === 'parceiro-comercial'
+          ? `Programa de Parceiros | Nova candidatura: ${lead.nome}`
+          : `Novo lead SERMST: ${lead.empresa}: ${lead.dor}`;
+
       await transporter.sendMail({
         from: smtpFrom,
         to: notifyTo,
-        subject: `=?UTF-8?B?${Buffer.from(
-          (lead.leadType === 'parceiro-comercial'
-            ? 'Nova candidatura comercial SERMST: '
-            : 'Novo lead SERMST: ') +
-            lead.empresa +
-            ': ' +
-            lead.dor,
-        ).toString('base64')}?=`,
+        replyTo:
+          lead.leadType === 'parceiro-comercial' ? lead.email : undefined,
+        subject: `=?UTF-8?B?${Buffer.from(emailSubject).toString('base64')}?=`,
         text: buildEmailText(lead),
         html: buildEmailHtml(lead),
         encoding: 'base64',

@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import nodemailer from 'nodemailer';
 import { POST } from '@/app/api/lead/route';
 
 const deliveryEnvKeys = [
@@ -39,6 +40,7 @@ function validPayload(overrides: Record<string, unknown> = {}) {
 
 describe('POST /api/lead', () => {
   beforeEach(() => {
+    vi.restoreAllMocks();
     for (const key of deliveryEnvKeys) {
       delete process.env[key];
     }
@@ -49,6 +51,64 @@ describe('POST /api/lead', () => {
 
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toEqual({ ok: true });
+  });
+
+  it('envia candidatura de parceiro em um email personalizado', async () => {
+    process.env.SMTP_HOST = 'smtp.example.com';
+    process.env.SMTP_PORT = '587';
+    process.env.SMTP_USER = 'site@sermst.com.br';
+    process.env.SMTP_PASS = 'test-password';
+    process.env.SMTP_FROM = 'SERMST Site <site@sermst.com.br>';
+    process.env.LEAD_NOTIFY_EMAIL = 'parcerias@sermst.com.br';
+
+    const sendMailMock = vi.fn().mockResolvedValue({ messageId: 'test-id' });
+    vi.spyOn(nodemailer, 'createTransport').mockReturnValue({
+      sendMail: sendMailMock,
+    } as never);
+
+    const response = await POST(
+      buildLeadRequest(
+        validPayload({
+          nome: 'Felipe Sannino',
+          empresa: 'Consultoria Ocupacional',
+          email: 'felipe@example.com',
+          telefone: '11999998888',
+          porte: 'equipe-6-mais',
+          dor: 'profissional-sst',
+          mensagem: 'Atuo com SST e já tenho relacionamento com empresas.',
+          lead_type: 'parceiro-comercial',
+          conversion_page: 'https://sermst.com.br/parcerias/comerciais',
+          utm_source: 'linkedin',
+          utm_medium: 'job-posting',
+        }),
+        '203.0.113.17',
+      ),
+    );
+
+    expect(response.status).toBe(200);
+    expect(sendMailMock).toHaveBeenCalledOnce();
+
+    const mail = sendMailMock.mock.calls[0][0] as {
+      subject: string;
+      replyTo: string;
+      text: string;
+      html: string;
+    };
+
+    expect(mail.replyTo).toBe('felipe@example.com');
+    expect(mail.subject).toContain(
+      Buffer.from(
+        'Programa de Parceiros | Nova candidatura: Felipe Sannino',
+      ).toString('base64'),
+    );
+    expect(mail.text).toContain('Profissional de SST');
+    expect(mail.text).toContain('Já possui uma equipe com 6 ou mais pessoas');
+    expect(mail.html).toContain('Nova candidatura recebida');
+    expect(mail.html).toContain('Responder por e-mail');
+    expect(mail.html).toContain('Profissional de SST');
+    expect(mail.html).toContain('Já possui uma equipe com 6 ou mais pessoas');
+    expect(mail.html).not.toContain('profissional-sst');
+    expect(mail.html).not.toContain('equipe-6-mais');
   });
 
   it('bloqueia payload sem campos obrigatorios', async () => {
