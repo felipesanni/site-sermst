@@ -116,7 +116,7 @@ const contractFaqs = [
   },
   {
     title: 'Existe prazo mínimo de contrato?',
-    text: 'O plano funciona em ciclo mensal ou anual. Não há fidelidade obrigatória de longo prazo além do ciclo contratado. A periodicidade e as condições de renovação são confirmadas no contrato antes do início do plano.',
+    text: 'O contrato tem vigência inicial de 12 meses. O cliente pode escolher pagamento mensal ou pagamento anual antecipado, com 5% de desconto. As condições de cancelamento antecipado estão previstas no contrato.',
   },
   {
     title: 'Como funciona o cancelamento da assinatura?',

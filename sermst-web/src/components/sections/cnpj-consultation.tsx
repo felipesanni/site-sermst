@@ -268,7 +268,7 @@ export function CnpjConsultation() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
             Digite o CNPJ para conferir os principais dados do cartão CNPJ: situação
-            cadastral, razão social, abertura, atividades e endereço. Sem cadastro.
+            cadastral, razão social, abertura, atividades e endereço.
           </p>
         </div>
 

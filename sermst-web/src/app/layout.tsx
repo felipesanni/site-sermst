@@ -191,6 +191,7 @@ const strategicLinks = [
   { name: 'Perícia Trabalhista', link: '/servicos/pericia-trabalhista-assistente-tecnico' },
   { name: 'Treinamentos de NRs', link: '/servicos/treinamentos-nrs-cipa-brigada' },
   { name: 'Planos de SST por Assinatura', link: '/assinaturas' },
+  { name: 'Parceiros Comerciais', link: '/parcerias/comerciais' },
   { name: 'Parceria para Contadores', link: '/parcerias/contadores' },
 ]
 

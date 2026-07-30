@@ -95,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ],
     },
     { url: `${BASE_URL}/contato`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/parcerias/comerciais`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/parcerias/contadores`, changeFrequency: "monthly", priority: 0.88 },
     {
       url: `${BASE_URL}/assinaturas`,

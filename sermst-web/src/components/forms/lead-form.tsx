@@ -92,12 +92,30 @@ const partnerDores = [
   { v: 'materiais-parceria', l: 'Quero receber materiais para indicar' },
 ];
 
+const commercialPartnerStructures = [
+  { v: 'atuacao-individual', l: 'Quero começar atuando sozinho(a)' },
+  { v: 'montando-equipe', l: 'Quero montar uma equipe comercial' },
+  { v: 'equipe-2-5', l: 'Já tenho uma equipe de 2 a 5 pessoas' },
+  { v: 'equipe-6-mais', l: 'Já tenho uma equipe com 6 ou mais pessoas' },
+];
+
+const commercialPartnerProfiles = [
+  { v: 'vendas-b2b', l: 'Tenho experiência com vendas B2B' },
+  { v: 'profissional-sst', l: 'Sou profissional de SST' },
+  { v: 'contabilidade-rh-dp', l: 'Atuo com contabilidade, RH ou DP' },
+  { v: 'consultoria-empresarial', l: 'Atuo com consultoria empresarial' },
+  { v: 'empreendedor-comercial', l: 'Sou empreendedor(a) com perfil comercial' },
+  { v: 'outro-perfil', l: 'Tenho outro perfil e quero apresentar' },
+];
+
 type LeadFormProps = {
-  variant?: 'default' | 'partner';
+  variant?: 'default' | 'partner' | 'commercial-partner';
 };
 
 export function LeadForm({ variant = 'default' }: LeadFormProps) {
-  const isPartner = variant === 'partner';
+  const isAccountingPartner = variant === 'partner';
+  const isCommercialPartner = variant === 'commercial-partner';
+  const isPartner = isAccountingPartner || isCommercialPartner;
   const pathname = usePathname();
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
@@ -186,7 +204,11 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'sermst_lead_generated',
-          form_name: 'contato_sermst',
+          form_name: isCommercialPartner
+            ? 'candidatura_parceiro_comercial'
+            : isAccountingPartner
+              ? 'parceria_contadores'
+              : 'contato_sermst',
           conversion_page: pathname,
         });
         if (typeof window.fbq === 'function') {
@@ -206,22 +228,33 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
           <CheckCircle2 className="h-8 w-8 text-green-600" />
         </div>
         <h3 className="mb-3 text-2xl font-black text-brand-900">
-          Recebemos sua mensagem.
+          {isCommercialPartner
+            ? 'Recebemos sua candidatura.'
+            : 'Recebemos sua mensagem.'}
         </h3>
         <p className="mx-auto mb-6 max-w-md leading-relaxed text-slate-700">
-          Em breve a equipe comercial da SERMST entra em contato para entender porte, urgência e operação antes de indicar o melhor caminho.
+          {isCommercialPartner
+            ? 'Agora nossa equipe vai analisar seu perfil, experiência e plano de atuação. Se houver alinhamento com o programa, entraremos em contato para a próxima conversa.'
+            : 'Em breve a equipe comercial da SERMST entra em contato para entender porte, urgência e operação antes de indicar o melhor caminho.'}
         </p>
-        <p className="text-sm text-slate-500">
-          Se for urgente, fale agora pelo WhatsApp:{' '}
-          <a
-            href={`https://wa.me/5511915146447?text=${encodeURIComponent('Olá! Acabei de preencher o formulário no site da SERMST (página: ' + pathname + ') e gostaria de falar com a equipe comercial.')}`}
-            className="font-bold text-accent-pink underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            (11) 91514-6447
-          </a>
-        </p>
+        {isCommercialPartner ? (
+          <p className="text-sm leading-relaxed text-slate-500">
+            A inscrição registra seu interesse, mas não garante entrada no
+            programa.
+          </p>
+        ) : (
+          <p className="text-sm text-slate-500">
+            Se for urgente, fale agora pelo WhatsApp:{' '}
+            <a
+              href={`https://wa.me/5511915146447?text=${encodeURIComponent('Olá! Acabei de preencher o formulário no site da SERMST (página: ' + pathname + ') e gostaria de falar com a equipe comercial.')}`}
+              className="font-bold text-accent-pink underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              (11) 91514-6447
+            </a>
+          </p>
+        )}
       </div>
     );
   }
@@ -238,14 +271,24 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
       <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
       <div>
         <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
-          {isPartner ? 'Programa de parceria' : 'Diagnóstico comercial'}
+          {isCommercialPartner
+            ? 'Candidatura ao programa de parceiros'
+            : isPartner
+              ? 'Programa de parceria'
+              : 'Diagnóstico comercial'}
         </span>
         <h3 className="mb-2 text-2xl font-black leading-tight text-brand-900 md:text-3xl">
-          {isPartner ? 'Preencha seus dados e fale com o time de parcerias' : 'Preencha o formulário e a SERMST entra em contato o mais rápido possível'}
+          {isCommercialPartner
+            ? 'Conte como você pretende desenvolver essa oportunidade'
+            : isPartner
+              ? 'Preencha seus dados e fale com o time de parcerias'
+              : 'Preencha o formulário e a SERMST entra em contato o mais rápido possível'}
         </h3>
         <p className="text-sm leading-relaxed text-slate-600">
-          {isPartner
-            ? 'Você conta como funciona o seu escritório e nossa equipe explica como indicar, acompanhar o atendimento e receber a comissão.'
+          {isCommercialPartner
+            ? 'Queremos entender sua experiência, seu acesso ao mercado B2B e se você pretende atuar sozinho ou construir uma equipe comercial.'
+            : isPartner
+              ? 'Você conta como funciona o seu escritório e nossa equipe explica como indicar, acompanhar o atendimento e receber a comissão.'
             : 'Nossa equipe irá entender sua demanda e retornar com orientação precisa. Se houver urgência de admissão, eSocial travado ou risco de fiscalização, sinalize no formulário para priorizarmos o contato.'}
         </p>
       </div>
@@ -266,7 +309,11 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
         </div>
         <div>
           <label htmlFor="empresa" className="mb-2 block text-sm font-bold text-brand-900">
-            {isPartner ? 'Escritório de contabilidade' : 'Empresa'}
+            {isCommercialPartner
+              ? 'Profissão, empresa ou operação atual'
+              : isPartner
+                ? 'Escritório de contabilidade'
+                : 'Empresa'}
           </label>
           <input
             id="empresa"
@@ -311,7 +358,11 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
 
       <div>
         <label htmlFor="porte" className="mb-2 block text-sm font-bold text-brand-900">
-          {isPartner ? 'Quantas empresas seu escritório atende?' : 'Quantos funcionários a empresa tem?'}
+          {isCommercialPartner
+            ? 'Como você pretende operar?'
+            : isPartner
+              ? 'Quantas empresas seu escritório atende?'
+              : 'Quantos funcionários a empresa tem?'}
         </label>
         <select
           id="porte"
@@ -321,9 +372,14 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
           className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
         >
           <option value="" disabled>
-            Selecione o porte
+            {isCommercialPartner ? 'Selecione sua estrutura' : 'Selecione o porte'}
           </option>
-          {(isPartner ? partnerPortes : portes).map((p) => (
+          {(isCommercialPartner
+            ? commercialPartnerStructures
+            : isPartner
+              ? partnerPortes
+              : portes
+          ).map((p) => (
             <option key={p.v} value={p.v}>
               {p.l}
             </option>
@@ -333,7 +389,11 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
 
       <div>
         <label htmlFor="dor" className="mb-2 block text-sm font-bold text-brand-900">
-          {isPartner ? 'Como deseja começar?' : 'Qual e a principal demanda?'}
+          {isCommercialPartner
+            ? 'Qual perfil mais combina com você?'
+            : isPartner
+              ? 'Como deseja começar?'
+              : 'Qual e a principal demanda?'}
         </label>
         <select
           id="dor"
@@ -343,9 +403,16 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
           className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
         >
           <option value="" disabled>
-            Selecione a demanda principal
+            {isCommercialPartner
+              ? 'Selecione seu perfil principal'
+              : 'Selecione a demanda principal'}
           </option>
-          {(isPartner ? partnerDores : dores).map((d) => (
+          {(isCommercialPartner
+            ? commercialPartnerProfiles
+            : isPartner
+              ? partnerDores
+              : dores
+          ).map((d) => (
             <option key={d.v} value={d.v}>
               {d.l}
             </option>
@@ -355,18 +422,38 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
 
       <div>
         <label htmlFor="mensagem" className="mb-2 block text-sm font-bold text-brand-900">
-          {isPartner ? 'Conte um pouco sobre seu escritório (opcional)' : 'Conte o cenário (opcional)'}
+          {isCommercialPartner
+            ? 'Conte sobre sua experiência e acesso a empresas'
+            : isPartner
+              ? 'Conte um pouco sobre seu escritório (opcional)'
+              : 'Conte o cenário (opcional)'}
         </label>
         <textarea
           id="mensagem"
           name="mensagem"
           rows={4}
-          placeholder={isPartner
-            ? 'Ex.: Atendo empresas de vários segmentos e quero oferecer SST aos meus clientes...'
-            : 'Ex.: Tenho 80 funcionários, PGR vencido, admissão parada e pendência no eSocial...'}
+          placeholder={
+            isCommercialPartner
+              ? 'Ex.: Trabalho com vendas B2B há quatro anos, tenho relacionamento com empresas da minha região e quero começar sozinho para depois montar uma equipe...'
+              : isPartner
+                ? 'Ex.: Atendo empresas de vários segmentos e quero oferecer SST aos meus clientes...'
+                : 'Ex.: Tenho 80 funcionários, PGR vencido, admissão parada e pendência no eSocial...'
+          }
           className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 text-slate-900 transition focus:border-accent-pink focus:outline-none focus:ring-2 focus:ring-accent-pink/20"
         />
       </div>
+
+      <input
+        type="hidden"
+        name="lead_type"
+        value={
+          isCommercialPartner
+            ? 'parceiro-comercial'
+            : isAccountingPartner
+              ? 'parceria-contadores'
+              : 'contato'
+        }
+      />
 
       <input
         type="text"
@@ -434,7 +521,11 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
             Enviando...
           </>
         ) : (
-          isPartner ? 'Quero ser contador parceiro' : 'Quero receber contato da SERMST'
+          isCommercialPartner
+            ? 'Enviar minha candidatura'
+            : isPartner
+              ? 'Quero ser contador parceiro'
+              : 'Quero receber contato da SERMST'
         )}
       </button>
       </form>

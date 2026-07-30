@@ -182,8 +182,8 @@ describe('CnaeCalculator', () => {
     {
       profile: 'Profissional de SST',
       employees: '30',
-      cta: 'Consultar a biblioteca técnica de SST',
-      href: '/normas',
+      cta: 'Ver como funciona a parceria',
+      href: '/parcerias/comerciais',
     },
   ])('personaliza o proximo passo para $profile', async ({ profile, employees, cta, href }) => {
     const user = userEvent.setup();

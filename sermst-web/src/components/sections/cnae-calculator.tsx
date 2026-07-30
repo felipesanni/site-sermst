@@ -240,17 +240,17 @@ function getNextStepConfig(consultantProfile: string, employees: number): NextSt
   if (consultantProfile === 'Profissional de SST') {
     return {
       segment: 'profissional_sst',
-      eyebrow: 'Para quem trabalha com SST',
-      title: 'O CNAE é só o começo. O enquadramento precisa se sustentar tecnicamente.',
+      eyebrow: 'Uma oportunidade para profissionais de SST',
+      title: 'Já pensou em vender SST sem precisar cuidar de toda a entrega?',
       description:
-        'Acesse análises de NRs, critérios de dimensionamento e referências para revisar a conclusão antes de documentar ou orientar a empresa.',
+        'Você encontra as oportunidades e apresenta os planos. Nossa equipe cuida da implantação, documentos, exames, eSocial e atendimento ao cliente.',
       cards: [
-        { label: 'Texto e critério', text: 'NR-01, NR-04, NR-05, NR-07 e outros temas com aplicação prática.' },
-        { label: 'Além da tabela', text: 'Atividade preponderante, exposição real e documentos entram na análise.' },
-        { label: 'Conclusão defensável', text: 'Referências para registrar o raciocínio técnico com mais consistência.' },
+        { label: 'Sua experiência abre portas', text: 'Use seu conhecimento para identificar empresas que precisam colocar as obrigações de SST em ordem.' },
+        { label: 'Oferta pronta para vender', text: 'Trabalhe com planos, preços definidos e apoio em cada negociação.' },
+        { label: 'Entrega por nossa conta', text: 'Nossa equipe cuida dos documentos, exames, eSocial e atendimento ao cliente.' },
       ],
-      ctaLabel: 'Consultar a biblioteca técnica de SST',
-      href: '/normas',
+      ctaLabel: 'Ver como funciona a parceria',
+      href: '/parcerias/comerciais',
       showLeadForm: false,
     };
   }

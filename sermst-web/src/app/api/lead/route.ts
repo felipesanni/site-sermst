@@ -295,6 +295,7 @@ function buildEmailText(lead: ReturnType<typeof buildLead>): string {
     `Novo lead recebido pelo formulário do site SERMST\n` +
     `${"=".repeat(50)}\n\n` +
     `Nome:              ${lead.nome}\n` +
+    `Tipo de lead:      ${lead.leadType}\n` +
     `Empresa:           ${lead.empresa}\n` +
     `E-mail:            ${lead.email}\n` +
     `Telefone:          ${lead.telefone}\n` +
@@ -518,6 +519,7 @@ function buildEmailHtml(lead: ReturnType<typeof buildLead>): string {
       <p style="margin:0 0 16px;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#e11d48">Dados do contato</p>
       <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden">
         ${row("Nome", lead.nome)}
+        ${row("Tipo de lead", lead.leadType)}
         ${row("Empresa", lead.empresa)}
         ${row("E-mail", `<a href="mailto:${lead.email}" style="color:#0f172a">${lead.email}</a>`)}
         ${row("Telefone", `<a href="tel:${lead.telefone}" style="color:#0f172a">${lead.telefone}</a>`)}
@@ -603,6 +605,7 @@ function normalizeSubscription(data: LeadPayload): SubscriptionLeadData | null {
 
 function buildLead(data: LeadPayload, req: Request) {
   return {
+    leadType: data.lead_type ? String(data.lead_type).trim() : 'contato',
     nome: String(data.nome).trim(),
     empresa: String(data.empresa).trim(),
     email: String(data.email).trim().toLowerCase(),
@@ -768,7 +771,14 @@ export async function POST(req: Request) {
       await transporter.sendMail({
         from: smtpFrom,
         to: notifyTo,
-        subject: `=?UTF-8?B?${Buffer.from('Novo lead SERMST: ' + lead.empresa + ': ' + lead.dor).toString('base64')}?=`,
+        subject: `=?UTF-8?B?${Buffer.from(
+          (lead.leadType === 'parceiro-comercial'
+            ? 'Nova candidatura comercial SERMST: '
+            : 'Novo lead SERMST: ') +
+            lead.empresa +
+            ': ' +
+            lead.dor,
+        ).toString('base64')}?=`,
         text: buildEmailText(lead),
         html: buildEmailHtml(lead),
         encoding: 'base64',

@@ -19,8 +19,13 @@ import {
 } from 'lucide-react';
 import { AssinaturaContractModal } from './assinatura-contract-modal';
 import { cnaeData, grauRiscoInfo, type CnaeEntry } from '@/lib/data/cnae-data';
+import {
+  calculateSubscriptionMonthly,
+  subscriptionPricing,
+  type SubscriptionPlanId,
+} from '@/lib/subscription-pricing';
 
-type PlanId = 'base' | 'essencial' | 'total';
+type PlanId = SubscriptionPlanId;
 
 type PriceBand = {
   from: number;
@@ -121,9 +126,16 @@ const plans: Plan[] = [
     title: 'Plano Gestão Total',
     description:
       'Para empresas que querem somar SST, saúde, apoio jurídico, liderança e desenvolvimento da equipe.',
-    minimum: 239,
+    minimum: subscriptionPricing.total.minimum,
     bestFor: 'Operações com mais funcionários, múltiplas funções, fiscalização ou maior exposição trabalhista.',
-    bands: [{ from: 2, to: 99, monthlyPerEmployee: 15 }],
+    bands: [
+      {
+        from: 2,
+        to: 99,
+        monthlyPerEmployee:
+          subscriptionPricing.total.monthlyPerAdditionalEmployee,
+      },
+    ],
     features: ['Tudo do Plano Essencial', ...totalIncludedItems],
     includedItems: [...baseIncludedItems, ...essencialIncludedItems, ...totalIncludedItems],
   },
@@ -133,9 +145,16 @@ const plans: Plan[] = [
     title: 'Plano Essencial',
     description:
       'Para empresas que querem o Base completo com laudos de insalubridade e periculosidade, PPP, CAT, CIPA e consultoria.',
-    minimum: 199,
+    minimum: subscriptionPricing.essencial.minimum,
     bestFor: 'Empresas em crescimento, RH sem tempo e contratos com admissões recorrentes.',
-    bands: [{ from: 2, to: 99, monthlyPerEmployee: 13 }],
+    bands: [
+      {
+        from: 2,
+        to: 99,
+        monthlyPerEmployee:
+          subscriptionPricing.essencial.monthlyPerAdditionalEmployee,
+      },
+    ],
     features: ['Tudo do Plano Base', ...essencialIncludedItems],
     includedItems: [...baseIncludedItems, ...essencialIncludedItems],
   },
@@ -145,9 +164,16 @@ const plans: Plan[] = [
     title: 'Plano Base',
     description:
       'Para empresas que precisam organizar a documentação obrigatória, exames clínicos e rotina digital de SST.',
-    minimum: 159,
+    minimum: subscriptionPricing.base.minimum,
     bestFor: 'Empresas pequenas, operação simples e baixa complexidade ocupacional.',
-    bands: [{ from: 2, to: 99, monthlyPerEmployee: 7 }],
+    bands: [
+      {
+        from: 2,
+        to: 99,
+        monthlyPerEmployee:
+          subscriptionPricing.base.monthlyPerAdditionalEmployee,
+      },
+    ],
     features: baseIncludedItems,
     includedItems: baseIncludedItems,
   },
@@ -188,23 +214,6 @@ function findCnaeEntry(value: string) {
 function clampEmployees(value: number) {
   if (!Number.isFinite(value)) return 1;
   return Math.min(Math.max(Math.round(value), 1), 10000);
-}
-
-function calculateMonthly(plan: Plan, employees: number) {
-  const normalized = clampEmployees(employees);
-  let total = plan.minimum;
-
-  for (const band of plan.bands) {
-    if (normalized < band.from) continue;
-
-    const bandEnd = band.to ?? normalized;
-    const countedEmployees = Math.min(normalized, bandEnd) - band.from + 1;
-    if (countedEmployees > 0) {
-      total += countedEmployees * band.monthlyPerEmployee;
-    }
-  }
-
-  return Math.round(total);
 }
 
 function hasAddress(address?: AddressPayload) {
@@ -660,7 +669,10 @@ export function AssinaturaPlans() {
   const pricing = useMemo(
     () =>
       orderedPlans.map((plan) => {
-        const monthly = calculateMonthly(plan, normalizedEmployees);
+        const monthly = calculateSubscriptionMonthly(
+          plan.id,
+          normalizedEmployees,
+        );
         const annualPix = Math.round(monthly * 12 * 0.95);
         const perEmployee = Math.max(1, Math.round(monthly / normalizedEmployees));
 

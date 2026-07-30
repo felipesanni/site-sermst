@@ -65,4 +65,19 @@ describe('LeadForm', () => {
     expect(await screen.findByText(/Não conseguimos enviar/i)).toBeInTheDocument();
     expect(screen.getByText(/Falha ao enviar lead/i)).toBeInTheDocument();
   });
+
+  it('apresenta a candidatura seletiva do parceiro comercial', () => {
+    render(<LeadForm variant="commercial-partner" />);
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Conte como você pretende desenvolver essa oportunidade/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText(/Profissão, empresa ou operação atual/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Como você pretende operar/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Qual perfil mais combina com você/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Enviar minha candidatura/i })).toBeInTheDocument();
+    expect(document.querySelector('input[name="lead_type"]')).toHaveValue('parceiro-comercial');
+  });
 });
