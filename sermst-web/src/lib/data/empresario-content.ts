@@ -715,6 +715,7 @@ const empresarioTopics: Record<string, EmpresarioTopicInput> = {
       { label: 'Gov.br: Emissor Nacional de NFS-e', href: officialUrls.nfse },
     ],
     related: ['simples-nacional', 'mei-pode-ter-funcionario', 'inscricao-estadual'],
+    lastReviewedAt: '2026-08-11',
   },
 
   'pro-labore': {

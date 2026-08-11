@@ -7,6 +7,7 @@ import { localidades, servicosSEO } from '@/lib/data/seo-content';
 import { buildFrequentFaqs } from '@/lib/faq';
 import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildServiceCopy } from '@/lib/seo-copy';
+import { getServicePriorityLinks } from '@/lib/seo-priority-links';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 function getServiceSearchLabel(servico: string, fallback: string) {
@@ -42,13 +43,13 @@ export async function generateMetadata({
   const canonicalUrl = `https://sermst.com.br/servicos/${servico}`;
   const serviceLabel = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
   const title = servico === 'exame-admissional-expresso'
-    ? `${serviceLabel} | SERMST`
+    ? 'Exame admissional para empresas | Clínica e ASO | SERMST'
     : servico === 'exame-toxicologico-clt'
       ? `${serviceLabel} | CNH C, D e E, Empresas e Pessoa Física`
       : data.seoTitle ?? data.h1;
   const description =
     servico === 'exame-admissional-expresso'
-      ? 'Agende exame admissional para sua empresa em São Paulo: ASO no mesmo dia, laboratório próprio e apoio ao PCMSO e eSocial, sem atrasar a contratação.'
+      ? 'Exame admissional para empresas em São Paulo, com ASO e exames complementares conforme o PCMSO e a NR-07. Atendimento ágil para não travar a contratação.'
       : servico === 'exame-toxicologico-clt'
         ? 'Exame toxicológico por R$ 200, validade nacional, para empresas e pessoa física. Suporte para admissão, demissão e renovação de CNH C, D e E.'
       : servico === 'audiometria-ocupacional-clinica'
@@ -60,6 +61,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    robots: 'index, follow',
     alternates: {
       canonical: canonicalUrl,
     },
@@ -85,6 +87,10 @@ export default async function ServicoPage({
 
   const seoCopy = buildServiceCopy(data);
   const serviceName = getServiceSearchLabel(servico, data.h1.split('|')[0].trim());
+  const serviceHook = servico === 'exame-admissional-expresso'
+    ? 'Precisa de exame admissional com rapidez, ASO e orientação para o eSocial? A SERMST atende empresas em São Paulo com laboratório próprio e fluxo organizado para não atrasar a contratação.'
+    : data.hook;
+  const priorityRelatedLinks = getServicePriorityLinks(servico);
   const areaServed = (data.allowedLocalSlugs
     ? localidades.filter((local) => data.allowedLocalSlugs?.includes(local.slug))
     : localidades).map((local) => local.nome);
@@ -99,7 +105,7 @@ export default async function ServicoPage({
     '@id': `https://sermst.com.br/servicos/${servico}#service`,
     name: serviceName,
     serviceType: serviceName,
-    description: data.hook,
+    description: serviceHook,
     url: `https://sermst.com.br/servicos/${servico}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -147,10 +153,10 @@ export default async function ServicoPage({
                 Especialidade SERMST
               </span>
               <h1 className="h1-standard mb-8 text-white">
-                {servico === 'exame-admissional-expresso' ? 'Clínica de Exame Admissional | Medicina do Trabalho' : data.h1}
+                {servico === 'exame-admissional-expresso' ? 'Exame admissional para empresas: clínica e emissão de ASO' : data.h1}
               </h1>
               <p className="mx-auto max-w-3xl border-l-4 border-accent-pink pl-6 text-left text-xl font-medium leading-relaxed text-slate-300 md:text-2xl">
-                {data.hook}
+                {serviceHook}
               </p>
             </FadeIn>
           </div>
@@ -435,6 +441,44 @@ export default async function ServicoPage({
           )}
         </div>
       </section>
+
+      {priorityRelatedLinks.length > 0 && (
+        <section className="border-y border-slate-100 bg-slate-50 py-20">
+          <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl">
+              <FadeIn direction="up">
+                <span className="kicker">Conteúdo relacionado</span>
+                <h2 className="mb-4 text-3xl font-black text-brand-900 md:text-4xl">
+                  Entenda melhor {serviceName.toLowerCase()} antes de contratar
+                </h2>
+                <p className="max-w-3xl text-lg leading-relaxed text-slate-600">
+                  Reunimos os conteúdos que explicam a norma, o preparo e os documentos ligados ao serviço. Isso ajuda o RH a definir o escopo correto e reduz retrabalho no atendimento.
+                </p>
+              </FadeIn>
+
+              <div className="mt-8 grid gap-5 md:grid-cols-2">
+                {priorityRelatedLinks.map((link, index) => (
+                  <FadeIn key={link.href} direction="up" delay={index * 0.04}>
+                    <Link
+                      href={link.href}
+                      className="group block h-full rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:shadow-lg"
+                    >
+                      <h3 className="text-xl font-black text-brand-900 transition-colors group-hover:text-accent-pink">
+                        {link.label}
+                      </h3>
+                      <p className="mt-3 leading-relaxed text-slate-600">{link.description}</p>
+                      <span className="mt-5 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                        Ler conteúdo
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-brand-900 py-20 text-white">
         <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">

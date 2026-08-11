@@ -97,9 +97,9 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: 'Consulta CNPJ grátis: cartão e situação cadastral | SERMST',
+  title: 'Consulta cartão CNPJ grátis | Situação cadastral e CNAE | SERMST',
   description:
-    'Consulte CNPJ grátis e sem cadastro. Veja cartão CNPJ, situação cadastral, razão social, CNAEs, abertura, porte, Simples e endereço.',
+    'Consulte o cartão CNPJ grátis, sem cadastro: veja situação cadastral, razão social, CNAE, porte, Simples Nacional e endereço da empresa.',
   keywords: [
     'consulta cnpj',
     'consultar cnpj',
@@ -114,9 +114,9 @@ export const metadata: Metadata = {
   alternates: { canonical: pageUrl },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Consulta CNPJ grátis: cartão e situação cadastral | SERMST',
+    title: 'Consulta cartão CNPJ grátis | Situação cadastral e CNAE | SERMST',
     description:
-      'Consulte cartão CNPJ, situação cadastral, razão social, CNAEs, abertura, porte, Simples e endereço.',
+      'Consulte o cartão CNPJ grátis e veja situação cadastral, razão social, CNAE, porte, Simples Nacional e endereço da empresa.',
     url: pageUrl,
     type: 'website',
     locale: 'pt_BR',
@@ -132,9 +132,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Consulta CNPJ grátis e sem cadastro | SERMST',
+    title: 'Consulta cartão CNPJ grátis | SERMST',
     description:
-      'Consulte situação cadastral e dados públicos da empresa pelo CNPJ.',
+      'Consulte o cartão CNPJ e confira situação cadastral, CNAE e dados públicos da empresa.',
     images: ['/images/site/og-cover.jpg'],
   },
 };
@@ -308,13 +308,22 @@ export default function ConsultaCnpjPage() {
                 normas que podem exigir atenção.
               </p>
             </div>
-            <Link
-              href="/rh/calculadora-cnae-grau-de-risco"
-              className="btn-primary-safe shrink-0"
-            >
-              Consultar grau de risco
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <Link
+                href="/rh/calculadora-cnae-grau-de-risco"
+                className="btn-primary-safe"
+              >
+                Consultar grau de risco
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/rh/lista-cnae-brasil"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 font-bold text-white transition-colors hover:border-accent-pink hover:text-accent-pink"
+              >
+                Ver tabela CNAE
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </FadeIn>
       </section>

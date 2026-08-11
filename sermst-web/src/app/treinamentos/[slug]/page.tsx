@@ -156,6 +156,28 @@ export default async function TrainingPage({ params }: PageProps) {
               </FadeIn>
             )}
 
+            {training.slug === 'nr-18-seguranca-construcao-civil' && (
+              <FadeIn delay={0.17} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+                <span className="kicker">Base normativa e aplicação</span>
+                <h2 className="mt-3 text-2xl font-black text-brand-900 md:text-3xl">
+                  Treinamento NR-18, PGR e controles do canteiro
+                </h2>
+                <p className="mt-4 leading-relaxed text-slate-700">
+                  O treinamento faz parte de uma rotina maior. Consulte a regra completa da NR-18, confira como o PGR acompanha a fase da obra e veja a opção de contratação corporativa para organizar turmas e reciclagens.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href="/normas/nr-18-construcao-civil" className="btn-primary-safe">
+                    Ler o guia da NR-18
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link href="/servicos/treinamentos-nrs-cipa-brigada/sao-paulo" className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-3 font-bold text-brand-900 transition-colors hover:border-accent-pink hover:text-accent-pink">
+                    Ver treinamentos para empresas
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </FadeIn>
+            )}
+
             {training.presentialOnly && (
               <FadeIn delay={0.18} className="rounded-3xl border border-amber-200 bg-amber-50 p-7 md:p-8">
                 <p className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-amber-800">

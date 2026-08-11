@@ -3,15 +3,15 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame toxicológico em São Paulo Centro | SERMST',
+  title: 'Onde fazer exame toxicológico em São Paulo? | SERMST',
   description:
-    'Onde fazer exame toxicológico em São Paulo Centro, no Largo do Paissandu: empresa e pessoa física, validade nacional e suporte para CNH C, D e E.',
+    'Saiba onde fazer exame toxicológico em São Paulo Centro, no Largo do Paissandu. Atendimento para CNH C, D e E, empresas e pessoas físicas.',
   robots: 'index, follow',
   alternates: { canonical: 'https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo' },
   openGraph: {
-    title: 'Exame toxicológico em São Paulo Centro | SERMST',
+    title: 'Onde fazer exame toxicológico em São Paulo? | SERMST',
     description:
-      'Guia prático para quem busca onde fazer exame toxicológico em São Paulo, inclusive perto da Sé, República e região central, com foco em CNH C, D e E, empresa e pessoa física.',
+      'Encontre atendimento para exame toxicológico no centro de São Paulo, com orientação para CNH C, D e E, empresas e pessoas físicas.',
     url: 'https://sermst.com.br/saude/onde-fazer-exame-toxicologico-sao-paulo',
     type: 'article',
     locale: 'pt_BR',
@@ -32,9 +32,9 @@ export default function OndeFazerExameToxicologicoPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-05-28',
-        dateModified: '2026-07-07',
+        dateModified: '2026-08-11',
       }}
-      h1="Onde fazer exame toxicológico em São Paulo: centro, acesso e validade do atendimento"
+      h1="Onde fazer exame toxicológico em São Paulo: endereço, atendimento e orientações"
       intro="Quem busca onde fazer exame toxicológico em São Paulo geralmente precisa resolver isso sem perda de tempo. Pode ser renovação da CNH C, D ou E, admissão de motorista, rotina da empresa ou simplesmente a dúvida sobre onde encontrar atendimento confiável na região central. Nessa hora, o que pesa não é só o endereço: é saber se a clínica atende empresa e pessoa física, se o laudo serve para a finalidade certa e se o acesso é simples."
       quickAnswer={
         <p>
@@ -147,9 +147,9 @@ export default function OndeFazerExameToxicologicoPage() {
         { label: 'ASO: quando emitir e o que o documento registra', href: '/saude/aso-atestado-saude-ocupacional' },
       ]}
       finalCta={{
-        title: 'Consulte as informações antes de agendar.',
+        title: 'Agende seu exame toxicológico no centro de São Paulo.',
         desc: 'Veja quem pode ser atendido, a finalidade do exame, o valor de referência e as orientações para a coleta no centro de São Paulo.',
-        label: 'Ver detalhes do exame',
+        label: 'Ver endereço e agendamento',
         href: '/servicos/exame-toxicologico-clt/sao-paulo',
       }}
     />

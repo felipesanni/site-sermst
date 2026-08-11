@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'NR-13: caldeiras e vasos de pressão | SERMST',
+  title: 'O que é a NR-13? Caldeiras, vasos de pressão e inspeções | SERMST',
   description:
     'Entenda o campo de aplicação da NR-13, a documentação, as inspeções e a capacitação para caldeiras, vasos, tubulações e tanques metálicos.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-13-vasos-de-pressao' },
   openGraph: {
-    title: 'NR-13: inspeções, documentos e capacitação | SERMST',
+    title: 'O que é a NR-13? Inspeções, documentos e capacitação | SERMST',
     description:
       'O que a NR-13 exige para caldeiras e vasos de pressão: inspeções, habilitação de operadores, prontuário e responsabilidades do empregador.',
     url: 'https://sermst.com.br/normas/nr-13-vasos-de-pressao',
@@ -30,10 +30,10 @@ export default function NR13Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-13',
+        dateModified: '2026-08-11',
       }}
 
-      h1="NR-13: Caldeiras, Vasos de Pressão, Tubulações e Tanques"
+      h1="O que é a NR-13? Caldeiras, vasos de pressão, tubulações e tanques"
       intro="A NR-13 define requisitos para a integridade e a operação segura de caldeiras, vasos de pressão, tubulações e determinados tanques metálicos. O enquadramento e os prazos precisam ser definidos a partir dos dados do equipamento e da avaliação de profissional legalmente habilitado."
       quickAnswer={
         <p>

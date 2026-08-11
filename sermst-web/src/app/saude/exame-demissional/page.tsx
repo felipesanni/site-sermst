@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame demissional: prazo, rescisão e quando fazer | SERMST',
+  title: 'Exame demissional: o que é, quando fazer e prazo | SERMST',
   description:
-    'Veja se o exame demissional deve ser feito antes ou depois da rescisão, o prazo de 10 dias, quem paga, quando há dispensa e o que acontece depois.',
+    'Entenda o que é o exame demissional, quando fazer, se ele pode ocorrer antes ou depois da rescisão e o prazo de até 10 dias.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional' },
   openGraph: {
-    title: 'Exame demissional: prazo, rescisão e quando fazer | SERMST',
+    title: 'Exame demissional: o que é, quando fazer e prazo | SERMST',
     description:
-      'Entenda o prazo de 10 dias, quando o exame pode ser dispensado, o que acontece depois da avaliação e como agendar em São Paulo.',
+      'Exame demissional: entenda o prazo de até 10 dias, a dispensa válida, o ASO e o próximo passo após a rescisão.',
     url: 'https://sermst.com.br/saude/exame-demissional',
     type: 'article',
     locale: 'pt_BR',
@@ -29,15 +30,52 @@ export default function ExameDemissionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-27',
+        dateModified: '2026-08-07',
       }}
       readingTime="7 min"
-      h1="Exame demissional: prazo, rescisão e quando fazer"
-      intro="O exame demissional registra a condição de saúde do trabalhador no encerramento do vínculo. Ele pode ser feito antes ou depois da formalização da saída, desde que a empresa respeite o prazo da NR-07 e confirme se há dispensa válida. Veja a regra, o que acontece depois da avaliação e como agendar."
+      h1="Exame demissional: o que é, quando fazer e qual o prazo"
+      intro="O exame demissional é a avaliação médica ocupacional feita no encerramento do contrato. Entenda quando ele é obrigatório, se pode ocorrer antes ou depois da rescisão, o prazo de até 10 dias, as regras de dispensa e o que acontece depois do ASO."
       quickAnswer={
-        <p>
-          O <strong>exame demissional</strong> pode ser realizado antes do desligamento ou em até <strong>10 dias contados do término do contrato</strong>, quando não houver dispensa válida. O custo é da empresa e, depois da avaliação, o médico emite o ASO demissional.
-        </p>
+        <>
+          <p>
+            Em resumo: o <strong>exame demissional</strong> pode ser feito antes ou depois da rescisão. Quando não houver dispensa válida, deve ocorrer em até <strong>10 dias contados do término do contrato</strong>. Depois da avaliação, o médico emite o ASO demissional.
+          </p>
+          <dl className="not-prose mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-2xl border border-emerald-200 bg-white/70 p-4">
+              <dt className="text-xs font-black uppercase tracking-wide text-slate-500">Prazo</dt>
+              <dd className="mt-1 text-sm font-bold leading-relaxed text-brand-900">
+                Até 10 dias após o término do contrato, quando não houver dispensa válida.
+              </dd>
+            </div>
+            <div className="rounded-2xl border border-emerald-200 bg-white/70 p-4">
+              <dt className="text-xs font-black uppercase tracking-wide text-slate-500">Antes ou depois?</dt>
+              <dd className="mt-1 text-sm font-bold leading-relaxed text-brand-900">
+                As duas opções são possíveis, considerando os riscos até o último dia de trabalho.
+              </dd>
+            </div>
+            <div className="rounded-2xl border border-emerald-200 bg-white/70 p-4">
+              <dt className="text-xs font-black uppercase tracking-wide text-slate-500">Depois do exame</dt>
+              <dd className="mt-1 text-sm font-bold leading-relaxed text-brand-900">
+                O médico emite o ASO; a empresa confere e guarda o documento.
+              </dd>
+            </div>
+            <div className="rounded-2xl border border-emerald-200 bg-white/70 p-4">
+              <dt className="text-xs font-black uppercase tracking-wide text-slate-500">Para agendar</dt>
+              <dd className="mt-1 text-sm font-bold leading-relaxed text-brand-900">
+                Tenha em mãos a função, a data do desligamento e o último exame ocupacional.
+              </dd>
+            </div>
+          </dl>
+          <div className="not-prose mt-5 rounded-2xl border border-accent-pink/25 bg-white px-4 py-4">
+            <p className="text-sm font-bold text-brand-900">Precisa agendar para um funcionário?</p>
+            <Link
+              href="/servicos/exame-demissional/sao-paulo"
+              className="mt-3 inline-flex items-center justify-center rounded-xl bg-accent-pink px-4 py-3 text-sm font-black text-white transition hover:bg-accent-pink-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-pink/40 focus-visible:ring-offset-2"
+            >
+              Agendar exame demissional em São Paulo <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </>
       }
       showTableOfContents
       sections={[
@@ -73,7 +111,7 @@ export default function ExameDemissionalPage() {
           ),
         },
         {
-          title: 'Exame demissional antes ou depois da rescisão: qual é o prazo',
+          title: 'O exame demissional é feito antes ou depois da rescisão?',
           body: (
             <>
               <p>
@@ -171,7 +209,7 @@ export default function ExameDemissionalPage() {
           body: (
             <>
               <p>
-                Ao terminar a avaliação, o médico emite o ASO com a conclusão correspondente. A empresa deve conferir o documento, disponibilizá-lo ao trabalhador e manter o registro junto ao prontuário e aos demais documentos do PCMSO.
+                <strong>Depois do exame demissional, o médico emite o ASO</strong> com a conclusão correspondente. A empresa deve conferir o documento, disponibilizá-lo ao trabalhador e manter o registro junto ao prontuário e aos demais documentos do PCMSO.
               </p>
               <p>
                 Quando houve exame demissional, as informações aplicáveis seguem para o evento S-2220 do eSocial. Se a avaliação indicar alteração que exija investigação, o caso precisa ser analisado antes de a empresa tratar o desligamento como uma etapa documental encerrada.
@@ -206,6 +244,10 @@ export default function ExameDemissionalPage() {
         },
       ]}
       faq={[
+        {
+          q: 'O que é o exame demissional?',
+          a: 'É a avaliação médica ocupacional realizada no encerramento do contrato para registrar a condição de saúde do trabalhador, considerando os riscos da função e o histórico dos exames ocupacionais.',
+        },
         {
           q: 'Quem paga o exame demissional?',
           a: 'A empresa. O custo do exame ocupacional faz parte da obrigação do empregador e não pode ser repassado ao trabalhador.',

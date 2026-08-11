@@ -42,15 +42,25 @@ export function FadeIn({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Em telas pequenas, a página precisa priorizar resposta ao toque e rolagem.
+    // As animações de entrada não agregam informação suficiente para justificar
+    // uma medição de layout e um IntersectionObserver por bloco.
+    const canMatchMedia = typeof window.matchMedia === 'function';
+    const isSmallViewport = canMatchMedia && window.matchMedia('(max-width: 767px)').matches;
+    const prefersReducedMotion = canMatchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!viewport || isSmallViewport || prefersReducedMotion) {
+      const animationFrame = window.requestAnimationFrame(() => {
+        setHydrated(true);
+        setVisible(true);
+      });
+
+      return () => window.cancelAnimationFrame(animationFrame);
+    }
+
     let observer: IntersectionObserver | undefined;
     const animationFrame = window.requestAnimationFrame(() => {
       setHydrated(true);
-
-      // viewport=false → anima imediatamente (ex: hero sem scroll-trigger)
-      if (!viewport) {
-        setVisible(true);
-        return;
-      }
 
       const el = ref.current;
       if (!el) return;

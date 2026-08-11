@@ -68,7 +68,7 @@ export const normasKnown: Record<string, { titulo: string; descricao: string; co
       'O PGRS é exigido para clínicas, laboratórios, hospitais e outras operações com resíduos de risco. Ele documenta geração, segregação, transporte e destinação de resíduos.',
   },
   'o-que-e-nr-07': {
-    titulo: 'NR-07 atualizada: PCMSO, ASO e exames ocupacionais',
+    titulo: 'O que é a NR-07 atualizada? PCMSO, ASO e exames ocupacionais',
     descricao:
       'Veja o que a NR-07 exige no PCMSO, quais exames ocupacionais devem ser feitos, quando emitir o ASO e como a norma se relaciona com o PGR e o eSocial.',
     conteudo: `A NR-07 estabelece diretrizes para o Programa de Controle Médico de Saúde Ocupacional (PCMSO). O programa deve proteger e preservar a saúde dos empregados em relação aos riscos ocupacionais identificados e classificados no PGR. Por isso, não funciona como um documento isolado nem como uma lista genérica de exames.
@@ -105,7 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'Entenda as Normas Regulamentadoras de Saúde e Segurança do Trabalho. A SERMST oferece suporte técnico completo para conformidade com NRs e eSocial.';
   const title =
     slug === 'o-que-e-nr-07'
-      ? 'NR-07 atualizada: PCMSO, ASO e exames | SERMST'
+      ? 'O que é a NR-07 atualizada? PCMSO, ASO e exames | SERMST'
       : `${titulo} | SERMST`;
 
   return {
@@ -143,7 +143,7 @@ export default async function NormaPage({ params }: Props) {
           mainEntityOfPage: 'https://sermst.com.br/normas/o-que-e-nr-07',
           inLanguage: 'pt-BR',
           datePublished: '2026-07-13T00:00:00-03:00',
-          dateModified: '2026-07-20T00:00:00-03:00',
+          dateModified: '2026-08-11T00:00:00-03:00',
           author: {
             '@type': 'Person',
             name: 'Luiz César Sannino',
@@ -167,6 +167,7 @@ export default async function NormaPage({ params }: Props) {
           { label: 'ASO: atestado de saúde ocupacional', href: '/saude/aso-atestado-saude-ocupacional' },
           { label: 'Serviço de PGR NR-01', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
           { label: 'Exame admissional', href: '/servicos/exame-admissional-expresso/sao-paulo' },
+          { label: 'Exame demissional e critérios de dispensa', href: '/saude/exame-demissional' },
         ]
       : ['nr-05-cipa', 'nr-15-insalubridade', 'nr-16-periculosidade'].includes(slug)
       ? [

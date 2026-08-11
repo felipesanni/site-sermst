@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Acuidade Visual Ocupacional em São Paulo | SERMST',
+  title: 'Exame de Acuidade Visual Ocupacional | São Paulo | SERMST',
   description:
-    'Exame de acuidade visual ocupacional para motoristas, operadores de máquinas e funções com exigência visual. Teste integrado ao ASO e PCMSO em SP.',
+    'Entenda o exame de acuidade visual ocupacional: quem precisa, o que ele avalia e como o resultado entra no ASO e no PCMSO em São Paulo.',
   robots: 'index, follow',
   alternates: { canonical: 'https://sermst.com.br/saude/acuidade-visual-ocupacional' },
   openGraph: {
-    title: 'Acuidade Visual Ocupacional em São Paulo | SERMST',
+    title: 'Exame de Acuidade Visual Ocupacional | São Paulo | SERMST',
     description:
-      'Guia sobre acuidade visual ocupacional: quando é exigida no PCMSO, quais funções precisam, o que o teste mede e onde fazer em São Paulo.',
+      'Saiba quando o exame de acuidade visual é indicado, quais funções podem exigir o teste e onde realizar o atendimento ocupacional em São Paulo.',
     url: 'https://sermst.com.br/saude/acuidade-visual-ocupacional',
     type: 'article',
     locale: 'pt_BR',
@@ -34,7 +34,7 @@ export default function AcuidadeVisualOcupacionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-07-06',
-        dateModified: '2026-07-13',
+        dateModified: '2026-08-11',
       }}
       readingTime="7 min"
       h1="Acuidade visual ocupacional: quem precisa, o que mede e onde fazer em São Paulo"
@@ -181,8 +181,8 @@ export default function AcuidadeVisualOcupacionalPage() {
       finalCta={{
         title: 'Acuidade visual ocupacional integrada ao PCMSO e ao ASO.',
         desc: 'A SERMST realiza o exame de acuidade visual em São Paulo Centro para motoristas, operadores e funções com requisito visual no PCMSO, com resultado integrado ao fluxo de admissão e periódico.',
-        label: 'Falar com a SERMST',
-        href: '/contato',
+        label: 'Agendar exame de acuidade visual',
+        href: '/contato?assunto=acuidade-visual-ocupacional',
       }}
     />
   );

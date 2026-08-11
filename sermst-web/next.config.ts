@@ -145,6 +145,8 @@ const nextConfig: NextConfig = {
       { source: "/saude-ocupacional", destination: "/saude", permanent: true },
       { source: "/seguranca-do-trabalho", destination: "/servicos", permanent: true },
       { source: "/exames-ocupacionais", destination: "/servicos", permanent: true },
+      { source: "/exames", destination: "/servicos", permanent: true },
+      { source: "/exames/", destination: "/servicos", permanent: true },
       { source: "/treinamentos", destination: "/servicos/treinamentos-nrs-cipa-brigada/sao-paulo", permanent: true },
       { source: "/esocial-sst", destination: "/servicos/gestao-esocial-s2220-s2240/sao-paulo", permanent: true },
       { source: "/clinicas-credenciadas", destination: "/a-clinica", permanent: true },
@@ -325,6 +327,8 @@ const nextConfig: NextConfig = {
       { source: "/rh/carta-demissão",                          destination: "/rh/carta-demissao",                   permanent: true },
       { source: "/rh/carta-recomenda%C3%A7%C3%A3o",           destination: "/rh/carta-recomendacao",               permanent: true },
       { source: "/rh/carta-recomendação",                      destination: "/rh/carta-recomendacao",               permanent: true },
+      { source: "/rh/quando-demitir-funcion%C3%A1rio",         destination: "/rh/quando-demitir-funcionario",       permanent: true },
+      { source: "/rh/quando-demitir-funcionário",              destination: "/rh/quando-demitir-funcionario",       permanent: true },
       // -- Typo: hífen extra em multa-esocial --
       { source: "/rh/multa-esocial-s-2220",                    destination: "/rh/multa-esocial-s2220",              permanent: true },
       { source: "/dicionario/multa-esocial-s2220",             destination: "/rh/multa-esocial-s2220",              permanent: true },

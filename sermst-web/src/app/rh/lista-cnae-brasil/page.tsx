@@ -7,7 +7,7 @@ import { CnaeTable } from '@/components/cnae/CnaeTable';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Consulta CNAE: Tabela Completa e Grau de Risco | SERMST',
+  title: 'Tabela CNAE: consulta por código, atividade e grau de risco | SERMST',
   description:
     'Consulte a tabela CNAE por código, atividade ou setor. Pesquise o grau de risco NR-04 e entenda como confirmar o CNAE principal da empresa pelo CNPJ.',
   keywords: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://sermst.com.br/rh/lista-cnae-brasil' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Consulta CNAE: código, atividade e grau de risco | SERMST',
+    title: 'Tabela CNAE: código, atividade e grau de risco | SERMST',
     description:
       'Pesquise a lista CNAE por código, atividade ou setor e consulte o grau de risco NR-04. Depois confirme o CNAE principal oficial pelo CNPJ.',
     url: 'https://sermst.com.br/rh/lista-cnae-brasil',
@@ -62,10 +62,16 @@ export default function ListaCNAEPage() {
         jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-06-01',
+        dateModified: '2026-08-11',
       }}
-      h1="Consulta CNAE: pesquise código, atividade e grau de risco"
+      h1="Tabela CNAE: consulte código, atividade e grau de risco"
       intro="Use a tabela CNAE para pesquisar por código, atividade econômica ou setor e consultar o grau de risco da NR-04. Depois, confirme o CNAE principal oficial da empresa pelo CNPJ antes de avaliar as obrigações reais de SST."
+      quickAnswer={
+        <p>
+          A <strong>tabela CNAE</strong> permite consultar o código e a atividade econômica da empresa e encontrar o grau de risco associado na NR-04. Use o CNPJ para confirmar o CNAE principal oficial antes de dimensionar CIPA, SESMT, PGR ou PCMSO.
+        </p>
+      }
+      showTableOfContents
       sections={[
         {
           title: 'Tabela CNAE para consulta por código, atividade ou setor',
@@ -193,6 +199,7 @@ export default function ListaCNAEPage() {
       sidebarCtaHref="/rh/calculadora-cnae-grau-de-risco"
       related={[
         { label: 'Calculadora CNAE × Grau de Risco', href: '/rh/calculadora-cnae-grau-de-risco' },
+        { label: 'Consulta cartão CNPJ grátis', href: '/empresario/consulta-cnpj' },
         { label: 'Como evitar processos trabalhistas', href: '/rh/evitar-processos-trabalhistas' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
         { label: 'Multa eSocial S-2220', href: '/rh/multa-esocial-s2220' },

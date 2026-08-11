@@ -36,7 +36,7 @@ export default function NR18Page() {
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-13',
+        dateModified: '2026-08-11',
       }}
       h1="NR-18: o que a Norma Regulamentadora 18 exige na construção civil"
       intro="A NR-18 reúne requisitos de SST para canteiros de obra, incluindo PGR, treinamentos, proteções coletivas, áreas de vivência, máquinas, EPIs e sinalização. Com a revisão da norma, o PCMAT deu lugar ao PGR. Veja como organizar os principais requisitos e manter os registros coerentes com a operação."
@@ -453,6 +453,7 @@ export default function NR18Page() {
         { label: 'NR-10: Segurança em instalações elétricas', href: '/normas/nr-10-eletricidade' },
         { label: 'Serviço de PGR para construção civil', href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo' },
         { label: 'Treinamentos NR-18, NR-35 e NR-10', href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo' },
+        { label: 'Treinamento NR-18 para construção civil', href: '/treinamentos/nr-18-seguranca-construcao-civil' },
         { label: 'PCMSO e exames ocupacionais', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
       ]}
     />

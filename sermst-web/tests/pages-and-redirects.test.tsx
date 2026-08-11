@@ -82,6 +82,16 @@ describe('redirects criticos', () => {
           destination: '/normas/nr-01-pgr-atualizada',
           permanent: true,
         }),
+        expect.objectContaining({
+          source: '/exames',
+          destination: '/servicos',
+          permanent: true,
+        }),
+        expect.objectContaining({
+          source: '/rh/quando-demitir-funcionário',
+          destination: '/rh/quando-demitir-funcionario',
+          permanent: true,
+        }),
       ]),
     );
   });

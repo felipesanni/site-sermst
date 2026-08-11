@@ -267,8 +267,8 @@ export function CnpjConsultation() {
             Consulta CNPJ grátis
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
-            Digite o CNPJ para conferir os principais dados do cartão CNPJ: situação
-            cadastral, razão social, abertura, atividades e endereço.
+            Consulte o cartão CNPJ grátis para conferir situação cadastral, razão social,
+            CNAE, abertura, porte e endereço da empresa.
           </p>
         </div>
 

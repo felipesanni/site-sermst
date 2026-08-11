@@ -33,10 +33,16 @@ export default function PCMSOPage() {
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-07',
+        dateModified: '2026-08-11',
       }}
-      h1="PCMSO: o que é, quem precisa e qual a validade do programa"
+      h1="O que é PCMSO? Quem precisa e qual a validade do programa"
       intro="PCMSO significa Programa de Controle Médico de Saúde Ocupacional. Previsto na NR-07, ele organiza o planejamento médico, os exames ocupacionais e o acompanhamento da saúde conforme os riscos de cada função. O programa deve permanecer alinhado ao PGR, aos ASOs e às informações enviadas ao eSocial."
+      quickAnswer={
+        <p>
+          <strong>PCMSO</strong> é o Programa de Controle Médico de Saúde Ocupacional previsto na NR-07. Ele define como a empresa acompanha a saúde dos empregados, quais exames ocupacionais são necessários e em que periodicidade, sempre de acordo com os riscos identificados no PGR.
+        </p>
+      }
+      showTableOfContents
       sections={[
         {
           title: 'O que é o PCMSO',

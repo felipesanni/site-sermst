@@ -16,13 +16,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const data = dicionarioSEO[slug];
   if (!data) return { title: 'Termo não encontrado | SERMST' };
+  const title = slug === 'o-que-e-ppp'
+    ? 'O que é PPP? Significado, para que serve e quem emite | SERMST'
+    : data.seoTitle ?? data.h1;
+  const description = slug === 'o-que-e-ppp'
+    ? 'PPP é o Perfil Profissiográfico Previdenciário. Entenda para que serve, quem deve emitir, quando entregar e como ele se relaciona com o LTCAT e o eSocial S-2240.'
+    : data.hook;
   return {
-    title: data.seoTitle ?? data.h1,
-    description: data.hook,
+    title,
+    description,
     alternates: { canonical: `https://sermst.com.br/dicionario/${slug}` },
     openGraph: {
-      title: data.seoTitle ?? data.h1,
-      description: data.hook,
+      title,
+      description,
       url: `https://sermst.com.br/dicionario/${slug}`,
       type: 'article',
       locale: 'pt_BR',
@@ -114,7 +120,7 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
                 </div>
 
                 {slug === 'o-que-e-ppp' && (
-                  <div className="my-12 grid gap-6 md:grid-cols-2">
+                  <div className="my-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     <Link href="/dicionario/o-que-e-ltcat" className="rounded-2xl border border-slate-200 bg-white p-7 no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
                       <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
                         Relação entre os documentos
@@ -132,6 +138,16 @@ export default async function DicionarioPage({ params }: { params: Promise<{ slu
                       <h2 className="mt-0 text-2xl font-black text-white">Como o S-2240 se conecta ao PPP e onde as empresas mais erram</h2>
                       <p className="mb-0 text-base leading-relaxed text-slate-300">
                         Depois de entender o que é PPP, o próximo ponto costuma ser a coerência entre documento, base ambiental e envio ao eSocial.
+                      </p>
+                    </Link>
+
+                    <Link href="/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo" className="rounded-2xl border border-slate-200 bg-slate-50 p-7 no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
+                      <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+                        Aplicação técnica
+                      </span>
+                      <h2 className="mt-0 text-2xl font-black text-brand-900">LTCAT para sustentar PPP e S-2240</h2>
+                      <p className="mb-0 text-base leading-relaxed text-slate-700">
+                        Veja como a avaliação técnica da exposição ajuda a manter o histórico previdenciário coerente.
                       </p>
                     </Link>
                   </div>

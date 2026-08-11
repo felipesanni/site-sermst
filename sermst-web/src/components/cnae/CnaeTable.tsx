@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { matchesCnaeSearch, type CnaeEntry } from '@/lib/data/cnae-data';
 
@@ -21,25 +21,26 @@ interface CnaeTableProps {
 export function CnaeTable({ data }: CnaeTableProps) {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
+  const deferredQuery = useDeferredValue(query);
 
   const filtered = useMemo(() => {
-    if (!query.trim()) return data;
-    return data.filter((entry) => matchesCnaeSearch(entry, query));
-  }, [query, data]);
+    if (!deferredQuery.trim()) return data;
+    return data.filter((entry) => matchesCnaeSearch(entry, deferredQuery));
+  }, [deferredQuery, data]);
 
   const handleQuery = (value: string) => {
     setQuery(value);
     setPage(1);
   };
 
-  const isSearching = query.trim().length > 0;
+  const isSearching = deferredQuery.trim().length > 0;
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const paginated = isSearching
-    ? filtered
+    ? filtered.slice(0, PAGE_SIZE)
     : filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   useEffect(() => {
-    const searchTerm = query.trim();
+    const searchTerm = deferredQuery.trim();
     if (searchTerm.length < 2) return;
 
     const timeout = window.setTimeout(() => {
@@ -52,7 +53,7 @@ export function CnaeTable({ data }: CnaeTableProps) {
     }, 500);
 
     return () => window.clearTimeout(timeout);
-  }, [filtered.length, query]);
+  }, [deferredQuery, filtered.length]);
 
   const trackCalculatorClick = (placement: string) => {
     if (typeof window === 'undefined') return;
@@ -113,7 +114,7 @@ export function CnaeTable({ data }: CnaeTableProps) {
       {/* ── Contador ── */}
       <p className="text-xs text-slate-500">
         {isSearching
-          ? `${filtered.length} resultado${filtered.length !== 1 ? 's' : ''} para "${query}"`
+          ? `${filtered.length} resultado${filtered.length !== 1 ? 's' : ''} para "${deferredQuery}"${filtered.length > PAGE_SIZE ? ` · mostrando os primeiros ${PAGE_SIZE}` : ''}`
           : `${data.length.toLocaleString('pt-BR')} subclasses, página ${page} de ${totalPages}`}
       </p>
 

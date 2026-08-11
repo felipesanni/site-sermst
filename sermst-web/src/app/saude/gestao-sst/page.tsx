@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Gestão de SST: Como Organizar na Empresa | SERMST',
+  title: 'O que é gestão de SST? Como organizar na empresa | SERMST',
   description:
     'Veja como organizar PGR, PCMSO, exames, treinamentos e eSocial em uma rotina de gestão de saúde e segurança do trabalho.',
   alternates: { canonical: 'https://sermst.com.br/saude/gestao-sst' },
   openGraph: {
-    title: 'Gestão de SST: como estruturar saúde e segurança na empresa | SERMST',
+    title: 'O que é gestão de SST? Como estruturar saúde e segurança | SERMST',
     description:
       'Como organizar a gestão de saúde e segurança do trabalho na prática: documentos, programas, obrigações eSocial e como evitar autuações e passivo trabalhista.',
     url: 'https://sermst.com.br/saude/gestao-sst',
@@ -29,11 +29,17 @@ export default function GestãoSSTPage() {
         jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-08-11',
       }}
 
-      h1="Gestão de SST: como organizar a rotina da empresa"
+      h1="O que é gestão de SST? Como organizar a rotina da empresa"
       intro="Gestão de Saúde e Segurança do Trabalho não cabe em uma pasta de documentos. Ela conecta a identificação dos riscos, as medidas de controle, os exames, os treinamentos e os registros enviados ao eSocial."
+      quickAnswer={
+        <p>
+          <strong>Gestão de SST</strong> é o processo de identificar e controlar riscos ocupacionais, organizar PGR, PCMSO, exames, treinamentos e acompanhar os registros de segurança e saúde do trabalho. Ela transforma documentos separados em uma rotina acompanhada pela empresa.
+        </p>
+      }
+      showTableOfContents
       sections={[
         {
           title: 'O que é gestão de SST de verdade',

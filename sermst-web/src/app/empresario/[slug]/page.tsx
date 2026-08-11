@@ -264,6 +264,19 @@ export default async function EmpresarioArticlePage({
                       <span className="mt-2 block text-sm leading-relaxed text-slate-600">{link.description}</span>
                     </Link>
                   ))}
+                  {slug === 'nota-fiscal-mei' && (
+                    <Link
+                      href="/empresario/consulta-cnpj"
+                      className="group block rounded-2xl border border-accent-pink/30 bg-accent-pink/5 p-5 transition-all hover:-translate-y-1 hover:border-accent-pink hover:bg-white hover:shadow-lg"
+                    >
+                      <strong className="block text-brand-900 group-hover:text-accent-pink">
+                        Confira o CNPJ antes de emitir a nota
+                      </strong>
+                      <span className="mt-2 block text-sm leading-relaxed text-slate-600">
+                        Valide a situação cadastral e consulte os dados da empresa para reduzir erros no preenchimento.
+                      </span>
+                    </Link>
+                  )}
                 </div>
               </div>
 

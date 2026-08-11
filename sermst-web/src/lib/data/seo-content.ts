@@ -396,7 +396,7 @@ export const servicosSEO: Record<string, SEODocument> = {
   "exame-admissional-expresso": {
     h1: "Exame Admissional | Clínica de Medicina do Trabalho",
     hook:
-      "Precisa de exame admissional com rapidez, validade para eSocial e menos impacto na rotina do RH A SERMST realiza exame admissional em São Paulo com laboratório próprio, liberação ágil de ASO e estrutura para empresas que não podem atrasar contratações.",
+      "A SERMST é uma clínica de exames admissionais em São Paulo para empresas que precisam de ASO, exames complementares e liberação ágil sem atrasar a contratação.",
     isClinico: true,
     quandoRequerido:
       "O exame admissional é uma exigência da NR-07 e deve ser realizado antes que o empregado assuma suas atividades. Ele registra a conclusão de aptidão para a função e fornece os dados usados no evento S-2220 do eSocial.",
@@ -1101,7 +1101,7 @@ export const dicionarioSEO: Record<string, SEODocument> = {
   ),
   "o-que-e-ppp": dicionarioEntry(
     "O que é PPP: significado do perfil profissiográfico previdenciário",
-    "PPP é o Perfil Profissiográfico Previdenciário, documento que consolida histórico laboral, agentes nocivos e informações previdenciárias do trabalhador.",
+    "PPP significa Perfil Profissiográfico Previdenciário. Entenda para que serve o documento, quem deve emitir, quando entregar e como ele se relaciona com o LTCAT e o eSocial S-2240.",
     "Muita empresa só descobre a importância do PPP quando surge desligamento, pedido de aposentadoria especial ou exigência de retificação documental.",
     "Com a definição certa, fica mais fácil entender por que PPP, LTCAT, S-2240 e histórico de exposição precisam contar a mesma história.",
   ),
@@ -1257,7 +1257,7 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
   },
   "o-que-e-ppp": {
     respostaCurta:
-      "PPP é o Perfil Profissiográfico Previdenciário. O documento reúne histórico laboral, atividades exercidas e informações sobre exposição a agentes nocivos, servindo de base para desligamento, revisão previdenciária e análise de aposentadoria especial.",
+      "PPP significa Perfil Profissiográfico Previdenciário. É o documento que reúne histórico laboral, atividades exercidas e informações sobre exposição a agentes nocivos, servindo de base para desligamento, revisão previdenciária e análise de aposentadoria especial.",
     ondeAparece:
       "O documento PPP aparece quando a empresa precisa entregar o histórico ocupacional do trabalhador em desligamentos, revisões previdenciárias, auditorias e análises de aposentadoria especial. No fluxo atual, ele também precisa conversar com os dados ambientais enviados ao eSocial, especialmente pelo S-2240.",
     naoConfunda:
@@ -1266,13 +1266,13 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
       href: "/normas/ppp-eletronico",
       title: "Precisa entender PPP eletrônico, S-2240, obrigatoriedade e responsabilidades?",
       description:
-        "Veja como o PPP funciona na prática, quem precisa emitir, quando entregar o documento é por que LTCAT, PGR e eSocial precisam estar alinhados.",
+        "Veja como o PPP funciona na prática, quem precisa emitir, quando entregar o documento e por que LTCAT, PGR e eSocial precisam estar alinhados.",
       label: "Ler guia completo de PPP",
     },
     faq: [
       {
-        q: "O que significa PPP?",
-        a: "PPP significa Perfil Profissiográfico Previdenciário.",
+        q: "O que é PPP e para que serve?",
+        a: "PPP significa Perfil Profissiográfico Previdenciário. Ele reúne o histórico laboral e as informações de exposição ocupacional que sustentam o registro previdenciário do trabalhador.",
       },
       {
         q: "PPP é obrigatório?",

@@ -35,10 +35,10 @@ export default function NR01Page() {
         jobTitle: 'Advogado - Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-13',
+        dateModified: '2026-08-11',
       }}
       showTableOfContents
-      h1="NR-01 atualizada: o que mudou no PGR, no GRO e nos riscos psicossociais"
+      h1="NR-01 atualizada: PGR, GRO e riscos psicossociais"
       intro="A NR-01 organiza as disposições gerais de SST e o Gerenciamento de Riscos Ocupacionais (GRO). Desde 26 de maio de 2026, o texto cita expressamente os fatores de risco psicossociais relacionados ao trabalho. Veja como tratá-los no gerenciamento, quem deve participar, quando revisar a avaliação e quais registros devem ser mantidos."
       quickAnswer={
         <p>

@@ -9,14 +9,14 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 export const dynamic = 'force-static';
 
 export const metadata = {
-  title: 'Saúde Ocupacional e Medicina do Trabalho | SERMST',
+  title: 'Saúde ocupacional: exames e medicina do trabalho | SERMST',
   description:
     'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO, ASO e produtividade.',
   alternates: {
     canonical: 'https://sermst.com.br/saude',
   },
   openGraph: {
-    title: 'Saúde Ocupacional e Medicina do Trabalho | SERMST',
+    title: 'Saúde ocupacional: exames e medicina do trabalho | SERMST',
     description:
       'Conteúdo de saúde ocupacional para empresas, RH e gestores que precisam entender exames, prevenção, PCMSO, ASO e produtividade.',
     url: 'https://sermst.com.br/saude',
@@ -81,7 +81,7 @@ export default function SaudeIndexPage() {
               Conteúdo de saúde ocupacional para empresas
             </span>
             <h1 className="h1-standard mb-8 max-w-4xl text-white">
-              Medicina do trabalho e saúde ocupacional
+              Saúde ocupacional e exames médicos do trabalho
               <br />
               <span className="text-accent-pink">para empresas que precisam de previsibilidade</span>
             </h1>
@@ -321,6 +321,37 @@ export default function SaudeIndexPage() {
                   key={item.href}
                   href={item.href}
                   className="rounded-2xl border border-slate-200 bg-slate-50 p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
+                >
+                  {item.label}
+                  <ArrowRight className="mt-4 h-4 w-4" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn direction="up" delay={0.13}>
+          <div className="mb-14 rounded-[2rem] border border-accent-pink/20 bg-accent-pink/5 p-8 lg:p-10">
+            <span className="mb-4 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
+              Decisões mais buscadas pelas empresas
+            </span>
+            <h2 className="text-3xl font-black text-brand-900 md:text-4xl">
+              Exames ocupacionais e documentos para agir sem retrabalho
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg font-medium leading-relaxed text-slate-700">
+              Se a pesquisa já virou uma demanda do RH, comece pelo conteúdo que responde ao próximo passo: admissão, demissão, PCMSO, ASO ou gestão contínua de SST.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { href: '/exames/como-funciona-o-exame-admissional', label: 'Como funciona o exame admissional' },
+                { href: '/saude/exame-demissional', label: 'Exame demissional: prazo e dispensa' },
+                { href: '/saude/pcmso-programa-controle-medico', label: 'O que é PCMSO?' },
+                { href: '/saude/gestao-sst', label: 'O que é gestão de SST?' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-white/80 bg-white p-5 font-bold text-brand-900 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:text-accent-pink"
                 >
                   {item.label}
                   <ArrowRight className="mt-4 h-4 w-4" />

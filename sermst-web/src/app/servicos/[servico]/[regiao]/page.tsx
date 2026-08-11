@@ -9,6 +9,7 @@ import { localidades, servicosSEO } from '@/lib/data/seo-content';
 import { buildFrequentFaqs } from '@/lib/faq';
 import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildLocalServiceCopy } from '@/lib/seo-copy';
+import { getServicePriorityLinks } from '@/lib/seo-priority-links';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
 
 function getServiceSearchLabel(servico: string, fallback: string) {
@@ -170,6 +171,7 @@ export default async function LocalSEOPage({
   const waMessage = `Preciso de ${servicoNome} em ${local.nome}`;
   const seoCopy = buildLocalServiceCopy(data, local);
   const pageDescription = getLocalServiceDescription(servico, servicoNome, local);
+  const priorityRelatedLinks = getServicePriorityLinks(servico);
   const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {
     context: 'service-local',
     topic: servicoNome,
@@ -418,6 +420,44 @@ export default async function LocalSEOPage({
           </div>
         </div>
       </section>
+
+      {priorityRelatedLinks.length > 0 && (
+        <section className="border-y border-slate-100 bg-slate-50 py-20">
+          <div className="mx-auto w-full max-w-[1280px] px-6">
+            <div className="mx-auto max-w-5xl">
+              <FadeIn direction="up">
+                <span className="kicker">Conteúdo relacionado</span>
+                <h2 className="mb-4 text-3xl font-black text-brand-900 md:text-4xl">
+                  Entenda {servicoNome.toLowerCase()} antes de contratar em {local.nome}
+                </h2>
+                <p className="max-w-3xl text-lg leading-relaxed text-slate-600">
+                  Estas páginas explicam a base normativa, o preparo e os documentos que sustentam o atendimento. Elas ajudam a empresa a chegar ao agendamento com a demanda melhor definida.
+                </p>
+              </FadeIn>
+
+              <div className="mt-8 grid gap-5 md:grid-cols-2">
+                {priorityRelatedLinks.map((link, index) => (
+                  <FadeIn key={link.href} direction="up" delay={index * 0.04}>
+                    <Link
+                      href={link.href}
+                      className="group block h-full rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-accent-pink/40 hover:shadow-lg"
+                    >
+                      <h3 className="text-xl font-black text-brand-900 transition-colors group-hover:text-accent-pink">
+                        {link.label}
+                      </h3>
+                      <p className="mt-3 leading-relaxed text-slate-600">{link.description}</p>
+                      <span className="mt-5 inline-flex items-center gap-2 font-bold text-brand-900 transition-colors group-hover:text-accent-pink">
+                        Ler conteúdo
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {isToxicologicoPage && (
         <section className="bg-slate-50 py-20">
