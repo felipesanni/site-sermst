@@ -279,7 +279,7 @@ export default function RootLayout({
       {/* O GTM e a unica origem da configuracao base do GA4 e dos page_views. */}
       <Script
         id="gtm"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -292,11 +292,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <Script
         id="google-tag-src"
         src="https://www.googletagmanager.com/gtag/js?id=AW-11548872057"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <Script
         id="google-tag-config"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
 window.dataLayer = window.dataLayer || [];
@@ -311,7 +311,7 @@ gtag('config', 'AW-11548872057');
       {/* ── Meta Pixel (direto, não via GTM) ── */}
       <Script
         id="meta-pixel"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -374,7 +374,6 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                 width={160}
                 height={48}
                 className="h-12 w-auto object-contain"
-                priority
               />
             </Link>
 

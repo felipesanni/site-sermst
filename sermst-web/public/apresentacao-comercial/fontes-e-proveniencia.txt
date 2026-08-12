@@ -1,0 +1,61 @@
+FONTES E PROVENIÊNCIA - SERMST APRESENTAÇÃO COMERCIAL
+Consulta e produção: 12/08/2026 (America/Sao_Paulo)
+
+FONTES INSTITUCIONAIS
+- https://sermst.com.br/
+- https://sermst.com.br/quem-somos
+- https://sermst.com.br/servicos
+- https://sermst.com.br/a-clinica
+- https://sermst.com.br/contato
+- https://sermst.com.br/rh
+- https://sermst.com.br/saude
+- https://sermst.com.br/normas
+- https://sermst.com.br/assinaturas
+
+FATOS INFORMADOS PELO CLIENTE
+- Responsável técnico: Wagner Rinaldin de Andrade, CREA/SP nº 5069926356 - SSST/MTE nº SP/010724-7.
+- Responsável técnico: Luiz César Sannino, CREA/SP nº 5061899709 - SSST/MTE nº 51/07383-6.
+- Médico responsável: Dr. Alberto Stape Filho, Médico do Trabalho, CRM/SP 7946, RQE 68628.
+- CNPJ: 28.125.178/0001-88.
+- CNES: 8007144.
+- Endereço: Largo do Paissandu, 72, 3º andar, Centro Histórico, São Paulo/SP.
+- Telefone: (11) 3229-7567.
+- E-mail: comercial@sermst.com.br.
+- Site: sermst.com.br.
+
+REPUTAÇÃO PÚBLICA
+- Ficha consultada: https://www.google.com/maps/search/?api=1&query=SERMST+GEST%C3%83O+OCUPACIONAL+Largo+do+Paissandu+72+S%C3%A3o+Paulo
+- Registro observado em 12/08/2026: nota 4,5/5 com 211 avaliações.
+- Frases usadas de forma curta e sem identificação de autor: “Excelente clínica de exame admissional.” e “Localização ótimo atendimento :)”.
+- O material identifica a informação como registro público do Google Maps, não como garantia de resultado.
+
+IMAGENS LOCAIS
+- logo-cor.png e logo-branco.png: assets oficiais presentes em sermst-web/public/images/site.
+- foto-recepcao-site.jpg: sermst-laboratorio-ocupacional-sao-paulo.jpg, asset presente no projeto da SERMST.
+- foto-corredor-site.jpg: clinica.jpg, asset presente no projeto da SERMST.
+- foto-atendimento-site.jpg: sermst-atendimento-ocupacional-clinica.jpg, asset presente no projeto da SERMST.
+
+IMAGENS PÚBLICAS DA INTERNET
+- foto-recepcao-google.jpg e foto-recepcao-google-2.jpg: fotos públicas exibidas na galeria do Google Maps da ficha da SERMST; observadas em 12/08/2026.
+- As imagens do Google Maps são mantidas com legenda de origem dentro do material e podem estar sujeitas aos direitos aplicáveis da plataforma e do autor.
+
+LOGOS DE CLIENTES
+- 14 logos foram fornecidos pelo cliente nesta rodada de revisão para uso como seleção de empresas atendidas.
+- O logo da Mercedes-Benz foi substituído por uma versão vetorial completa, de fonte pública, para evitar o corte do wordmark no PDF e no microsite: https://commons.wikimedia.org/wiki/File:Mercedes-Benz_logo.svg.
+- A informação “mais de 1.500 empresas ativas” foi fornecida pelo cliente e foi apresentada separadamente dos números históricos publicados no site.
+
+BANCOS DE IMAGENS E ÍCONES
+- Foto de medicina ocupacional: https://www.pexels.com/photo/a-doctor-checking-a-patient-8460221/ (Los Muertos Crew; indicada como gratuita para uso na página consultada).
+- Foto de segurança do trabalho: https://www.pexels.com/photo/man-in-safety-helmet-and-goggles-17993024/ (César Santa Cruz Arévalo; indicada como gratuita para uso na página consultada).
+- Foto de análise de documentos: https://www.pexels.com/photo/professionals-looking-at-documents-8847204/ (Mikhail Nilov; indicada como gratuita para uso na página consultada).
+- Licença e orientações do banco de imagens: https://www.pexels.com/license/.
+- Ícones de referência: Lucide Icons, https://lucide.dev/ e https://github.com/lucide-icons/lucide/blob/main/LICENSE (ISC; arquivos incorporados localmente).
+- Tratamento customizado: moldura orbital, ponto de navegação e composição cromática azul desenhados para esta apresentação, sem dependência externa.
+
+REFERÊNCIAS TÉCNICAS CONSULTADAS
+- NR-07 (PCMSO): https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/itens-para-verificar/uncategorised/norma-regulamentadora-n-07-programas-de-controle-medico-de-saude-ocupacional-pcmso.
+- NR-09 atualizada 2026: https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-09-atualizada-2026.pdf.
+- eSocial — Manual Web Geral, S-2240: https://www.gov.br/esocial/pt-br/empresas/manual-web-geral.
+
+NOTA DE ESCOPO
+O microsite não herda navegação, cabeçalho, rodapé, estilos ou componentes do site principal. O projeto atual é usado apenas como fonte de fatos, logos e imagens institucionais.

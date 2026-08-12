@@ -49,13 +49,11 @@ export function FadeIn({
     const isSmallViewport = canMatchMedia && window.matchMedia('(max-width: 767px)').matches;
     const prefersReducedMotion = canMatchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Em telas pequenas ou com movimento reduzido, o HTML SSR jÃ¡ estÃ¡ visÃ­vel.
+    // NÃ£o agendamos rAF nem forÃ§amos uma segunda renderizaÃ§Ã£o por bloco: isso
+    // reduz o trabalho de hidrataÃ§Ã£o nas pÃ¡ginas longas, sem remover conteÃºdo.
     if (!viewport || isSmallViewport || prefersReducedMotion) {
-      const animationFrame = window.requestAnimationFrame(() => {
-        setHydrated(true);
-        setVisible(true);
-      });
-
-      return () => window.cancelAnimationFrame(animationFrame);
+      return;
     }
 
     let observer: IntersectionObserver | undefined;

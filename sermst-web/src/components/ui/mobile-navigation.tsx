@@ -50,7 +50,6 @@ export function MobileNavigation() {
             width={172}
             height={48}
             className="h-11 w-auto object-contain"
-            priority
           />
         </Link>
 

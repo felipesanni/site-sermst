@@ -271,7 +271,7 @@ export default async function LocalSEOPage({
 
       <section className="relative overflow-hidden bg-brand-900 pb-40 pt-32">
         <div className="absolute inset-0 z-0 opacity-15">
-          <Image src="/images/site/corporate-team.jpg" alt="Equipe corporativa e gestão SST" fill sizes="100vw" className="object-cover" priority />
+          <Image src="/images/site/corporate-team.jpg" alt="Equipe corporativa e gestão SST" fill sizes="100vw" className="object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-brand-900/90"></div>
         </div>
 
