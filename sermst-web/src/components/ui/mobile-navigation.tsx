@@ -13,7 +13,7 @@ const navigationItems = [
   { href: '/saude', label: 'Saúde Ocupacional' },
   { href: '/normas', label: 'Normas Regulamentadoras' },
   { href: '/dicionario', label: 'Dicionário SST' },
-  { href: '/assinaturas', label: 'Planos de SST' },
+  { href: '/assinaturas', label: 'Planos SST' },
   { href: '/contato', label: 'Contato' },
 ];
 

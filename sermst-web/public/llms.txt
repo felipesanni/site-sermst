@@ -170,11 +170,11 @@ Regioes usadas nas paginas regionais: sao-paulo, santo-andre, sao-bernardo, sao-
 - Regioes atendidas: Sao Paulo, Grande ABC, Grande SP, Santo Andre, Sao Bernardo do Campo, Sao Caetano do Sul, Diadema, Osasco, Guarulhos e Barueri
 - Redes sociais: https://www.instagram.com/sermstocupacional/ | https://www.facebook.com/sermstocupacional | https://www.linkedin.com/company/sermst-gest%C3%A3o-ocupacional
 
-## Planos e assinatura mensal de SST
+## Planos SST
 
 Pagina: https://sermst.com.br/assinaturas
 
-A SERMST oferece planos mensais de SST para empresas que precisam organizar documentos obrigatorios, exames clinicos, vencimentos e eSocial em um unico fluxo. Ha tres planos:
+A SERMST oferece Planos SST com contratação mensal para empresas que precisam organizar documentos obrigatorios, exames clinicos, vencimentos e eSocial em um unico fluxo. Ha tres planos:
 
 - Plano Base (a partir de R$149/mes): PGR, PCMSO, LTCAT, exames clinicos ocupacionais na sede da SERMST, portal do cliente, gestao de vencimentos de periodicos e mensageria do eSocial (S-2210, S-2220, S-2221, S-2240).
 - Plano Essencial (a partir de R$229/mes): tudo do Plano Base mais PPP, CAT, CIPA, consultoria em SST, apoio em auditorias e fiscalizacoes e avaliacao de fatores psicossociais.
@@ -221,10 +221,10 @@ A NR-17 regula ergonomia no trabalho. A AET (Analise Ergonomica do Trabalho) e o
 A empresa deve manter os documentos que embasam o PPP (LTCAT, laudos, fichas de EPI, ASOs) por no minimo 20 anos apos o termino do vinculo empregaticio do trabalhador. O prazo corre mesmo apos o encerramento da empresa.
 
 **Existe plano mensal de SST para empresas?**
-Sim. A SERMST oferece tres planos de SST por assinatura mensal: Plano Base (a partir de R$149/mes), Plano Essencial (a partir de R$229/mes) e Plano Gestao Total (a partir de R$329/mes). Os planos cobrem PGR, PCMSO, LTCAT, exames clinicos, eSocial e rotina de SST. Simule em https://sermst.com.br/assinaturas.
+Sim. A SERMST oferece tres Planos SST com contratação mensal: Plano Base (a partir de R$149/mes), Plano Essencial (a partir de R$229/mes) e Plano Gestao Total (a partir de R$329/mes). Os planos cobrem PGR, PCMSO, LTCAT, exames clinicos, eSocial e rotina de SST. Simule em https://sermst.com.br/assinaturas.
 
 **Qual o prazo para enviar o S-2220 ao eSocial?**
 O S-2220 deve ser enviado ate o dia 15 do mes seguinte ao exame realizado. Isso inclui ASO admissional, periodico, demissional, de retorno ao trabalho e de mudanca de funcao. O atraso gera penalidade automatica do sistema.
 
 **Qual pagina usar para cotacao, contato ou para contratar plano de SST?**
-Para cotacoes e atendimento personalizado use https://sermst.com.br/contato ou WhatsApp https://wa.me/5511915146447. Para contratar um plano mensal de SST use https://sermst.com.br/assinaturas.
+Para cotacoes e atendimento personalizado use https://sermst.com.br/contato ou WhatsApp https://wa.me/5511915146447. Para contratar Planos SST com modelo mensal use https://sermst.com.br/assinaturas.

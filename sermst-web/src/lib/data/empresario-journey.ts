@@ -26,7 +26,7 @@ const journeysBySection: Record<EmpresarioSection, EmpresarioJourney> = {
       description:
         'Compare os planos para reunir documentos, exames, vencimentos e eSocial em uma rotina acompanhada.',
       href: '/assinaturas',
-      label: 'Ver planos de SST',
+      label: 'Ver Planos SST',
     },
   },
   'MEI, impostos e dinheiro': {
@@ -74,7 +74,7 @@ const journeysBySection: Record<EmpresarioSection, EmpresarioJourney> = {
       description:
         'Veja como manter documentos, exames, vencimentos e eventos de SST em uma rotina acompanhada.',
       href: '/assinaturas',
-      label: 'Ver planos de SST',
+      label: 'Ver Planos SST',
     },
   },
 };
@@ -125,7 +125,7 @@ const journeyOverrides: Partial<Record<string, EmpresarioJourney>> = {
       description:
         'Compare planos para acompanhar documentos, exames, vencimentos e eSocial ao longo do ano.',
       href: '/assinaturas',
-      label: 'Ver planos de SST',
+      label: 'Ver Planos SST',
     },
   },
   'alvara-de-funcionamento': journeysBySection['Abertura e cadastro'],

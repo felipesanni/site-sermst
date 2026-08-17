@@ -283,7 +283,7 @@ export default function ContadoresParceirosPage() {
             <p className="mt-4 leading-relaxed text-slate-600">
               E, quando quiser entender melhor os serviços oferecidos, você pode conhecer os{' '}
               <Link href="/assinaturas" className="font-bold text-brand-900 underline decoration-accent-pink underline-offset-4">
-                planos de SST por assinatura
+                Planos SST
               </Link>{' '}
               da SERMST.
             </p>

@@ -26,7 +26,7 @@ import { PartnerEarningsSimulator } from './partner-earnings-simulator';
 export const metadata: Metadata = {
   title: 'Programa de Parceiros Comerciais SERMST | Venda SST',
   description:
-    'Venda planos de SST por assinatura, receba até 75% de uma mensalidade por cliente e conte com suporte técnico, comercial e estrutura da SERMST.',
+    'Venda Planos SST, receba até 75% de uma mensalidade por cliente e conte com suporte técnico, comercial e estrutura da SERMST.',
   alternates: {
     canonical: 'https://sermst.com.br/parcerias/comerciais',
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Programa de Parceiros Comerciais SERMST',
     description:
-      'Ganhe dinheiro vendendo planos de SST por assinatura com o suporte de uma equipe experiente e responsável por toda a entrega.',
+      'Ganhe dinheiro vendendo Planos SST com o suporte de uma equipe experiente e responsável por toda a entrega.',
     url: 'https://sermst.com.br/parcerias/comerciais',
     type: 'website',
     locale: 'pt_BR',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Programa de Parceiros Comerciais SERMST',
     description:
-      'Receba até 75% de uma mensalidade por cliente vendendo SST por assinatura com todo o suporte da SERMST.',
+      'Receba até 75% de uma mensalidade por cliente vendendo Planos SST com todo o suporte da SERMST.',
     images: ['/images/site/og-cover.jpg'],
   },
 };
@@ -193,7 +193,7 @@ const pageSchema = {
   },
   about: [
     'Parceria comercial',
-    'Planos de SST por assinatura',
+    'Planos SST',
     'Comissão de vendas',
     'Empreendedorismo B2B',
   ],

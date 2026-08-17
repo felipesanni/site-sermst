@@ -267,7 +267,7 @@ function getNextStepConfig(consultantProfile: string, employees: number): NextSt
         { label: 'Custo previsível', text: 'Compare o que cada plano inclui antes de assumir qualquer compromisso.' },
         { label: 'Tem alguém acompanhando', text: 'Sua empresa não depende de lembrar sozinha cada exame e vencimento.' },
       ],
-      ctaLabel: 'Ver planos de SST para minha empresa',
+      ctaLabel: 'Ver Planos SST para minha empresa',
       href: '/assinaturas',
       showLeadForm: false,
     };
@@ -279,13 +279,13 @@ function getNextStepConfig(consultantProfile: string, employees: number): NextSt
       eyebrow: `Para sua operação com ${employeeLabel}`,
       title: 'Menos planilha e cobrança. Coloque exames, documentos e eSocial na mesma rotina.',
       description:
-        'Compare planos de SST pensados para empresas menores e escolha uma estrutura que acompanhe a operação sem criar mais um gargalo para o gestor.',
+        'Compare Planos SST pensados para empresas menores e escolha uma estrutura que acompanhe a operação sem criar mais um gargalo para o gestor.',
       cards: [
         { label: 'Admissões no ritmo', text: 'Exames e documentos deixam de ser resolvidos sempre na última hora.' },
         { label: 'Prazos visíveis', text: 'Vencimentos e obrigações recorrentes ficam mais fáceis de acompanhar.' },
         { label: 'Menos cobrança manual', text: 'A rotina não depende de perseguir fornecedor para cada pendência.' },
       ],
-      ctaLabel: 'Comparar planos de SST para a operação',
+      ctaLabel: 'Comparar Planos SST para a operação',
       href: '/assinaturas',
       showLeadForm: false,
     };

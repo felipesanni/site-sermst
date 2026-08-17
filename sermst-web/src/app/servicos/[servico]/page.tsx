@@ -603,7 +603,7 @@ export default async function ServicoPage({
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link href="/assinaturas" className="btn-outline-safe">
-                  Ver planos por assinatura
+                  Ver Planos SST
                 </Link>
                 <Link href="/servicos" className="btn-outline-safe">
                   Ver outros serviços

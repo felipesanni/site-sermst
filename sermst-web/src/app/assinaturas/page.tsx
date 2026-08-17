@@ -16,14 +16,14 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { siteImages } from '@/lib/site-images';
 
 export const metadata: Metadata = {
-  title: 'Planos de SST por Assinatura para Empresas | SERMST',
+  title: 'Planos SST para Empresas | SERMST',
   description:
-    'Contrate SST por assinatura com a SERMST. Planos mensais para organizar PGR, PCMSO, LTCAT, exames clínicos, eSocial, vencimentos e rotina de SST da empresa.',
+    'Contrate Planos SST com a SERMST. Planos mensais para organizar PGR, PCMSO, LTCAT, exames clínicos, eSocial, vencimentos e rotina de SST da empresa.',
   alternates: {
     canonical: 'https://sermst.com.br/assinaturas',
   },
   openGraph: {
-    title: 'Planos de SST por Assinatura | Simulador SERMST',
+    title: 'Planos SST | Simulador SERMST',
     description:
       'Escolha um plano mensal de SST, simule pelo número de funcionários e envie os dados de contratação pelo fluxo da SERMST.',
     url: 'https://sermst.com.br/assinaturas',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: '/images/site/og-cover.jpg',
         width: 1200,
         height: 630,
-        alt: 'Planos de SST por assinatura da SERMST para empresas',
+        alt: 'Planos SST da SERMST para empresas',
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Planos de SST por assinatura',
+  name: 'Planos SST',
   provider: {
     '@type': 'Organization',
     name: 'SERMST',
@@ -193,7 +193,7 @@ export default function AssinaturasPage() {
       <BreadcrumbJsonLd
         items={[
           { name: 'Início', item: 'https://sermst.com.br' },
-          { name: 'Planos de SST por assinatura' },
+          { name: 'Planos SST' },
         ]}
       />
 
@@ -213,7 +213,7 @@ export default function AssinaturasPage() {
           <FadeIn direction="up" viewport={false}>
             <span className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/8 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white/90 backdrop-blur">
               <BadgeCheck className="h-4 w-4 text-accent-pink" />
-              SST por assinatura
+              Planos SST
             </span>
             <h1 className="h1-standard mb-6 max-w-4xl text-white md:text-5xl lg:text-6xl">
               Saúde e Segurança do Trabalho em um único plano mensal

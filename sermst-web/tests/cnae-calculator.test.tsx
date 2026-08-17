@@ -164,13 +164,13 @@ describe('CnaeCalculator', () => {
     {
       profile: 'Empresário(a) / Sócio(a)',
       employees: '20',
-      cta: 'Ver planos de SST para minha empresa',
+      cta: 'Ver Planos SST para minha empresa',
       href: '/assinaturas',
     },
     {
       profile: 'Gestor(a) / Gerente',
       employees: '20',
-      cta: 'Comparar planos de SST para a operação',
+      cta: 'Comparar Planos SST para a operação',
       href: '/assinaturas',
     },
     {

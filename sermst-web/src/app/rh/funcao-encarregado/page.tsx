@@ -339,7 +339,7 @@ export default function FunçãoEncarregadoPage() {
                   href="/assinaturas"
                   className="btn-primary-safe flex w-full text-sm"
                 >
-                  Ver planos de SST para a equipe
+                  Ver Planos SST para a equipe
                 </Link>
               </div>
             </FadeIn>

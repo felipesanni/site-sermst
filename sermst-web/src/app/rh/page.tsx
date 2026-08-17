@@ -358,7 +358,7 @@ export default function RHIndexPage() {
               <ArrowRight className="ml-2 inline h-4 w-4" />
             </Link>
             <Link href="/assinaturas" className="rounded-2xl border border-brand-900 bg-brand-900 px-6 py-4 font-bold text-white transition-all hover:opacity-90">
-              Planos de SST por assinatura
+              Planos SST
               <ArrowRight className="ml-2 inline h-4 w-4" />
             </Link>
           </div>

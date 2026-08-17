@@ -388,7 +388,7 @@ function AssinaturaCommercialModal({
     const riskLabel = cnaeEntry ? grauRiscoInfo[cnaeEntry.grauRisco]?.label || '' : '';
 
     const message = [
-      'Solicitação de proposta corporativa de SST pela página de assinaturas.',
+      'Solicitação de proposta corporativa de SST pela página de Planos SST.',
       `Plano de interesse: ${plan.title}.`,
       `Funcionários informados: ${employees}.`,
       informedCnpj ? `CNPJ: ${informedCnpj}.` : '',

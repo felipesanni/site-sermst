@@ -112,7 +112,7 @@ export default function ObrigadoAssinaturasPage() {
               </p>
               <nav className="space-y-3" aria-label="Links úteis">
                 {[
-                  { href: '/assinaturas', label: 'Ver detalhes dos planos de SST' },
+                  { href: '/assinaturas', label: 'Ver detalhes dos Planos SST' },
                   { href: '/saude/pcmso-programa-controle-medico', label: 'Como funciona o PCMSO' },
                   { href: '/rh/calculadora-cnae-grau-de-risco', label: 'Calculadora de risco por CNAE' },
                   { href: '/servicos/gestao-esocial-s2220-s2240', label: 'Gestão de eSocial SST' },

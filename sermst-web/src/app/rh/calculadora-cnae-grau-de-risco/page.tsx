@@ -313,7 +313,7 @@ export default function CalculadoraCnaePage() {
           { label: 'Lista CNAE Brasil: guia completo', href: '/rh/lista-cnae-brasil' },
           { label: 'O que é PCMSO e quando é obrigatório', href: '/saude/pcmso-programa-controle-medico' },
           { label: 'Guia da NR-01: o que muda no PGR', href: '/normas/nr-01-pgr-atualizada' },
-          { label: 'Planos de SST por assinatura', href: '/assinaturas' },
+          { label: 'Planos SST', href: '/assinaturas' },
         ]}
       />
     </>

@@ -87,7 +87,7 @@ export default function ServicosIndexPage() {
             ciclo anual de conformidade de qualquer empresa regularmente constituída. Quando esse
             controle precisa deixar de ser compra avulsa e virar rotina, os{' '}
             <Link href="/assinaturas" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
-              planos de SST por assinatura
+              Planos SST
             </Link>{' '}
             ajudam a organizar vencimentos, exames e documentos em uma trilha recorrente.
           </p>

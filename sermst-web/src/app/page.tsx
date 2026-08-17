@@ -125,7 +125,7 @@ const sstServices = [
     href: '/servicos/treinamentos-nrs-cipa-brigada/sao-paulo',
   },
   {
-    title: 'Planos de SST',
+    title: 'Planos SST',
     description: 'Exames, documentos e vencimentos reunidos em uma rotina mensal.',
     href: '/assinaturas',
   },

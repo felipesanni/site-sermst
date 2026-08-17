@@ -305,7 +305,7 @@ function buildSubscriptionMessage({
     : 'Sem filiais adicionais informadas.';
 
   const message = [
-    'Lead originado pela calculadora de assinatura da SERMST.',
+    'Lead originado pela calculadora de Planos SST da SERMST.',
     `Empresa: ${companyName}.`,
     `Plano escolhido: ${plan.title}.`,
     `Funcionários informados: ${employees}.`,
@@ -1033,7 +1033,7 @@ export function AssinaturaContractModal({
             </p>
             <div className="mt-8 flex flex-col items-center gap-3">
               <a
-                href="https://wa.me/5511915146447?text=Ol%C3%A1!%20Acabei%20de%20enviar%20minha%20contrata%C3%A7%C3%A3o%20de%20plano%20SST%20pela%20p%C3%A1gina%20de%20assinaturas%20e%20gostaria%20de%20confirmar%20o%20recebimento."
+                href="https://wa.me/5511915146447?text=Ol%C3%A1!%20Acabei%20de%20enviar%20minha%20contrata%C3%A7%C3%A3o%20de%20plano%20SST%20pela%20p%C3%A1gina%20de%20Planos%20SST%20e%20gostaria%20de%20confirmar%20o%20recebimento."
                 target="_blank"
                 rel="noopener"
                 className="btn-whatsapp btn-whatsapp-solid inline-flex"

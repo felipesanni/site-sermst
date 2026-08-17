@@ -190,7 +190,7 @@ const strategicLinks = [
   { name: 'Exames Complementares', link: '/servicos/exames-complementares-laboratoriais' },
   { name: 'Perícia Trabalhista', link: '/servicos/pericia-trabalhista-assistente-tecnico' },
   { name: 'Treinamentos de NRs', link: '/servicos/treinamentos-nrs-cipa-brigada' },
-  { name: 'Planos de SST por Assinatura', link: '/assinaturas' },
+  { name: 'Planos SST', link: '/assinaturas' },
   { name: 'Parceiros Comerciais', link: '/parcerias/comerciais' },
   { name: 'Parceria para Contadores', link: '/parcerias/contadores' },
 ]
@@ -403,7 +403,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                 <Link href="/rh" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">RH e eSocial</Link>
                 <Link href="/saude" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Saúde Ocupacional</Link>
                 <Link href="/normas" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Normas (NR)</Link>
-                <Link href="/assinaturas" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Planos</Link>
+                <Link href="/assinaturas" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Planos SST</Link>
                 <Link href="/contato" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Contato</Link>
               </nav>
 

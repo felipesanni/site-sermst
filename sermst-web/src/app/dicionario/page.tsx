@@ -139,7 +139,7 @@ export default function DicionarioIndexPage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/assinaturas" className="mt-2 flex items-center gap-2 text-sm font-bold text-accent-pink transition-colors hover:text-white">
-                Planos de SST por assinatura
+                Planos SST
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
