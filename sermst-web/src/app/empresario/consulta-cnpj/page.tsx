@@ -22,6 +22,16 @@ const faq = [
       'Digite os 14 números do CNPJ na ferramenta e clique em Consultar CNPJ. A busca é gratuita, não exige cadastro e apresenta os dados públicos encontrados nas fontes integradas.',
   },
   {
+    question: 'Como consultar um CNPJ pelo número?',
+    answer:
+      'Informe os 14 números do CNPJ, com ou sem pontuação, e clique em Consultar CNPJ. A ferramenta faz uma consulta pública inicial e mostra os dados disponíveis nas fontes integradas.',
+  },
+  {
+    question: 'Como saber o CNAE pelo CNPJ?',
+    answer:
+      'Digite o CNPJ na ferramenta para visualizar o CNAE principal e, quando disponível, as atividades secundárias. O CNAE ajuda a identificar a atividade econômica registrada da empresa.',
+  },
+  {
     question: 'Quais dados aparecem na consulta CNPJ?',
     answer:
       'A resposta pode mostrar razão social, nome fantasia, situação cadastral, abertura, porte, capital social, natureza jurídica, CNAEs, opção pelo Simples Nacional e MEI e endereço cadastrado. Alguns campos dependem da fonte pública.',
@@ -99,7 +109,7 @@ const faqSchema = {
 export const metadata: Metadata = {
   title: 'Consulta cartão CNPJ grátis | Situação cadastral e CNAE | SERMST',
   description:
-    'Consulte o cartão CNPJ grátis, sem cadastro: veja situação cadastral, razão social, CNAE, porte, Simples Nacional e endereço da empresa.',
+    'Consulte o CNPJ pelo número, grátis e sem cadastro: veja situação cadastral, razão social, CNAE, porte, Simples Nacional e endereço da empresa.',
   keywords: [
     'consulta cnpj',
     'consultar cnpj',
@@ -116,7 +126,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Consulta cartão CNPJ grátis | Situação cadastral e CNAE | SERMST',
     description:
-      'Consulte o cartão CNPJ grátis e veja situação cadastral, razão social, CNAE, porte, Simples Nacional e endereço da empresa.',
+      'Consulte o CNPJ pelo número e veja situação cadastral, razão social, CNAE, porte, Simples Nacional e endereço da empresa.',
     url: pageUrl,
     type: 'website',
     locale: 'pt_BR',

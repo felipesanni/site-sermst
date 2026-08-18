@@ -8,7 +8,8 @@ const BASE_URL = "https://sermst.com.br";
 const SEO_REVISION_DATE = "2026-07-13";
 const PRIORITY_REVISION_DATE = "2026-07-20";
 const NR35_REVISION_DATE = "2026-07-27";
-const CNPJ_TOOL_REVISION_DATE = "2026-07-27";
+const TARGETED_REVISION_DATE = "2026-08-18";
+const CNPJ_TOOL_REVISION_DATE = TARGETED_REVISION_DATE;
 
 function getAccurateLastModified(url: string): string | undefined {
   const nr35RevisedPages = new Set([
@@ -23,6 +24,15 @@ function getAccurateLastModified(url: string): string | undefined {
 
   if (url === `${BASE_URL}/empresario/consulta-cnpj`) {
     return CNPJ_TOOL_REVISION_DATE;
+  }
+
+  const targetedRevisedPages = new Set([
+    `${BASE_URL}/saude/exame-demissional`,
+    `${BASE_URL}/dicionario/o-que-e-ppp`,
+  ]);
+
+  if (targetedRevisedPages.has(url)) {
+    return TARGETED_REVISION_DATE;
   }
 
   const priorityRevisedPages = new Set([

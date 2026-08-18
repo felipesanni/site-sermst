@@ -326,7 +326,7 @@ describe('technical SEO discovery files', () => {
     expect(nr35?.lastModified).toBe('2026-07-27');
     expect(treinamentoNr35?.lastModified).toBe('2026-07-27');
     expect(psicossocialNr35?.lastModified).toBe('2026-07-27');
-    expect(demissional?.lastModified).toBe('2026-07-20');
+    expect(demissional?.lastModified).toBe('2026-08-18');
     expect(retorno?.lastModified).toBe('2026-07-20');
     expect(empresarioHub?.lastModified).toBe('2026-07-13');
     for (const slug of Object.keys(empresarioSEO)) {

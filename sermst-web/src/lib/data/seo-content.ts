@@ -1100,8 +1100,8 @@ export const dicionarioSEO: Record<string, SEODocument> = {
     "A definição correta ajuda a separar o que é laudo previdenciário, o que é gestão de risco ocupacional e o que é enquadramento trabalhista, evitando erro técnico e retrabalho.",
   ),
   "o-que-e-ppp": dicionarioEntry(
-    "O que é PPP: significado do perfil profissiográfico previdenciário",
-    "PPP significa Perfil Profissiográfico Previdenciário. Entenda para que serve o documento, quem deve emitir, quando entregar e como ele se relaciona com o LTCAT e o eSocial S-2240.",
+    "O que é PPP? Significado, para que serve e quem emite",
+    "PPP significa Perfil Profissiográfico Previdenciário. Entenda para que serve o documento, quem deve emitir, quando entregar e como o PPP eletrônico se relaciona com o LTCAT e o eSocial S-2240.",
     "Muita empresa só descobre a importância do PPP quando surge desligamento, pedido de aposentadoria especial ou exigência de retificação documental.",
     "Com a definição certa, fica mais fácil entender por que PPP, LTCAT, S-2240 e histórico de exposição precisam contar a mesma história.",
   ),
@@ -1257,7 +1257,7 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
   },
   "o-que-e-ppp": {
     respostaCurta:
-      "PPP significa Perfil Profissiográfico Previdenciário. É o documento que reúne histórico laboral, atividades exercidas e informações sobre exposição a agentes nocivos, servindo de base para desligamento, revisão previdenciária e análise de aposentadoria especial.",
+      "PPP significa Perfil Profissiográfico Previdenciário. É o documento que reúne histórico laboral, atividades exercidas e informações sobre exposição a agentes nocivos. Desde 1º de janeiro de 2023, o PPP é emitido exclusivamente em meio eletrônico, a partir das informações de SST do eSocial.",
     ondeAparece:
       "O documento PPP aparece quando a empresa precisa entregar o histórico ocupacional do trabalhador em desligamentos, revisões previdenciárias, auditorias e análises de aposentadoria especial. No fluxo atual, ele também precisa conversar com os dados ambientais enviados ao eSocial, especialmente pelo S-2240.",
     naoConfunda:
@@ -1271,8 +1271,16 @@ export const dicionarioDetails: Record<string, DicionarioDetail> = {
     },
     faq: [
       {
+        q: "O que significa a sigla PPP?",
+        a: "PPP significa Perfil Profissiográfico Previdenciário. O documento reúne o histórico laboral e as informações de exposição ocupacional que sustentam o registro previdenciário do trabalhador.",
+      },
+      {
         q: "O que é PPP e para que serve?",
         a: "PPP significa Perfil Profissiográfico Previdenciário. Ele reúne o histórico laboral e as informações de exposição ocupacional que sustentam o registro previdenciário do trabalhador.",
+      },
+      {
+        q: "PPP é físico ou eletrônico?",
+        a: "Para os períodos abrangidos pelo fluxo atual, o PPP é emitido eletronicamente com base nas informações de SST enviadas ao eSocial. A empresa continua responsável pela qualidade e coerência dos dados que alimentam esse histórico.",
       },
       {
         q: "PPP é obrigatório?",

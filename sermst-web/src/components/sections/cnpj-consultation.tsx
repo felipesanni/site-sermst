@@ -171,6 +171,7 @@ export function CnpjConsultation() {
         event: 'cnpj_consulta',
         cnpj_status: data.situacaoCadastral || 'nao_informada',
         cnpj_source: data.source,
+        query_type: 'cnpj_number',
         conversion_stage: 'microconversao',
       });
     } catch {
@@ -267,13 +268,19 @@ export function CnpjConsultation() {
             Consulta CNPJ grátis
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
-            Consulte o cartão CNPJ grátis para conferir situação cadastral, razão social,
-            CNAE, abertura, porte e endereço da empresa.
+            Consulte o CNPJ pelo número, grátis e sem cadastro, para conferir situação
+            cadastral, razão social, CNAE, abertura, porte e endereço da empresa.
           </p>
         </div>
 
         <div className="overflow-hidden rounded-[2rem] border border-white/15 bg-white text-slate-900 shadow-[0_32px_80px_-28px_rgba(0,0,0,0.55)]">
-          <form onSubmit={handleSubmit} noValidate className="p-6 md:p-9">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            aria-busy={status === 'loading'}
+            data-analytics-form="consulta-cnpj"
+            className="p-6 md:p-9"
+          >
             <label htmlFor="cnpj-consulta" className="block text-sm font-black uppercase tracking-[0.12em] text-brand-900">
               CNPJ da empresa
             </label>
@@ -286,6 +293,7 @@ export function CnpjConsultation() {
                   name="cnpj"
                   type="text"
                   inputMode="numeric"
+                  enterKeyHint="search"
                   autoComplete="off"
                   value={cnpj}
                   onChange={(event) => handleChange(event.target.value)}

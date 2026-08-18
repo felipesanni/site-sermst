@@ -37,6 +37,18 @@ function buildUrl(pathname: string): string {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(getWhatsAppMessage(pathname))}`;
 }
 
+function trackWhatsAppClick(pathname: string, placement: string) {
+  if (typeof window === 'undefined') return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'sermst_whatsapp_click',
+    cta_placement: placement,
+    conversion_stage: 'contato_iniciado',
+    page_path: pathname,
+  });
+}
+
 /** Botão rosa do topo (desktop) */
 export function WhatsAppHeaderLink() {
   const pathname = usePathname();
@@ -45,6 +57,9 @@ export function WhatsAppHeaderLink() {
       href={buildUrl(pathname)}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick(pathname, 'header_button')}
+      data-analytics-cta="whatsapp"
+      data-analytics-placement="header_button"
       className="force-pink-btn flex items-center gap-2 rounded px-6 py-2 text-sm font-bold text-white shadow-lg transition-colors"
     >
       <Image
@@ -67,6 +82,9 @@ export function WhatsAppHeaderTextLink() {
       href={buildUrl(pathname)}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick(pathname, 'header_text')}
+      data-analytics-cta="whatsapp"
+      data-analytics-placement="header_text"
       className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent-pink"
     >
       <Image
@@ -89,6 +107,9 @@ export function WhatsAppMobileLink() {
       href={buildUrl(pathname)}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick(pathname, 'mobile_menu')}
+      data-analytics-cta="whatsapp"
+      data-analytics-placement="mobile_menu"
       className="flex items-center justify-center gap-2 rounded-2xl bg-accent-pink px-4 py-3 text-sm font-bold text-white shadow-lg"
     >
       <Image
@@ -112,6 +133,9 @@ export function WhatsAppFloatingButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale pelo WhatsApp"
+      onClick={() => trackWhatsAppClick(pathname, 'floating_button')}
+      data-analytics-cta="whatsapp"
+      data-analytics-placement="floating_button"
       className="force-whatsapp-bg fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full border-2 border-white p-4 shadow-[0_10px_30px_rgba(37,211,102,0.4)] transition-transform hover:scale-110"
     >
       <Image
@@ -122,6 +146,32 @@ export function WhatsAppFloatingButton() {
         className="h-8 w-8 object-contain brightness-0 invert drop-shadow-md"
       />
       <span className="force-pink-btn absolute -right-1 -top-1 h-4 w-4 animate-pulse rounded-full border-2 border-white" />
+    </a>
+  );
+}
+
+export function WhatsAppInlineLink({
+  label,
+  className,
+  placement = 'inline',
+}: {
+  label: string;
+  className?: string;
+  placement?: string;
+}) {
+  const pathname = usePathname();
+
+  return (
+    <a
+      href={buildUrl(pathname)}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick(pathname, placement)}
+      data-analytics-cta="whatsapp"
+      data-analytics-placement={placement}
+      className={className}
+    >
+      {label}
     </a>
   );
 }

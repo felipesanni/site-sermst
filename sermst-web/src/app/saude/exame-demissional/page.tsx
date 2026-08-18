@@ -30,7 +30,7 @@ export default function ExameDemissionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-08-07',
+        dateModified: '2026-08-18',
       }}
       readingTime="7 min"
       h1="Exame demissional: o que é, quando fazer e qual o prazo"
@@ -88,6 +88,9 @@ export default function ExameDemissionalPage() {
               </p>
               <p>
                 O demissional registra a avaliação de saúde ocupacional no encerramento do vínculo e permite comparar o resultado com o histórico dos exames realizados durante o contrato.
+              </p>
+              <p>
+                Quando o RH pesquisa por <strong>“exame quando sai da empresa”</strong>, normalmente está se referindo ao exame demissional: a avaliação que fecha o acompanhamento ocupacional no desligamento.
               </p>
             </>
           ),
@@ -249,6 +252,14 @@ export default function ExameDemissionalPage() {
           a: 'É a avaliação médica ocupacional realizada no encerramento do contrato para registrar a condição de saúde do trabalhador, considerando os riscos da função e o histórico dos exames ocupacionais.',
         },
         {
+          q: 'Exame quando sai da empresa é qual?',
+          a: 'É o exame demissional, uma avaliação médica ocupacional feita no encerramento do vínculo. Quando não houver dispensa válida, ele deve ser realizado dentro do prazo aplicável da NR-07.',
+        },
+        {
+          q: 'Como se escreve demissional?',
+          a: 'A forma correta é “demissional”, com dois “s”. O termo aparece em expressões como exame demissional e ASO demissional.',
+        },
+        {
           q: 'Quem paga o exame demissional?',
           a: 'A empresa. O custo do exame ocupacional faz parte da obrigação do empregador e não pode ser repassado ao trabalhador.',
         },
@@ -285,7 +296,7 @@ export default function ExameDemissionalPage() {
           a: 'O valor depende do exame clínico e dos exames complementares exigidos pelo PCMSO para os riscos da função. A clínica precisa conferir a função e a guia antes de informar o preço correto.',
         },
       ]}
-      maxFaqItems={10}
+      maxFaqItems={12}
       sidebarTitle="Precisa agendar o exame demissional?"
       sidebarHook="Informe a função, a data do desligamento e o último exame ocupacional para organizar o atendimento dentro do prazo aplicável."
       sidebarCtaLabel="Agendar exame demissional"

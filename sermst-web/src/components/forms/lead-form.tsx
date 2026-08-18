@@ -1,9 +1,10 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { WhatsAppInlineLink } from '@/components/ui/whatsapp-link';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -116,7 +117,13 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
   const isAccountingPartner = variant === 'partner';
   const isCommercialPartner = variant === 'commercial-partner';
   const isPartner = isAccountingPartner || isCommercialPartner;
+  const formName = isCommercialPartner
+    ? 'candidatura_parceiro_comercial'
+    : isAccountingPartner
+      ? 'parceria_contadores'
+      : 'contato_sermst';
   const pathname = usePathname();
+  const formStartTrackedRef = useRef(false);
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [attribution, setAttribution] = useState<StoredAttribution | null>(null);
@@ -176,8 +183,22 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
     setFormStartedAt(nextFormStartedAt);
   }, []);
 
+  function trackFormStart() {
+    if (formStartTrackedRef.current || typeof window === 'undefined') return;
+
+    formStartTrackedRef.current = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'sermst_form_started',
+      form_name: formName,
+      conversion_page: pathname,
+    });
+  }
+
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (status === 'submitting') return;
+
     setStatus('submitting');
     setError('');
 
@@ -204,11 +225,8 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'sermst_lead_generated',
-          form_name: isCommercialPartner
-            ? 'candidatura_parceiro_comercial'
-            : isAccountingPartner
-              ? 'parceria_contadores'
-              : 'contato_sermst',
+          form_name: formName,
+          lead_event_name: 'generate_lead',
           conversion_page: pathname,
         });
         if (typeof window.fbq === 'function') {
@@ -268,7 +286,14 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
         />
       ) : null}
 
-      <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+      <form
+        onSubmit={onSubmit}
+        onFocusCapture={trackFormStart}
+        aria-busy={status === 'submitting'}
+        data-analytics-form="lead"
+        data-form-name={formName}
+        className="space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10"
+      >
       <div>
         <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-accent-pink">
           {isCommercialPartner
@@ -528,6 +553,13 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
               : 'Quero receber contato da SERMST'
         )}
       </button>
+      {!isPartner ? (
+        <WhatsAppInlineLink
+          label="Prefiro falar agora pelo WhatsApp"
+          className="mx-auto block text-center text-sm font-bold text-accent-pink underline underline-offset-4 hover:text-brand-900"
+          placement="lead_form"
+        />
+      ) : null}
       </form>
     </>
   );
