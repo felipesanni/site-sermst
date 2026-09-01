@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'ASO: o que é e quando emitir | SERMST',
+  title: 'ASO na empresa: quando emitir e o que deve constar | SERMST',
   description:
-    'Guia prático sobre ASO: quando emitir, o que precisa constar, relação com o eSocial e como o documento protege a empresa em admissões, periódicos e demissões.',
+    'Saiba quando emitir o ASO, quais informações devem constar, quem assina, como ele se relaciona com PCMSO e NR-07 e quando informar o S-2220 ao eSocial.',
   alternates: { canonical: 'https://sermst.com.br/saude/aso-atestado-saude-ocupacional' },
   openGraph: {
-    title: 'ASO: o que é e quando emitir | SERMST',
+    title: 'ASO na empresa: quando emitir e o que deve constar | SERMST',
     description:
-      'Entenda o Atestado de Saúde Ocupacional (ASO), quando é obrigatório, o que deve constar e como ele se integra ao eSocial para proteger empresa e trabalhador.',
+      'Entenda quando emitir o Atestado de Saúde Ocupacional, o que conferir no documento e como alinhá-lo ao PCMSO, à NR-07 e ao eSocial.',
     url: 'https://sermst.com.br/saude/aso-atestado-saude-ocupacional',
     type: 'article',
     locale: 'pt_BR',
@@ -33,13 +33,13 @@ export default function ASOPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-07',
+        dateModified: '2026-09-01',
       }}
-      h1="ASO: o que é, quando emitir e por que ele protege a empresa"
-      intro="O Atestado de Saúde Ocupacional fecha o ciclo de cada exame ocupacional. Se a dúvida é apenas conceitual, o dicionário resolve rápido. Aqui, o foco é outro: quando emitir, o que precisa constar, como o ASO conversa com PCMSO, NR-07 e eSocial e onde a empresa se expõe quando esse documento está errado, vencido ou desconectado da operação."
+      h1="ASO na empresa: quando emitir, o que deve constar e como controlar"
+      intro="O Atestado de Saúde Ocupacional fecha o ciclo de cada exame ocupacional. Se a dúvida é apenas conceitual, o dicionário explica o significado da sigla. Aqui, o foco é operacional: quando emitir, quem assina, o que conferir, como o ASO conversa com PCMSO, NR-07 e eSocial e onde a empresa se expõe quando o documento está errado, vencido ou desconectado da operação."
       sections={[
         {
-          title: 'O que é o ASO',
+          title: 'ASO na prática: o que é e para que serve',
           body: (
             <>
               <p>
@@ -52,6 +52,19 @@ export default function ASOPage() {
                 Tecnicamente, o ASO não é só um papel. Ele é a <strong>evidência documental</strong> de que a empresa
                 avaliou a saúde do trabalhador naquele momento. É isso que fortalece a defesa do empregador em
                 fiscalizações, discussões trabalhistas e revisões previdenciárias.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quem emite o ASO e quem recebe o documento',
+          body: (
+            <>
+              <p>
+                O ASO é emitido e assinado pelo <strong>médico que realizou o exame clínico ocupacional</strong>. Quando houver médico responsável pelo PCMSO, os dados desse profissional também devem aparecer no documento conforme a NR-07.
+              </p>
+              <p>
+                A empresa deve disponibilizar uma via ao trabalhador e manter o registro organizado junto à documentação ocupacional. Para o RH, o ponto central é controlar a função, a data, a conclusão de aptidão e a coerência com o PCMSO e o evento S-2220, sem transformar informações clínicas protegidas em dado administrativo.
               </p>
             </>
           ),

@@ -30,7 +30,7 @@ export function getServicePriorityLinks(servico: string): SeoPriorityLink[] {
         },
         {
           href: '/saude/aso-atestado-saude-ocupacional',
-          label: 'ASO: o que é e quando emitir',
+          label: 'ASO na empresa: quando emitir e o que conferir',
           description: 'Saiba o que o atestado precisa registrar e como ele fecha o fluxo do exame ocupacional.',
         },
       ];

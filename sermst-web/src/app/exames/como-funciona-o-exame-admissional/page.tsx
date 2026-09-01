@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame admissional: o que é e como funciona | SERMST',
+  title: 'Exame admissional: como funciona, quais exames e quem paga | SERMST',
   description:
-    'Entenda o que é exame admissional, como funciona, quais exames podem ser solicitados, quando precisa de jejum e como o ASO entra no processo.',
+    'Saiba como funciona o exame admissional antes do início do trabalho, quais exames podem ser solicitados, quem paga, quando há jejum e como o ASO entra no processo.',
   alternates: { canonical: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional' },
   openGraph: {
-    title: 'Exame admissional: o que é e como funciona',
+    title: 'Exame admissional: como funciona, quais exames e quem paga',
     description:
-      'Veja o que é exame admissional, como o processo funciona, quais exames podem entrar no ASO e o que a empresa precisa organizar antes da contratação.',
+      'Veja as etapas do exame admissional, os exames que podem entrar no ASO, os documentos e o que a empresa precisa organizar antes da contratação.',
     url: 'https://sermst.com.br/exames/como-funciona-o-exame-admissional',
     type: 'article',
     locale: 'pt_BR',
@@ -170,13 +170,13 @@ export default function ComoFuncionaExameAdmissionalPage() {
           jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
           url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
           datePublished: '2024-03-01',
-          dateModified: '2026-08-11',
+          dateModified: '2026-09-01',
         }}
         h1="Exame admissional: o que é, como funciona e quais exames podem ser solicitados"
         intro="O exame admissional é o exame ocupacional feito antes do início das atividades. Ele verifica se o trabalhador está apto para a função conforme os riscos do cargo e o PCMSO da empresa, define se haverá complementares e termina com a emissão do ASO admissional."
         quickAnswer={
           <p>
-            O <strong>exame admissional</strong> deve ser realizado antes de o trabalhador começar a função. Ele inclui avaliação clínica, pode incluir exames complementares conforme o PCMSO e termina com o ASO, que registra a aptidão para aquele cargo.
+            O <strong>exame admissional</strong> deve ser realizado antes de o trabalhador começar a função. Ele inclui avaliação clínica, pode incluir exames complementares conforme o PCMSO e termina com o ASO, que registra a aptidão para aquele cargo. O custo é da empresa contratante, e o candidato deve receber orientação sobre documentos e preparo antes do atendimento.
           </p>
         }
         showTableOfContents
@@ -470,12 +470,13 @@ export default function ComoFuncionaExameAdmissionalPage() {
       sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
       related={[
         { label: 'Exame admissional expresso em São Paulo', href: '/servicos/exame-admissional-expresso/sao-paulo' },
+        { label: 'Clínica de exame admissional para empresas', href: '/servicos/exame-admissional-expresso' },
         { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
         { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },
         { label: 'Exame admissional precisa de jejum?', href: '/saude/exame-admissional-precisa-de-jejum' },
         { label: 'Tabela de exames por função', href: '/saude/tabela-exames-admissionais-por-funcao' },
-        { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
+        { label: 'ASO na empresa: quando emitir e o que conferir', href: '/saude/aso-atestado-saude-ocupacional' },
       ]}
       finalCta={{
         title: 'Precisa organizar o exame admissional?',

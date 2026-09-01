@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'Exame demissional: o que é, quando fazer e prazo | SERMST',
+  title: 'Exame demissional: prazo, ASO, quem paga e quando fazer | SERMST',
   description:
-    'Entenda o que é o exame demissional, quando fazer, se ele pode ocorrer antes ou depois da rescisão e o prazo de até 10 dias.',
+    'Entenda o exame demissional: quando fazer, prazo de até 10 dias, quem paga, quando pode haver dispensa, como o ASO é emitido e o que vem depois.',
   alternates: { canonical: 'https://sermst.com.br/saude/exame-demissional' },
   openGraph: {
-    title: 'Exame demissional: o que é, quando fazer e prazo | SERMST',
+    title: 'Exame demissional: prazo, ASO, quem paga e quando fazer | SERMST',
     description:
-      'Exame demissional: entenda o prazo de até 10 dias, a dispensa válida, o ASO e o próximo passo após a rescisão.',
+      'Exame demissional: veja prazo, quem paga, dispensa válida, ASO e os próximos passos do RH após a rescisão.',
     url: 'https://sermst.com.br/saude/exame-demissional',
     type: 'article',
     locale: 'pt_BR',
@@ -30,11 +30,11 @@ export default function ExameDemissionalPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-08-18',
+        dateModified: '2026-09-01',
       }}
       readingTime="7 min"
-      h1="Exame demissional: o que é, quando fazer e qual o prazo"
-      intro="O exame demissional é a avaliação médica ocupacional feita no encerramento do contrato. Entenda quando ele é obrigatório, se pode ocorrer antes ou depois da rescisão, o prazo de até 10 dias, as regras de dispensa e o que acontece depois do ASO."
+      h1="Exame demissional: o que é, prazo, ASO e próximos passos"
+      intro="O exame demissional é a avaliação médica ocupacional feita no encerramento do contrato. Entenda quando ele é obrigatório, quem paga, se pode ocorrer antes ou depois da rescisão, o prazo de até 10 dias, as regras de dispensa e o que acontece depois do ASO."
       quickAnswer={
         <>
           <p>
@@ -91,6 +91,20 @@ export default function ExameDemissionalPage() {
               </p>
               <p>
                 Quando o RH pesquisa por <strong>“exame quando sai da empresa”</strong>, normalmente está se referindo ao exame demissional: a avaliação que fecha o acompanhamento ocupacional no desligamento.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Quem paga o exame demissional e o que o RH deve informar',
+          body: (
+            <>
+              <p>
+                O exame demissional é custeado pela <strong>empresa</strong>, não pelo trabalhador. Antes de agendar, o RH deve informar a função e o setor, a data prevista para o desligamento, o último exame ocupacional e os riscos ou protocolos aplicáveis à atividade.
+              </p>
+              <p>
+                Essas informações ajudam a clínica a confirmar se basta o exame clínico ou se o PCMSO prevê exames complementares. Um encaminhamento incompleto pode gerar atraso, protocolo inadequado ou necessidade de refazer o atendimento. Para organizar o agendamento, consulte o serviço de{' '}
+                <Link href="/servicos/exame-demissional/sao-paulo">exame demissional para empresas em São Paulo</Link>.
               </p>
             </>
           ),
@@ -305,7 +319,7 @@ export default function ExameDemissionalPage() {
         { label: 'Agendar exame demissional em São Paulo', href: '/servicos/exame-demissional/sao-paulo' },
         { label: 'Exame periódico ocupacional: prazo e periodicidade', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Exame de retorno ao trabalho', href: '/saude/exame-retorno-ao-trabalho' },
-        { label: 'ASO: o que é e quando emitir', href: '/saude/aso-atestado-saude-ocupacional' },
+        { label: 'ASO na empresa: quando emitir e o que conferir', href: '/saude/aso-atestado-saude-ocupacional' },
         { label: 'Quando demitir um funcionário', href: '/rh/quando-demitir-funcionario' },
         { label: 'PCMSO: programa de controle médico', href: '/saude/pcmso-programa-controle-medico' },
       ]}

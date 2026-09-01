@@ -1024,7 +1024,7 @@ export const saudeSEO: Record<string, SEODocument> = {
     "O programa precisa refletir os riscos, definir exames e periodicidades coerentes e permanecer alinhado com o PGR e o eSocial.",
   ),
   "aso-atestado-saude-ocupacional": saudeEntry(
-    "ASO: o que é, quando emitir e quais informações conferir",
+    "ASO na empresa: quando emitir e quais informações conferir",
     "O Atestado de Saúde Ocupacional registra a conclusão do exame clínico ocupacional e a aptidão para a função ou tarefa indicada.",
     "Prazo incorreto, campos ausentes ou divergências com o PCMSO reduzem a confiabilidade do registro e precisam ser corrigidos.",
     "ASO correto tem: dados do médico responsável pelo PCMSO, quando houver, assinatura do médico que realizou o exame clínico, campos preenchidos, disponibilização ao trabalhador e envio do S-2220 ao eSocial dentro do prazo.",

@@ -5,12 +5,12 @@ import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 export const metadata: Metadata = {
   title: 'NR-18: o que exige na construção civil | SERMST',
   description:
-    'Entenda o que a NR-18 exige na construção civil: PGR no lugar do PCMAT, treinamento, canteiro de obras, áreas de vivência e fiscalização.',
+    'NR-18 atualizada: entenda PGR, PCMAT, treinamentos, canteiro, áreas de vivência, fiscalização e onde consultar o texto oficial.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-18-construcao-civil' },
   openGraph: {
     title: 'NR-18: o que exige na construção civil | SERMST',
     description:
-      'Veja o que a NR-18 exige para canteiros, reformas e obras: PGR, PCMAT, treinamentos, áreas de vivência, validade e fiscalização.',
+      'Veja as exigências da NR-18 para canteiros, reformas e obras: PGR, treinamentos, áreas de vivência, validade e fiscalização.',
     url: 'https://sermst.com.br/normas/nr-18-construcao-civil',
     type: 'article',
     locale: 'pt_BR',
@@ -36,7 +36,7 @@ export default function NR18Page() {
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-08-11',
+        dateModified: '2026-09-01',
       }}
       h1="NR-18: o que a Norma Regulamentadora 18 exige na construção civil"
       intro="A NR-18 reúne requisitos de SST para canteiros de obra, incluindo PGR, treinamentos, proteções coletivas, áreas de vivência, máquinas, EPIs e sinalização. Com a revisão da norma, o PCMAT deu lugar ao PGR. Veja como organizar os principais requisitos e manter os registros coerentes com a operação."
@@ -90,6 +90,18 @@ export default function NR18Page() {
               </p>
               <p>
                 Para a empresa, baixar o PDF não basta. O ponto central é verificar se o PGR do canteiro, o PCMSO, os treinamentos, as áreas de vivência e as proteções coletivas estão alinhados à versão vigente da norma e à fase real da obra.
+              </p>
+              <p>
+                Consulte também o{' '}
+                <a
+                  href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-paritaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-18-nr-18"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink"
+                >
+                  texto oficial da NR-18 no Ministério do Trabalho e Emprego
+                </a>{' '}
+                antes de revisar documentos ou treinamentos da obra.
               </p>
             </>
           ),

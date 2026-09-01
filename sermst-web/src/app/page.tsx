@@ -67,8 +67,8 @@ const websiteSchema = {
 
 const examServices = [
   {
-    title: 'Exame admissional',
-    description: 'Atendimento clínico, exames complementares e emissão do ASO para novas contratações.',
+    title: 'Clínica de exame admissional',
+    description: 'Atendimento clínico, exames complementares e emissão do ASO para novas contratações empresariais.',
     href: '/servicos/exame-admissional-expresso/sao-paulo',
   },
   {
