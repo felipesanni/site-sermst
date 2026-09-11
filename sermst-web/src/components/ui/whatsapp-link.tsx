@@ -2,10 +2,13 @@
 
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import type { ReactNode } from 'react';
 
 const PHONE = '5511915146447';
 
-function getWhatsAppMessage(pathname: string): string {
+function getWhatsAppMessage(pathname: string, customMessage?: string): string {
+  if (customMessage) return customMessage;
+
   if (pathname === '/')
     return 'Olá! Vim pela Home do site da SERMST e gostaria de um orçamento';
   if (pathname.startsWith('/servicos'))
@@ -33,8 +36,8 @@ function getWhatsAppMessage(pathname: string): string {
   return 'Olá! Vim pelo site da SERMST e gostaria de mais informações';
 }
 
-function buildUrl(pathname: string): string {
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(getWhatsAppMessage(pathname))}`;
+function buildUrl(pathname: string, customMessage?: string): string {
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(getWhatsAppMessage(pathname, customMessage))}`;
 }
 
 function trackWhatsAppClick(pathname: string, placement: string) {
@@ -154,16 +157,20 @@ export function WhatsAppInlineLink({
   label,
   className,
   placement = 'inline',
+  message,
+  children,
 }: {
-  label: string;
+  label?: string;
   className?: string;
   placement?: string;
+  message?: string;
+  children?: ReactNode;
 }) {
   const pathname = usePathname();
 
   return (
     <a
-      href={buildUrl(pathname)}
+      href={buildUrl(pathname, message)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackWhatsAppClick(pathname, placement)}
@@ -171,7 +178,7 @@ export function WhatsAppInlineLink({
       data-analytics-placement={placement}
       className={className}
     >
-      {label}
+      {children ?? label}
     </a>
   );
 }

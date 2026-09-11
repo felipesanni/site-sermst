@@ -11,6 +11,7 @@ import { trainingsData } from '@/lib/data/treinamentos-data';
 import { buildLocalServiceCopy } from '@/lib/seo-copy';
 import { getServicePriorityLinks } from '@/lib/seo-priority-links';
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-jsonld';
+import { WhatsAppInlineLink } from '@/components/ui/whatsapp-link';
 
 function getServiceSearchLabel(servico: string, fallback: string) {
   if (servico === 'exame-admissional-expresso') {
@@ -24,6 +25,12 @@ function getServiceSearchLabel(servico: string, fallback: string) {
   }
   if (servico === 'ltcat-laudo-tecnico-previdenciario') {
     return 'LTCAT: Laudo Técnico Ambiental';
+  }
+  if (servico === 'laudo-insalubridade-nr15') {
+    return 'Laudo de Insalubridade';
+  }
+  if (servico === 'laudo-periculosidade-nr16') {
+    return 'Laudo de Periculosidade';
   }
   if (servico === 'treinamentos-nrs-cipa-brigada') {
     return 'Treinamentos de NRs, CIPA e brigada';
@@ -82,6 +89,14 @@ function getLocalServiceDescription(servico: string, serviceName: string, local:
 
   if (servico === 'ltcat-laudo-tecnico-previdenciario') {
     return `LTCAT em ${local.nome}: laudo técnico ambiental com base para aposentadoria especial, defesa em auditoria previdenciária e sustentação do evento S-2240 no eSocial.`;
+  }
+
+  if (servico === 'laudo-insalubridade-nr15') {
+    return `Laudo de insalubridade em ${local.nome}: avaliação técnica das exposições e atividades conforme a NR-15, com conclusão para RH, folha, PGR e eSocial.`;
+  }
+
+  if (servico === 'laudo-periculosidade-nr16') {
+    return `Laudo de periculosidade em ${local.nome}: análise técnica das atividades e áreas de risco conforme a NR-16, com documentação para RH, folha, PGR e eSocial.`;
   }
 
   if (servico === 'pericia-trabalhista-assistente-tecnico') {
@@ -308,13 +323,14 @@ export default async function LocalSEOPage({
               </p>
 
               <div className="flex flex-col gap-5 sm:flex-row">
-                <a
-                  href={`https://wa.me/5511915146447?text=${encodeURIComponent(`Quero orçamento para ${servicoNome} em ${local.nome}`)}`}
+                <WhatsAppInlineLink
+                  message={`Quero orçamento para ${servicoNome} em ${local.nome}`}
+                  placement="service_hero"
                   className="btn-primary-safe-lg group flex scale-105 px-10 py-5 text-lg font-black shadow-2xl"
                 >
                   Solicitar orçamento
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-                </a>
+                </WhatsAppInlineLink>
               </div>
             </div>
           </FadeIn>
@@ -406,13 +422,14 @@ export default async function LocalSEOPage({
                     Em 15 minutos a equipe entende o porte, a operação e o momento da empresa antes de indicar exame, laudo ou gestão SST. Sem proposta genérica, sem venda forçada: só o que realmente se aplica ao seu cenário.
                   </p>
                   <div className="mt-8 border-t border-white/10 pt-8">
-                    <a
-                      href={`https://wa.me/5511915146447?text=${encodeURIComponent(seoCopy.localCta)}`}
+                    <WhatsAppInlineLink
+                      message={seoCopy.localCta}
+                      placement="service_local_cta"
                       className="btn-primary-safe"
                     >
                       {seoCopy.localCta}
                       <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </WhatsAppInlineLink>
                   </div>
                 </div>
               </FadeIn>
@@ -706,9 +723,13 @@ export default async function LocalSEOPage({
                 <p className="mb-8 border-l-4 border-accent-pink pl-6 text-xl font-medium leading-relaxed opacity-90">
                   {data.expectativaCusto || 'Orçamentos personalizados para o CNPJ de sua empresa.'}
                 </p>
-                <a href={`https://wa.me/5511915146447?text=${encodeURIComponent(`Quero orçamento para ${servicoNome} em ${local.nome}`)}`} className="btn-primary-safe-lg px-10 py-5 text-center text-lg font-black uppercase tracking-tighter shadow-xl">
+                <WhatsAppInlineLink
+                  message={`Quero orçamento para ${servicoNome} em ${local.nome}`}
+                  placement="service_scope_cta"
+                  className="btn-primary-safe-lg px-10 py-5 text-center text-lg font-black uppercase tracking-tighter shadow-xl"
+                >
                   Falar com comercial
-                </a>
+                </WhatsAppInlineLink>
               </div>
             </FadeIn>
           </div>
@@ -954,9 +975,13 @@ export default async function LocalSEOPage({
               Organize o atendimento de SST <br /> da sua empresa em {local.nome}.
             </h2>
             <div className="flex flex-col justify-center gap-6 md:flex-row">
-              <a href={`https://wa.me/5511915146447?text=${encodeURIComponent(waMessage)}`} className="btn-primary-safe-lg px-16 py-6 text-2xl font-black shadow-2xl hover:scale-105 active:scale-95">
+              <WhatsAppInlineLink
+                message={waMessage}
+                placement="service_final_cta"
+                className="btn-primary-safe-lg px-16 py-6 text-2xl font-black shadow-2xl hover:scale-105 active:scale-95"
+              >
                 {waMessage}
-              </a>
+              </WhatsAppInlineLink>
             </div>
             {!local.isHub && (
               <p className="mt-12 flex items-center justify-center gap-2 text-sm font-medium text-slate-400">

@@ -118,6 +118,31 @@ export function buildLocalServiceCopy(data: SEODocument, local: Localidade) {
     };
   }
 
+  if (serviceName === 'Laudo de Insalubridade' || serviceName === 'Laudo de Periculosidade') {
+    const isInsalubridade = serviceName === 'Laudo de Insalubridade';
+    const norma = isInsalubridade ? 'NR-15' : 'NR-16';
+    const foco = isInsalubridade
+      ? 'agentes, exposição e necessidade de avaliação qualitativa ou quantitativa'
+      : 'atividades, áreas de risco e condições concretas da operação';
+
+    return {
+      serviceName,
+      localParagraphs: [
+        `${serviceName} em ${local.nome} começa pela leitura da atividade e das condições reais de trabalho, não apenas pelo nome do cargo.`,
+        `${local.contextoEmpresarial} Em empresas com operação, RH e folha distribuídos entre setores, um enquadramento técnico claro evita decisões baseadas em modelo ou suposição.`,
+        `${data.content.solucao} A avaliação considera ${foco} e explica o que precisa ser mantido ou corrigido na documentação de SST.`,
+        `A SERMST atende empresas no Centro de São Paulo, com escopo, visita e documentos definidos conforme o porte e a complexidade da operação.`,
+      ],
+      localSeoParagraphs: [
+        `A ${norma} não deve ser aplicada por associação automática ao cargo ou ao produto. A conclusão depende do agente ou da atividade, da exposição, dos controles existentes e do anexo técnico aplicável.`,
+        `O laudo precisa conversar com PGR, PCMSO, folha e eSocial. Quando os documentos contam histórias diferentes, o RH perde segurança para explicar a rotina e priorizar correções.`,
+        `Antes de solicitar uma proposta, vale separar funções, setores, agentes, áreas de risco e documentos já existentes. Isso ajuda a dimensionar a visita e evita escopo genérico.`,
+      ],
+      localCta: `Solicitar ${serviceName} em ${local.nome}`,
+      bridgeSentence: `Em ${local.nome}, a SERMST transforma a dúvida sobre ${serviceName.toLowerCase()} em um escopo técnico claro para a empresa.`,
+    };
+  }
+
   const toxicologicoLocalOverrides: Partial<Record<string, {
     localParagraphs: string[];
     localSeoParagraphs: string[];

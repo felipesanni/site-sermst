@@ -124,6 +124,42 @@ export function getServicePriorityLinks(servico: string): SeoPriorityLink[] {
           description: 'O programa médico precisa conversar com o inventário e o plano de ação do PGR.',
         },
       ];
+    case 'laudo-insalubridade-nr15':
+      return [
+        {
+          href: '/normas/nr-15-insalubridade',
+          label: 'NR-15: insalubridade e avaliação técnica',
+          description: 'Entenda como agentes, limites, medições e controles entram na conclusão do laudo.',
+        },
+        {
+          href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo',
+          label: 'PGR e medidas de prevenção',
+          description: 'O laudo deve conversar com o inventário de riscos e o plano de ação da empresa.',
+        },
+        {
+          href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo',
+          label: 'LTCAT e exposição previdenciária',
+          description: 'Compare a finalidade trabalhista do laudo de insalubridade com a base previdenciária do LTCAT.',
+        },
+      ];
+    case 'laudo-periculosidade-nr16':
+      return [
+        {
+          href: '/normas/nr-16-periculosidade',
+          label: 'NR-16: periculosidade e áreas de risco',
+          description: 'Veja como atividade, permanência e área de risco entram na avaliação técnica.',
+        },
+        {
+          href: '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo',
+          label: 'PGR e controle da operação',
+          description: 'Use a avaliação para orientar medidas de prevenção e manter a rotina de SST documentada.',
+        },
+        {
+          href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo',
+          label: 'LTCAT: quando a finalidade é previdenciária',
+          description: 'Entenda por que periculosidade e LTCAT não são documentos equivalentes.',
+        },
+      ];
     case 'treinamentos-nrs-cipa-brigada':
       return [
         {

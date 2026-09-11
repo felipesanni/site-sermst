@@ -661,6 +661,126 @@ export const servicosSEO: Record<string, SEODocument> = {
       ],
     },
   },
+  "laudo-insalubridade-nr15": {
+    h1: "Laudo de Insalubridade | Avaliação Técnica NR-15",
+    seoTitle: "Laudo de Insalubridade em São Paulo | NR-15 | SERMST",
+    allowedLocalSlugs: ["sao-paulo"],
+    hook:
+      "Avaliação técnica para empresas que precisam entender a exposição ocupacional, documentar o enquadramento e manter folha, PGR, PCMSO e eSocial coerentes com a realidade do ambiente.",
+    isClinico: false,
+    fluxoCorporativo: [
+      "Leitura da atividade, dos agentes e das medidas de controle",
+      "Avaliação qualitativa e quantitativa quando aplicável",
+      "Emissão do laudo com conclusão técnica e orientação ao RH",
+    ],
+    quandoRequerido:
+      "O laudo de insalubridade é indicado quando a empresa precisa avaliar atividades e ambientes à luz da NR-15, verificar a necessidade de medições e documentar uma conclusão técnica para apoiar decisões de prevenção e folha.",
+    documentosNecessarios: [
+      "CNPJ, atividade econômica e endereço da operação",
+      "Funções, setores e número de trabalhadores expostos",
+      "PGR, PCMSO e laudos existentes, quando houver",
+      "Informações sobre agentes, processos e medidas de controle",
+    ],
+    expectativaCusto:
+      "O valor depende do número de funções e ambientes, dos agentes envolvidos e da necessidade de avaliações quantitativas. A proposta deve separar escopo técnico, medições e entregáveis.",
+    content: {
+      dor:
+        "Tratar qualquer contato com agente como insalubridade, ou manter um laudo genérico, pode levar a adicional mal enquadrado, controles insuficientes e divergências entre folha, PGR, PCMSO e eSocial.",
+      solucao:
+        "A SERMST avalia a atividade e as condições reais de exposição, define a metodologia aplicável e entrega um laudo que explica o enquadramento, os limites da análise e os próximos controles necessários.",
+      beneficios: [
+        "Análise técnica vinculada à realidade da operação",
+        "Medições quando o anexo aplicável exigir",
+        "Conclusão clara para RH, folha e gestão de SST",
+        "Coerência com PGR, PCMSO e eSocial",
+      ],
+    },
+    geoOpt: {
+      expertQuote: {
+        text: "A presença de um agente não encerra a análise. O enquadramento depende da atividade, da exposição, do anexo aplicável e da avaliação técnica do ambiente.",
+        author: "Diretoria Técnica",
+        role: "SERMST",
+      },
+      faq: [
+        {
+          q: "Quando a empresa precisa de um laudo de insalubridade?",
+          a: "Quando precisa avaliar tecnicamente atividades e exposições relacionadas à NR-15, apoiar decisões sobre adicional e manter os documentos de SST coerentes com a operação. A necessidade concreta depende do ambiente e do agente analisado.",
+        },
+        {
+          q: "Todo contato com produto químico gera insalubridade?",
+          a: "Não. A conclusão depende do agente, da forma e intensidade da exposição, do anexo aplicável, das medidas de controle e da avaliação técnica do caso.",
+        },
+        {
+          q: "O laudo de insalubridade substitui o PGR?",
+          a: "Não. O laudo responde ao enquadramento técnico da insalubridade; o PGR organiza o gerenciamento dos riscos e as medidas de prevenção. Os documentos precisam conversar entre si.",
+        },
+        {
+          q: "O laudo pode exigir medição?",
+          a: "Sim. Alguns agentes e anexos da NR-15 dependem de avaliação quantitativa, enquanto outros exigem análise qualitativa ou inspeção técnica.",
+        },
+      ],
+    },
+  },
+  "laudo-periculosidade-nr16": {
+    h1: "Laudo de Periculosidade | Avaliação Técnica NR-16",
+    seoTitle: "Laudo de Periculosidade em São Paulo | NR-16 | SERMST",
+    allowedLocalSlugs: ["sao-paulo"],
+    hook:
+      "Avaliação técnica das atividades e áreas de risco para empresas que precisam documentar o enquadramento da periculosidade e manter operação, folha, PGR e eSocial alinhados.",
+    isClinico: false,
+    fluxoCorporativo: [
+      "Levantamento da atividade, das áreas e das condições de trabalho",
+      "Análise do enquadramento conforme a NR-16 e o caso concreto",
+      "Emissão do laudo com conclusão e orientação técnica ao RH",
+    ],
+    quandoRequerido:
+      "O laudo de periculosidade é indicado quando a empresa precisa avaliar atividades ou operações potencialmente perigosas, documentar áreas de risco e apoiar decisões sobre adicional e medidas de controle.",
+    documentosNecessarios: [
+      "CNPJ, atividade econômica e endereço da operação",
+      "Funções, setores e número de trabalhadores envolvidos",
+      "PGR, procedimentos e documentos de segurança existentes",
+      "Descrição de instalações, equipamentos e atividades críticas",
+    ],
+    expectativaCusto:
+      "O valor depende do número de funções, áreas e instalações analisadas, além da complexidade da vistoria. A proposta deve detalhar a visita, o escopo e os documentos de entrega.",
+    content: {
+      dor:
+        "Enquadrar periculosidade sem analisar a atividade real, a área de risco e a rotina de trabalho pode gerar decisões frágeis para a folha, controles incompletos e conflito entre laudo, PGR e eSocial.",
+      solucao:
+        "A SERMST examina as atividades e condições reais da operação, confronta os dados com a NR-16 e entrega uma conclusão técnica que ajuda o RH a decidir com mais segurança.",
+      beneficios: [
+        "Avaliação baseada na atividade e no ambiente reais",
+        "Delimitação técnica das áreas e situações de risco",
+        "Conclusão objetiva para RH e folha",
+        "Integração com PGR, controles e eSocial",
+      ],
+    },
+    geoOpt: {
+      expertQuote: {
+        text: "Periculosidade não deve ser definida por uma palavra no cargo. A análise precisa olhar a atividade, a permanência, a área de risco e o enquadramento técnico aplicável.",
+        author: "Diretoria Técnica",
+        role: "SERMST",
+      },
+      faq: [
+        {
+          q: "Quando a empresa precisa de um laudo de periculosidade?",
+          a: "Quando precisa avaliar tecnicamente uma atividade ou operação potencialmente perigosa e documentar o enquadramento conforme a NR-16 e as condições reais de trabalho.",
+        },
+        {
+          q: "Periculosidade depende apenas do cargo?",
+          a: "Não. A conclusão depende da atividade executada, da exposição, da área de risco e das condições concretas da operação.",
+        },
+        {
+          q: "Laudo de periculosidade e LTCAT são a mesma coisa?",
+          a: "Não. O laudo de periculosidade trata do enquadramento trabalhista previsto na NR-16; o LTCAT tem finalidade previdenciária e sustenta análises de exposição para PPP e eSocial, conforme o caso.",
+        },
+        {
+          q: "O laudo de periculosidade substitui o PGR?",
+          a: "Não. O laudo registra a análise técnica do enquadramento. O PGR organiza o gerenciamento dos riscos e as medidas de prevenção da empresa.",
+        },
+      ],
+    },
+  },
   "gestao-esocial-s2220-s2240": {
     h1: "Gestão completa de eSocial SST | S-2220 e S-2240",
     hook:
