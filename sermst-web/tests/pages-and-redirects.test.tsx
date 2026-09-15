@@ -70,6 +70,11 @@ describe('redirects criticos', () => {
           permanent: true,
         }),
         expect.objectContaining({
+          source: '/diag',
+          destination: 'https://sermst.com.br/diagnostico?origem=instagram_organico&utm_source=instagram&utm_medium=organic&utm_campaign=bio&utm_content=perfil',
+          permanent: true,
+        }),
+        expect.objectContaining({
           source: '/servicos/exame-admissional',
           destination: '/servicos/exame-admissional-expresso/sao-paulo',
           permanent: true,

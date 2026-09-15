@@ -115,6 +115,11 @@ const nextConfig: NextConfig = {
         destination: 'https://sermst.com.br/:path*',
         permanent: true,
       },
+      {
+        source: '/diag',
+        destination: 'https://sermst.com.br/diagnostico?origem=instagram_organico&utm_source=instagram&utm_medium=organic&utm_campaign=bio&utm_content=perfil',
+        permanent: true,
+      },
       // Consolida o antigo cluster Empresario nas novas URLs informacionais.
       { source: '/empresario/cnpj-ativo-significa-empresa-regularizada', destination: '/empresario/cnpj-ativo-o-que-significa', permanent: true },
       { source: '/empresario/nota-fiscal-mei-nao-significa-empresa-regularizada', destination: '/empresario/nota-fiscal-mei', permanent: true },
