@@ -36,12 +36,12 @@ const securityHeaders = [
       "default-src 'self'",
       // GTM injeta scripts dinamicamente — precisa de 'unsafe-inline' + todos os domínios que usa
       // Referência: https://developers.google.com/tag-platform/security/guides/csp
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://assets.calendly.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://tagmanager.google.com https://www.googletagmanager.com https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https: https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://www.facebook.com",
-      "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://hooks.zapier.com https://brasilapi.com.br https://n8n.projeto.app.br https://www.facebook.com https://graph.facebook.com https://www.google.com https://google.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://cm.g.doubleclick.net https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms https://c.bing.com https://l.clarity.ms",
-      "frame-src https://www.googletagmanager.com https://td.doubleclick.net https://www.google.com https://challenges.cloudflare.com https://www.facebook.com",
+      "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://hooks.zapier.com https://brasilapi.com.br https://n8n.projeto.app.br https://www.facebook.com https://graph.facebook.com https://www.google.com https://google.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://cm.doubleclick.net https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms https://c.bing.com https://l.clarity.ms https://calendly.com https://*.calendly.com",
+      "frame-src https://www.googletagmanager.com https://td.doubleclick.net https://www.google.com https://challenges.cloudflare.com https://www.facebook.com https://calendly.com https://*.calendly.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self' https://www.facebook.com",
@@ -277,7 +277,7 @@ const nextConfig: NextConfig = {
 
       // -- Paginas WP sem equivalente direto --
       { source: "/termos-e-condicoes", destination: "/", permanent: true },
-      { source: "/politica-de-privacidade", destination: "/", permanent: true },
+      // /politica-de-privacidade agora é uma página nativa do Next.js.
       // { source: "/guia", destination: "/dicionario", permanent: true }, // removido — /guia agora é página ativa
       { source: "/ebook", destination: "/contato", permanent: true },
       { source: "/obrigado-sermst", destination: "/contato", permanent: true },

@@ -5,6 +5,7 @@ import HomePage from '@/app/page';
 import ContatoPage from '@/app/contato/page';
 import CalculadoraCnaePage from '@/app/rh/calculadora-cnae-grau-de-risco/page';
 import ExamePeriodicoPage from '@/app/saude/exame-periodico-ocupacional/page';
+import PoliticaDePrivacidadePage from '@/app/politica-de-privacidade/page';
 
 describe('paginas principais', () => {
   it('renderiza a home com a proposta central do negocio', () => {
@@ -43,6 +44,17 @@ describe('paginas principais', () => {
     expect(screen.getByText(/a cada dois anos/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Periodicidade: quem define e qual o prazo/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Perguntas frequentes/i })).toBeInTheDocument();
+  });
+
+  it('renderiza a politica de privacidade com canal de titulares', () => {
+    render(<PoliticaDePrivacidadePage />);
+
+    expect(screen.getByRole('heading', { name: /Política de Privacidade/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /^Canal de privacidade$/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Enviar solicitação/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('mailto:comercial@sermst.com.br'),
+    );
   });
 });
 
@@ -121,6 +133,18 @@ describe('redirects criticos', () => {
     expect(redirects).not.toEqual(
       expect.arrayContaining([
         expect.objectContaining({ source: '/normas/o-que-e-nr-07' }),
+      ]),
+    );
+  });
+
+  it('mantém a página de privacidade como rota canônica, sem redirecioná-la para a home', async () => {
+    const redirects = (await nextConfig.redirects?.()) ?? [];
+
+    expect(redirects).not.toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          source: '/politica-de-privacidade',
+        }),
       ]),
     );
   });

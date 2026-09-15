@@ -1,0 +1,174 @@
+.page {
+  --ink: #17213a;
+  --muted: #596579;
+  --paper: #f7f9fc;
+  --accent: #e31b45;
+  --line: #dce2eb;
+  --brand: #0b133c;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.page * { box-sizing: border-box; }
+.page :is(p, h1, h2, h3, label, a, button, summary) { overflow-wrap: anywhere; }
+.heroCopy, .formCard, .scopeIntro, .scopeRows, .closing > div { min-width: 0; }
+.page h1, .page h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -.045em; }
+.page h3, .page button, .page input, .page select { font-family: Arial, Helvetica, sans-serif; }
+.page p { margin: 0; }
+.page em { font-weight: 400; }
+.hero, .scope, .closing, .footer { width: min(1200px, calc(100% - 80px)); margin-inline: auto; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 80px; padding-block: 40px 60px; align-items: center; }
+.heroCopy { padding-block: 16px; }
+.eyebrow, .kicker { display: block; text-transform: uppercase; letter-spacing: .11em; font-size: 14px; font-weight: 700; }
+.eyebrow { display: block; color: var(--brand); margin-bottom: 24px; }
+.eyebrow > span { display: inline-block; vertical-align: middle; margin-right: 9px; width: 7px; height: 7px; background: var(--brand); border-radius: 50%; }
+.hero h1 { font-size: clamp(48px, 4.8vw, 67px); line-height: 1.05; margin: 0; text-wrap: balance; overflow-wrap: normal; }
+.heroText { max-width: 440px; color: var(--muted); font-size: 18px; line-height: 1.65; margin-top: 24px !important; }
+.primaryCta, .submitButton { display: inline-flex; align-items: center; justify-content: center; gap: 16px; background: var(--accent); color: #fff; border: 0; border-radius: 5px; min-height: 52px; padding: 15px 22px; font-size: 16px; font-weight: 700; line-height: 1.4; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background .16s; }
+.primaryCta:hover, .submitButton:hover:not(:disabled) { background: #c4163b; color: #fff; }
+.heroCopy > .primaryCta { margin-top: 28px; }
+.heroNote { display: flex; gap: 14px; align-items: center; padding-top: 26px; margin-top: 30px; border-top: 1px solid var(--line); max-width: 395px; }
+.noteMark { font-family: Georgia, serif; font-size: 40px; color: #596579; line-height: 1; }
+.heroNote p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.heroNote strong { font-weight: 500; color: var(--ink); }
+.formCard { background: #fff; border: 1px solid #ccd5e3; border-radius: 10px; box-shadow: 0 18px 60px #0b133c12; padding: 26px 30px; scroll-margin-top: 20px; }
+.progress { display: flex; list-style: none; padding: 0; margin: 0 0 22px; gap: 20px; }
+.progress li { display: flex; align-items: center; gap: 7px; flex: 1; font-size: 14px; color: #596579; border-top: 2px solid #dce2eb; padding-top: 10px; }
+.progress li > span { display: grid; flex-shrink: 0; place-items: center; width: 24px; height: 24px; border: 1px solid #ccd5e3; border-radius: 50%; font-size: 14px; }
+.progress li[aria-current], .progress li[data-done="true"] { border-color: var(--brand); color: var(--brand); font-weight: 600; }
+.progress li[aria-current] > span, .progress li[data-done="true"] > span { background: var(--brand); color: white; border-color: var(--brand); }
+.page .formTitle { font-family: Arial, Helvetica, sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -.02em; line-height: 1.3; margin: 0 0 7px; }
+.formIntro { font-size: 14px; color: var(--muted); line-height: 1.5; }
+.form { margin-top: 18px; }
+.form fieldset { margin: 0; padding: 0; border: 0; min-width: 0; display: grid; gap: 13px; }
+.form fieldset[hidden] { display: none; }
+.form fieldset:not([hidden]) { animation: revealStep 180ms ease-out; }
+@keyframes revealStep {
+  from { opacity: .55; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 16px; line-height: 1.4; font-weight: 600; }
+.requiredMark { color: #596579; }
+.field input, .field select { background: #fff; color: var(--ink); min-height: 46px; padding: 9px 11px; width: 100%; border: 1px solid #aebbd0; border-radius: 4px; font-size: 16px; line-height: 1.4; }
+.field input::placeholder { color: #657187; font-size: 16px; }
+.field select { padding-right: 24px; }
+.field input:focus, .field select:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
+.submitButton { width: 100%; margin-top: 20px; justify-content: space-between; padding-inline: 20px; }
+.submitButton:disabled { opacity: .65; cursor: wait; }
+.formFootnote { display: flex; gap: 6px; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); margin-top: 12px !important; }
+.formFootnote svg { flex-shrink: 0; }
+.backButton { display: block; min-height: 44px; background: transparent; color: var(--muted); border: 0; padding: 12px 0; margin: 0 auto; font-size: 14px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.backButton:disabled { cursor: wait; }
+.errorMessage { display: flex; align-items: start; gap: 8px; padding: 12px; margin-top: 15px; background: #fff1e9; border: 1px solid #e6b8a8; color: #963e26; border-radius: 4px; font-size: 14px; }
+.errorMessage svg { flex-shrink: 0; margin-top: 2px; }
+.successCard { min-height: 470px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 24px; }
+.successIcon { width: 60px; height: 60px; background: #eef2f8; border-radius: 50%; color: var(--brand); display: grid; place-items: center; }
+.successCard h2 { font-size: 38px; line-height: 1.1; margin: 0; }
+.successCard p { color: var(--muted); font-size: 16px; }
+.calendarEmbed { width: 100%; height: 760px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+.calendarEmbed iframe { display: block; width: 100%; height: 100%; min-height: 700px; border: 0; }
+.calendarLoading { display: grid; min-height: 100%; place-items: center; margin: 0; color: var(--muted); font-size: 15px; }
+.promiseStrip { background: #eef2f8; border-block: 1px solid #dce2eb; display: flex; align-items: center; justify-content: center; gap: 80px; padding: 24px 30px; }
+.promiseStrip p { font-family: Georgia, serif; font-size: 23px; letter-spacing: -.02em; }
+.promiseStrip strong { font-weight: 400; }
+.promiseStrip > span { font-size: 14px; text-transform: uppercase; letter-spacing: .15em; color: #596579; }
+.scope { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; padding-block: 90px; align-items: start; }
+.kicker { color: var(--brand); margin-bottom: 18px; }
+.scope h2 { font-size: clamp(30px, 3vw, 40px); line-height: 1.18; margin: 0 0 24px; text-wrap: balance; overflow-wrap: normal; }
+.scope h2 em { color: #596579; }
+.scopeIntro > p { color: var(--muted); font-size: 16px; line-height: 1.8; max-width: 380px; }
+.scopeRows { border-top: 1px solid var(--line); }
+.scopeRow { display: flex; gap: 25px; padding-block: 24px; border-bottom: 1px solid var(--line); }
+.scopeRow > span { color: #596579; font-size: 14px; padding-top: 4px; }
+.scopeRow h3 { font-size: 18px; font-weight: 700; letter-spacing: -.03em; line-height: 1.3; margin: 0 0 8px; }
+.scopeRow p { font-size: 16px; color: var(--muted); line-height: 1.7; }
+.manifesto { background: #eef2f8; color: var(--ink); text-align: center; padding: 70px 30px; }
+.manifesto .kicker { color: #596579; }
+.manifesto h2 { font-size: clamp(31px, 3.6vw, 50px); line-height: 1.2; margin: 25px 0; }
+.manifesto h2 em { color: #0b133c; }
+.manifesto p { max-width: 610px; margin-inline: auto; color: #596579; font-size: 16px; line-height: 1.8; }
+.signature { display: block; font-size: 16px; font-weight: 700; letter-spacing: .06em; margin-top: 30px; }
+.signature span { display: block; font-size: 14px; font-weight: 400; letter-spacing: .04em; color: #596579; margin-top: 3px; }
+.closing { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; padding-block: 80px; }
+.closing h2 { font-size: 38px; line-height: 1.15; margin: 0 0 26px; }
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { position: relative; list-style: none; padding: 18px 24px 18px 0; font-size: 16px; line-height: 1.4; font-weight: 600; cursor: pointer; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; position: absolute; right: 0; font-size: 20px; font-weight: 400; top: 12px; color: #0b133c; }
+.faq details[open] summary::after { content: '−'; }
+.faq p { color: var(--muted); font-size: 16px; line-height: 1.7; padding-bottom: 18px; }
+.footer { display: flex; gap: 20px; justify-content: space-between; border-top: 1px solid var(--line); padding-block: 24px; font-size: 14px; color: var(--muted); }
+.footer > div { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer a { text-decoration: underline; text-underline-offset: 3px; }
+.page :is(a,button,summary):focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (min-width: 1400px) { .hero { padding-block: 50px 70px; } }
+@media (max-width: 1100px) {
+  .hero, .scope, .closing, .footer { width: calc(100% - 48px); }
+  .hero { gap: 40px; grid-template-columns: 1.1fr 1fr; }
+  .hero h1 { font-size: 48px; }
+  .heroText { font-size: 16px; }
+  .formCard { padding: 24px; }
+  .scope, .closing { gap: 50px; }
+}
+@media (max-width: 800px) {
+  .hero, .scope, .closing, .footer { width: min(560px, calc(100% - 36px)); }
+  .hero { grid-template-columns: 1fr; gap: 12px; padding-block: 32px 24px; }
+  .heroCopy { padding: 0; }
+  .heroCopy, .scopeIntro { text-align: left; }
+  .hero h1, .formTitle, .formIntro, .scopeIntro h2, .closing > div:first-child h2 { text-align: center; }
+  .eyebrow { font-size: 14px; letter-spacing: .015em; margin-bottom: 8px; }
+  .hero h1 { font-size: clamp(32px, 8.5vw, 44px); line-height: 1.1; }
+  .heroText { margin: 10px 0 0 !important; font-size: 16px; line-height: 1.4; max-width: 100%; }
+  .heroCopy > .primaryCta, .heroNote { display: none; }
+  .formCard { padding: 14px; scroll-margin-top: 12px; border-color: #e6a9b8; box-shadow: 0 18px 60px #0b133c12, 0 0 0 4px #e31b4510; }
+  .progress { margin-block: 0 10px; }
+  .progress li { padding-top: 6px; }
+  .form { margin-top: 10px; }
+  .form fieldset { gap: 8px; }
+  .submitButton { margin-top: 12px; }
+  .formFootnote { margin-top: 8px !important; }
+  .field input, .field select { min-height: 46px; }
+  .field label { font-size: 16px; }
+  .promiseStrip { flex-direction: column; gap: 6px; padding: 22px 18px; }
+  .promiseStrip p { font-size: 23px; }
+  .scope { grid-template-columns: 1fr; gap: 28px; padding-block: 48px; }
+  .scope h2 { font-size: 30px; }
+  .scopeIntro > p { max-width: 100%; margin-inline: 0; font-size: 16px; }
+  .scopeRow { padding-block: 20px; gap: 18px; }
+  .manifesto { padding: 48px 22px; }
+  .manifesto h2 { font-size: 32px; }
+  .manifesto p { font-size: 16px; }
+  .closing { grid-template-columns: 1fr; gap: 30px; padding-block: 48px; }
+  .closing h2 { font-size: 34px; }
+  .closing .primaryCta { width: 100%; }
+  .footer { flex-direction: column; gap: 10px; padding-block: 20px; }
+  .footer a { padding-block: 8px; }
+  .successCard { min-height: 390px; }
+  .calendarEmbed { height: 820px; }
+  .calendarEmbed iframe { min-height: 760px; }
+}
+@media (min-width: 801px) and (max-height: 760px) {
+  .hero { padding-block: 40px; }
+  .heroCopy { padding-block: 0; }
+  .hero h1 { font-size: clamp(44px, 4vw, 56px); }
+  .eyebrow { margin-bottom: 18px; }
+  .heroText { margin-top: 18px !important; }
+  .heroCopy > .primaryCta { margin-top: 20px; }
+  .heroNote { margin-top: 18px; padding-top: 18px; }
+  .formCard { padding-block: 20px; }
+  .progress { margin-bottom: 14px; }
+  .form { margin-top: 14px; }
+  .form fieldset { gap: 10px; }
+  .submitButton { margin-top: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primaryCta, .submitButton { transition: none; }
+  .form fieldset:not([hidden]) { animation: none; }
+}
+.heroText strong { color: var(--ink); font-weight: 700; }

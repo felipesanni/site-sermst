@@ -6,6 +6,7 @@ import { Suspense } from 'react'
 import './globals.css'
 import Script from 'next/script'
 import { RouteAnalyticsTracker } from '@/components/analytics/route-analytics-tracker'
+import { SiteChromeVisibility } from '@/components/layout/site-chrome-visibility'
 import { MobileNavigation } from '@/components/ui/mobile-navigation'
 import { WhatsAppHeaderTextLink, WhatsAppFloatingButton } from '@/components/ui/whatsapp-link'
 import { ScrollToTop } from '@/components/ui/scroll-to-top'
@@ -365,6 +366,8 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
           }}
         />
 
+        <SiteChromeVisibility>
+        <div className="site-global-chrome">
         <div className="relative z-50 hidden bg-brand-900 py-3 text-white shadow-md md:block">
           <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-4 px-6 md:flex-row lg:px-8">
             <Link href="/" className="flex items-center gap-3">
@@ -426,9 +429,13 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
             <MobileNavigation />
           </div>
         </header>
+        </div>
+        </SiteChromeVisibility>
 
         <main className="flex-1">{children}</main>
 
+        <SiteChromeVisibility>
+        <div className="site-global-chrome">
         <WhatsAppFloatingButton />
 
         <footer className="relative overflow-hidden border-t border-white/5 bg-[#05091C] py-24 text-slate-400">
@@ -548,6 +555,13 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
                 </ul>
 
                 <div className="mt-8 border-t border-white/5 pt-8">
+                  <Link
+                    href="/politica-de-privacidade"
+                    className="mb-5 inline-flex items-center gap-2 text-sm font-bold text-slate-300 transition-colors hover:text-accent-pink"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent-pink" />
+                    Política de Privacidade
+                  </Link>
                   <div className="text-[10px] font-black uppercase tracking-widest leading-relaxed text-slate-600">
                     CRM 1002913 | CNPJ 28.125.178/0001-88
                     <br />
@@ -558,6 +572,8 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
             </div>
           </div>
         </footer>
+        </div>
+        </SiteChromeVisibility>
       </body>
     </html>
   )

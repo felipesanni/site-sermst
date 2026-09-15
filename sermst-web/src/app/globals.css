@@ -22,6 +22,15 @@
     @apply text-slate-900 bg-white antialiased selection:bg-accent-pink selection:text-white;
   }
 
+  /* A landing page can opt out of the regular site's commercial chrome. */
+  body:has(.diagnostico-page) .site-global-chrome {
+    display: none !important;
+  }
+
+  html:has(.diagnostico-page) {
+    scroll-padding-top: 0;
+  }
+
   button:not(:disabled),
   [role='button'],
   summary {
