@@ -24,7 +24,7 @@ describe('diagnostic capture before scheduling', () => {
     expect(await response.json()).not.toHaveProperty('ok', true)
   })
 
-  it.each(['instagram_organico', 'instagram_pago'])('delivers %s attribution before returning the calendar', async (origem) => {
+  it.each(['instagram_organico', 'instagram_pago', 'parceiro_contador', '  instagram_organico  ', '', '   ', undefined])('delivers %s attribution before returning the calendar', async (origem) => {
     vi.stubEnv('DIAGNOSTICO_CRM_API_URL', 'https://crm.example.com/api/v1/leads')
     vi.stubEnv('DIAGNOSTICO_CRM_API_KEY', 'test-crm-key')
     vi.stubEnv('CALENDAR_URL', 'https://calendar.example.com/diagnostic')
@@ -70,7 +70,11 @@ describe('diagnostic capture before scheduling', () => {
     })
     expect(delivered).not.toHaveProperty('utm_source_first')
     expect(delivered).not.toHaveProperty('utm_campaign_first')
-    expect(delivered).not.toHaveProperty('leadSource')
+    if (origem?.trim()) {
+      expect(delivered.leadSource).toBe(origem.trim())
+    } else {
+      expect(delivered).not.toHaveProperty('leadSource')
+    }
     expect(fetchMock.mock.calls[0][1].headers).toMatchObject({ Authorization: 'Bearer test-crm-key' })
     expect(fetchMock.mock.calls[1][0]).toBe('https://crm.example.com/api/v1/opportunities/opp-123')
     expect(fetchMock.mock.calls[1][1]).toMatchObject({

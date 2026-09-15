@@ -246,6 +246,7 @@ function buildCrmApiLead(lead: ReturnType<typeof buildDiagnosticLead>) {
     company: lead.empresa,
     title: `Diagnóstico de SST | ${lead.empresa}`,
     value: 0,
+    ...(lead.origem_parametro ? { leadSource: lead.origem_parametro } : {}),
     pageUrl: lead.attribution.conversion_page || lead.attribution.landing_page,
     ...formAnswers,
     cargo: lead.cargo,
