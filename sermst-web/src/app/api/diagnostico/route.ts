@@ -518,9 +518,11 @@ export async function POST(request: Request) {
     }, 502)
   }
 
-  const calendarUrl = scheduleReady
-    ? process.env.CALENDAR_URL || process.env.NEXT_PUBLIC_CALENDAR_URL || ''
-    : ''
+  // A agenda deve continuar disponível quando o lead foi confirmado pelo CRM.
+  // A atualização do estágio é uma segunda operação e não pode bloquear o
+  // agendamento caso falhe temporariamente.
+  const configuredCalendarUrl = process.env.CALENDAR_URL || process.env.NEXT_PUBLIC_CALENDAR_URL || ''
+  const calendarUrl = crmConfirmed ? configuredCalendarUrl : ''
 
   return jsonResponse({
     ok: true,

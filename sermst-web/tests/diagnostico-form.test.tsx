@@ -167,6 +167,32 @@ describe('diagnostic conversion UI', () => {
     expect(fetchMock).toHaveBeenCalledOnce()
   })
 
+  it('keeps the Calendly schedule available when CRM stage synchronization is pending', async () => {
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(JSON.stringify({
+      ok: true,
+      delivered: true,
+      crmConfirmed: true,
+      scheduleReady: false,
+      calendarUrl: 'https://calendly.com/sermstocupacional/30min',
+      opportunityId: 'opp-123',
+    }), { status: 200 }))
+    const initInlineWidget = vi.fn(({ url, parentElement }: { url: string; parentElement: HTMLElement; resize?: boolean }) => {
+      const iframe = document.createElement('iframe')
+      iframe.title = 'Escolha o horário do seu diagnóstico'
+      iframe.src = url
+      parentElement.appendChild(iframe)
+    })
+    Object.defineProperty(window, 'Calendly', { configurable: true, value: { initInlineWidget } })
+    const { container } = await renderDiagnostic()
+    fillForm()
+    fireEvent.submit(container.querySelector('form')!)
+
+    const iframe = await screen.findByTitle('Escolha o horário do seu diagnóstico')
+    expect(iframe).toHaveAttribute('src', expect.stringContaining('https://calendly.com/sermstocupacional/30min'))
+    expect(initInlineWidget).toHaveBeenCalledOnce()
+    expect(fetchMock).toHaveBeenCalledOnce()
+  })
+
   it('sends the Calendly event reference when the embed does not expose the date', async () => {
     const fetchMock = vi.spyOn(globalThis, 'fetch')
       .mockResolvedValueOnce(new Response(JSON.stringify({ ok: true, delivered: true, crmConfirmed: true, scheduleReady: true, calendarUrl: 'https://calendly.com/sermstocupacional/30min', opportunityId: 'opp-123' }), { status: 200 }))

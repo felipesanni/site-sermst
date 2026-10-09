@@ -124,7 +124,7 @@ describe('diagnostic capture before scheduling', () => {
       crmConfirmed: true,
       deliveryStatus: 'crm_confirmed_schedule_pending',
       scheduleReady: false,
-      calendarUrl: '',
+      calendarUrl: 'https://calendar.example.com/diagnostic',
       opportunityId: 'opp-123',
     })
   })
@@ -243,7 +243,7 @@ describe('diagnostic capture before scheduling', () => {
     expect(await response.json()).not.toHaveProperty('calendarUrl')
   })
 
-  it('does not release the calendar when the CRM cannot move the opportunity to scheduling', async () => {
+  it('keeps the calendar available when the CRM cannot move the opportunity to scheduling', async () => {
     vi.stubEnv('DIAGNOSTICO_CRM_API_URL', 'https://crm.example.com/api/v1/leads')
     vi.stubEnv('DIAGNOSTICO_CRM_API_KEY', 'test-crm-key')
     vi.stubEnv('CALENDAR_URL', 'https://calendar.example.com/diagnostic')
@@ -259,7 +259,7 @@ describe('diagnostic capture before scheduling', () => {
       delivered: true,
       crmConfirmed: true,
       scheduleReady: false,
-      calendarUrl: '',
+      calendarUrl: 'https://calendar.example.com/diagnostic',
       opportunityId: 'opp-123',
     })
   })

@@ -608,9 +608,12 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
         try { window.sessionStorage.removeItem(DIAGNOSTIC_OPPORTUNITY_KEY) } catch { /* storage bloqueado */ }
       }
 
-      const destination = data.scheduleReady === false
-        ? ''
-        : buildCalendarTarget(data.calendarUrl || calendarUrl, payload)
+      // O lead confirmado já pode escolher um horário. A atualização do
+      // estágio para Agendamento é independente e não deve esconder a agenda
+      // quando o CRM estiver momentaneamente indisponível para o PATCH.
+      const destination = data.crmConfirmed === true
+        ? buildCalendarTarget(data.calendarUrl || calendarUrl, payload)
+        : ''
       pushDiagnosticEvent(
         data.crmConfirmed === true ? 'diagnostico_form_submit' : 'diagnostico_delivery_accepted',
         attribution,
