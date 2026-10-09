@@ -120,11 +120,11 @@ export default function ContatoPage() {
 
       <section className="mx-auto max-w-[1280px] px-6 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_0.9fr]">
-          <FadeIn direction="right">
+          <FadeIn direction="right" className="min-w-0">
             <LeadForm />
           </FadeIn>
 
-          <FadeIn direction="left" delay={0.1}>
+          <FadeIn direction="left" delay={0.1} className="min-w-0">
             <div className="surface-panel h-full">
               <span className="kicker">
                 Canais oficiais
@@ -211,7 +211,7 @@ export default function ContatoPage() {
 
       <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto grid max-w-[1280px] items-start gap-10 px-6 py-20 lg:grid-cols-2 lg:px-8">
-          <FadeIn direction="right">
+          <FadeIn direction="right" className="min-w-0">
             <div>
               <span className="kicker">
                 Por que a SERMST
@@ -238,7 +238,7 @@ export default function ContatoPage() {
             </div>
           </FadeIn>
 
-          <FadeIn direction="left" delay={0.1}>
+          <FadeIn direction="left" delay={0.1} className="min-w-0">
             <div className="surface-panel-muted">
               <span className="kicker">
                 Objeções comuns

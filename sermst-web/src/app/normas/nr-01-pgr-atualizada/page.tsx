@@ -35,7 +35,7 @@ export default function NR01Page() {
         jobTitle: 'Advogado - Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-08-11',
+        dateModified: '2026-10-08',
       }}
       showTableOfContents
       h1="NR-01 atualizada: PGR, GRO e riscos psicossociais"
@@ -146,7 +146,14 @@ export default function NR01Page() {
                 Muitas empresas entenderam que a NR-01 mudou, mas ainda travam na pergunta mais
                 importante: <strong>como inserir riscos psicossociais no PGR</strong> sem criar um
                 documento genérico. O caminho é demonstrar que a empresa avaliou a
-                organização real do trabalho.
+                organização real do trabalho. Para um roteiro prático sobre o que o RH precisa
+                revisar, consulte o{' '}
+                <Link
+                  href="/rh/riscos-psicossociais"
+                  className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
+                >
+                  guia de riscos psicossociais no trabalho
+                </Link>.
               </p>
               <ol>
                 <li>
@@ -176,6 +183,52 @@ export default function NR01Page() {
                 O ponto central é simples: o fator psicossocial precisa estar relacionado ao
                 trabalho e receber uma resposta de gestão. Não é diagnóstico clínico individual nem
                 promessa de eliminar todo estresse da empresa.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Como escolher uma avaliação de riscos psicossociais relacionada ao trabalho',
+          body: (
+            <>
+              <p>
+                O objetivo é avaliar condições e organização do trabalho, não diagnosticar a saúde mental de cada pessoa.
+                Ao selecionar um método ou apoio técnico, verifique se a abordagem considera as atividades reais, permite
+                participação dos trabalhadores e produz informações que possam ser integradas à Avaliação Ergonômica
+                Preliminar (AEP), ao inventário de riscos e ao plano de ação, conforme o caso.
+              </p>
+              <ul>
+                <li>Peça a justificativa do método e sua adequação aos ambientes, grupos e tarefas avaliados.</li>
+                <li>Confirme como serão protegidas a confidencialidade e a qualidade das informações, especialmente em grupos pequenos.</li>
+                <li>Verifique como os resultados serão analisados e convertidos em medidas de prevenção, responsáveis e prazos.</li>
+                <li>Evite tratar um questionário isolado ou uma avaliação médica individual como substituto da análise das condições de trabalho.</li>
+              </ul>
+              <p>
+                O MTE informa que não há instrumento único obrigatório e que questionários, quando usados, não bastam por
+                si sós para demonstrar a gestão dos riscos. Consulte as{' '}
+                <a
+                  href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/manuais-e-publicacoes/2026/perguntas-e-respostas-gro-pgr-maio-2026/@@download/file"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
+                >
+                  perguntas e respostas oficiais sobre GRO/PGR
+                </a>{' '}
+                e as{' '}
+                <a
+                  href="https://www.gov.br/fundacentro/pt-br/comunicacao/noticias/noticias/2026/maio/fundacentro-lanca-diretrizes-para-aplicar-nr-1-com-inclusao-dos-riscos-psicossociais"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
+                >
+                  diretrizes da Fundacentro
+                </a>.
+              </p>
+              <p>
+                Se a empresa precisa revisar o gerenciamento como um todo, veja o{' '}
+                <Link href="/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo" className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4">
+                  serviço de PGR conforme a NR-01
+                </Link>.
               </p>
             </>
           ),
@@ -229,7 +282,13 @@ export default function NR01Page() {
                 <li>
                   <strong>Atualizar PCMSO em paralelo.</strong> O PCMSO precisa refletir os mesmos
                   riscos do PGR. Se um menciona risco psicossocial e outro não, há inconsistência
-                  técnica.
+                  técnica. Para conhecer a solução comercial, consulte o{' '}
+                  <Link
+                    href="/servicos/pcmso-nr07-programa"
+                    className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
+                  >
+                    serviço de PCMSO (NR-07)
+                  </Link>.
                 </li>
                 <li>
                   <strong>Documentar e orientar as lideranças.</strong> Gerentes e supervisores
@@ -264,33 +323,31 @@ export default function NR01Page() {
           ),
         },
         {
-          title: 'Decisão do STF sobre sanções da NR-01: situação em julho de 2026',
+          title: 'NR-01 e riscos psicossociais: situação judicial em setembro de 2026',
           body: (
             <>
               <p>
-                Em decisão liminar divulgada em 25 de junho de 2026, o ministro André Mendonça, do STF,
-                suspendeu por 90 dias a aplicação de multas e outras sanções ligadas aos dispositivos
-                da NR-01 sobre fatores de risco psicossociais. A medida abriu uma etapa de conciliação
-                para discutir critérios de aplicação e ainda será submetida ao Plenário.
+                Em 24 de setembro de 2026, o relator da ADPF 1316 prorrogou por mais 90 dias a suspensão
+                da aplicação de multas e outras sanções ligadas à inclusão de fatores de risco
+                psicossociais nas regras de gerenciamento de riscos. A decisão busca permitir a
+                continuidade das negociações e não revoga o texto da NR-01.
               </p>
               <p>
-                A liminar não retirou a vigência das diretrizes gerais. A empresa deve continuar
-                identificando, avaliando e prevenindo os riscos relacionados ao trabalho. O que ficou
-                temporariamente suspenso foi a aplicação das sanções alcançadas pela decisão.
+                A prorrogação se refere às sanções alcançadas pela decisão. A obrigação geral de
+                identificar, avaliar e prevenir riscos relacionados ao trabalho permanece; a empresa
+                deve seguir o texto vigente e acompanhar os próximos atos do processo.
               </p>
               <p>
-                Como a situação processual pode mudar, a página deve ser revista após o referendo do
-                Plenário. Enquanto isso, a organização pode revisar inventário, método, plano de ação
-                e alinhamento com o PCMSO. Fonte:{' '}
+                A suspensão foi prorrogada por mais 90 dias, conforme notícia oficial do{' '}
                 <a
-                  href="https://noticias.stf.jus.br/postsnoticias/stf-suspende-sancoes-da-nr-1-e-abre-conciliacao-sobre-regras-de-riscos-psicossociais-no-trabalho/"
+                  href="https://noticias.stf.jus.br/postsnoticias/relator-prorroga-suspensao-de-sancoes-sobre-riscos-psicossociais-no-trabalho/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
                 >
-                  notícia oficial do STF sobre a ADPF 1316
+                  STF sobre a ADPF 1316
                 </a>
-                .
+                . Como o processo pode mudar, confirme o status atualizado antes de orientar decisões jurídicas ou operacionais.
               </p>
             </>
           ),
@@ -381,7 +438,7 @@ export default function NR01Page() {
         },
         {
           q: 'O STF suspendeu a NR-01 sobre riscos psicossociais?',
-          a: 'Não. A liminar divulgada pelo STF em 25 de junho de 2026 suspendeu por 90 dias multas e outras sanções alcançadas pela decisão, mas manteve válidas as diretrizes gerais de prevenção. A medida ainda será submetida ao Plenário.',
+          a: 'Não. Em 24 de setembro de 2026, o relator prorrogou por mais 90 dias a suspensão de multas e outras sanções específicas. A decisão não revogou a NR-01 nem suspendeu a obrigação geral de identificar, avaliar e prevenir os riscos relacionados ao trabalho. A situação processual deve ser acompanhada.',
         },
         {
           q: 'O que a empresa precisa fazer com a NR-01 atualizada?',
@@ -440,6 +497,7 @@ export default function NR01Page() {
         { label: 'Calculadora de grau de risco por CNAE', href: '/rh/calculadora-cnae-grau-de-risco' },
         { label: 'O que é PGR? Significado e para que serve', href: '/dicionario/o-que-e-pgr' },
         { label: 'PCMSO NR-07: programa', href: '/saude/pcmso-programa-controle-medico' },
+        { label: 'Quanto custa PGR e PCMSO? Fatores do orçamento', href: '/saude/quanto-custa-pgr-pcmso' },
         { label: 'NR-15: Insalubridade', href: '/normas/nr-15-insalubridade' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },
       ]}

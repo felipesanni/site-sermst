@@ -231,6 +231,13 @@ export default function ExameDemissionalPage() {
               <p>
                 Quando houve exame demissional, as informações aplicáveis seguem para o evento S-2220 do eSocial. Se a avaliação indicar alteração que exija investigação, o caso precisa ser analisado antes de a empresa tratar o desligamento como uma etapa documental encerrada.
               </p>
+              <p>
+                Quando o RH está avaliando ou reorganizando o fornecedor responsável por esses fluxos, o{' '}
+                <Link href="/saude/medicina-do-trabalho-guia" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  guia de medicina do trabalho para empresas
+                </Link>{' '}
+                ajuda a comparar escopo, continuidade e responsabilidades.
+              </p>
             </>
           ),
         },

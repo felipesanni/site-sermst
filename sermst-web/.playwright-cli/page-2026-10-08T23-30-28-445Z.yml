@@ -1,0 +1,279 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e6]:
+      - link "Página inicial da SERMST" [ref=f1e7] [cursor=pointer]:
+        - /url: /
+        - img "SERMST Gestão Ocupacional" [ref=f1e8]
+      - generic [ref=f1e9]:
+        - link "Ligar para SERMST" [ref=f1e10] [cursor=pointer]:
+          - /url: tel:+551132297567
+        - button "Abrir menu principal" [ref=f1e13] [cursor=pointer]
+  - main [ref=f1e16]:
+    - main [ref=f1e17]:
+      - generic [ref=f1e18]:
+        - img "Encarregado liderando equipe em atividade operacional com responsabilidades de SST" [ref=f1e20]
+        - generic [ref=f1e25]:
+          - link "← RH e Departamento Pessoal" [ref=f1e26] [cursor=pointer]:
+            - /url: /rh
+          - heading "O que faz um encarregado? Função, responsabilidades e cuidados de SST" [level=1] [ref=f1e27]
+          - paragraph [ref=f1e28]: "Guia direto para gestores, RH e quem está estruturando o cargo: o que esse profissional faz na prática, quais responsabilidades assume, que perfil costuma funcionar e onde SST entra nessa decisão."
+      - generic [ref=f1e30]:
+        - article [ref=f1e31]:
+          - generic [ref=f1e32]:
+            - heading "O que é a função de encarregado" [level=2] [ref=f1e33]
+            - paragraph [ref=f1e34]: O encarregado é a primeira camada formal de liderança operacional dentro da empresa. É quem está no campo, no chão de fábrica, na obra ou no ponto de operação coordenando a execução do trabalho da equipe diretamente. Diferente do operador, tem responsabilidade sobre o resultado do grupo. Diferente do supervisor, está com a mão na execução todo dia.
+            - paragraph [ref=f1e35]: "Em empresas familiares, é o cargo mais subestimado e mais decisivo: subestimado porque parece \"só mais um da equipe\", decisivo porque é quem traduz o plano da diretoria em comportamento real no turno."
+          - generic [ref=f1e37]:
+            - paragraph [ref=f1e38]: Resposta direta
+            - paragraph [ref=f1e39]:
+              - text: Encarregado é um cargo de
+              - strong [ref=f1e40]: liderança operacional
+              - text: que costuma coordenar a equipe no campo, acompanhar procedimentos e comunicar ocorrências do turno. A descrição exata depende da estrutura e das atividades de cada empresa.
+          - heading "Responsabilidades reais do encarregado" [level=2] [ref=f1e42]
+          - generic [ref=f1e43]:
+            - generic [ref=f1e50]:
+              - paragraph [ref=f1e51]: Liderança operacional direta
+              - paragraph [ref=f1e52]: Coordena a equipe na execução das atividades, distribui tarefas e cobra resultado dentro do plano do dia.
+            - generic [ref=f1e59]:
+              - paragraph [ref=f1e60]: Treinamento e integração
+              - paragraph [ref=f1e61]: Apoia a integração de novos colaboradores e o reforço de procedimentos com quem já está na operação.
+            - generic [ref=f1e68]:
+              - paragraph [ref=f1e69]: Cumprimento de procedimentos
+              - paragraph [ref=f1e70]: Acompanha a aplicação dos procedimentos operacionais e corrige desvios dentro de sua alçada.
+            - generic [ref=f1e77]:
+              - paragraph [ref=f1e78]: Segurança do trabalho na linha de frente
+              - paragraph [ref=f1e79]: É o responsável imediato por exigir uso de EPI, observar comportamento de risco e reportar incidentes ao SESMT.
+            - generic [ref=f1e86]:
+              - paragraph [ref=f1e87]: Reporte de produtividade e ocorrências
+              - paragraph [ref=f1e88]: Consolida indicadores do turno (produção, falhas, paradas, acidentes) e leva à supervisão.
+            - generic [ref=f1e95]:
+              - paragraph [ref=f1e96]: Mediação de conflitos da equipe
+              - paragraph [ref=f1e97]: Resolve atritos do dia a dia operacional antes de escalar para RH ou supervisão.
+          - generic [ref=f1e98]:
+            - heading "Perfil ideal do encarregado" [level=2] [ref=f1e99]
+            - paragraph [ref=f1e100]: "Não existe um modelo único. Alguns critérios ajudam a selecionar e desenvolver esse profissional:"
+            - list [ref=f1e101]:
+              - listitem [ref=f1e102]: Experiência comprovada na atividade que vai liderar (não dá para liderar o que não conhece)
+              - listitem [ref=f1e103]: Comunicação direta, com fala simples e escrita clara
+              - listitem [ref=f1e104]: Postura de exemplo (chega no horário, usa EPI, segue procedimento)
+              - listitem [ref=f1e105]: Tomada de decisão sob pressão sem travar o turno
+              - listitem [ref=f1e106]: Conhecimento das NRs aplicáveis à atividade da equipe
+              - listitem [ref=f1e107]: Capacidade de dar e receber feedback sem virar conflito pessoal
+            - heading "4 erros comuns de gestores ao definir o cargo" [level=2] [ref=f1e108]
+          - generic [ref=f1e109]:
+            - generic [ref=f1e115]:
+              - paragraph [ref=f1e116]: Promover por tempo de casa, não por capacidade de liderar
+              - paragraph [ref=f1e117]: "O melhor operador raramente é o melhor encarregado. Liderar exige habilidade de gente, não só técnica. Promoção mal feita gera duas perdas: o operador deixa de produzir e a equipe vira o caos."
+            - generic [ref=f1e123]:
+              - paragraph [ref=f1e124]: Não treinar o encarregado em SST
+              - paragraph [ref=f1e125]: A conduta do encarregado pode ser analisada em uma investigação de acidente, conforme suas atribuições, autonomia e participação no fato. Por isso, a empresa deve definir o papel e oferecer capacitação compatível.
+            - generic [ref=f1e131]:
+              - paragraph [ref=f1e132]: Confundir com supervisor
+              - paragraph [ref=f1e133]: Encarregado é hierarquia operacional direta. Supervisor coordena encarregados. Misturar atribuições gera desorganização, conflito de papéis e perda de produtividade.
+            - generic [ref=f1e139]:
+              - paragraph [ref=f1e140]: Esquecer do exame ocupacional periódico
+              - paragraph [ref=f1e141]: Cargo de liderança não dispensa PCMSO. Encarregado precisa de exame admissional, periódico e demissional como qualquer colaborador. Ignorar o fluxo pode gerar inconsistência no eSocial e risco de autuação.
+          - generic [ref=f1e142]:
+            - heading "Onde SST entra nas atribuições do encarregado" [level=2] [ref=f1e143]
+            - paragraph [ref=f1e144]: O encarregado costuma estar próximo da execução e pode ter atribuições como interromper uma tarefa insegura, cobrar o uso de proteção e comunicar desvios. Essas responsabilidades precisam estar descritas e acompanhadas de autoridade e treinamento compatíveis.
+            - paragraph [ref=f1e145]: Em caso de acidente, a investigação pode analisar o que o encarregado sabia, o que estava autorizado a fazer e quais providências tomou. A responsabilização pessoal não é automática e depende da conduta, do nexo causal e das circunstâncias. A empresa continua responsável por organizar o trabalho e oferecer meios de prevenção.
+            - paragraph [ref=f1e146]: "Isso significa três coisas concretas para quem está estruturando o cargo agora:"
+            - list [ref=f1e147]:
+              - listitem [ref=f1e148]:
+                - strong [ref=f1e149]: "Treinamento documentado:"
+                - text: NR aplicável à atividade (NR-10 elétrica, NR-18 construção, NR-35 altura, NR-12 máquinas, etc.) com lista de presença, certificado e renovação periódica.
+              - listitem [ref=f1e150]:
+                - strong [ref=f1e151]: "PCMSO coerente:"
+                - text: exames ocupacionais definidos conforme os riscos da função e eventos enviados ao eSocial quando exigidos.
+              - listitem [ref=f1e152]:
+                - strong [ref=f1e153]: "Procedimentos claros e assinados:"
+                - text: ele precisa receber por escrito as instruções de trabalho, e a empresa precisa guardar a evidência.
+            - paragraph [ref=f1e154]: Esses registros não impedem acidentes nem garantem resultado judicial. Eles ajudam a demonstrar como a função foi organizada e quais medidas foram efetivamente adotadas.
+            - paragraph [ref=f1e155]: O grau de risco da atividade é uma das informações usadas para dimensionar estruturas como CIPA e SESMT, mas os exames e treinamentos dependem também dos riscos reais da função. A calculadora de CNAE e grau de risco ajuda no primeiro enquadramento.
+            - paragraph [ref=f1e156]:
+              - text: Para organizar essas frentes como uma rotina da empresa, veja também o guia de
+              - link "gestão de SST" [ref=f1e157] [cursor=pointer]:
+                - /url: /saude/gestao-sst
+              - text: ", que explica como programas, exames, treinamentos e registros se relacionam."
+            - heading "Perguntas frequentes sobre a função de encarregado" [level=2] [ref=f1e158]
+          - generic [ref=f1e159]:
+            - group [ref=f1e161]:
+              - generic "Qual a diferença entre encarregado e supervisor? +" [ref=f1e162] [cursor=pointer]:
+                - generic [ref=f1e163]: Qual a diferença entre encarregado e supervisor?
+                - generic [ref=f1e164]: +
+              - paragraph [ref=f1e166]: Em muitas empresas, o encarregado acompanha a execução diária da equipe, enquanto o supervisor coordena uma área, mais de um turno ou vários encarregados. A CLT não cria uma descrição universal para esses cargos; a diferença depende do organograma, da convenção coletiva e das tarefas realmente exercidas.
+            - group [ref=f1e168]:
+              - generic "O encarregado precisa de exame admissional e periódico? +" [ref=f1e169] [cursor=pointer]:
+                - generic [ref=f1e170]: O encarregado precisa de exame admissional e periódico?
+                - generic [ref=f1e171]: +
+            - group [ref=f1e173]:
+              - generic "Qual o salário médio de um encarregado? +" [ref=f1e174] [cursor=pointer]:
+                - generic [ref=f1e175]: Qual o salário médio de um encarregado?
+                - generic [ref=f1e176]: +
+            - group [ref=f1e178]:
+              - generic "O encarregado pode ser responsabilizado por acidente da equipe? +" [ref=f1e179] [cursor=pointer]:
+                - generic [ref=f1e180]: O encarregado pode ser responsabilizado por acidente da equipe?
+                - generic [ref=f1e181]: +
+            - group [ref=f1e183]:
+              - generic "Como saber se preciso de mais encarregados na operação? +" [ref=f1e184] [cursor=pointer]:
+                - generic [ref=f1e185]: Como saber se preciso de mais encarregados na operação?
+                - generic [ref=f1e186]: +
+        - complementary [ref=f1e187]:
+          - generic [ref=f1e189]:
+            - heading "Você gerencia encarregados?" [level=3] [ref=f1e194]
+            - paragraph [ref=f1e195]: Se a empresa tem encarregado de turno, esse cargo está dentro do PCMSO da operação. Saber se está em dia é a diferença entre ter defesa em fiscalização ou virar passivo.
+            - link "Consultar CNAE e grau de risco" [ref=f1e196] [cursor=pointer]:
+              - /url: /rh/calculadora-cnae-grau-de-risco
+            - link "Conheça a gestão completa de SST" [ref=f1e197] [cursor=pointer]:
+              - /url: /assinaturas
+          - generic [ref=f1e199]:
+            - paragraph [ref=f1e203]: Risco real de não ter SST documentado
+            - list [ref=f1e204]:
+              - listitem [ref=f1e205]:
+                - generic [ref=f1e206]: •
+                - text: Evento S-2220 atrasado ou inconsistente, sujeito à verificação fiscal
+              - listitem [ref=f1e207]:
+                - generic [ref=f1e208]: •
+                - text: Adicional de insalubridade ou periculosidade pago indevidamente por anos
+              - listitem [ref=f1e209]:
+                - generic [ref=f1e210]: •
+                - text: Defesa frágil em ação trabalhista ou perícia judicial
+              - listitem [ref=f1e211]:
+                - generic [ref=f1e212]: •
+                - text: Responsabilidade pessoal do gestor em caso de acidente grave
+          - generic [ref=f1e214]:
+            - paragraph [ref=f1e215]: Mais para gestores
+            - list [ref=f1e216]:
+              - listitem [ref=f1e217]:
+                - link "O que um gerente faz" [ref=f1e218] [cursor=pointer]:
+                  - /url: /rh/o-que-um-gerente-faz
+              - listitem [ref=f1e222]:
+                - link "Quando demitir um funcionário" [ref=f1e223] [cursor=pointer]:
+                  - /url: /rh/quando-demitir-funcionario
+              - listitem [ref=f1e227]:
+                - link "Multa de eSocial S-2220" [ref=f1e228] [cursor=pointer]:
+                  - /url: /rh/multa-esocial-s2220
+      - generic [ref=f1e235]:
+        - generic [ref=f1e236]:
+          - generic [ref=f1e237]: Para encarregados
+          - heading "As atribuições de SST do cargo estão claras?" [level=2] [ref=f1e238]
+          - paragraph [ref=f1e239]: Em caso de acidente, a conduta do encarregado pode ser analisada conforme suas atribuições e sua participação no fato. Compartilhar este guia com o RH pode abrir uma conversa útil sobre descrição de cargo, treinamento e autoridade para interromper uma tarefa insegura.
+        - link "Enviar para o gestor" [ref=f1e241] [cursor=pointer]:
+          - /url: https://wa.me/?text=Vi%20este%20guia%20sobre%20as%20responsabilidades%20de%20SST%20do%20encarregado%20e%20acho%20que%20vale%20a%20leitura%3A%20https%3A%2F%2Fsermst.com.br%2Frh%2Ffuncao-encarregado.%20Ele%20explica%20como%20organizar%20treinamentos%2C%20exames%20e%20as%20rotinas%20da%20fun%C3%A7%C3%A3o.
+      - generic [ref=f1e246]:
+        - heading "Como o encarregado participa da SST? Revise documentos, exames e treinamentos." [level=2] [ref=f1e251]: Como o encarregado participa da SST?Revise documentos, exames e treinamentos.
+        - paragraph [ref=f1e252]: A SERMST pode fazer uma revisão inicial do PCMSO, do PGR e dos treinamentos relacionados à função e indicar os pontos que precisam de atenção.
+        - link "Solicitar revisão inicial" [ref=f1e253] [cursor=pointer]:
+          - /url: /contato
+        - paragraph [ref=f1e256]: mais de 3.500 empresas atendidas ao longo de mais de 55 anos
+  - generic [ref=f1e262]:
+    - link "Fale pelo WhatsApp" [ref=f1e263] [cursor=pointer]:
+      - /url: https://wa.me/5511915146447?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20RH%20e%20eSocial%20da%20SERMST%20e%20preciso%20de%20ajuda
+      - img "WhatsApp" [ref=f1e264]
+    - contentinfo [ref=f1e266]:
+      - generic [ref=f1e269]:
+        - generic [ref=f1e270]:
+          - img "SERMST" [ref=f1e271]
+          - paragraph [ref=f1e272]: Há mais de 55 anos, a SERMST acompanha empresas com medicina ocupacional e segurança do trabalho. A equipe ajuda a manter exames, laudos, treinamentos e prazos de SST organizados.
+        - generic [ref=f1e273]:
+          - heading "Soluções Corporativas" [level=4] [ref=f1e274]
+          - list [ref=f1e275]:
+            - listitem [ref=f1e276]:
+              - link "Exame Admissional Expresso" [ref=f1e277] [cursor=pointer]:
+                - /url: /servicos/exame-admissional-expresso
+            - listitem [ref=f1e280]:
+              - link "Empresa de Segurança do Trabalho" [ref=f1e281] [cursor=pointer]:
+                - /url: /servicos/empresa-seguranca-do-trabalho
+            - listitem [ref=f1e284]:
+              - link "Serviço de PGR NR-01" [ref=f1e285] [cursor=pointer]:
+                - /url: /servicos/pgr-nr01-gerenciamento-riscos
+            - listitem [ref=f1e288]:
+              - link "PCMSO e Saúde Ocupacional" [ref=f1e289] [cursor=pointer]:
+                - /url: /servicos/pcmso-nr07-programa
+            - listitem [ref=f1e292]:
+              - link "Serviço de LTCAT previdenciário" [ref=f1e293] [cursor=pointer]:
+                - /url: /servicos/ltcat-laudo-tecnico-previdenciario
+            - listitem [ref=f1e296]:
+              - link "Gestão eSocial S-2220/S-2240" [ref=f1e297] [cursor=pointer]:
+                - /url: /servicos/gestao-esocial-s2220-s2240
+            - listitem [ref=f1e300]:
+              - link "Audiometria Ocupacional" [ref=f1e301] [cursor=pointer]:
+                - /url: /servicos/audiometria-ocupacional-clinica
+            - listitem [ref=f1e304]:
+              - link "Exame Toxicológico para CNH C, D e E" [ref=f1e305] [cursor=pointer]:
+                - /url: /servicos/exame-toxicologico-clt
+            - listitem [ref=f1e308]:
+              - link "Exames Complementares" [ref=f1e309] [cursor=pointer]:
+                - /url: /servicos/exames-complementares-laboratoriais
+            - listitem [ref=f1e312]:
+              - link "Perícia Trabalhista" [ref=f1e313] [cursor=pointer]:
+                - /url: /servicos/pericia-trabalhista-assistente-tecnico
+            - listitem [ref=f1e316]:
+              - link "Treinamentos de NRs" [ref=f1e317] [cursor=pointer]:
+                - /url: /servicos/treinamentos-nrs-cipa-brigada
+            - listitem [ref=f1e320]:
+              - link "Planos SST" [ref=f1e321] [cursor=pointer]:
+                - /url: /assinaturas
+            - listitem [ref=f1e324]:
+              - link "Parceiros Comerciais" [ref=f1e325] [cursor=pointer]:
+                - /url: /parcerias/comerciais
+            - listitem [ref=f1e328]:
+              - link "Parceria para Contadores" [ref=f1e329] [cursor=pointer]:
+                - /url: /parcerias/contadores
+        - generic [ref=f1e332]:
+          - heading "Unidade Central" [level=4] [ref=f1e333]
+          - generic [ref=f1e334]:
+            - link [ref=f1e339] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/TcAza8i3jHKjHfjr5
+              - paragraph [ref=f1e340]: Largo do Paissandu, 72
+              - paragraph [ref=f1e341]: Centro Histórico, 3º AndarSão Paulo - SP | 01034-901
+            - generic [ref=f1e346]:
+              - paragraph [ref=f1e347]: Canais Oficiais
+              - link "(11) 3229-7567" [ref=f1e348] [cursor=pointer]:
+                - /url: tel:+551132297567
+              - link "comercial@sermst.com.br" [ref=f1e349] [cursor=pointer]:
+                - /url: mailto:comercial@sermst.com.br
+        - generic [ref=f1e350]:
+          - heading "Regiões Atendidas" [level=4] [ref=f1e351]
+          - generic [ref=f1e352]:
+            - link "São Paulo" [ref=f1e353] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-paulo
+            - link "Santo André" [ref=f1e354] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/santo-andre
+            - link "Osasco" [ref=f1e355] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/osasco
+            - link "Guarulhos" [ref=f1e356] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/guarulhos
+            - link "Diadema" [ref=f1e357] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/diadema
+            - link "S.B. Campo" [ref=f1e358] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-bernardo
+            - link "Barueri" [ref=f1e359] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/barueri
+            - link "S. Caetano" [ref=f1e360] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-caetano
+          - heading "Conhecimento SST" [level=4] [ref=f1e361]
+          - list [ref=f1e362]:
+            - listitem [ref=f1e363]:
+              - link "Conteúdo para empresários" [ref=f1e364] [cursor=pointer]:
+                - /url: /empresario
+            - listitem [ref=f1e367]:
+              - link "Saúde Ocupacional" [ref=f1e368] [cursor=pointer]:
+                - /url: /saude
+            - listitem [ref=f1e371]:
+              - link "RH e DP" [ref=f1e372] [cursor=pointer]:
+                - /url: /rh
+            - listitem [ref=f1e375]:
+              - link "Normas Regulamentadoras" [ref=f1e376] [cursor=pointer]:
+                - /url: /normas
+            - listitem [ref=f1e379]:
+              - link "Dicionário SST" [ref=f1e380] [cursor=pointer]:
+                - /url: /dicionario
+            - listitem [ref=f1e383]:
+              - link "Quem somos" [ref=f1e384] [cursor=pointer]:
+                - /url: /quem-somos
+          - generic [ref=f1e387]:
+            - link "Política de Privacidade" [ref=f1e388] [cursor=pointer]:
+              - /url: /politica-de-privacidade
+            - generic [ref=f1e390]: CRM 1002913 | CNPJ 28.125.178/0001-88© 2026 SERMST Gestão Ocupacional
+  - alert [ref=f1e391]

@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useMemo, useRef, useState } from 'react';
 import {
   AlertCircle,
   Building2,
@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import { cnaeData, grauRiscoInfo, type CnaeEntry } from '@/lib/data/cnae-data';
 import { calculateNr05, getNr05ReferenceLabel } from '@/lib/nr05';
+import { clearFormSubmissionKey, getFormSubmissionKey } from '@/lib/form-submission-id';
+import { dispatchSubscriptionLeadEvents } from '@/lib/subscription-conversion';
 
 type BillingCycle = 'monthly' | 'annual';
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -584,6 +586,8 @@ export function AssinaturaContractModal({
   const [acceptedEstimate, setAcceptedEstimate] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
   const [submitError, setSubmitError] = useState('');
+  const submissionLockRef = useRef(false);
+  const submissionIdRef = useRef<string | null>(null);
 
   const cnaeEntry = useMemo(
     () => (cnpjInfo?.cnaeFiscal ? findCnaeEntry(cnpjInfo.cnaeFiscal) : null),
@@ -835,6 +839,8 @@ export function AssinaturaContractModal({
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submissionLockRef.current) return;
+    submissionLockRef.current = true;
     setSubmitStatus('submitting');
     setSubmitError('');
 
@@ -866,6 +872,7 @@ export function AssinaturaContractModal({
     if (digits(cnpj).length !== 14) {
       setSubmitStatus('error');
       setSubmitError('Informe um CNPJ válido para iniciar a contratação.');
+      submissionLockRef.current = false;
       return;
     }
 
@@ -952,38 +959,50 @@ export function AssinaturaContractModal({
     };
 
     try {
+      const submissionId =
+        submissionIdRef.current ??
+        (await getFormSubmissionKey('subscription-contract', payload));
+      submissionIdRef.current = submissionId;
+
       const response = await fetch('/api/lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Idempotency-Key': submissionId,
+        },
         body: JSON.stringify(payload),
       });
+      const receipt = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data?.error || 'Não foi possível enviar a contratação.');
+        throw new Error(receipt?.error || 'Não foi possível enviar a contratação.');
+      }
+      if (receipt?.delivered !== true) {
+        throw new Error('Não foi possível confirmar a entrega. Tente novamente em instantes.');
       }
 
+      await clearFormSubmissionKey('subscription-contract', payload, submissionId);
       setSubmitStatus('success');
       form.reset();
+      submissionIdRef.current = null;
 
-      if (typeof window !== 'undefined') {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'subscription_plan_lead_generated',
-          plan_id: plan.id,
-          plan_name: plan.title,
-          employees,
-          cnae_codigo: cnpjInfo?.cnaeFiscal || '',
-          cnae_grau_risco: cnaeEntry?.grauRisco || '',
-          additional_locations: branches.length,
-        });
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Lead');
-        }
+      const dispatched = dispatchSubscriptionLeadEvents({
+        flow: 'plan',
+        submissionId,
+        planId: plan.id,
+        employees,
+        crmConfirmed: receipt?.crmConfirmed === true,
+        crmId: typeof receipt?.crmId === 'string' ? receipt.crmId : undefined,
+      });
+
+      if (dispatched.confirmedDispatched && typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead');
       }
     } catch (error) {
       setSubmitStatus('error');
       setSubmitError(error instanceof Error ? error.message : 'Erro inesperado ao enviar.');
+    } finally {
+      submissionLockRef.current = false;
     }
   }
 

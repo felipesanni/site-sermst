@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -29,15 +30,21 @@ export default function GestãoSSTPage() {
         jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-08-11',
+        dateModified: '2026-10-08',
       }}
 
       h1="O que é gestão de SST? Como organizar a rotina da empresa"
       intro="Gestão de Saúde e Segurança do Trabalho não cabe em uma pasta de documentos. Ela conecta a identificação dos riscos, as medidas de controle, os exames, os treinamentos e os registros enviados ao eSocial."
+      mobileSingleColumn
       quickAnswer={
-        <p>
-          <strong>Gestão de SST</strong> é o processo de identificar e controlar riscos ocupacionais, organizar PGR, PCMSO, exames, treinamentos e acompanhar os registros de segurança e saúde do trabalho. Ela transforma documentos separados em uma rotina acompanhada pela empresa.
-        </p>
+        <>
+          <p>
+            <strong>Gestão de SST</strong> é o processo de identificar e controlar riscos ocupacionais, organizar PGR, PCMSO, exames, treinamentos e acompanhar os registros de segurança e saúde do trabalho. Ela transforma documentos separados em uma rotina acompanhada pela empresa.
+          </p>
+          <Link href="/diagnostico" className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-accent-pink px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink sm:w-auto">
+            Solicitar diagnóstico gratuito
+          </Link>
+        </>
       }
       showTableOfContents
       sections={[
@@ -119,6 +126,61 @@ export default function GestãoSSTPage() {
           ),
         },
         {
+          title: 'SST avulsa ou gestão mensal: como decidir?',
+          body: (
+            <>
+              <p>
+                A escolha depende da frequência das demandas e do tipo de apoio que a empresa precisa. Um serviço avulso
+                pode atender uma necessidade delimitada, como elaborar ou revisar um documento específico. A gestão
+                recorrente pode fazer sentido quando exames, vencimentos, treinamentos e atualizações precisam ser
+                acompanhados ao longo do tempo.
+              </p>
+              <ul>
+                <li>
+                  <strong>Serviço avulso:</strong> peça um escopo com entrega, prazo, responsáveis e itens incluídos. É uma
+                  alternativa quando a demanda é pontual e a empresa consegue coordenar as próximas etapas internamente.
+                </li>
+                <li>
+                  <strong>Gestão recorrente:</strong> confirme a frequência do acompanhamento, quais serviços entram no
+                  plano, como mudanças de risco ou de equipe são tratadas e quais tarefas continuam sob responsabilidade
+                  da empresa.
+                </li>
+              </ul>
+              <p>
+                Não compare apenas o preço total: verifique se as propostas cobrem o mesmo escopo e o mesmo período. A
+                recorrência, por si só, não garante menor custo nem substitui as responsabilidades do empregador. Para
+                conhecer as opções de atendimento, consulte o <Link href="/servicos">catálogo de serviços</Link> e os{' '}
+                <Link href="/assinaturas">planos de gestão recorrente</Link>.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Como comparar propostas de medicina do trabalho e SST',
+          body: (
+            <>
+              <p>
+                Antes de comparar valores, confira se os prestadores estão orçando a mesma necessidade. Uma proposta pode
+                cobrir apenas um documento ou exame; outra pode incluir mais etapas, unidades ou acompanhamento. Leia o
+                escopo linha a linha e peça que limites e itens adicionais fiquem explícitos.
+              </p>
+              <ul>
+                <li><strong>Atendimento:</strong> exames, programas, documentos, treinamentos e eventos incluídos.</li>
+                <li><strong>Unidades e pessoas:</strong> estabelecimentos, funções e grupos cobertos.</li>
+                <li><strong>Execução:</strong> visitas, prazos, agendamento, suporte e fluxo de dúvidas.</li>
+                <li><strong>Responsabilidades:</strong> dados que a empresa precisa fornecer, aprovações e tarefas internas.</li>
+                <li><strong>Limites:</strong> serviços extras, deslocamentos, revisões e condições de atualização do escopo.</li>
+              </ul>
+              <p>
+                Para programas específicos, consulte também o guia de{' '}
+                <Link href="/saude/quanto-custa-pgr-pcmso">orçamento de PGR e PCMSO</Link>. A comparação deve considerar
+                entregas equivalentes e a realidade de cada operação, sem assumir que a opção mais barata ou mais ampla
+                seja automaticamente a mais adequada.
+              </p>
+            </>
+          ),
+        },
+        {
           title: 'Como começar a estruturar gestão de SST',
           body: (
             <ol>
@@ -156,7 +218,7 @@ export default function GestãoSSTPage() {
       ]}
       sidebarTitle="Sua gestão de SST aguenta fiscalização?"
       sidebarHook="A SERMST revisa PGR, PCMSO, treinamentos, ASOs, EPI e eSocial para identificar inconsistências e organizar um plano de ação."
-      sidebarCtaLabel="Simular auditoria SST"
+      sidebarCtaLabel="Conheça os planos de gestão SST"
       sidebarCtaHref="/assinaturas"
       related={[
         { label: 'Empresa de segurança do trabalho em São Paulo', href: '/servicos/empresa-seguranca-do-trabalho/sao-paulo' },

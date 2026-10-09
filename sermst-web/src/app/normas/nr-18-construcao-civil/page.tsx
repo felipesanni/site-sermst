@@ -38,6 +38,7 @@ export default function NR18Page() {
         datePublished: '2025-01-01',
         dateModified: '2026-09-01',
       }}
+      mobileSingleColumn
       h1="NR-18: o que a Norma Regulamentadora 18 exige na construção civil"
       intro="A NR-18 reúne requisitos de SST para canteiros de obra, incluindo PGR, treinamentos, proteções coletivas, áreas de vivência, máquinas, EPIs e sinalização. Com a revisão da norma, o PCMAT deu lugar ao PGR. Veja como organizar os principais requisitos e manter os registros coerentes com a operação."
       quickAnswer={
@@ -191,6 +192,31 @@ export default function NR18Page() {
               </p>
               <p>
                 A elaboração deve seguir o enquadramento técnico previsto na norma. Em alguns cenários mais simples, a NR-18 admite profissional qualificado. Em outros, exige profissional legalmente habilitado. A necessidade de ART, RRT ou outro registro de responsabilidade técnica deve ser analisada conforme o serviço e o responsável envolvido.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Como comparar propostas de PGR para uma obra',
+          body: (
+            <>
+              <p>
+                Para comparar valores, confirme se cada proposta considera o mesmo canteiro, as frentes de trabalho e as
+                fases previstas. A NR-18 exige que o PGR contemple os riscos e as medidas de prevenção do canteiro e seja
+                atualizado de acordo com a etapa da obra.
+              </p>
+              <ul>
+                <li><strong>Escopo:</strong> quais canteiros, frentes, atividades e empresas contratadas entram no trabalho.</li>
+                <li><strong>Entregas:</strong> como inventário, plano de ação e documentos específicos exigidos pela NR-18 serão tratados.</li>
+                <li><strong>Atualização:</strong> como mudanças de fase, método construtivo ou risco levam à revisão do programa.</li>
+                <li><strong>Responsabilidade e limites:</strong> quem responde tecnicamente e quais visitas, projetos, avaliações ou serviços ficam fora do preço.</li>
+              </ul>
+              <p>
+                O escopo deve deixar claro o que será entregue e o que depende de contratação separada. Para critérios gerais
+                de comparação de orçamento, consulte o guia sobre{' '}
+                <Link href="/saude/quanto-custa-pgr-pcmso" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  custo de PGR e PCMSO
+                </Link>.
               </p>
             </>
           ),

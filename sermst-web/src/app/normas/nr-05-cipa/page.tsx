@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
-  title: 'CIPA: o que é, quem precisa e qual treinamento a NR-05 exige | SERMST',
+  title: 'CIPA: a partir de quantos funcionários? NR-05 | SERMST',
   description:
-    'Entenda o que é a CIPA, quando ela é obrigatória, quando basta designado, como funciona a eleição e qual treinamento a NR-05 exige.',
+    'O limite varia por grau de risco e estabelecimento: entenda o Quadro I da NR-05, quando nomear representante e como funcionam CIPA e treinamento.',
   alternates: { canonical: 'https://sermst.com.br/normas/nr-05-cipa' },
   openGraph: {
-    title: 'CIPA: o que é, quem precisa e qual treinamento a NR-05 exige | SERMST',
+    title: 'CIPA: a partir de quantos funcionários? NR-05 | SERMST',
     description:
-      'Guia completo sobre CIPA, designado da NR-05, processo eleitoral, treinamento obrigatório, estabilidade, SIPAT e erros que geram autuação.',
+      'Dimensionamento da CIPA por estabelecimento, representantes da NR-05, processo eleitoral e treinamento conforme o grau de risco.',
     url: 'https://sermst.com.br/normas/nr-05-cipa',
     type: 'article',
     locale: 'pt_BR',
@@ -34,7 +34,7 @@ export default function NR05Page() {
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2026-05-01',
-        dateModified: '2026-07-07',
+        dateModified: '2026-10-08',
       }}
       showTableOfContents
       readingTime="14 min"
@@ -45,7 +45,7 @@ export default function NR05Page() {
           A <strong>CIPA</strong> é uma comissão paritária formada por representantes do empregador e dos empregados
           para identificar riscos, propor medidas preventivas, acompanhar a segurança e saúde no trabalho e atuar na
           prevenção ao assédio. A obrigatoriedade depende do <strong>CNAE, do grau de risco e do número de empregados no estabelecimento</strong>.
-          O dimensionamento é feito pelo <strong>Quadro I da NR-05</strong>, que cruza o grupo da atividade econômica com o número de empregados do estabelecimento.
+          O dimensionamento é feito pelo <strong>Quadro I da NR-05</strong>, que cruza o grau de risco da atividade com o número de empregados do estabelecimento.
           Quando o estabelecimento não se enquadra no Quadro I e não é atendido por SESMT, a organização nomeia um representante da NR-05, observadas as exceções da norma.
         </p>
       }
@@ -56,10 +56,10 @@ export default function NR05Page() {
             <>
               <p>Se a sua empresa está tentando entender o que fazer com a NR-05, pense assim:</p>
               <ul>
-                <li><strong>Abaixo do limite do Quadro I:</strong> em regra, não há CIPA plena, mas a empresa precisa nomear um <strong>designado</strong> e treiná-lo conforme o grau de risco.</li>
-                <li><strong>Acima do limite do Quadro I:</strong> a empresa precisa <strong>constituir a CIPA</strong>, abrir processo eleitoral, formalizar posse, registrar atas e manter o treinamento dos membros.</li>
-                <li><strong>Se houver dúvida sobre CNAE ou grau de risco:</strong> vale validar primeiro no cálculo de enquadramento para não errar tamanho de comissão nem carga horária.</li>
-                <li><strong>Os erros que mais geram problema:</strong> não abrir eleição no prazo, treinamento sem registro, esquecer o designado e perder a rastreabilidade documental.</li>
+                <li><strong>Dimensionamento:</strong> o Quadro I da NR-05 cruza o número de empregados por estabelecimento com o grau de risco; não existe um único limite para todas as empresas.</li>
+                <li><strong>Quando não há enquadramento no Quadro I:</strong> se o estabelecimento não for atendido por SESMT, a organização nomeia representante; quando há SESMT, ele desempenha as atribuições da CIPA.</li>
+                <li><strong>Exceções e regras específicas:</strong> o MEI é dispensado de nomear representante, e construção civil e prestadores de serviços têm disposições próprias.</li>
+                <li><strong>Os erros que mais geram problema:</strong> não abrir eleição no prazo quando a CIPA é exigida, deixar de nomear representante quando aplicável, não registrar treinamento e perder a rastreabilidade documental.</li>
               </ul>
               <p>
                 Se o gargalo hoje é descobrir o grau de risco correto, comece pela{' '}
@@ -87,22 +87,35 @@ export default function NR05Page() {
           ),
         },
         {
-          title: 'Quem é obrigado a ter CIPA',
+          title: 'CIPA a partir de quantos funcionários? Dimensionamento pela NR-05',
           body: (
             <>
               <p>
-                A obrigatoriedade e o dimensionamento dependem de dois fatores: o <strong>CNAE da empresa</strong>,
-                que ajuda a definir o grau de risco, e o <strong>número de empregados no estabelecimento</strong>.
-                Esses dados são cruzados com o Quadro I do Anexo I da NR-05.
+                Não há um único número para todas as empresas. A CIPA é dimensionada por <strong>estabelecimento</strong>,
+                cruzando o número de empregados com o grau de risco da atividade no Quadro I da NR-05. Na tabela geral,
+                a constituição começa a partir de <strong>81 empregados no grau de risco 1</strong>, <strong>51 no grau 2</strong>
+                e <strong>20 nos graus 3 e 4</strong>. O quadro também define o número de representantes titulares e suplentes.
               </p>
-              <p>Em regra geral:</p>
-              <ul>
-                <li>Empresas de <strong>grau de risco 1 ou 2</strong> constituem CIPA a partir de <strong>50 empregados</strong>.</li>
-                <li>Empresas de <strong>grau de risco 3 ou 4</strong> constituem CIPA a partir de <strong>20 empregados</strong>.</li>
-                <li>Abaixo do limite, normalmente <strong>não há CIPA plena</strong>, mas entra a obrigação de indicar um <strong>designado</strong> treinado.</li>
-              </ul>
               <p>
-                O Quadro I também define quantos membros titulares e suplentes cada lado da comissão deve ter em cada faixa de empregados.
+                O grau de risco é associado ao CNAE conforme o enquadramento aplicável. Construção civil, prestadores de
+                serviços e atividades com anexo próprio exigem conferência das regras específicas, além do quadro geral.
+              </p>
+              <p>
+                Quando o estabelecimento não se enquadra no Quadro I, a organização deve verificar se há atendimento por
+                SESMT: sem esse atendimento, nomeia um representante da NR-05; com SESMT, o serviço desempenha as atribuições
+                da CIPA. O <strong>MEI está dispensado de nomear esse representante</strong>.
+              </p>
+              <p>
+                Consulte o{' '}
+                <a
+                  href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-paritaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/NR05atualizada2023.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4"
+                >
+                  Quadro I oficial da NR-05
+                </a>{' '}
+                e valide o CNAE e o grau de risco antes de dimensionar a comissão.
               </p>
             </>
           ),
@@ -116,7 +129,7 @@ export default function NR05Page() {
                 risco, priorizar medidas de prevenção, registrar reuniões, acompanhar ocorrências e organizar campanhas como a SIPAT.
               </p>
               <p>
-                Em empresas pequenas, o ponto central costuma ser não esquecer o designado e o treinamento. Em empresas maiores,
+                Em empresas pequenas, confirme primeiro se o estabelecimento precisa constituir CIPA ou nomear representante; quando a nomeação se aplica, a atenção fica no registro e no treinamento. Em empresas maiores,
                 o desafio geralmente está em eleição, estabilidade, atas, calendário de reuniões e prova documental de que a comissão está ativa.
               </p>
             </>
@@ -167,7 +180,11 @@ export default function NR05Page() {
                 <li><strong>Grau de risco 4:</strong> 20 horas.</li>
               </ul>
               <p>
-                O representante nomeado também deve receber capacitação compatível com o grau de risco do estabelecimento.
+                Para o treinamento presencial, a carga horária mínima é de 4 horas no grau de risco 2 e 8 horas nos graus
+                3 e 4. A carga horária dos estabelecimentos de grau 1 e do representante nomeado pode ser realizada
+                integralmente a distância ou em formato semipresencial, nos termos da NR-01; o treinamento integralmente
+                a distância deve contemplar os riscos específicos do estabelecimento. O representante nomeado também deve
+                receber capacitação compatível com o grau de risco do estabelecimento.
                 Quando a empresa precisa formar membros, cumprir um prazo ou apresentar certificados à fiscalização, deve
                 definir a turma e o conteúdo conforme o seu enquadramento.
               </p>
@@ -200,7 +217,7 @@ export default function NR05Page() {
                 compatíveis com o grau de risco e com a realidade do estabelecimento.
               </p>
               <p>
-                Também vale alinhar datas, participantes e registros antes do início do mandato. Esse cuidado evita
+                Também vale alinhar datas, participantes e registros antes do início do mandato. Como regra, o treinamento deve ocorrer antes da posse; no primeiro mandato da CIPA, o prazo máximo é de 30 dias após a posse. Esse cuidado evita
                 correções de última hora e deixa claro para o RH o que já foi concluído e o que ainda está pendente.
               </p>
               <p>
@@ -235,7 +252,7 @@ export default function NR05Page() {
               <li><strong>Certificados de treinamento:</strong> com carga horária compatível com o grau de risco, data, instrutor e conteúdo.</li>
               <li><strong>Mapa de riscos:</strong> quando aplicável, elaborado e revisado pela comissão.</li>
               <li><strong>Plano de trabalho:</strong> atividades previstas para o mandato.</li>
-              <li><strong>Registro do designado:</strong> nomeação, treinamento e atribuições.</li>
+              <li><strong>Registro do representante nomeado, quando aplicável:</strong> nomeação, treinamento e atribuições.</li>
             </ol>
           ),
         },
@@ -281,6 +298,12 @@ export default function NR05Page() {
                 <Link href="/normas/nr-01-pgr-atualizada">PGR da NR-01</Link> e, quando aplicável, com o{' '}
                 <Link href="/normas/sesmt">SESMT</Link>.
               </p>
+              <p>
+                Para organizar documentos, prazos e acompanhamento além da comissão, veja também o guia de{' '}
+                <Link href="/saude/gestao-sst" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4">
+                  gestão de SST para empresas
+                </Link>.
+              </p>
             </>
           ),
         },
@@ -292,9 +315,9 @@ export default function NR05Page() {
                 Muitas empresas pequenas confundem “não preciso constituir CIPA” com “não preciso fazer nada”. São coisas diferentes.
               </p>
               <ul>
-                <li><strong>MEI sem empregados:</strong> não está no mesmo cenário de uma empresa com CLT e rotina formal de NR-05.</li>
-                <li><strong>Empresa abaixo do Quadro I:</strong> em regra, não constitui CIPA plena, mas precisa nomear designado e documentar o treinamento.</li>
-                <li><strong>Empresa que não faz nem CIPA nem designado:</strong> fica exposta à autuação.</li>
+                <li><strong>MEI:</strong> a NR-05 o dispensa de nomear o representante previsto no item 5.4.13.</li>
+                <li><strong>Estabelecimento fora do Quadro I:</strong> se não for atendido por SESMT, a organização deve nomear e formalizar anualmente um representante; se houver SESMT, ele desempenha as atribuições da CIPA.</li>
+                <li><strong>Construção civil e prestadores de serviços:</strong> confira também as disposições específicas aplicáveis ao canteiro, à frente de trabalho e ao estabelecimento atendido.</li>
               </ul>
             </>
           ),
@@ -325,7 +348,7 @@ export default function NR05Page() {
               <ul>
                 <li>Não constituir CIPA quando obrigatória.</li>
                 <li>Não abrir eleição no prazo.</li>
-                <li>Não treinar membros ou designado corretamente.</li>
+                <li>Não treinar os membros da CIPA e o representante nomeado, quando aplicável.</li>
                 <li>Não realizar SIPAT.</li>
                 <li>Demitir cipeiro estável sem o tratamento jurídico adequado.</li>
               </ul>
@@ -338,7 +361,7 @@ export default function NR05Page() {
             <ol>
               <li><strong>CIPA não constituída quando obrigatória.</strong> A empresa atinge o limite do Quadro I, mas a comissão não existe de forma regular.</li>
               <li><strong>Eleição não realizada no prazo.</strong> O mandato vence e a empresa deixa a comissão inativa.</li>
-              <li><strong>Treinamento incompleto ou sem registro.</strong> Membros e designado sem a carga horária exigida para o grau de risco.</li>
+              <li><strong>Treinamento incompleto ou sem registro.</strong> Membros da CIPA e representante nomeado, quando aplicável, sem a carga horária prevista para o grau de risco.</li>
               <li><strong>Dispensa de cipeiro estável.</strong> A empresa trata a estabilidade como detalhe e transforma um problema administrativo em passivo judicial.</li>
             </ol>
           ),
@@ -346,12 +369,12 @@ export default function NR05Page() {
       ]}
       faq={[
         {
-          q: 'CIPA é obrigatória para construção civil com menos de 50 funcionários?',
-          a: 'Na construção civil, a obrigatoriedade costuma aparecer antes, porque muitas atividades ficam em grau de risco 3 ou 4. Em regra, a CIPA passa a ser exigida a partir de 20 empregados no estabelecimento. Abaixo disso, normalmente entra a figura do designado treinado conforme a NR-05.',
+          q: 'CIPA a partir de quantos funcionários em 2026?',
+          a: 'O limite varia pelo grau de risco e é contado por estabelecimento: na tabela geral da NR-05, a CIPA começa a partir de 81 empregados no grau 1, 51 no grau 2 e 20 nos graus 3 e 4. Construção civil, prestadores de serviços e outras atividades com regra específica exigem conferência do respectivo anexo.',
         },
         {
           q: 'O que é o designado da NR-05?',
-          a: 'É o trabalhador nomeado pela empresa para cumprir as atribuições da CIPA quando o estabelecimento não atinge o porte mínimo para constituir a comissão plena. Ele precisa receber treinamento compatível com o grau de risco.',
+          a: 'É o empregado nomeado para auxiliar nas ações de prevenção quando o estabelecimento não se enquadra no Quadro I e não é atendido por SESMT. O MEI está dispensado dessa nomeação, e há regras próprias para construção civil e prestadores de serviços. Quando aplicável, o representante deve receber o treinamento previsto na NR-05.',
         },
         {
           q: 'A CIPA precisa se reunir todo mês?',
@@ -375,7 +398,7 @@ export default function NR05Page() {
         },
         {
           q: 'Membros do SESMT precisam fazer o treinamento da CIPA?',
-          a: 'Em regra, integrantes do SESMT que atuam na CIPA não dependem do mesmo tratamento dado a membros leigos da comissão, mas a documentação da empresa precisa registrar corretamente esse enquadramento.',
+          a: 'A NR-05 dispensa o integrante do SESMT do treinamento da CIPA.',
         },
         {
           q: 'Empresa sem CIPA paga multa?',

@@ -143,6 +143,7 @@ export default function TabelaExamesFuncaoPage() {
           </p>
         }
         showTableOfContents
+        mobileSingleColumn
         sections={[
           {
             title: 'Regra fundamental: quem define os exames é o PCMSO',
@@ -250,7 +251,7 @@ export default function TabelaExamesFuncaoPage() {
         sidebarTitle="Precisa montar o protocolo de exames da sua empresa?"
         sidebarHook="A SERMST elabora o PCMSO a partir dos riscos da operação e organiza um protocolo de exames adequado a cada função."
         sidebarCtaLabel="Montar meu PCMSO"
-        sidebarCtaHref="/servicos/exame-admissional-expresso/sao-paulo"
+        sidebarCtaHref="/servicos/pcmso-nr07-programa"
         related={[
           { label: 'Exame admissional: o que é e como funciona', href: '/exames/como-funciona-o-exame-admissional' },
           { label: 'Valor do exame admissional', href: '/saude/valor-exame-admissional' },

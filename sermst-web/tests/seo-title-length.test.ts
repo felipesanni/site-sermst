@@ -8,6 +8,9 @@ import { metadata as sesmtMetadata } from '@/app/normas/sesmt/page';
 import { metadata as acidenteDeTrabalhoMetadata } from '@/app/saude/acidente-de-trabalho/page';
 import { metadata as examePeriodicoMetadata } from '@/app/saude/exame-periodico-ocupacional/page';
 import { metadata as pcmsoMetadata } from '@/app/saude/pcmso-programa-controle-medico/page';
+import { metadata as nr05Metadata } from '@/app/normas/nr-05-cipa/page';
+import { metadata as nr35Metadata } from '@/app/normas/nr-35-trabalho-em-altura/page';
+import { metadata as custoPGRPCMSOMetadata } from '@/app/saude/quanto-custa-pgr-pcmso/page';
 import { metadata as ondeFazerAudiometriaMetadata } from '@/app/saude/onde-fazer-audiometria-ocupacional-sao-paulo/page';
 import { generateMetadata as generateLocalServiceMetadata } from '@/app/servicos/[servico]/[regiao]/page';
 import { generateMetadata as generateServiceMetadata } from '@/app/servicos/[servico]/page';
@@ -67,10 +70,51 @@ describe('SEO title length', () => {
     const exameAdmissionalTitle = getTitleText(exameAdmissionalMetadata.title);
 
     expect(homeTitle).toBe('Exames Ocupacionais e SST para Empresas | SERMST');
-    expect(exameAdmissionalTitle).toBe('Clínica de Exame Admissional em São Paulo');
+    expect(exameAdmissionalTitle).toBe('Exame admissional em São Paulo | SERMST');
     expect(homeTitle).not.toBe(exameAdmissionalTitle);
     expect(homeTitle.length).toBeLessThanOrEqual(60);
     expect(exameAdmissionalTitle.length).toBeLessThanOrEqual(60);
+  });
+
+  it('mantem titles concisos nas paginas atualizadas na Fase 5', () => {
+    const pages = [
+      { metadata: nr05Metadata, expected: 'CIPA: a partir de quantos funcionários? NR-05 | SERMST' },
+      { metadata: nr35Metadata, expected: 'NR-35 atualizada: treinamento presencial e escadas | SERMST' },
+      { metadata: custoPGRPCMSOMetadata, expected: 'Quanto custa PGR e PCMSO? O que define o orçamento | SERMST' },
+    ];
+
+    for (const { metadata, expected } of pages) {
+      const title = getTitleText(metadata.title);
+      const ogTitle = getTitleText(metadata.openGraph?.title);
+
+      expect(title).toBe(expected);
+      expect(title.length).toBeLessThanOrEqual(60);
+      expect(ogTitle.length).toBeLessThanOrEqual(60);
+    }
+
+    expect(custoPGRPCMSOMetadata.alternates?.canonical).toBe(
+      'https://sermst.com.br/saude/quanto-custa-pgr-pcmso',
+    );
+  });
+
+  it('usa titulo local empresarial nas sete rotas de exame admissional priorizadas', async () => {
+    const locations = [
+      ['sao-paulo', 'São Paulo'],
+      ['santo-andre', 'Santo André'],
+      ['sao-bernardo', 'São Bernardo'],
+      ['sao-caetano', 'São Caetano'],
+      ['diadema', 'Diadema'],
+      ['osasco', 'Osasco'],
+      ['barueri', 'Barueri'],
+    ];
+
+    await Promise.all(locations.map(async ([regiao, nome]) => {
+      const metadata = await generateLocalServiceMetadata({
+        params: Promise.resolve({ servico: 'exame-admissional-expresso', regiao }),
+      });
+
+      expect(getTitleText(metadata.title)).toBe(`Exame admissional em ${nome} | SERMST`);
+    }));
   });
 
   it('mantem curto o title das paginas regionais de audiometria', async () => {

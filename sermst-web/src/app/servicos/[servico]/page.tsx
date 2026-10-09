@@ -165,7 +165,7 @@ export default async function ServicoPage({
 
       <section className="relative z-20 mx-auto -mt-16 w-full max-w-[1280px] px-6 py-20 lg:px-8">
         <div className="mx-auto flex max-w-5xl flex-col gap-12 rounded-[2rem] border border-slate-100 bg-white p-8 shadow-2xl lg:flex-row lg:p-12">
-          <FadeIn direction="right" className="flex-1">
+          <FadeIn direction="right" tabletDirection="up" className="flex-1">
             <div className="mb-4 flex items-center gap-3 text-accent-pink">
               <ShieldAlert className="h-8 w-8" />
               <h2 className="text-sm font-black uppercase tracking-widest">O problema que a empresa quer evitar</h2>
@@ -183,7 +183,7 @@ export default async function ServicoPage({
             </p>
           </FadeIn>
 
-          <FadeIn direction="left" delay={0.2} className="surface-panel-muted flex-1">
+          <FadeIn direction="left" tabletDirection="up" delay={0.2} className="surface-panel-muted flex-1">
             <h3 className="mb-6 text-xl font-black text-brand-900">Ganhos imediatos para sua empresa</h3>
             <ul className="mb-8 space-y-4">
               {data.content.beneficios.map((ben, i) => (
@@ -219,7 +219,7 @@ export default async function ServicoPage({
           </FadeIn>
 
           <div className="grid gap-8 lg:grid-cols-2">
-            <FadeIn direction="right">
+            <FadeIn direction="right" tabletDirection="up">
               <div className="surface-panel-muted h-full">
                 <h2 className="mb-5 text-2xl font-black text-brand-900">
                   Como esse serviço protege o RH, o eSocial e a operação
@@ -232,7 +232,7 @@ export default async function ServicoPage({
               </div>
             </FadeIn>
 
-            <FadeIn direction="left" delay={0.1}>
+            <FadeIn direction="left" tabletDirection="up" delay={0.1}>
               <div className="h-full rounded-2xl bg-brand-900 p-8 text-white lg:p-10">
                 <h2 className="mb-5 text-2xl font-black">O que avaliar antes de contratar</h2>
                 <div className="space-y-5 text-base leading-relaxed text-slate-200 md:text-lg">
@@ -255,7 +255,7 @@ export default async function ServicoPage({
 
           {servico === 'treinamentos-nrs-cipa-brigada' && (
             <div className="grid gap-6 lg:grid-cols-3">
-              <FadeIn direction="right">
+              <FadeIn direction="right" tabletDirection="up">
                 <Link
                   href="/normas/nr-05-cipa"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -274,7 +274,7 @@ export default async function ServicoPage({
                 </Link>
               </FadeIn>
 
-              <FadeIn direction="left" delay={0.08}>
+              <FadeIn direction="left" tabletDirection="up" delay={0.08}>
                 <Link
                   href="/rh/calculadora-cnae-grau-de-risco"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -316,7 +316,7 @@ export default async function ServicoPage({
 
           {servico === 'pcmso-nr07-programa' && (
             <div className="grid gap-6 lg:grid-cols-2">
-              <FadeIn direction="right">
+              <FadeIn direction="right" tabletDirection="up">
                 <Link
                   href="/normas/o-que-e-nr-07"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -335,7 +335,7 @@ export default async function ServicoPage({
                 </Link>
               </FadeIn>
 
-              <FadeIn direction="left" delay={0.08}>
+              <FadeIn direction="left" tabletDirection="up" delay={0.08}>
                 <Link
                   href="/rh/declaracao-inexistencia-risco-dir"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -358,7 +358,7 @@ export default async function ServicoPage({
 
           {servico === 'ltcat-laudo-tecnico-previdenciario' && (
             <div className="grid gap-6 lg:grid-cols-2">
-              <FadeIn direction="right">
+              <FadeIn direction="right" tabletDirection="up">
                 <Link
                   href="/dicionario/o-que-e-ltcat"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -377,7 +377,7 @@ export default async function ServicoPage({
                 </Link>
               </FadeIn>
 
-              <FadeIn direction="left" delay={0.08}>
+              <FadeIn direction="left" tabletDirection="up" delay={0.08}>
                 <Link
                   href="/normas/ppp-eletronico"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -400,7 +400,7 @@ export default async function ServicoPage({
 
           {servico === 'gestao-esocial-s2220-s2240' && (
             <div className="grid gap-6 lg:grid-cols-2">
-              <FadeIn direction="right">
+              <FadeIn direction="right" tabletDirection="up">
                 <Link
                   href="/rh/domicilio-eletronico-trabalhista-det"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"
@@ -419,7 +419,7 @@ export default async function ServicoPage({
                 </Link>
               </FadeIn>
 
-              <FadeIn direction="left" delay={0.08}>
+              <FadeIn direction="left" tabletDirection="up" delay={0.08}>
                 <Link
                   href="/rh/declaracao-inexistencia-risco-dir"
                   className="surface-panel group block transition-all hover:-translate-y-1 hover:shadow-xl"

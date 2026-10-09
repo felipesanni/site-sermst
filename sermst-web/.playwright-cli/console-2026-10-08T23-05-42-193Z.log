@@ -1,0 +1,72 @@
+[    1049ms] [ERROR] Loading the script 'https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=68e2f' violates the following Content Security Policy directive: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://assets.calendly.com". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ :0
+[  191342ms] [ERROR] Loading the script 'https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=ktkrld' violates the following Content Security Policy directive: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://assets.calendly.com". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ :0
+[  233633ms] [ERROR] Loading the script 'https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=fku7bs' violates the following Content Security Policy directive: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://assets.calendly.com". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ :0
+[  264292ms] [ERROR] Loading the script 'https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=llnqt' violates the following Content Security Policy directive: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://assets.calendly.com". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ :0
+[  272514ms] [ERROR] Loading the script 'https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=rsijfs' violates the following Content Security Policy directive: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://assets.calendly.com". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ :0
+[  273223ms] [ERROR] Loading the script 'https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=rvyzydk' violates the following Content Security Policy directive: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://ssl.google-analytics.com https://www.google-analytics.com https://tagmanager.google.com https://connect.facebook.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms https://assets.calendly.com". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked. @ :0
+[  288949ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  288949ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  288949ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  301716ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  301717ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  301717ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  302180ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  302180ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  302180ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  302794ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  302794ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  302836ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  303403ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  303403ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  303465ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  304044ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  304046ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  304046ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  304411ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  304411ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  304411ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  305144ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  305144ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  305144ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  305780ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  305782ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  305782ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  306403ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  306403ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  306404ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  307395ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  307396ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  307396ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  308000ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  308005ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  308005ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  308464ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  308465ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  308465ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  309154ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  309154ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  309155ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  309763ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  309763ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  309763ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  323346ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  323346ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  323346ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  323644ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  323644ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  323644ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  342693ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  342705ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  342707ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  424555ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  424555ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  424555ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  424843ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  424843ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  424844ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  425108ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  425108ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  425108ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0
+[  436345ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtm.js?id=GTM-N7NL2D9B:0
+[  436345ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.googletagmanager.com/gtag/js?id=AW-11548872057:0
+[  436345ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://connect.facebook.net/en_US/fbevents.js:0

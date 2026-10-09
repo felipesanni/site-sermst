@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function MedicinaDoTrabalhoPage() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-10-08',
       }}
 
       h1="Medicina do Trabalho: o que é e o que toda empresa precisa saber"
@@ -122,6 +123,34 @@ export default function MedicinaDoTrabalhoPage() {
               <li><strong>Monitorar os prazos:</strong> acompanhar exames periódicos e mudanças que exijam revisão do programa.</li>
               <li><strong>Preparar o relatório analítico:</strong> avaliar os resultados do programa a cada ano, ressalvadas as dispensas previstas na própria NR-07.</li>
             </ol>
+          ),
+        },
+        {
+          title: 'Como trocar de fornecedor de medicina do trabalho',
+          body: (
+            <>
+              <p>
+                A mudança pode ser organizada sem interromper o acompanhamento, mas exige levantar o que está em andamento
+                antes de iniciar a transição. Defina uma data de corte, identifique o contato responsável em cada lado e
+                confirme como serão tratados os exames já agendados, os documentos vigentes e as obrigações com prazo.
+              </p>
+              <ol>
+                <li>Reúna PCMSO, relação de funções e exames ocupacionais pendentes ou próximos do vencimento.</li>
+                <li>Confirme a responsabilidade técnica, os estabelecimentos e os serviços incluídos no novo escopo.</li>
+                <li>Combine a continuidade dos atendimentos e o encaminhamento dos resultados e ASOs conforme as regras aplicáveis de sigilo e proteção de dados.</li>
+                <li>Confira quem prepara, valida e acompanha as informações de SST enviadas ao eSocial durante a transição.</li>
+                <li>Registre pendências, prazos, responsáveis e o que permanece sob coordenação da empresa.</li>
+              </ol>
+              <p>
+                Não presuma que a contratação transfere automaticamente todo o histórico ou as responsabilidades internas.
+                O plano de transição deve identificar documentos e tarefas, observando o acesso autorizado e a proteção das
+                informações de saúde. Consulte também o{' '}
+                <Link href="/saude/pcmso-programa-controle-medico" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4">
+                  guia do PCMSO
+                </Link>{' '}
+                para entender como o programa orienta a rotina médica ocupacional.
+              </p>
+            </>
           ),
         },
       ]}

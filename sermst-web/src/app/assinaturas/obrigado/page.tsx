@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Script from 'next/script';
 import { CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -15,22 +14,6 @@ export const metadata: Metadata = {
 export default function ObrigadoAssinaturasPage() {
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* GTM dataLayer push de conversão: dispara quando a URL é carregada */}
-      <Script
-        id="conversion-obrigado"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              event: 'subscription_lead_confirmed',
-              page_type: 'obrigado_assinatura',
-              conversion_source: 'assinaturas_form'
-            });
-          `,
-        }}
-      />
-
       <section className="relative overflow-hidden bg-brand-900 text-white">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-16 md:py-24 lg:px-8">

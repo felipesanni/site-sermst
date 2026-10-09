@@ -270,13 +270,19 @@ export default async function NormaPage({ params }: Props) {
                           A periodicidade não depende apenas da idade ou do grau de risco da empresa. Trabalhadores expostos a riscos ocupacionais identificados no PGR e pessoas com condições crônicas que aumentem a suscetibilidade podem precisar de exame clínico anual ou em intervalo menor, conforme o critério médico. Para os demais trabalhadores, o intervalo geral é de dois anos.
                         </p>
                         <p>
-                          MEI, ME e EPP de grau de risco 1 ou 2 podem ser dispensados de elaborar o PCMSO quando cumprem as condições previstas na NR-01 e não identificam as exposições indicadas pela norma. Essa dispensa não elimina os exames ocupacionais nem a emissão do ASO.
+                          MEI, ME e EPP de grau de risco 1 ou 2 que declarem as informações digitais na forma do subitem 1.6.1 da NR-01 e não identifiquem exposições ocupacionais a agentes físicos, químicos, biológicos ou riscos relacionados a fatores ergonômicos podem ser dispensados de elaborar o PCMSO. Essa dispensa não elimina os exames ocupacionais nem a emissão do ASO.
                         </p>
                         <p>
                           Para conferir o grau de risco a partir do CNAE, use a{' '}
                           <Link href="/rh/calculadora-cnae-grau-de-risco" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4">
                             calculadora de CNAE e grau de risco
                           </Link>.
+                        </p>
+                        <p>
+                          Se estiver comparando fornecedores, veja também os critérios para avaliar{' '}
+                          <Link href="/saude/quanto-custa-pgr-pcmso" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4">
+                            propostas de PGR e PCMSO
+                          </Link>, incluindo escopo, entregas e itens cobrados à parte.
                         </p>
                       </div>
                     </section>

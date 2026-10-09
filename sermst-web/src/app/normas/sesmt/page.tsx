@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -105,7 +106,14 @@ export default function SesmtPage() {
           title: 'SESMT próprio, comum ou apoio técnico externo',
           body: (
             <p>
-              A forma de estruturação depende do enquadramento da empresa e das regras aplicáveis. Mesmo quando a empresa não é obrigada a manter SESMT próprio, ela continua precisando cumprir PGR, PCMSO, ASO, treinamentos, CIPA ou designado quando aplicável. Apoio técnico externo pode ajudar a organizar esses requisitos sem confundir obrigação legal com necessidade prática de gestão.
+              A forma de estruturação depende do enquadramento da empresa e das regras aplicáveis. Mesmo quando a empresa não é obrigada a manter SESMT próprio, ela continua precisando cumprir PGR, PCMSO, ASO, treinamentos, CIPA ou designado quando aplicável. Apoio técnico externo pode ajudar a organizar esses requisitos sem confundir obrigação legal com necessidade prática de gestão. Para acompanhar documentos, exames e vencimentos ao longo do ano, conheça os{' '}
+              <Link
+                href="/assinaturas"
+                className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
+              >
+                Planos SST mensais
+              </Link>{' '}
+              da SERMST.
             </p>
           ),
         },

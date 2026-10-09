@@ -368,7 +368,7 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
 
         <SiteChromeVisibility>
         <div className="site-global-chrome">
-        <div className="relative z-50 hidden bg-brand-900 py-3 text-white shadow-md md:block">
+        <div className="relative z-50 hidden bg-brand-900 py-3 text-white shadow-md lg:block">
           <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-4 px-6 md:flex-row lg:px-8">
             <Link href="/" className="flex items-center gap-3">
               <Image
@@ -398,8 +398,8 @@ fbq('init','3362485210720558');fbq('track','PageView');`,
 
         <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
           <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8">
-            <div className="hidden h-20 items-center justify-between md:flex">
-              <nav className="hidden h-full items-center gap-5 whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-slate-700 md:flex lg:gap-6 xl:gap-8 xl:text-sm">
+            <div className="hidden h-20 items-center justify-between lg:flex">
+              <nav className="hidden h-full items-center gap-5 whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-slate-700 lg:flex lg:gap-6 xl:gap-8 xl:text-sm">
                 <Link href="/" className="force-pink-border force-pink-text flex h-full items-center border-b-2 border-transparent hover:force-pink-border hover:force-pink-text">Home</Link>
                 <Link href="/quem-somos" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Quem Somos</Link>
                 <Link href="/servicos" className="flex h-full items-center border-b-2 border-transparent transition-colors hover:border-slate-300 hover:text-[#0B133C]">Serviços</Link>

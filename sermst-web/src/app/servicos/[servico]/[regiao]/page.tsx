@@ -144,8 +144,8 @@ export async function generateMetadata({
       : `${mainTerm} em ${local.nome} | CNH C, D e E e Empresas`
     : servico === 'empresa-seguranca-do-trabalho' && local.slug === 'sao-paulo'
       ? `${mainTerm} no Centro de SP | SERMST`
-    : servico === 'exame-admissional-expresso' && local.slug === 'sao-paulo'
-      ? `${mainTerm} em ${local.nome}`
+    : servico === 'exame-admissional-expresso' && ['sao-paulo', 'santo-andre', 'sao-bernardo', 'sao-caetano', 'diadema', 'osasco', 'barueri'].includes(local.slug)
+      ? `Exame admissional em ${local.nome} | SERMST`
     : servico === 'exame-demissional' && local.slug === 'sao-paulo'
       ? 'Exame Demissional em São Paulo Centro | Agende'
     : servico === 'audiometria-ocupacional-clinica' && local.slug === 'sao-paulo'
@@ -339,7 +339,7 @@ export default async function LocalSEOPage({
 
       <section className="border-b border-slate-100 bg-white py-24">
         <div className="mx-auto grid w-full max-w-[1280px] items-center gap-20 px-6 md:grid-cols-2">
-          <FadeIn direction="right">
+          <FadeIn direction="right" className="min-w-0">
             <span className="mb-4 block text-xs font-black uppercase tracking-widest text-accent-pink">
               Quando o serviço é necessário
             </span>
@@ -360,7 +360,7 @@ export default async function LocalSEOPage({
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2} direction="left">
+          <FadeIn delay={0.2} direction="left" className="min-w-0">
             <div className="rounded-[3rem] bg-brand-900 p-10 text-white shadow-2xl">
               <h3 className="mb-10 flex items-center gap-4 text-2xl font-black">
                 <Zap className="h-8 w-8 text-accent-pink" />

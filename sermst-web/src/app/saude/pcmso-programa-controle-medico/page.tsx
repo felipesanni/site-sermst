@@ -33,7 +33,7 @@ export default function PCMSOPage() {
         jobTitle: 'Higienista Ocupacional | Técnico em Segurança do Trabalho | CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-08-11',
+        dateModified: '2026-10-08',
       }}
       h1="O que é PCMSO? Quem precisa e qual a validade do programa"
       intro="PCMSO significa Programa de Controle Médico de Saúde Ocupacional. Previsto na NR-07, ele organiza o planejamento médico, os exames ocupacionais e o acompanhamento da saúde conforme os riscos de cada função. O programa deve permanecer alinhado ao PGR, aos ASOs e às informações enviadas ao eSocial."
@@ -112,7 +112,7 @@ export default function PCMSOPage() {
             <>
               <p>
                 A organização deve indicar <strong>médico responsável pelo PCMSO</strong>. Em regra, esse papel recai sobre
-                médico do trabalho. Quando não houver médico do trabalho disponível na localidade, a NR-07 admite, nas
+                <Link href="/saude/medico-do-trabalho">médico do trabalho</Link>. Quando não houver médico do trabalho disponível na localidade, a NR-07 admite, nas
                 hipóteses da própria norma, médico de outra especialidade como responsável pelo programa.
               </p>
               <p>
@@ -238,6 +238,7 @@ export default function PCMSOPage() {
         { label: 'Exame periódico ocupacional: periodicidade e rotina', href: '/saude/exame-periodico-ocupacional' },
         { label: 'Contratar elaboração e gestão de PCMSO', href: '/servicos/pcmso-nr07-programa/sao-paulo' },
         { label: 'Guia da NR-01 e atualização do PGR', href: '/normas/nr-01-pgr-atualizada' },
+        { label: 'Quanto custa PGR e PCMSO? Fatores do orçamento', href: '/saude/quanto-custa-pgr-pcmso' },
       ]}
     />
   );

@@ -8,6 +8,7 @@ describe('AssinaturaPlans contract flow', () => {
     vi.restoreAllMocks();
     window.localStorage.clear();
     window.sessionStorage.clear();
+    window.dataLayer = [];
     window.history.replaceState({}, '', '/assinaturas?utm_source=google');
   });
 
@@ -29,6 +30,7 @@ describe('AssinaturaPlans contract flow', () => {
 
   it('consulta CNPJ, permite trocar endereco por CEP e envia a simulacao', async () => {
     const user = userEvent.setup();
+    let leadAttempts = 0;
     const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input, init) => {
       const url = String(input);
 
@@ -69,7 +71,21 @@ describe('AssinaturaPlans contract flow', () => {
       }
 
       if (url === '/api/lead') {
-        return new Response(JSON.stringify({ ok: true }), { status: 200 });
+        leadAttempts += 1;
+        if (leadAttempts === 1) {
+          return new Response(JSON.stringify({ error: 'Falha temporária' }), { status: 502 });
+        }
+        return new Response(
+          JSON.stringify({
+            ok: true,
+            received: true,
+            delivered: true,
+            deliveryChannels: ['webhook'],
+            crmConfirmed: true,
+            crmId: 'crm-test-contract',
+          }),
+          { status: 200 },
+        );
       }
 
       return new Response(JSON.stringify({ error: 'not mocked', init }), { status: 404 });
@@ -100,11 +116,23 @@ describe('AssinaturaPlans contract flow', () => {
     await user.type(screen.getByLabelText(/E-mail do financeiro/i), 'financeiro@empresa.com');
     await user.click(screen.getByRole('checkbox'));
     await user.click(screen.getByRole('button', { name: /Confirmar envio/i }));
+    await waitFor(() => expect(leadAttempts).toBe(1));
+    expect(screen.getByRole('button', { name: /Confirmar envio/i })).toBeEnabled();
+    await user.click(screen.getByRole('button', { name: /Confirmar envio/i }));
 
     expect(await screen.findByText(/Contratação enviada/i)).toBeInTheDocument();
 
     const leadCall = fetchMock.mock.calls.find(([url]) => String(url) === '/api/lead');
     expect(leadCall).toBeTruthy();
+    const leadCalls = fetchMock.mock.calls.filter(([url]) => String(url) === '/api/lead');
+    expect(leadCalls).toHaveLength(2);
+    expect(leadCalls[0]?.[1]?.headers).toMatchObject({ 'Idempotency-Key': expect.stringMatching(/^sermst_/) });
+    const firstRequestHeaders = leadCalls[0]?.[1]?.headers as Record<string, string>;
+    const retryRequestHeaders = leadCalls[1]?.[1]?.headers as Record<string, string>;
+    expect(retryRequestHeaders['Idempotency-Key']).toBe(firstRequestHeaders['Idempotency-Key']);
+    expect(leadCall?.[1]?.headers).toMatchObject({
+      'Idempotency-Key': expect.stringMatching(/^sermst_/),
+    });
 
     const payload = JSON.parse(String(leadCall?.[1]?.body));
     expect(payload).toMatchObject({
@@ -115,6 +143,10 @@ describe('AssinaturaPlans contract flow', () => {
     });
     expect(payload.mensagem).toContain('Plano escolhido: Plano Essencial');
     expect(payload.mensagem).toContain('Itens incluídos no contrato');
+    expect(window.dataLayer?.map((event) => event.event)).toEqual([
+      'subscription_cnpj_lookup_success',
+      'subscription_lead_confirmed',
+    ]);
     expect(payload.mensagem).toContain('Endereço principal: Praca da Se');
 
     await waitFor(() => {
@@ -125,7 +157,14 @@ describe('AssinaturaPlans contract flow', () => {
   it('encaminha empresas com 100 ou mais funcionários para uma proposta comercial', async () => {
     const user = userEvent.setup();
     const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
-      new Response(JSON.stringify({ ok: true }), { status: 200 }),
+      new Response(JSON.stringify({
+        ok: true,
+        received: true,
+        delivered: true,
+        deliveryChannels: ['webhook'],
+        crmConfirmed: true,
+        crmId: 'crm-test-commercial',
+      }), { status: 200 }),
     );
 
     render(<AssinaturaPlans />);
@@ -157,13 +196,17 @@ describe('AssinaturaPlans contract flow', () => {
     await user.type(screen.getByLabelText(/^E-mail corporativo/i), 'joao@empresa.com');
     await user.type(screen.getByLabelText(/^Telefone ou WhatsApp/i), '11999999999');
     await user.click(screen.getByRole('checkbox'));
-    await user.click(screen.getByRole('button', { name: /Enviar para o comercial/i }));
+    await user.dblClick(screen.getByRole('button', { name: /Enviar para o comercial/i }));
 
     expect(await screen.findByText('Solicitação recebida')).toBeInTheDocument();
     expect(screen.getByText(/entrará em contato o mais rápido possível/i)).toBeInTheDocument();
 
     const leadCall = fetchMock.mock.calls.find(([url]) => String(url) === '/api/lead');
     expect(leadCall).toBeTruthy();
+    expect(fetchMock.mock.calls.filter(([url]) => String(url) === '/api/lead')).toHaveLength(1);
+    expect(leadCall?.[1]?.headers).toMatchObject({
+      'Idempotency-Key': expect.stringMatching(/^sermst_/),
+    });
 
     const payload = JSON.parse(String(leadCall?.[1]?.body));
     expect(payload).toMatchObject({
@@ -176,5 +219,13 @@ describe('AssinaturaPlans contract flow', () => {
       lead_type: 'assinatura-corporativa',
     });
     expect(payload.mensagem).toContain('Funcionários informados: 100');
+    expect(payload.assinatura).toMatchObject({
+      plano: { id: 'essencial', nome: 'Plano Essencial', funcionarios: 100 },
+      responsavel: { nome: 'João da Silva', email: 'joao@empresa.com', cargo: 'Diretor de RH' },
+      empresa: { cnpj: '', razao_social: 'Empresa Corporativa' },
+    });
+    expect(window.dataLayer?.map((event) => event.event)).toEqual([
+      'subscription_lead_confirmed',
+    ]);
   });
 });

@@ -4,6 +4,7 @@ import {
   buildDiagnosticCrmFormAnswers,
   DIAGNOSTICO_CRM_SCHEDULING_STAGE_ID,
 } from '@/lib/diagnostico-crm-fields'
+import { normalizeDiagnosticOrigin } from '@/lib/diagnostic-attribution'
 
 export const runtime = 'nodejs'
 
@@ -31,6 +32,7 @@ type DiagnosticPayload = {
   landing_page?: string
   conversion_page?: string
   original_referrer?: string
+  last_referrer?: string
   form_started_at?: string
   utm_source?: string
   utm_medium?: string
@@ -127,27 +129,6 @@ function normalizePhone(value: string) {
   return `+55${digits}`
 }
 
-function foldText(value: string) {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-}
-
-function normalizeOrigin(originParam: string, source: string, medium: string) {
-  const originText = foldText(originParam)
-  const sourceText = foldText(source)
-  const mediumText = foldText(medium)
-  const isInstagram = originText.includes('instagram') || sourceText === 'instagram' || !originParam
-  const isPaid = originText.includes('pago') || mediumText.includes('paid')
-  const isOrganic = originText.includes('organico') || mediumText.includes('organic')
-
-  return {
-    origem: isInstagram ? 'Instagram' : originParam,
-    suborigem: isPaid ? 'Pago' : isOrganic || isInstagram ? 'Orgânico' : 'Não informado',
-  }
-}
-
 function parseAdditionalParams(value: string | undefined) {
   if (!value) return {}
 
@@ -174,7 +155,20 @@ function buildDiagnosticLead(data: DiagnosticPayload, request: Request) {
   const origemParam = String(data.origem || '').trim()
   const utmSource = String(data.utm_source || '').trim()
   const utmMedium = String(data.utm_medium || '').trim()
-  const origin = normalizeOrigin(origemParam, utmSource, utmMedium)
+  const additionalParams = parseAdditionalParams(data.attribution_additional)
+  const lastReferrer = String(data.last_referrer || data.original_referrer || '').trim()
+  const origin = normalizeDiagnosticOrigin({
+    originParam: origemParam,
+    utmSource,
+    utmMedium,
+    referrer: lastReferrer,
+    gclid: String(data.gclid || '').trim(),
+    fbclid: String(data.fbclid || '').trim(),
+    hasOtherAttributionSignal: Boolean(
+      data.utm_campaign || data.utm_content || data.utm_term || data.utm_id || Object.keys(additionalParams).length,
+    ),
+    siteHost: new URL(request.url).hostname,
+  })
 
   return {
     lead_type: 'diagnostico-sst',
@@ -188,11 +182,14 @@ function buildDiagnosticLead(data: DiagnosticPayload, request: Request) {
     cargo: String(data.cargo || '').trim(),
     origem: origin.origem,
     suborigem: origin.suborigem,
+    source_classification: origin.classification,
     origem_parametro: origemParam,
     attribution: {
       landing_page: String(data.landing_page || '').trim(),
       conversion_page: String(data.conversion_page || '').trim(),
       original_referrer: String(data.original_referrer || '').trim(),
+      source_classification: origin.classification,
+      referrer_host: origin.referrerHost,
       first_touch: {
         utm_source: String(data.utm_source_first || '').trim(),
         utm_medium: String(data.utm_medium_first || '').trim(),
@@ -203,6 +200,7 @@ function buildDiagnosticLead(data: DiagnosticPayload, request: Request) {
         fbclid: String(data.fbclid_first || '').trim(),
         utm_id: String(data.utm_id_first || '').trim(),
         captured_at: String(data.attribution_first_captured_at || '').trim(),
+        referrer: String(data.original_referrer || '').trim(),
       },
       last_touch: {
         origem: origin.origem,
@@ -217,8 +215,9 @@ function buildDiagnosticLead(data: DiagnosticPayload, request: Request) {
         fbclid: String(data.fbclid || '').trim(),
         utm_id: String(data.utm_id || '').trim(),
         captured_at: String(data.attribution_last_captured_at || '').trim(),
+        referrer: lastReferrer,
       },
-      additional_params: parseAdditionalParams(data.attribution_additional),
+      additional_params: additionalParams,
     },
     received_at: receivedAt,
     request: {
@@ -294,6 +293,16 @@ function extractOpportunityId(payload: unknown): string {
   ]
 
   return candidates.find((value): value is string => typeof value === 'string' && value.trim().length > 0)?.trim() || ''
+}
+
+function readCrmConfirmation(payload: unknown, opportunityId: string) {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return false
+  const record = payload as Record<string, unknown>
+  const crm = record.crm && typeof record.crm === 'object' && !Array.isArray(record.crm)
+    ? record.crm as Record<string, unknown>
+    : null
+
+  return record.crm_confirmed === true || crm?.created === true || (record.success === true && Boolean(opportunityId))
 }
 
 function buildOpportunityUrl(leadsUrl: string, opportunityId: string) {
@@ -409,85 +418,119 @@ export async function POST(request: Request) {
   const crmApiUrl = process.env.DIAGNOSTICO_CRM_API_URL
   const crmApiKey = process.env.DIAGNOSTICO_CRM_API_KEY
   const crmWebhookUrl = process.env.DIAGNOSTICO_CRM_WEBHOOK_URL || process.env.CRM_WEBHOOK_URL
-  const crmDestination = crmApiUrl || crmWebhookUrl
-  let deliveryAttempted = false
-  let deliverySucceeded = false
-  let opportunityId = ''
+  const directCrmReady = Boolean(crmApiUrl && crmApiKey)
+  const crmDestination = directCrmReady ? crmApiUrl : crmWebhookUrl
+  const idempotencyHeader = request.headers.get('Idempotency-Key')
+  const idempotencyKey = idempotencyHeader?.trim() || ''
 
+  if (idempotencyHeader && (idempotencyKey.length > 128 || !/^[A-Za-z0-9._:-]+$/.test(idempotencyKey))) {
+    return jsonResponse({ error: 'Chave de envio inválida.' }, 400)
+  }
+  if (directCrmReady && !idempotencyKey) {
+    return jsonResponse({ error: 'Não foi possível identificar esta solicitação para evitar duplicidade. Recarregue a página e tente novamente.' }, 400)
+  }
   if (crmApiUrl && !crmApiKey) {
-    console.error('[DIAGNOSTICO_LEAD] DIAGNOSTICO_CRM_API_KEY não configurada')
-    return jsonResponse({ error: 'Não foi possível registrar o diagnóstico agora. Tente novamente em instantes.' }, 502)
+    console.error('[DIAGNOSTICO_LEAD] DIAGNOSTICO_CRM_API_KEY não configurada; tentando webhook ou e-mail alternativo')
   }
 
+  let deliveryAccepted = false
+  let crmConfirmed = false
+  let opportunityId = ''
+  let scheduleReady = false
+
   if (crmDestination) {
-    deliveryAttempted = true
     try {
       const crmResponse = await fetch(crmDestination, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(crmApiUrl && crmApiKey ? { Authorization: `Bearer ${crmApiKey}` } : {}),
+          ...(directCrmReady ? { Authorization: 'Bearer ' + crmApiKey } : {}),
+          ...(idempotencyKey ? { 'Idempotency-Key': idempotencyKey } : {}),
         },
-        body: JSON.stringify(crmApiUrl ? buildCrmApiLead(lead) : lead),
-        signal: AbortSignal.timeout(10000),
+        body: JSON.stringify(directCrmReady ? buildCrmApiLead(lead) : lead),
+        signal: AbortSignal.timeout(10_000),
       })
-      let crmResponseBody: unknown = null
-      try {
-        crmResponseBody = await crmResponse.json()
-      } catch {
-        // Algumas integrações confirmam sucesso sem corpo JSON.
-      }
-      if (crmResponse.ok) {
-        deliverySucceeded = true
-        if (crmApiUrl) {
-          opportunityId = extractOpportunityId(crmResponseBody)
+      const crmResponseBody = await crmResponse.json().catch(() => null) as unknown
 
-          if (opportunityId) {
-            const stageResponse = await fetch(buildOpportunityUrl(crmApiUrl, opportunityId), {
+      if (crmResponse.status === 409) {
+        const body = crmResponseBody && typeof crmResponseBody === 'object'
+          ? crmResponseBody as Record<string, unknown>
+          : {}
+        if (body.status === 'idempotency_in_progress' || body.status === 'idempotency_payload_mismatch') {
+          return jsonResponse({
+            error: typeof body.error === 'string' ? body.error : 'A solicitação precisa ser reenviada com segurança.',
+            status: body.status,
+            retryable: body.status === 'idempotency_in_progress',
+          }, 409)
+        }
+      }
+
+      if (crmResponse.ok) {
+        deliveryAccepted = true
+        opportunityId = extractOpportunityId(crmResponseBody)
+        crmConfirmed = readCrmConfirmation(crmResponseBody, opportunityId)
+
+        if (directCrmReady && crmConfirmed && opportunityId) {
+          try {
+            const stageResponse = await fetch(buildOpportunityUrl(crmApiUrl as string, opportunityId), {
               method: 'PATCH',
               headers: {
-                Authorization: `Bearer ${crmApiKey}`,
+                Authorization: 'Bearer ' + crmApiKey,
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({ stageId: SCHEDULING_STAGE_ID }),
-              signal: AbortSignal.timeout(10000),
+              signal: AbortSignal.timeout(10_000),
             })
-
+            scheduleReady = stageResponse.ok
             if (!stageResponse.ok) {
               console.error('[DIAGNOSTICO_LEAD] CRM não moveu a oportunidade para Agendamento', stageResponse.status)
-              deliverySucceeded = false
             }
-          } else {
-            console.error('[DIAGNOSTICO_LEAD] CRM não devolveu o opportunityId da oportunidade criada')
-            deliverySucceeded = false
+          } catch (error) {
+            console.error('[DIAGNOSTICO_LEAD] falha ao atualizar etapa da oportunidade confirmada', error)
           }
+        } else if (crmConfirmed && !directCrmReady) {
+          scheduleReady = true
         }
-      } else console.error('[DIAGNOSTICO_LEAD] CRM respondeu', crmResponse.status)
+      } else {
+        console.error('[DIAGNOSTICO_LEAD] CRM respondeu', crmResponse.status)
+      }
     } catch (error) {
       console.error('[DIAGNOSTICO_LEAD] CRM falhou', error)
-      deliverySucceeded = false
-    }
-    if (!deliverySucceeded) {
-      return jsonResponse({ error: 'Não foi possível registrar o diagnóstico agora. Seus campos foram mantidos; tente novamente em instantes.' }, 502)
     }
   }
 
+  let emailAccepted = false
   if (process.env.DIAGNOSTICO_NOTIFY_EMAIL) {
-    deliveryAttempted = true
     try {
-      if (await sendNotificationEmail(lead)) deliverySucceeded = true
+      emailAccepted = await sendNotificationEmail(lead)
     } catch (error) {
       console.error('[DIAGNOSTICO_LEAD] e-mail de notificação falhou', error)
     }
   }
 
-  if (!deliveryAttempted || !deliverySucceeded) {
-    return jsonResponse({ error: 'Não foi possível registrar o diagnóstico agora. Tente novamente em instantes.' }, 502)
+  const delivered = crmConfirmed || deliveryAccepted || emailAccepted
+  if (!delivered) {
+    return jsonResponse({
+      ok: false,
+      delivered: false,
+      crmConfirmed: false,
+      error: 'Não foi possível registrar o diagnóstico agora. Tente novamente em instantes.',
+    }, 502)
   }
+
+  const calendarUrl = scheduleReady
+    ? process.env.CALENDAR_URL || process.env.NEXT_PUBLIC_CALENDAR_URL || ''
+    : ''
 
   return jsonResponse({
     ok: true,
-    calendarUrl: process.env.CALENDAR_URL || process.env.NEXT_PUBLIC_CALENDAR_URL || '',
+    delivered: true,
+    crmConfirmed,
+    deliveryStatus: crmConfirmed
+      ? scheduleReady ? 'crm_confirmed' : 'crm_confirmed_schedule_pending'
+      : 'delivery_accepted',
+    scheduleReady,
+    calendarUrl,
     opportunityId: opportunityId || null,
-  })
+  }, crmConfirmed ? 200 : 202)
 }

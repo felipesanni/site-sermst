@@ -124,7 +124,7 @@ export default function ListaCNAEPage() {
                 Cada subclasse tem um <strong>grau de risco</strong> de 1 a 4 para fins da NR-04. Esse enquadramento ajuda a dimensionar:
               </p>
               <ul>
-                <li>A obrigatoriedade de SESMT próprio (Serviço Especializado em Engenharia de Segurança e Medicina do Trabalho) conforme o número de empregados</li>
+                <li>A obrigatoriedade de <Link href="/normas/sesmt" className="font-semibold underline">SESMT próprio</Link> (Serviço Especializado em Engenharia de Segurança e Medicina do Trabalho) conforme o número de empregados</li>
                 <li>A composição do SESMT conforme o grau de risco e o porte</li>
                 <li>O dimensionamento da CIPA conforme o grau de risco e o número de empregados</li>
               </ul>

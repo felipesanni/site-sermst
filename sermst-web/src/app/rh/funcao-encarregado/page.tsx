@@ -208,7 +208,7 @@ export default function FunçãoEncarregadoPage() {
       <section className="py-20 lg:py-24">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 grid lg:grid-cols-[1fr_360px] gap-12">
           {/* Conteúdo principal */}
-          <article className="prose max-w-none">
+          <article className="prose max-w-none min-w-0">
             <FadeIn direction="up">
               <h2>O que é a função de encarregado</h2>
               <p>
@@ -299,7 +299,11 @@ export default function FunçãoEncarregadoPage() {
                 Esses registros não impedem acidentes nem garantem resultado judicial. Eles ajudam a demonstrar como a função foi organizada e quais medidas foram efetivamente adotadas.
               </p>
               <p>
-                O grau de risco da atividade é uma das informações usadas para dimensionar estruturas como CIPA e SESMT, mas os exames e treinamentos dependem também dos riscos reais da função. <Link href="/rh/calculadora-cnae-grau-de-risco" className="text-accent-pink font-bold hover:underline">A calculadora de CNAE e grau de risco</Link> ajuda no primeiro enquadramento.
+                O grau de risco da atividade é uma das informações usadas para dimensionar estruturas como CIPA e SESMT, mas os exames e treinamentos dependem também dos riscos reais da função. A calculadora de CNAE e grau de risco ajuda no primeiro enquadramento.
+              </p>
+              <p>
+                Para organizar essas frentes como uma rotina da empresa, veja também o guia de{' '}
+                <Link href="/saude/gestao-sst">gestão de SST</Link>, que explica como programas, exames, treinamentos e registros se relacionam.
               </p>
 
               <h2>Perguntas frequentes sobre a função de encarregado</h2>
@@ -323,7 +327,7 @@ export default function FunçãoEncarregadoPage() {
           </article>
 
           {/* SIDEBAR: CTA reorientado para gestor */}
-          <aside className="lg:sticky lg:top-24 lg:self-start space-y-6">
+          <aside className="lg:sticky lg:top-24 lg:self-start space-y-6 min-w-0">
             <FadeIn direction="left">
               <div className="bg-brand-900 text-white rounded-2xl p-7 shadow-[0_20px_40px_-15px_rgba(11,19,60,0.4)]">
                 <div className="w-12 h-12 bg-accent-pink/15 border border-accent-pink/30 rounded-xl flex items-center justify-center mb-5">
@@ -335,11 +339,11 @@ export default function FunçãoEncarregadoPage() {
                 <p className="text-slate-300 leading-relaxed mb-6 text-sm">
                   Se a empresa tem encarregado de turno, esse cargo está dentro do PCMSO da operação. Saber se está em dia é a diferença entre ter defesa em fiscalização ou virar passivo.
                 </p>
-                <Link
-                  href="/assinaturas"
-                  className="btn-primary-safe flex w-full text-sm"
-                >
-                  Ver Planos SST para a equipe
+                <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-primary-safe flex w-full text-sm">
+                  Consultar CNAE e grau de risco
+                </Link>
+                <Link href="/assinaturas" className="mt-3 inline-flex text-sm font-semibold text-slate-300 underline decoration-slate-400 underline-offset-4 hover:text-white">
+                  Conheça a gestão completa de SST
                 </Link>
               </div>
             </FadeIn>

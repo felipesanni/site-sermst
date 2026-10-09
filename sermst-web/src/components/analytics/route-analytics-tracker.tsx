@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
+import { captureDiagnosticAttribution } from '@/lib/diagnostic-attribution'
 
 export function RouteAnalyticsTracker() {
   const pathname = usePathname()
@@ -17,7 +18,22 @@ export function RouteAnalyticsTracker() {
 
     const pagePath = `${pathname}${queryString ? `?${queryString}` : ''}`
     const pageLocation = `${window.location.origin}${pagePath}`
+    const isClientNavigation = hasSkippedInitialPageViewRef.current
     const pageReferrer = previousLocationRef.current || document.referrer || ''
+
+    // Guarda somente atribuição de sessão. A navegação interna atualiza a página
+    // de jornada, mas não substitui o último contato identificável.
+    try {
+      captureDiagnosticAttribution({
+        storage: window.sessionStorage,
+        href: pageLocation,
+        referrer: document.referrer || '',
+        siteHost: window.location.hostname,
+        isClientNavigation,
+      })
+    } catch {
+      // Armazenamento bloqueado não deve impedir navegação nem medição de página.
+    }
 
     // O Google tag envia o page_view inicial e detecta as mudancas de historico
     // do App Router. Este componente publica apenas o evento tecnico no dataLayer.

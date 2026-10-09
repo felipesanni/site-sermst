@@ -160,7 +160,7 @@ export default function ASOPage() {
               </p>
               <p>
                 Em empresas com alta rotatividade ou muitos empregados, controlar isso manualmente costuma falhar.
-                O caminho seguro é organizar vencimentos com lógica de programa e não só com agenda de última hora.
+                O caminho seguro é organizar vencimentos com lógica de programa e não só com agenda de última hora. Para a etapa de contratação, consulte também a <Link href="/saude/validade-aso-admissional">validade do ASO admissional</Link>.
               </p>
             </>
           ),

@@ -499,15 +499,17 @@ function buildSubscriptionEmailText(lead: ReturnType<typeof buildLead>): string 
   const branches = company.filiais ?? [];
   const includedItems = plan.itens_inclusos ?? [];
 
+  const isCommercialQuote = lead.leadType === 'assinatura-corporativa';
+
   return (
-    `Nova contratação de assinatura SERMST\n` +
+    `${isCommercialQuote ? 'Solicitação de proposta corporativa de SST' : 'Nova contratação de assinatura SERMST'}\n` +
     `${"=".repeat(50)}\n\n` +
     `Empresa:              ${textOrEmpty(company.razao_social || lead.empresa)}\n` +
     `CNPJ:                 ${textOrEmpty(company.cnpj)}\n` +
     `Plano:                ${textOrEmpty(plan.nome || lead.dor)}\n` +
     `Funcionários:         ${textOrEmpty(plan.funcionarios || lead.porte)}\n` +
-    `Pagamento:            ${plan.ciclo_pagamento === 'annual' ? 'Anual à vista via PIX' : 'Mensal recorrente'}\n` +
-    `Valor contratado:     ${plan.ciclo_pagamento === 'annual' ? textOrEmpty(plan.valor_anual_pix) : textOrEmpty(plan.valor_mensal)}\n` +
+    `Pagamento:            ${isCommercialQuote ? 'A definir pelo comercial' : plan.ciclo_pagamento === 'annual' ? 'Anual à vista via PIX' : 'Mensal recorrente'}\n` +
+    `Valor contratado:     ${isCommercialQuote ? 'A definir em proposta' : plan.ciclo_pagamento === 'annual' ? textOrEmpty(plan.valor_anual_pix) : textOrEmpty(plan.valor_mensal)}\n` +
     `Valor mensal (ref.):  ${textOrEmpty(plan.valor_mensal)}\n` +
     `Valor anual PIX (ref.): ${textOrEmpty(plan.valor_anual_pix)}\n\n` +
     `Responsável:          ${textOrEmpty(responsible.nome || lead.nome)}\n` +
@@ -539,7 +541,12 @@ function buildSubscriptionEmailHtml(lead: ReturnType<typeof buildLead>): string 
   const company = subscription?.empresa ?? {};
   const branches = company.filiais ?? [];
   const includedItems = plan.itens_inclusos ?? [];
-  const paymentLabel = plan.ciclo_pagamento === 'annual' ? 'Anual à vista via PIX' : 'Mensal recorrente';
+  const isCommercialQuote = lead.leadType === 'assinatura-corporativa';
+  const paymentLabel = isCommercialQuote
+    ? 'A definir pelo comercial'
+    : plan.ciclo_pagamento === 'annual'
+      ? 'Anual à vista via PIX'
+      : 'Mensal recorrente';
 
   const itemsHtml = includedItems.length
     ? `<ul style="margin:0;padding:0;list-style:none">${includedItems
@@ -575,8 +582,8 @@ function buildSubscriptionEmailHtml(lead: ReturnType<typeof buildLead>): string 
     <tr><td align="center" style="padding:28px 12px">
       <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:760px;border-collapse:collapse;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(15,23,42,.12)">
         <tr><td style="background:#0f172a;padding:28px 32px">
-          <p style="margin:0 0 8px;color:#fb174c;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.14em">Contratação de assinatura</p>
-          <h1 style="margin:0;color:#ffffff;font-size:26px;line-height:1.2;font-weight:900">Novo pedido: ${htmlValue(plan.nome || 'Plano SERMST')}</h1>
+          <p style="margin:0 0 8px;color:#fb174c;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.14em">${isCommercialQuote ? 'Proposta corporativa' : 'Contratação de assinatura'}</p>
+          <h1 style="margin:0;color:#ffffff;font-size:26px;line-height:1.2;font-weight:900">${isCommercialQuote ? 'Solicitação de proposta' : 'Novo pedido'}: ${htmlValue(plan.nome || 'Plano SERMST')}</h1>
           <p style="margin:10px 0 0;color:#cbd5e1;font-size:15px;line-height:1.5">${htmlValue(company.razao_social || lead.empresa)} · ${htmlValue(plan.funcionarios || lead.porte)} funcionários</p>
         </td></tr>
 
@@ -719,7 +726,15 @@ function buildEmailHtml(lead: ReturnType<typeof buildLead>): string {
 }
 
 function normalizeSubscription(data: LeadPayload): SubscriptionLeadData | null {
-  if (data.dor !== 'assinatura-sst' && data.lead_type !== 'assinatura-sst') return null;
+  const leadType = String(data.lead_type || '').trim().toLowerCase();
+  const pain = String(data.dor || '').trim().toLowerCase();
+  const isSubscription =
+    leadType === 'assinatura-sst' ||
+    leadType === 'assinatura-corporativa' ||
+    pain === 'assinatura-sst' ||
+    pain === 'proposta-corporativa-sst';
+
+  if (!isSubscription) return null;
 
   if (data.assinatura && typeof data.assinatura === 'object') {
     return data.assinatura;
@@ -809,6 +824,30 @@ function buildLead(data: LeadPayload, req: Request) {
   };
 }
 
+function readCrmConfirmation(body: string): { confirmed: boolean; id?: string } {
+  if (!body || body.length > 16_384) return { confirmed: false };
+
+  try {
+    const value = JSON.parse(body) as {
+      success?: unknown;
+      opportunityId?: unknown;
+      crm_confirmed?: unknown;
+      crm_id?: unknown;
+      crm?: { created?: unknown; id?: unknown };
+    };
+    const opportunityId = typeof value.opportunityId === 'string' ? value.opportunityId.trim() : '';
+    const explicitMiddlewareConfirmation = value.crm_confirmed === true || value.crm?.created === true;
+    const directCrmConfirmation = value.success === true && Boolean(opportunityId);
+    if (!explicitMiddlewareConfirmation && !directCrmConfirmation) return { confirmed: false };
+
+    const idValue = value.crm_id ?? value.crm?.id ?? opportunityId;
+    const id = typeof idValue === 'string' ? idValue.trim() : '';
+    return { confirmed: true, ...(id ? { id } : {}) };
+  } catch {
+    return { confirmed: false };
+  }
+}
+
 export async function POST(req: Request) {
   const ip =
     req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
@@ -889,19 +928,39 @@ export async function POST(req: Request) {
 
   let deliveryAttempted = false;
   let deliverySucceeded = false;
+  let crmConfirmed = false;
+  let crmId: string | undefined;
+  const deliveryChannels: Array<'webhook' | 'email'> = [];
 
   // ── Webhook ────────────────────────────────────────────────────────────────
   const webhookUrl = process.env.LEAD_WEBHOOK_URL;
+  const idempotencyHeader = req.headers.get('Idempotency-Key');
+  const idempotencyKey = idempotencyHeader?.trim() || '';
+  if (idempotencyHeader && (idempotencyKey.length > 128 || !/^[A-Za-z0-9._:-]+$/.test(idempotencyKey))) {
+    return jsonResponse({ error: 'Chave de envio inválida.' }, 400);
+  }
   if (webhookUrl) {
     deliveryAttempted = true;
     try {
+      const webhookHeaders: Record<string, string> = {
+        'Content-Type': 'application/json',
+      };
+      if (idempotencyKey) webhookHeaders['Idempotency-Key'] = idempotencyKey;
+
       const webhookResponse = await fetch(webhookUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: webhookHeaders,
         body: JSON.stringify(lead),
+        signal: AbortSignal.timeout(10_000),
       });
       if (webhookResponse.ok) {
         deliverySucceeded = true;
+        deliveryChannels.push('webhook');
+        const confirmation = readCrmConfirmation(await webhookResponse.text());
+        if (confirmation.confirmed) {
+          crmConfirmed = true;
+          crmId = confirmation.id;
+        }
       } else {
         console.error('[LEAD] Webhook respondeu com erro:', webhookResponse.status);
       }
@@ -946,17 +1005,45 @@ export async function POST(req: Request) {
         encoding: 'base64',
       });
       deliverySucceeded = true;
+      deliveryChannels.push('email');
     } catch (err) {
       console.error('[LEAD] SMTP falhou:', err);
     }
   }
 
-  if (deliveryAttempted && !deliverySucceeded) {
+  if (!deliveryAttempted) {
     return jsonResponse(
-      { error: 'Nao foi possivel concluir o envio agora. Tente novamente em instantes ou fale com a SERMST pelo WhatsApp.' },
-      502
+      {
+        ok: false,
+        received: true,
+        delivered: false,
+        status: 'delivery_not_configured',
+        error: 'Nao foi possivel concluir o envio agora. Tente novamente em instantes ou fale com a SERMST pelo WhatsApp.',
+      },
+      503,
     );
   }
 
-  return jsonResponse({ ok: true });
+  if (!deliverySucceeded) {
+    return jsonResponse(
+      {
+        ok: false,
+        received: true,
+        delivered: false,
+        status: 'delivery_failed',
+        error: 'Nao foi possivel concluir o envio agora. Tente novamente em instantes ou fale com a SERMST pelo WhatsApp.',
+      },
+      502,
+    );
+  }
+
+  return jsonResponse({
+    ok: true,
+    received: true,
+    delivered: true,
+    deliveryChannels,
+    crmConfirmed,
+    deliveryStatus: crmConfirmed ? 'crm_confirmed' : 'delivery_accepted',
+    ...(crmId ? { crmId } : {}),
+  });
 }

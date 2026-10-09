@@ -1,0 +1,325 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "SERMST Gestão Ocupacional" [ref=e6]
+      - generic [ref=e7]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: https://wa.me/5511915146447?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Sa%C3%BAde%20Ocupacional%20da%20SERMST%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es
+          - img "WhatsApp" [ref=e9]
+          - text: Falar no WhatsApp
+        - link "comercial@sermst.com.br" [ref=e10] [cursor=pointer]:
+          - /url: mailto:comercial@sermst.com.br
+        - link "Calcular Meu Risco" [ref=e13] [cursor=pointer]:
+          - /url: /rh/calculadora-cnae-grau-de-risco
+    - banner [ref=e14]:
+      - generic [ref=e16]:
+        - navigation [ref=e17]:
+          - link "Home" [ref=e18] [cursor=pointer]:
+            - /url: /
+          - link "Quem Somos" [ref=e19] [cursor=pointer]:
+            - /url: /quem-somos
+          - link "Serviços" [ref=e20] [cursor=pointer]:
+            - /url: /servicos
+          - link "RH e eSocial" [ref=e21] [cursor=pointer]:
+            - /url: /rh
+          - link "Saúde Ocupacional" [ref=e22] [cursor=pointer]:
+            - /url: /saude
+          - link "Normas (NR)" [ref=e23] [cursor=pointer]:
+            - /url: /normas
+          - link "Planos SST" [ref=e24] [cursor=pointer]:
+            - /url: /assinaturas
+          - link "Contato" [ref=e25] [cursor=pointer]:
+            - /url: /contato
+        - generic [ref=e26]:
+          - link "Facebook" [ref=e27] [cursor=pointer]:
+            - /url: https://www.facebook.com/sermstocupacional
+          - link "Instagram" [ref=e30] [cursor=pointer]:
+            - /url: https://www.instagram.com/sermstocupacional/
+          - link "LinkedIn" [ref=e33] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/sermst-gest%C3%A3o-ocupacional
+          - link "YouTube" [ref=e36] [cursor=pointer]:
+            - /url: https://www.youtube.com/@sermstocupacional
+  - main [ref=e39]:
+    - main [ref=e40]:
+      - generic [ref=e41]:
+        - img "Documentação técnica de saúde e segurança do trabalho" [ref=e42]
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - link "← Saúde Ocupacional" [ref=e49] [cursor=pointer]:
+              - /url: /saude
+            - generic [ref=e52]: Orçamento de LTCAT
+            - generic [ref=e53]: 7 min de leitura
+          - heading "Quanto custa um LTCAT? Veja o que define o orçamento" [level=1] [ref=e57]
+          - paragraph [ref=e58]: O preço de um LTCAT depende das condições de trabalho que precisam ser avaliadas e do escopo técnico solicitado. Para comparar propostas, considere estabelecimentos, atividades, grupos expostos, necessidade de levantamento em campo, medições aplicáveis e responsabilidade técnica — não apenas o número de empregados.
+          - paragraph [ref=e64]:
+            - text: Por
+            - link "Felipe Sannino" [ref=e65] [cursor=pointer]:
+              - /url: https://sermst.com.br/equipe/felipe-sannino
+            - text: · Advogado - Direito do Trabalho e SST · OAB/SP 430.824
+          - generic [ref=e66]:
+            - generic [ref=e67]: "Última revisão: 8 de outubro de 2026"
+            - generic [ref=e71]: Publicado em 8 de outubro de 2026
+      - generic [ref=e73]:
+        - article [ref=e74]:
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - paragraph [ref=e78]: Resposta direta
+              - paragraph [ref=e80]:
+                - text: Não existe um valor único de LTCAT que sirva para todas as empresas. A proposta deve informar quais unidades, atividades e exposições serão avaliadas, qual metodologia será usada e se visitas ou medições estão previstas. A empresa também precisa manter o laudo atualizado conforme as condições ambientais e os dados que fundamentam as informações previdenciárias. Consulte o
+                - link "art. 58 da Lei nº 8.213/1991" [ref=e81] [cursor=pointer]:
+                  - /url: https://www.planalto.gov.br/ccivil_03/leis/l8213compilado.htm
+                - text: .
+            - generic [ref=e82]:
+              - paragraph [ref=e83]: Neste artigo
+              - list [ref=e84]:
+                - listitem [ref=e85]:
+                  - link "01 O que faz o preço do LTCAT variar?" [ref=e86] [cursor=pointer]:
+                    - /url: "#o-que-faz-o-preco-do-ltcat-variar-1"
+                    - generic [ref=e87]: "01"
+                    - generic [ref=e88]: O que faz o preço do LTCAT variar?
+                - listitem [ref=e89]:
+                  - link "02 Número de empregados não define o escopo sozinho" [ref=e90] [cursor=pointer]:
+                    - /url: "#numero-de-empregados-nao-define-o-escopo-sozinho-2"
+                    - generic [ref=e91]: "02"
+                    - generic [ref=e92]: Número de empregados não define o escopo sozinho
+                - listitem [ref=e93]:
+                  - link "03 Como comparar propostas de LTCAT" [ref=e94] [cursor=pointer]:
+                    - /url: "#como-comparar-propostas-de-ltcat-3"
+                    - generic [ref=e95]: "03"
+                    - generic [ref=e96]: Como comparar propostas de LTCAT
+                - listitem [ref=e97]:
+                  - link "04 LTCAT, PGR e laudo de insalubridade têm finalidades diferentes" [ref=e98] [cursor=pointer]:
+                    - /url: "#ltcat-pgr-e-laudo-de-insalubridade-tem-finalidades-diferentes-4"
+                    - generic [ref=e99]: "04"
+                    - generic [ref=e100]: LTCAT, PGR e laudo de insalubridade têm finalidades diferentes
+                - listitem [ref=e101]:
+                  - link "05 Quais dados reunir antes de pedir um orçamento" [ref=e102] [cursor=pointer]:
+                    - /url: "#quais-dados-reunir-antes-de-pedir-um-orcamento-5"
+                    - generic [ref=e103]: "05"
+                    - generic [ref=e104]: Quais dados reunir antes de pedir um orçamento
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - generic [ref=e108]: "01"
+              - heading "O que faz o preço do LTCAT variar?" [level=2] [ref=e109]
+            - generic [ref=e110]:
+              - paragraph [ref=e111]: O trabalho pode variar conforme o número de estabelecimentos, os processos realizados em cada local, as funções e os grupos de trabalhadores expostos, os agentes identificados e os documentos já disponíveis. Operações distintas dentro da mesma empresa podem exigir levantamentos diferentes.
+              - paragraph [ref=e112]: Também influenciam o orçamento as visitas técnicas, a necessidade de avaliação quantitativa para determinados agentes, o deslocamento, a análise dos registros de proteção e a organização dos dados que sustentam o PPP e o evento S-2240. A necessidade de cada etapa deve decorrer das condições avaliadas e do escopo, não de um pacote presumido.
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e116]: "02"
+              - heading "Número de empregados não define o escopo sozinho" [level=2] [ref=e117]
+            - generic [ref=e118]:
+              - paragraph [ref=e119]: A quantidade de trabalhadores ajuda a dimensionar a operação, mas não substitui a análise de atividades, ambientes e exposições. Uma empresa menor pode ter processos variados ou agentes que demandem investigação específica; uma empresa maior pode ter ambientes e funções semelhantes entre si.
+              - paragraph [ref=e120]: Por isso, desconfie de comparações feitas apenas por trabalhador ou por CNPJ. Confirme se todas as propostas cobrem os mesmos estabelecimentos, grupos de exposição, avaliações e entregáveis.
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - generic [ref=e124]: "03"
+              - heading "Como comparar propostas de LTCAT" [level=2] [ref=e125]
+            - generic [ref=e126]:
+              - paragraph [ref=e127]: "Peça que cada proposta esclareça os seguintes pontos:"
+              - list [ref=e128]:
+                - listitem [ref=e129]:
+                  - strong [ref=e130]: "Unidades e atividades:"
+                  - text: quais endereços e processos estão incluídos.
+                - listitem [ref=e131]:
+                  - strong [ref=e132]: "Grupos avaliados:"
+                  - text: funções, tarefas e exposições que serão consideradas.
+                - listitem [ref=e133]:
+                  - strong [ref=e134]: "Metodologia:"
+                  - text: levantamentos e medições previstos, quando aplicáveis, e condições em que serão realizados.
+                - listitem [ref=e135]:
+                  - strong [ref=e136]: "Responsabilidade técnica:"
+                  - text: profissional responsável e identificação no documento.
+                - listitem [ref=e137]:
+                  - strong [ref=e138]: "Entregas e limites:"
+                  - text: laudo, registros de avaliação, revisões, deslocamentos e itens cobrados à parte.
+                - listitem [ref=e139]:
+                  - strong [ref=e140]: "Prazo e dados de base:"
+                  - text: informações que a empresa precisa fornecer e como mudanças futuras serão tratadas.
+              - paragraph [ref=e141]: Um orçamento mais baixo pode ter um escopo menor. Compare as entregas e os limites por escrito antes de decidir; o valor não demonstra, sozinho, a adequação técnica do trabalho.
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]: "04"
+              - heading "LTCAT, PGR e laudo de insalubridade têm finalidades diferentes" [level=2] [ref=e146]
+            - generic [ref=e147]:
+              - paragraph [ref=e148]: O LTCAT documenta condições ambientais para fins previdenciários e serve de base para informações do PPP, conforme o caso. O PGR organiza o gerenciamento dos riscos ocupacionais; já o laudo de insalubridade avalia o enquadramento trabalhista segundo a NR-15. Um documento não substitui automaticamente o outro.
+              - paragraph [ref=e149]:
+                - text: Para entender as diferenças e o processo de avaliação, consulte o
+                - link "guia do PPP eletrônico" [ref=e150] [cursor=pointer]:
+                  - /url: /normas/ppp-eletronico
+                - text: e a página sobre
+                - link "insalubridade na NR-15" [ref=e151] [cursor=pointer]:
+                  - /url: /normas/nr-15-insalubridade
+                - text: .
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - generic [ref=e155]: "05"
+              - heading "Quais dados reunir antes de pedir um orçamento" [level=2] [ref=e156]
+            - generic [ref=e157]:
+              - paragraph [ref=e158]: "Organize, quando disponíveis:"
+              - list [ref=e159]:
+                - listitem [ref=e160]: endereços e atividades de cada estabelecimento;
+                - listitem [ref=e161]: relação de funções, tarefas e setores;
+                - listitem [ref=e162]: processos, equipamentos, produtos e agentes presentes;
+                - listitem [ref=e163]: PGR, avaliações ambientais, LTCAT e PPP existentes;
+                - listitem [ref=e164]: registros de EPI e EPC e alterações recentes na operação;
+                - listitem [ref=e165]: informações sobre avaliações ou medições anteriores.
+              - paragraph [ref=e166]:
+                - text: Com esses dados, o prestador pode esclarecer o que ainda precisa ser levantado. Conheça o
+                - link "serviço de LTCAT previdenciário da SERMST" [ref=e167] [cursor=pointer]:
+                  - /url: /servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo
+                - text: e confirme o escopo aplicável à empresa.
+          - generic [ref=e169]:
+            - heading "Perguntas frequentes" [level=2] [ref=e172]
+            - generic [ref=e174]:
+              - group [ref=e176]:
+                - generic "O LTCAT tem preço por funcionário? +" [ref=e177] [cursor=pointer]:
+                  - generic [ref=e178]: O LTCAT tem preço por funcionário?
+                  - generic [ref=e179]: +
+                - paragraph [ref=e181]: O orçamento depende do escopo de avaliação, das unidades, das atividades e das exposições. A quantidade de trabalhadores pode ser considerada, mas não determina sozinha o esforço técnico.
+              - group [ref=e183]:
+                - generic "Todo LTCAT precisa de medição quantitativa? +" [ref=e184] [cursor=pointer]:
+                  - generic [ref=e185]: Todo LTCAT precisa de medição quantitativa?
+                  - generic [ref=e186]: +
+              - group [ref=e188]:
+                - generic "O LTCAT precisa ser atualizado? +" [ref=e189] [cursor=pointer]:
+                  - generic [ref=e190]: O LTCAT precisa ser atualizado?
+                  - generic [ref=e191]: +
+        - complementary [ref=e192]:
+          - generic [ref=e194]:
+            - generic [ref=e195]: SERMST
+            - heading "Precisa elaborar ou revisar o LTCAT?" [level=3] [ref=e200]
+            - paragraph [ref=e201]: O escopo técnico depende das atividades, dos ambientes e das exposições presentes na operação.
+            - link "Conhecer o serviço de LTCAT" [ref=e202] [cursor=pointer]:
+              - /url: /servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo
+          - generic [ref=e206]:
+            - paragraph [ref=e207]: Leituras relacionadas
+            - list [ref=e208]:
+              - listitem [ref=e209]:
+                - link "PPP eletrônico e S-2240" [ref=e210] [cursor=pointer]:
+                  - /url: /normas/ppp-eletronico
+              - listitem [ref=e214]:
+                - 'link "NR-15: insalubridade e avaliações" [ref=e215] [cursor=pointer]':
+                  - /url: /normas/nr-15-insalubridade
+              - listitem [ref=e219]:
+                - 'link "PGR e PCMSO: fatores de orçamento" [ref=e220] [cursor=pointer]':
+                  - /url: /saude/quanto-custa-pgr-pcmso
+      - generic [ref=e229]:
+        - generic [ref=e230]: Próximo passo
+        - heading "Compare o escopo antes de contratar" [level=2] [ref=e231]
+        - paragraph [ref=e232]: Veja quais levantamentos e entregas fazem sentido para as condições da sua empresa.
+        - link "Ver serviço de LTCAT" [ref=e233] [cursor=pointer]:
+          - /url: /servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo
+  - generic [ref=e236]:
+    - link "Fale pelo WhatsApp" [ref=e237] [cursor=pointer]:
+      - /url: https://wa.me/5511915146447?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Sa%C3%BAde%20Ocupacional%20da%20SERMST%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es
+      - img "WhatsApp" [ref=e238]
+    - contentinfo [ref=e240]:
+      - generic [ref=e243]:
+        - generic [ref=e244]:
+          - img "SERMST" [ref=e245]
+          - paragraph [ref=e246]: Há mais de 55 anos, a SERMST acompanha empresas com medicina ocupacional e segurança do trabalho. A equipe ajuda a manter exames, laudos, treinamentos e prazos de SST organizados.
+        - generic [ref=e247]:
+          - heading "Soluções Corporativas" [level=4] [ref=e248]
+          - list [ref=e249]:
+            - listitem [ref=e250]:
+              - link "Exame Admissional Expresso" [ref=e251] [cursor=pointer]:
+                - /url: /servicos/exame-admissional-expresso
+            - listitem [ref=e254]:
+              - link "Empresa de Segurança do Trabalho" [ref=e255] [cursor=pointer]:
+                - /url: /servicos/empresa-seguranca-do-trabalho
+            - listitem [ref=e258]:
+              - link "Serviço de PGR NR-01" [ref=e259] [cursor=pointer]:
+                - /url: /servicos/pgr-nr01-gerenciamento-riscos
+            - listitem [ref=e262]:
+              - link "PCMSO e Saúde Ocupacional" [ref=e263] [cursor=pointer]:
+                - /url: /servicos/pcmso-nr07-programa
+            - listitem [ref=e266]:
+              - link "Serviço de LTCAT previdenciário" [ref=e267] [cursor=pointer]:
+                - /url: /servicos/ltcat-laudo-tecnico-previdenciario
+            - listitem [ref=e270]:
+              - link "Gestão eSocial S-2220/S-2240" [ref=e271] [cursor=pointer]:
+                - /url: /servicos/gestao-esocial-s2220-s2240
+            - listitem [ref=e274]:
+              - link "Audiometria Ocupacional" [ref=e275] [cursor=pointer]:
+                - /url: /servicos/audiometria-ocupacional-clinica
+            - listitem [ref=e278]:
+              - link "Exame Toxicológico para CNH C, D e E" [ref=e279] [cursor=pointer]:
+                - /url: /servicos/exame-toxicologico-clt
+            - listitem [ref=e282]:
+              - link "Exames Complementares" [ref=e283] [cursor=pointer]:
+                - /url: /servicos/exames-complementares-laboratoriais
+            - listitem [ref=e286]:
+              - link "Perícia Trabalhista" [ref=e287] [cursor=pointer]:
+                - /url: /servicos/pericia-trabalhista-assistente-tecnico
+            - listitem [ref=e290]:
+              - link "Treinamentos de NRs" [ref=e291] [cursor=pointer]:
+                - /url: /servicos/treinamentos-nrs-cipa-brigada
+            - listitem [ref=e294]:
+              - link "Planos SST" [ref=e295] [cursor=pointer]:
+                - /url: /assinaturas
+            - listitem [ref=e298]:
+              - link "Parceiros Comerciais" [ref=e299] [cursor=pointer]:
+                - /url: /parcerias/comerciais
+            - listitem [ref=e302]:
+              - link "Parceria para Contadores" [ref=e303] [cursor=pointer]:
+                - /url: /parcerias/contadores
+        - generic [ref=e306]:
+          - heading "Unidade Central" [level=4] [ref=e307]
+          - generic [ref=e308]:
+            - link [ref=e313] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/TcAza8i3jHKjHfjr5
+              - paragraph [ref=e314]: Largo do Paissandu, 72
+              - paragraph [ref=e315]: Centro Histórico, 3º AndarSão Paulo - SP | 01034-901
+            - generic [ref=e320]:
+              - paragraph [ref=e321]: Canais Oficiais
+              - link "(11) 3229-7567" [ref=e322] [cursor=pointer]:
+                - /url: tel:+551132297567
+              - link "comercial@sermst.com.br" [ref=e323] [cursor=pointer]:
+                - /url: mailto:comercial@sermst.com.br
+        - generic [ref=e324]:
+          - heading "Regiões Atendidas" [level=4] [ref=e325]
+          - generic [ref=e326]:
+            - link "São Paulo" [ref=e327] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-paulo
+            - link "Santo André" [ref=e328] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/santo-andre
+            - link "Osasco" [ref=e329] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/osasco
+            - link "Guarulhos" [ref=e330] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/guarulhos
+            - link "Diadema" [ref=e331] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/diadema
+            - link "S.B. Campo" [ref=e332] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-bernardo
+            - link "Barueri" [ref=e333] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/barueri
+            - link "S. Caetano" [ref=e334] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-caetano
+          - heading "Conhecimento SST" [level=4] [ref=e335]
+          - list [ref=e336]:
+            - listitem [ref=e337]:
+              - link "Conteúdo para empresários" [ref=e338] [cursor=pointer]:
+                - /url: /empresario
+            - listitem [ref=e341]:
+              - link "Saúde Ocupacional" [ref=e342] [cursor=pointer]:
+                - /url: /saude
+            - listitem [ref=e345]:
+              - link "RH e DP" [ref=e346] [cursor=pointer]:
+                - /url: /rh
+            - listitem [ref=e349]:
+              - link "Normas Regulamentadoras" [ref=e350] [cursor=pointer]:
+                - /url: /normas
+            - listitem [ref=e353]:
+              - link "Dicionário SST" [ref=e354] [cursor=pointer]:
+                - /url: /dicionario
+            - listitem [ref=e357]:
+              - link "Quem somos" [ref=e358] [cursor=pointer]:
+                - /url: /quem-somos
+          - generic [ref=e361]:
+            - link "Política de Privacidade" [ref=e362] [cursor=pointer]:
+              - /url: /politica-de-privacidade
+            - generic [ref=e364]: CRM 1002913 | CNPJ 28.125.178/0001-88© 2026 SERMST Gestão Ocupacional
+  - alert [ref=e365]

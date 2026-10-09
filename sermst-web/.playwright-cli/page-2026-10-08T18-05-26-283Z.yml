@@ -1,0 +1,119 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - region [ref=e4]:
+        - generic [ref=e5]:
+          - generic [ref=e6]: SERMST · Diagnóstico gratuito de SST
+          - heading "Sua operação de SST pode estar custando mais e dando mais trabalho do que deveria." [level=1] [ref=e8]
+          - paragraph [ref=e9]: Faça um diagnóstico gratuito da sua operação de Saúde e Segurança do Trabalho. Identifique custos, gargalos e riscos que merecem atenção e saiba por onde começar.
+          - link "Quero meu diagnóstico gratuito" [ref=e10] [cursor=pointer]:
+            - /url: "#diagnostico-form"
+          - generic [ref=e13]:
+            - generic [aria-hidden] [ref=e14]: ↳
+            - paragraph [ref=e15]:
+              - text: Uma conversa prática com quem entende de SST e conhece a
+              - strong [ref=e16]: realidade de quem administra uma empresa.
+        - region "Solicitação de diagnóstico" [ref=e17]:
+          - list "Etapas do formulário" [ref=e18]:
+            - listitem [ref=e19]: Sua empresa
+            - listitem [ref=e21]:
+              - generic [ref=e22]: "2"
+              - text: Seu contato
+          - heading "Com quem vamos conversar?" [level=2] [ref=e119]
+          - paragraph [ref=e24]: "Última etapa: seu contato para solicitar a conversa."
+          - generic [ref=e25]:
+            - group "Seu contato" [ref=e120]:
+              - generic [ref=e122]:
+                - generic [ref=e123]: Nome completo *
+                - textbox "Nome completo *" [active] [ref=e124]:
+                  - /placeholder: Como podemos chamar você?
+                  - text: Pessoa Teste Ficticia
+              - generic [ref=e125]:
+                - generic [ref=e126]: Cargo / função *
+                - combobox "Cargo / função *" [ref=e127]:
+                  - option "Selecione seu cargo" [disabled]
+                  - option "Dono / Sócio" [selected]
+                  - option "Diretoria"
+                  - option "RH / DP"
+                  - option "Financeiro"
+                  - option "Administrativo"
+                  - option "SST / SESMT"
+                  - option "Gestor / Coordenação"
+                  - option "Outro"
+              - generic [ref=e128]:
+                - generic [ref=e129]: WhatsApp / telefone *
+                - textbox "WhatsApp / telefone *" [ref=e130]:
+                  - /placeholder: (11) 99999-9999
+              - generic [ref=e131]:
+                - generic [ref=e132]: E-mail *
+                - textbox "E-mail *" [ref=e133]:
+                  - /placeholder: voce@empresa.com.br
+            - button "Agendar meu diagnóstico" [ref=e134] [cursor=pointer]
+            - button "← Voltar aos dados da empresa" [ref=e135] [cursor=pointer]
+      - region "Proposta da conversa" [ref=e47]:
+        - paragraph [ref=e48]:
+          - strong [ref=e49]: Primeiro, entender.
+          - text: Depois, decidir.
+        - generic [ref=e50]: Custos · Riscos · Operação
+      - region [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e53]: O que vale colocar na mesa
+          - heading [level=2] [ref=e54]:
+            - text: O problema nem sempre está na conta.
+            - emphasis [ref=e55]: Às vezes, está na rotina.
+          - paragraph [ref=e56]: Você não precisa dominar Saúde e Segurança do Trabalho. Mas precisa entender pelo que paga, o que está coberto e o que continua sobrando para sua equipe.
+        - generic [ref=e57]:
+          - article [ref=e58]:
+            - generic [ref=e59]: "01"
+            - generic [ref=e60]:
+              - heading "O custo faz sentido?" [level=3] [ref=e61]
+              - paragraph [ref=e62]: Vamos avaliar se gastos e exames merecem uma segunda análise. Economizar só é bom quando não deixa sua empresa exposta.
+          - article [ref=e63]:
+            - generic [ref=e64]: "02"
+            - generic [ref=e65]:
+              - heading "O que pode estar passando?" [level=3] [ref=e66]
+              - paragraph [ref=e67]: "Documentos, exames, vencimentos e obrigações: entender quais pontos precisam de atenção e o que já está bem cuidado."
+          - article [ref=e68]:
+            - generic [ref=e69]: "03"
+            - generic [ref=e70]:
+              - heading "Onde o trabalho emperra?" [level=3] [ref=e71]
+              - paragraph [ref=e72]: Admissões demoradas, pedidos de exame e retrabalho. Olhar o que toma tempo de você, do RH e do DP.
+          - article [ref=e73]:
+            - generic [ref=e74]: "04"
+            - generic [ref=e75]:
+              - heading "Seu fornecedor acompanha?" [level=3] [ref=e76]
+              - paragraph [ref=e77]: Ver se a estrutura atual atende sua operação. Reconhecer o que funciona também faz parte do diagnóstico.
+      - region [ref=e78]:
+        - generic [ref=e79]: Nosso compromisso com a conversa
+        - heading [level=2] [ref=e80]:
+          - text: “Se estiver tudo certo,
+          - emphasis [ref=e81]: vamos dizer que está tudo certo.
+          - text: ”
+        - paragraph [ref=e82]: Você não precisa chegar querendo trocar de fornecedor. A SERMST começa entendendo sua operação e o que já funciona. Se houver espaço para melhorar, conversamos sobre ele. A decisão é sua.
+        - generic [ref=e83]:
+          - text: SERMST
+          - generic [ref=e84]: Gestão Ocupacional
+      - region [ref=e85]:
+        - generic [ref=e86]:
+          - generic [ref=e87]: Antes de solicitar
+          - heading "Uma conversa prática. Sem chegar com tudo pronto." [level=2] [ref=e88]: Uma conversa prática.Sem chegar com tudo pronto.
+          - link "Solicitar diagnóstico gratuito" [ref=e89] [cursor=pointer]:
+            - /url: "#diagnostico-form"
+        - generic [ref=e92]:
+          - group [ref=e93]:
+            - generic "O que acontece no diagnóstico? −" [ref=e94] [cursor=pointer]
+            - paragraph [ref=e95]: Um especialista conversa com você sobre a operação atual, esclarece dúvidas e aponta o que merece atenção. Se for preciso aprofundar a análise de documentos, combinamos o próximo passo.
+          - group [ref=e96]:
+            - generic "Preciso enviar documentos antes? +" [ref=e97] [cursor=pointer]
+          - group [ref=e98]:
+            - generic "Já tenho fornecedor. Faz sentido participar? +" [ref=e99] [cursor=pointer]
+          - group [ref=e100]:
+            - generic "Minha empresa é pequena. Posso solicitar? +" [ref=e101] [cursor=pointer]
+      - generic [ref=e102]:
+        - generic [ref=e103]: SERMST Gestão Ocupacional
+        - generic [ref=e104]:
+          - link "Política de Privacidade" [ref=e105] [cursor=pointer]:
+            - /url: https://sermst.com.br/politica-de-privacidade
+          - generic [ref=e106]: © 2026 SERMST
+  - button "Open Next.js Dev Tools" [ref=e113] [cursor=pointer]
+  - alert [ref=e107]

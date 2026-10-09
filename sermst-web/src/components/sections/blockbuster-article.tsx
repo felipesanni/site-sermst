@@ -53,6 +53,8 @@ export interface BlockbusterPageProps {
   pageUrl?: string;
   /** Quando a página já tem um H1 anterior (ex: calculadora), renderiza o título do artigo como H2 */
   h1Tag?: 'h1' | 'h2';
+  /** Usa uma coluna de largura mínima controlada no grid do artigo em telas menores. */
+  mobileSingleColumn?: boolean;
   /** Foto de destaque exibida no hero do artigo */
   coverImage?: { src: string; alt: string };
   /** Autor do artigo (E-E-A-T) */
@@ -97,6 +99,7 @@ export function BlockbusterArticle({
   coverImage,
   author,
   h1Tag = 'h1',
+  mobileSingleColumn = false,
 }: BlockbusterPageProps) {
   const frequentFaqs = buildFrequentFaqs(faq, {
     context: 'article',
@@ -297,10 +300,10 @@ export function BlockbusterArticle({
 
       {/* ── Body ──────────────────────────────────────────────────────────── */}
       <section className="py-16 lg:py-24">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8 grid lg:grid-cols-[1fr_340px] gap-14">
+        <div className={"max-w-[1280px] mx-auto px-6 lg:px-8 grid " + (mobileSingleColumn ? "grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-8 " : "lg:grid-cols-[1fr_340px] gap-14")}>
 
           {/* Article content */}
-          <article>
+          <article className={mobileSingleColumn ? 'min-w-0' : undefined}>
             {(quickAnswer || showTableOfContents) && (
               <FadeIn direction="up">
                 <div className="mb-12 grid gap-5 md:grid-cols-2">
@@ -400,7 +403,7 @@ export function BlockbusterArticle({
 
           {/* Sidebar */}
           <aside className="lg:sticky lg:top-24 lg:self-start space-y-5">
-            <FadeIn direction="left">
+            <FadeIn direction={mobileSingleColumn ? 'up' : 'left'} tabletDirection="up">
               <div className="rounded-2xl bg-brand-900 p-7 text-white shadow-[0_20px_40px_-15px_rgba(11,19,60,0.35)]">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent-pink/30 bg-accent-pink/10 px-3 py-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-accent-pink" />
@@ -416,7 +419,7 @@ export function BlockbusterArticle({
             </FadeIn>
 
             {related.length > 0 && (
-              <FadeIn direction="left" delay={0.08}>
+              <FadeIn direction={mobileSingleColumn ? 'up' : 'left'} tabletDirection="up" delay={0.08}>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
                   <p className="mb-4 text-xs font-black uppercase tracking-widest text-slate-400">
                     Leituras relacionadas

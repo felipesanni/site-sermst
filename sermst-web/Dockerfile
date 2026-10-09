@@ -12,7 +12,9 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-RUN npm ci --omit=dev --ignore-scripts
+# `prebuild` executa lint e testes, que dependem de devDependencies.
+# Mantem scripts de instalacao para validar binarios nativos como sharp e esbuild.
+RUN npm ci --include=dev
 
 # ── Estágio 2: build ──────────────────────────────────────────────────────────
 FROM node:22-alpine AS builder

@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import sitemap from '@/app/sitemap';
+import { metadata as custoLTCATMetadata } from '@/app/saude/quanto-custa-ltcat/page';
 import robots from '@/app/robots';
 import { empresarioSEO, localidades, servicosSEO } from '@/lib/data/seo-content';
 import { buildLocalServiceCopy } from '@/lib/seo-copy';
@@ -305,6 +306,8 @@ describe('technical SEO discovery files', () => {
     expect(new Set(urls).size).toBe(urls.length);
     expect(urls).toContain(`${BASE_URL}/normas/o-que-e-nr-07`);
     expect(urls).toContain(`${BASE_URL}/saude/exame-demissional`);
+    expect(urls).toContain(`${BASE_URL}/saude/quanto-custa-pgr-pcmso`);
+    expect(urls).toContain(`${BASE_URL}/saude/quanto-custa-ltcat`);
     expect(urls).toContain(`${BASE_URL}/saude/exame-periodico-ocupacional`);
     expect(urls).not.toContain(`${BASE_URL}/saude/exame-demissional-guia`);
     expect(urls).not.toContain(`${BASE_URL}/saude/importancia-do-exame-periodico`);
@@ -323,12 +326,31 @@ describe('technical SEO discovery files', () => {
     const unchanged = entries.find((entry) => entry.url === `${BASE_URL}/quem-somos`);
 
     expect(nr07?.lastModified).toBe('2026-07-20');
-    expect(nr35?.lastModified).toBe('2026-07-27');
+    expect(nr35?.lastModified).toBe('2026-10-08');
     expect(treinamentoNr35?.lastModified).toBe('2026-07-27');
     expect(psicossocialNr35?.lastModified).toBe('2026-07-27');
     expect(demissional?.lastModified).toBe('2026-08-18');
     expect(retorno?.lastModified).toBe('2026-07-20');
     expect(empresarioHub?.lastModified).toBe('2026-07-13');
+    const phase5RevisedUrls = [
+      'normas/nr-05-cipa',
+      'normas/nr-35-trabalho-em-altura',
+      'normas/nr-01-pgr-atualizada',
+      'saude/gestao-sst',
+      'saude/pcmso-programa-controle-medico',
+      'saude/quanto-custa-pgr-pcmso',
+      'servicos/exame-admissional-expresso/sao-paulo',
+      'servicos/exame-admissional-expresso/santo-andre',
+      'servicos/exame-admissional-expresso/sao-bernardo',
+      'servicos/exame-admissional-expresso/sao-caetano',
+      'servicos/exame-admissional-expresso/diadema',
+      'servicos/exame-admissional-expresso/osasco',
+      'servicos/exame-admissional-expresso/barueri',
+    ];
+    for (const path of phase5RevisedUrls) {
+      const page = entries.find((entry) => entry.url === `${BASE_URL}/${path}`);
+      expect(page?.lastModified).toBe('2026-10-08');
+    }
     for (const slug of Object.keys(empresarioSEO)) {
       const article = entries.find(
         (entry) => entry.url === `${BASE_URL}/empresario/${slug}`,
@@ -338,6 +360,18 @@ describe('technical SEO discovery files', () => {
     expect(unchanged?.lastModified).toBeUndefined();
   });
 
+  it('publica o guia de custo do LTCAT com canonical próprio e link contextual de entrada', () => {
+    const entries = sitemap();
+    const urls = entries.map((entry) => entry.url);
+    const ltcatEntry = entries.find((entry) => entry.url === 'https://sermst.com.br/saude/quanto-custa-ltcat');
+    const pppPage = readFileSync(join(process.cwd(), 'src', 'app', 'normas', 'ppp-eletronico', 'page.tsx'), 'utf8');
+
+    expect(custoLTCATMetadata.alternates?.canonical).toBe('https://sermst.com.br/saude/quanto-custa-ltcat');
+    expect(custoLTCATMetadata.title).toBe('Quanto custa um LTCAT? Preço e fatores do orçamento');
+    expect(urls.filter((url) => url === 'https://sermst.com.br/saude/quanto-custa-ltcat')).toHaveLength(1);
+    expect(ltcatEntry?.lastModified).toBe('2026-10-08');
+    expect(pppPage).toContain("href: '/saude/quanto-custa-ltcat'");
+  });
   it('mantem a oferta de NR-35 exclusivamente presencial apos a Portaria MTE 1.259/2026', () => {
     const trainingData = readFileSync(
       join(process.cwd(), 'src', 'lib', 'data', 'treinamentos-data.ts'),

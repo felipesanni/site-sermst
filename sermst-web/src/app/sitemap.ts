@@ -8,10 +8,50 @@ const BASE_URL = "https://sermst.com.br";
 const SEO_REVISION_DATE = "2026-07-13";
 const PRIORITY_REVISION_DATE = "2026-07-20";
 const NR35_REVISION_DATE = "2026-07-27";
+const PHASE5_REVISION_DATE = "2026-10-08";
+const PHASE6_REVISION_DATE = "2026-10-08";
+const PHASE6_REVISED_PAGES = new Set([
+  BASE_URL + "/solucoes",
+  BASE_URL + "/normas/nr-01-pgr-atualizada",
+  BASE_URL + "/normas/nr-15-insalubridade",
+  BASE_URL + "/normas/ppp-eletronico",
+  BASE_URL + "/saude/gestao-sst",
+  BASE_URL + "/saude/medicina-do-trabalho-guia",
+  BASE_URL + "/saude/quanto-custa-pgr-pcmso",
+  BASE_URL + "/saude/quanto-custa-ltcat",
+  BASE_URL + "/servicos/gestao-esocial-s2220-s2240",
+  BASE_URL + "/servicos/gestao-esocial-s2220-s2240/sao-paulo",
+]);
+const PHASE5_REVISED_PAGES = new Set([
+  `${BASE_URL}/normas/nr-05-cipa`,
+  `${BASE_URL}/normas/nr-35-trabalho-em-altura`,
+  `${BASE_URL}/normas/nr-01-pgr-atualizada`,
+  `${BASE_URL}/saude/gestao-sst`,
+  `${BASE_URL}/saude/pcmso-programa-controle-medico`,
+  `${BASE_URL}/saude/quanto-custa-pgr-pcmso`,
+  `${BASE_URL}/servicos/exame-admissional-expresso/sao-paulo`,
+  `${BASE_URL}/servicos/exame-admissional-expresso/santo-andre`,
+  `${BASE_URL}/servicos/exame-admissional-expresso/sao-bernardo`,
+  `${BASE_URL}/servicos/exame-admissional-expresso/sao-caetano`,
+  `${BASE_URL}/servicos/exame-admissional-expresso/diadema`,
+  `${BASE_URL}/servicos/exame-admissional-expresso/osasco`,
+  `${BASE_URL}/servicos/exame-admissional-expresso/barueri`,
+]);
 const TARGETED_REVISION_DATE = "2026-08-18";
 const CNPJ_TOOL_REVISION_DATE = TARGETED_REVISION_DATE;
 
 function getAccurateLastModified(url: string): string | undefined {
+  if (
+    PHASE6_REVISED_PAGES.has(url) ||
+    url.startsWith(BASE_URL + '/servicos/gestao-esocial-s2220-s2240/')
+  ) {
+    return PHASE6_REVISION_DATE;
+  }
+
+  if (PHASE5_REVISED_PAGES.has(url)) {
+    return PHASE5_REVISION_DATE;
+  }
+
   const nr35RevisedPages = new Set([
     `${BASE_URL}/normas/nr-35-trabalho-em-altura`,
     `${BASE_URL}/treinamentos/nr-35-trabalho-em-altura`,
@@ -251,6 +291,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/saude/medicina-do-trabalho-guia`,           changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE_URL}/saude/aso-atestado-saude-ocupacional`,      changeFrequency: "monthly", priority: 0.70 },
     { url: `${BASE_URL}/saude/gestao-sst`,                          changeFrequency: "monthly", priority: 0.65 },
+    { url: `${BASE_URL}/saude/quanto-custa-pgr-pcmso`,              changeFrequency: "monthly", priority: 0.78 },
+    { url: `${BASE_URL}/saude/quanto-custa-ltcat`,                  changeFrequency: "monthly", priority: 0.78 },
     { url: `${BASE_URL}/saude/insalubridade-o-que-e-adicional`,     changeFrequency: "monthly", priority: 0.78 },
     { url: `${BASE_URL}/saude/acidente-de-trabalho`,                changeFrequency: "monthly", priority: 0.78 },
     { url: `${BASE_URL}/saude/o-que-e-exame-toxicologico`,          changeFrequency: "monthly", priority: 0.75 },

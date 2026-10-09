@@ -1,0 +1,133 @@
+- generic [active] [ref=e1]:
+  - main [ref=e39]:
+    - generic [ref=e270]:
+      - region [ref=e271]:
+        - generic [ref=e272]:
+          - generic [ref=e273]: SERMST · Diagnóstico gratuito de SST
+          - heading "Sua operação de SST pode estar custando mais e dando mais trabalho do que deveria." [level=1] [ref=e275]
+          - paragraph [ref=e276]: Faça um diagnóstico gratuito da sua operação de Saúde e Segurança do Trabalho. Identifique custos, gargalos e riscos que merecem atenção e saiba por onde começar.
+          - link "Quero meu diagnóstico gratuito" [ref=e277] [cursor=pointer]:
+            - /url: "#diagnostico-form"
+          - generic [ref=e280]:
+            - generic [aria-hidden] [ref=e281]: ↳
+            - paragraph [ref=e282]:
+              - text: Uma conversa prática com quem entende de SST e conhece a
+              - strong [ref=e283]: realidade de quem administra uma empresa.
+        - region "Solicitação de diagnóstico" [ref=e284]:
+          - list "Etapas do formulário" [ref=e285]:
+            - listitem [ref=e286]:
+              - generic [ref=e287]: "1"
+              - text: Sua empresa
+            - listitem [ref=e288]:
+              - generic [ref=e289]: "2"
+              - text: Seu contato
+          - heading "Solicite seu diagnóstico" [level=2] [ref=e290]
+          - paragraph [ref=e291]: 2 etapas. Depois, escolha um horário.
+          - generic [ref=e292]:
+            - group "Sua empresa" [ref=e293]:
+              - generic [ref=e295]:
+                - generic [ref=e296]: Empresa *
+                - textbox "Empresa *" [ref=e297]:
+                  - /placeholder: Nome da sua empresa
+              - generic [ref=e298]:
+                - generic [ref=e299]: Funcionários CLT *
+                - combobox "Funcionários CLT *" [ref=e300]:
+                  - option "Selecione uma faixa" [disabled] [selected]
+                  - option "1 a 10"
+                  - option "11 a 20"
+                  - option "21 a 50"
+                  - option "51 a 100"
+                  - option "101 a 250"
+                  - option "251 a 500"
+                  - option "501 a 1.000"
+                  - option "Mais de 1.000"
+              - generic [ref=e301]:
+                - generic [ref=e302]: Já possui fornecedor de SST? *
+                - combobox "Já possui fornecedor de SST? *" [ref=e303]:
+                  - option "Selecione uma opção" [disabled] [selected]
+                  - option "Sim"
+                  - option "Não"
+                  - option "Não sei informar"
+              - generic [ref=e304]:
+                - generic [ref=e305]: Segmento da empresa *
+                - combobox "Segmento da empresa *" [ref=e306]:
+                  - option "Selecione o segmento" [disabled] [selected]
+                  - option "Indústria"
+                  - option "Construção"
+                  - option "Comércio / Varejo"
+                  - option "Serviços"
+                  - option "Logística / Transporte"
+                  - option "Alimentação / Restaurantes"
+                  - option "Saúde"
+                  - option "Educação"
+                  - option "Call Center / BPO"
+                  - option "Tecnologia"
+                  - option "Outros"
+            - button "Continuar para meu contato" [ref=e307] [cursor=pointer]
+            - paragraph [ref=e310]: Sem documentos ou informações financeiras.
+      - region "Proposta da conversa" [ref=e314]:
+        - paragraph [ref=e315]:
+          - strong [ref=e316]: Primeiro, entender.
+          - text: Depois, decidir.
+        - generic [ref=e317]: Custos · Riscos · Operação
+      - region [ref=e318]:
+        - generic [ref=e319]:
+          - generic [ref=e320]: O que vale colocar na mesa
+          - heading [level=2] [ref=e321]:
+            - text: O problema nem sempre está na conta.
+            - emphasis [ref=e322]: Às vezes, está na rotina.
+          - paragraph [ref=e323]: Você não precisa dominar Saúde e Segurança do Trabalho. Mas precisa entender pelo que paga, o que está coberto e o que continua sobrando para sua equipe.
+        - generic [ref=e324]:
+          - article [ref=e325]:
+            - generic [ref=e326]: "01"
+            - generic [ref=e327]:
+              - heading "O custo faz sentido?" [level=3] [ref=e328]
+              - paragraph [ref=e329]: Vamos avaliar se gastos e exames merecem uma segunda análise. Economizar só é bom quando não deixa sua empresa exposta.
+          - article [ref=e330]:
+            - generic [ref=e331]: "02"
+            - generic [ref=e332]:
+              - heading "O que pode estar passando?" [level=3] [ref=e333]
+              - paragraph [ref=e334]: "Documentos, exames, vencimentos e obrigações: entender quais pontos precisam de atenção e o que já está bem cuidado."
+          - article [ref=e335]:
+            - generic [ref=e336]: "03"
+            - generic [ref=e337]:
+              - heading "Onde o trabalho emperra?" [level=3] [ref=e338]
+              - paragraph [ref=e339]: Admissões demoradas, pedidos de exame e retrabalho. Olhar o que toma tempo de você, do RH e do DP.
+          - article [ref=e340]:
+            - generic [ref=e341]: "04"
+            - generic [ref=e342]:
+              - heading "Seu fornecedor acompanha?" [level=3] [ref=e343]
+              - paragraph [ref=e344]: Ver se a estrutura atual atende sua operação. Reconhecer o que funciona também faz parte do diagnóstico.
+      - region [ref=e345]:
+        - generic [ref=e346]: Nosso compromisso com a conversa
+        - heading [level=2] [ref=e347]:
+          - text: “Se estiver tudo certo,
+          - emphasis [ref=e348]: vamos dizer que está tudo certo.
+          - text: ”
+        - paragraph [ref=e349]: Você não precisa chegar querendo trocar de fornecedor. A SERMST começa entendendo sua operação e o que já funciona. Se houver espaço para melhorar, conversamos sobre ele. A decisão é sua.
+        - generic [ref=e350]:
+          - text: SERMST
+          - generic [ref=e351]: Gestão Ocupacional
+      - region [ref=e352]:
+        - generic [ref=e353]:
+          - generic [ref=e354]: Antes de solicitar
+          - heading "Uma conversa prática. Sem chegar com tudo pronto." [level=2] [ref=e355]: Uma conversa prática.Sem chegar com tudo pronto.
+          - link "Solicitar diagnóstico gratuito" [ref=e356] [cursor=pointer]:
+            - /url: "#diagnostico-form"
+        - generic [ref=e359]:
+          - group [ref=e360]:
+            - generic "O que acontece no diagnóstico? −" [ref=e361] [cursor=pointer]
+            - paragraph [ref=e362]: Um especialista conversa com você sobre a operação atual, esclarece dúvidas e aponta o que merece atenção. Se for preciso aprofundar a análise de documentos, combinamos o próximo passo.
+          - group [ref=e363]:
+            - generic "Preciso enviar documentos antes? +" [ref=e364] [cursor=pointer]
+          - group [ref=e365]:
+            - generic "Já tenho fornecedor. Faz sentido participar? +" [ref=e366] [cursor=pointer]
+          - group [ref=e367]:
+            - generic "Minha empresa é pequena. Posso solicitar? +" [ref=e368] [cursor=pointer]
+      - generic [ref=e369]:
+        - generic [ref=e370]: SERMST Gestão Ocupacional
+        - generic [ref=e371]:
+          - link "Política de Privacidade" [ref=e372] [cursor=pointer]:
+            - /url: https://sermst.com.br/politica-de-privacidade
+          - generic [ref=e373]: © 2026 SERMST
+  - alert [ref=e269]: Diagnóstico gratuito de SST | SERMST

@@ -87,9 +87,38 @@ export default function SoluçõesPage() {
         </div>
       </section>
 
+      <section aria-labelledby="solution-path-title" className="mx-auto max-w-[1280px] px-6 pt-10 lg:px-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+          <span className="kicker">Escolha por onde começar</span>
+          <h2 id="solution-path-title" className="mt-2 text-2xl font-black text-brand-900 md:text-3xl">
+            O que sua empresa precisa resolver agora?
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <Link href="/servicos" className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-accent-pink/50 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink md:p-6">
+              <span className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-accent-pink">Serviço específico</span>
+              <span className="text-xl font-black text-brand-900 group-hover:text-accent-pink">Preciso contratar um serviço específico</span>
+              <span className="mt-2 leading-relaxed text-slate-600">Consulte o catálogo de exames, programas, laudos, treinamentos e outros serviços de SST.</span>
+              <span className="mt-5 font-bold text-brand-900">Ver catálogo de serviços <span aria-hidden="true">→</span></span>
+            </Link>
+            <Link href="/assinaturas" className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-accent-pink/50 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink md:p-6">
+              <span className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-accent-pink">Gestão contínua</span>
+              <span className="text-xl font-black text-brand-900 group-hover:text-accent-pink">Preciso manter a rotina de SST acompanhada</span>
+              <span className="mt-2 leading-relaxed text-slate-600">Conheça os planos mensais para organizar exames, documentos e prazos recorrentes.</span>
+              <span className="mt-5 font-bold text-brand-900">Conhecer os planos SST <span aria-hidden="true">→</span></span>
+            </Link>
+            <Link href="/diagnostico" className="group flex h-full flex-col rounded-2xl border border-accent-pink/25 bg-accent-pink/[0.04] p-5 transition hover:border-accent-pink/50 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink md:p-6">
+              <span className="mb-2 text-xs font-black uppercase tracking-[0.16em] text-accent-pink">Ainda estou avaliando</span>
+              <span className="text-xl font-black text-brand-900 group-hover:text-accent-pink">Não sei quais obrigações devo priorizar</span>
+              <span className="mt-2 leading-relaxed text-slate-600">Converse com a equipe em um diagnóstico gratuito para identificar custos, gargalos e próximos passos da operação de SST.</span>
+              <span className="mt-5 font-bold text-brand-900">Solicitar diagnóstico gratuito <span aria-hidden="true">→</span></span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-[1280px] px-6 py-20 lg:px-8">
         <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-          <FadeIn direction="right">
+          <FadeIn direction="up">
             <div className="surface-panel">
               <span className="kicker">
                 Na prática
@@ -107,11 +136,21 @@ export default function SoluçõesPage() {
                 <p>
                   O que sua empresa contrata é o resultado: documentação que sustenta auditoria, fluxo que destrava admissão, eSocial limpo, equipe protegida. Tudo conectado, sem precisar gerenciar quatro fornecedores diferentes.
                 </p>
+                <p>
+                  Para contratar um item específico, consulte o{' '}
+                  <Link href="/servicos" className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                    catálogo de serviços de SST
+                  </Link>
+                  . Para manter documentos e prazos em uma rotina contínua, conheça os{' '}
+                  <Link href="/assinaturas" className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                    Planos SST mensais
+                  </Link>.
+                </p>
               </div>
             </div>
           </FadeIn>
 
-          <FadeIn direction="left" delay={0.1}>
+          <FadeIn direction="up" delay={0.1}>
             <div className="surface-panel">
               <span className="kicker">
                 Quando isso faz diferença
@@ -140,6 +179,49 @@ export default function SoluçõesPage() {
         </div>
       </section>
 
+      <section aria-labelledby="sst-planning-title" className="mx-auto max-w-[1280px] px-6 pb-20 lg:px-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-9">
+          <span className="kicker">Organização por operação</span>
+          <h2 id="sst-planning-title" className="mt-2 max-w-3xl text-2xl font-black text-brand-900 md:text-3xl">
+            Como identificar os serviços de SST que sua empresa precisa
+          </h2>
+          <p className="mt-4 max-w-4xl text-base leading-relaxed text-slate-700 md:text-lg">
+            Não existe uma lista única que se aplique a toda empresa. O mapeamento depende das atividades realizadas,
+            dos ambientes, das funções, dos riscos identificados, do número de trabalhadores e das obrigações específicas
+            de cada estabelecimento. Use os pontos abaixo para organizar a conversa técnica, sem presumir que todos os
+            serviços sejam necessários em qualquer operação.
+          </p>
+          <div className="mt-7 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl bg-slate-50 p-5 md:p-6">
+              <h3 className="text-xl font-black text-brand-900">Comece pelo que acontece no trabalho</h3>
+              <ul className="mt-4 space-y-3 leading-relaxed text-slate-700">
+                <li>Liste atividades, funções, setores e ambientes de trabalho.</li>
+                <li>Confira documentos e avaliações existentes e suas datas.</li>
+                <li>Relacione exames, treinamentos, laudos e eventos que precisam ser organizados conforme os riscos e a operação.</li>
+                <li>Defina quem acompanha prazos, mudanças e informações entre RH, operação e apoio técnico.</li>
+              </ul>
+              <Link href="/servicos" className="mt-5 inline-flex font-bold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                Consultar o catálogo de serviços
+              </Link>
+            </div>
+            <div className="rounded-2xl bg-slate-50 p-5 md:p-6">
+              <h3 className="text-xl font-black text-brand-900">Matriz e filiais exigem visão por unidade</h3>
+              <p className="mt-4 leading-relaxed text-slate-700">
+                Registre para cada endereço a atividade realizada, a equipe, as funções e as condições de exposição.
+                Unidades da mesma empresa podem ter ambientes e riscos diferentes; o escopo técnico precisa deixar claro
+                quais delas foram consideradas em cada programa, laudo ou serviço.
+              </p>
+              <p className="mt-3 leading-relaxed text-slate-700">
+                Se a demanda é acompanhar documentos e prazos de forma recorrente, compare o escopo dos{' '}
+                <Link href="/assinaturas" className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4 hover:text-accent-pink">
+                  planos de gestão SST
+                </Link>{' '}
+                e confirme como as unidades da empresa são consideradas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="mx-auto max-w-[1280px] px-6 pb-20 lg:px-8">
         <FadeIn direction="up">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

@@ -10,6 +10,14 @@ import {
   ShieldCheck,
 } from 'lucide-react'
 import { buildDiagnosticCrmFormAnswers } from '@/lib/diagnostico-crm-fields'
+import {
+  buildDiagnosticAttributionSnapshot,
+  buildDiagnosticConversionPageUrl,
+  getInternalReferralPage,
+  readDiagnosticAttribution,
+  type StoredDiagnosticAttribution,
+} from '@/lib/diagnostic-attribution'
+import { clearFormSubmissionKey, getFormSubmissionKey } from '@/lib/form-submission-id'
 import styles from './diagnostico.module.css'
 
 type DiagnosticClientProps = {
@@ -30,28 +38,7 @@ type CalendlyMessage = {
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
-type AttributionSnapshot = {
-  page: string
-  referrer: string
-  capturedAt: string
-  origemParam: string
-  origem: string
-  suborigem: string
-  utm_source: string
-  utm_medium: string
-  utm_campaign: string
-  utm_content: string
-  utm_term: string
-  gclid: string
-  fbclid: string
-  utm_id: string
-  additionalParams: Record<string, string>
-}
-
-type StoredAttribution = {
-  first: AttributionSnapshot
-  last: AttributionSnapshot
-}
+type StoredAttribution = StoredDiagnosticAttribution
 
 type RememberedOpportunity = {
   opportunityId: string
@@ -60,21 +47,8 @@ type RememberedOpportunity = {
 
 type CalendlyReferenceType = 'scheduled_events' | 'scheduled_event_invitees'
 
-const ATTRIBUTION_KEY = 'sermst_diagnostico_attribution_v1'
 const DIAGNOSTIC_FORM_STARTED_AT_KEY = 'sermst_diagnostico_form_started_at_v1'
 const DIAGNOSTIC_OPPORTUNITY_KEY = 'sermst_diagnostico_opportunity_v1'
-const TRACKED_QUERY_KEYS = new Set([
-  'origem',
-  'utm_source',
-  'utm_medium',
-  'utm_campaign',
-  'utm_content',
-  'utm_term',
-  'gclid',
-  'fbclid',
-  'utm_id',
-])
-
 const employeeOptions = [
   '1 a 10',
   '11 a 20',
@@ -136,97 +110,35 @@ function validPhone(value: string) {
   return digits.length >= 10 && digits.length <= 11
 }
 
-function foldText(value: string) {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-}
-
-function deriveOrigin(originParam: string, source: string, medium: string) {
-  const originText = foldText(originParam)
-  const sourceText = foldText(source)
-  const mediumText = foldText(medium)
-  const isInstagram = originText.includes('instagram') || sourceText === 'instagram' || !originParam
-  const isPaid = originText.includes('pago') || mediumText.includes('paid')
-  const isOrganic = originText.includes('organico') || mediumText.includes('organic')
-
-  return {
-    origem: isInstagram ? 'Instagram' : originParam,
-    suborigem: isPaid ? 'Pago' : isOrganic || isInstagram ? 'Orgânico' : 'Não informado',
-  }
-}
-
-function buildSnapshot(): AttributionSnapshot {
-  const params = new URLSearchParams(window.location.search)
-  const origemParam = params.get('origem')?.trim() || ''
-  const utm_source = params.get('utm_source')?.trim() || ''
-  const utm_medium = params.get('utm_medium')?.trim() || ''
-  const additionalParams = Object.fromEntries(
-    Array.from(params.entries()).filter(([key]) => !TRACKED_QUERY_KEYS.has(key)),
-  )
-
-  return {
-    page: window.location.href,
-    referrer: document.referrer || '',
-    capturedAt: new Date().toISOString(),
-    origemParam,
-    ...deriveOrigin(origemParam, utm_source, utm_medium),
-    utm_source,
-    utm_medium,
-    utm_campaign: params.get('utm_campaign')?.trim() || '',
-    utm_content: params.get('utm_content')?.trim() || '',
-    utm_term: params.get('utm_term')?.trim() || '',
-    gclid: params.get('gclid')?.trim() || '',
-    fbclid: params.get('fbclid')?.trim() || '',
-    utm_id: params.get('utm_id')?.trim() || '',
-    additionalParams,
-  }
-}
-
-function hasCampaignSignal(snapshot: AttributionSnapshot) {
-  return Boolean(
-    snapshot.origemParam ||
-      snapshot.utm_source ||
-      snapshot.utm_medium ||
-      snapshot.utm_campaign ||
-      snapshot.utm_content ||
-      snapshot.utm_term ||
-      snapshot.gclid ||
-      snapshot.fbclid ||
-      snapshot.utm_id ||
-      Object.keys(snapshot.additionalParams).length,
-  )
-}
+const LEGACY_ATTRIBUTION_KEY = 'sermst_diagnostico_attribution_v1'
 
 function resolveAttribution(): StoredAttribution {
-  const current = buildSnapshot()
-  let stored: StoredAttribution | null = null
-
   try {
-    const raw = window.localStorage.getItem(ATTRIBUTION_KEY)
-    stored = raw ? (JSON.parse(raw) as StoredAttribution) : null
-    if (!stored?.first?.capturedAt || !stored?.last?.capturedAt || !stored.first.page || !stored.last.page) stored = null
+    // Remove a atribuição persistente da versão anterior; a jornada nova é apenas de sessão.
+    window.localStorage.removeItem(LEGACY_ATTRIBUTION_KEY)
   } catch {
-    stored = null
+    // Storage pode estar bloqueado pelo navegador.
   }
 
-  const next = stored
-    ? hasCampaignSignal(current)
-      ? { first: stored.first, last: current }
-      : {
-          first: stored.first,
-          last: { ...stored.last, page: current.page },
-        }
-    : { first: current, last: current }
-
   try {
-    window.localStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(next))
+    const stored = readDiagnosticAttribution(window.sessionStorage)
+    if (stored) return stored
   } catch {
-    // Alguns navegadores bloqueiam storage privado; o formulário continua usando o snapshot atual.
+    // O formulário continua utilizável sem armazenamento persistente.
   }
 
-  return next
+  const current = buildDiagnosticAttributionSnapshot({
+    href: window.location.href,
+    referrer: document.referrer || '',
+    siteHost: window.location.hostname,
+  })
+
+  return {
+    first: current,
+    last: current,
+    currentPage: new URL(window.location.href).pathname,
+    diagnosticReferralPage: getInternalReferralPage(document.referrer || '', window.location.hostname),
+  }
 }
 
 function pushDiagnosticEvent(
@@ -241,8 +153,10 @@ function pushDiagnosticEvent(
   window.dataLayer.push({
     event,
     page_path: '/diagnostico',
-    origem: snapshot?.origem || 'Instagram',
-    suborigem: snapshot?.suborigem || 'Orgânico',
+    origem: snapshot?.origem || '',
+    suborigem: snapshot?.suborigem || 'Não informado',
+    source_classification: snapshot?.sourceClassification || 'unknown',
+    referrer_host: snapshot?.referrerHost || '',
     utm_source: snapshot?.utm_source || '',
     utm_medium: snapshot?.utm_medium || '',
     utm_campaign: snapshot?.utm_campaign || '',
@@ -404,6 +318,7 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
   const pageViewTrackedRef = useRef(false)
   const scheduleViewTrackedRef = useRef(false)
   const scheduleCompletedRef = useRef(false)
+  const scheduleUpdateInFlightRef = useRef(false)
   const selectedScheduledDateRef = useRef('')
   const rememberedOpportunityRef = useRef<RememberedOpportunity | null>(null)
   const successRef = useRef<HTMLDivElement>(null)
@@ -414,25 +329,37 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
   }, [status])
 
   useEffect(() => {
-    const next = resolveAttribution()
-    const startedAt = String(Date.now())
+    let cancelled = false
+    const initializeAttribution = () => {
+      if (cancelled) return
 
-    try {
-      const storedStartedAt = window.sessionStorage.getItem(DIAGNOSTIC_FORM_STARTED_AT_KEY)
-      const effectiveStartedAt = storedStartedAt || startedAt
-      if (!storedStartedAt) {
-        window.sessionStorage.setItem(DIAGNOSTIC_FORM_STARTED_AT_KEY, startedAt)
+      // Espera o rastreador global concluir a captura da rota atual antes de ler a jornada.
+      const next = resolveAttribution()
+      const startedAt = String(Date.now())
+
+      try {
+        const storedStartedAt = window.sessionStorage.getItem(DIAGNOSTIC_FORM_STARTED_AT_KEY)
+        const effectiveStartedAt = storedStartedAt || startedAt
+        if (!storedStartedAt) {
+          window.sessionStorage.setItem(DIAGNOSTIC_FORM_STARTED_AT_KEY, startedAt)
+        }
+        setFormStartedAt(effectiveStartedAt)
+      } catch {
+        setFormStartedAt(startedAt)
       }
-      setFormStartedAt(effectiveStartedAt)
-    } catch {
-      setFormStartedAt(startedAt)
+
+      setAttribution(next)
+      setConversionPage(buildDiagnosticConversionPageUrl(window.location.href, next.diagnosticReferralPage))
+      if (!pageViewTrackedRef.current) {
+        pushDiagnosticEvent('diagnostico_page_view', next)
+        pageViewTrackedRef.current = true
+      }
     }
 
-    setAttribution(next)
-    setConversionPage(window.location.href)
-    if (!pageViewTrackedRef.current) {
-      pushDiagnosticEvent('diagnostico_page_view', next)
-      pageViewTrackedRef.current = true
+    const timeout = window.setTimeout(initializeAttribution, 0)
+    return () => {
+      cancelled = true
+      window.clearTimeout(timeout)
     }
   }, [])
 
@@ -503,17 +430,11 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
         return
       }
       if (messageEvent.data.event !== 'calendly.event_scheduled') return
-      if (scheduleCompletedRef.current) return
+      if (scheduleCompletedRef.current || scheduleUpdateInFlightRef.current) return
 
-      scheduleCompletedRef.current = true
       const dataReuniao = scheduledDate || selectedScheduledDateRef.current || extractScheduledDateFromUrl(observedIframe?.src)
       const calendlyEventUri = extractCalendlyUri(messageEvent.data, 'scheduled_events')
       const calendlyInviteeUri = extractCalendlyUri(messageEvent.data, 'scheduled_event_invitees')
-      pushDiagnosticEvent('diagnostico_schedule_complete', attribution, {
-        ...(dataReuniao ? { data_reuniao: dataReuniao } : {}),
-        calendly_event_reference: calendlyEventUri ? 'received' : 'missing',
-      })
-
       const rememberedOpportunity = rememberedOpportunityRef.current || readRememberedOpportunity()
       if (!rememberedOpportunity?.opportunityId || (!dataReuniao && !calendlyEventUri && !calendlyInviteeUri)) {
         pushDiagnosticEvent('diagnostico_schedule_update_pending', attribution, {
@@ -522,29 +443,50 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
         return
       }
 
-      void fetch('/api/diagnostico/agendamento', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          opportunityId: rememberedOpportunity.opportunityId,
-          ...(dataReuniao ? { data_reuniao: dataReuniao } : {}),
-          ...(calendlyEventUri ? { calendlyEventUri } : {}),
-          ...(calendlyInviteeUri ? { calendlyInviteeUri } : {}),
-          formAnswers: rememberedOpportunity.formAnswers,
-        }),
-        signal: AbortSignal.timeout(10000),
-      }).then(async response => {
-        if (!response.ok) throw new Error('schedule_update_failed')
-        const result = await response.json().catch(() => ({})) as { data_reuniao?: string }
-        pushDiagnosticEvent('diagnostico_opportunity_updated', attribution, {
-          opportunity_id: rememberedOpportunity.opportunityId,
-          data_reuniao: result.data_reuniao || dataReuniao || '',
-        })
-      }).catch(() => {
-        pushDiagnosticEvent('diagnostico_schedule_update_error', attribution, {
-          opportunity_id: rememberedOpportunity.opportunityId,
-        })
+      const scheduleUpdatePayload = JSON.stringify({
+        opportunityId: rememberedOpportunity.opportunityId,
+        ...(dataReuniao ? { data_reuniao: dataReuniao } : {}),
+        ...(calendlyEventUri ? { calendlyEventUri } : {}),
+        ...(calendlyInviteeUri ? { calendlyInviteeUri } : {}),
+        formAnswers: rememberedOpportunity.formAnswers,
       })
+      scheduleUpdateInFlightRef.current = true
+      void (async () => {
+        try {
+          let updated: { data_reuniao?: string } | null = null
+          for (let attempt = 0; attempt < 2; attempt += 1) {
+            try {
+              const response = await fetch('/api/diagnostico/agendamento', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: scheduleUpdatePayload,
+                signal: AbortSignal.timeout(10000),
+              })
+              if (!response.ok) throw new Error('schedule_update_failed')
+              updated = await response.json().catch(() => ({})) as { data_reuniao?: string }
+              break
+            } catch (error) {
+              if (attempt === 1) throw error
+            }
+          }
+
+          if (!updated) throw new Error('schedule_update_failed')
+          scheduleCompletedRef.current = true
+          pushDiagnosticEvent('diagnostico_schedule_complete', attribution, {
+            ...(dataReuniao ? { data_reuniao: dataReuniao } : {}),
+            calendly_event_reference: calendlyEventUri ? 'received' : 'missing',
+          })
+          pushDiagnosticEvent('diagnostico_opportunity_updated', attribution, {
+            data_reuniao: updated.data_reuniao || dataReuniao || '',
+          })
+        } catch {
+          pushDiagnosticEvent('diagnostico_schedule_update_error', attribution, {
+            reason: 'crm_update_failed',
+          })
+        } finally {
+          scheduleUpdateInFlightRef.current = false
+        }
+      })()
     }
 
     window.addEventListener('message', handleCalendlyMessage)
@@ -623,14 +565,21 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
     setError('')
 
     try {
+      const idempotencyKey = await getFormSubmissionKey('diagnostico', payload)
       const response = await fetch('/api/diagnostico', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Idempotency-Key': idempotencyKey,
+        },
         body: JSON.stringify(payload),
         signal: AbortSignal.timeout(20000),
       })
       const data = (await response.json().catch(() => ({}))) as {
         error?: string
+        delivered?: boolean
+        crmConfirmed?: boolean
+        scheduleReady?: boolean
         calendarUrl?: string
         opportunityId?: string | null
       }
@@ -638,7 +587,11 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
       if (!response.ok) {
         throw new Error(data.error || 'Não foi possível registrar seus dados.')
       }
+      if (data.delivered !== true) {
+        throw new Error('Não foi possível confirmar a entrega. Tente novamente em instantes.')
+      }
 
+      await clearFormSubmissionKey('diagnostico', payload, idempotencyKey)
       const questionnaireAnswers = buildDiagnosticCrmFormAnswers({
         funcionarios_clt: 'Sim',
         quant_funcionarios_clt: String(payload.funcionarios_clt || ''),
@@ -655,14 +608,20 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
         try { window.sessionStorage.removeItem(DIAGNOSTIC_OPPORTUNITY_KEY) } catch { /* storage bloqueado */ }
       }
 
-      const destination = buildCalendarTarget(data.calendarUrl || calendarUrl, payload)
-      pushDiagnosticEvent('diagnostico_form_submit', attribution, {
-        lead_type: 'diagnostico-sst',
-        funcionarios_clt: payload.funcionarios_clt,
-        prestador_sst: payload.prestador_sst,
-        segmento: payload.segmento,
-        cargo: payload.cargo,
-      })
+      const destination = data.scheduleReady === false
+        ? ''
+        : buildCalendarTarget(data.calendarUrl || calendarUrl, payload)
+      pushDiagnosticEvent(
+        data.crmConfirmed === true ? 'diagnostico_form_submit' : 'diagnostico_delivery_accepted',
+        attribution,
+        {
+          lead_type: 'diagnostico-sst',
+          funcionarios_clt: payload.funcionarios_clt,
+          prestador_sst: payload.prestador_sst,
+          segmento: payload.segmento,
+          cargo: payload.cargo,
+        },
+      )
 
       if (destination) {
         setScheduleTarget(destination)
@@ -775,6 +734,7 @@ export function DiagnosticoClient({ calendarUrl, privacyUrl }: DiagnosticClientP
                   <input type="hidden" name="landing_page" value={attribution?.first.page || ''} />
                   <input type="hidden" name="conversion_page" value={conversionPage} />
                   <input type="hidden" name="original_referrer" value={attribution?.first.referrer || ''} />
+                  <input type="hidden" name="last_referrer" value={attribution?.last.referrer || ''} />
                   <input type="hidden" name="form_started_at" value={formStartedAt} />
                   <input type="hidden" name="utm_source" value={attribution?.last.utm_source || ''} />
                   <input type="hidden" name="utm_medium" value={attribution?.last.utm_medium || ''} />

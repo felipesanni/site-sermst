@@ -38,7 +38,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
     <section className="overflow-hidden bg-white py-24">
       <div className="mx-auto w-full max-w-[1280px] px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <FadeIn direction="right">
+          <FadeIn direction="right" className="min-w-0">
             <div>
               <span className="mb-6 inline-block rounded-full bg-brand-900/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-900">
                 Simulador de risco eSocial
@@ -123,7 +123,7 @@ export function PenaltyCalculator({ localidade }: PenaltyCalculatorProps) {
             </div>
           </FadeIn>
 
-          <FadeIn direction="left" delay={0.2}>
+          <FadeIn direction="left" delay={0.2} className="min-w-0">
             <div className="group relative">
               <div className="absolute -inset-4 rounded-[3.5rem] bg-gradient-to-r from-accent-pink to-brand-900 opacity-20 blur-2xl transition-opacity duration-500 group-hover:opacity-40" />
               <div className="relative overflow-hidden rounded-[3.5rem] border border-white/10 bg-brand-900 p-12 text-white shadow-2xl">

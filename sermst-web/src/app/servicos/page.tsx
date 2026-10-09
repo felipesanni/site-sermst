@@ -25,6 +25,18 @@ export const metadata = {
 
 export default function ServicosIndexPage() {
   const servicos = Object.entries(servicosSEO).map(([slug, data]) => ({ slug, ...data }));
+  const serviceCategories = [
+    {
+      id: 'exames-ocupacionais',
+      label: 'Exames ocupacionais e saúde',
+      services: servicos.filter((service) => service.isClinico),
+    },
+    {
+      id: 'programas-laudos-gestao',
+      label: 'Programas, laudos e gestão de SST',
+      services: servicos.filter((service) => !service.isClinico),
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-slate-50">
@@ -81,6 +93,13 @@ export default function ServicosIndexPage() {
             empresa em conformidade com o Ministério do Trabalho.
           </p>
           <p className="mb-4 leading-relaxed text-slate-600">
+            Se ainda está definindo o escopo, conheça as{' '}
+            <Link href="/solucoes" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+              soluções de SST organizadas por necessidade
+            </Link>{' '}
+            antes de escolher um serviço específico.
+          </p>
+          <p className="mb-4 leading-relaxed text-slate-600">
             Empresas com funcionários CLT têm obrigações periódicas de SST que variam conforme o
             CNAE, o grau de risco e o número de empregados. Exame periódico, envio do S-2220,
             atualização de PCMSO e PGR e renovação de treinamentos obrigatórios fazem parte do
@@ -104,6 +123,17 @@ export default function ServicosIndexPage() {
           </p>
         </div>
       </section>
+
+      <nav aria-label="Atalhos para categorias de serviços" className="mx-auto w-full max-w-[1280px] px-6 pt-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <p className="mb-3 text-sm font-bold text-brand-900">Ir direto para</p>
+          <div className="flex flex-wrap gap-2">
+            <a href="#exames-ocupacionais" className="inline-flex min-h-11 items-center rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-brand-900 transition hover:border-accent-pink/50 hover:text-accent-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink">Exames ocupacionais</a>
+            <a href="#programas-laudos-gestao" className="inline-flex min-h-11 items-center rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-brand-900 transition hover:border-accent-pink/50 hover:text-accent-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink">Programas, laudos e gestão</a>
+            <a href="#catalogo-completo" className="inline-flex min-h-11 items-center rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-brand-900 transition hover:border-accent-pink/50 hover:text-accent-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink">Ver catálogo completo</a>
+          </div>
+        </div>
+      </nav>
 
       <section className="mx-auto w-full max-w-[1280px] px-6 py-20 lg:px-8">
         <div className="mb-8 rounded-[2rem] border border-accent-pink/20 bg-gradient-to-r from-accent-pink/6 via-white to-accent-pink/10 p-6 shadow-sm">
@@ -159,9 +189,17 @@ export default function ServicosIndexPage() {
                 clareza.
               </p>
             </div>
-            <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">
-              Abrir Calculadora de Risco
-            </Link>
+            <div className="w-full lg:w-auto">
+              <Link href="/rh/calculadora-cnae-grau-de-risco" className="btn-dark-safe w-full lg:w-auto">
+                Abrir Calculadora de Risco
+              </Link>
+              <p className="mt-3 text-center text-sm text-slate-600 lg:text-right">
+                Prefere conversar?{' '}
+                <Link href="/diagnostico" className="font-bold text-brand-900 underline decoration-accent-pink/50 underline-offset-4 hover:text-accent-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink">
+                  Solicite um diagnóstico gratuito
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -201,26 +239,36 @@ export default function ServicosIndexPage() {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {servicos.map((servico, idx) => (
-            <FadeIn key={servico.slug} delay={idx * 0.1}>
-              <Link href={`/servicos/${servico.slug}`} className="card-clean group block">
-                <div className="mb-6 flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-accent-pink transition-colors group-hover:bg-accent-pink group-hover:text-white">
-                    <ShieldCheck className="h-6 w-6" />
-                  </div>
-                  <Zap className="h-5 w-5 text-slate-200 transition-colors group-hover:text-accent-pink" />
+        <div id="catalogo-completo" className="scroll-mt-24 pt-4" tabIndex={-1}>
+          <h2 className="mb-8 text-3xl font-black text-brand-900 md:text-4xl">Catálogo completo de serviços</h2>
+          <div className="space-y-12">
+            {serviceCategories.map((category) => (
+              <section key={category.id} aria-labelledby={category.id}>
+                <h3 id={category.id} tabIndex={-1} className="mb-5 scroll-mt-24 text-2xl font-black text-brand-900">{category.label}</h3>
+                <div className="grid gap-8 md:grid-cols-2">
+                  {category.services.map((servico, idx) => (
+                    <FadeIn key={servico.slug} delay={idx * 0.1}>
+                      <Link href={'/servicos/' + servico.slug} className="card-clean group block">
+                        <div className="mb-6 flex items-start justify-between">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-accent-pink transition-colors group-hover:bg-accent-pink group-hover:text-white">
+                            <ShieldCheck className="h-6 w-6" />
+                          </div>
+                          <Zap className="h-5 w-5 text-slate-200 transition-colors group-hover:text-accent-pink" />
+                        </div>
+                        <h4 className="mb-4 text-2xl font-black text-brand-900 transition-colors group-hover:text-accent-pink">
+                          {servico.h1}
+                        </h4>
+                        <p className="mb-8 line-clamp-3 text-slate-600">{servico.hook}</p>
+                        <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent-pink">
+                          Ver detalhes do serviço <ChevronRight className="h-4 w-4" />
+                        </div>
+                      </Link>
+                    </FadeIn>
+                  ))}
                 </div>
-                <h3 className="mb-4 text-2xl font-black text-brand-900 transition-colors group-hover:text-accent-pink">
-                  {servico.h1}
-                </h3>
-                <p className="mb-8 line-clamp-3 text-slate-600">{servico.hook}</p>
-                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent-pink">
-                  Ver detalhes do serviço <ChevronRight className="h-4 w-4" />
-                </div>
-              </Link>
-            </FadeIn>
-          ))}
+              </section>
+            ))}
+          </div>
         </div>
       </section>
     </main>

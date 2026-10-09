@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import { WhatsAppInlineLink } from '@/components/ui/whatsapp-link';
+import { clearFormSubmissionKey, getFormSubmissionKey } from '@/lib/form-submission-id';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -124,6 +125,7 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
       : 'contato_sermst';
   const pathname = usePathname();
   const formStartTrackedRef = useRef(false);
+  const submissionLockRef = useRef(false);
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const [attribution, setAttribution] = useState<StoredAttribution | null>(null);
@@ -197,45 +199,63 @@ export function LeadForm({ variant = 'default' }: LeadFormProps) {
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (status === 'submitting') return;
+    if (submissionLockRef.current || status === 'submitting') return;
 
+    submissionLockRef.current = true;
     setStatus('submitting');
     setError('');
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     try {
+      const idempotencyKey = await getFormSubmissionKey('lead-' + formName, payload);
       const res = await fetch('/api/lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Idempotency-Key': idempotencyKey,
+        },
         body: JSON.stringify(payload),
       });
+      const receipt = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.error || 'Não foi possível enviar.');
+        throw new Error(receipt?.error || 'Não foi possível enviar.');
+      }
+      if (receipt?.delivered !== true) {
+        throw new Error('Não foi possível confirmar a entrega. Tente novamente em instantes.');
       }
 
       setStatus('success');
-      (e.target as HTMLFormElement).reset();
+      form.reset();
+      await clearFormSubmissionKey('lead-' + formName, payload, idempotencyKey);
 
-      // Dispara um único evento proprietário para GTM/GA4 e o Lead do Meta Pixel
       if (typeof window !== 'undefined') {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'sermst_lead_generated',
-          form_name: formName,
-          lead_event_name: 'generate_lead',
-          conversion_page: pathname,
-        });
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Lead');
+        if (receipt?.crmConfirmed === true) {
+          window.dataLayer.push({
+            event: 'sermst_lead_generated',
+            form_name: formName,
+            conversion_page: pathname,
+          });
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead');
+          }
+        } else {
+          window.dataLayer.push({
+            event: 'sermst_lead_delivery_accepted',
+            form_name: formName,
+            conversion_page: pathname,
+          });
         }
       }
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Erro inesperado.');
+    } finally {
+      submissionLockRef.current = false;
     }
   }
 

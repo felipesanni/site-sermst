@@ -18,6 +18,8 @@ import {
   X,
 } from 'lucide-react';
 import { AssinaturaContractModal } from './assinatura-contract-modal';
+import { dispatchSubscriptionLeadEvents } from '@/lib/subscription-conversion';
+import { clearFormSubmissionKey, getFormSubmissionKey } from '@/lib/form-submission-id';
 import { cnaeData, grauRiscoInfo, type CnaeEntry } from '@/lib/data/cnae-data';
 import {
   calculateSubscriptionMonthly,
@@ -354,6 +356,7 @@ function AssinaturaCommercialModal({
   const [submitStatus, setSubmitStatus] = useState<CommercialSubmitStatus>('idle');
   const [submitError, setSubmitError] = useState('');
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const submissionLockRef = useRef(false);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -373,6 +376,8 @@ function AssinaturaCommercialModal({
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submissionLockRef.current) return;
+    submissionLockRef.current = true;
     setSubmitStatus('submitting');
     setSubmitError('');
 
@@ -420,36 +425,68 @@ function AssinaturaCommercialModal({
       cnpj: digits(informedCnpj),
       cnae: cnpjInfo?.cnaeFiscal || '',
       grau_risco: cnaeEntry ? String(cnaeEntry.grauRisco) : '',
+      assinatura: {
+        plano: {
+          id: plan.id,
+          nome: plan.title,
+          funcionarios: employees,
+          itens_inclusos: plan.includedItems,
+        },
+        responsavel: {
+          nome: responsibleName,
+          email,
+          telefone: phone,
+          cargo: role,
+        },
+        empresa: {
+          cnpj: digits(informedCnpj),
+          razao_social: company,
+          cnae: cnpjInfo?.cnaeFiscal || '',
+          cnae_descricao: cnpjInfo?.cnaeDescricao || '',
+          grau_risco: cnaeEntry ? String(cnaeEntry.grauRisco) : '',
+          grau_risco_label: riskLabel,
+          endereco_principal: cnpjInfo?.endereco,
+        },
+      },
       ...buildAttributionPayload(attribution, conversionPage),
     };
 
     try {
+      const submissionId = await getFormSubmissionKey('subscription-commercial', payload);
       const response = await fetch('/api/lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Idempotency-Key': submissionId,
+        },
         body: JSON.stringify(payload),
       });
+      const receipt = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data?.error || 'Não foi possível enviar seus dados.');
+        throw new Error(receipt?.error || 'Não foi possível enviar seus dados.');
+      }
+      if (receipt?.delivered !== true) {
+        throw new Error('Não foi possível confirmar a entrega. Tente novamente em instantes.');
       }
 
+      await clearFormSubmissionKey('subscription-commercial', payload, submissionId);
       setSubmitStatus('success');
-
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'subscription_commercial_lead_generated',
-        plan_id: plan.id,
-        plan_name: plan.title,
+      dispatchSubscriptionLeadEvents({
+        flow: 'commercial',
+        submissionId,
+        planId: plan.id,
         employees,
-        cnae_codigo: cnpjInfo?.cnaeFiscal || '',
+        crmConfirmed: receipt?.crmConfirmed === true,
+        crmId: typeof receipt?.crmId === 'string' ? receipt.crmId : undefined,
       });
     } catch (error) {
       setSubmitStatus('error');
       setSubmitError(
         error instanceof Error ? error.message : 'Ocorreu um erro ao enviar seus dados.',
       );
+    } finally {
+      submissionLockRef.current = false;
     }
   }
 

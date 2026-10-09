@@ -1,0 +1,368 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - generic [ref=f2e4]:
+      - link [ref=f2e5] [cursor=pointer]:
+        - /url: /
+        - img "SERMST Gestão Ocupacional" [ref=f2e6]
+      - generic [ref=f2e7]:
+        - link [ref=f2e8] [cursor=pointer]:
+          - /url: https://wa.me/5511915146447?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Sa%C3%BAde%20Ocupacional%20da%20SERMST%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es
+          - img "WhatsApp" [ref=f2e9]
+          - text: Falar no WhatsApp
+        - link "comercial@sermst.com.br" [ref=f2e10] [cursor=pointer]:
+          - /url: mailto:comercial@sermst.com.br
+        - link "Calcular Meu Risco" [ref=f2e13] [cursor=pointer]:
+          - /url: /rh/calculadora-cnae-grau-de-risco
+    - banner [ref=f2e14]:
+      - generic [ref=f2e16]:
+        - navigation [ref=f2e17]:
+          - link "Home" [ref=f2e18] [cursor=pointer]:
+            - /url: /
+          - link "Quem Somos" [ref=f2e19] [cursor=pointer]:
+            - /url: /quem-somos
+          - link "Serviços" [ref=f2e20] [cursor=pointer]:
+            - /url: /servicos
+          - link "RH e eSocial" [ref=f2e21] [cursor=pointer]:
+            - /url: /rh
+          - link "Saúde Ocupacional" [ref=f2e22] [cursor=pointer]:
+            - /url: /saude
+          - link "Normas (NR)" [ref=f2e23] [cursor=pointer]:
+            - /url: /normas
+          - link "Planos SST" [ref=f2e24] [cursor=pointer]:
+            - /url: /assinaturas
+          - link "Contato" [ref=f2e25] [cursor=pointer]:
+            - /url: /contato
+        - generic [ref=f2e26]:
+          - link "Facebook" [ref=f2e27] [cursor=pointer]:
+            - /url: https://www.facebook.com/sermstocupacional
+          - link "Instagram" [ref=f2e30] [cursor=pointer]:
+            - /url: https://www.instagram.com/sermstocupacional/
+          - link "LinkedIn" [ref=f2e33] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/sermst-gest%C3%A3o-ocupacional
+          - link "YouTube" [ref=f2e36] [cursor=pointer]:
+            - /url: https://www.youtube.com/@sermstocupacional
+  - main [ref=f2e39]:
+    - main [ref=f2e40]:
+      - generic [ref=f2e41]:
+        - img "Equipe discutindo gestão de saúde e segurança do trabalho" [ref=f2e42]
+        - generic [ref=f2e47]:
+          - link "← Saúde Ocupacional" [ref=f2e49] [cursor=pointer]:
+            - /url: /saude
+          - heading "O que é gestão de SST? Como organizar a rotina da empresa" [level=1] [ref=f2e52]
+          - paragraph [ref=f2e53]: Gestão de Saúde e Segurança do Trabalho não cabe em uma pasta de documentos. Ela conecta a identificação dos riscos, as medidas de controle, os exames, os treinamentos e os registros enviados ao eSocial.
+          - paragraph [ref=f2e59]:
+            - text: Por
+            - link "Felipe Sannino" [ref=f2e60] [cursor=pointer]:
+              - /url: https://sermst.com.br/equipe/felipe-sannino
+            - text: · Advogado em Direito do Trabalho e SST · OAB/SP 430.824
+          - generic [ref=f2e61]:
+            - generic [ref=f2e62]: "Última revisão: 11 de agosto de 2026"
+            - generic [ref=f2e66]: Publicado em 1 de janeiro de 2025
+      - generic [ref=f2e68]:
+        - article [ref=f2e69]:
+          - generic [ref=f2e71]:
+            - generic [ref=f2e72]:
+              - paragraph [ref=f2e73]: Resposta direta
+              - generic [ref=f2e74]:
+                - paragraph [ref=f2e75]:
+                  - strong [ref=f2e76]: Gestão de SST
+                  - text: é o processo de identificar e controlar riscos ocupacionais, organizar PGR, PCMSO, exames, treinamentos e acompanhar os registros de segurança e saúde do trabalho. Ela transforma documentos separados em uma rotina acompanhada pela empresa.
+                - link "Solicitar diagnóstico gratuito" [ref=f2e77] [cursor=pointer]:
+                  - /url: /diagnostico
+            - generic [ref=f2e78]:
+              - paragraph [ref=f2e79]: Neste artigo
+              - list [ref=f2e80]:
+                - listitem [ref=f2e81]:
+                  - link "01 O que é gestão de SST de verdade" [ref=f2e82] [cursor=pointer]:
+                    - /url: "#o-que-e-gestao-de-sst-de-verdade-1"
+                    - generic [ref=f2e83]: "01"
+                    - generic [ref=f2e84]: O que é gestão de SST de verdade
+                - listitem [ref=f2e85]:
+                  - link "02 O ciclo de gestão de SST em 6 etapas" [ref=f2e86] [cursor=pointer]:
+                    - /url: "#o-ciclo-de-gestao-de-sst-em-6-etapas-2"
+                    - generic [ref=f2e87]: "02"
+                    - generic [ref=f2e88]: O ciclo de gestão de SST em 6 etapas
+                - listitem [ref=f2e89]:
+                  - link "03 Os 4 documentos que sustentam a gestão" [ref=f2e90] [cursor=pointer]:
+                    - /url: "#os-4-documentos-que-sustentam-a-gestao-3"
+                    - generic [ref=f2e91]: "03"
+                    - generic [ref=f2e92]: Os 4 documentos que sustentam a gestão
+                - listitem [ref=f2e93]:
+                  - link "04 eSocial é o termômetro da gestão" [ref=f2e94] [cursor=pointer]:
+                    - /url: "#esocial-e-o-termometro-da-gestao-4"
+                    - generic [ref=f2e95]: "04"
+                    - generic [ref=f2e96]: eSocial é o termômetro da gestão
+                - listitem [ref=f2e97]:
+                  - link "05 Os 5 sinais de que a sua gestão está frágil" [ref=f2e98] [cursor=pointer]:
+                    - /url: "#os-5-sinais-de-que-a-sua-gestao-esta-fragil-5"
+                    - generic [ref=f2e99]: "05"
+                    - generic [ref=f2e100]: Os 5 sinais de que a sua gestão está frágil
+                - listitem [ref=f2e101]:
+                  - link "06 Como começar a estruturar gestão de SST" [ref=f2e102] [cursor=pointer]:
+                    - /url: "#como-comecar-a-estruturar-gestao-de-sst-6"
+                    - generic [ref=f2e103]: "06"
+                    - generic [ref=f2e104]: Como começar a estruturar gestão de SST
+          - generic [ref=f2e106]:
+            - generic [ref=f2e107]:
+              - generic [ref=f2e108]: "01"
+              - heading "O que é gestão de SST de verdade" [level=2] [ref=f2e109]
+            - generic [ref=f2e110]:
+              - paragraph [ref=f2e111]: "Gestão de SST integra os processos de saúde e segurança em uma sequência coerente: identificar os riscos, definir controles, treinar, acompanhar a saúde, registrar ocorrências e revisar o que precisa melhorar."
+              - paragraph [ref=f2e112]: Um problema comum é deixar PGR, PCMSO, ASOs, treinamentos e eSocial em rotinas separadas. Os documentos existem, mas usam cargos, riscos ou datas diferentes. A gestão começa quando essas informações passam a conversar entre si.
+          - generic [ref=f2e114]:
+            - generic [ref=f2e115]:
+              - generic [ref=f2e116]: "02"
+              - heading "O ciclo de gestão de SST em 6 etapas" [level=2] [ref=f2e117]
+            - generic [ref=f2e118]:
+              - list [ref=f2e119]:
+                - listitem [ref=f2e120]:
+                  - strong [ref=f2e121]: Identificar.
+                  - text: Mapear os perigos e riscos ocupacionais por ambiente, atividade e grupo de trabalhadores.
+                - listitem [ref=f2e122]:
+                  - strong [ref=f2e123]: Avaliar.
+                  - text: Estimar o nível de risco com os critérios definidos no PGR e estabelecer prioridades.
+                - listitem [ref=f2e124]:
+                  - strong [ref=f2e125]: Controlar.
+                  - text: Priorizar eliminação, substituição e proteção coletiva antes de depender do EPI.
+                - listitem [ref=f2e126]:
+                  - strong [ref=f2e127]: Documentar.
+                  - text: PGR (riscos e controles), PCMSO (vigilância médica), ordens de serviço (instruções específicas), procedimentos de trabalho.
+                - listitem [ref=f2e128]:
+                  - strong [ref=f2e129]: Treinar.
+                  - text: Atender às NRs aplicáveis e aos procedimentos da empresa, com conteúdo, instrutor, carga horária e registros adequados.
+                - listitem [ref=f2e130]:
+                  - strong [ref=f2e131]: Monitorar e melhorar.
+                  - text: Acompanhar ocorrências, afastamentos, prazos e eficácia das medidas para ajustar o sistema.
+              - paragraph [ref=f2e132]: Uma etapa depende da outra. Um PGR bem escrito perde utilidade se as medidas não chegam à operação; um treinamento sem registro dificulta a comprovação; um documento antigo pode deixar de representar o trabalho real.
+          - generic [ref=f2e134]:
+            - generic [ref=f2e135]:
+              - generic [ref=f2e136]: "03"
+              - heading "Os 4 documentos que sustentam a gestão" [level=2] [ref=f2e137]
+            - generic [ref=f2e138]:
+              - list [ref=f2e139]:
+                - listitem [ref=f2e140]:
+                  - strong [ref=f2e141]: "PGR (NR-01):"
+                  - text: reúne inventário de riscos e plano de ação.
+                - listitem [ref=f2e142]:
+                  - strong [ref=f2e143]: "PCMSO (NR-07):"
+                  - text: planeja o acompanhamento médico a partir dos riscos ocupacionais.
+                - listitem [ref=f2e144]:
+                  - strong [ref=f2e145]: "LTCAT:"
+                  - text: sustenta informações previdenciárias relacionadas à exposição a agentes nocivos.
+                - listitem [ref=f2e146]:
+                  - strong [ref=f2e147]: "Ordens de serviço e procedimentos:"
+                  - text: comunicam riscos, controles e orientações aplicáveis às atividades.
+              - paragraph [ref=f2e148]: Esses documentos têm finalidades diferentes, mas os dados básicos sobre funções, ambientes, riscos e controles precisam ser coerentes.
+          - generic [ref=f2e150]:
+            - generic [ref=f2e151]:
+              - generic [ref=f2e152]: "04"
+              - heading "eSocial é o termômetro da gestão" [level=2] [ref=f2e153]
+            - generic [ref=f2e154]:
+              - paragraph [ref=f2e155]: Os eventos de SST do eSocial, como S-2210, S-2220 e S-2240, refletem dados produzidos ao longo da gestão. Quando o cadastro, os exames e as avaliações ambientais estão organizados, o envio tende a exigir menos correções.
+              - paragraph [ref=f2e156]: Atrasos, rejeições e divergências entre o evento e o documento de origem costumam indicar falhas no processo anterior ao envio. Corrigir apenas o arquivo transmitido não resolve a causa.
+          - generic [ref=f2e158]:
+            - generic [ref=f2e159]:
+              - generic [ref=f2e160]: "05"
+              - heading "Os 5 sinais de que a sua gestão está frágil" [level=2] [ref=f2e161]
+            - generic [ref=f2e162]:
+              - list [ref=f2e163]:
+                - listitem [ref=f2e164]:
+                  - strong [ref=f2e165]: O PGR foi feito uma vez e ninguém revisou desde.
+                - listitem [ref=f2e166]:
+                  - strong [ref=f2e167]: Os ASOs estão arquivados sem ninguém olhar tendência.
+                - listitem [ref=f2e168]:
+                  - strong [ref=f2e169]: Treinamentos estão vencidos ou nunca foram dados formalmente.
+                - listitem [ref=f2e170]:
+                  - strong [ref=f2e171]: Os eventos do eSocial saem com erro recorrente.
+                - listitem [ref=f2e172]:
+                  - strong [ref=f2e173]: Quando alguém pergunta "o que muda no SST porque temos uma máquina nova", ninguém sabe responder.
+              - paragraph [ref=f2e174]: Um sinal isolado já merece atenção. Quando vários aparecem ao mesmo tempo, vale fazer uma revisão estruturada dos documentos e da rotina operacional.
+          - generic [ref=f2e176]:
+            - generic [ref=f2e177]:
+              - generic [ref=f2e178]: "06"
+              - heading "Como começar a estruturar gestão de SST" [level=2] [ref=f2e179]
+            - list [ref=f2e181]:
+              - listitem [ref=f2e182]:
+                - strong [ref=f2e183]: Revisar o que existe hoje.
+                - text: Confira se cada documento está atualizado, representa a operação e tem a responsabilidade técnica aplicável.
+              - listitem [ref=f2e184]:
+                - strong [ref=f2e185]: Definir um responsável interno.
+                - text: Pode ser RH, DP, gerente de operação, ou cargo dedicado em empresa maior. Sem dono, o sistema não funciona.
+              - listitem [ref=f2e186]:
+                - strong [ref=f2e187]: Definir o apoio técnico.
+                - text: A empresa pode usar equipe própria, profissionais externos ou uma combinação dos dois, conforme o porte e o dimensionamento legal.
+              - listitem [ref=f2e188]:
+                - strong [ref=f2e189]: Definir cronograma.
+                - text: Quais documentos precisam ser revisados quando. Quais exames fazem aniversário em qual mês. Quais treinamentos vencem.
+              - listitem [ref=f2e190]:
+                - strong [ref=f2e191]: Criar painel de indicadores.
+                - text: Conformidade documental, taxa de exame em dia, treinamentos atualizados, eventos eSocial no prazo. Olhar mensal.
+              - listitem [ref=f2e192]:
+                - strong [ref=f2e193]: Fazer análise crítica periódica.
+                - text: A direção e os responsáveis revisam os resultados e ajustam prioridades.
+          - generic [ref=f2e195]:
+            - heading "Perguntas frequentes" [level=2] [ref=f2e198]
+            - generic [ref=f2e200]:
+              - group [ref=f2e202]:
+                - generic "Quem é o responsável pela gestão de SST na empresa? +" [ref=f2e203] [cursor=pointer]:
+                  - generic [ref=f2e204]: Quem é o responsável pela gestão de SST na empresa?
+                  - generic [ref=f2e205]: +
+                - paragraph [ref=f2e207]: O empregador continua responsável pelo cumprimento das obrigações. A coordenação operacional pode ficar com RH, gestão, SESMT ou outro responsável interno, com apoio técnico externo quando necessário.
+              - group [ref=f2e209]:
+                - generic "Posso terceirizar toda a gestão de SST? +" [ref=f2e210] [cursor=pointer]:
+                  - generic [ref=f2e211]: Posso terceirizar toda a gestão de SST?
+                  - generic [ref=f2e212]: +
+              - group [ref=f2e214]:
+                - generic "Quanto custa montar gestão de SST do zero? +" [ref=f2e215] [cursor=pointer]:
+                  - generic [ref=f2e216]: Quanto custa montar gestão de SST do zero?
+                  - generic [ref=f2e217]: +
+              - group [ref=f2e219]:
+                - generic "Qual a diferença entre gestão de SST e SESMT? +" [ref=f2e220] [cursor=pointer]:
+                  - generic [ref=f2e221]: Qual a diferença entre gestão de SST e SESMT?
+                  - generic [ref=f2e222]: +
+              - group [ref=f2e224]:
+                - generic "Como saber se minha gestão de SST aguenta uma fiscalização? +" [ref=f2e225] [cursor=pointer]:
+                  - generic [ref=f2e226]: Como saber se minha gestão de SST aguenta uma fiscalização?
+                  - generic [ref=f2e227]: +
+        - complementary [ref=f2e228]:
+          - generic [ref=f2e230]:
+            - generic [ref=f2e231]: SERMST
+            - heading "Sua gestão de SST aguenta fiscalização?" [level=3] [ref=f2e236]
+            - paragraph [ref=f2e237]: A SERMST revisa PGR, PCMSO, treinamentos, ASOs, EPI e eSocial para identificar inconsistências e organizar um plano de ação.
+            - link "Conheça os planos de gestão SST" [ref=f2e238] [cursor=pointer]:
+              - /url: /assinaturas
+          - generic [ref=f2e242]:
+            - paragraph [ref=f2e243]: Leituras relacionadas
+            - list [ref=f2e244]:
+              - listitem [ref=f2e245]:
+                - link "Empresa de segurança do trabalho em São Paulo" [ref=f2e246] [cursor=pointer]:
+                  - /url: /servicos/empresa-seguranca-do-trabalho/sao-paulo
+              - listitem [ref=f2e250]:
+                - link "O que é saúde ocupacional" [ref=f2e251] [cursor=pointer]:
+                  - /url: /saude/o-que-e-saude-ocupacional
+              - listitem [ref=f2e255]:
+                - link "Guia da NR-01 e atualização do PGR" [ref=f2e256] [cursor=pointer]:
+                  - /url: /normas/nr-01-pgr-atualizada
+              - listitem [ref=f2e260]:
+                - 'link "PCMSO (NR-07): programa" [ref=f2e261] [cursor=pointer]':
+                  - /url: /servicos/pcmso-nr07-programa/sao-paulo
+              - listitem [ref=f2e265]:
+                - link "Multa eSocial S-2220" [ref=f2e266] [cursor=pointer]:
+                  - /url: /rh/multa-esocial-s2220
+      - generic [ref=f2e275]:
+        - generic [ref=f2e276]: Próximo passo
+        - heading "A SERMST faz auditoria SST gratuita" [level=2] [ref=f2e277]
+        - paragraph [ref=f2e278]: Em 15 minutos a equipe entende o porte e a operação da empresa antes de indicar exame, laudo ou gestão. Sem compromisso, sem venda forçada.
+        - link "Ver Planos SST" [ref=f2e279] [cursor=pointer]:
+          - /url: /assinaturas
+  - generic [ref=f2e282]:
+    - link "Fale pelo WhatsApp" [ref=f2e283] [cursor=pointer]:
+      - /url: https://wa.me/5511915146447?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Sa%C3%BAde%20Ocupacional%20da%20SERMST%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es
+      - img "WhatsApp" [ref=f2e284]
+    - contentinfo [ref=f2e286]:
+      - generic [ref=f2e289]:
+        - generic [ref=f2e290]:
+          - img "SERMST" [ref=f2e291]
+          - paragraph [ref=f2e292]: Há mais de 55 anos, a SERMST acompanha empresas com medicina ocupacional e segurança do trabalho. A equipe ajuda a manter exames, laudos, treinamentos e prazos de SST organizados.
+        - generic [ref=f2e293]:
+          - heading "Soluções Corporativas" [level=4] [ref=f2e294]
+          - list [ref=f2e295]:
+            - listitem [ref=f2e296]:
+              - link "Exame Admissional Expresso" [ref=f2e297] [cursor=pointer]:
+                - /url: /servicos/exame-admissional-expresso
+            - listitem [ref=f2e300]:
+              - link "Empresa de Segurança do Trabalho" [ref=f2e301] [cursor=pointer]:
+                - /url: /servicos/empresa-seguranca-do-trabalho
+            - listitem [ref=f2e304]:
+              - link "Serviço de PGR NR-01" [ref=f2e305] [cursor=pointer]:
+                - /url: /servicos/pgr-nr01-gerenciamento-riscos
+            - listitem [ref=f2e308]:
+              - link "PCMSO e Saúde Ocupacional" [ref=f2e309] [cursor=pointer]:
+                - /url: /servicos/pcmso-nr07-programa
+            - listitem [ref=f2e312]:
+              - link "Serviço de LTCAT previdenciário" [ref=f2e313] [cursor=pointer]:
+                - /url: /servicos/ltcat-laudo-tecnico-previdenciario
+            - listitem [ref=f2e316]:
+              - link "Gestão eSocial S-2220/S-2240" [ref=f2e317] [cursor=pointer]:
+                - /url: /servicos/gestao-esocial-s2220-s2240
+            - listitem [ref=f2e320]:
+              - link "Audiometria Ocupacional" [ref=f2e321] [cursor=pointer]:
+                - /url: /servicos/audiometria-ocupacional-clinica
+            - listitem [ref=f2e324]:
+              - link "Exame Toxicológico para CNH C, D e E" [ref=f2e325] [cursor=pointer]:
+                - /url: /servicos/exame-toxicologico-clt
+            - listitem [ref=f2e328]:
+              - link "Exames Complementares" [ref=f2e329] [cursor=pointer]:
+                - /url: /servicos/exames-complementares-laboratoriais
+            - listitem [ref=f2e332]:
+              - link "Perícia Trabalhista" [ref=f2e333] [cursor=pointer]:
+                - /url: /servicos/pericia-trabalhista-assistente-tecnico
+            - listitem [ref=f2e336]:
+              - link "Treinamentos de NRs" [ref=f2e337] [cursor=pointer]:
+                - /url: /servicos/treinamentos-nrs-cipa-brigada
+            - listitem [ref=f2e340]:
+              - link "Planos SST" [ref=f2e341] [cursor=pointer]:
+                - /url: /assinaturas
+            - listitem [ref=f2e344]:
+              - link "Parceiros Comerciais" [ref=f2e345] [cursor=pointer]:
+                - /url: /parcerias/comerciais
+            - listitem [ref=f2e348]:
+              - link "Parceria para Contadores" [ref=f2e349] [cursor=pointer]:
+                - /url: /parcerias/contadores
+        - generic [ref=f2e352]:
+          - heading "Unidade Central" [level=4] [ref=f2e353]
+          - generic [ref=f2e354]:
+            - link [ref=f2e359] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/TcAza8i3jHKjHfjr5
+              - paragraph [ref=f2e360]: Largo do Paissandu, 72
+              - paragraph [ref=f2e361]: Centro Histórico, 3º AndarSão Paulo - SP | 01034-901
+            - generic [ref=f2e366]:
+              - paragraph [ref=f2e367]: Canais Oficiais
+              - link "(11) 3229-7567" [ref=f2e368] [cursor=pointer]:
+                - /url: tel:+551132297567
+              - link "comercial@sermst.com.br" [ref=f2e369] [cursor=pointer]:
+                - /url: mailto:comercial@sermst.com.br
+        - generic [ref=f2e370]:
+          - heading "Regiões Atendidas" [level=4] [ref=f2e371]
+          - generic [ref=f2e372]:
+            - link "São Paulo" [ref=f2e373] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-paulo
+            - link "Santo André" [ref=f2e374] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/santo-andre
+            - link "Osasco" [ref=f2e375] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/osasco
+            - link "Guarulhos" [ref=f2e376] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/guarulhos
+            - link "Diadema" [ref=f2e377] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/diadema
+            - link "S.B. Campo" [ref=f2e378] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-bernardo
+            - link "Barueri" [ref=f2e379] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/barueri
+            - link "S. Caetano" [ref=f2e380] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-caetano
+          - heading "Conhecimento SST" [level=4] [ref=f2e381]
+          - list [ref=f2e382]:
+            - listitem [ref=f2e383]:
+              - link "Conteúdo para empresários" [ref=f2e384] [cursor=pointer]:
+                - /url: /empresario
+            - listitem [ref=f2e387]:
+              - link "Saúde Ocupacional" [ref=f2e388] [cursor=pointer]:
+                - /url: /saude
+            - listitem [ref=f2e391]:
+              - link "RH e DP" [ref=f2e392] [cursor=pointer]:
+                - /url: /rh
+            - listitem [ref=f2e395]:
+              - link "Normas Regulamentadoras" [ref=f2e396] [cursor=pointer]:
+                - /url: /normas
+            - listitem [ref=f2e399]:
+              - link "Dicionário SST" [ref=f2e400] [cursor=pointer]:
+                - /url: /dicionario
+            - listitem [ref=f2e403]:
+              - link "Quem somos" [ref=f2e404] [cursor=pointer]:
+                - /url: /quem-somos
+          - generic [ref=f2e407]:
+            - link "Política de Privacidade" [ref=f2e408] [cursor=pointer]:
+              - /url: /politica-de-privacidade
+            - generic [ref=f2e410]: CRM 1002913 | CNPJ 28.125.178/0001-88© 2026 SERMST Gestão Ocupacional
+  - alert [ref=f2e411]

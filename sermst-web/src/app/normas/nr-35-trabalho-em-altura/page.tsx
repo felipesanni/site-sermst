@@ -7,12 +7,12 @@ const PORTARIA_URL =
   'https://www.in.gov.br/web/dou/-/portaria-mte-n-1.259-de-15-de-julho-de-2026-719529365';
 
 export const metadata: Metadata = {
-  title: 'NR-35 atualizada 2026: presencial e escadas | SERMST',
+  title: 'NR-35 atualizada: treinamento presencial e escadas | SERMST',
   description:
-    'Entenda a Portaria MTE 1.259/2026: treinamento NR-35 presencial, prazo para corrigir cursos anteriores e novas regras para escadas fixas.',
+    'Veja o que mudou em 2026 na NR-35: treinamento presencial, prazo para adequar o treinamento inicial e novas regras para escadas fixas nas empresas.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'NR-35 atualizada 2026: treinamento presencial e escadas',
+    title: 'NR-35 atualizada: treinamento presencial e escadas',
     description:
       'O que mudou na NR-35 em julho de 2026, quem precisa refazer o treinamento e como adequar escadas fixas verticais.',
     url: PAGE_URL,
@@ -38,7 +38,7 @@ export default function NR35Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-27',
+        dateModified: '2026-10-08',
       }}
       readingTime="12 min"
       h1="NR-35 atualizada em 2026: treinamento presencial e novas regras para escadas"

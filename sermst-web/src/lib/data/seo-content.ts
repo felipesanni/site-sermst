@@ -813,6 +813,18 @@ export const servicosSEO: Record<string, SEODocument> = {
           q: "O que é o evento S-2240?",
           a: "E o evento de condições ambientais do trabalho, ligado a exposição a riscos e base técnica de SST.",
         },
+        {
+          q: "Quais eventos de SST existem no eSocial?",
+          a: "Entre os principais estão o S-2210, relacionado à Comunicação de Acidente de Trabalho; o S-2220, de monitoramento da saúde do trabalhador; e o S-2240, de condições ambientais do trabalho. O evento aplicável depende do fato ocorrido e das regras vigentes.",
+        },
+        {
+          q: "O que pode ser incluído na terceirização do eSocial SST?",
+          a: "O escopo pode incluir organização de dados, conferência de informações, preparação ou transmissão dos eventos contratados, acompanhamento de protocolos e apoio na análise de erros. A proposta deve dizer quais eventos, etapas, prazos e limites estão incluídos; não presuma que toda atividade faça parte do serviço.",
+        },
+        {
+          q: "O que a empresa precisa fazer quando contrata apoio para o eSocial SST?",
+          a: "A empresa precisa fornecer informações corretas e atualizadas sobre trabalhadores, funções, exames, atividades e mudanças na operação, além de definir os responsáveis por validar dados e acompanhar pendências. O contrato deve esclarecer como serão feitos os acessos, as aprovações, as correções e a proteção das informações.",
+        },
       ],
     },
   },

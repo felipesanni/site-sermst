@@ -1,0 +1,321 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e4]:
+      - link [ref=f1e5] [cursor=pointer]:
+        - /url: /
+        - img "SERMST Gestão Ocupacional" [ref=f1e6]
+      - generic [ref=f1e7]:
+        - link [ref=f1e8] [cursor=pointer]:
+          - /url: https://wa.me/5511915146447?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Servi%C3%A7os%20da%20SERMST%20e%20gostaria%20de%20um%20or%C3%A7amento
+          - img "WhatsApp" [ref=f1e9]
+          - text: Falar no WhatsApp
+        - link "comercial@sermst.com.br" [ref=f1e10] [cursor=pointer]:
+          - /url: mailto:comercial@sermst.com.br
+        - link "Calcular Meu Risco" [ref=f1e13] [cursor=pointer]:
+          - /url: /rh/calculadora-cnae-grau-de-risco
+    - banner [ref=f1e14]:
+      - generic [ref=f1e16]:
+        - navigation [ref=f1e17]:
+          - link "Home" [ref=f1e18] [cursor=pointer]:
+            - /url: /
+          - link "Quem Somos" [ref=f1e19] [cursor=pointer]:
+            - /url: /quem-somos
+          - link "Serviços" [ref=f1e20] [cursor=pointer]:
+            - /url: /servicos
+          - link "RH e eSocial" [ref=f1e21] [cursor=pointer]:
+            - /url: /rh
+          - link "Saúde Ocupacional" [ref=f1e22] [cursor=pointer]:
+            - /url: /saude
+          - link "Normas (NR)" [ref=f1e23] [cursor=pointer]:
+            - /url: /normas
+          - link "Planos SST" [ref=f1e24] [cursor=pointer]:
+            - /url: /assinaturas
+          - link "Contato" [ref=f1e25] [cursor=pointer]:
+            - /url: /contato
+        - generic [ref=f1e26]:
+          - link "Facebook" [ref=f1e27] [cursor=pointer]:
+            - /url: https://www.facebook.com/sermstocupacional
+          - link "Instagram" [ref=f1e30] [cursor=pointer]:
+            - /url: https://www.instagram.com/sermstocupacional/
+          - link "LinkedIn" [ref=f1e33] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/sermst-gest%C3%A3o-ocupacional
+          - link "YouTube" [ref=f1e36] [cursor=pointer]:
+            - /url: https://www.youtube.com/@sermstocupacional
+  - main [ref=f1e39]:
+    - main [ref=f1e40]:
+      - generic [ref=f1e41]:
+        - img "Recepção da clínica ocupacional da SERMST em São Paulo" [ref=f1e43]
+        - generic [ref=f1e48]:
+          - generic [ref=f1e49]: Exames, laudos e rotina ocupacional
+          - heading "Serviços de SST para empresas que precisam de operação sem gargalo" [level=1] [ref=f1e54]: Serviços de SST para empresasque precisam de operação sem gargalo
+          - paragraph [ref=f1e55]: Soluções em Saúde e Segurança do Trabalho para empresas que precisam contratar, regularizar documentos e manter o eSocial sob controle sem travar a operação.
+      - generic [ref=f1e57]:
+        - paragraph [ref=f1e58]: A SERMST oferece serviços completos de Medicina e Segurança do Trabalho para empresas de todos os portes em São Paulo e Grande ABC. Do exame admissional expresso, com ASO emitido no mesmo dia e laboratório clínico próprio, até a gestão documental de PGR, PCMSO, LTCAT e eSocial, cada serviço é estruturado para reduzir risco e manter a empresa em conformidade com o Ministério do Trabalho.
+        - paragraph [ref=f1e59]:
+          - text: Se ainda está definindo o escopo, conheça as
+          - link "soluções de SST organizadas por necessidade" [ref=f1e60] [cursor=pointer]:
+            - /url: /solucoes
+          - text: antes de escolher um serviço específico.
+        - paragraph [ref=f1e61]:
+          - text: Empresas com funcionários CLT têm obrigações periódicas de SST que variam conforme o CNAE, o grau de risco e o número de empregados. Exame periódico, envio do S-2220, atualização de PCMSO e PGR e renovação de treinamentos obrigatórios fazem parte do ciclo anual de conformidade de qualquer empresa regularmente constituída. Quando esse controle precisa deixar de ser compra avulsa e virar rotina, os
+          - link "Planos SST" [ref=f1e62] [cursor=pointer]:
+            - /url: /assinaturas
+          - text: ajudam a organizar vencimentos, exames e documentos em uma trilha recorrente.
+        - paragraph [ref=f1e63]: Não sabe por onde começar? Use a Calculadora de Risco abaixo para identificar as obrigações de SST com base no CNAE da sua empresa antes de escolher o serviço.
+        - paragraph [ref=f1e64]:
+          - text: Para empresas com motoristas ou para pessoa física que busca
+          - link "exame toxicológico para renovação de CNH C, D e E" [ref=f1e65] [cursor=pointer]:
+            - /url: /servicos/exame-toxicologico-clt/sao-paulo
+          - text: ", a SERMST também atende com fluxo claro, validade nacional e valor informado na própria página."
+      - navigation "Atalhos para categorias de serviços" [ref=f1e66]:
+        - generic [ref=f1e67]:
+          - paragraph [ref=f1e68]: Ir direto para
+          - generic [ref=f1e69]:
+            - link "Exames ocupacionais" [ref=f1e70] [cursor=pointer]:
+              - /url: "#exames-ocupacionais"
+            - link "Programas, laudos e gestão" [ref=f1e71] [cursor=pointer]:
+              - /url: "#programas-laudos-gestao"
+            - link "Ver catálogo completo" [ref=f1e72] [cursor=pointer]:
+              - /url: "#catalogo-completo"
+      - generic [ref=f1e73]:
+        - generic [ref=f1e75]:
+          - generic [ref=f1e76]:
+            - generic [ref=f1e77]: Atendimento para empresas e condutores
+            - heading "Exame toxicológico para empresas, motoristas e CNH C, D e E" [level=2] [ref=f1e78]
+            - paragraph [ref=f1e79]: Consulte quando o exame se aplica, quem pode ser atendido, o valor de referência e as orientações para admissão, desligamento ou renovação da habilitação.
+          - link "Ver exame toxicológico" [ref=f1e80] [cursor=pointer]:
+            - /url: /servicos/exame-toxicologico-clt/sao-paulo
+        - generic [ref=f1e82]:
+          - generic [ref=f1e83]:
+            - generic [ref=f1e84]: Gestão integrada de SST
+            - heading "Empresa de segurança do trabalho em São Paulo" [level=2] [ref=f1e85]
+            - paragraph [ref=f1e86]: Página focada em empresas que querem centralizar PGR, PCMSO, LTCAT, exames ocupacionais, treinamentos e eSocial em uma operação de SST mais coerente.
+          - link "Ver serviço" [ref=f1e87] [cursor=pointer]:
+            - /url: /servicos/empresa-seguranca-do-trabalho/sao-paulo
+        - generic [ref=f1e89]:
+          - generic [ref=f1e90]:
+            - generic [ref=f1e91]: Diagnóstico antes do orçamento
+            - heading "Não sabe ainda quais obrigações se aplicam ao seu caso?" [level=2] [ref=f1e92]
+            - paragraph [ref=f1e93]: Use a Calculadora de Risco para consultar o CNPJ ou CNAE da empresa, estimar o grau de risco, o enquadramento de NR-05/CIPA e chegar ao serviço certo com mais clareza.
+          - generic [ref=f1e94]:
+            - link "Abrir Calculadora de Risco" [ref=f1e95] [cursor=pointer]:
+              - /url: /rh/calculadora-cnae-grau-de-risco
+            - paragraph [ref=f1e96]:
+              - text: Prefere conversar?
+              - link "Solicite um diagnóstico gratuito" [ref=f1e97] [cursor=pointer]:
+                - /url: /diagnostico
+        - generic [ref=f1e98]:
+          - generic [ref=f1e99]: Serviços relacionados
+          - heading "Serviços que costumam ser avaliados em conjunto" [level=2] [ref=f1e100]
+          - paragraph [ref=f1e101]: Consulte exames, programas, laudos e assistência técnica de acordo com a necessidade da empresa. O escopo de cada serviço informa o que está incluído e quais dados precisam ser enviados.
+          - generic [ref=f1e102]:
+            - link "Exame admissional expresso" [ref=f1e103] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-paulo
+            - link "Exame demissional em São Paulo" [ref=f1e106] [cursor=pointer]:
+              - /url: /servicos/exame-demissional/sao-paulo
+            - link "Empresa de segurança do trabalho" [ref=f1e109] [cursor=pointer]:
+              - /url: /servicos/empresa-seguranca-do-trabalho/sao-paulo
+            - link "Audiometria ocupacional" [ref=f1e112] [cursor=pointer]:
+              - /url: /servicos/audiometria-ocupacional-clinica/sao-paulo
+            - link "Exame toxicológico" [ref=f1e115] [cursor=pointer]:
+              - /url: /servicos/exame-toxicologico-clt/sao-paulo
+            - link "Exames complementares" [ref=f1e118] [cursor=pointer]:
+              - /url: /servicos/exames-complementares-laboratoriais/sao-paulo
+            - link "LTCAT previdenciário" [ref=f1e121] [cursor=pointer]:
+              - /url: /servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo
+            - link "PCMSO NR-07" [ref=f1e124] [cursor=pointer]:
+              - /url: /servicos/pcmso-nr07-programa/sao-paulo
+            - link "Perícia trabalhista" [ref=f1e127] [cursor=pointer]:
+              - /url: /servicos/pericia-trabalhista-assistente-tecnico/sao-paulo
+            - link "PGR NR-01" [ref=f1e130] [cursor=pointer]:
+              - /url: /servicos/pgr-nr01-gerenciamento-riscos/sao-paulo
+        - generic [ref=f1e133]:
+          - heading "Catálogo completo de serviços" [level=2] [ref=f1e134]
+          - generic [ref=f1e135]:
+            - region [ref=f1e136]:
+              - heading "Exames ocupacionais e saúde" [level=3] [ref=f1e137]
+              - generic [ref=f1e138]:
+                - link [ref=f1e140] [cursor=pointer]:
+                  - /url: /servicos/exame-admissional-expresso
+                  - heading "Exame Admissional | Clínica de Medicina do Trabalho" [level=4] [ref=f1e148]
+                  - paragraph [ref=f1e149]: A SERMST é uma clínica de exames admissionais em São Paulo para empresas que precisam de ASO, exames complementares e liberação ágil sem atrasar a contratação.
+                  - generic [ref=f1e150]: Ver detalhes do serviço
+                - link [ref=f1e154] [cursor=pointer]:
+                  - /url: /servicos/exame-demissional
+                  - heading "Exame Demissional | Clínica de Medicina do Trabalho" [level=4] [ref=f1e162]
+                  - paragraph [ref=f1e163]: Precisa agendar exame demissional em São Paulo? A SERMST atende empresas no Centro, emite o ASO demissional e organiza o exame conforme o PCMSO, os riscos da função e o prazo da NR-07.
+                  - generic [ref=f1e164]: Ver detalhes do serviço
+                - link [ref=f1e168] [cursor=pointer]:
+                  - /url: /servicos/audiometria-ocupacional-clinica
+                  - heading "Audiometria Ocupacional e Audiometria Tonal | Exames de Audição" [level=4] [ref=f1e176]
+                  - paragraph [ref=f1e177]: A SERMST realiza audiometria ocupacional integrada ao PCMSO, com cabine e equipamentos adequados para acompanhar trabalhadores expostos a níveis de ruído que exigem controle médico.
+                  - generic [ref=f1e178]: Ver detalhes do serviço
+                - link [ref=f1e182] [cursor=pointer]:
+                  - /url: /servicos/exame-toxicologico-clt
+                  - heading "Exame Toxicológico | Empresas, Motoristas e Renovação CNH C, D e E" [level=4] [ref=f1e190]
+                  - paragraph [ref=f1e191]: "Exame toxicológico para empresas e condutores em São Paulo, com coleta para admissão, acompanhamento periódico, desligamento e exigências relacionadas à CNH nas categorias C, D e E. Preço de referência: R$ 200,00."
+                  - generic [ref=f1e192]: Ver detalhes do serviço
+                - link [ref=f1e196] [cursor=pointer]:
+                  - /url: /servicos/exames-complementares-laboratoriais
+                  - heading "Exames Complementares em SST | Laboratório Próprio" [level=4] [ref=f1e204]
+                  - paragraph [ref=f1e205]: Exames complementares em medicina do trabalho com mais agilidade para o RH e menos deslocamento para o colaborador. A SERMST integra exames de sangue, visão, ECG, EEG e espirometria ao fluxo do ASO para acelerar a admissão e reforçar a conformidade.
+                  - generic [ref=f1e206]: Ver detalhes do serviço
+            - region [ref=f1e209]:
+              - heading "Programas, laudos e gestão de SST" [level=3] [ref=f1e210]
+              - generic [ref=f1e211]:
+                - link [ref=f1e213] [cursor=pointer]:
+                  - /url: /servicos/empresa-seguranca-do-trabalho
+                  - heading "Empresa de Segurança do Trabalho | Gestão de SST para Empresas" [level=4] [ref=f1e221]
+                  - paragraph [ref=f1e222]: A SERMST atende empresas que precisam organizar PGR, PCMSO, LTCAT, exames ocupacionais, treinamentos e eSocial em um fluxo de SST mais coerente, previsível e seguro para o RH.
+                  - generic [ref=f1e223]: Ver detalhes do serviço
+                - link [ref=f1e227] [cursor=pointer]:
+                  - /url: /servicos/pcmso-nr07-programa
+                  - heading "PCMSO (NR-07) | Gestão de Saúde Ocupacional Especializada" [level=4] [ref=f1e235]
+                  - paragraph [ref=f1e236]: O PCMSO precisa refletir os riscos e as funções da empresa. A SERMST elabora e coordena o programa, define exames e periodicidades e mantém as informações alinhadas aos ASOs e ao eSocial.
+                  - generic [ref=f1e237]: Ver detalhes do serviço
+                - link [ref=f1e241] [cursor=pointer]:
+                  - /url: /servicos/pgr-nr01-gerenciamento-riscos
+                  - heading "PGR (NR-01) | Engenharia de Segurança e Levantamento de Riscos" [level=4] [ref=f1e249]
+                  - paragraph [ref=f1e250]: Sua empresa precisa de PGR coerente com a operação real, e não de um documento padrão. A SERMST realiza vistoria técnica, inventário de riscos e plano de ação com foco em conformidade, prevenção e sustentação do eSocial.
+                  - generic [ref=f1e251]: Ver detalhes do serviço
+                - link [ref=f1e255] [cursor=pointer]:
+                  - /url: /servicos/ltcat-laudo-tecnico-previdenciario
+                  - heading "LTCAT | Laudo Técnico de Condições Ambientais do Trabalho" [level=4] [ref=f1e263]
+                  - paragraph [ref=f1e264]: Documentação sólida para aposentadoria especial, PPP e eSocial S-2240. A SERMST realiza medições quantitativas, enquadramento técnico e entrega de LTCAT com base consistente para obrigações previdenciárias.
+                  - generic [ref=f1e265]: Ver detalhes do serviço
+                - link [ref=f1e269] [cursor=pointer]:
+                  - /url: /servicos/laudo-insalubridade-nr15
+                  - heading "Laudo de Insalubridade | Avaliação Técnica NR-15" [level=4] [ref=f1e277]
+                  - paragraph [ref=f1e278]: Avaliação técnica para empresas que precisam entender a exposição ocupacional, documentar o enquadramento e manter folha, PGR, PCMSO e eSocial coerentes com a realidade do ambiente.
+                  - generic [ref=f1e279]: Ver detalhes do serviço
+                - link [ref=f1e283] [cursor=pointer]:
+                  - /url: /servicos/laudo-periculosidade-nr16
+                  - heading "Laudo de Periculosidade | Avaliação Técnica NR-16" [level=4] [ref=f1e291]
+                  - paragraph [ref=f1e292]: Avaliação técnica das atividades e áreas de risco para empresas que precisam documentar o enquadramento da periculosidade e manter operação, folha, PGR e eSocial alinhados.
+                  - generic [ref=f1e293]: Ver detalhes do serviço
+                - link [ref=f1e297] [cursor=pointer]:
+                  - /url: /servicos/gestao-esocial-s2220-s2240
+                  - heading "Gestão completa de eSocial SST | S-2220 e S-2240" [level=4] [ref=f1e305]
+                  - paragraph [ref=f1e306]: Gestão de eSocial SST para empresas que precisam controlar prazos, arquivos XML e erros de envio. A SERMST organiza S-2220 e S-2240 com processo, rastreabilidade e suporte ao RH.
+                  - generic [ref=f1e307]: Ver detalhes do serviço
+                - link [ref=f1e311] [cursor=pointer]:
+                  - /url: /servicos/treinamentos-nrs-cipa-brigada
+                  - heading "Treinamentos de NRs, CIPA e Brigada | Capacitação em SST" [level=4] [ref=f1e319]
+                  - paragraph [ref=f1e320]: Treinamentos de NRs com conteúdo teórico e prático, emissão de certificados e controle das reciclagens. A SERMST oferece capacitação em CIPA, brigada e outros temas aplicáveis à operação.
+                  - generic [ref=f1e321]: Ver detalhes do serviço
+                - link [ref=f1e325] [cursor=pointer]:
+                  - /url: /servicos/pericia-trabalhista-assistente-tecnico
+                  - heading "Perícia Trabalhista | Assistente Técnico Especializado" [level=4] [ref=f1e333]
+                  - paragraph [ref=f1e334]: Assistência técnica em perícias trabalhistas de insalubridade, periculosidade e doença ocupacional, com elaboração de quesitos, acompanhamento da diligência e análise dos documentos do caso.
+                  - generic [ref=f1e335]: Ver detalhes do serviço
+  - generic [ref=f1e338]:
+    - link "Fale pelo WhatsApp" [ref=f1e339] [cursor=pointer]:
+      - /url: https://wa.me/5511915146447?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Servi%C3%A7os%20da%20SERMST%20e%20gostaria%20de%20um%20or%C3%A7amento
+      - img "WhatsApp" [ref=f1e340]
+    - contentinfo [ref=f1e342]:
+      - generic [ref=f1e345]:
+        - generic [ref=f1e346]:
+          - img "SERMST" [ref=f1e347]
+          - paragraph [ref=f1e348]: Há mais de 55 anos, a SERMST acompanha empresas com medicina ocupacional e segurança do trabalho. A equipe ajuda a manter exames, laudos, treinamentos e prazos de SST organizados.
+        - generic [ref=f1e349]:
+          - heading "Soluções Corporativas" [level=4] [ref=f1e350]
+          - list [ref=f1e351]:
+            - listitem [ref=f1e352]:
+              - link "Exame Admissional Expresso" [ref=f1e353] [cursor=pointer]:
+                - /url: /servicos/exame-admissional-expresso
+            - listitem [ref=f1e356]:
+              - link "Empresa de Segurança do Trabalho" [ref=f1e357] [cursor=pointer]:
+                - /url: /servicos/empresa-seguranca-do-trabalho
+            - listitem [ref=f1e360]:
+              - link "Serviço de PGR NR-01" [ref=f1e361] [cursor=pointer]:
+                - /url: /servicos/pgr-nr01-gerenciamento-riscos
+            - listitem [ref=f1e364]:
+              - link "PCMSO e Saúde Ocupacional" [ref=f1e365] [cursor=pointer]:
+                - /url: /servicos/pcmso-nr07-programa
+            - listitem [ref=f1e368]:
+              - link "Serviço de LTCAT previdenciário" [ref=f1e369] [cursor=pointer]:
+                - /url: /servicos/ltcat-laudo-tecnico-previdenciario
+            - listitem [ref=f1e372]:
+              - link "Gestão eSocial S-2220/S-2240" [ref=f1e373] [cursor=pointer]:
+                - /url: /servicos/gestao-esocial-s2220-s2240
+            - listitem [ref=f1e376]:
+              - link "Audiometria Ocupacional" [ref=f1e377] [cursor=pointer]:
+                - /url: /servicos/audiometria-ocupacional-clinica
+            - listitem [ref=f1e380]:
+              - link "Exame Toxicológico para CNH C, D e E" [ref=f1e381] [cursor=pointer]:
+                - /url: /servicos/exame-toxicologico-clt
+            - listitem [ref=f1e384]:
+              - link "Exames Complementares" [ref=f1e385] [cursor=pointer]:
+                - /url: /servicos/exames-complementares-laboratoriais
+            - listitem [ref=f1e388]:
+              - link "Perícia Trabalhista" [ref=f1e389] [cursor=pointer]:
+                - /url: /servicos/pericia-trabalhista-assistente-tecnico
+            - listitem [ref=f1e392]:
+              - link "Treinamentos de NRs" [ref=f1e393] [cursor=pointer]:
+                - /url: /servicos/treinamentos-nrs-cipa-brigada
+            - listitem [ref=f1e396]:
+              - link "Planos SST" [ref=f1e397] [cursor=pointer]:
+                - /url: /assinaturas
+            - listitem [ref=f1e400]:
+              - link "Parceiros Comerciais" [ref=f1e401] [cursor=pointer]:
+                - /url: /parcerias/comerciais
+            - listitem [ref=f1e404]:
+              - link "Parceria para Contadores" [ref=f1e405] [cursor=pointer]:
+                - /url: /parcerias/contadores
+        - generic [ref=f1e408]:
+          - heading "Unidade Central" [level=4] [ref=f1e409]
+          - generic [ref=f1e410]:
+            - link [ref=f1e415] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/TcAza8i3jHKjHfjr5
+              - paragraph [ref=f1e416]: Largo do Paissandu, 72
+              - paragraph [ref=f1e417]: Centro Histórico, 3º AndarSão Paulo - SP | 01034-901
+            - generic [ref=f1e422]:
+              - paragraph [ref=f1e423]: Canais Oficiais
+              - link "(11) 3229-7567" [ref=f1e424] [cursor=pointer]:
+                - /url: tel:+551132297567
+              - link "comercial@sermst.com.br" [ref=f1e425] [cursor=pointer]:
+                - /url: mailto:comercial@sermst.com.br
+        - generic [ref=f1e426]:
+          - heading "Regiões Atendidas" [level=4] [ref=f1e427]
+          - generic [ref=f1e428]:
+            - link "São Paulo" [ref=f1e429] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-paulo
+            - link "Santo André" [ref=f1e430] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/santo-andre
+            - link "Osasco" [ref=f1e431] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/osasco
+            - link "Guarulhos" [ref=f1e432] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/guarulhos
+            - link "Diadema" [ref=f1e433] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/diadema
+            - link "S.B. Campo" [ref=f1e434] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-bernardo
+            - link "Barueri" [ref=f1e435] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/barueri
+            - link "S. Caetano" [ref=f1e436] [cursor=pointer]:
+              - /url: /servicos/exame-admissional-expresso/sao-caetano
+          - heading "Conhecimento SST" [level=4] [ref=f1e437]
+          - list [ref=f1e438]:
+            - listitem [ref=f1e439]:
+              - link "Conteúdo para empresários" [ref=f1e440] [cursor=pointer]:
+                - /url: /empresario
+            - listitem [ref=f1e443]:
+              - link "Saúde Ocupacional" [ref=f1e444] [cursor=pointer]:
+                - /url: /saude
+            - listitem [ref=f1e447]:
+              - link "RH e DP" [ref=f1e448] [cursor=pointer]:
+                - /url: /rh
+            - listitem [ref=f1e451]:
+              - link "Normas Regulamentadoras" [ref=f1e452] [cursor=pointer]:
+                - /url: /normas
+            - listitem [ref=f1e455]:
+              - link "Dicionário SST" [ref=f1e456] [cursor=pointer]:
+                - /url: /dicionario
+            - listitem [ref=f1e459]:
+              - link "Quem somos" [ref=f1e460] [cursor=pointer]:
+                - /url: /quem-somos
+          - generic [ref=f1e463]:
+            - link "Política de Privacidade" [ref=f1e464] [cursor=pointer]:
+              - /url: /politica-de-privacidade
+            - generic [ref=f1e466]: CRM 1002913 | CNPJ 28.125.178/0001-88© 2026 SERMST Gestão Ocupacional
+  - alert [ref=f1e467]

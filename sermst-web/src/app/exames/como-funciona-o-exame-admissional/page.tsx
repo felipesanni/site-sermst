@@ -277,7 +277,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
                 O ASO admissional não é um detalhe burocrático. Ele é a evidência de que a empresa cumpriu a etapa médica antes do início das atividades e sustenta o registro de saúde ocupacional do trabalhador.
               </p>
               <p>
-                Depois da contratação, a empresa deve manter o acompanhamento conforme o PCMSO, com exames periódicos e demais exames ocupacionais quando aplicáveis.
+                Depois da contratação, a empresa deve manter o acompanhamento conforme o PCMSO, com exames periódicos e demais exames ocupacionais quando aplicáveis. Consulte também a <Link href="/saude/validade-aso-admissional">validade do ASO admissional</Link>.
               </p>
             </>
           ),
@@ -293,7 +293,7 @@ export default function ComoFuncionaExameAdmissionalPage() {
                 A conclusão deve ser técnica e relacionada ao cargo. O médico não deve usar o exame para discriminar candidato, investigar assuntos sem relação ocupacional ou expor informações clínicas ao empregador.
               </p>
               <p>
-                Quando há inaptidão, a empresa deve tratar o caso com cuidado documental e jurídico. O ASO informa apto ou inapto; detalhes clínicos pertencem ao prontuário médico, não ao RH.
+                Quando há inaptidão, a empresa deve tratar o caso com cuidado documental e jurídico. O ASO informa apto ou inapto; detalhes clínicos pertencem ao prontuário médico, não ao RH. Veja também quando a <Link href="/saude/empresa-pode-desistir-apos-exame-admissional">empresa pode desistir após o exame admissional</Link>.
               </p>
             </>
           ),

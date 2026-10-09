@@ -390,6 +390,12 @@ export default function Home() {
                   </Link>
                 ))}
               </div>
+              <p className="mt-5 text-sm leading-relaxed text-slate-300">
+                Se ainda está definindo o que precisa resolver, veja as{' '}
+                <Link href="/solucoes" className="font-bold text-white underline decoration-accent-pink underline-offset-4 hover:text-accent-pink">
+                  soluções de SST organizadas por necessidade
+                </Link>.
+              </p>
             </article>
           </div>
         </div>

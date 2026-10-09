@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -47,7 +48,7 @@ export default function CatAcidenteTrabalhoPage() {
           body: (
             <>
               <p>
-                CAT significa Comunicação de Acidente de Trabalho. É o documento usado para informar oficialmente ao INSS a ocorrência de acidente de trabalho ou doença relacionada ao trabalho.
+                CAT significa Comunicação de Acidente de Trabalho. É o documento usado para informar oficialmente ao INSS a ocorrência de <Link href="/saude/acidente-de-trabalho">acidente de trabalho</Link> ou doença relacionada ao trabalho.
               </p>
               <p>
                 A CAT não é confissão automática de culpa da empresa. Ela é comunicação obrigatória. O que define responsabilidade, estabilidade, nexo causal e indenização depende da análise técnica, médica, previdenciária e jurídica do caso.

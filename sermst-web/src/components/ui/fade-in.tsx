@@ -2,16 +2,19 @@
 
 import { useEffect, useRef, useState, ReactNode } from 'react';
 
+type FadeInDirection = 'up' | 'down' | 'left' | 'right' | 'none';
+
 type FadeInProps = {
   children: ReactNode;
   delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right' | 'none';
+  direction?: FadeInDirection;
+  tabletDirection?: FadeInDirection;
   duration?: number;
   className?: string;
   viewport?: boolean;
 };
 
-const directionMap: Record<string, string> = {
+const directionMap: Record<FadeInDirection, string> = {
   up:    'translateY(32px)',
   down:  'translateY(-32px)',
   left:  'translateX(32px)',
@@ -33,6 +36,7 @@ export function FadeIn({
   children,
   delay = 0,
   direction = 'up',
+  tabletDirection,
   duration = 0.5,
   className = '',
   viewport = true,
@@ -40,12 +44,28 @@ export function FadeIn({
   const ref = useRef<HTMLDivElement>(null);
   const [hydrated, setHydrated] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [animationDirection, setAnimationDirection] = useState<FadeInDirection>(direction);
 
   useEffect(() => {
     // Em telas pequenas, a página precisa priorizar resposta ao toque e rolagem.
     // As animações de entrada não agregam informação suficiente para justificar
     // uma medição de layout e um IntersectionObserver por bloco.
     const canMatchMedia = typeof window.matchMedia === 'function';
+    const updateDirection = () => {
+      const isIntermediateViewport =
+        canMatchMedia &&
+        window.matchMedia('(min-width: 768px) and (max-width: 1359px)').matches;
+      const fallbackIntermediateDirection =
+        direction === 'left' || direction === 'right' ? 'up' : direction;
+      const nextDirection = isIntermediateViewport
+        ? tabletDirection ?? fallbackIntermediateDirection
+        : direction;
+      setAnimationDirection((current) => (current === nextDirection ? current : nextDirection));
+    };
+    updateDirection();
+    if (tabletDirection) {
+      window.addEventListener('resize', updateDirection, { passive: true });
+    }
     const isSmallViewport = canMatchMedia && window.matchMedia('(max-width: 767px)').matches;
     const prefersReducedMotion = canMatchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -53,7 +73,9 @@ export function FadeIn({
     // NÃ£o agendamos rAF nem forÃ§amos uma segunda renderizaÃ§Ã£o por bloco: isso
     // reduz o trabalho de hidrataÃ§Ã£o nas pÃ¡ginas longas, sem remover conteÃºdo.
     if (!viewport || isSmallViewport || prefersReducedMotion) {
-      return;
+      return () => {
+        if (tabletDirection) window.removeEventListener('resize', updateDirection);
+      };
     }
 
     let observer: IntersectionObserver | undefined;
@@ -86,14 +108,15 @@ export function FadeIn({
     return () => {
       window.cancelAnimationFrame(animationFrame);
       observer?.disconnect();
+      if (tabletDirection) window.removeEventListener('resize', updateDirection);
     };
-  }, [viewport]);
+  }, [viewport, direction, tabletDirection]);
 
   // Antes da hidratação → sem estilo inline → HTML visível para crawlers e LCP
   const style: React.CSSProperties = hydrated
     ? {
         opacity: visible ? 1 : 0,
-        transform: visible ? 'none' : directionMap[direction],
+        transform: visible ? 'none' : directionMap[animationDirection],
         transition: `opacity ${duration}s cubic-bezier(0.21,0.47,0.32,0.98) ${delay}s, transform ${duration}s cubic-bezier(0.21,0.47,0.32,0.98) ${delay}s`,
         willChange: visible ? 'auto' : 'opacity, transform',
       }

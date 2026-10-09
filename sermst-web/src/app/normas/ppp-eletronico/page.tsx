@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -30,9 +31,10 @@ export default function PPPPage() {
         jobTitle: 'Advogado em Direito do Trabalho e SST · OAB/SP 430.824',
         url: 'https://sermst.com.br/equipe/felipe-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-07-13',
+        dateModified: '2026-10-08',
       }}
 
+      mobileSingleColumn
       h1="PPP eletrônico: o que é, como funciona e por que ele importa"
       intro="O PPP eletrônico reúne o histórico laboral e as informações declaradas pela empresa sobre exposição a agentes prejudiciais à saúde. Para períodos trabalhados desde 1º de janeiro de 2023, ele é emitido em meio eletrônico e pode ser consultado pelo segurado no Meu INSS."
       quickAnswer={
@@ -98,6 +100,12 @@ export default function PPPPage() {
               <p>
                 Quando os documentos usam funções, períodos ou exposições diferentes, o PPP fica inconsistente. A correção deve ocorrer na fonte e nos eventos do eSocial, com preservação do histórico.
               </p>
+              <p>
+                Se a empresa também precisa organizar o envio e o acompanhamento recorrente dos eventos, conheça a{' '}
+                <Link href="/servicos/gestao-esocial-s2220-s2240" className="font-bold text-brand-900 underline decoration-accent-pink/40 underline-offset-4 hover:text-accent-pink">
+                  gestão de eSocial SST para S-2220 e S-2240
+                </Link>.
+              </p>
             </>
           ),
         },
@@ -151,7 +159,7 @@ export default function PPPPage() {
           a: 'Sim. O PPP eletrônico é emitido para os segurados abrangidos, independentemente do ramo da empresa ou da existência de exposição. Para quem não está exposto, o S-2240 deve informar a ausência de fatores de risco conforme as regras do leiaute.',
         },
         {
-          q: 'EPI &quot;neutraliza&quot; o agente para fins de aposentadoria especial?',
+          q: 'EPI "neutraliza" o agente para fins de aposentadoria especial?',
           a: 'Depende do agente e das evidências. No caso de ruído acima dos limites legais, o STF decidiu que a declaração de eficácia do EPI não descaracteriza, por si só, o tempo especial. Para outros agentes, a análise considera a proteção realmente adotada e a documentação disponível.',
         },
         {
@@ -168,6 +176,7 @@ export default function PPPPage() {
       sidebarCtaLabel="Auditar PPP/S-2240"
       related={[
         { label: 'O que significa LTCAT', href: '/dicionario/o-que-e-ltcat' },
+        { label: 'Quanto custa um LTCAT? Fatores do orçamento', href: '/saude/quanto-custa-ltcat' },
         { label: 'Serviço de LTCAT previdenciário', href: '/servicos/ltcat-laudo-tecnico-previdenciario/sao-paulo' },
         { label: 'NR-15: Insalubridade', href: '/normas/nr-15-insalubridade' },
         { label: 'NR-16: Periculosidade', href: '/normas/nr-16-periculosidade' },

@@ -1,0 +1,31 @@
+[    1169ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1267ms] [LOG] [HMR] connected @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   35728ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   35790ms] [LOG] [Fast Refresh] done in 169ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   38418ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   38482ms] [LOG] [Fast Refresh] done in 168ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   40300ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   40365ms] [LOG] [Fast Refresh] done in 167ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   42556ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   42620ms] [LOG] [Fast Refresh] done in 166ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   57319ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   57383ms] [LOG] [Fast Refresh] done in 168ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   63613ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   63677ms] [LOG] [Fast Refresh] done in 166ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  107767ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://calendly.com/YOURLINK/30min?embed_domain=localhost%3A3100&embed_type=Inline&name=Pessoa%2BTeste%2BFicticia&email=teste.ficticio%40example.com&phone=%2B5511987654321:0
+[  107991ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  108451ms] [LOG] [Fast Refresh] done in 589ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  108707ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  108712ms] [LOG] [Fast Refresh] done in 111ms @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  107767ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://calendly.com/YOURLINK/30min?embed_domain=localhost%3A3100&embed_type=Inline&name=Pessoa%2BTeste%2BFicticia&email=teste.ficticio%40example.com&phone=%2B5511987654321:0
+[  169792ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://calendly.com/YOURLINK/30min?embed_domain=localhost%3A3100&embed_type=Inline:0
+[  233151ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  233175ms] [LOG] [HMR] connected @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  249923ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  249953ms] [LOG] [HMR] connected @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  254737ms] [WARNING] Datadog Browser SDK: No storage available for session. We will not send any data. @ https://assets.calendly.com/assets/booking/js/booking-48c61c235.js:95
+[  629006ms] [ERROR] WebSocket connection to 'ws://localhost:3100/_next/webpack-hmr?id=0EMO4CFUbdTjb0inUmdfG' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  630023ms] [ERROR] WebSocket connection to 'ws://localhost:3100/_next/webpack-hmr?id=0EMO4CFUbdTjb0inUmdfG' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  631030ms] [ERROR] WebSocket connection to 'ws://localhost:3100/_next/webpack-hmr?id=0EMO4CFUbdTjb0inUmdfG' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  632044ms] [ERROR] WebSocket connection to 'ws://localhost:3100/_next/webpack-hmr?id=0EMO4CFUbdTjb0inUmdfG' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  633050ms] [ERROR] WebSocket connection to 'ws://localhost:3100/_next/webpack-hmr?id=0EMO4CFUbdTjb0inUmdfG' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3100/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299

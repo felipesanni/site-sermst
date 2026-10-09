@@ -41,7 +41,7 @@ export function MobileNavigation() {
   }, [isOpen]);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <div className="flex min-h-[74px] w-full items-center justify-between gap-3 bg-white py-3">
         <Link href="/" className="flex items-center" aria-label="Página inicial da SERMST">
           <Image

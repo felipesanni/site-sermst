@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BlockbusterArticle } from '@/components/sections/blockbuster-article';
 
 export const metadata: Metadata = {
@@ -30,9 +31,10 @@ export default function NR15Page() {
         jobTitle: 'Higienista Ocupacional · Técnico em Segurança do Trabalho · CREA/SP 5061899709',
         url: 'https://sermst.com.br/equipe/luiz-cesar-sannino',
         datePublished: '2025-01-01',
-        dateModified: '2026-05-01',
+        dateModified: '2026-10-08',
       }}
 
+      mobileSingleColumn
       h1="NR-15: insalubridade para gestores e RH"
       intro="A NR-15 reúne critérios quantitativos e qualitativos para caracterizar atividades insalubres. O enquadramento depende do agente, da forma de exposição, do anexo aplicável e de avaliação técnica do ambiente de trabalho."
       quickAnswer={
@@ -77,6 +79,41 @@ export default function NR15Page() {
               <li><strong>Folha de pagamento</strong> com o adicional identificado, quando devido.</li>
               <li><strong>S-2240</strong> no eSocial refletindo a exposição.</li>
             </ol>
+          ),
+        },
+        {
+          title: 'Quando uma avaliação quantitativa pode ser necessária',
+          body: (
+            <>
+              <p>
+                A presença de um agente no ambiente não significa, por si só, que uma medição específica seja necessária
+                ou suficiente. A análise preliminar e os dados disponíveis ajudam a decidir se é preciso aprofundar a
+                avaliação e qual método é adequado ao agente, à atividade e à pergunta técnica que precisa ser respondida.
+              </p>
+              <p>
+                Quando aplicável, a proposta deve explicar quais trabalhadores ou grupos serão considerados, em que
+                condições a coleta será feita, qual técnica será usada e como os resultados serão interpretados. A
+                amostragem precisa representar a exposição real; uma medição pontual fora das condições habituais pode
+                não responder à questão do laudo.
+              </p>
+              <p>
+                A avaliação para caracterização de insalubridade deve seguir o anexo pertinente da NR-15. A NR-09 também
+                orienta a avaliação das exposições para fins de prevenção no PGR. São finalidades relacionadas, mas não
+                intercambiáveis. Consulte a{' '}
+                <a
+                  href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-paritaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-9-nr-9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4"
+                >
+                  NR-09 vigente no MTE
+                </a>{' '}
+                e conheça o{' '}
+                <Link href="/servicos/laudo-insalubridade-nr15/sao-paulo" className="font-semibold text-brand-700 underline decoration-accent-pink/60 underline-offset-4">
+                  serviço de laudo de insalubridade
+                </Link>.
+              </p>
+            </>
           ),
         },
         {

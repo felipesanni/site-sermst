@@ -13,12 +13,17 @@ const deliveryEnvKeys = [
   'TURNSTILE_SECRET_KEY',
 ] as const;
 
-function buildLeadRequest(body: Record<string, unknown>, ip = '203.0.113.10') {
+function buildLeadRequest(
+  body: Record<string, unknown>,
+  ip = '203.0.113.10',
+  idempotencyKey?: string,
+) {
   return new Request('http://localhost/api/lead', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'x-forwarded-for': ip,
+      ...(idempotencyKey ? { 'Idempotency-Key': idempotencyKey } : {}),
     },
     body: JSON.stringify(body),
   });
@@ -46,13 +51,162 @@ describe('POST /api/lead', () => {
     }
   });
 
-  it('aceita um lead valido', async () => {
+  it('não declara sucesso quando nenhum canal de entrega está configurado', async () => {
     const response = await POST(buildLeadRequest(validPayload(), '203.0.113.11'));
 
-    expect(response.status).toBe(200);
-    await expect(response.json()).resolves.toEqual({ ok: true });
+    expect(response.status).toBe(503);
+    await expect(response.json()).resolves.toMatchObject({
+      ok: false,
+      received: true,
+      delivered: false,
+      status: 'delivery_not_configured',
+    });
   });
 
+  it('preserva a proposta estruturada e reconhece confirmação explícita do CRM no webhook', async () => {
+    process.env.LEAD_WEBHOOK_URL = 'https://webhook.example/leads';
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify({ crm_confirmed: true, crm_id: 'crm-real-123' }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }),
+    );
+
+    const response = await POST(buildLeadRequest(
+      validPayload({
+        empresa: 'Empresa Corporativa',
+        dor: 'proposta-corporativa-sst',
+        lead_type: 'assinatura-corporativa',
+        porte: '100 funcionários',
+        plano_assinatura: 'Plano Essencial',
+        funcionarios: '100',
+        cnpj: '12345678000195',
+        cnae: '6201501',
+        grau_risco: '2',
+        assinatura: {
+          plano: { id: 'essencial', nome: 'Plano Essencial', funcionarios: 100 },
+          responsavel: { nome: 'Maria Silva', email: 'maria@empresa.com', cargo: 'Diretora de RH' },
+          empresa: {
+            cnpj: '12345678000195',
+            razao_social: 'Empresa Corporativa',
+            cnae: '6201501',
+            grau_risco: '2',
+            endereco_principal: { cidade: 'São Paulo', estado: 'SP' },
+          },
+        },
+        utm_source: 'google',
+        utm_campaign: 'proposta-sst',
+      }),
+      '203.0.113.18',
+      'sub_test_123',
+    ));
+
+    const webhookPayload = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
+    expect(fetchMock.mock.calls[0]?.[1]?.headers).toMatchObject({
+      'Idempotency-Key': 'sub_test_123',
+    });
+    expect(fetchMock.mock.calls[0]?.[1]?.signal).toBeInstanceOf(AbortSignal);
+    expect(webhookPayload).toMatchObject({
+      leadType: 'assinatura-corporativa',
+      subscription: {
+        plano: { id: 'essencial', nome: 'Plano Essencial', funcionarios: 100 },
+        responsavel: { nome: 'Maria Silva', email: 'maria@empresa.com', cargo: 'Diretora de RH' },
+        empresa: {
+          cnpj: '12345678000195',
+          razao_social: 'Empresa Corporativa',
+          cnae: '6201501',
+          endereco_principal: { cidade: 'São Paulo', estado: 'SP' },
+        },
+      },
+      attribution: { lastTouch: { utm_source: 'google', utm_campaign: 'proposta-sst' } },
+    });
+    await expect(response.json()).resolves.toEqual({
+      ok: true,
+      received: true,
+      delivered: true,
+      deliveryChannels: ['webhook'],
+      crmConfirmed: true,
+      deliveryStatus: 'crm_confirmed',
+      crmId: 'crm-real-123',
+    });
+  });
+
+  it('trata webhook 2xx sem confirmação explícita como entrega, não como lead confirmado', async () => {
+    process.env.LEAD_WEBHOOK_URL = 'https://webhook.example/leads';
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify({ ok: true }), { status: 200 }),
+    );
+
+    const response = await POST(buildLeadRequest(validPayload(), '203.0.113.19'));
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toEqual({
+      ok: true,
+      received: true,
+      delivered: true,
+      deliveryChannels: ['webhook'],
+      crmConfirmed: false,
+      deliveryStatus: 'delivery_accepted',
+    });
+  });
+
+  it('recognizes the current CRM success contract only when it returns an opportunity ID', async () => {
+    process.env.LEAD_WEBHOOK_URL = 'https://webhook.example/leads';
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify({ success: true, opportunityId: 'opp-123' }), { status: 201 }),
+    );
+
+    const confirmed = await POST(buildLeadRequest(validPayload(), '203.0.113.20', 'contact_req_1'));
+    expect(confirmed.status).toBe(200);
+    await expect(confirmed.json()).resolves.toMatchObject({
+      delivered: true,
+      crmConfirmed: true,
+      crmId: 'opp-123',
+      deliveryStatus: 'crm_confirmed',
+    });
+  });
+
+  it('does not treat a generic success body without the CRM opportunity ID as CRM confirmation', async () => {
+    process.env.LEAD_WEBHOOK_URL = 'https://webhook.example/leads';
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify({ success: true }), { status: 200 }),
+    );
+
+    const response = await POST(buildLeadRequest(validPayload(), '203.0.113.22', 'contact_req_no_id'));
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toMatchObject({
+      delivered: true,
+      crmConfirmed: false,
+      deliveryStatus: 'delivery_accepted',
+    });
+  });
+
+  it('accepts an explicit middleware CRM confirmation even when it has no CRM ID', async () => {
+    process.env.LEAD_WEBHOOK_URL = 'https://webhook.example/leads';
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify({ crm_confirmed: true }), { status: 200 }),
+    );
+
+    const response = await POST(buildLeadRequest(validPayload(), '203.0.113.23', 'contact_req_confirmed'));
+
+    expect(response.status).toBe(200);
+    const receipt = await response.json();
+    expect(receipt).toMatchObject({
+      crmConfirmed: true,
+      deliveryStatus: 'crm_confirmed',
+    });
+    expect(receipt).not.toHaveProperty('crmId');
+  });
+  it('rejects malformed idempotency keys instead of silently dropping them', async () => {
+    process.env.LEAD_WEBHOOK_URL = 'https://webhook.example/leads';
+    const fetchMock = vi.spyOn(globalThis, 'fetch');
+
+    const response = await POST(buildLeadRequest(validPayload(), '203.0.113.21', 'bad key'));
+
+    expect(response.status).toBe(400);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
   it('envia candidatura de parceiro em um email personalizado', async () => {
     process.env.SMTP_HOST = 'smtp.example.com';
     process.env.SMTP_PORT = '587';
@@ -141,6 +295,8 @@ describe('POST /api/lead', () => {
   });
 
   it('aplica rate limit por IP para evitar abuso', async () => {
+    process.env.LEAD_WEBHOOK_URL = 'https://webhook.example/leads';
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async () => new Response(JSON.stringify({ ok: true }), { status: 200 }));
     const ip = '203.0.113.15';
 
     for (let attempt = 0; attempt < 5; attempt += 1) {
@@ -166,7 +322,11 @@ describe('POST /api/lead', () => {
 
     expect(fetchMock).toHaveBeenCalled();
     expect(response.status).toBe(502);
-    await expect(response.json()).resolves.toEqual({
+    await expect(response.json()).resolves.toMatchObject({
+      ok: false,
+      received: true,
+      delivered: false,
+      status: 'delivery_failed',
       error:
         'Nao foi possivel concluir o envio agora. Tente novamente em instantes ou fale com a SERMST pelo WhatsApp.',
     });

@@ -49,6 +49,7 @@ export default async function RHDoresPage({
 
   if (!data) notFound();
 
+  const isPsychosocialArticle = slug === 'riscos-psicossociais';
   const frequentFaqs = buildFrequentFaqs(data.geoOpt.faq, {
     context: 'rh',
     topic: data.h1,
@@ -177,16 +178,28 @@ export default async function RHDoresPage({
           <FadeIn direction="up" delay={0.2} className="mt-20">
             <div className="flex flex-col items-start justify-between gap-6 rounded-[2rem] bg-brand-900 p-8 text-white md:flex-row md:items-center md:p-10">
               <div className="max-w-2xl">
-                <h3 className="mb-3 text-2xl font-black">Se o problema já está afetando o RH, vale acelerar a conversa</h3>
+                <h3 className="mb-3 text-2xl font-black">
+                  {isPsychosocialArticle
+                    ? 'Sua empresa precisa integrar riscos psicossociais ao PGR?'
+                    : 'Se o problema já está afetando o RH, vale acelerar a conversa'}
+                </h3>
                 <p className="leading-relaxed text-slate-300">
-                  A SERMST pode ajudar a organizar a rotina de SST, revisar riscos de multa e dar clareza sobre os próximos passos técnicos e operacionais.
+                  {isPsychosocialArticle
+                    ? 'Conheça o serviço de PGR conforme a NR-01 e avalie se o apoio é adequado à realidade da sua operação.'
+                    : 'A SERMST pode ajudar a organizar a rotina de SST, revisar riscos de multa e dar clareza sobre os próximos passos técnicos e operacionais.'}
                 </p>
               </div>
               <a
-                href="https://wa.me/5511915146447?text=Quero%20ajuda%20com%20eSocial%20e%20SST%20na%20minha%20empresa"
+                href={
+                  isPsychosocialArticle
+                    ? '/servicos/pgr-nr01-gerenciamento-riscos/sao-paulo'
+                    : 'https://wa.me/5511915146447?text=Quero%20ajuda%20com%20eSocial%20e%20SST%20na%20minha%20empresa'
+                }
                 className="btn-primary-safe-lg"
               >
-                Falar com a SERMST
+                {isPsychosocialArticle
+                  ? 'Conhecer o serviço de PGR (NR-01)'
+                  : 'Falar com a SERMST'}
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
