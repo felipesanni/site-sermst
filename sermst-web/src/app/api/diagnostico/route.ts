@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import {
   buildDiagnosticCrmFormAnswers,
+  DIAGNOSTICO_CRM_QUALIFICATION_STAGE_ID,
   DIAGNOSTICO_CRM_SCHEDULING_STAGE_ID,
 } from '@/lib/diagnostico-crm-fields'
 import { normalizeDiagnosticOrigin } from '@/lib/diagnostic-attribution'
@@ -13,7 +14,6 @@ const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
 const RATE_LIMIT = 5
 const WINDOW_MS = 60_000
 const MIN_SUBMIT_MS = 4_000
-const SCHEDULING_STAGE_ID = process.env.DIAGNOSTICO_SCHEDULING_STAGE_ID || DIAGNOSTICO_CRM_SCHEDULING_STAGE_ID
 
 type DiagnosticPayload = {
   nome?: string
@@ -292,7 +292,14 @@ function extractOpportunityId(payload: unknown): string {
     resultOpportunity?.id,
   ]
 
-  return candidates.find((value): value is string => typeof value === 'string' && value.trim().length > 0)?.trim() || ''
+  for (const value of candidates) {
+    if (typeof value === 'string' && value.trim()) return value.trim()
+    // Algumas respostas do CRM serializam o ID numérico como number. Normalize
+    // para string antes de devolver à LP, que o guarda para o PATCH do Calendly.
+    if (typeof value === 'number' && Number.isSafeInteger(value) && value > 0) return String(value)
+  }
+
+  return ''
 }
 
 function readCrmConfirmation(payload: unknown, opportunityId: string) {
@@ -472,13 +479,29 @@ export async function POST(request: Request) {
 
         if (directCrmReady && crmConfirmed && opportunityId) {
           try {
-            const stageResponse = await fetch(buildOpportunityUrl(crmApiUrl as string, opportunityId), {
+            const opportunityUrl = buildOpportunityUrl(crmApiUrl as string, opportunityId)
+            const stageHeaders = {
+              Authorization: 'Bearer ' + crmApiKey,
+              'Content-Type': 'application/json',
+            }
+            const qualificationResponse = await fetch(opportunityUrl, {
               method: 'PATCH',
-              headers: {
-                Authorization: 'Bearer ' + crmApiKey,
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ stageId: SCHEDULING_STAGE_ID }),
+              headers: stageHeaders,
+              body: JSON.stringify({ stageId: DIAGNOSTICO_CRM_QUALIFICATION_STAGE_ID }),
+              signal: AbortSignal.timeout(10_000),
+            })
+
+            if (!qualificationResponse.ok) {
+              console.error('[DIAGNOSTICO_LEAD] CRM não moveu a oportunidade para Qualificação', qualificationResponse.status)
+            }
+
+            // Caixa de Entrada só permite avançar para Qualificação. Sempre
+            // tentamos Agendamento em seguida para também recuperar replays
+            // idempotentes quando a oportunidade já tiver avançado antes.
+            const stageResponse = await fetch(opportunityUrl, {
+              method: 'PATCH',
+              headers: stageHeaders,
+              body: JSON.stringify({ stageId: DIAGNOSTICO_CRM_SCHEDULING_STAGE_ID }),
               signal: AbortSignal.timeout(10_000),
             })
             scheduleReady = stageResponse.ok

@@ -1,20 +1,19 @@
 /**
- * IDs atualmente configurados nas perguntas do funil de vendas do CRM.
- *
- * Esses IDs foram conferidos na configuração ativa do funil e precisam ser
- * usados em `formAnswers` para que os valores apareçam no Questionário.
+ * The CRM API accepts these semantic questionnaire keys and maps them to its
+ * internal field IDs. Keep the keys aligned with the CRM's API documentation.
  */
-export const DIAGNOSTICO_CRM_FORM_ANSWER_IDS = {
-  funcionarios_clt: 'new_1759509682081',
-  quant_funcionarios_clt: 'new_1760131251192',
-  necessita_contrato: 'new_1762202729539',
-  necessita_reuniao: 'new_1764087960206',
-  prestador_sst: 'new_1789428176289',
-  segmento: 'new_1789428287294',
-  data_reuniao: 'new_1764090755294',
-} as const
+const DIAGNOSTICO_CRM_FORM_ANSWER_KEYS: Array<keyof DiagnosticFormAnswerValues> = [
+  'funcionarios_clt',
+  'quant_funcionarios_clt',
+  'necessita_contrato',
+  'necessita_reuniao',
+  'prestador_sst',
+  'segmento',
+  'data_reuniao',
+]
 
 export const DIAGNOSTICO_CRM_MEETING_STAGE_ID = 'teHUsURtaNw9zHEhAV7v'
+export const DIAGNOSTICO_CRM_QUALIFICATION_STAGE_ID = 'TQ38dK5dhgGzBjaivpHR'
 export const DIAGNOSTICO_CRM_SCHEDULING_STAGE_ID = 'wMHthU8qBYFeQwZyAr1n'
 
 type DiagnosticFormAnswerValues = {
@@ -30,10 +29,10 @@ type DiagnosticFormAnswerValues = {
 export function buildDiagnosticCrmFormAnswers(values: DiagnosticFormAnswerValues) {
   const answers: Record<string, string> = {}
 
-  for (const key of Object.keys(DIAGNOSTICO_CRM_FORM_ANSWER_IDS) as Array<keyof DiagnosticFormAnswerValues>) {
+  for (const key of DIAGNOSTICO_CRM_FORM_ANSWER_KEYS) {
     const value = values[key]
     if (typeof value === 'string' && value.trim()) {
-      answers[DIAGNOSTICO_CRM_FORM_ANSWER_IDS[key]] = value.trim()
+      answers[key] = value.trim()
     }
   }
 

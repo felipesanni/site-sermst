@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server'
 import {
-  buildDiagnosticCrmFormAnswers,
   DIAGNOSTICO_CRM_MEETING_STAGE_ID,
 } from '@/lib/diagnostico-crm-fields'
 
 export const runtime = 'nodejs'
 
 const JSON_HEADERS = { 'Content-Type': 'application/json; charset=utf-8' } as const
-const MEETING_STAGE_ID = process.env.DIAGNOSTICO_MEETING_STAGE_ID || DIAGNOSTICO_CRM_MEETING_STAGE_ID
 
 function jsonResponse(body: unknown, status = 200) {
   return NextResponse.json(body, { status, headers: JSON_HEADERS })
@@ -18,12 +16,17 @@ function isIsoDate(value: unknown): value is string {
   return Number.isFinite(Date.parse(value))
 }
 
-function isOpportunityId(value: unknown): value is string {
-  return typeof value === 'string' && /^[A-Za-z0-9._:-]{1,200}$/.test(value)
-}
+function normalizeOpportunityId(value: unknown): string | null {
+  if (typeof value === 'string') {
+    const normalized = value.trim()
+    return /^[A-Za-z0-9._:-]{1,200}$/.test(normalized) ? normalized : null
+  }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return Boolean(value) && typeof value === 'object' && !Array.isArray(value)
+  if (typeof value === 'number' && Number.isSafeInteger(value) && value > 0) {
+    return String(value)
+  }
+
+  return null
 }
 
 function buildOpportunityUrl(leadsUrl: string, opportunityId: string) {
@@ -61,7 +64,7 @@ async function resolveCalendlyStartTime(eventUri: string) {
 }
 
 export async function POST(request: Request) {
-  let data: { opportunityId?: unknown; data_reuniao?: unknown; formAnswers?: unknown; calendlyEventUri?: unknown; calendlyInviteeUri?: unknown }
+  let data: { opportunityId?: unknown; data_reuniao?: unknown; calendlyEventUri?: unknown; calendlyInviteeUri?: unknown }
 
   try {
     data = (await request.json()) as { opportunityId?: unknown; data_reuniao?: unknown; formAnswers?: unknown; calendlyEventUri?: unknown; calendlyInviteeUri?: unknown }
@@ -69,7 +72,8 @@ export async function POST(request: Request) {
     return jsonResponse({ error: 'Não foi possível ler os dados do agendamento.' }, 400)
   }
 
-  if (!isOpportunityId(data?.opportunityId)) {
+  const opportunityId = normalizeOpportunityId(data?.opportunityId)
+  if (!opportunityId) {
     return jsonResponse({ error: 'A oportunidade do diagnóstico não foi identificada.' }, 400)
   }
 
@@ -99,37 +103,41 @@ export async function POST(request: Request) {
   }
 
   try {
-    const updatePayload: Record<string, unknown> = {
-      stageId: MEETING_STAGE_ID,
-      data_reuniao: dataReuniao,
-      dueDate: dataReuniao,
+    const opportunityUrl = buildOpportunityUrl(leadsUrl, opportunityId)
+    const headers = {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
     }
-
-    if (isRecord(data.formAnswers)) {
-      updatePayload.formAnswers = {
-        ...data.formAnswers,
-        ...buildDiagnosticCrmFormAnswers({ data_reuniao: dataReuniao }),
-      }
-    } else {
-      updatePayload.formAnswers = buildDiagnosticCrmFormAnswers({ data_reuniao: dataReuniao })
-    }
-
-    const crmResponse = await fetch(buildOpportunityUrl(leadsUrl, data.opportunityId), {
+    const stageResponse = await fetch(opportunityUrl, {
       method: 'PATCH',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatePayload),
+      headers,
+      body: JSON.stringify({
+        stageId: DIAGNOSTICO_CRM_MEETING_STAGE_ID,
+        data_reuniao: dataReuniao,
+      }),
       signal: AbortSignal.timeout(10000),
     })
 
-    if (!crmResponse.ok) {
-      console.error('[DIAGNOSTICO_SCHEDULE] CRM respondeu', crmResponse.status)
+    if (!stageResponse.ok) {
+      console.error('[DIAGNOSTICO_SCHEDULE] CRM não moveu a oportunidade para Reunião', stageResponse.status)
       return jsonResponse({ error: 'Não foi possível atualizar o agendamento agora.' }, 502)
     }
 
-    return jsonResponse({ ok: true, opportunityId: data.opportunityId, data_reuniao: dataReuniao })
+    // O CRM limpa o vencimento ao entrar em Reunião. Grave-o depois da
+    // mudança de etapa para manter a data de vencimento alinhada à reunião.
+    const dueDateResponse = await fetch(opportunityUrl, {
+      method: 'PATCH',
+      headers,
+      body: JSON.stringify({ dueDate: dataReuniao }),
+      signal: AbortSignal.timeout(10000),
+    })
+
+    if (!dueDateResponse.ok) {
+      console.error('[DIAGNOSTICO_SCHEDULE] CRM não atualizou o vencimento', dueDateResponse.status)
+      return jsonResponse({ error: 'Não foi possível atualizar o agendamento agora.' }, 502)
+    }
+
+    return jsonResponse({ ok: true, opportunityId, data_reuniao: dataReuniao })
   } catch (error) {
     console.error('[DIAGNOSTICO_SCHEDULE] CRM falhou', error)
     return jsonResponse({ error: 'Não foi possível atualizar o agendamento agora.' }, 502)

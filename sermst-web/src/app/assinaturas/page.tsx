@@ -99,7 +99,7 @@ const serviceSchema = {
 
 const contractFaqs = [
   {
-    title: 'Como funciona a assinatura mensal de SST?',
+    title: 'Como funciona o plano mensal de SST?',
     text: 'A empresa escolhe o plano, informa CNPJ, número de funcionários e unidades atendidas. A SERMST recebe o pedido com os dados de contratação e inicia a organização dos documentos, exames, vencimentos e rotinas incluídas no plano.',
   },
   {
@@ -119,16 +119,16 @@ const contractFaqs = [
     text: 'O contrato tem vigência inicial de 12 meses. O cliente pode escolher pagamento mensal ou pagamento anual antecipado, com 5% de desconto. As condições de cancelamento antecipado estão previstas no contrato.',
   },
   {
-    title: 'Como funciona o cancelamento da assinatura?',
+    title: 'Como funciona o cancelamento do plano?',
     text: 'O cancelamento deve ser solicitado com antecedência compatível com o ciclo do plano. Não há multa por cancelamento após o cumprimento do ciclo contratado. Os documentos e registros permanecem disponíveis conforme acordado no contrato.',
   },
   {
     title: 'Existe reajuste anual e por qual índice?',
-    text: 'O contrato prevê reajuste anual com base em índice de correção definido no momento da contratação. O índice e o mês de referência do reajuste são informados antes da assinatura do contrato.',
+    text: 'O contrato prevê reajuste anual com base em índice de correção definido no momento da contratação. O índice e o mês de referência do reajuste são informados antes da formalização do contrato.',
   },
   {
     title: 'Qual o prazo de resposta da SERMST em dúvidas e urgências?',
-    text: 'A SERMST tem canal de atendimento direto para clientes do plano. Em urgências operacionais: como acidente de trabalho ou fiscalização: o suporte é prioritário. O tempo de resposta padrão para dúvidas rotineiras é definido no contrato de assinatura.',
+    text: 'A SERMST tem canal de atendimento direto para clientes do plano. Em urgências operacionais: como acidente de trabalho ou fiscalização: o suporte é prioritário. O tempo de resposta padrão para dúvidas rotineiras é definido no contrato do plano.',
   },
 ];
 
@@ -292,7 +292,7 @@ export default function AssinaturasPage() {
       >
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center xl:gap-16">
           <div className="max-w-xl">
-            <span className="kicker">Por que assinar</span>
+            <span className="kicker">Por que escolher um plano</span>
             <h2
               id="comparativo-assinatura"
               className="mb-5 text-3xl font-black leading-tight text-brand-900 md:text-5xl"
@@ -300,8 +300,8 @@ export default function AssinaturasPage() {
               Menos contratações soltas. Mais continuidade.
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
-              Na compra avulsa, cada documento, exame ou envio pode virar uma nova demanda. A
-              assinatura reúne o que foi contratado e coloca a SST dentro de uma rotina mais fácil
+              Na compra avulsa, cada documento, exame ou envio pode virar uma nova demanda.
+              O plano reúne o que foi contratado e coloca a SST dentro de uma rotina mais fácil
               de acompanhar.
             </p>
 

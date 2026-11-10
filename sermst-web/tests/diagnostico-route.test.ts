@@ -25,6 +25,7 @@ describe('diagnostic capture before scheduling', () => {
     for (const key of [
       'DIAGNOSTICO_CRM_API_URL', 'DIAGNOSTICO_CRM_API_KEY', 'DIAGNOSTICO_CRM_WEBHOOK_URL',
       'CRM_WEBHOOK_URL', 'DIAGNOSTICO_NOTIFY_EMAIL', 'CALENDAR_URL', 'NEXT_PUBLIC_CALENDAR_URL',
+      'DIAGNOSTICO_SCHEDULING_STAGE_ID',
       'SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'SMTP_FROM',
     ]) vi.stubEnv(key, '')
   })
@@ -39,6 +40,7 @@ describe('diagnostic capture before scheduling', () => {
   it.each(['instagram_organico', 'instagram_pago', 'parceiro_contador', '  instagram_organico  ', '', '   ', undefined])('delivers %s attribution before returning the calendar', async (origem) => {
     vi.stubEnv('DIAGNOSTICO_CRM_API_URL', 'https://crm.example.com/api/v1/leads')
     vi.stubEnv('DIAGNOSTICO_CRM_API_KEY', 'test-crm-key')
+    vi.stubEnv('DIAGNOSTICO_SCHEDULING_STAGE_ID', 'opp-stage-3')
     vi.stubEnv('CALENDAR_URL', 'https://calendar.example.com/diagnostic')
     const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ success: true, opportunityId: 'opp-123' }), { status: 200, headers: { 'Content-Type': 'application/json' } }))
     vi.stubGlobal('fetch', fetchMock)
@@ -54,7 +56,7 @@ describe('diagnostic capture before scheduling', () => {
       fbclid: 'fbclid-last',
     }))
     expect(response.status).toBe(200)
-    expect(fetchMock).toHaveBeenCalledTimes(2)
+    expect(fetchMock).toHaveBeenCalledTimes(3)
     const delivered = JSON.parse(fetchMock.mock.calls[0][1].body)
     expect(delivered).toMatchObject({
       name: 'Pessoa QA',
@@ -64,12 +66,12 @@ describe('diagnostic capture before scheduling', () => {
       title: 'Diagnóstico de SST | Empresa QA',
       value: 0,
       pageUrl: 'https://sermst.com.br/diagnostico',
-      new_1759509682081: 'Sim',
-      new_1760131251192: '51 a 100',
-      new_1762202729539: 'Sim',
-      new_1764087960206: 'Sim',
-      new_1789428176289: 'Sim',
-      new_1789428287294: 'Serviços',
+      funcionarios_clt: 'Sim',
+      quant_funcionarios_clt: '51 a 100',
+      necessita_contrato: 'Sim',
+      necessita_reuniao: 'Sim',
+      prestador_sst: 'Sim',
+      segmento: 'Serviços',
       cargo: 'Dono / Sócio',
       utm_source: 'sermst-diagnostico',
       utm_medium: 'paid_social',
@@ -94,6 +96,11 @@ describe('diagnostic capture before scheduling', () => {
     expect(fetchMock.mock.calls[1][0]).toBe('https://crm.example.com/api/v1/opportunities/opp-123')
     expect(fetchMock.mock.calls[1][1]).toMatchObject({
       method: 'PATCH',
+      body: JSON.stringify({ stageId: 'TQ38dK5dhgGzBjaivpHR' }),
+    })
+    expect(fetchMock.mock.calls[2][0]).toBe(fetchMock.mock.calls[1][0])
+    expect(fetchMock.mock.calls[2][1]).toMatchObject({
+      method: 'PATCH',
       body: JSON.stringify({ stageId: 'wMHthU8qBYFeQwZyAr1n' }),
     })
     expect(await response.json()).toMatchObject({
@@ -112,6 +119,7 @@ describe('diagnostic capture before scheduling', () => {
     vi.stubEnv('CALENDAR_URL', 'https://calendar.example.com/diagnostic')
     vi.stubGlobal('fetch', vi.fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ success: true, opportunityId: 'opp-123' }), { status: 201 }))
+      .mockResolvedValueOnce(new Response('', { status: 503 }))
       .mockResolvedValueOnce(new Response('', { status: 503 })))
     vi.spyOn(console, 'error').mockImplementation(() => {})
 
@@ -129,14 +137,44 @@ describe('diagnostic capture before scheduling', () => {
     })
   })
 
+  it('normalizes a numeric CRM opportunity ID before updating and returning it to the LP', async () => {
+    vi.stubEnv('DIAGNOSTICO_CRM_API_URL', 'https://crm.example.com/api/v1/leads')
+    vi.stubEnv('DIAGNOSTICO_CRM_API_KEY', 'test-crm-key')
+    vi.stubEnv('CALENDAR_URL', 'https://calendar.example.com/diagnostic')
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true, opportunityId: 184698 }), { status: 201 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true }), { status: 200 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true }), { status: 200 }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    const response = await POST(request(payload()))
+
+    expect(response.status).toBe(200)
+    expect(fetchMock).toHaveBeenNthCalledWith(2, 'https://crm.example.com/api/v1/opportunities/184698', expect.objectContaining({
+      method: 'PATCH',
+      body: JSON.stringify({ stageId: 'TQ38dK5dhgGzBjaivpHR' }),
+    }))
+    expect(fetchMock).toHaveBeenNthCalledWith(3, 'https://crm.example.com/api/v1/opportunities/184698', expect.objectContaining({
+      method: 'PATCH',
+      body: JSON.stringify({ stageId: 'wMHthU8qBYFeQwZyAr1n' }),
+    }))
+    expect(await response.json()).toMatchObject({
+      crmConfirmed: true,
+      scheduleReady: true,
+      opportunityId: '184698',
+    })
+  })
+
   it('recovers a failed stage update by replaying the same CRM opportunity on the same key', async () => {
     vi.stubEnv('DIAGNOSTICO_CRM_API_URL', 'https://crm.example.com/api/v1/leads')
     vi.stubEnv('DIAGNOSTICO_CRM_API_KEY', 'test-crm-key')
     vi.stubEnv('CALENDAR_URL', 'https://calendar.example.com/diagnostic')
     const fetchMock = vi.fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ success: true, opportunityId: 'opp-same' }), { status: 201 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ success: true }), { status: 200 }))
       .mockResolvedValueOnce(new Response('', { status: 503 }))
       .mockResolvedValueOnce(new Response(JSON.stringify({ success: true, opportunityId: 'opp-same', idempotentReplay: true }), { status: 200 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ id: 'opp-same' }), { status: 200 }))
       .mockResolvedValueOnce(new Response(JSON.stringify({ id: 'opp-same' }), { status: 200 }))
     vi.stubGlobal('fetch', fetchMock)
     vi.spyOn(console, 'error').mockImplementation(() => {})
@@ -149,10 +187,10 @@ describe('diagnostic capture before scheduling', () => {
     expect(await first.json()).toMatchObject({ crmConfirmed: true, scheduleReady: false, opportunityId: 'opp-same' })
     expect(retry.status).toBe(200)
     expect(await retry.json()).toMatchObject({ crmConfirmed: true, scheduleReady: true, opportunityId: 'opp-same' })
-    expect(fetchMock).toHaveBeenCalledTimes(4)
+    expect(fetchMock).toHaveBeenCalledTimes(6)
     expect(fetchMock.mock.calls[0][1].headers).toMatchObject({ 'Idempotency-Key': key })
-    expect(fetchMock.mock.calls[2][1].headers).toMatchObject({ 'Idempotency-Key': key })
-    expect(fetchMock.mock.calls[1][0]).toBe(fetchMock.mock.calls[3][0])
+    expect(fetchMock.mock.calls[3][1].headers).toMatchObject({ 'Idempotency-Key': key })
+    expect(fetchMock.mock.calls[1][0]).toBe(fetchMock.mock.calls[5][0])
   })
   it('returns in-progress CRM idempotency as retryable without falling back to a second channel', async () => {
     vi.stubEnv('DIAGNOSTICO_CRM_API_URL', 'https://crm.example.com/api/v1/leads')
@@ -249,6 +287,7 @@ describe('diagnostic capture before scheduling', () => {
     vi.stubEnv('CALENDAR_URL', 'https://calendar.example.com/diagnostic')
     vi.stubGlobal('fetch', vi.fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ success: true, opportunityId: 'opp-123' }), { status: 200 }))
+      .mockResolvedValueOnce(new Response('', { status: 503 }))
       .mockResolvedValueOnce(new Response('', { status: 503 })))
     vi.spyOn(console, 'error').mockImplementation(() => {})
 
